@@ -3,11 +3,11 @@ package edu.aku.hassannaqvi.kmc.ui;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class SectionC1Activity extends AppCompatActivity {
+public class SectionD1Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_section_c1);
+        setContentView(R.layout.activity_section_d1);
     }
 }

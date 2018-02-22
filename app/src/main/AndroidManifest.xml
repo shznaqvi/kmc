@@ -17,14 +17,14 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
-        android:name="edu.aku.hassannaqvi.kmc.core.MainApp"
+        android:name=".core.MainApp"
         android:allowBackup="true"
         android:icon="@drawable/kmc_logo"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="edu.aku.hassannaqvi.kmc.ui.SplashscreenActivity"
+            android:name=".ui.SplashscreenActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,116 +33,46 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="edu.aku.hassannaqvi.kmc.ui.LoginActivity"
+            android:name=".ui.LoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar"
             android:windowSoftInputMode="stateVisible|adjustPan" />
         <activity
-            android:name="edu.aku.hassannaqvi.kmc.ui.MainActivity"
+            android:name=".ui.MainActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name="edu.aku.hassannaqvi.kmc.core.AndroidDatabaseManager"
+            android:name=".core.AndroidDatabaseManager"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name="edu.aku.hassannaqvi.kmc.ui.EndingActivity"
+            android:name=".ui.EndingActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name="edu.aku.hassannaqvi.kmc.ui.MotherEndingActivity"
+            android:name=".ui.MotherEndingActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name="edu.aku.hassannaqvi.kmc.ui.SectionA2Activity"
+            android:name=".ui.SectionAActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-        <activity
-            android:name="edu.aku.hassannaqvi.kmc.ui.SectionA5Activity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme1"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-        <activity
-            android:name="edu.aku.hassannaqvi.kmc.ui.SectionA1Activity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme1"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-        <activity
-            android:name="edu.aku.hassannaqvi.kmc.ui.SectionA3Activity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme1"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-        <activity
-            android:name="edu.aku.hassannaqvi.kmc.ui.SectionA4Activity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme1"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-        <activity
-            android:name="edu.aku.hassannaqvi.kmc.ui.SectionB1Activity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme1"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-        <activity
-            android:name="edu.aku.hassannaqvi.kmc.ui.SectionA8AActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme1"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-        <activity
-            android:name="edu.aku.hassannaqvi.kmc.ui.SectionB1AActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme1"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-        <activity
-            android:name="edu.aku.hassannaqvi.kmc.ui.SectionB2Activity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme1"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-        <activity
-            android:name="edu.aku.hassannaqvi.kmc.ui.SectionB4Activity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme1"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-        <activity
-            android:name="edu.aku.hassannaqvi.kmc.ui.SectionB3Activity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme1"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-        <activity
-            android:name="edu.aku.hassannaqvi.kmc.ui.SectionB5Activity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme1"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-        <activity
-            android:name="edu.aku.hassannaqvi.kmc.ui.SectionC1Activity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme1"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-        <activity
-            android:name="edu.aku.hassannaqvi.kmc.ui.SectionB6Activity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme1"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-        <activity
-            android:name="edu.aku.hassannaqvi.kmc.ui.SectionC5Activity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme1"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-        <activity
-            android:name="edu.aku.hassannaqvi.kmc.ui.SectionC2Activity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme1"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-
-        <activity
-            android:name="edu.aku.hassannaqvi.kmc.ui.SectionC3Activity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme1"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-
-        <activity android:name="edu.aku.hassannaqvi.kmc.ui.SectionC4Activity"></activity>
+        <activity android:name=".ui.SectionA1Activity" />
+        <activity android:name=".ui.SectionB1Activity" />
+        <activity android:name=".ui.SectionB2Activity" />
+        <activity android:name=".ui.SectionC1Activity" />
+        <activity android:name=".ui.SectionC2Activity" />
+        <activity android:name=".ui.SectionC3Activity" />
+        <activity android:name=".ui.SectionC4Activity" />
+        <activity android:name=".ui.SectionD1Activity" />
+        <activity android:name=".ui.SectionD2Activity" />
+        <activity android:name=".ui.SectionE1Activity" />
+        <activity android:name=".ui.SectionE2Activity" />
+        <activity android:name=".ui.SectionE3Activity" />
+        <activity android:name=".ui.SectionFActivity"></activity>
     </application>
 
 </manifest>

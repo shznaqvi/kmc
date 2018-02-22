@@ -33,7 +33,6 @@ import edu.aku.hassannaqvi.kmc.contracts.SerialContract;
 import edu.aku.hassannaqvi.kmc.other.MembersCount;
 import edu.aku.hassannaqvi.kmc.ui.EndingActivity;
 import edu.aku.hassannaqvi.kmc.ui.MotherEndingActivity;
-import edu.aku.hassannaqvi.kmc.ui.SectionC1Activity;
 
 /**
  * Created by hassan.naqvi on 11/30/2016.
