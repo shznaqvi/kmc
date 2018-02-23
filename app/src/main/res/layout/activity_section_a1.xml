@@ -24,7 +24,6 @@
             android:layoutDirection="rtl"
             android:orientation="vertical">
 
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -34,7 +33,6 @@
                 android:gravity="center"
                 android:text="@string/ka1heading"
                 android:textSize="40sp" />
-
 
             <!--ka101-->
             <TextView
@@ -118,7 +116,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                android:hint="@string/other"
+                android:hint="@string/others"
                 android:text='@{ka10196.checked ? ka10196x.getText.toString : ""}'
                 android:visibility='@{ka10196.checked ? View.VISIBLE : View.GONE}' />
 
@@ -236,15 +234,6 @@
 
 
             <!--ka103-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/ka103"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -372,15 +361,6 @@
 
 
             <!--ka104-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/ka104"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -576,7 +556,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
-                    android:text="@string/ka107a" />
+                    android:text="@string/yes" />
 
                 <RadioButton
                     android:id="@+id/ka107b"
@@ -584,7 +564,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
-                    android:text="@string/ka107b" />
+                    android:text="@string/no" />
 
             </RadioGroup>
 
@@ -781,7 +761,17 @@
                     android:layout_marginTop="2dp"
                     android:background="@color/colorPrimaryDark"
                     android:gravity="center"
-                    android:text="@string/ka109sub1"
+                    android:text="@string/ka109sub"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="2dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:gravity="center"
+                    android:text="@string/ka109sub01"
                     android:textSize="30sp" />
 
                 <RadioButton
