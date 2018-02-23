@@ -174,7 +174,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:hint="@string/kc103d"
+                android:hint="@string/kc103y"
                 android:inputType="number"
                 android:maxLength="2" />
 
@@ -278,8 +278,7 @@
                     android:background="#1ed61e"
                     android:onClick="@{() -> callback.BtnContinue()}"
                     android:text="@string/nextSection"
-                    android:textColor="@color/white"
-                    android:visibility="@{na11201b.checked ? View.GONE : View.VISIBLE}" />
+                    android:textColor="@color/white" />
 
             </LinearLayout>
 

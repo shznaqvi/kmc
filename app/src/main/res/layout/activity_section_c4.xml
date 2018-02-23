@@ -106,7 +106,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
-                    android:text="@string/day" />
+                    android:text="@string/days" />
 
                 <RadioButton
                     android:id="@+id/kc402b"
@@ -114,7 +114,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
-                    android:text="@string/hour" />
+                    android:text="@string/hours" />
 
                 <RadioButton
                     android:id="@+id/kc40298"

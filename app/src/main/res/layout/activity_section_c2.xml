@@ -5,14 +5,11 @@
     tools:context=".ui.SectionC2Activity">
 
     <data>
-
         <import type="android.view.View" />
-
         <variable
             name="callback"
             type="edu.aku.hassannaqvi.kmc.ui.SectionC2Activity" />
     </data>
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -945,11 +942,9 @@
                     android:background="#1ed61e"
                     android:onClick="@{() -> callback.BtnContinue()}"
                     android:text="@string/nextSection"
-                    android:textColor="@color/white"
-                    android:visibility="@{na11201b.checked ? View.GONE : View.VISIBLE}" />
+                    android:textColor="@color/white" />
 
             </LinearLayout>
-
         </LinearLayout>
     </ScrollView>
 </layout>

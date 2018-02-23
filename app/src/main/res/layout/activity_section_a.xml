@@ -30,7 +30,7 @@
                 android:layout_marginTop="2dp"
                 android:background="@color/colorPrimaryDark"
                 android:gravity="center"
-                android:text="@string/na1heading"
+                android:text="@string/ka1heading"
                 android:textSize="40sp" />
 
 
@@ -40,7 +40,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@color/colorPrimary"
-                android:text="@string/na102"
+                android:text="@string/ka102"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@android:color/white" />
 
@@ -56,17 +56,17 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="5dp"
                     android:layout_weight="60"
-                    android:hint="@string/na102"
+                    android:hint="@string/ka102"
                     android:inputType="number"
                     android:maxLength="9" />
 
-                <Button
-                    android:id="@+id/checkEnmBtn"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="30"
-                    android:onClick="@{() -> callback.BtnCheckEnm()}"
-                    android:text="CHECK" />
+                <!--<Button-->
+                    <!--android:id="@+id/checkEnmBtn"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_weight="30"-->
+                    <!--android:onClick="@{() -> callback.BtnCheckEnm()}"-->
+                    <!--android:text="CHECK" />-->
 
             </LinearLayout>
 
@@ -94,7 +94,7 @@
                             android:layout_marginTop="16dp"
                             android:layout_weight="1"
                             android:background="@color/colorPrimary"
-                            android:text="@string/na101a"
+                            android:text="@string/ka101a"
                             android:textAppearance="?android:attr/textAppearanceLarge"
                             android:textColor="@android:color/white" />
 
@@ -119,7 +119,7 @@
                             android:layout_marginTop="16dp"
                             android:layout_weight="1"
                             android:background="@color/colorPrimary"
-                            android:text="@string/na101b"
+                            android:text="@string/ka101b"
                             android:textAppearance="?android:attr/textAppearanceLarge"
                             android:textColor="@android:color/white" />
 
@@ -156,7 +156,7 @@
                             android:layout_marginTop="16dp"
                             android:layout_weight="1"
                             android:background="@color/colorPrimary"
-                            android:text="@string/na101c"
+                            android:text="@string/ka101c"
                             android:textAppearance="?android:attr/textAppearanceLarge"
                             android:textColor="@android:color/white" />
 
@@ -181,7 +181,7 @@
                             android:layout_marginTop="16dp"
                             android:layout_weight="1"
                             android:background="@color/colorPrimary"
-                            android:text="@string/na101d"
+                            android:text="@string/ka101d"
                             android:textAppearance="?android:attr/textAppearanceLarge"
                             android:textColor="@android:color/white" />
 
@@ -207,7 +207,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:background="@color/colorPrimary"
-                    android:text="@string/na103"
+                    android:text="@string/ka103a"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@android:color/white" />
 
@@ -243,291 +243,291 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
                     <!--na105-->
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:background="@color/colorPrimary"
-                        android:text="@string/na105"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:textColor="@android:color/white" />
+                    <!--<TextView-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginTop="16dp"-->
+                        <!--android:background="@color/colorPrimary"-->
+                        <!--android:text="@string/ka105"-->
+                        <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
+                        <!--android:textColor="@android:color/white" />-->
 
-                    <EditText
-                        android:id="@+id/na105"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz0123456789"
-                        android:hint="@string/na105"
-                        android:maxLength="25"
+                    <!--<EditText-->
+                        <!--android:id="@+id/na105"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginBottom="1dp"-->
+                        <!--android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz0123456789"-->
+                        <!--android:hint="@string/ka105"-->
+                        <!--android:maxLength="25"-->
 
-                        />
+                        <!--/>-->
 
-                    <!--na107-->
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:background="@color/colorPrimary"
-                        android:text="@string/na107"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:textColor="@android:color/white" />
+                    <!--&lt;!&ndash;na107&ndash;&gt;-->
+                    <!--<TextView-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginTop="16dp"-->
+                        <!--android:background="@color/colorPrimary"-->
+                        <!--android:text="@string/ka107"-->
+                        <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
+                        <!--android:textColor="@android:color/white" />-->
 
-                    <EditText
-                        android:id="@+id/na107"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                        android:hint="@string/na107"
-                        android:maxLength="25" />
+                    <!--<EditText-->
+                        <!--android:id="@+id/na107"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginBottom="1dp"-->
+                        <!--android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"-->
+                        <!--android:hint="@string/ka107"-->
+                        <!--android:maxLength="25" />-->
 
-                    <!--na108-->
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:background="@color/colorPrimary"
-                        android:text="@string/na108"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:textColor="@android:color/white" />
+                    <!--&lt;!&ndash;na108&ndash;&gt;-->
+                    <!--<TextView-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginTop="16dp"-->
+                        <!--android:background="@color/colorPrimary"-->
+                        <!--android:text="@string/ka108"-->
+                        <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
+                        <!--android:textColor="@android:color/white" />-->
 
-                    <EditText
-                        android:id="@+id/na108"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:digits="0123456789"
-                        android:hint="@string/na108"
-                        android:inputType="number"
-                        android:maxLength="2" />
+                    <!--<EditText-->
+                        <!--android:id="@+id/na108"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginTop="5dp"-->
+                        <!--android:digits="0123456789"-->
+                        <!--android:hint="@string/ka108"-->
+                        <!--android:inputType="number"-->
+                        <!--android:maxLength="2" />-->
 
-                    <!--13-->
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:background="@color/colorPrimary"
-                        android:text="@string/na213"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:textColor="@android:color/white" />
+                    <!--&lt;!&ndash;13&ndash;&gt;-->
+                    <!--<TextView-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginTop="16dp"-->
+                        <!--android:background="@color/colorPrimary"-->
+                        <!--android:text="@string/ka12413"-->
+                        <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
+                        <!--android:textColor="@android:color/white" />-->
 
-                    <EditText
-                        android:id="@+id/na213"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:hint="@string/na213"
-                        android:inputType="number"
-                        android:maxLength="11" />
+                    <!--<EditText-->
+                        <!--android:id="@+id/na213"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginBottom="1dp"-->
+                        <!--android:hint="@string/ka213"-->
+                        <!--android:inputType="number"-->
+                        <!--android:maxLength="11" />-->
 
-                    <!--na111-->
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:background="@color/colorPrimary"
-                        android:text="@string/na111"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:textColor="@android:color/white" />
+                    <!--&lt;!&ndash;na111&ndash;&gt;-->
+                    <!--<TextView-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginTop="16dp"-->
+                        <!--android:background="@color/colorPrimary"-->
+                        <!--android:text="@string/na111"-->
+                        <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
+                        <!--android:textColor="@android:color/white" />-->
 
-                    <!--na11101blood-->
+                    <!--&lt;!&ndash;na11101blood&ndash;&gt;-->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
-                            android:layout_weight="1"
-                            android:background="@color/colorPrimary"
-                            android:text="@string/na11101blood"
-                            android:textAppearance="?android:attr/textAppearanceLarge"
-                            android:textColor="@android:color/white" />
+                        <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_marginTop="16dp"-->
+                            <!--android:layout_weight="1"-->
+                            <!--android:background="@color/colorPrimary"-->
+                            <!--android:text="@string/na11101blood"-->
+                            <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
+                            <!--android:textColor="@android:color/white" />-->
 
-                        <RadioGroup
-                            android:id="@+id/na11101blood"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
+                        <!--<RadioGroup-->
+                            <!--android:id="@+id/na11101blood"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_marginTop="16dp"-->
 
-                            android:layout_weight="1"
-                            android:orientation="horizontal">
+                            <!--android:layout_weight="1"-->
+                            <!--android:orientation="horizontal">-->
 
-                            <RadioButton
-                                android:id="@+id/na11101blooda"
-                                style="@style/radiobutton"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="1dp"
-                                android:layout_weight="1"
-                                android:text="@string/yes" />
+                            <!--<RadioButton-->
+                                <!--android:id="@+id/na11101blooda"-->
+                                <!--style="@style/radiobutton"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_marginBottom="1dp"-->
+                                <!--android:layout_weight="1"-->
+                                <!--android:text="@string/yes" />-->
 
-                            <RadioButton
-                                android:id="@+id/na11101bloodb"
-                                style="@style/radiobutton"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="1dp"
-                                android:layout_weight="1"
-                                android:text="@string/no" />
-                        </RadioGroup>
+                            <!--<RadioButton-->
+                                <!--android:id="@+id/na11101bloodb"-->
+                                <!--style="@style/radiobutton"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_marginBottom="1dp"-->
+                                <!--android:layout_weight="1"-->
+                                <!--android:text="@string/no" />-->
+                        <!--</RadioGroup>-->
                     </LinearLayout>
-                    <!--na11102water-->
+                    <!--&lt;!&ndash;na11102water&ndash;&gt;-->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
-                            android:layout_weight="1"
-                            android:background="@color/colorPrimary"
-                            android:text="@string/na11102water"
-                            android:textAppearance="?android:attr/textAppearanceLarge"
-                            android:textColor="@android:color/white" />
+                        <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_marginTop="16dp"-->
+                            <!--android:layout_weight="1"-->
+                            <!--android:background="@color/colorPrimary"-->
+                            <!--android:text="@string/na11102water"-->
+                            <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
+                            <!--android:textColor="@android:color/white" />-->
 
-                        <RadioGroup
-                            android:id="@+id/na11102water"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
-                            android:layout_weight="1"
-                            android:orientation="horizontal">
+                        <!--<RadioGroup-->
+                            <!--android:id="@+id/na11102water"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_marginTop="16dp"-->
+                            <!--android:layout_weight="1"-->
+                            <!--android:orientation="horizontal">-->
 
-                            <RadioButton
-                                android:id="@+id/na11102watera"
-                                style="@style/radiobutton"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="1dp"
-                                android:layout_weight="1"
+                            <!--<RadioButton-->
+                                <!--android:id="@+id/na11102watera"-->
+                                <!--style="@style/radiobutton"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_marginBottom="1dp"-->
+                                <!--android:layout_weight="1"-->
 
-                                android:text="@string/yes" />
+                                <!--android:text="@string/yes" />-->
 
-                            <RadioButton
-                                android:id="@+id/na11102waterb"
-                                style="@style/radiobutton"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="1dp"
-                                android:layout_weight="1"
-                                android:text="@string/no" />
-                        </RadioGroup>
+                            <!--<RadioButton-->
+                                <!--android:id="@+id/na11102waterb"-->
+                                <!--style="@style/radiobutton"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_marginBottom="1dp"-->
+                                <!--android:layout_weight="1"-->
+                                <!--android:text="@string/no" />-->
+                        <!--</RadioGroup>-->
                     </LinearLayout>
-                    <!--na1a-->
-                    <TextView
-                        style="@style/sub"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/na112info" />
+                    <!--&lt;!&ndash;na1a&ndash;&gt;-->
+                    <!--<TextView-->
+                        <!--style="@style/sub"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="@string/na112info" />-->
 
-                    <!--na112-->
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:background="@color/colorPrimary"
-                        android:text="@string/na112"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:textColor="@android:color/white" />
+                    <!--&lt;!&ndash;na112&ndash;&gt;-->
+                    <!--<TextView-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginTop="16dp"-->
+                        <!--android:background="@color/colorPrimary"-->
+                        <!--android:text="@string/na112"-->
+                        <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
+                        <!--android:textColor="@android:color/white" />-->
 
-                    <!--na11201-->
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:background="@color/colorPrimary"
-                        android:text="@string/na11201"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:textColor="@android:color/white" />
+                    <!--&lt;!&ndash;na11201&ndash;&gt;-->
+                    <!--<TextView-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginTop="16dp"-->
+                        <!--android:background="@color/colorPrimary"-->
+                        <!--android:text="@string/na11201"-->
+                        <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
+                        <!--android:textColor="@android:color/white" />-->
 
-                    <RadioGroup
-                        android:id="@+id/na11201"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                    <!--<RadioGroup-->
+                        <!--android:id="@+id/na11201"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:orientation="horizontal">-->
 
-                        <RadioButton
-                            android:id="@+id/na11201a"
-                            style="@style/radiobutton"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="1dp"
-                            android:layout_weight="1"
-                            android:text="@string/yes" />
+                        <!--<RadioButton-->
+                            <!--android:id="@+id/na11201a"-->
+                            <!--style="@style/radiobutton"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_marginBottom="1dp"-->
+                            <!--android:layout_weight="1"-->
+                            <!--android:text="@string/yes" />-->
 
-                        <RadioButton
-                            android:id="@+id/na11201b"
-                            style="@style/radiobutton"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="1dp"
-                            android:layout_weight="1"
-                            android:text="@string/no" />
-                    </RadioGroup>
+                        <!--<RadioButton-->
+                            <!--android:id="@+id/na11201b"-->
+                            <!--style="@style/radiobutton"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_marginBottom="1dp"-->
+                            <!--android:layout_weight="1"-->
+                            <!--android:text="@string/no" />-->
+                    <!--</RadioGroup>-->
 
-                    <!--na11202-->
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:background="@color/colorPrimary"
-                        android:text="@string/na11202"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:textColor="@android:color/white" />
+                    <!--&lt;!&ndash;na11202&ndash;&gt;-->
+                    <!--<TextView-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginTop="16dp"-->
+                        <!--android:background="@color/colorPrimary"-->
+                        <!--android:text="@string/na11202"-->
+                        <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
+                        <!--android:textColor="@android:color/white" />-->
 
-                    <RadioGroup
-                        android:id="@+id/na11202"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                    <!--<RadioGroup-->
+                        <!--android:id="@+id/na11202"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:orientation="horizontal">-->
 
-                        <RadioButton
-                            android:id="@+id/na11202a"
-                            style="@style/radiobutton"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="1dp"
-                            android:layout_weight="1"
-                            android:text="@string/yes" />
+                        <!--<RadioButton-->
+                            <!--android:id="@+id/na11202a"-->
+                            <!--style="@style/radiobutton"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_marginBottom="1dp"-->
+                            <!--android:layout_weight="1"-->
+                            <!--android:text="@string/yes" />-->
 
-                        <RadioButton
-                            android:id="@+id/na11202b"
-                            style="@style/radiobutton"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="1dp"
-                            android:layout_weight="1"
-                            android:text="@string/no" />
-                    </RadioGroup>
+                        <!--<RadioButton-->
+                            <!--android:id="@+id/na11202b"-->
+                            <!--style="@style/radiobutton"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_marginBottom="1dp"-->
+                            <!--android:layout_weight="1"-->
+                            <!--android:text="@string/no" />-->
+                    <!--</RadioGroup>-->
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:visibility="@{na11201a.checked ? View.GONE : View.VISIBLE}">
+                       >
 
-                        <!--na1b-->
-                        <TextView
-                            style="@style/sub"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/na113info" />
+                        <!--&lt;!&ndash;na1b&ndash;&gt;-->
+                        <!--<TextView-->
+                            <!--style="@style/sub"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:text="@string/na113info" />-->
 
-                        <!--na113-->
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
-                            android:background="@color/colorPrimary"
-                            android:text="@string/na113"
-                            android:textAppearance="?android:attr/textAppearanceLarge"
-                            android:textColor="@android:color/white" />
+                        <!--&lt;!&ndash;na113&ndash;&gt;-->
+                        <!--<TextView-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_marginTop="16dp"-->
+                            <!--android:background="@color/colorPrimary"-->
+                            <!--android:text="@string/na113"-->
+                            <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
+                            <!--android:textColor="@android:color/white" />-->
 
                         <LinearLayout
                             android:id="@+id/fldGrpna113"
@@ -535,81 +535,81 @@
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
 
-                            <CheckBox
-                                android:id="@+id/na113a"
-                                style="@style/checkbox"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="1dp"
-                                android:text="@string/na113a" />
+                            <!--<CheckBox-->
+                                <!--android:id="@+id/na113a"-->
+                                <!--style="@style/checkbox"-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_marginBottom="1dp"-->
+                                <!--android:text="@string/na113a" />-->
 
-                            <CheckBox
-                                android:id="@+id/na113b"
-                                style="@style/checkbox"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="1dp"
-                                android:text="@string/na113b" />
+                            <!--<CheckBox-->
+                                <!--android:id="@+id/na113b"-->
+                                <!--style="@style/checkbox"-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_marginBottom="1dp"-->
+                                <!--android:text="@string/na113b" />-->
 
-                            <CheckBox
-                                android:id="@+id/na113c"
-                                style="@style/checkbox"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="1dp"
-                                android:text="@string/na113c" />
+                            <!--<CheckBox-->
+                                <!--android:id="@+id/na113c"-->
+                                <!--style="@style/checkbox"-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_marginBottom="1dp"-->
+                                <!--android:text="@string/na113c" />-->
 
-                            <CheckBox
-                                android:id="@+id/na113d"
-                                style="@style/checkbox"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="1dp"
-                                android:text="@string/na113d" />
+                            <!--<CheckBox-->
+                                <!--android:id="@+id/na113d"-->
+                                <!--style="@style/checkbox"-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_marginBottom="1dp"-->
+                                <!--android:text="@string/na113d" />-->
 
-                            <CheckBox
-                                android:id="@+id/na113e"
-                                style="@style/checkbox"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="1dp"
-                                android:text="@string/na113e" />
+                            <!--<CheckBox-->
+                                <!--android:id="@+id/na113e"-->
+                                <!--style="@style/checkbox"-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_marginBottom="1dp"-->
+                                <!--android:text="@string/na113e" />-->
 
-                            <CheckBox
-                                android:id="@+id/na113f"
-                                style="@style/checkbox"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="1dp"
-                                android:text="@string/na113f" />
+                            <!--<CheckBox-->
+                                <!--android:id="@+id/na113f"-->
+                                <!--style="@style/checkbox"-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_marginBottom="1dp"-->
+                                <!--android:text="@string/na113f" />-->
 
-                            <CheckBox
-                                android:id="@+id/na113g"
-                                style="@style/checkbox"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="1dp"
-                                android:text="@string/na113g" />
+                            <!--<CheckBox-->
+                                <!--android:id="@+id/na113g"-->
+                                <!--style="@style/checkbox"-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_marginBottom="1dp"-->
+                                <!--android:text="@string/na113g" />-->
 
-                            <CheckBox
-                                android:id="@+id/na11396"
-                                style="@style/checkbox"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="1dp"
-                                android:text="@string/other" />
+                            <!--<CheckBox-->
+                                <!--android:id="@+id/na11396"-->
+                                <!--style="@style/checkbox"-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_marginBottom="1dp"-->
+                                <!--android:text="@string/other" />-->
 
                         </LinearLayout>
 
-                        <EditText
-                            android:id="@+id/na11396x"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
-                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                            android:hint="@string/other"
-                            android:text='@{na11396.checked ? na11396x.getText.toString : ""}'
-                            android:visibility='@{na11396.checked ? View.VISIBLE : View.GONE}' />
+                        <!--<EditText-->
+                            <!--android:id="@+id/na11396x"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_marginTop="5dp"-->
+                            <!--android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"-->
+                            <!--android:hint="@string/other"-->
+                            <!--android:text='@{na11396.checked ? na11396x.getText.toString : ""}'-->
+                            <!--android:visibility='@{na11396.checked ? View.VISIBLE : View.GONE}' />-->
 
                     </LinearLayout>
 
@@ -642,7 +642,7 @@
                             android:onClick="@{() -> callback.BtnContinue()}"
                             android:text="@string/nextSection"
                             android:textColor="@color/white"
-                            android:visibility="@{na11201b.checked ? View.GONE : View.VISIBLE}" />
+                           />
 
                     </LinearLayout>
 

@@ -64,7 +64,7 @@ public class MotherEndingActivity extends AppCompatActivity {
             if (UpdateDB()) {
 
                 finish();
-
+/*
                 if (SectionC1Activity.counter == SectionC1Activity.counterPerMom) {
 
                     startActivity(new Intent(this, EndingActivity.class)
@@ -73,7 +73,7 @@ public class MotherEndingActivity extends AppCompatActivity {
                 } else {
                     startActivity(new Intent(this, SectionC1Activity.class)
                             .putExtra("name", SectionC1Activity.selectedChildName));
-                }
+                }*/
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();

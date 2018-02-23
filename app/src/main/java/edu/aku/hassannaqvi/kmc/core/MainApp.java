@@ -33,6 +33,7 @@ import edu.aku.hassannaqvi.kmc.contracts.SerialContract;
 import edu.aku.hassannaqvi.kmc.other.MembersCount;
 import edu.aku.hassannaqvi.kmc.ui.EndingActivity;
 import edu.aku.hassannaqvi.kmc.ui.MotherEndingActivity;
+import edu.aku.hassannaqvi.kmc.ui.SectionC1Activity;
 
 /**
  * Created by hassan.naqvi on 11/30/2016.
@@ -214,8 +215,8 @@ public class MainApp extends Application {
                             public void onClick(DialogInterface dialog,
                                                 int id) {
 
-                                SectionC1Activity.counter = 1;
-                                SectionC1Activity.counterPerMom = 0;
+//                                SectionC1Activity.counter = 1;
+//                                SectionC1Activity.counterPerMom = 0;
 
                                 activity.finish();
                                 Intent end_intent = new Intent(context, MotherEndingActivity.class);

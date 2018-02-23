@@ -310,8 +310,8 @@ public class MainActivity extends Activity {
     }
 
     public void openB(View v) {
-        Intent iB = new Intent(this, SectionA2Activity.class);
-        startActivity(iB);
+        //Intent iB = new Intent(this, SectionA2Activity.class);
+//        startActivity(iB);
     }
 
 
@@ -372,7 +372,7 @@ public class MainActivity extends Activity {
     }*/
 
 
-    public void testGPS(View v) {
+    public void testGPS(View v){
 
         SharedPreferences sharedPref = getSharedPreferences("GPSCoordinates", Context.MODE_PRIVATE);
         Log.d("MAP", "testGPS: " + sharedPref.getAll().toString());

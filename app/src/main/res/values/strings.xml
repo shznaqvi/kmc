@@ -45,7 +45,11 @@
     <string name="years"> سال </string>
     <string name="months"> مهينا </string>
     <string name="times"> تعداد </string>
-    <string name="others"> ٻيو ڪجھ وضاحت ڪريو </string>
+    <string name="timesd"> ويمن جو تعداد </string>
+    <string name="other"> ٻيو ڪجھ وضاحت ڪريو </string>
+    <string name="noone"> ڪو به نه </string>
+    <string name="neverb"> نه ونهجاريو </string>
+
 
 
   <string name="kaheading"> Module A: SOCIO DEMOGRAPHIC INFORMATION (KMC-2018-2020) </string>
@@ -78,6 +82,8 @@
   <string name="ka102f"> سيمنٽ جون سرون، پڪيون سرون يا پٿر ۽ سمينٽ سان (پلستر نه ٿيل </string>
   <string name="ka102g"> سيمنٽ سان (پلستر ٿيل) </string>
   <string name="ka102h"> ڪاٺ جي تاڪن سان </string>
+
+  <string name="ka103">Missing String </string>
   <string name="ka103sub"> ب. ڇت جي جوڙ جڪ </string>
   <string name="ka103suba"> بغير ڇت جي </string>
   <string name="ka103a"> کجي يا ناريل جون ڇڙيون </string>
@@ -91,6 +97,9 @@
   <string name="ka103i"> سيرامڪ ٽائيل يا سيمنٽ </string>
   <string name="ka103j"> ڪنهن ڌاتو جي ڇت </string>
   <string name="ka103k"> روفنگ شنگلس </string>
+
+  <string name="ka104"> Missing string ka104</string>
+
   <string name="ka104sub"> ج. فرش جي جوڙ جڪ </string>
   <string name="ka104a"> ڪچي زمين، واري، مٽي </string>
   <string name="ka104b"> ڪاٺ جا تاڪ </string>
@@ -133,6 +142,7 @@
   <string name="ka109h"> محفوظ چشمو </string>
   <string name="ka109i"> غير محفوظ چشمو </string>
   <string name="kasub03"> ٻيا ذريعا </string>
+  <string name="ka109sub04">missing string</string>
   <string name="ka109j"> برساتي پاڻي </string>
   <string name="ka109k"> ٽينڪر يا ٽرڪ </string>
   <string name="ka109l"> فلٽر ٿيل پاڻي </string>
@@ -227,10 +237,14 @@
 <string name="ka12418"> پاڻي گرم ڪرڻ واري مشين </string>
 <string name="ka12419"> ايئر ڪنڊيشن يا ايئر ڪولر </string>
 <string name="ka12420"> ڪمپيوٽر </string>
+<string name="kb"> Reproductive History and current pregnency status (KMC-2018-2020)</string>
 <string name="kb1heading"> پيدائشن جي باري ۾ معلومات </string>
 <string name="kb101"> مڪمل حملن جو تعداد </string>
 <string name="kb102"> مڪمل ويمن جو تعداد </string>
+
+
 <string name="kb2heading"> موجوده حمل جي باري ۾ معلومات </string>
+<string name="kb201"> ڇا توهان هن وقت حمل سان آهيو؟ </string>
 <string name="kb202"> توهان ڪيترن هفتن/مهينن جي حمل سان آهيو؟ پورا ڪيل هفتن ۽ مهينن جو تعداد </string>
 <string name="kb203"> الٽرا سائونڊ موجود آهي </string>
 <string name="kb204"> ماهواري جي آخري تاريخ </string>
@@ -243,7 +257,7 @@
 <string name="kb207c"> پئسا نه هيا </string>
 <string name="kb207d"> ڪو مرد موجود نه هيو گڏ وڃڻ لاءِ </string>
 <string name="kb207e"> صحت مرڪز گھر کان تمام پري هو </string>
-<string name="kb208f"> گھرواري /گھر جي سربراه جي اجازت نه هئي </string>
+<string name="kb207f"> گھرواري /گھر جي سربراه جي اجازت نه هئي </string>
 <string name="kb208"> جيڪڏهن ها ته ڪيترا دفعا؟ </string>
     <string name="kb209"> حمل جي ڪهڙي مهيني ۾ توهان پنهنجو طبي معائنو
     ڪرايو </string>
@@ -251,6 +265,8 @@
 <string name="kb209b"> 2nd trimester </string>
 <string name="kb209c"> 1st trimester </string>
 <string name="kb210"> اوهان جو طبي معائنو ڪنهن ڪيو </string>
+<string name="kb210sub1">Health Personnel</string>
+<string name="kb210sub2">Other Person</string>
 <string name="kb210a"> ڊاڪٽر </string>
 <string name="kb210b"> نرس/مڊوائيف/ايل ايڇ ڊبليو </string>
 <string name="kb210c"> ڪمنيونٽي مڊوائيف </string>
@@ -258,6 +274,9 @@
 <string name="kb210e"> دائي-ٽي بي اي </string>
 <string name="kb210f"> ليڊي هيلٿ ورڪر </string>
 <string name="kb211"> توهان طبي معائنو ڪٿي ڪرايو؟ </string>
+<string name="kb211sub1"> Home</string>
+<string name="kb211sub2"> Public Medical Sector</string>
+<string name="kb211sub3"> Public Medical Sector</string>
 <string name="kb211a"> توهان جي گھر </string>
 <string name="kb211b"> ايل ايڇ وي/سي ايم ڊليو/ٽي بي اي/دائي جو گھر </string>
 <string name="kb211c"> سرڪاري اسپتال </string>
@@ -307,6 +326,9 @@
 <string name="kb218"> موجوده حمل ۾ڇا توهان کي ٻانهن جي ڏوري ۾جھٽڪن کان بچاءَ جي سئي لڳي آهي مطلب پيدائش کان پوءِ ٻار کي جھٽڪا اچڻ؟ </string>
 <string name="kb219"> موجوده حمل دوران گھڻا دفعا جھٽڪن کان بچاءُ جي سئي لڳي آهي؟ </string>
 <string name="kb220"> ويم ڪرائڻ جي باري ۾ توهان ڪهڙي جڳھ جو سوچيو آهي؟ </string>
+    <string name="kb220sub1"> Home</string>
+    <string name="kb220sub2"> Public Medical Sector</string>
+    <string name="kb220sub3"> Public Medical Sector</string>
 <string name="kb220a"> پنهنجي گھر </string>
 <string name="kb220b"> ايل ايڇ وي/سي ايم ڊليو/ٽي بي اي/دائي جو گھر </string>
 <string name="kb220c"> سرڪاري اسپتال </string>
@@ -540,6 +562,7 @@
 <string name="kc412f"> بخار جو 35.5 کان گھٽجي وڃڻ </string>
 <string name="kc412g"> ٻار جو لوڏڻ سان چرپچ ڪرڻ يا بلڪل به نه هلڻ </string>
 <string name="kc412h"> ساڻو ٿي وڃڻ </string>
+<string name="kd"> Module D: LOW BIRTH WEIGHT BABY </string>
 <string name="kd1heading"> Section D1: Prolong Skin to Skin Contact/ Kangaroo Mother Care </string>
 <string name="kd101"> ڪمزور يا گھٽ وزن واري ٻار کي ڪيئين گرم رکندا آهيو؟ </string>
 <string name="kd101a"> ڪپھ يا ڪمبل ۾ ويهريندا آهيو </string>
@@ -574,9 +597,12 @@
 <string name="kd202a"> STARTED ______DAYS AFTER BIRTH </string>
 <string name="kd203"> ڏينهن ۾ ڪيترا ڀيرا ماليش ڪندا آهيو؟ </string>
 <string name="kd203a"> APPLIED ________TIME PER DAY </string>
-<string name="kd203b"> CONTINUE TILL DATE </string>
-<string name="keheading"> هڪ سال کان گھٽ ٻارن ۾ کير پيارڻ جو عمل </string>
-<string name="ke01"> توهان جي آخري ٻار جي عمر ڇا آهي؟ </string>
+<string name="kd204"> توهان ڪيتري دير ٻار کي تيل جي ماليش ڪندا آهيو؟ </string>
+    <string name="kd204a"> APPLIED TILL ________ DAYS</string>
+    <string name="kd204b"> CONTINUE TILL DATE </string>
+
+    <string name="keheading"> هڪ سال کان گھٽ ٻارن ۾ کير پيارڻ جو عمل </string>
+<string name="ke001"> توهان جي آخري ٻار جي عمر ڇا آهي؟ </string>
 <string name="ke1heading"> کير پيارڻ جي شروعات </string>
 <string name="ke101"> ڇا ڪڏهن توهان پنهنجي ٻار کي پنهنجي ٿڃ پياري؟ </string>
 <string name="ke102"> ٻار جي ڄمڻ کان هڪدم پوءِ توهان ٻار کي ڇا ڏنو؟ </string>
@@ -612,22 +638,22 @@
 <string name="ke109b"> ڪپ ۽ چمچي سان </string>
 <string name="ke109c"> بوتل سان </string>
 <string name="ke109d"> beaker </string>
-    <string name="ke10">
+    <string name="ke110">
     جيڪڏهن ٻيو طريقو اختيار ڪندا آهيو ته ڇو ڪندا آهيو؟ </string>
-<string name="ke10a"> ٻار گھٽ وزن جو هيو </string>
-<string name="ke10b"> ٻار ننڍو هيو </string>
-<string name="ke10c"> ٻار بيمار هيو </string>
-<string name="ke10d"> ٻار ٿڃ وٺڻ جي قابل نه هيو </string>
-<string name="ke10e"> ٻار آڪسيجن تي هو </string>
-<string name="ke10f"> ڊاڪٽر اجازت نه ڏني </string>
-<string name="ke10g"> آئو بيمار هئيس </string>
-<string name="ke10h"> چپ وڍيل تارون ڪٽيل </string>
+<string name="ke110a"> ٻار گھٽ وزن جو هيو </string>
+<string name="ke110b"> ٻار ننڍو هيو </string>
+<string name="ke110c"> ٻار بيمار هيو </string>
+<string name="ke110d"> ٻار ٿڃ وٺڻ جي قابل نه هيو </string>
+<string name="ke110e"> ٻار آڪسيجن تي هو </string>
+<string name="ke110f"> ڊاڪٽر اجازت نه ڏني </string>
+<string name="ke110g"> آئو بيمار هئيس </string>
+<string name="ke110h"> چپ وڍيل تارون ڪٽيل </string>
 <string name="ke2heading"> صرف ماءَ جو کير </string>
 <string name="ke201"> ڪيترا مهينا توهان پنهنجي ٻار کي صرف پنهنجي ٿڄ پياري؟ صرف ٿڄ معنيٰ پنهنجو کير (دوائون سميت) </string>
 <string name="ke201a"> ڏينهن </string>
 <string name="ke201b"> مهينا </string>
-<string name="ke201c"> ڪڏهن به نه </string>
-<string name="ke201d"> اڃا تائين صرف ماءُ جي کير تي آهي </string>
+<string name="ke20199"> ڪڏهن به نه </string>
+<string name="ke20177"> اڃا تائين صرف ماءُ جي کير تي آهي </string>
 <string name="ke202"> توهان کي ڪيئن خبر پئي ته توهان جي ٻارپيٽ ڀري کير پيتو آهي؟ </string>
 <string name="ke202a"> ٻار کير پي سمي پيو هو </string>
 <string name="ke202b"> ٻار کير پيئڻ کان پوءِ پيشاب ڪيو هو </string>

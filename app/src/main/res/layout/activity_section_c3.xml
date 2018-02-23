@@ -98,7 +98,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
-                    android:text="@string/kc30198" />
+                    android:text="@string/noone" />
 
                 <RadioButton
                     android:id="@+id/kc30196"
@@ -465,7 +465,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:digits="0123456789."
-                    android:hint="@string/kc306kg"
+                    android:hint="@string/kg"
                     android:inputType="numberDecimal"
                     android:maxLength="5"
                     android:visibility="gone" />
@@ -1019,7 +1019,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
-                    android:text="@string/hour" />
+                    android:text="@string/hours" />
 
                 <RadioButton
                     android:id="@+id/kc316c"
@@ -1027,7 +1027,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
-                    android:text="@string/day" />
+                    android:text="@string/days" />
 
                 <RadioButton
                     android:id="@+id/kc31697"
@@ -1035,7 +1035,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
-                    android:text="@string/kc31697" />
+                    android:text="@string/neverb" />
 
                 <RadioButton
                     android:id="@+id/kc31698"
@@ -1076,7 +1076,7 @@
                     android:onClick="@{() -> callback.BtnContinue()}"
                     android:text="@string/nextSection"
                     android:textColor="@color/white"
-                    android:visibility="@{na11201b.checked ? View.GONE : View.VISIBLE}" />
+                    />
 
             </LinearLayout>
 

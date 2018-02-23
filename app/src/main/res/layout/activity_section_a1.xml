@@ -576,7 +576,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
-                    android:text="@string/ka107a" />
+                    android:text="@string/yes" />
 
                 <RadioButton
                     android:id="@+id/ka107b"
@@ -584,7 +584,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
-                    android:text="@string/ka107b" />
+                    android:text="@string/no" />
 
             </RadioGroup>
 
@@ -781,7 +781,7 @@
                     android:layout_marginTop="2dp"
                     android:background="@color/colorPrimaryDark"
                     android:gravity="center"
-                    android:text="@string/ka109sub1"
+                    android:text="@string/ka109sub"
                     android:textSize="30sp" />
 
                 <RadioButton
@@ -807,7 +807,7 @@
                     android:layout_marginTop="2dp"
                     android:background="@color/colorPrimaryDark"
                     android:gravity="center"
-                    android:text="@string/ka109sub2"
+                    android:text="@string/ka109sub01"
                     android:textSize="30sp" />
 
                 <RadioButton
@@ -833,7 +833,7 @@
                     android:layout_marginTop="2dp"
                     android:background="@color/colorPrimaryDark"
                     android:gravity="center"
-                    android:text="@string/ka109sub3"
+                    android:text="@string/kasub03"
                     android:textSize="30sp" />
 
                 <RadioButton
@@ -859,7 +859,7 @@
                     android:layout_marginTop="2dp"
                     android:background="@color/colorPrimaryDark"
                     android:gravity="center"
-                    android:text="@string/ka109sub4"
+                    android:text="@string/ka109sub04"
                     android:textSize="30sp" />
 
                 <RadioButton
@@ -980,7 +980,7 @@
                     android:layout_marginTop="2dp"
                     android:background="@color/colorPrimaryDark"
                     android:gravity="center"
-                    android:text="@string/ka110sub1"
+                    android:text="@string/ka110sub"
                     android:textSize="30sp" />
 
                 <RadioButton
@@ -1030,7 +1030,7 @@
                     android:layout_marginTop="2dp"
                     android:background="@color/colorPrimaryDark"
                     android:gravity="center"
-                    android:text="@string/ka110sub2"
+                    android:text="@string/ka110sub01"
                     android:textSize="30sp" />
 
                 <RadioButton
@@ -1445,7 +1445,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:background="@color/colorPrimary"
-                    android:text="@string/ka116sub1"
+                    android:text="@string/ka110sub03"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@android:color/white" />
 
@@ -1704,7 +1704,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:digits="0123456789"
-                android:hint="@string/ka123a"
+                android:hint="@string/ka123acr"
                 android:maxLength="3" />
 
             <EditText
@@ -1713,7 +1713,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:digits="0123456789"
-                android:hint="@string/ka123k"
+                android:hint="@string/ka123can"
                 android:maxLength="3" />
 
             <CheckBox
@@ -2152,8 +2152,7 @@
                     android:background="#1ed61e"
                     android:onClick="@{() -> callback.BtnContinue()}"
                     android:text="@string/nextSection"
-                    android:textColor="@color/white"
-                    android:visibility="@{na11201b.checked ? View.GONE : View.VISIBLE}" />
+                    android:textColor="@color/white" />
 
             </LinearLayout>
 
