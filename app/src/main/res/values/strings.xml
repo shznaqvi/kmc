@@ -161,15 +161,15 @@
   <string name="ka111"> ا گهر جو ڪو ڀاتي ڪنهن وقت يا روزانو پاڻي کڻڻ لاءِ ويندو آهي؟ </string>
   <string name="ka112"> پاڻي حاصل ڪرڻ ۽ کڻي اچڻ لاءِ ڪيترو وقت لڳي ٿو؟ </string>
   <string name="ka112a"> منٽن جي حساب سان </string>
-  "<string name=""ka113""> گهڻو ڪري پاڻي ڀرڻ جي لاءِ گهر مان ڪير ويندو آهي؟
+    <string name="ka113"> گهڻو ڪري پاڻي ڀرڻ جي لاءِ گهر مان ڪير ويندو آهي؟
   ( پڇو: ڇا اهو فرد 15سالن کان گهٽ عمر جو آهي؟ ڪهڙي جنس آهي؟ ان کي دائرو ڏيو جيڪو وڌيڪ پاڻي ڀرڻ ويندو آهي)
-</string>"
+</string>
 <string name="ka113a"> بالغ عورت </string>
 <string name="ka113b"> بالغ مرد </string>
 <string name="ka113c"> ڇوڪري ( 81 سالن کان ننڍي عمر جي) </string>
 <string name="ka113d"> ڇوڪرو( 51 سالن کان ننڍي عمر جو) </string>
-    "<string name=""ka114""> ڇا توهان پيئڻ جي پاڻي کي صاف ڪرڻ لاءِ ڪو طريقو
-    استعمال ڪريو ٿا؟ </string>"
+    <string name="ka114"> ڇا توهان پيئڻ جي پاڻي کي صاف ڪرڻ لاءِ ڪو طريقو
+    استعمال ڪريو ٿا؟ </string>
 <string name="ka115"> پيئڻ جي پاڻي کي صاف ڪرڻ لاءِ توهان اڪثر ڪهڙو طريقو استعمال ڪندا آهيو؟ </string>
 <string name="ka115a"> اٻارڻ </string>
 <string name="ka115b"> بليڇ يا ڪلورين شامل ڪري </string>
@@ -192,15 +192,15 @@
 <string name="ka116j"> ٽنگيل حاجت واري جاءِ </string>
 <string name="ka116sub02"> ٻيا </string>
 <string name="ka116k"> بغير سهولت جي زمين يا ٻوڙن </string>
-    "<string name=""ka117""> ڇا توهان اها ليٽرين ٻين گهرن کي به استعمال ڪرڻ ڏيندا
-    آهيو؟ </string>"
-    "<string name=""ka118""> جيڪڏهن ها ته ٻيا گهڻا گهرليٽرين جي اها سهولت
-    استعمال ڪندا آهن؟ </string>"
+    <string name="ka117"> ڇا توهان اها ليٽرين ٻين گهرن کي به استعمال ڪرڻ ڏيندا
+    آهيو؟ </string>
+    <string name="ka118"> جيڪڏهن ها ته ٻيا گهڻا گهرليٽرين جي اها سهولت
+    استعمال ڪندا آهن؟ </string>
 
-    "<string name=""ka119""> ڇا توهان حاجت پوري ڪرڻ کان پوءِ پنهنجا هٿ ڌوئندا
-    آهيو؟ </string>"
+    <string name="ka119"> ڇا توهان حاجت پوري ڪرڻ کان پوءِ پنهنجا هٿ ڌوئندا
+    آهيو؟ </string>
 <string name="ka120"> ڇا توهان ماني پچائڻ کان پهرين پنهنجا هٿ ڌوئندا آهيو؟ </string>
-    "<string name=""ka121""> مشاهدو ڪريو ته ڇا هٿن ڌوئڻ واري جاءِ تي صابڻ
+    <string name="ka121"> مشاهدو ڪريو ته ڇا هٿن ڌوئڻ واري جاءِ تي صابڻ
     موجود آهي؟ </string>"
 <string name="ka122"> ڇا گهر جي ڪنهن به فرد وٽ پنهنجي زرعي زمين موجود آهي؟ </string>
 <string name="ka123"> توهان جي گهرفرد کي ڪيترا ايڪڙ يا ڪئنال زرعي زمين آهي؟ </string>
@@ -235,8 +235,8 @@
 <string name="kb203"> الٽرا سائونڊ موجود آهي </string>
 <string name="kb204"> ماهواري جي آخري تاريخ </string>
 <string name="kb205"> ويم جي متوقع تاريخ </string>
-    "<string name=""kb206""> ڇا توهان هن حمل جي دوران پنهنجو طبي معائنو
-    ڪرايو؟ </string>"
+    <string name="kb206"> ڇا توهان هن حمل جي دوران پنهنجو طبي معائنو
+    ڪرايو؟ </string>
 <string name="kb207"> جيڪڏهن نه توهان معائنو ڇو نه ڪرايو؟ </string>
 <string name="kb207a"> ضروري نه هيو </string>
 <string name="kb207b"> گاڏي جو بندوبست نه هيو </string>
@@ -245,8 +245,8 @@
 <string name="kb207e"> صحت مرڪز گھر کان تمام پري هو </string>
 <string name="kb208f"> گھرواري /گھر جي سربراه جي اجازت نه هئي </string>
 <string name="kb208"> جيڪڏهن ها ته ڪيترا دفعا؟ </string>
-    "<string name=""kb209""> حمل جي ڪهڙي مهيني ۾ توهان پنهنجو طبي معائنو
-    ڪرايو </string>"
+    <string name="kb209"> حمل جي ڪهڙي مهيني ۾ توهان پنهنجو طبي معائنو
+    ڪرايو </string>
 <string name="kb209a"> 3rd trimester </string>
 <string name="kb209b"> 2nd trimester </string>
 <string name="kb209c"> 1st trimester </string>
@@ -288,9 +288,9 @@
 <string name="kb215d"> مهيني ۾ </string>
 <string name="kb215e"> ڪڏهن ڪڏهن </string>
 <string name="kb215f"> ڪڏهن به نه </string>
-    "<string name=""kb216"">
+    <string name="kb216">
     حمل دوران اوهان ڪيترا ڀيرا اضافي غذائي خوراڪ مان ٺهيل شيون استعمال ڪيون آهن؟
-    </string>"
+    </string>
 <string name="kb216a"> روزانو </string>
 <string name="kb216b"> هفتي ۾ هڪ دفعو </string>
 <string name="kb216c"> هر 15 ڏينهن </string>
@@ -344,8 +344,8 @@
 <string name="kc202e"> صحت مرڪز گھر کان تمام پري هو </string>
 <string name="kc202f"> اجازت نه هئي گھرواري جي/سربراه جي </string>
 <string name="kc203"> جيڪڏهن ها ته ڪيترا ڀيرا ڪرايو؟ </string>
-    "<string name=""kc204""> حمل جي ڪيترن مهينن ۾ توهان طبي معائنو
-    ڪرايو؟ </string>"
+    <string name="kc204"> حمل جي ڪيترن مهينن ۾ توهان طبي معائنو
+    ڪرايو؟ </string>
 <string name="kc204a"> 3rd TRIMESTER </string>
 <string name="kc204b"> 2nd TRIMESTER </string>
 <string name="kc204c"> 1st TRIMESTER </string>
@@ -365,9 +365,9 @@
 <string name="kc206f"> خانگي اسپتال </string>
 <string name="kc206g"> خانگي ڪلينڪ </string>
 <string name="kc206h"> خانگي ويم گھر </string>
-    "<string name=""kc207""> حمل جي طبي معائني جي دوران معائني جي فهرست
+    <string name="kc207"> حمل جي طبي معائني جي دوران معائني جي فهرست
     مان ڪهڙو معائنو ڪيو ويو هو) گھٽ ۾ گھٽ هڪ
-    ڀيرو( </string>"
+    ڀيرو( </string>
 <string name="kc207a"> توهان جو وزن ٿيو </string>
 <string name="kc207b"> توهان جو قد ماپيو </string>
 <string name="kc207c"> توهان جو بلڊ پريشر چيڪ ٿيو </string>
@@ -377,41 +377,41 @@
 <string name="kc207g"> خوراڪ جي باري ۾ سمجھاڻي </string>
 <string name="kc207h"> پنهنجو کير پيارڻ بابت سمجھاڻي </string>
 <string name="kc207i"> ٻارن ۾ وقفي جي بابت سمجھاڻي </string>
-    "<string name=""kc208""> گذريل حمل دوران ڇا توهان اضافي غذائي خوراڪ
-    استعمال ڪئي هئي؟ </string>"
+    <string name="kc208"> گذريل حمل دوران ڇا توهان اضافي غذائي خوراڪ
+    استعمال ڪئي هئي؟ </string>
 <string name="kc209"> جيڪڏهن ها ته توهان ڇا ورتو هو؟ </string>
 <string name="kc209a"> فولاد ۽ فولڪ ايسڊ جون گوريون </string>
 <string name="kc209b"> اضافي خوراڪ مان ٺهيل شيون </string>
 <string name="kc209c"> ڪيلشم جي خوراڪ </string>
-    "<string name=""kc210""> گذريل حمل دوران توهان ڪيترا ڀيرا فولاد ۽ فولڪ
-    ايسڊ استعمال ڪئي هئي؟ </string>"
+    <string name="kc210"> گذريل حمل دوران توهان ڪيترا ڀيرا فولاد ۽ فولڪ
+    ايسڊ استعمال ڪئي هئي؟ </string>
 <string name="kc210a"> روزانو </string>
 <string name="kc210b"> هفتي ۾ هڪ دفعو </string>
 <string name="kc210c"> هر 15 ڏينهن </string>
 <string name="kc210d"> مهيني ۾ </string>
 <string name="kc210e"> ڪڏهن ڪڏهن </string>
 <string name="kc210f"> ڪڏهن به نه </string>
-    "<string name=""kc211""> گذريل حمل دوران توهان ڪيترا ڀيرا اضافي غذا
-    واري خوراڪ استعمال ڪئي هئي؟ </string>"
+    <string name="kc211"> گذريل حمل دوران توهان ڪيترا ڀيرا اضافي غذا
+    واري خوراڪ استعمال ڪئي هئي؟ </string>
 <string name="kc211a"> روزانو </string>
 <string name="kc211b"> هفتي ۾ هڪ دفعو </string>
 <string name="kc211c"> هر 15 ڏينهن </string>
 <string name="kc211d"> مهيني ۾ </string>
 <string name="kc211e"> ڪڏهن ڪڏهن </string>
 <string name="kc211f"> ڪڏهن به نه </string>
-    "<string name=""kc212""> آخري حمل ۾ توهان ڪيترا ڀيرا ڪيلشم جي خوراڪ
-    ورتي هئي؟ </string>"
+    <string name="kc212"> آخري حمل ۾ توهان ڪيترا ڀيرا ڪيلشم جي خوراڪ
+    ورتي هئي؟ </string>
 <string name="kc212a"> روزانو </string>
 <string name="kc212b"> هفتي ۾ هڪ دفعو </string>
 <string name="kc212c"> هر 15 ڏينهن </string>
 <string name="kc212d"> مهيني ۾ </string>
 <string name="kc212e"> ڪڏهن ڪڏهن </string>
 <string name="kc212f"> ڪڏهن به نه </string>
-    "<string name=""kc213""> گزريل حمل جي دوران توهان کي ٻانهن جي ڏوري ۾
+    <string name="kc213"> گزريل حمل جي دوران توهان کي ٻانهن جي ڏوري ۾
     جھٽڪن کان بچاءُ جي سئي لڳي هئي مطلب پيدائش
-    کان پوءِ ٻار کي جھٽڪا اچڻ؟ </string>"
-    "<string name=""kc214""> گزريل حمل ۾ ڪيترا دفعه جھٽڪن کان بچاءَ جي
-    سئي لڳي هئي؟ </string>"
+    کان پوءِ ٻار کي جھٽڪا اچڻ؟ </string>
+    <string name="kc214"> گزريل حمل ۾ ڪيترا دفعه جھٽڪن کان بچاءَ جي
+    سئي لڳي هئي؟ </string>
 <string name="kc3heading"> ٻار جي ڄمڻ کان پوءِ جي سنڀال (گزريل حمل) </string>
 <string name="kc301"> توهان جو گذريل حمل ڪنهن ڪرايوهو؟ </string>
 <string name="kc301a"> ڊاڪٽر </string>
@@ -444,16 +444,16 @@
 <string name="kc306"> جيڪڏهن ها ته ٻار جو پيدائشي وزن ڪيترو هو؟ جيڪڏهن ڪارڊ موجود آهي ته ان تان وزن لکو </string>
 <string name="kc306a"> kg </string>
 <string name="kc306b"> From recall </string>
-    "<string name=""kc307"">
+    <string name="kc307">
     ٻار جي پيدائش وقت ٻار تمام وڏو،وڏو،وچولو،ننڍو يا صفا ننڍو هيو؟ تصوير ڏيکاريو </string>"
 <string name="kc307a"> تمام وڏو </string>
 <string name="kc307b"> عام ٻارن جي مقابلي ۾ وڏو </string>
 <string name="kc307c"> نارمل </string>
 <string name="kc307d"> عام ٻارن جي مقابلي ۾ ننڍو </string>
 <string name="kc307e"> تمام ننڍو </string>
-    "<string name=""kc308"">
+    <string name="kc308">
     جيڪڏهن ٻار گھٽ وزن وارو هيو ته پڇو ته ٻار جي پيدائش 37 هفتن کان پهريائين ٿئي هئي؟
-    </string>"
+    </string>
 <string name="kc309"> ڇا ٻار کي ڄمڻ کان پوءِ هڪ ڪلاڪ جي اندر توهان پنهنجي ڇاتي سان لڳايو هو؟ </string>
 <string name="kc310"> ڇا ٻار ڄمڻ کان پوءِ هڪدم رنو هو؟ </string>
 <string name="kc311"> ٻار کي روئائڻ لاءِ ڇا ڪيو ويو هو؟ </string>
@@ -470,9 +470,9 @@
 <string name="kc315c"> يل/مکڻ </string>
 <string name="kc315d"> سرمو </string>
 <string name="kc315e"> ڇيڻو </string>
-    "<string name=""kc316"">
+    <string name="kc316">
     ڄمڻ کان پوءِ پهريون دفعو ڪڏهن ٻار کي ونهجاريو ويو؟
-    </string>"
+    </string>
 <string name="kc316a"> يڪدم هڪ ڪلاڪ اندر </string>
 <string name="kc316b"> ڪلاڪ </string>
 <string name="kc316c"> ڏينهن </string>
@@ -529,7 +529,7 @@
 <string name="kc410e"> صحت مرڪز ڏانهن موڪلڻ </string>
 <string name="kc410f"> حفاذتي ٽڪا </string>
 <string name="kc410h"> پوليو جا قطرا </string>
-<string name="kc410h"> ٽي بي کان بچاءَ جو ٽڪو </string>
+    <string name="kc410i"> ٽي بي کان بچاءَ جو ٽڪو </string>
 <string name="kc411"> ڇا ٻار پهرين ٻن مهينن ۾ شديد بيمار ٿيو هيو؟ </string>
 <string name="kc412"> جيڪڏهن ها ته بيماري جي دوران ڪهريون (نشانيون/علامتون) موجود هيون </string>
 <string name="kc412a"> ڄمڻ کان پوءِ سهي سان کير نه پيئڻ </string>
@@ -612,8 +612,8 @@
 <string name="ke109b"> ڪپ ۽ چمچي سان </string>
 <string name="ke109c"> بوتل سان </string>
 <string name="ke109d"> beaker </string>
-    "<string name=""ke10"">
-    جيڪڏهن ٻيو طريقو اختيار ڪندا آهيو ته ڇو ڪندا آهيو؟ </string>"
+    <string name="ke10">
+    جيڪڏهن ٻيو طريقو اختيار ڪندا آهيو ته ڇو ڪندا آهيو؟ </string>
 <string name="ke10a"> ٻار گھٽ وزن جو هيو </string>
 <string name="ke10b"> ٻار ننڍو هيو </string>
 <string name="ke10c"> ٻار بيمار هيو </string>
@@ -644,9 +644,9 @@
 <string name="ke204f"> brown sugar </string>
 <string name="ke204g"> pop corns </string>
 <string name="ke3heading"> گڏيل خوراڪ </string>
-    "<string name=""ke301"">
+    <string name="ke301">
     توهان پنهنجي ٻار کي ڪيتري عمر ۾پنهنجي کير کان علاوه چانھ جوس يا ٻيو ڪجھ ڏيندا آهيو؟
-    </string>"
+    </string>
 <string name="ke301d"> شروع نه ڪيو </string>
 <string name="ke302"> ڪهڙي پاڻياٺ ڏيندا آهيو؟ پڇو ٻئي ڪا شيءِ </string>
 <string name="ke302a"> ماءُ جو کير )ماءُ جي کير کان علاوه( </string>
@@ -659,16 +659,16 @@
 <string name="ke302h"> ديسي هربل دوائون / چانھ </string>
 <string name="ke302i"> ماکي ۽ پاڻي </string>
 <string name="ke302j"> پيئڻ لاءِ ڪجھ به نه ڏنو هو </string>
-    "<string name=""ke303""> جيڪڏهن دٻي جو کير پياريندا آهيو ته ان کير جي
-    صلاح توهان کي ڪنهن ڏني؟ </string>"
+    <string name="ke303"> جيڪڏهن دٻي جو کير پياريندا آهيو ته ان کير جي
+    صلاح توهان کي ڪنهن ڏني؟ </string>
 <string name="ke303a"> ڊاڪٽر </string>
 <string name="ke303b"> دوائون ڏيڻ وارو </string>
 <string name="ke303c"> مائيٽ </string>
-    "<string name=""ke304""> ڪيتري عمر ۾ توهان پنهنجي ٻار کي مٿان جي
-    خوراڪ شروع ڪئي؟ </string>"
+    <string name="ke304"> ڪيتري عمر ۾ توهان پنهنجي ٻار کي مٿان جي
+    خوراڪ شروع ڪئي؟ </string>
 <string name="ke304d"> شروع نه ڪيو </string>
-    "<string name=""ke305""> جيڪڏهن خوراڪ 6 مهينن کان اڳ شروع ڪئي ته
-    ڇو هن عمر ۾ شروع ڪئي؟ </string>"
+    <string name="ke305"> جيڪڏهن خوراڪ 6 مهينن کان اڳ شروع ڪئي ته
+    ڇو هن عمر ۾ شروع ڪئي؟ </string>
 <string name="ke305a"> ماءُ جو کير ڪافي نه هو </string>
 <string name="ke305b"> ٻار جو وزن وڌائڻ لاءِ </string>
 <string name="ke305c"> ٻار ڪمزور هو ۽ ان جو وزن وڌي نه رهيو هو </string>
