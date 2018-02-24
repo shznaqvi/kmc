@@ -2143,7 +2143,7 @@
                     android:onClick="@{() -> callback.BtnContinue()}"
                     android:text="@string/nextSection"
                     android:textColor="@color/white"
-                    android:visibility="@{na11201b.checked ? View.GONE : View.VISIBLE}" />
+                  />
 
             </LinearLayout>
 

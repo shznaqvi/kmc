@@ -46,6 +46,7 @@
     <string name="months"> مهينا </string>
     <string name="times"> تعداد </string>
     <string name="timesd"> ويمن جو تعداد </string>
+    <string name="others"> ٻيو ڪجھ وضاحت ڪريو </string>
     <string name="other"> ٻيو ڪجھ وضاحت ڪريو </string>
     <string name="noone"> ڪو به نه </string>
     <string name="neverb"> نه ونهجاريو </string>
@@ -230,10 +231,12 @@
     <string name="ka12418"> پاڻي گرم ڪرڻ واري مشين </string>
     <string name="ka12419"> ايئر ڪنڊيشن يا ايئر ڪولر </string>
     <string name="ka12420"> ڪمپيوٽر </string>
+    <string name="kb"> موجوده حمل ۽ مڪمل حملن جي باري ۾ معلومات</string>
     <string name="kb1heading"> پيدائشن جي باري ۾ معلومات </string>
     <string name="kb101"> مڪمل حملن جو تعداد </string>
     <string name="kb102"> مڪمل ويمن جو تعداد </string>
     <string name="kb2heading"> موجوده حمل جي باري ۾ معلومات </string>
+    <string name="kb201"> ڇا توهان هن وقت حمل سان آهيو؟ </string>
     <string name="kb202"> توهان ڪيترن هفتن/مهينن جي حمل سان آهيو؟ پورا ڪيل هفتن ۽ مهينن جو تعداد </string>
     <string name="kb203"> الٽرا سائونڊ موجود آهي </string>
     <string name="kb204"> ماهواري جي آخري تاريخ </string>
@@ -692,5 +695,7 @@
     <string name="ke305f"> ڊاڪٽر مشورو ڏنو </string>
     <string name="ke305g"> ليڊي هيلٿ ورڪر مشورو ڏنو </string>
     <string name="kfheading"> نون ڄاول ٻارن جي مرڻ جي باري ۾ معلومات </string>
+    <string name="ka109sub04">Missing string</string>
+    <string name="kc410g">Missing String</string>
 
 </resources>
