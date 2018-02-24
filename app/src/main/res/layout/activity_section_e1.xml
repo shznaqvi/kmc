@@ -575,72 +575,73 @@ tools:context="edu.aku.hassannaqvi.kmc.ui.SectionE1Activity">
             android:text="@string/ke110"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@android:color/white" />
-        <RadioGroup
+        <LinearLayout
             android:id="@+id/ke110"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <RadioButton
+            <CheckBox
                 android:id="@+id/ke110a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:text="@string/ke110a" />
 
-            <RadioButton
+            <CheckBox
                 android:id="@+id/ke110b"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:text="@string/ke110b" />
-            <RadioButton
+            <CheckBox
                 android:id="@+id/ke110c"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:text="@string/ke110c" />
-            <RadioButton
+            <CheckBox
                 android:id="@+id/ke110d"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:text="@string/ke110d" />
 
-            <RadioButton
+            <CheckBox
                 android:id="@+id/ke110e"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:text="@string/ke110e" />
 
-            <RadioButton
+            <CheckBox
                 android:id="@+id/ke110f"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:text="@string/ke110f" />
 
-            <RadioButton
+            <CheckBox
                 android:id="@+id/ke110g"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:text="@string/ke110g" />
 
-            <RadioButton
+            <CheckBox
                 android:id="@+id/ke110h"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:text="@string/ke110g" />
 
-            <RadioButton
+            <CheckBox
                 android:id="@+id/ke11096"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:text="@string/other" />
-        </RadioGroup>
+        </LinearLayout>
         <EditText
             android:id="@+id/ke11096x"
             android:layout_width="match_parent"

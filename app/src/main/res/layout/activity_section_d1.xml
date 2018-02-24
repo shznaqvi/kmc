@@ -130,6 +130,12 @@ tools:context="edu.aku.hassannaqvi.kmc.ui.SectionD1Activity">
                 android:layout_weight="1"
                 android:text="@string/no" />
         </RadioGroup>
+    <!--skip pattern kd103-->
+    <LinearLayout
+        android:id="@+id/fldGrpkd103"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <!--kd103-->
         <TextView
@@ -421,6 +427,7 @@ tools:context="edu.aku.hassannaqvi.kmc.ui.SectionD1Activity">
                 android:layout_weight="1"
                 android:text="@string/dkn" />
         </RadioGroup>
+    </LinearLayout>
         <!--  = = = = =  END OF FORM FIELDS  = = = = = -->
         <LinearLayout
             android:layout_width="match_parent"

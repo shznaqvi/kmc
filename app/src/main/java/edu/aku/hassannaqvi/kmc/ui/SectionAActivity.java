@@ -41,7 +41,7 @@ public class SectionAActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_section_a1);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_section_a);
         db = new DatabaseHelper(this);
         binding.setCallback(this);
 

@@ -49,15 +49,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_weight="1.5"
-                android:orientation="horizontal">
+                android:layout_weight="1.5">
 
                 <RadioButton
                     android:id="@+id/ka101a"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
-                    android:layout_weight="1"
                     android:text="@string/ka101a" />
 
                 <RadioButton
@@ -145,8 +143,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_weight="1.5"
-                android:orientation="horizontal">
+                android:layout_weight="1.5">
 
                 <RadioButton
                     android:id="@+id/ka102a"
@@ -248,8 +245,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_weight="1.5"
-                android:orientation="horizontal">
+                android:layout_weight="1.5">
 
                 <RadioButton
                     android:id="@+id/ka103a"
@@ -375,8 +371,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_weight="1.5"
-                android:orientation="horizontal">
+                android:layout_weight="1.5">
 
                 <RadioButton
                     android:id="@+id/ka104a"
@@ -584,8 +579,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_weight="1.5"
-                android:orientation="horizontal">
+                android:layout_weight="1.5">
 
                 <RadioButton
                     android:id="@+id/ka108a"
@@ -711,8 +705,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_weight="1.5"
-                android:orientation="horizontal">
+                android:layout_weight="1.5">
 
                 <RadioButton
                     android:id="@+id/ka109a"
@@ -1158,8 +1151,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_weight="1.5"
-                android:orientation="horizontal">
+                android:layout_weight="1.5">
 
                 <RadioButton
                     android:id="@+id/ka113a"
@@ -1250,8 +1242,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_weight="1.5"
-                android:orientation="horizontal">
+                android:layout_weight="1.5">
 
                 <RadioButton
                     android:id="@+id/ka115a"
@@ -1338,8 +1329,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_weight="1.5"
-                android:orientation="horizontal">
+                android:layout_weight="1.5">
 
                 <RadioButton
                     android:id="@+id/ka116a"

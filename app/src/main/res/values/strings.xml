@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name"> National Nutrition Survey 2018 </string>
+    <string name="app_name"> Kangroo Mother Care </string>
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
