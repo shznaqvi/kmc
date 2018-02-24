@@ -24,7 +24,6 @@
             android:layoutDirection="rtl"
             android:orientation="vertical">
 
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -34,7 +33,6 @@
                 android:gravity="center"
                 android:text="@string/ka1heading"
                 android:textSize="40sp" />
-
 
             <!--ka101-->
             <TextView
@@ -241,15 +239,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@color/colorPrimary"
-                android:text="@string/ka103"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
                 android:text="@string/ka103sub"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@android:color/white" />
@@ -372,15 +361,6 @@
 
 
             <!--ka104-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/ka104"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -782,6 +762,16 @@
                     android:background="@color/colorPrimaryDark"
                     android:gravity="center"
                     android:text="@string/ka109sub"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="2dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:gravity="center"
+                    android:text="@string/ka109sub01"
                     android:textSize="30sp" />
 
                 <RadioButton
@@ -1717,7 +1707,7 @@
                 android:maxLength="3" />
 
             <CheckBox
-                android:id="@+id/ka12399"
+                android:id="@+id/ka12398"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
@@ -2152,7 +2142,8 @@
                     android:background="#1ed61e"
                     android:onClick="@{() -> callback.BtnContinue()}"
                     android:text="@string/nextSection"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/white"
+                    android:visibility="@{na11201b.checked ? View.GONE : View.VISIBLE}" />
 
             </LinearLayout>
 
