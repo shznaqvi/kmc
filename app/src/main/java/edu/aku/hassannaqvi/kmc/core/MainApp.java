@@ -33,7 +33,6 @@ import edu.aku.hassannaqvi.kmc.contracts.SerialContract;
 import edu.aku.hassannaqvi.kmc.other.MembersCount;
 import edu.aku.hassannaqvi.kmc.ui.EndingActivity;
 import edu.aku.hassannaqvi.kmc.ui.MotherEndingActivity;
-import edu.aku.hassannaqvi.kmc.ui.SectionC1Activity;
 
 /**
  * Created by hassan.naqvi on 11/30/2016.
@@ -298,7 +297,7 @@ public class MainApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        TypefaceUtil.overrideFont(getApplicationContext(), "SERIF", "fonts/JameelNooriNastaleeq.ttf"); // font from assets: "assets/fonts/Roboto-Regular.ttf
+        TypefaceUtil.overrideFont(getApplicationContext(), "SERIF", "fonts/MBLateefi.ttf"); // font from assets: "assets/fonts/Roboto-Regular.ttf
 
         deviceId = Settings.Secure.getString(getApplicationContext().getContentResolver(),
                 Settings.Secure.ANDROID_ID);
@@ -373,10 +372,7 @@ public class MainApp extends Application {
             return true;
         } else if (isNewer && !isLessAccurate) {
             return true;
-        } else if (isNewer && !isSignificantlyLessAccurate && isFromSameProvider) {
-            return true;
-        }
-        return false;
+        } else return isNewer && !isSignificantlyLessAccurate && isFromSameProvider;
     }
 
     /**

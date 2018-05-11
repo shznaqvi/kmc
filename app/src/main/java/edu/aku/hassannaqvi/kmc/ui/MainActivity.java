@@ -258,7 +258,7 @@ public class MainActivity extends Activity {
     public void openForm() {
 
 //        if (spAreas.getSelectedItemPosition() != 0) {
-        final Intent oF = new Intent(MainActivity.this, SectionAActivity.class);
+        final Intent oF = new Intent(MainActivity.this, SectionC2Activity.class);
 
         if (sharedPref.getString("tagName", null) != "" && sharedPref.getString("tagName", null) != null && !MainApp.userName.equals("0000")) {
             startActivity(oF);
@@ -383,7 +383,7 @@ public class MainActivity extends Activity {
 
     }
 
-    public void updateApp(View v) throws IOException {
+    public void updateApp(View v) {
         v.setBackgroundColor(Color.GREEN);
 
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
