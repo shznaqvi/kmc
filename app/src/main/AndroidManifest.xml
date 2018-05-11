@@ -19,7 +19,7 @@
     <application
         android:name=".core.MainApp"
         android:allowBackup="true"
-        android:icon="@drawable/logo"
+        android:icon="@drawable/agakhan"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -58,23 +58,60 @@
         <activity
             android:name=".ui.SectionAActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme1"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-        <activity android:name=".ui.SectionA1Activity" />
-        <activity android:name=".ui.SectionB1Activity" />
-        <activity android:name=".ui.SectionB2Activity" />
-        <activity android:name=".ui.SectionC1Activity" />
-        <activity android:name=".ui.SectionC2Activity" />
-        <activity android:name=".ui.SectionC3Activity" />
-        <activity android:name=".ui.SectionC4Activity" />
-        <activity android:name=".ui.SectionD1Activity" />
-        <activity android:name=".ui.SectionD2Activity" />
-        <activity android:name=".ui.SectionE1Activity" />
-        <activity android:name=".ui.SectionE2Activity" />
-        <activity android:name=".ui.SectionE3Activity" />
-        <activity android:name=".ui.SectionFActivity" />
-        <activity android:name=".ui.SectionD2Activity$SectionE4Activity" />
-        <activity android:name=".ui.SectionE4Activity"></activity>
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".ui.SectionA1Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".ui.SectionB1Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".ui.SectionB2Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".ui.SectionC1Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".ui.SectionC2Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".ui.SectionC3Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".ui.SectionC6Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".ui.SectionC4Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".ui.SectionC5Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".ui.SectionD1Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".ui.SectionD2Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".ui.SectionD3Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".ui.SectionFActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1" />
+        <activity android:name=".ui.SectionEActivity"></activity>
     </application>
 
 </manifest>

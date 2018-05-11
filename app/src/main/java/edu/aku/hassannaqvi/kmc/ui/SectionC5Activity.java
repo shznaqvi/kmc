@@ -1,40 +1,44 @@
 package edu.aku.hassannaqvi.kmc.ui;
 
 import android.databinding.DataBindingUtil;
-import android.provider.ContactsContract;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.RadioGroup;
 
 import edu.aku.hassannaqvi.kmc.R;
-import edu.aku.hassannaqvi.kmc.databinding.ActivitySectionE1Binding;
-import edu.aku.hassannaqvi.kmc.databinding.ActivitySectionE2Binding;
+import edu.aku.hassannaqvi.kmc.databinding.ActivitySectionC5Binding;
 
-public class SectionE2Activity extends AppCompatActivity {
-ActivitySectionE2Binding bi;
+public class SectionC5Activity extends AppCompatActivity {
+    ActivitySectionC5Binding bi;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_e2);
+        setContentView(R.layout.activity_section_c5);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_c5);
         bi.setCallback(this);
-
-        setupView();
+        setupview();
     }
 
-    private void setupView() {
-        bi.ke203.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+    private void setupview() {
+        bi.kc501.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if(checkedId == R.id.ke203b){
-                    bi.fldGrpke204.setVisibility(View.GONE);
-                    bi.ke204.clearCheck();
-                    bi.ke20496x.setText(null);
-                }
-                else{
-                    bi.fldGrpke204.setVisibility(View.VISIBLE);
-                }
+                bi.kc501.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(RadioGroup group, int checkedId) {
+                        if (checkedId == R.id.kc501a) {
+                            bi.fldGrpkc502.setVisibility(View.VISIBLE);
+                        } else {
+                            bi.fldGrpkc502.setVisibility(View.GONE);
+                            bi.kc502.setText(null);
+                            bi.kc503.setText(null);
+                            bi.kc504.setText(null);
+                            bi.kc50498.setChecked(false);
+                        }
+                    }
+                });
             }
         });
     }
@@ -60,6 +64,7 @@ ActivitySectionE2Binding bi;
             }
         }*/
     }
+
     public void BtnContinue() {
 
 /*        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();

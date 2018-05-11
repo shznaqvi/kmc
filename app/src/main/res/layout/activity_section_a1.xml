@@ -60,39 +60,23 @@
 
                 <RadioButton
                     android:id="@+id/ka101b"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
                     android:text="@string/ka101b" />
 
                 <RadioButton
-                    android:id="@+id/ka101c"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:layout_weight="1"
-                    android:text="@string/ka101c" />
-
-                <RadioButton
                     android:id="@+id/ka101d"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
                     android:text="@string/ka101d" />
 
                 <RadioButton
-                    android:id="@+id/ka101e"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:layout_weight="1"
-                    android:text="@string/ka101e" />
-
-                <RadioButton
                     android:id="@+id/ka101f"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -100,11 +84,27 @@
 
                 <RadioButton
                     android:id="@+id/ka10196"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
                     android:text="@string/other" />
+
+                <RadioButton
+                    android:id="@+id/ka101e"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:layout_weight="1"
+                    android:text="@string/ka101e" />
+
+                <RadioButton
+                    android:id="@+id/ka101c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:layout_weight="1"
+                    android:text="@string/ka101c" />
 
             </RadioGroup>
 
@@ -147,7 +147,7 @@
 
                 <RadioButton
                     android:id="@+id/ka102a"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -155,7 +155,7 @@
 
                 <RadioButton
                     android:id="@+id/ka102b"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -163,7 +163,7 @@
 
                 <RadioButton
                     android:id="@+id/ka102c"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -171,7 +171,7 @@
 
                 <RadioButton
                     android:id="@+id/ka102d"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -179,7 +179,7 @@
 
                 <RadioButton
                     android:id="@+id/ka102e"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -187,7 +187,7 @@
 
                 <RadioButton
                     android:id="@+id/ka102f"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -195,7 +195,7 @@
 
                 <RadioButton
                     android:id="@+id/ka102g"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -203,7 +203,7 @@
 
                 <RadioButton
                     android:id="@+id/ka102h"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -211,7 +211,7 @@
 
                 <RadioButton
                     android:id="@+id/ka10296"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -249,7 +249,7 @@
 
                 <RadioButton
                     android:id="@+id/ka103a"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -257,7 +257,7 @@
 
                 <RadioButton
                     android:id="@+id/ka103b"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -265,7 +265,7 @@
 
                 <RadioButton
                     android:id="@+id/ka103c"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -273,7 +273,7 @@
 
                 <RadioButton
                     android:id="@+id/ka103d"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -281,7 +281,7 @@
 
                 <RadioButton
                     android:id="@+id/ka103e"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -289,7 +289,7 @@
 
                 <RadioButton
                     android:id="@+id/ka103f"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -297,7 +297,7 @@
 
                 <RadioButton
                     android:id="@+id/ka103g"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -305,7 +305,7 @@
 
                 <RadioButton
                     android:id="@+id/ka103h"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -313,7 +313,7 @@
 
                 <RadioButton
                     android:id="@+id/ka103i"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -321,7 +321,7 @@
 
                 <RadioButton
                     android:id="@+id/ka103j"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -329,7 +329,7 @@
 
                 <RadioButton
                     android:id="@+id/ka103k"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -337,7 +337,7 @@
 
                 <RadioButton
                     android:id="@+id/ka10396"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -375,7 +375,7 @@
 
                 <RadioButton
                     android:id="@+id/ka104a"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -383,7 +383,7 @@
 
                 <RadioButton
                     android:id="@+id/ka104b"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -391,7 +391,7 @@
 
                 <RadioButton
                     android:id="@+id/ka104c"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -399,7 +399,7 @@
 
                 <RadioButton
                     android:id="@+id/ka104d"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -407,7 +407,7 @@
 
                 <RadioButton
                     android:id="@+id/ka104e"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -415,7 +415,7 @@
 
                 <RadioButton
                     android:id="@+id/ka104f"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -423,7 +423,7 @@
 
                 <RadioButton
                     android:id="@+id/ka104g"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -431,7 +431,7 @@
 
                 <RadioButton
                     android:id="@+id/ka104h"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -439,7 +439,7 @@
 
                 <RadioButton
                     android:id="@+id/ka104i"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -447,7 +447,7 @@
 
                 <RadioButton
                     android:id="@+id/ka10496"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -583,7 +583,7 @@
 
                 <RadioButton
                     android:id="@+id/ka108a"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -591,7 +591,7 @@
 
                 <RadioButton
                     android:id="@+id/ka108b"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -599,7 +599,7 @@
 
                 <RadioButton
                     android:id="@+id/ka108c"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -607,7 +607,7 @@
 
                 <RadioButton
                     android:id="@+id/ka108d"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -615,7 +615,7 @@
 
                 <RadioButton
                     android:id="@+id/ka108e"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -623,7 +623,7 @@
 
                 <RadioButton
                     android:id="@+id/ka108f"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -631,7 +631,7 @@
 
                 <RadioButton
                     android:id="@+id/ka108g"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -639,7 +639,7 @@
 
                 <RadioButton
                     android:id="@+id/ka108h"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -647,7 +647,7 @@
 
                 <RadioButton
                     android:id="@+id/ka108i"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -655,7 +655,7 @@
 
                 <RadioButton
                     android:id="@+id/ka108j"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -663,7 +663,7 @@
 
                 <RadioButton
                     android:id="@+id/ka108k"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -671,7 +671,7 @@
 
                 <RadioButton
                     android:id="@+id/ka10896"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -709,7 +709,7 @@
 
                 <RadioButton
                     android:id="@+id/ka109a"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -717,7 +717,7 @@
 
                 <RadioButton
                     android:id="@+id/ka109b"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -725,7 +725,7 @@
 
                 <RadioButton
                     android:id="@+id/ka109c"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -733,7 +733,7 @@
 
                 <RadioButton
                     android:id="@+id/ka109d"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -741,7 +741,7 @@
 
                 <RadioButton
                     android:id="@+id/ka109e"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -769,7 +769,7 @@
 
                 <RadioButton
                     android:id="@+id/ka109f"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -777,7 +777,7 @@
 
                 <RadioButton
                     android:id="@+id/ka109g"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -795,7 +795,7 @@
 
                 <RadioButton
                     android:id="@+id/ka109h"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -803,7 +803,7 @@
 
                 <RadioButton
                     android:id="@+id/ka109i"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -821,7 +821,7 @@
 
                 <RadioButton
                     android:id="@+id/ka109j"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -829,7 +829,7 @@
 
                 <RadioButton
                     android:id="@+id/ka109k"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -847,7 +847,7 @@
 
                 <RadioButton
                     android:id="@+id/ka109l"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -855,7 +855,7 @@
 
                 <RadioButton
                     android:id="@+id/ka109m"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -863,7 +863,7 @@
 
                 <RadioButton
                     android:id="@+id/ka109n"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -871,7 +871,7 @@
 
                 <RadioButton
                     android:id="@+id/ka109o"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -879,7 +879,7 @@
 
                 <RadioButton
                     android:id="@+id/ka10996"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -918,7 +918,7 @@
 
                 <RadioButton
                     android:id="@+id/ka110a"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -926,7 +926,7 @@
 
                 <RadioButton
                     android:id="@+id/ka110b"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -934,7 +934,7 @@
 
                 <RadioButton
                     android:id="@+id/ka110c"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -942,7 +942,7 @@
 
                 <RadioButton
                     android:id="@+id/ka110d"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -950,7 +950,7 @@
 
                 <RadioButton
                     android:id="@+id/ka110e"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -968,7 +968,7 @@
 
                 <RadioButton
                     android:id="@+id/ka110f"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -976,7 +976,7 @@
 
                 <RadioButton
                     android:id="@+id/ka110g"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -984,7 +984,7 @@
 
                 <RadioButton
                     android:id="@+id/ka110h"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -992,7 +992,7 @@
 
                 <RadioButton
                     android:id="@+id/ka110i"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -1000,7 +1000,7 @@
 
                 <RadioButton
                     android:id="@+id/ka110j"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -1018,7 +1018,7 @@
 
                 <RadioButton
                     android:id="@+id/ka110k"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -1026,7 +1026,7 @@
 
                 <RadioButton
                     android:id="@+id/ka110l"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -1034,7 +1034,7 @@
 
                 <RadioButton
                     android:id="@+id/ka110m"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -1042,7 +1042,7 @@
 
                 <RadioButton
                     android:id="@+id/ka110n"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -1050,7 +1050,7 @@
 
                 <RadioButton
                     android:id="@+id/ka110o"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -1058,7 +1058,7 @@
 
                 <RadioButton
                     android:id="@+id/ka11096"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -1098,7 +1098,7 @@
 
                 <RadioButton
                     android:id="@+id/ka111a"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -1106,7 +1106,7 @@
 
                 <RadioButton
                     android:id="@+id/ka111b"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -1155,7 +1155,7 @@
 
                 <RadioButton
                     android:id="@+id/ka113a"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -1163,7 +1163,7 @@
 
                 <RadioButton
                     android:id="@+id/ka113b"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -1171,7 +1171,7 @@
 
                 <RadioButton
                     android:id="@+id/ka113c"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -1179,7 +1179,7 @@
 
                 <RadioButton
                     android:id="@+id/ka113d"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -1209,7 +1209,7 @@
 
                 <RadioButton
                     android:id="@+id/ka114a"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -1217,7 +1217,7 @@
 
                 <RadioButton
                     android:id="@+id/ka114b"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -1246,7 +1246,7 @@
 
                 <RadioButton
                     android:id="@+id/ka115a"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -1254,7 +1254,7 @@
 
                 <RadioButton
                     android:id="@+id/ka115b"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -1262,7 +1262,7 @@
 
                 <RadioButton
                     android:id="@+id/ka115c"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -1270,7 +1270,7 @@
 
                 <RadioButton
                     android:id="@+id/ka115d"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -1278,7 +1278,7 @@
 
                 <RadioButton
                     android:id="@+id/ka115e"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -1286,7 +1286,7 @@
 
                 <RadioButton
                     android:id="@+id/ka115f"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -1294,7 +1294,7 @@
 
                 <RadioButton
                     android:id="@+id/ka11596"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -1333,7 +1333,7 @@
 
                 <RadioButton
                     android:id="@+id/ka116a"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -1341,7 +1341,7 @@
 
                 <RadioButton
                     android:id="@+id/ka116b"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -1349,7 +1349,7 @@
 
                 <RadioButton
                     android:id="@+id/ka116c"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -1357,7 +1357,7 @@
 
                 <RadioButton
                     android:id="@+id/ka116d"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -1365,7 +1365,7 @@
 
                 <RadioButton
                     android:id="@+id/ka116e"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -1382,7 +1382,7 @@
 
                 <RadioButton
                     android:id="@+id/ka116f"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -1390,7 +1390,7 @@
 
                 <RadioButton
                     android:id="@+id/ka116g"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -1398,7 +1398,7 @@
 
                 <RadioButton
                     android:id="@+id/ka116h"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -1406,7 +1406,7 @@
 
                 <RadioButton
                     android:id="@+id/ka116i"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -1414,7 +1414,7 @@
 
                 <RadioButton
                     android:id="@+id/ka116j"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -1431,7 +1431,7 @@
 
                 <RadioButton
                     android:id="@+id/ka116k"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -1439,7 +1439,7 @@
 
                 <RadioButton
                     android:id="@+id/ka11696"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -1479,7 +1479,7 @@
 
                 <RadioButton
                     android:id="@+id/ka117a"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -1487,7 +1487,7 @@
 
                 <RadioButton
                     android:id="@+id/ka117b"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -1537,7 +1537,7 @@
 
                 <RadioButton
                     android:id="@+id/ka119a"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -1545,7 +1545,7 @@
 
                 <RadioButton
                     android:id="@+id/ka119b"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -1575,7 +1575,7 @@
 
                 <RadioButton
                     android:id="@+id/ka120a"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -1583,7 +1583,7 @@
 
                 <RadioButton
                     android:id="@+id/ka120b"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -1613,7 +1613,7 @@
 
                 <RadioButton
                     android:id="@+id/ka121a"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -1621,7 +1621,7 @@
 
                 <RadioButton
                     android:id="@+id/ka121b"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -1651,7 +1651,7 @@
 
                 <RadioButton
                     android:id="@+id/ka122a"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
@@ -1659,7 +1659,7 @@
 
                 <RadioButton
                     android:id="@+id/ka122b"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
