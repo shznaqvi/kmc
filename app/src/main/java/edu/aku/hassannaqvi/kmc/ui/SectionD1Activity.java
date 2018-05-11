@@ -7,10 +7,10 @@ import android.view.View;
 import android.widget.RadioGroup;
 
 import edu.aku.hassannaqvi.kmc.R;
-import edu.aku.hassannaqvi.kmc.databinding.ActivitySectionE1Binding;
+import edu.aku.hassannaqvi.kmc.databinding.ActivitySectionD1Binding;
 
 public class SectionD1Activity extends AppCompatActivity {
-ActivitySectionE1Binding bi;
+    ActivitySectionD1Binding bi;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
