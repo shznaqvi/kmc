@@ -1,5 +1,6 @@
 package edu.aku.hassannaqvi.kmc.ui;
 
+import android.app.Activity;
 import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,7 +8,6 @@ import android.view.View;
 import android.widget.RadioGroup;
 
 import edu.aku.hassannaqvi.kmc.R;
-import edu.aku.hassannaqvi.kmc.databinding.ActivitySectionB1Binding;
 import edu.aku.hassannaqvi.kmc.databinding.ActivitySectionD2Binding;
 
 public class SectionD2Activity extends AppCompatActivity {
@@ -85,5 +85,14 @@ ActivitySectionD2Binding bi ;
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
         }*/
+    }
+
+    public static class SectionE4Activity extends Activity {
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_section_e4);
+        }
     }
 }
