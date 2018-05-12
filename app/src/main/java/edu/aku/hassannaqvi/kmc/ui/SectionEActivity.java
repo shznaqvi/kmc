@@ -3,6 +3,7 @@ package edu.aku.hassannaqvi.kmc.ui;
 import android.app.Activity;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -10,8 +11,9 @@ import org.json.JSONObject;
 import edu.aku.hassannaqvi.kmc.R;
 import edu.aku.hassannaqvi.kmc.core.MainApp;
 import edu.aku.hassannaqvi.kmc.validation.validatorClass;
+import edu.aku.hassannaqvi.kmc.databinding.ActivitySectionEBinding;
 
-public class SectionEActivity extends Activity {
+public class SectionEActivity extends AppCompatActivity {
 
     ActivitySectionEBinding bi;
 
@@ -24,6 +26,13 @@ public class SectionEActivity extends Activity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_e);
 
         bi.setCallback(this);
+    }
+
+
+    private void setUp() {
+
+
+
     }
 
 
@@ -55,7 +64,7 @@ public class SectionEActivity extends Activity {
         }
 
 
-        if (!validatorClass.EmptyTextBox(this, bi.ke405, getString(R.string.ke405))) {
+        if (!validatorClass.EmptyTextBox(this, bi.ke405hr, getString(R.string.ke405))) {
             return false;
         }
 
@@ -152,7 +161,7 @@ public class SectionEActivity extends Activity {
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, bi.ke418, bi.ke418a, getString(R.string.ke418))) {
+        if (!validatorClass.EmptyCheckBox(this, bi.ke418, bi.ke418a, getString(R.string.ke418))) {
             return false;
         }
 
@@ -226,12 +235,11 @@ public class SectionEActivity extends Activity {
                 : bi.ke40196.isChecked() ? "96"
                 : "0");
 
-        sE.put("ke40196", binding.ke40196x.getText().toString());
+        sE.put("ke40196", bi.ke40196x.getText().toString());
 
 
         sE.put("ke402", bi.ke402a.isChecked() ? "1"
                 : bi.ke402b.isChecked() ? "2"
-                : bi.ke402c.isChecked() ? "3"
                 : "0");
 
         sE.put("ke403", bi.ke403.getText().toString());
@@ -245,7 +253,7 @@ public class SectionEActivity extends Activity {
         sE.put("ke404g", bi.ke404g.isChecked() ? "7" : "0");
 
 
-        sE.put("ke405", bi.ke405.getText().toString());
+        sE.put("ke405hr", bi.ke405hr.getText().toString());
 
 
         sE.put("ke406", bi.ke406a.isChecked() ? "1"
@@ -256,10 +264,6 @@ public class SectionEActivity extends Activity {
         sE.put("ke407a", bi.ke407a.isChecked() ? "1" : "0");
         sE.put("ke407b", bi.ke407b.isChecked() ? "2" : "0");
         sE.put("ke407c", bi.ke407c.isChecked() ? "3" : "0");
-        sE.put("ke407d", bi.ke407d.isChecked() ? "4" : "0");
-        sE.put("ke407e", bi.ke407e.isChecked() ? "5" : "0");
-        sE.put("ke407f", bi.ke407f.isChecked() ? "6" : "0");
-        sE.put("ke407g", bi.ke407g.isChecked() ? "7" : "0");
 
         sE.put("ke40796x", bi.ke40796x.getText().toString());
 
@@ -382,8 +386,6 @@ public class SectionEActivity extends Activity {
         sE.put("ke420c", bi.ke420c.isChecked() ? "3" : "0");
         sE.put("ke420d", bi.ke420d.isChecked() ? "4" : "0");
         sE.put("ke420e", bi.ke420e.isChecked() ? "5" : "0");
-        sE.put("ke420f", bi.ke420f.isChecked() ? "6" : "0");
-        sE.put("ke420g", bi.ke420g.isChecked() ? "7" : "0");
         sE.put("ke42096", bi.ke42096.isChecked() ? "96" : "0");
 
 
@@ -402,8 +404,8 @@ public class SectionEActivity extends Activity {
         sE.put("ke422", bi.ke422a.isChecked() ? "1"
                 : bi.ke422b.isChecked() ? "2"
                 : bi.ke422c.isChecked() ? "3"
-                : bi.ke422d.isChecked() ? "4"
-                : bi.ke42296.isChecked() ? "96"
+                : bi.ke422c.isChecked() ? "4"
+                : bi.ke42299.isChecked() ? "96"
                 : "0");
 
         sE.put("ke423a", bi.ke423a.isChecked() ? "1" : "0");

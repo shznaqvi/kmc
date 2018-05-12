@@ -592,7 +592,7 @@
     <string name="kc504a"> APPLIED TILL ________ DAYS</string>
     <string name="kc504b"> CONTINUE TILL DATE </string>
 
-    <string name="keheading"> هڪ سال کان گھٽ ٻارن ۾ کير پيارڻ جو عمل </string>
+    <string name="keheading1"> هڪ سال کان گھٽ ٻارن ۾ کير پيارڻ جو عمل </string>
     <string name="ke001"> توهان جي آخري ٻار جي عمر ڇا آهي؟ </string>
     <string name="kd1heading"> کير پيارڻ جي شروعات </string>
     <string name="kd101"> ڇا ڪڏهن توهان پنهنجي ٻار کي پنهنجي ٿڃ پياري؟ </string>
@@ -696,5 +696,166 @@
     <string name="kfheading"> نون ڄاول ٻارن جي مرڻ جي باري ۾ معلومات </string>
     <string name="ka109sub04">Missing string</string>
     <string name="kc610g">Missing String</string>
+
+
+    <string name="keheading">Paternal Parenting Information</string>
+
+    <string name="ke401">توهان جي مڙس جو ڪهڙو پيشو آهي؟</string>
+    <string name="ke401a">غير ترتيب يافته مزدور</string>
+    <string name="ke401b">ترتيب يافته مزدور</string>
+    <string name="ke401c">هاري</string>
+    <string name="ke401d">خريد ۽ فروخت</string>
+    <string name="ke401e">پروفيشنل </string>
+    <string name="ke401f">رٽائرڊ</string>
+    <string name="ke401g">شاگرد</string>
+    <string name="ke401h">بيروزگار</string>
+
+
+    <string name="ke402">هو ڪٿي ڪم ڪندو آهي؟</string>
+    <string name="ke402a">شهر ۾</string>
+    <string name="ke402b">شهر کان ٻار</string>
+
+
+    <string name="ke403">هو ننڊ واري ٽائيم کانسواءِ گهر ۾ ڪيترو وقت گذاريندو آهي ؟ </string>
+    <string name="ke403hr">ڪيترا ڪلاڪ</string>
+
+    <string name="ke404">ٻارن کي ڪيڏي مهل ٽائيم ڏيندو آهي؟</string>
+    <string name="ke404a">صبح</string>
+    <string name="ke404b">منجھند</string>
+    <string name="ke404c">شام</string>
+    <string name="ke404d">رات</string>
+    <string name="ke404e">جڏهن واندو هوندو آهي</string>
+    <string name="ke404f">ڪڏهن ڪڏهن</string>
+    <string name="ke404g">ڪڏهن به نه</string>
+
+
+    <string name="ke405">هو ٻارن سان روزانو ڪيترو ٽائيم گذاريندو آهي؟</string>
+    <string name="ke406">ڇا هو ٻارن سان کيڏندو آهي؟</string>
+    <string name="ke407">جيڪڏهن ها ته هنن سان ڪهڙي راند کيڏندو آهي؟</string>
+    <string name="ke407a">ٻارن کي پارڪ/ راند کيڏڻ واري جڳھ وٺي ويندو آهي</string>
+    <string name="ke407b">ٻارن سان گڏ ٽي وي پروگرام ڏسندو آهي</string>
+    <string name="ke407c">ٻار کي تفريح جي لاءِ ٻاهر وٺي ويندو آهي</string>
+
+    <string name="ke408">اهي سرگرميون هو ڪيتري عرصي جي وقفي سان ڪندو آهي؟</string>
+    <string name="ke408a">هفتي ۾ هڪ ڀيرو</string>
+    <string name="ke408b">مهيني ۾ هڪ ڀيرو</string>
+    <string name="ke408c">سال ۾ هڪ ڀيرو</string>
+
+    <string name="ke409">ڇا هي ٻارن جي سار سنڀال ڪرڻ ۾ توهان جي مدد ڪندو آهي؟ پڇو- ڪهڙي قسم جي مدد ڪندو آهي؟</string>
+    <string name="ke409a">ٻارن جا ڪپڙا مٽائيندو آهي</string>
+    <string name="ke409b">ڊائپر مٽائيندو آهي</string>
+    <string name="ke409c">ٻارن کي وهنجاريندو آهي</string>
+    <string name="ke409d">کير پيارڻ ۾ مدد ڪندو آهي</string>
+    <string name="ke409e">رڌ پچاءَ ۾ مدد ڪندو آهي</string>
+    <string name="ke409f">صفائي ڪرڻ ۾ مدد ڪندو آهي</string>
+    <string name="ke409g">خريداري ڪرڻ ۾ مدد ڪندو آهي</string>
+    <string name="ke409h">مالي معاملن ۾ مدد ڪندو آهي</string>
+    <string name="ke409i">گهر جي لاءِ پاڻي ڀري ايندو آهي</string>
+    <string name="ke409j">ڪا به مدد نه ڪندو آهي </string>
+
+
+    <string name="ke410">ڇا ٻار کي کاڌو کارائڻ ۾ مدد ڪندو آهي؟</string>
+
+    <string name="ke411">جيڪڏهن ها ته ڪهڙي مدد ڪندو آهي؟</string>
+    <string name="ke411a">ٻار کي خوراڪ کارائڻ وقت ان سان گڏ راند ڪندو آهي</string>
+    <string name="ke411b">هي ٻار کي پاڻ کير(بوتل، ڪوپ يا چمچي) سان پياريندو آهي</string>
+    <string name="ke411c">ٻار کي ٺوس غذا کائڻ لاءِ آماده ڪرڻ</string>
+
+
+    <string name="ke412">جيڪڏهن ٻار روئندو آهي ته هو ڇا ڪندو آهي؟ پڇو- ڇا ڪندو آهي؟</string>
+    <string name="ke412a">ڪجھ به نه ڪندو آهي</string>
+    <string name="ke412b">ٻار کي ماٺ ڪرائڻ ۾ ماءُ جي مدد ڪندو آهي</string>
+    <string name="ke412c">ٻار سان راند کيڏندو آهي</string>
+    <string name="ke412d">ٻار کي گلي سان لڳائي ماٺ ڪرائيندو آهي</string>
+    <string name="ke412e">ٻار کي ٻاهر وٺي ويندو آهي</string>
+    <string name="ke412f">ٻار ماءُ کي يا ڪنهن مائٽ عورت کي ڏئي ڇڏيندو آهي</string>
+    <string name="ke412g">ٻار تي ڪاوڙ ڪندو آهي</string>
+    <string name="ke412h">ماءُ تي رڙيون آهي</string>
+    <string name="ke412i">ٻار تي رڙيون آهي</string>
+    <string name="ke412j">ڪمري مان ٻاهر هليو ويندو آهي</string>
+    <string name="ke412k">ماءُ ۽ ٻار کي ڪمري مان ٻاهر موڪلي ڇڏيندو آهي</string>
+
+
+    <string name="ke413">ڇا هو ٻارن کي ماريندو آهي يا انهن کي دڙڪا ڏيندو آهي؟</string>
+
+
+    <string name="ke414">جيڪڏهن ها ته،  ٻارن کي مارڻ يا دڙڪا ڏيڻ جو ڪهڙو اهم سبب هوندو آهي ؟</string>
+    <string name="ke414a">جڏهن ٻار ٻين ٻارن سان يا پاڻ ۾وڙهنداآهن</string>
+    <string name="ke414b">جڏهن ٻار ڪپڙا خراب ڪندوآهي</string>
+    <string name="ke414c">جڏهن ٻار گھڻي دير تائين دوستن سان ٻاهر راند کڏندا آهن</string>
+    <string name="ke414d">صحيح طرح سان کاڌو نه کائيندو آهي</string>
+    <string name="ke414e">جڏهن بدتميزي ڪندو آهي</string>
+    <string name="ke414f">ڪاوڙ جو اظهار ڪرڻ تي يا روئڻ تي</string>
+
+
+    <string name="ke415">جڏهن ٻار بيمار ٿيندو آهي ته ان کي علاج لاءِ ڊاڪٽر ڏي ڪير وٺي ويندو آهي؟</string>
+    <string name="ke415a">ماءُ</string>
+    <string name="ke415b">پيءَ</string>
+    <string name="ke415c">ڏاڏي</string>
+    <string name="ke415d">ڏاڏا</string>
+    <string name="ke415e">ڪو به نه</string>
+
+
+    <string name="ke416">جڏهن توهان جي ڌي / پٽ 2 کان 3 سال جا هئا ته پيءُ وڌيڪ ٽائيم ڪنهن سان گذاريندو هو؟ وڌيڪ پڇا: هي سوال صرف ان خاندان کان پڇو جن وٽ ٻه کان ٽي سال جي عمر جو پٽ ۽ ڌي هجي</string>
+
+    <string name="ke416a">پٽ سان وڌيڪ</string>
+    <string name="ke416b">ڌيءُ سان وڌيڪ</string>
+    <string name="ke416c">ٻنهي ٻارن سان هڪ جيترو</string>
+    <string name="ke416d">ٻار تي منحصر آهي</string>
+
+
+    <string name="ke417">جن وٽ ڌيءُ ۽ پٽ نه هجي ته انهن کان خاندان ۾ عام رواج بابت پڇو ته ڪهڙي بار کي وڌيڪ ڌيان ڏنو ويندو آهي</string>
+    <string name="ke417a">ڇوڪرو</string>
+    <string name="ke417b">ڇوڪري</string>
+    <string name="ke417c">ٻنهي ٻارن کي هڪ جيترو</string>
+    <string name="ke417d">ٻار تي منحصر ڪري ٿو</string>
+
+    <string name="ke418">هي ٻارن جي تعريف ڪيئن ڪندو آهي؟</string>
+    <string name="ke418a">زباني حوصلاافزائي ڪندو آهي</string>
+    <string name="ke418b">ڪپڙن يا شخصيت تي راءِ ڏيندو آهي</string>
+    <string name="ke418c">تحفو ڏيندو آهي</string>
+    <string name="ke418d">ٻين جي سامهون تعريف ڪندو آهي</string>
+    <string name="ke418e">انهن سان وڌيڪ ٽائيم گذاريندو آهي</string>
+    <string name="ke418f">ٻين کي هنن جي ڪاميابيءَ جي باري ۾ ٻڌائيندو آهي</string>
+    <string name="ke418g">تعريف نه ڪندو آهي</string>
+
+    <string name="ke419">ڇا هي محسوس ڪري ٿو ته پيءُ هجڻ جي ناتي هن تي گھڻيون ذميواريون آهن؟</string>
+    <string name="ke419c">ڪجھ ٽائيم</string>
+
+    <string name="ke420">جيڪڏهن ها ته وضاحت ڪريو ڇو؟</string>
+    <string name="ke420a">بيروزگاري سبب پريشاني</string>
+    <string name="ke420b">گھٽ آمدني/ پئسي جي پريشاني</string>
+    <string name="ke420c">زياده ٻار</string>
+    <string name="ke420d">زياده ذميواريون</string>
+    <string name="ke420e">گھر جي ٻين ڀاتين جون ذميواريون</string>
+
+
+    <string name="ke421">توهان جو پنهنجي مڙس سان جهيڙو ڪڏنهن ٿيندو آهي؟</string>
+    <string name="ke421a">جڏهن توهان ٻارن جي ڪپڙن ۽ رانديڪن جي گھرج ڪريو ٿا</string>
+    <string name="ke421b">جڏهن توهان اسڪول جي فيس گھرو ٿا</string>
+    <string name="ke421c">جڏهن توهان پنهنجي خريداري جي لاءِ پئسا گھرو ٿا</string>
+    <string name="ke421d">جڏهن توهان گھر جي سامان جي لاءِ پئسا گھرو ٿا</string>
+    <string name="ke421e">جڏهن توهان ٻين ٻارن سان پنهنجن ٻارن کي ڀيٽايو ٿا</string>
+
+    <string name="ke422">ٻار جي پيداٿيڻ کانپوءِ توهان جو ڪيتري عرصي کانپوءِ جهيڙو ٿيو آهي؟</string>
+    <string name="ke422a">گھڻو ڪري</string>
+    <string name="ke422b">ڪڏهن ڪڏهن</string>
+    <string name="ke422c">تقريبن ساڳيو</string>
+    <string name="ke422d">ڪڏهن به جهيڙو ناهي ڪيو</string>
+
+    <string name="ke423">توهان ڪيئن پنهنجي مڙس جو ڌيان پاڻ ڏانهن ڇڪيل محسوس ڪندا آهيو؟</string>
+    <string name="ke423a">جڏهن هي توهان کي ٻڌندو آهي</string>
+    <string name="ke423b">جڏهن هو توهان کي خريداري ڪرائڻ جي لاءِ وٺي ويندو آهي</string>
+    <string name="ke423c">جڏهن هو توهان جا مسئلا حل ڪندو آهي</string>
+    <string name="ke423d">جڏهن هو گهر جي ڪم ڪار ۾ توهان جي مدد ڪندو آهي</string>
+    <string name="ke423e">جڏهن هو توهان کي توهان جي ماءُ جي گهر وٺي ويندو آهي</string>
+    <string name="ke423f">جڏهن هو توهان کي ڪنهن فيصلي ڪرڻ وقت شريڪ رکندو آهي</string>
+    <string name="ke423g">جڏهن هو توهان کي غير ضروري طورتي پابند نه ڪندو آهي</string>
+
+    <string name="ke424">ڇا توهان محسوس ڪيو آهي ته پهرئين ٻار ڄمڻ کانپوءِ توهان جي مڙس جو توهان ڏانهن توجهه يا توهان جو خيال رکڻ ۾ ڪا تبديلي (گهٽ يا وڌ) ٿي آهي؟</string>
+    <string name="ke424a">ڪابه تبديلي نه آئي آهي</string>
+    <string name="ke424b">وڌيڪ توجهه ڏي ٿو</string>
+    <string name="ke424c">گهٽ توجهه ڏي ٿو</string>
+    <string name="ke424d">تقريبن ساڳيو آهي</string>
 
 </resources>

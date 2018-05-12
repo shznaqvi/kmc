@@ -31,7 +31,7 @@
                 android:layout_marginTop="2dp"
                 android:background="@color/colorPrimaryDark"
                 android:gravity="center"
-                android:text="@string/ke4heading"
+                android:text="@string/keheading"
                 android:textSize="40sp" />
 
             <!--ke401-->
@@ -123,8 +123,8 @@
                 android:layout_marginTop="5dp"
                 android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
                 android:hint="@string/others"
-                android:text='@{kd40196.checked ? kd40196x.getText.toString : ""}'
-                android:visibility='@{kd40196.checked ? View.VISIBLE : View.GONE}' />
+                android:text='@{ke40196.checked ? ke40196x.getText.toString : ""}'
+                android:visibility='@{ke40196.checked ? View.VISIBLE : View.GONE}' />
 
 
             <!--ke402-->
@@ -157,13 +157,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:text="@string/ke402b" />
-
-                <RadioButton
-                    android:id="@+id/ke402c"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/ke402c" />
 
             </RadioGroup>
 
@@ -269,12 +262,12 @@
                 android:textColor="@android:color/white" />
 
             <EditText
-                android:id="@+id/ke405"
+                android:id="@+id/ke405hr"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:digits="0123456789"
-                android:hint="@string/ke405"
+                android:hint="@string/ke403hr"
                 android:text="" />
 
 
@@ -367,8 +360,8 @@
                 android:layout_marginTop="5dp"
                 android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
                 android:hint="@string/others"
-                android:text='@{ke40796.checked ? kd40796x.getText.toString : ""}'
-                android:visibility='@{kd40796.checked ? View.VISIBLE : View.GONE}' />
+                android:text='@{ke40796.checked ? ke40796x.getText.toString : ""}'
+                android:visibility='@{ke40796.checked ? View.VISIBLE : View.GONE}' />
 
 
             <!--ke408-->
@@ -425,8 +418,8 @@
                 android:layout_marginTop="5dp"
                 android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
                 android:hint="@string/others"
-                android:text='@{ke40896.checked ? kd40896x.getText.toString : ""}'
-                android:visibility='@{kd40896.checked ? View.VISIBLE : View.GONE}' />
+                android:text='@{ke40896.checked ? ke40896x.getText.toString : ""}'
+                android:visibility='@{ke40896.checked ? View.VISIBLE : View.GONE}' />
 
 
             <!--ke409-->
@@ -533,8 +526,8 @@
                 android:layout_marginTop="5dp"
                 android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
                 android:hint="@string/others"
-                android:text='@{ke40996.checked ? kd40996x.getText.toString : ""}'
-                android:visibility='@{kd40996.checked ? View.VISIBLE : View.GONE}' />
+                android:text='@{ke40996.checked ? ke40996x.getText.toString : ""}'
+                android:visibility='@{ke40996.checked ? View.VISIBLE : View.GONE}' />
 
 
             <!--ke410-->
@@ -1268,7 +1261,7 @@
                 android:layout_weight="1.5">
 
                 <RadioButton
-                    android:id="@+id/ke421ake421a"
+                    android:id="@+id/ke421a"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
