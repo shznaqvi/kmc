@@ -1,5 +1,6 @@
 package edu.aku.hassannaqvi.kmc.ui;
 
+import android.app.Activity;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -79,4 +80,5 @@ public class SectionD2Activity extends AppCompatActivity {
             }
         }*/
     }
+
 }

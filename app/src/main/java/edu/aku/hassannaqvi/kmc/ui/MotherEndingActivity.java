@@ -27,6 +27,7 @@ public class MotherEndingActivity extends AppCompatActivity {
 
         Boolean check = getIntent().getExtras().getBoolean("complete");
 
+
         if (check) {
             binding.istatusa.setEnabled(true);
             binding.istatusb.setEnabled(false);

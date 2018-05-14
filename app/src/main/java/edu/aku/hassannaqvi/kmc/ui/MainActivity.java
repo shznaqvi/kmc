@@ -258,7 +258,9 @@ public class MainActivity extends Activity {
     public void openForm() {
 
 //        if (spAreas.getSelectedItemPosition() != 0) {
-        final Intent oF = new Intent(MainActivity.this, SectionA1Activity.class);
+        //final Intent oF = new Intent(MainActivity.this, SectionA1Activity.class);
+
+        final Intent oF = new Intent(MainActivity.this, SectionC6Activity.class);
 
         if (sharedPref.getString("tagName", null) != "" && sharedPref.getString("tagName", null) != null && !MainApp.userName.equals("0000")) {
             startActivity(oF);
@@ -372,7 +374,7 @@ public class MainActivity extends Activity {
     }*/
 
 
-    public void testGPS(View v){
+    public void testGPS(View v) {
 
         SharedPreferences sharedPref = getSharedPreferences("GPSCoordinates", Context.MODE_PRIVATE);
         Log.d("MAP", "testGPS: " + sharedPref.getAll().toString());
