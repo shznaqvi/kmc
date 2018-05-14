@@ -82,6 +82,7 @@ public class SectionB1Activity extends AppCompatActivity {
                     bi.kb202w.setText(null);
                     bi.kb202m.setText(null);
 
+
                     bi.fldGrpkb202.setVisibility(View.GONE);
                     bi.fldGrpkb201.setVisibility(View.VISIBLE);
 
