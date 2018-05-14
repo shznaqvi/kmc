@@ -99,6 +99,7 @@ public class SectionC1Activity extends AppCompatActivity {
                 : bi.kc101g.isChecked() ? "7"
                 : "0");
 
+
         sn.put("kc102", bi.kc102a.isChecked() ? "1"
                 : bi.kc102b.isChecked() ? "2"
                 : "0");
