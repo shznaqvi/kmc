@@ -34,7 +34,7 @@ public class SectionInfoKmcActivity extends Activity {
     Map<String, String> ucsMap;
 
 
-    private static final String TAG = SectionAActivity.class.getName();
+    private static final String TAG = SectionInfoKmcActivity.class.getName();
     String dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
 
     ActivitySectionInfoKmcBinding bi;
@@ -100,12 +100,7 @@ public class SectionInfoKmcActivity extends Activity {
         }
 
 
-        if (!validatorClass.EmptyTextBox(this, bi.cra06, getString(R.string.cra06))) {
-            return false;
-        }
-
-
-        return true;
+        return validatorClass.EmptyTextBox(this, bi.cra06, getString(R.string.cra06));
     }
 
 

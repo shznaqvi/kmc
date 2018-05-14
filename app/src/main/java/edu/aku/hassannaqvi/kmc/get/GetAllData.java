@@ -59,7 +59,7 @@ public class GetAllData extends AsyncTask<String, String, String> {
         try {
             switch (syncClass) {
                 case "EnumBlock":
-                    //url = new URL(MainApp._HOST_URL + EnumBlockTable._URI);
+                    // url = new URL(MainApp._HOST_URL + EnumBlockTable._URI);
                     break;
                 case "User":
                     url = new URL(MainApp._HOST_URL + UsersContract.UsersTable._URI);
@@ -106,7 +106,7 @@ public class GetAllData extends AsyncTask<String, String, String> {
 
                     switch (syncClass) {
                         case "EnumBlock":
-                            //db.syncEnumBlocks(jsonArray);
+                            //     db.syncEnumBlocks(jsonArray);
                             break;
                         case "User":
                             db.syncUser(jsonArray);

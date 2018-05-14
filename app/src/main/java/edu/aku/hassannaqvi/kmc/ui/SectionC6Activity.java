@@ -1,5 +1,6 @@
 package edu.aku.hassannaqvi.kmc.ui;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -320,7 +321,7 @@ public class SectionC6Activity extends AppCompatActivity {
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateBirthsDeaths();
+        int updcount = db.updateSC6();
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
@@ -329,7 +330,6 @@ public class SectionC6Activity extends AppCompatActivity {
             return false;
         }
 
-        return true;
     }
 
 
@@ -338,9 +338,9 @@ public class SectionC6Activity extends AppCompatActivity {
 
 
     public void BtnEnd() {
-/*
+
         Toast.makeText(this, "Processing End Section", Toast.LENGTH_SHORT).show();
-        if (formValidation()) {
+        if (ValidateForm()) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
@@ -356,13 +356,13 @@ public class SectionC6Activity extends AppCompatActivity {
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        }*/
+        }
     }
 
     public void BtnContinue() {
 
-/*        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
-        if (formValidation()) {
+        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
+        if (ValidateForm()) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
@@ -378,6 +378,6 @@ public class SectionC6Activity extends AppCompatActivity {
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        }*/
+        }
     }
 }

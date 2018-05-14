@@ -167,7 +167,7 @@ public class SectionC3Activity extends AppCompatActivity {
                 return false;
             }
 
-            if (!validatorClass.EmptyTextBox(this, bi.kc308, getString(R.string.kc308))) {
+            if (!validatorClass.EmptyRadioButton(this, bi.kc308, bi.kc308a, getString(R.string.kc308))) {
                 return false;
             }
         }
@@ -203,7 +203,7 @@ public class SectionC3Activity extends AppCompatActivity {
             }
 
         }
-        if (!validatorClass.EmptyCheckBox(this, bi.kc312, bi.kc312a, getString(R.string.kc312))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.kc312, bi.kc312a, getString(R.string.kc312))) {
             return false;
         }
 

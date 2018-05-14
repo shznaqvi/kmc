@@ -569,7 +569,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                 @Override
                 public void run() {
                     Toast.makeText(LoginActivity.this, "Sync Enum Blocks", Toast.LENGTH_LONG).show();
-                    new GetAllData(mContext, "EnumBlock").execute();
+                    // new GetAllData(mContext, "EnumBlock").execute();
                     Toast.makeText(LoginActivity.this, "Sync Users", Toast.LENGTH_LONG).show();
                     new GetAllData(mContext, "User").execute();
                 }

@@ -16,7 +16,6 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.StrictMode;
-import android.provider.Settings;
 import android.text.InputType;
 import android.util.Log;
 import android.view.View;
@@ -240,15 +239,8 @@ public class MainActivity extends Activity {
         });*/
 
         /*Add data in Serial date wrt date*/
-        MainApp.sc = db.getSerialWRTDate(new SimpleDateFormat("dd-MM-yy").format(new Date()).toString());
 
-        if (MainApp.sc.getDeviceid() == null) {
-            db.addSerialForm(new SerialContract(Settings.Secure.getString(getApplicationContext().getContentResolver(), Settings.Secure.ANDROID_ID),
-                    new SimpleDateFormat("dd-MM-yy").format(new Date()).toString(),
-                    "0"));
 
-            MainApp.sc = db.getSerialWRTDate(new SimpleDateFormat("dd-MM-yy").format(new Date()).toString());
-        }
 
     }
 
@@ -457,12 +449,6 @@ public class MainActivity extends Activity {
 
             Toast.makeText(getApplicationContext(), "Syncing Forms", Toast.LENGTH_SHORT).show();
             new SyncForms(this, true).execute();
-
-            Toast.makeText(getApplicationContext(), "Syncing Child Forms", Toast.LENGTH_SHORT).show();
-            new SyncChildForms(this, true).execute();
-
-            Toast.makeText(getApplicationContext(), "Syncing Serials", Toast.LENGTH_SHORT).show();
-            new SyncSerials(this, true).execute();
 
 
             SharedPreferences syncPref = getSharedPreferences("SyncInfo", Context.MODE_PRIVATE);
