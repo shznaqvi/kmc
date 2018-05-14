@@ -258,7 +258,9 @@ public class MainActivity extends Activity {
     public void openForm() {
 
 //        if (spAreas.getSelectedItemPosition() != 0) {
-        final Intent oF = new Intent(MainActivity.this, SectionA1Activity.class);
+        //final Intent oF = new Intent(MainActivity.this, SectionA1Activity.class);
+
+        final Intent oF = new Intent(MainActivity.this, SectionC2Activity.class);
 
         if (sharedPref.getString("tagName", null) != "" && sharedPref.getString("tagName", null) != null && !MainApp.userName.equals("0000")) {
             startActivity(oF);

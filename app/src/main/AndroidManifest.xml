@@ -111,7 +111,8 @@
             android:name=".ui.SectionFActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1" />
-        <activity android:name=".ui.SectionEActivity"></activity>
+        <activity android:name=".ui.SectionEActivity" />
+        <activity android:name=".ui.SectionInfoKmcActivity"></activity>
     </application>
 
 </manifest>

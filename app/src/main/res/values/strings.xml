@@ -52,6 +52,21 @@
     <string name="neverb"> نه ونهجاريو </string>
 
 
+    <!--      CBT Vars       !-->
+
+    <string name="endForm">اختتام</string>
+    <string name="section_A">  Module A: SOCIO DEMOGRAPHIC INFORMATION (KMC-2018-2020) </string>
+    <string name="cra01">ڇا جواب ڏيندڙ تحقيق ۾ حصو وٺڻ لاءِ تيار آهي</string>
+    <string name="crvillage">ڳوٺ/ ايريا جو نالو</string>
+    <string name="cruc">يونين ڪائونسل جو نالو</string>
+    <string name="cra03"> توليدي عمر واري عورت جو نمبر </string>
+    <string name="cra0301"> Arm </string>
+    <string name="cra0302"> Child </string>
+    <string name="cra25"> گهر جو نمبر </string>
+
+    <!--      CBT Vars       !-->
+
+
     <string name="kaheading"> Module A: SOCIO DEMOGRAPHIC INFORMATION (KMC-2018-2020) </string>
     <string name="ka01"> انٽرويو وٺندڙ جو نالو ۽ نمبر </string>
     <string name="ka02"> ڊيٽا ڪليڪٽر جو ڪوڊ </string>
