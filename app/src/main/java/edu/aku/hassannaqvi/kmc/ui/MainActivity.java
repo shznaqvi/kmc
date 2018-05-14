@@ -45,14 +45,11 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import edu.aku.hassannaqvi.kmc.R;
 import edu.aku.hassannaqvi.kmc.contracts.FormsContract;
-import edu.aku.hassannaqvi.kmc.contracts.SerialContract;
 import edu.aku.hassannaqvi.kmc.core.AndroidDatabaseManager;
 import edu.aku.hassannaqvi.kmc.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc.core.MainApp;
 import edu.aku.hassannaqvi.kmc.databinding.ActivityMainBinding;
-import edu.aku.hassannaqvi.kmc.sync.SyncChildForms;
 import edu.aku.hassannaqvi.kmc.sync.SyncForms;
-import edu.aku.hassannaqvi.kmc.sync.SyncSerials;
 
 public class MainActivity extends Activity {
 
