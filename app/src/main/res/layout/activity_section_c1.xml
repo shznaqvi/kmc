@@ -112,75 +112,88 @@
             </RadioGroup>
 
 
-            <!--kc102-->
-            <TextView
+            <LinearLayout
+                android:id="@+id/fldGrpkc102"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_weight="1"
-                android:background="@color/pink_100"
-                android:text="@string/kc102"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/colorPrimaryDark" />
-
-            <RadioGroup
-                android:id="@+id/kc102"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_weight="1.5"
-                android:orientation="horizontal">
-
-                <RadioButton
-                    android:id="@+id/kc102a"
+                android:orientation="vertical">
+                <!--kc102-->
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
+                    android:layout_marginTop="16dp"
                     android:layout_weight="1"
-                    android:text="@string/yes" />
+                    android:background="@color/pink_100"
+                    android:text="@string/kc102"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/colorPrimaryDark" />
 
-                <RadioButton
-                    android:id="@+id/kc102b"
+                <RadioGroup
+                    android:id="@+id/kc102"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:layout_weight="1"
-                    android:text="@string/no" />
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="1.5"
+                    android:orientation="horizontal">
 
-            </RadioGroup>
+                    <RadioButton
+                        android:id="@+id/kc102a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="1"
+                        android:text="@string/yes" />
 
+                    <RadioButton
+                        android:id="@+id/kc102b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="1"
+                        android:text="@string/no" />
 
-            <!--kc103-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/kc103"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
-
-            <EditText
-                android:id="@+id/kc103m"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:hint="@string/kc103m"
-                android:inputType="number"
-                android:maxLength="2" />
-
-            <EditText
-                android:id="@+id/kc103d"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:hint="@string/kc103y"
-                android:inputType="number"
-                android:maxLength="2" />
+                </RadioGroup>
 
 
+                <LinearLayout
+                    android:id="@+id/fldGrpkc103"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!--kc103-->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/colorPrimary"
+                        android:text="@string/kc103"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@android:color/white" />
+
+                    <EditText
+                        android:id="@+id/kc103m"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:hint="@string/kc103m"
+                        android:inputType="number"
+                        android:maxLength="2" />
+
+                    <EditText
+                        android:id="@+id/kc103d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:hint="@string/kc103y"
+                        android:inputType="number"
+                        android:maxLength="2" />
+
+                </LinearLayout>
+
+            </LinearLayout>
             <!--kc104-->
-            <TextView
+            <!--<TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -248,7 +261,7 @@
                 android:hint="@string/other"
                 android:text='@{kc10496.checked ? kc10496x.getText.toString : ""}'
                 android:visibility='@{kc10496.checked ? View.VISIBLE : View.GONE}' />
-
+-->
 
             <!--  = = = = =  END OF FORM FIELDS  = = = = = -->
             <LinearLayout
