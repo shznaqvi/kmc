@@ -69,12 +69,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             FormsTable.COLUMN_SA1 + " TEXT," +
             FormsTable.COLUMN_SB1 + " TEXT," +
             FormsTable.COLUMN_SB2 + " TEXT," +
+            FormsTable.COLUMN_SC2 + " TEXT," +
+            FormsTable.COLUMN_SC3 + " TEXT," +
             FormsTable.COLUMN_SA4 + " TEXT," +
             FormsTable.COLUMN_SA5 + " TEXT," +
             FormsTable.COLUMN_SB4 + " TEXT," +
-            FormsTable.COLUMN_SD1 + " TEXT,"+
-            FormsTable.COLUMN_SD2  + " TEXT,"+
-            FormsTable.COLUMN_SD3 + " TEXT,"+
+            FormsTable.COLUMN_SD1 + " TEXT," +
+            FormsTable.COLUMN_SD2 + " TEXT," +
+            FormsTable.COLUMN_SD3 + " TEXT," +
             FormsTable.COLUMN_SE + " TEXT," +
             FormsTable.COLUMN_ISTATUS + " TEXT," +
             FormsTable.COLUMN_ISTATUS88x + " TEXT," +
@@ -554,6 +556,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_SA1, fc.getsA1());
         values.put(FormsTable.COLUMN_SB1, fc.getsB1());
         values.put(FormsTable.COLUMN_SB2, fc.getsB2());
+        values.put(FormsTable.COLUMN_SC2, fc.getsC2());
+        values.put(FormsTable.COLUMN_SC3, fc.getsC3());
         values.put(FormsTable.COLUMN_SA4, fc.getsA4());
         values.put(FormsTable.COLUMN_SA5, fc.getsA5());
         values.put(FormsTable.COLUMN_SB4, fc.getsB4());
@@ -1810,6 +1814,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selectionArgs);
         return count;
     }
+
     public int updateSD1() {
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -1827,6 +1832,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selectionArgs);
         return count;
     }
+
     public int updateSD2() {
         SQLiteDatabase db = this.getReadableDatabase();
 
