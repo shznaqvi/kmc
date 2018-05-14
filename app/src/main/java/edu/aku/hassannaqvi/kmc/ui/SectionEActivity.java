@@ -23,7 +23,7 @@ import edu.aku.hassannaqvi.kmc.databinding.ActivitySectionEBinding;
 
 public class SectionEActivity extends AppCompatActivity {
 
-    private static final String TAG = SectionAActivity.class.getName();
+    private static final String TAG = SectionEActivity.class.getName();
     String dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
 
     ActivitySectionEBinding bi;
@@ -728,7 +728,7 @@ public class SectionEActivity extends AppCompatActivity {
                 : "0");
 
 
-        MainApp.fc.setsB4(String.valueOf(sE));
+        MainApp.fc.setsE(String.valueOf(sE));
 
     }
 

@@ -1,11 +1,13 @@
 package edu.aku.hassannaqvi.kmc.ui;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -14,6 +16,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import edu.aku.hassannaqvi.kmc.R;
+import edu.aku.hassannaqvi.kmc.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc.core.MainApp;
 import edu.aku.hassannaqvi.kmc.databinding.ActivitySectionC2Binding;
 import edu.aku.hassannaqvi.kmc.validation.validatorClass;
@@ -55,19 +58,30 @@ public class SectionC2Activity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (bi.kc208a.isChecked()) {
+                    bi.fldGrpkc208.setVisibility(View.VISIBLE);
+                } else {
                     bi.kc209.clearCheck();
                     bi.kc210.clearCheck();
                     bi.kc211.clearCheck();
                     bi.kc212.clearCheck();
 
                     bi.fldGrpkc208.setVisibility(View.GONE);
-
-                } else {
-                    bi.fldGrpkc208.setVisibility(View.VISIBLE);
                 }
             }
         });
 
+
+        bi.kc213.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (bi.kc213a.isChecked()) {
+                    bi.fldGrpkc213.setVisibility(View.VISIBLE);
+                } else {
+                    bi.kc214.setText(null);
+                    bi.fldGrpkc213.setVisibility(View.GONE);
+                }
+            }
+        });
 
     }
 
@@ -320,7 +334,7 @@ public class SectionC2Activity extends AppCompatActivity {
 
 
     public void BtnEnd() {
-/*
+
         Toast.makeText(this, "Processing End Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
             try {
@@ -338,12 +352,12 @@ public class SectionC2Activity extends AppCompatActivity {
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        }*/
+        }
     }
 
     public void BtnContinue() {
 
-/*        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
             try {
                 SaveDraft();
@@ -360,6 +374,22 @@ public class SectionC2Activity extends AppCompatActivity {
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        }*/
+        }
+    }
+
+
+    private boolean UpdateDB() {
+        //Long rowId;
+        DatabaseHelper db = new DatabaseHelper(this);
+
+        int updcount = db.updateSC2();
+
+        if (updcount == 1) {
+            //Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+            return true;
+        } else {
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            return false;
+        }
     }
 }
