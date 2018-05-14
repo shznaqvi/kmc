@@ -18,19 +18,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
-import edu.aku.hassannaqvi.kmc.contracts.ChildContract;
-import edu.aku.hassannaqvi.kmc.contracts.EligibleMembersContract;
-import edu.aku.hassannaqvi.kmc.contracts.FamilyMembersContract;
 import edu.aku.hassannaqvi.kmc.contracts.FormsContract;
-import edu.aku.hassannaqvi.kmc.contracts.MWRAContract;
-import edu.aku.hassannaqvi.kmc.contracts.OutcomeContract;
-import edu.aku.hassannaqvi.kmc.contracts.RecipientsContract;
-import edu.aku.hassannaqvi.kmc.contracts.SerialContract;
-import edu.aku.hassannaqvi.kmc.other.MembersCount;
 import edu.aku.hassannaqvi.kmc.ui.EndingActivity;
 import edu.aku.hassannaqvi.kmc.ui.MotherEndingActivity;
 
@@ -73,35 +62,10 @@ public class MainApp extends Application {
 
     public static Boolean admin = false;
     public static FormsContract fc;
-    public static MWRAContract mc;
-    public static OutcomeContract oc;
-    public static ChildContract cc;
-    public static EligibleMembersContract ec;
-    public static SerialContract sc;
-    public static RecipientsContract rc;
-    public static MembersCount membersCount;
     public static String userName = "0000";
     public static int versionCode;
     public static String versionName;
-    public static Boolean IsHead;
 
-    //    Ali
-    public static FamilyMembersContract fmc;
-    public static EligibleMembersContract emc;
-    public static List<FamilyMembersContract> members_f_m;
-    public static List<FamilyMembersContract> all_members;
-    public static List<FamilyMembersContract> childUnder2;
-    public static List<FamilyMembersContract> childUnder5;
-    public static List<FamilyMembersContract> mwra;
-    public static List<FamilyMembersContract> adolescents;
-    public static int serial_no;
-
-    // Gul Sanober
-    public static Map<String, String> mwraMap = new HashMap<>();
-    public static int totalPregnancy = 0;
-    public static int count = 1;
-    public static boolean flag = false;
-    public static int outcome = 0;
     protected static LocationManager locationManager;
 
     public static int monthsBetweenDates(Date startDate, Date endDate) {
