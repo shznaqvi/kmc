@@ -47,6 +47,7 @@ public class SectionC2Activity extends AppCompatActivity {
                 } else {
 
                 }
+
             }
         });
 
