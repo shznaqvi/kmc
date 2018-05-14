@@ -482,8 +482,7 @@
     <string name="kc307c"> نارمل </string>
     <string name="kc307d"> عام ٻارن جي مقابلي ۾ ننڍو </string>
     <string name="kc307e"> تمام ننڍو </string>
-    <string name="kc308">
-    جيڪڏهن ٻار گھٽ وزن وارو هيو ته پڇو ته ٻار جي پيدائش 37 هفتن کان پهريائين ٿئي هئي؟
+    <string name="kc308">    جيڪڏهن ٻار گھٽ وزن وارو هيو ته پڇو ته ٻار جي پيدائش 37 هفتن کان پهريائين ٿئي هئي؟
     </string>
     <string name="kc309"> ڇا ٻار کي ڄمڻ کان پوءِ هڪ ڪلاڪ جي اندر توهان پنهنجي ڇاتي سان لڳايو هو؟ </string>
     <string name="kc310"> ڇا ٻار ڄمڻ کان پوءِ هڪدم رنو هو؟ </string>
@@ -875,5 +874,19 @@
     <string name="ke424b">وڌيڪ توجهه ڏي ٿو</string>
     <string name="ke424c">گهٽ توجهه ڏي ٿو</string>
     <string name="ke424d">تقريبن ساڳيو آهي</string>
+
+
+    <string name="bdheading"> نون ڄاول ٻارن جي مرڻ جي باري ۾ معلومات   </string>
+    <string name="bdheadingsub"> گزريل هڪ سال ۾ توهان جي گھر ۾ ڪيترا ٻار پيدا ٿيا آهن يا هڪ سال کان گھٽ ڪيترا ٻار فوت ٿيا آهن </string>
+    <string name="bda"> Indicators </string>
+    <string name="bdb"> Statistics None = 0 </string>
+    <string name="bdba"> Number </string>
+    <string name="bdc"> تاریخ پیدائش </string>
+    <string name="bdd"> تاریخ وفات </string>
+    <string name="bd03"> زندہ پیدائش </string>
+    <string name="bd04"> پيدائش کان 7 ڏينهن تائين </string>
+    <string name="bd05"> 8 ڏينهن کان 28 ڏينهن تائين </string>
+    <string name="bd06">  29 ڏينهن کان هڪ سال تائين  </string>
+
 
 </resources>
