@@ -543,9 +543,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-
-
-
     public int updateSA1() {
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -782,9 +779,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selectionArgs);
         return count;
     }
-
-    public int updateSD2() {
-
 
     public int updateEnding() {
         SQLiteDatabase db = this.getReadableDatabase();

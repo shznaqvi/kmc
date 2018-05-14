@@ -32,8 +32,6 @@ public class FormsContract {
     private String sA5 = ""; //
     private String sB4 = "";
     private String sC1 = "";
-    private String sC2 = "";
-    private String sC3 = "";
     private String sC4 = "";
     private String sC5 = "";
     private String sC6 = "";
@@ -184,7 +182,6 @@ public class FormsContract {
         json.put(FormsTable.COLUMN_SE, this.sE == null ? JSONObject.NULL : this.sE);
         json.put(FormsTable.COLUMN_SF, this.sF == null ? JSONObject.NULL : this.sF);
         json.put(FormsTable.COLUMN_COUNT, this.count == null ? JSONObject.NULL : this.count);
-        json.put(FormsTable.COLUMN_ISTATUS88x, this.istatus88x == null ? JSONObject.NULL : this.istatus88x);
         json.put(FormsTable.COLUMN_GPSELEV, this.gpsElev == null ? JSONObject.NULL : this.gpsElev);
 
 
@@ -375,26 +372,6 @@ public class FormsContract {
     }
 
 
-    public String getsC2() {
-        return sC2;
-    }
-
-    public void setsC2(String sC2) {
-        this.sC2 = sC2;
-    }
-
-
-    public String getsC3() {
-        return sC3;
-    }
-
-    public void setsC3(String sC3) {
-        this.sC3 = sC3;
-    }
-
-
-    public String getGpsElev() {
-        return gpsElev;
     public String getsC1() {
         return sC1;
     }
@@ -580,8 +557,6 @@ public class FormsContract {
         public static final String COLUMN_SB1 = "sb1";
         public static final String COLUMN_SB2 = "sb2";
 
-        public static final String COLUMN_SC2 = "sc2";
-        public static final String COLUMN_SC3 = "sc3";
 
         public static final String COLUMN_SA4 = "sa4";
         public static final String COLUMN_SA5 = "sa5";

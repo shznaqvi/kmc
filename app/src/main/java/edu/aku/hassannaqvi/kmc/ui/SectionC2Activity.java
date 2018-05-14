@@ -20,7 +20,7 @@ import edu.aku.hassannaqvi.kmc.validation.validatorClass;
 
 public class SectionC2Activity extends AppCompatActivity {
 
-    private static final String TAG = SectionAActivity.class.getName();
+    private static final String TAG = SectionC2Activity.class.getName();
     String dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
 
     ActivitySectionC2Binding bi;
@@ -43,11 +43,28 @@ public class SectionC2Activity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (bi.kc201a.isChecked()) {
                     bi.kc202.clearCheck();
-                    //bi.fldGrpkc201.
+                    bi.kc20296x.setText(null);
+                    bi.fldGrpkc201.setVisibility(View.GONE);
                 } else {
-
+                    bi.fldGrpkc201.setVisibility(View.VISIBLE);
                 }
+            }
+        });
 
+        bi.kc208.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (bi.kc208a.isChecked()) {
+                    bi.kc209.clearCheck();
+                    bi.kc210.clearCheck();
+                    bi.kc211.clearCheck();
+                    bi.kc212.clearCheck();
+
+                    bi.fldGrpkc208.setVisibility(View.GONE);
+
+                } else {
+                    bi.fldGrpkc208.setVisibility(View.VISIBLE);
+                }
             }
         });
 
