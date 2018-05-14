@@ -1,6 +1,5 @@
 package edu.aku.hassannaqvi.kmc.ui;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
