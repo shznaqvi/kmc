@@ -15,7 +15,6 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import edu.aku.hassannaqvi.kmc.contracts.EnumBlockContract.EnumBlockTable;
 import edu.aku.hassannaqvi.kmc.contracts.UsersContract;
 import edu.aku.hassannaqvi.kmc.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc.core.MainApp;
@@ -60,7 +59,7 @@ public class GetAllData extends AsyncTask<String, String, String> {
         try {
             switch (syncClass) {
                 case "EnumBlock":
-                    url = new URL(MainApp._HOST_URL + EnumBlockTable._URI);
+                    //url = new URL(MainApp._HOST_URL + EnumBlockTable._URI);
                     break;
                 case "User":
                     url = new URL(MainApp._HOST_URL + UsersContract.UsersTable._URI);
@@ -107,7 +106,7 @@ public class GetAllData extends AsyncTask<String, String, String> {
 
                     switch (syncClass) {
                         case "EnumBlock":
-                            db.syncEnumBlocks(jsonArray);
+                            //db.syncEnumBlocks(jsonArray);
                             break;
                         case "User":
                             db.syncUser(jsonArray);

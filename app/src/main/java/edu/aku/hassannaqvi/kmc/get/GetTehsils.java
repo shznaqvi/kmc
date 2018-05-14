@@ -15,7 +15,6 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import edu.aku.hassannaqvi.kmc.contracts.EnumBlockContract.EnumBlockTable;
 import edu.aku.hassannaqvi.kmc.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc.core.MainApp;
 
@@ -51,7 +50,7 @@ public class GetTehsils extends AsyncTask<String, String, String> {
 
         URL url = null;
         try {
-            url = new URL(MainApp._HOST_URL + EnumBlockTable._URI);
+            //url = new URL(MainApp._HOST_URL + EnumBlockTable._URI);
             urlConnection = (HttpURLConnection) url.openConnection();
             urlConnection.setReadTimeout(10000 /* milliseconds */);
             urlConnection.setConnectTimeout(15000 /* milliseconds */);
@@ -90,7 +89,7 @@ public class GetTehsils extends AsyncTask<String, String, String> {
                 DatabaseHelper db = new DatabaseHelper(mContext);
                 try {
                     JSONArray jsonArray = new JSONArray(json);
-                    db.syncEnumBlocks(jsonArray);
+                    //db.syncEnumBlocks(jsonArray);
                     pd.setMessage("Received: " + jsonArray.length());
                     pd.show();
                 } catch (JSONException e) {

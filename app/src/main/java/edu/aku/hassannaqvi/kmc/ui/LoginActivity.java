@@ -83,7 +83,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     ArrayAdapter<String> dataAdapter;
 
     ArrayList<String> lablesTalukas;
-    Collection<EnumBlockContract> TalukasList;
+    //Collection<EnumBlockContract> TalukasList;
     Map<String, String> talukasMap;
 
     ArrayList<String> lablesUCs;
