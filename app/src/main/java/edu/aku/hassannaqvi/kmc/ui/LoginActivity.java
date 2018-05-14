@@ -197,7 +197,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
     public void dbBackup() {
 
-        sharedPref = getSharedPreferences("src", MODE_PRIVATE);
+        sharedPref = getSharedPreferences("kmc", MODE_PRIVATE);
         editor = sharedPref.edit();
 
         if (sharedPref.getBoolean("flag", false)) {

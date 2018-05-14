@@ -54,6 +54,8 @@ public class SectionC4Activity extends AppCompatActivity {
                 }
             }
         });
+
+
     }
 
     public void BtnEnd() {
