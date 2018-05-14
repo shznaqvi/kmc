@@ -899,7 +899,7 @@
                 android:visibility='@{ka10996.checked ? View.VISIBLE : View.GONE}' />
 
 
-            <!--ka110-->
+            <!--&lt;!&ndash;ka110&ndash;&gt;
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -1075,7 +1075,7 @@
                 android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
                 android:hint="@string/other"
                 android:text='@{ka11096.checked ? ka11096x.getText.toString : ""}'
-                android:visibility='@{ka11096.checked ? View.VISIBLE : View.GONE}' />
+                android:visibility='@{ka11096.checked ? View.VISIBLE : View.GONE}' />-->
 
 
             <!--ka111-->
@@ -1116,77 +1116,88 @@
             </RadioGroup>
 
 
-            <!--ka112-->
-            <TextView
+            <LinearLayout
+                android:id="@+id/fldGrpka111"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/ka112"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
-
-            <EditText
-                android:id="@+id/ka112"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:hint="@string/ka112"
-                android:inputType="number"
-                android:maxLength="2" />
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
 
 
-            <!--ka113-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_weight="1"
-                android:background="@color/pink_100"
-                android:text="@string/ka113"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/colorPrimaryDark" />
+                <!--ka112-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/ka112"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/white" />
 
-            <RadioGroup
-                android:id="@+id/ka113"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_weight="1.5">
-
-                <RadioButton
-                    android:id="@+id/ka113a"
+                <EditText
+                    android:id="@+id/ka112"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
-                    android:layout_weight="1"
-                    android:text="@string/ka113a" />
+                    android:hint="@string/ka112"
+                    android:inputType="number"
+                    android:maxLength="2" />
 
-                <RadioButton
-                    android:id="@+id/ka113b"
+
+                <!--ka113-->
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
+                    android:layout_marginTop="16dp"
                     android:layout_weight="1"
-                    android:text="@string/ka113b" />
+                    android:background="@color/pink_100"
+                    android:text="@string/ka113"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/colorPrimaryDark" />
 
-                <RadioButton
-                    android:id="@+id/ka113c"
+                <RadioGroup
+                    android:id="@+id/ka113"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:layout_weight="1"
-                    android:text="@string/ka113c" />
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="1.5">
 
-                <RadioButton
-                    android:id="@+id/ka113d"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:layout_weight="1"
-                    android:text="@string/ka113d" />
+                    <RadioButton
+                        android:id="@+id/ka113a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="1"
+                        android:text="@string/ka113a" />
 
-            </RadioGroup>
+                    <RadioButton
+                        android:id="@+id/ka113b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="1"
+                        android:text="@string/ka113b" />
+
+                    <RadioButton
+                        android:id="@+id/ka113c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="1"
+                        android:text="@string/ka113c" />
+
+                    <RadioButton
+                        android:id="@+id/ka113d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="1"
+                        android:text="@string/ka113d" />
+
+                </RadioGroup>
+
+            </LinearLayout>
 
 
             <!--ka114-->
@@ -1227,91 +1238,102 @@
             </RadioGroup>
 
 
-            <!--ka115-->
-            <TextView
+            <LinearLayout
+                android:id="@+id/fldGrpka114"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_weight="1"
-                android:background="@color/pink_100"
-                android:text="@string/ka115"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/colorPrimaryDark" />
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
 
-            <RadioGroup
-                android:id="@+id/ka115"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_weight="1.5">
 
-                <RadioButton
-                    android:id="@+id/ka115a"
+                <!--ka115-->
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
+                    android:layout_marginTop="16dp"
                     android:layout_weight="1"
-                    android:text="@string/ka115a" />
+                    android:background="@color/pink_100"
+                    android:text="@string/ka115"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/colorPrimaryDark" />
 
-                <RadioButton
-                    android:id="@+id/ka115b"
+                <RadioGroup
+                    android:id="@+id/ka115"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:layout_weight="1"
-                    android:text="@string/ka115b" />
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="1.5">
 
-                <RadioButton
-                    android:id="@+id/ka115c"
+                    <RadioButton
+                        android:id="@+id/ka115a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="1"
+                        android:text="@string/ka115a" />
+
+                    <RadioButton
+                        android:id="@+id/ka115b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="1"
+                        android:text="@string/ka115b" />
+
+                    <RadioButton
+                        android:id="@+id/ka115c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="1"
+                        android:text="@string/ka115c" />
+
+                    <RadioButton
+                        android:id="@+id/ka115d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="1"
+                        android:text="@string/ka115d" />
+
+                    <RadioButton
+                        android:id="@+id/ka115e"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="1"
+                        android:text="@string/ka115e" />
+
+                    <RadioButton
+                        android:id="@+id/ka115f"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="1"
+                        android:text="@string/ka115f" />
+
+                    <RadioButton
+                        android:id="@+id/ka11596"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="1"
+                        android:text="@string/other" />
+
+                </RadioGroup>
+
+                <EditText
+                    android:id="@+id/ka11596x"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:layout_weight="1"
-                    android:text="@string/ka115c" />
+                    android:layout_marginTop="5dp"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                    android:hint="@string/other"
+                    android:text='@{ka11596.checked ? ka11596x.getText.toString : ""}'
+                    android:visibility='@{ka11596.checked ? View.VISIBLE : View.GONE}' />
 
-                <RadioButton
-                    android:id="@+id/ka115d"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:layout_weight="1"
-                    android:text="@string/ka115d" />
-
-                <RadioButton
-                    android:id="@+id/ka115e"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:layout_weight="1"
-                    android:text="@string/ka115e" />
-
-                <RadioButton
-                    android:id="@+id/ka115f"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:layout_weight="1"
-                    android:text="@string/ka115f" />
-
-                <RadioButton
-                    android:id="@+id/ka11596"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:layout_weight="1"
-                    android:text="@string/other" />
-
-            </RadioGroup>
-
-            <EditText
-                android:id="@+id/ka11596x"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                android:hint="@string/other"
-                android:text='@{ka11596.checked ? ka11596x.getText.toString : ""}'
-                android:visibility='@{ka11596.checked ? View.VISIBLE : View.GONE}' />
+            </LinearLayout>
 
 
             <!--ka116-->
@@ -1497,24 +1519,34 @@
             </RadioGroup>
 
 
-            <!--ka118-->
-            <TextView
+            <LinearLayout
+                android:id="@+id/fldGrpka117"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/ka118"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
 
-            <EditText
-                android:id="@+id/ka118"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:digits="0123456789"
-                android:hint="@string/ka118"
-                android:maxLength="2" />
+                <!--ka118-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/ka118"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/white" />
+
+                <EditText
+                    android:id="@+id/ka118"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:digits="0123456789"
+                    android:hint="@string/ka118"
+                    android:maxLength="2" />
+
+            </LinearLayout>
 
 
             <!--ka119-->
@@ -1669,40 +1701,50 @@
             </RadioGroup>
 
 
-            <!--ka123-->
-            <TextView
+            <LinearLayout
+                android:id="@+id/fldGrpka122"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/ka123"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
 
-            <EditText
-                android:id="@+id/ka123a"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:digits="0123456789"
-                android:hint="@string/ka123acr"
-                android:maxLength="3" />
+                <!--ka123-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/ka123"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/white" />
 
-            <EditText
-                android:id="@+id/ka123k"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:digits="0123456789"
-                android:hint="@string/ka123can"
-                android:maxLength="3" />
+                <EditText
+                    android:id="@+id/ka123a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:digits="0123456789"
+                    android:hint="@string/ka123acr"
+                    android:maxLength="3" />
 
-            <CheckBox
-                android:id="@+id/ka12398"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/dkn" />
+                <EditText
+                    android:id="@+id/ka123k"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:digits="0123456789"
+                    android:hint="@string/ka123can"
+                    android:maxLength="3" />
+
+                <CheckBox
+                    android:id="@+id/ka12398"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/dkn" />
+
+            </LinearLayout>
 
 
             <!--ka12401-->
@@ -2133,8 +2175,7 @@
                     android:background="#1ed61e"
                     android:onClick="@{() -> callback.BtnContinue()}"
                     android:text="@string/nextSection"
-                    android:textColor="@color/white"
-                  />
+                    android:textColor="@color/white" />
 
             </LinearLayout>
 

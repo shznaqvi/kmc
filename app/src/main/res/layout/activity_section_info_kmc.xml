@@ -94,6 +94,22 @@
 
             </LinearLayout>
 
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/cra02" />
+
+            <EditText
+                android:id="@+id/cra02"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="0123456789"
+                android:hint="@string/cra02"
+                android:inputType="number"
+                android:maxLength="5" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -109,21 +125,50 @@
                 android:inputType="number"
                 android:maxLength="5" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/cra04" />
+
+            <EditText
+                android:id="@+id/cra04"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="0123456789"
+                android:hint="@string/cra04"
+                android:inputType="number"
+                android:maxLength="3" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="@string/cra25" />
+                android:text="@string/cra05" />
 
             <EditText
-                android:id="@+id/cra25"
+                android:id="@+id/cra05"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                android:hint="@string/cra05"
+                android:inputType="textCapWords"
+                android:maxLength="50" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/cra06" />
+
+            <EditText
+                android:id="@+id/cra06"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:digits="0123456789"
-                android:hint="@string/cra25"
+                android:hint="@string/cra06"
                 android:inputType="number"
-                android:maxLength="3" />
+                android:maxLength="2" />
 
 
             <LinearLayout
@@ -148,6 +193,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
                         android:layout_weight="1"
+                        android:onClick="@{() -> callback.BtnContinue()}"
                         android:text="@string/nextSection"
                         android:textColor="@android:color/holo_green_light"
                         android:textSize="24sp" />
@@ -158,6 +204,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
                         android:layout_weight="1"
+                        android:onClick="@{() -> callback.BtnEnd()}"
                         android:text="@string/endForm"
                         android:textColor="@android:color/holo_red_light"
                         android:textSize="24sp"
