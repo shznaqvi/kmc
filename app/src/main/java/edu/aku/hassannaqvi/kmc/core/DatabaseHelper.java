@@ -65,7 +65,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             FormsTable.COLUMN_FORMDATE + " TEXT," +
             FormsTable.COLUMN_USER + " TEXT," +
             FormsTable.COLUMN_GPSELEV + " TEXT," +
+            FormsTable.COLUMN_SINFO + " TEXT," +
             FormsTable.COLUMN_SA1 + " TEXT," +
+            FormsTable.COLUMN_SB1 + " TEXT," +
+            FormsTable.COLUMN_SB2 + " TEXT," +
             FormsTable.COLUMN_SA4 + " TEXT," +
             FormsTable.COLUMN_SA5 + " TEXT," +
             FormsTable.COLUMN_SB4 + " TEXT," +
@@ -544,7 +547,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_GPSELEV, fc.getGpsElev());
         values.put(FormsTable.COLUMN_ISTATUS, fc.getIstatus());
         values.put(FormsTable.COLUMN_ISTATUS88x, fc.getIstatus88x());
+        values.put(FormsTable.COLUMN_SINFO, fc.getsInfo());
         values.put(FormsTable.COLUMN_SA1, fc.getsA1());
+        values.put(FormsTable.COLUMN_SB1, fc.getsB1());
+        values.put(FormsTable.COLUMN_SB2, fc.getsB2());
         values.put(FormsTable.COLUMN_SA4, fc.getsA4());
         values.put(FormsTable.COLUMN_SA5, fc.getsA5());
         values.put(FormsTable.COLUMN_SB4, fc.getsB4());
@@ -1477,6 +1483,27 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return alc;
         }
     }
+
+
+    // mwra - uPDATE
+    public int updateSB1() {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+// New value for one column
+        ContentValues values = new ContentValues();
+        values.put(FormsTable.COLUMN_SB1, MainApp.mc.getsB1());
+
+// Which row to update, based on the ID
+        String selection = FormsTable._ID + " = ?";
+        String[] selectionArgs = {String.valueOf(MainApp.mc.get_ID())};
+
+        int count = db.update(FormsTable.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+        return count;
+    }
+
 
     // mwra - uPDATE
     public int updateSB2() {

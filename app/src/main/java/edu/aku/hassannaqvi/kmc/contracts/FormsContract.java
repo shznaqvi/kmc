@@ -25,6 +25,8 @@ public class FormsContract {
 
     private String sInfo = "";    // Info Section
     private String sA1 = "";
+    private String sB1 = "";
+    private String sB2 = "";
     private String sA4 = ""; // sA4
     private String sA5 = ""; //
     private String sB4 = "";
@@ -57,6 +59,9 @@ public class FormsContract {
         this.gpsElev = jsonObject.getString(FormsTable.COLUMN_GPSELEV);
         this.sInfo = jsonObject.getString(FormsTable.COLUMN_SINFO);
         this.sA1 = jsonObject.getString(FormsTable.COLUMN_SA1);
+        this.sB1 = jsonObject.getString(FormsTable.COLUMN_SB1);
+        this.sB2 = jsonObject.getString(FormsTable.COLUMN_SB2);
+
         this.sA4 = jsonObject.getString(FormsTable.COLUMN_SA4);
         this.sA5 = jsonObject.getString(FormsTable.COLUMN_SA5);
         this.sB4 = jsonObject.getString(FormsTable.COLUMN_SB4);
@@ -87,6 +92,11 @@ public class FormsContract {
 
         this.sInfo = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SINFO));
         this.sA1 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SA1));
+
+        this.sB1 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SB1));
+        this.sB2 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SB2));
+
+
         this.sA4 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SA4));
         this.sA5 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SA5));
         this.sB4 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SB4));
@@ -130,6 +140,18 @@ public class FormsContract {
         if (!this.sA1.equals("")) {
 
             json.put(FormsTable.COLUMN_SA1, this.sA1.equals("") ? JSONObject.NULL : new JSONObject(this.sA1));
+        }
+
+
+        if (!this.sB1.equals("")) {
+
+            json.put(FormsTable.COLUMN_SB1, this.sB1.equals("") ? JSONObject.NULL : new JSONObject(this.sB1));
+        }
+
+
+        if (!this.sB2.equals("")) {
+
+            json.put(FormsTable.COLUMN_SB2, this.sB2.equals("") ? JSONObject.NULL : new JSONObject(this.sB2));
         }
 
 
@@ -249,6 +271,24 @@ public class FormsContract {
 
     public void setsA1(String sA1) {
         this.sA1 = sA1;
+    }
+
+
+    public String getsB2() {
+        return sB2;
+    }
+
+    public void setsB2(String sB2) {
+        this.sB2 = sB2;
+    }
+
+
+    public String getsB1() {
+        return sB1;
+    }
+
+    public void setsB1(String sB1) {
+        this.sB1 = sB1;
     }
 
 
@@ -381,6 +421,8 @@ public class FormsContract {
 
         public static final String COLUMN_SINFO = "sinfo";
         public static final String COLUMN_SA1 = "sa1";
+        public static final String COLUMN_SB1 = "sb1";
+        public static final String COLUMN_SB2 = "sb2";
         public static final String COLUMN_SA4 = "sa4";
         public static final String COLUMN_SA5 = "sa5";
         public static final String COLUMN_SB4 = "sb4";

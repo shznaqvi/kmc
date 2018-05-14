@@ -342,7 +342,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
-                    android:text="@string/other" />
+                    android:hint="@string/other" />
 
             </RadioGroup>
 
@@ -1726,6 +1726,7 @@
                     android:layout_marginBottom="1dp"
                     android:digits="0123456789"
                     android:hint="@string/ka123acr"
+                    android:inputType="number"
                     android:maxLength="3" />
 
                 <EditText
@@ -1735,6 +1736,7 @@
                     android:layout_marginBottom="1dp"
                     android:digits="0123456789"
                     android:hint="@string/ka123can"
+                    android:inputType="number"
                     android:maxLength="3" />
 
                 <CheckBox
@@ -1764,6 +1766,7 @@
                 android:layout_marginBottom="1dp"
                 android:digits="0123456789"
                 android:hint="@string/ka12401"
+                android:inputType="number"
                 android:maxLength="2" />
 
 
@@ -1784,6 +1787,7 @@
                 android:layout_marginBottom="1dp"
                 android:digits="0123456789"
                 android:hint="@string/ka12402"
+                android:inputType="number"
                 android:maxLength="2" />
 
 
@@ -1804,6 +1808,7 @@
                 android:layout_marginBottom="1dp"
                 android:digits="0123456789"
                 android:hint="@string/ka12403"
+                android:inputType="number"
                 android:maxLength="2" />
 
 
@@ -1824,6 +1829,7 @@
                 android:layout_marginBottom="1dp"
                 android:digits="0123456789"
                 android:hint="@string/ka12404"
+                android:inputType="number"
                 android:maxLength="2" />
 
 
@@ -1844,6 +1850,7 @@
                 android:layout_marginBottom="1dp"
                 android:digits="0123456789"
                 android:hint="@string/ka12405"
+                android:inputType="number"
                 android:maxLength="2" />
 
 
@@ -1864,6 +1871,7 @@
                 android:layout_marginBottom="1dp"
                 android:digits="0123456789"
                 android:hint="@string/ka12406"
+                android:inputType="number"
                 android:maxLength="2" />
 
 
@@ -1884,6 +1892,7 @@
                 android:layout_marginBottom="1dp"
                 android:digits="0123456789"
                 android:hint="@string/ka12407"
+                android:inputType="number"
                 android:maxLength="2" />
 
 
@@ -1904,6 +1913,7 @@
                 android:layout_marginBottom="1dp"
                 android:digits="0123456789"
                 android:hint="@string/ka12408"
+                android:inputType="number"
                 android:maxLength="2" />
 
 
@@ -1924,6 +1934,7 @@
                 android:layout_marginBottom="1dp"
                 android:digits="0123456789"
                 android:hint="@string/ka12409"
+                android:inputType="number"
                 android:maxLength="2" />
 
 
@@ -1944,6 +1955,7 @@
                 android:layout_marginBottom="1dp"
                 android:digits="0123456789"
                 android:hint="@string/ka12410"
+                android:inputType="number"
                 android:maxLength="2" />
 
 
@@ -1964,6 +1976,7 @@
                 android:layout_marginBottom="1dp"
                 android:digits="0123456789"
                 android:hint="@string/ka12411"
+                android:inputType="number"
                 android:maxLength="2" />
 
 
@@ -1984,6 +1997,7 @@
                 android:layout_marginBottom="1dp"
                 android:digits="0123456789"
                 android:hint="@string/ka12412"
+                android:inputType="number"
                 android:maxLength="2" />
 
 
@@ -2004,6 +2018,7 @@
                 android:layout_marginBottom="1dp"
                 android:digits="0123456789"
                 android:hint="@string/ka12413"
+                android:inputType="number"
                 android:maxLength="2" />
 
 
@@ -2024,6 +2039,7 @@
                 android:layout_marginBottom="1dp"
                 android:digits="0123456789"
                 android:hint="@string/ka12414"
+                android:inputType="number"
                 android:maxLength="2" />
 
 
@@ -2044,6 +2060,7 @@
                 android:layout_marginBottom="1dp"
                 android:digits="0123456789"
                 android:hint="@string/ka12415"
+                android:inputType="number"
                 android:maxLength="2" />
 
 
@@ -2064,6 +2081,7 @@
                 android:layout_marginBottom="1dp"
                 android:digits="0123456789"
                 android:hint="@string/ka12416"
+                android:inputType="number"
                 android:maxLength="2" />
 
 
@@ -2084,6 +2102,7 @@
                 android:layout_marginBottom="1dp"
                 android:digits="0123456789"
                 android:hint="@string/ka12417"
+                android:inputType="number"
                 android:maxLength="2" />
 
 
@@ -2104,6 +2123,7 @@
                 android:layout_marginBottom="1dp"
                 android:digits="0123456789"
                 android:hint="@string/ka12418"
+                android:inputType="number"
                 android:maxLength="2" />
 
 
@@ -2124,6 +2144,7 @@
                 android:layout_marginBottom="1dp"
                 android:digits="0123456789"
                 android:hint="@string/ka12419"
+                android:inputType="number"
                 android:maxLength="2" />
 
 
@@ -2144,6 +2165,7 @@
                 android:layout_marginBottom="1dp"
                 android:digits="0123456789"
                 android:hint="@string/ka12419"
+                android:inputType="number"
                 android:maxLength="2" />
 
 
