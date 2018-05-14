@@ -24,9 +24,14 @@ public class FormsContract {
     private String sA1 = "";
     private String sB1 = "";
     private String sB2 = "";
-    private String sC1 = "";
+
     private String sC2 = "";
     private String sC3 = "";
+
+    private String sA4 = ""; // sA4
+    private String sA5 = ""; //
+    private String sB4 = "";
+    private String sC1 = "";
     private String sC4 = "";
     private String sC5 = "";
     private String sC6 = "";
@@ -64,6 +69,13 @@ public class FormsContract {
         this.sA1 = jsonObject.getString(FormsTable.COLUMN_SA1);
         this.sB1 = jsonObject.getString(FormsTable.COLUMN_SB1);
         this.sB2 = jsonObject.getString(FormsTable.COLUMN_SB2);
+
+        this.sC2 = jsonObject.getString(FormsTable.COLUMN_SC2);
+        this.sC3 = jsonObject.getString(FormsTable.COLUMN_SC3);
+
+        this.sA4 = jsonObject.getString(FormsTable.COLUMN_SA4);
+        this.sA5 = jsonObject.getString(FormsTable.COLUMN_SA5);
+        this.sB4 = jsonObject.getString(FormsTable.COLUMN_SB4);
         this.sC1 = jsonObject.getString(FormsTable.COLUMN_SC1);
         this.sC2 = jsonObject.getString(FormsTable.COLUMN_SC2);
         this.sC3 = jsonObject.getString(FormsTable.COLUMN_SC3);
@@ -105,6 +117,14 @@ public class FormsContract {
         this.sA1 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SA1));
         this.sB1 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SB1));
         this.sB2 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SB2));
+
+        this.sC2 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SC2));
+        this.sC3 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SC3));
+
+
+        this.sA4 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SA4));
+        this.sA5 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SA5));
+        this.sB4 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SB4));
         this.sC1 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SC1));
         this.sC2 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SC2));
         this.sC3 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SC3));
@@ -162,6 +182,79 @@ public class FormsContract {
         json.put(FormsTable.COLUMN_SE, this.sE == null ? JSONObject.NULL : this.sE);
         json.put(FormsTable.COLUMN_SF, this.sF == null ? JSONObject.NULL : this.sF);
         json.put(FormsTable.COLUMN_COUNT, this.count == null ? JSONObject.NULL : this.count);
+        json.put(FormsTable.COLUMN_GPSELEV, this.gpsElev == null ? JSONObject.NULL : this.gpsElev);
+
+
+        if (!this.sInfo.equals("")) {
+            json.put(FormsTable.COLUMN_SINFO, this.sInfo.equals("") ? JSONObject.NULL : new JSONObject(this.sInfo));
+        }
+
+
+        if (!this.sA1.equals("")) {
+
+            json.put(FormsTable.COLUMN_SA1, this.sA1.equals("") ? JSONObject.NULL : new JSONObject(this.sA1));
+        }
+
+
+        if (!this.sB1.equals("")) {
+
+            json.put(FormsTable.COLUMN_SB1, this.sB1.equals("") ? JSONObject.NULL : new JSONObject(this.sB1));
+        }
+
+
+        if (!this.sB2.equals("")) {
+            json.put(FormsTable.COLUMN_SB2, this.sB2.equals("") ? JSONObject.NULL : new JSONObject(this.sB2));
+        }
+
+
+        if (!this.sC2.equals("")) {
+            json.put(FormsTable.COLUMN_SC2, this.sC2.equals("") ? JSONObject.NULL : new JSONObject(this.sC2));
+        }
+
+
+        if (!this.sC3.equals("")) {
+            json.put(FormsTable.COLUMN_SC3, this.sC3.equals("") ? JSONObject.NULL : new JSONObject(this.sC3));
+        }
+
+
+        if (!this.count.equals("")) {
+
+            json.put(FormsTable.COLUMN_COUNT, this.count.equals("") ? JSONObject.NULL : new JSONObject(this.count));
+        }
+
+
+        /*if (!this.sA4.equals("")) {
+
+            json.put(FormsTable.COLUMN_SA3, this.sA4.equals("") ? JSONObject.NULL : new JSONObject(this.sA4));
+        }
+        if (!this.sA5.equals("")) {
+
+            json.put(FormsTable.COLUMN_SA5, this.sA5.equals("") ? JSONObject.NULL : new JSONObject(this.sA5));
+        }
+        if (!this.sB4.equals("")) {
+
+            json.put(FormsTable.COLUMN_SB4, this.sB4.equals("") ? JSONObject.NULL : new JSONObject(this.sB4));
+        }*/
+
+        if (!this.sD1.equals("")) {
+
+            json.put(FormsTable.COLUMN_SD1, this.sD1 == null ? JSONObject.NULL : new JSONObject(this.sD1));
+        }
+        if (!this.sD2.equals("")) {
+
+            json.put(FormsTable.COLUMN_SD2, this.sD2 == null ? JSONObject.NULL : new JSONObject(this.sD2));
+        }
+        if (!this.sD3.equals("")) {
+
+            json.put(FormsTable.COLUMN_SD3, this.sD3 == null ? JSONObject.NULL : new JSONObject(this.sD3));
+        }
+
+        if (!this.sE.equals("")) {
+
+            json.put(FormsTable.COLUMN_SE, this.sE.equals("") ? JSONObject.NULL : new JSONObject(this.sE));
+        }
+
+
         json.put(FormsTable.COLUMN_GPSLAT, this.gpsLat == null ? JSONObject.NULL : this.gpsLat);
         json.put(FormsTable.COLUMN_GPSLNG, this.gpsLng == null ? JSONObject.NULL : this.gpsLng);
         json.put(FormsTable.COLUMN_GPSDT, this.gpsDT == null ? JSONObject.NULL : this.gpsDT);
@@ -463,6 +556,11 @@ public class FormsContract {
         public static final String COLUMN_SA1 = "sa1";
         public static final String COLUMN_SB1 = "sb1";
         public static final String COLUMN_SB2 = "sb2";
+
+
+        public static final String COLUMN_SA4 = "sa4";
+        public static final String COLUMN_SA5 = "sa5";
+        public static final String COLUMN_SB4 = "sb4";
         public static final String COLUMN_SC1 = "sc1";
         public static final String COLUMN_SC2 = "sc2";
         public static final String COLUMN_SC3 = "sc3";
