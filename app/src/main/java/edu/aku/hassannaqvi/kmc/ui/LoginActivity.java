@@ -59,7 +59,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.kmc.R;
-import edu.aku.hassannaqvi.kmc.contracts.EnumBlockContract;
 import edu.aku.hassannaqvi.kmc.contracts.UCsContract;
 import edu.aku.hassannaqvi.kmc.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc.core.MainApp;
