@@ -78,42 +78,41 @@ public class SectionC1Activity extends AppCompatActivity {
 
                 return validatorClass.EmptyTextBox(this, bi.kc103m, getString(R.string.kc103m));
 
-
             }
-
-            return true;
         }
 
-
-        private void SaveDraft () throws JSONException {
-            Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
-
-            JSONObject sn = new JSONObject();
-
-
-            sn.put("kc101", bi.kc101a.isChecked() ? "1"
-                    : bi.kc101b.isChecked() ? "2"
-                    : bi.kc101c.isChecked() ? "3"
-                    : bi.kc101d.isChecked() ? "4"
-                    : bi.kc101e.isChecked() ? "5"
-                    : bi.kc101f.isChecked() ? "6"
-                    : bi.kc101g.isChecked() ? "7"
-                    : "0");
-
-            sn.put("kc102", bi.kc102a.isChecked() ? "1"
-                    : bi.kc102b.isChecked() ? "2"
-                    : "0");
-
-            sn.put("kc103d", bi.kc103d.getText().toString());
-            sn.put("kc103m", bi.kc103m.getText().toString());
-
-            //MainApp.fc.sets(String.valueOf(sn));
-
-            Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
+        return true;
     }
 
-        private boolean UpdateDB () {
-            DatabaseHelper db = new DatabaseHelper(this);
+    private void SaveDraft() throws JSONException {
+        Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
+
+        JSONObject sn = new JSONObject();
+
+
+        sn.put("kc101", bi.kc101a.isChecked() ? "1"
+                : bi.kc101b.isChecked() ? "2"
+                : bi.kc101c.isChecked() ? "3"
+                : bi.kc101d.isChecked() ? "4"
+                : bi.kc101e.isChecked() ? "5"
+                : bi.kc101f.isChecked() ? "6"
+                : bi.kc101g.isChecked() ? "7"
+                : "0");
+
+        sn.put("kc102", bi.kc102a.isChecked() ? "1"
+                : bi.kc102b.isChecked() ? "2"
+                : "0");
+
+        sn.put("kc103d", bi.kc103d.getText().toString());
+        sn.put("kc103m", bi.kc103m.getText().toString());
+
+        //MainApp.fc.sets(String.valueOf(sn));
+
+        Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
+    }
+
+    private boolean UpdateDB() {
+        DatabaseHelper db = new DatabaseHelper(this);
 
         /*int updcount = db.updateBirthsDeaths();
         if (updcount == 1) {
@@ -124,8 +123,8 @@ public class SectionC1Activity extends AppCompatActivity {
             return false;
         }*/
 
-            return true;
-        }
+        return true;
+    }
 
 
     public void BtnEnd() {
@@ -149,6 +148,7 @@ public class SectionC1Activity extends AppCompatActivity {
             }
         }*/
     }
+
     public void BtnContinue() {
 
 /*        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();

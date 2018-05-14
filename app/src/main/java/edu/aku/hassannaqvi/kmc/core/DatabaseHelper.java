@@ -1511,13 +1511,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 // New value for one column
         ContentValues values = new ContentValues();
-        values.put(MWRATable.COLUMN_SB2, MainApp.mc.getsB2());
+        values.put(FormsTable.COLUMN_SB2, MainApp.mc.getsB2());
 
 // Which row to update, based on the ID
-        String selection = MWRATable._ID + " = ?";
+        String selection = FormsTable._ID + " = ?";
         String[] selectionArgs = {String.valueOf(MainApp.mc.get_ID())};
 
-        int count = db.update(MWRATable.TABLE_NAME,
+        int count = db.update(FormsTable.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);
