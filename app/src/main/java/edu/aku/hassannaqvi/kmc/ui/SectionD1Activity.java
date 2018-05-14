@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.kmc.ui;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
@@ -96,7 +97,7 @@ public class SectionD1Activity extends AppCompatActivity {
 
                 finish();
 
-//                startActivity(new Intent(this, SectionA2Activity.class));
+                startActivity(new Intent(this, SectionD2Activity.class));
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
@@ -153,13 +154,10 @@ public class SectionD1Activity extends AppCompatActivity {
     private void SaveDraft() throws JSONException {
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
-        JSONObject sd0 = new JSONObject();
-
-        sd0.put("kd001d", bi.kd001d.getText().toString());
-        sd0.put("kd001m", bi.kd001m.getText().toString());
-        MainApp.fc.setsD0(String.valueOf(sd0));
 
         JSONObject sd1 = new JSONObject();
+        sd1.put("kd001d", bi.kd001d.getText().toString());
+        sd1.put("kd001m", bi.kd001m.getText().toString());
         sd1.put("kd101", bi.kd101a.isChecked() ? "1" : bi.kd101b.isChecked() ? "2" : "0");
         sd1.put("kd102",
                 bi.kd102a.isChecked() ? "1" :
