@@ -55,7 +55,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + " );";
     public static final String DATABASE_NAME = "kmc.db";
     public static final String DB_NAME = DATABASE_NAME.replace(".", "_copy.");
-    public static final String PROJECT_NAME = "NNS-2018";
+    public static final String PROJECT_NAME = "KMC-2018-2020";
     private static final int DATABASE_VERSION = 1;
     private static final String SQL_CREATE_FORMS = "CREATE TABLE "
             + FormsTable.TABLE_NAME + "("
@@ -69,6 +69,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             FormsTable.COLUMN_SA4 + " TEXT," +
             FormsTable.COLUMN_SA5 + " TEXT," +
             FormsTable.COLUMN_SB4 + " TEXT," +
+            FormsTable.COLUMN_SE + " TEXT," +
             FormsTable.COLUMN_ISTATUS + " TEXT," +
             FormsTable.COLUMN_ISTATUS88x + " TEXT," +
             FormsTable.COLUMN_GPSLAT + " TEXT," +
@@ -547,6 +548,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_SA4, fc.getsA4());
         values.put(FormsTable.COLUMN_SA5, fc.getsA5());
         values.put(FormsTable.COLUMN_SB4, fc.getsB4());
+        values.put(FormsTable.COLUMN_SE, fc.getsE());
         values.put(FormsTable.COLUMN_GPSLAT, fc.getGpsLat());
         values.put(FormsTable.COLUMN_GPSLNG, fc.getGpsLng());
         values.put(FormsTable.COLUMN_GPSDATE, fc.getGpsDT());
