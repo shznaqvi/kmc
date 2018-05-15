@@ -3,20 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layoutDirection="rtl"
     tools:context=".ui.SectionA1Activity">
-
     <data>
-
         <import type="android.view.View" />
-
         <variable
             name="callback"
             type="edu.aku.hassannaqvi.kmc.ui.SectionA1Activity" />
     </data>
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -342,7 +337,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
-                    android:hint="@string/other" />
+                    android:text="@string/other" />
 
             </RadioGroup>
 

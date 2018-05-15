@@ -186,7 +186,7 @@ public class SectionInfoKmcActivity extends Activity {
 
         MainApp.fc.set_ID(String.valueOf(updcount));
 
-        if (updcount < 0) {
+        if (updcount > 0) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
 
             MainApp.fc.setUID(

@@ -115,6 +115,7 @@ public class SectionA1Activity extends AppCompatActivity {
 
     private void SaveDraft() throws JSONException {
 
+
         JSONObject sA1 = new JSONObject();
 
         sA1.put("ka101", bi.ka101a.isChecked() ? "1"
@@ -714,7 +715,7 @@ public class SectionA1Activity extends AppCompatActivity {
 
         int updcount = db.updateSA1();
 
-        if (updcount == 1) {
+        if (updcount >0) {
             //Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {

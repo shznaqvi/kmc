@@ -283,7 +283,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(FormsTable.COLUMN_PROJECTNAME, fc.getProjectName());
         values.put(FormsTable.COLUMN_SURVEYTYPE, fc.getSurveyType());
-        values.put(FormsTable.COLUMN__ID, fc.get_ID());
         values.put(FormsTable.COLUMN__UID, fc.getUID());
         values.put(FormsTable.COLUMN_FORMDATE, fc.getFormDate());
         values.put(FormsTable.COLUMN_USER, fc.getUser());

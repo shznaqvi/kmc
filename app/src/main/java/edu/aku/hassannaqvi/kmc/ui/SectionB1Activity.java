@@ -11,6 +11,9 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import edu.aku.hassannaqvi.kmc.R;
 import edu.aku.hassannaqvi.kmc.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc.core.MainApp;
@@ -20,6 +23,7 @@ import edu.aku.hassannaqvi.kmc.validation.validatorClass;
 public class SectionB1Activity extends AppCompatActivity {
 
     ActivitySectionB1Binding bi;
+    String dateToday = new SimpleDateFormat("dd/MM/yyyy").format(new Date().getTime());
 
 
     @Override
@@ -27,7 +31,10 @@ public class SectionB1Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_b1);
         bi.setCallback(this);
-
+        bi.kb204.setManager(getSupportFragmentManager());
+        bi.kb204.setMaxDate(dateToday);
+        bi.kb205.setManager(getSupportFragmentManager());
+        bi.kb205.setMinDate(dateToday);
         setupView();
     }
 
