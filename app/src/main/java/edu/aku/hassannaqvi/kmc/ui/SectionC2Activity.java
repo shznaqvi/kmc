@@ -2,10 +2,9 @@ package edu.aku.hassannaqvi.kmc.ui;
 
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.CompoundButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -324,9 +323,7 @@ public class SectionC2Activity extends AppCompatActivity {
 
         if (!bi.kc21498.isChecked()) {
 
-            if (!validatorClass.EmptyTextBox(this, bi.kc214, getString(R.string.kc214))) {
-                return false;
-            }
+            return validatorClass.EmptyTextBox(this, bi.kc214, getString(R.string.kc214));
         }
 
         return true;
@@ -369,8 +366,8 @@ public class SectionC2Activity extends AppCompatActivity {
 
                 finish();
 
-                //startActivity(new Intent(this, SectionC3Activity.class));
-                startActivity(new Intent(this, MainActivity.class));
+                startActivity(new Intent(this, SectionC3Activity.class));
+                //startActivity(new Intent(this, MainActivity.class));
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
@@ -380,7 +377,7 @@ public class SectionC2Activity extends AppCompatActivity {
 
 
     private boolean UpdateDB() {
-        /*//Long rowId;
+        //Long rowId;
         DatabaseHelper db = new DatabaseHelper(this);
 
         int updcount = db.updateSC2();
@@ -391,8 +388,7 @@ public class SectionC2Activity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }*/
+        }
 
-        return true;
     }
 }

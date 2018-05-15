@@ -319,7 +319,7 @@ public class SectionC6Activity extends AppCompatActivity {
     }
 
     private boolean UpdateDB() {
-        /*DatabaseHelper db = new DatabaseHelper(this);
+        DatabaseHelper db = new DatabaseHelper(this);
 
         int updcount = db.updateSC6();
         if (updcount == 1) {
@@ -328,9 +328,8 @@ public class SectionC6Activity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }*/
+        }
 
-        return true;
     }
 
 
@@ -370,8 +369,8 @@ public class SectionC6Activity extends AppCompatActivity {
 
                 finish();
 
-//                startActivity(new Intent(this, SectionA2Activity.class));
-                startActivity(new Intent(this, MainActivity.class));
+                startActivity(new Intent(this, SectionD1Activity.class));
+                //                startActivity(new Intent(this, MainActivity.class));
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();

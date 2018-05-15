@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -82,7 +80,6 @@ public class SectionB1Activity extends AppCompatActivity {
                     bi.kb202w.setText(null);
                     bi.kb202m.setText(null);
 
-
                     bi.fldGrpkb202.setVisibility(View.GONE);
                     bi.fldGrpkb201.setVisibility(View.VISIBLE);
 
@@ -131,11 +128,9 @@ public class SectionB1Activity extends AppCompatActivity {
             return false;
         }
 
-
         if (!validatorClass.EmptyRadioButton(this, bi.kb201, bi.kb201a, getString(R.string.kb201))) {
             return false;
         }
-
 
         if (!bi.kb201b.isChecked()) {
 
@@ -150,20 +145,15 @@ public class SectionB1Activity extends AppCompatActivity {
                 }
             }
 
-
             if (!validatorClass.EmptyRadioButton(this, bi.kb203, bi.kb203a, getString(R.string.kb203))) {
                 return false;
             }
-
 
             if (!validatorClass.EmptyTextBox(this, bi.kb204, getString(R.string.kb204))) {
                 return false;
             }
 
-
-            if (!validatorClass.EmptyTextBox(this, bi.kb205, getString(R.string.kb205))) {
-                return false;
-            }
+            return validatorClass.EmptyTextBox(this, bi.kb205, getString(R.string.kb205));
         }
 
         return true;
@@ -206,8 +196,8 @@ public class SectionB1Activity extends AppCompatActivity {
 
                 finish();
 
-                //startActivity(new Intent(this, SectionB2Activity.class));
-                startActivity(new Intent(this, MainActivity.class));
+                startActivity(new Intent(this, SectionB2Activity.class));
+                //startActivity(new Intent(this, MainActivity.class));
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
@@ -218,7 +208,7 @@ public class SectionB1Activity extends AppCompatActivity {
 
     private boolean UpdateDB() {
 
-       /* //Long rowId;
+        //Long rowId;
         DatabaseHelper db = new DatabaseHelper(this);
 
         int updcount = db.updateSB1();
@@ -229,9 +219,8 @@ public class SectionB1Activity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }*/
+        }
 
-        return true;
     }
 
 }

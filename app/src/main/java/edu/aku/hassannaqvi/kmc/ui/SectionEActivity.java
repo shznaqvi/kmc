@@ -18,8 +18,8 @@ import java.util.Date;
 import edu.aku.hassannaqvi.kmc.R;
 import edu.aku.hassannaqvi.kmc.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc.core.MainApp;
-import edu.aku.hassannaqvi.kmc.validation.validatorClass;
 import edu.aku.hassannaqvi.kmc.databinding.ActivitySectionEBinding;
+import edu.aku.hassannaqvi.kmc.validation.validatorClass;
 
 public class SectionEActivity extends AppCompatActivity {
 
@@ -510,12 +510,7 @@ public class SectionEActivity extends AppCompatActivity {
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, bi.ke424, bi.ke424a, getString(R.string.ke424))) {
-            return false;
-        }
-
-
-        return true;
+        return validatorClass.EmptyRadioButton(this, bi.ke424, bi.ke424a, getString(R.string.ke424));
     }
 
 
@@ -770,8 +765,8 @@ public class SectionEActivity extends AppCompatActivity {
 
                 finish();
 
-                //startActivity(new Intent(this, SectionA2Activity.class));
-                startActivity(new Intent(this, MainActivity.class));
+                startActivity(new Intent(this, SectionFActivity.class));
+                //startActivity(new Intent(this, MainActivity.class));
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
@@ -782,20 +777,19 @@ public class SectionEActivity extends AppCompatActivity {
 
     private boolean UpdateDB() {
 
-       /* //Long rowId;
+        //Long rowId;
         DatabaseHelper db = new DatabaseHelper(this);
 
         int updcount = db.updateSE();
 
         if (updcount == 1) {
-            //Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }*/
+        }
 
-        return true;
     }
 
 

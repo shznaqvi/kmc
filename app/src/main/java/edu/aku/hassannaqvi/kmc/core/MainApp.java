@@ -1,11 +1,7 @@
 package edu.aku.hassannaqvi.kmc.core;
 
-import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.Application;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.location.Location;
 import android.location.LocationListener;
@@ -20,8 +16,6 @@ import java.util.Calendar;
 import java.util.Date;
 
 import edu.aku.hassannaqvi.kmc.contracts.FormsContract;
-import edu.aku.hassannaqvi.kmc.ui.EndingActivity;
-import edu.aku.hassannaqvi.kmc.ui.MotherEndingActivity;
 
 /**
  * Created by hassan.naqvi on 11/30/2016.
@@ -68,174 +62,6 @@ public class MainApp extends Application {
 
     protected static LocationManager locationManager;
 
-    public static int monthsBetweenDates(Date startDate, Date endDate) {
-
-        Calendar start = Calendar.getInstance();
-        start.setTime(startDate);
-
-        Calendar end = Calendar.getInstance();
-        end.setTime(endDate);
-
-        int monthsBetween = 0;
-        int dateDiff = end.get(Calendar.DAY_OF_MONTH) - start.get(Calendar.DAY_OF_MONTH);
-
-        if (dateDiff < 0) {
-            int borrrow = end.getActualMaximum(Calendar.DAY_OF_MONTH);
-            dateDiff = (end.get(Calendar.DAY_OF_MONTH) + borrrow) - start.get(Calendar.DAY_OF_MONTH);
-            monthsBetween--;
-
-            if (dateDiff > 0) {
-                monthsBetween++;
-            }
-        }
-
-        monthsBetween += end.get(Calendar.MONTH) - start.get(Calendar.MONTH);
-        monthsBetween += (end.get(Calendar.YEAR) - start.get(Calendar.YEAR)) * 12;
-        return monthsBetween;
-    }
-
-    public static long ageInMonths(String year, String month) {
-        long ageInMonths = (Integer.valueOf(year) * 12) + Integer.valueOf(month);
-        return ageInMonths;
-    }
-
-    public static void errorCheck(final Context context, String error) {
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
-                context);
-        alertDialogBuilder
-                .setMessage(error)
-                .setCancelable(false)
-                .setPositiveButton("Ok",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog,
-                                                int id) {
-                                dialog.cancel();
-                            }
-                        });
-        AlertDialog alert = alertDialogBuilder.create();
-        alert.show();
-    }
-
-    public static void errorCountDialog(final Context context, final Activity activity, String error) {
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
-                context);
-        alertDialogBuilder
-                .setMessage(error)
-                .setCancelable(false)
-                .setPositiveButton("Discard",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog,
-                                                int id) {
-//                                MainApp.memFlag--;
-                                activity.finish();
-                            }
-                        });
-        alertDialogBuilder.setNegativeButton("Cancel",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.cancel();
-                    }
-                });
-        AlertDialog alert = alertDialogBuilder.create();
-        alert.show();
-    }
-
-    public static String getTagName(Context mContext) {
-        SharedPreferences sharedPref = mContext.getSharedPreferences("tagName", MODE_PRIVATE);
-        return sharedPref.getString("tagName", null);
-    }
-
-    public static void finishActivity(final Context context, final Activity activity) {
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
-                context);
-        alertDialogBuilder
-                .setMessage("Do you want to Exit??")
-                .setCancelable(false)
-                .setPositiveButton("Yes",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog,
-                                                int id) {
-                                activity.finish();
-                            }
-                        });
-        alertDialogBuilder.setNegativeButton("No",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.cancel();
-                    }
-                });
-        AlertDialog alert = alertDialogBuilder.create();
-        alert.show();
-    }
-
-    public static void endActivityMother(final Context context, final Activity activity, final Boolean flag) {
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
-                context);
-        alertDialogBuilder
-                .setMessage("Do you want to Exit??")
-                .setCancelable(false)
-                .setPositiveButton("Yes",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog,
-                                                int id) {
-
-//                                SectionC1Activity.counter = 1;
-//                                SectionC1Activity.counterPerMom = 0;
-
-                                activity.finish();
-                                Intent end_intent = new Intent(context, MotherEndingActivity.class);
-                                end_intent.putExtra("complete", flag);
-                                context.startActivity(end_intent);
-                            }
-                        });
-        alertDialogBuilder.setNegativeButton("No",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.cancel();
-                    }
-                });
-        AlertDialog alert = alertDialogBuilder.create();
-        alert.show();
-    }
-
-    public static void endActivity(final Context context, final Activity activity) {
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
-                context);
-        alertDialogBuilder
-                .setMessage("Do you want to Exit??")
-                .setCancelable(false)
-                .setPositiveButton("Yes",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog,
-                                                int id) {
-                                activity.finish();
-                                Intent end_intent = new Intent(context, EndingActivity.class);
-                                end_intent.putExtra("complete", false);
-                                context.startActivity(end_intent);
-                            }
-                        });
-        alertDialogBuilder.setNegativeButton("No",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.cancel();
-                    }
-                });
-        AlertDialog alert = alertDialogBuilder.create();
-        alert.show();
-    }
-
-    public static String convertDateFormat(String dateStr) {
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-        try {
-            Date d = sdf.parse(dateStr);
-            return new SimpleDateFormat("dd/MM/yyyy").format(d);
-        } catch (ParseException ex) {
-            ex.printStackTrace();
-        }
-
-        return "";
-    }
-
     public static Calendar getCalendarDate(String value) {
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
         Calendar calendar = Calendar.getInstance();
@@ -248,15 +74,6 @@ public class MainApp extends Application {
             e.printStackTrace();
         }
         return calendar;
-    }
-
-    public static long ageInYearByDOB(String dateStr) {
-        Calendar cal = getCalendarDate(dateStr);
-        Date dob = cal.getTime();
-        Date today = new Date();
-        Long diff = today.getTime() - dob.getTime();
-        long ageInYears = (diff / (24 * 60 * 60 * 1000)) / 365;
-        return ageInYears;
     }
 
     @Override
@@ -348,30 +165,6 @@ public class MainApp extends Application {
             return provider2 == null;
         }
         return provider1.equals(provider2);
-    }
-
-    public static class deadMemberClass {
-
-        int position;
-        String DSSId;
-
-        public deadMemberClass(int i, String s) {
-            position = i;
-            DSSId = s;
-        }
-
-        public int getPosition() {
-            return position;
-        }
-
-        public void setPosition(int i) {
-            position = i;
-        }
-
-        public void setDSSId(String id) {
-            DSSId = id;
-        }
-
     }
 
     public class GPSLocationListener implements LocationListener {

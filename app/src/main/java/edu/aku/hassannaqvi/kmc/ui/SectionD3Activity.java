@@ -5,7 +5,6 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.CompoundButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -167,9 +166,7 @@ public class SectionD3Activity extends AppCompatActivity {
 
         if (bi.kd30596.isChecked()) {
 
-            if (!validatorClass.EmptyTextBox(this, bi.kd30596x, getString(R.string.other))) {
-                return false;
-            }
+            return validatorClass.EmptyTextBox(this, bi.kd30596x, getString(R.string.other));
         }
 
         return true;
@@ -213,8 +210,8 @@ public class SectionD3Activity extends AppCompatActivity {
 
                 finish();
 
-                //startActivity(new Intent(this, SectionEActivity.class));
-                startActivity(new Intent(this, MainActivity.class));
+                startActivity(new Intent(this, SectionEActivity.class));
+                //startActivity(new Intent(this, MainActivity.class));
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
@@ -225,7 +222,7 @@ public class SectionD3Activity extends AppCompatActivity {
 
     private boolean UpdateDB() {
 
-        /*//Long rowId;
+        //Long rowId;
         DatabaseHelper db = new DatabaseHelper(this);
 
         int updcount = db.updateSD3();
@@ -236,9 +233,8 @@ public class SectionD3Activity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }*/
+        }
 
-        return true;
     }
 
 }

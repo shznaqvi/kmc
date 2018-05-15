@@ -2,7 +2,6 @@ package edu.aku.hassannaqvi.kmc.ui;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -12,9 +11,6 @@ import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import edu.aku.hassannaqvi.kmc.R;
 import edu.aku.hassannaqvi.kmc.core.DatabaseHelper;
@@ -97,8 +93,8 @@ public class SectionD1Activity extends AppCompatActivity {
 
                 finish();
 
-                //startActivity(new Intent(this, SectionD2Activity.class));
-                startActivity(new Intent(this, MainActivity.class));
+                startActivity(new Intent(this, SectionD2Activity.class));
+                //startActivity(new Intent(this, MainActivity.class));
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
@@ -144,9 +140,7 @@ public class SectionD1Activity extends AppCompatActivity {
             return false;
         }
         if (!bi.kd103a.isChecked()) {
-            if (!validatorClass.EmptyCheckBox(context, bi.kd104, bi.kd10496, bi.kd10496x, getString(R.string.kd104))) {
-                return false;
-            }
+            return validatorClass.EmptyCheckBox(context, bi.kd104, bi.kd10496, bi.kd10496x, getString(R.string.kd104));
         }
 
         return true;
@@ -197,7 +191,7 @@ public class SectionD1Activity extends AppCompatActivity {
     }
 
     private boolean UpdateDB() {
-       /* db = new DatabaseHelper(context);
+        db = new DatabaseHelper(context);
         int updcount = db.updateSD1();
 
         if (updcount == 1) {
@@ -206,9 +200,9 @@ public class SectionD1Activity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }*/
+        }
 
-        return true;
+
     }
 
 }
