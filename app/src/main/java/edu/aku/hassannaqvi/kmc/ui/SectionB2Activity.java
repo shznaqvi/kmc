@@ -45,6 +45,34 @@ public class SectionB2Activity extends AppCompatActivity {
                 } else if(checkedId == R.id.kb206b){
                     bi.fldGrpkb207.setVisibility(View.VISIBLE);
                     bi.fldGrkb208.setVisibility(View.GONE);
+                    bi.kb208.setText(null);
+                    bi.kb209.clearCheck();
+                    bi.kb210.clearCheck();
+                    bi.kb21096x.setText(null);
+                    bi.kb211.clearCheck();
+                    bi.kb21196x.setText(null);
+                    bi.kb212a.setChecked(false);
+                    bi.kb212b.setChecked(false);
+                    bi.kb212c.setChecked(false);
+                    bi.kb212d.setChecked(false);
+                    bi.kb212e.setChecked(false);
+                    bi.kb212f.setChecked(false);
+                    bi.kb212g.setChecked(false);
+                    bi.kb212h.setChecked(false);
+                    bi.kb212i.setChecked(false);
+                    bi.kb21296.setChecked(false);
+                    bi.kb21296x.setText(null);
+                    bi.kb213.clearCheck();
+                    bi.kb214.clearCheck();
+                    bi.kb21496x.setText(null);
+                    bi.kb215.clearCheck();
+                    bi.kb216.clearCheck();
+                    bi.kb217.clearCheck();
+                    bi.kb218.clearCheck();
+                    bi.kb219.setText(null);
+                    bi.kb21998.setChecked(false);
+                    bi.kb220.clearCheck();
+                    bi.kb22096x.setText(null);
                 }
             }
         });
