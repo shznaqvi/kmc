@@ -151,8 +151,14 @@
                     android:text='@{kb20796.checked ? kb20796x.getText.toString : ""}'
                     android:visibility='@{kb20796.checked ? View.VISIBLE : View.GONE}' />
 
+            </LinearLayout>
 
                 <!--kb208-->
+            <LinearLayout
+                android:id="@+id/fldGrkb208"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -172,8 +178,8 @@
                     android:inputType="number"
                     android:maxLength="2" />
                 <!--end of skipping pattern kb206-->
-            </LinearLayout>
             <!--kb209-->
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -991,7 +997,7 @@
                 android:text='@{kb22096.checked ? kb22096x.getText.toString : ""}'
                 android:visibility='@{kb22096.checked ? View.VISIBLE : View.GONE}' />
 
-
+            </LinearLayout>
             //end of skip pattern of kb201
 
 

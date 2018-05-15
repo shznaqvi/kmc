@@ -38,12 +38,13 @@ public class SectionB2Activity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (checkedId == R.id.kb206a) {
                     bi.fldGrpkb207.setVisibility(View.GONE);
+                    bi.fldGrkb208.setVisibility(View.VISIBLE);
                     bi.kb207.clearCheck();
                     bi.kb20796x.setText(null);
 
-                } else {
+                } else if(checkedId == R.id.kb206b){
                     bi.fldGrpkb207.setVisibility(View.VISIBLE);
-
+                    bi.fldGrkb208.setVisibility(View.GONE);
                 }
             }
         });
@@ -250,7 +251,8 @@ public class SectionB2Activity extends AppCompatActivity {
                 }
             }
 
-        }
+        }else{
+
 
 
         if (!validatorClass.EmptyTextBox(this, bi.kb208, getString(R.string.kb208))) {
@@ -365,6 +367,7 @@ public class SectionB2Activity extends AppCompatActivity {
             return validatorClass.EmptyTextBox(this, bi.kb22096x, getString(R.string.other));
         }
 
+        }
 
         return true;
     }
