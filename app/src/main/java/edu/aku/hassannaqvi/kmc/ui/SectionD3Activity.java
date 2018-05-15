@@ -128,20 +128,12 @@ public class SectionD3Activity extends AppCompatActivity {
         }
 
 
-        if (!validatorClass.EmptyCheckBox(this, bi.kd302, bi.kd302a, getString(R.string.kd302))) {
+        if (!validatorClass.EmptyCheckBox(this, bi.kd302, bi.kd30296,bi.kd30296x, getString(R.string.kd302))) {
             return false;
         }
 
 
-        if (bi.kd30296.isChecked()) {
-
-            if (!validatorClass.EmptyTextBox(this, bi.kd30296x, getString(R.string.other))) {
-                return false;
-            }
-        }
-
-
-        if (!validatorClass.EmptyRadioButton(this, bi.kd303, bi.kd303a, getString(R.string.kd303))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.kd303, bi.kd30396, getString(R.string.kd303))) {
             return false;
         }
 
@@ -149,24 +141,21 @@ public class SectionD3Activity extends AppCompatActivity {
         if (!validatorClass.EmptyRadioButton(this, bi.kd304, bi.kd304a, getString(R.string.kd304))) {
             return false;
         }
+        if(bi.kd304a.isChecked()){
 
-        if (bi.kd304a.isChecked()) {
-
-            if (!validatorClass.EmptyTextBox(this, bi.kd304m, getString(R.string.kd304))) {
+            if (!validatorClass.EmptyTextBox(this, bi.kd304m, getString(R.string.months))) {
                 return false;
             }
-
+        }
+        if(bi.kd304b.isChecked()){
+            if (!validatorClass.EmptyTextBox(this, bi.kd304y, getString(R.string.years))) {
+                return false;
+            }
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, bi.kd305, bi.kd305a, getString(R.string.kd305))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.kd305, bi.kd30596, bi.kd30596x, getString(R.string.kd305))) {
             return false;
-        }
-
-
-        if (bi.kd30596.isChecked()) {
-
-            return validatorClass.EmptyTextBox(this, bi.kd30596x, getString(R.string.other));
         }
 
         return true;

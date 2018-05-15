@@ -220,7 +220,6 @@ public class SectionC2Activity extends AppCompatActivity {
             return false;
         }
 
-
         if (!validatorClass.EmptyRadioButton(this, bi.kc202, bi.kc202a, getString(R.string.kc202))) {
             return false;
         }

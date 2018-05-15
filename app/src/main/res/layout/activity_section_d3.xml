@@ -94,7 +94,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:visibility="gone">
+                android:visibility="visible">
 
                 <!--kd302-->
                 <TextView
@@ -285,7 +285,9 @@
                     <RadioButton
                         android:id="@+id/kd304a"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:text="@string/months"
+                        />
 
                     <EditText
                         android:id="@+id/kd304m"
@@ -296,8 +298,15 @@
                         android:hint="@string/months"
                         android:inputType="number"
                         android:maxLength="2"
-                        android:visibility="@{kd304a.isChecked()? View.VISIBLE : View.GONE}" />
+                        android:text='@{kd304a.checked ? kd304m.getText.toString : ""}'
+                        android:visibility='@{kd304a.checked ? View.VISIBLE : View.GONE}'/>
 
+                    <RadioButton
+                        android:id="@+id/kd304b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/years"
+                        />
                     <EditText
                         android:id="@+id/kd304y"
                         android:layout_width="match_parent"
@@ -306,7 +315,9 @@
                         android:digits="0123456789"
                         android:hint="@string/years"
                         android:inputType="number"
-                        android:maxLength="2" />
+                        android:maxLength="2"
+                        android:text='@{kd304b.checked ? kd304y.getText.toString : ""}'
+                        android:visibility='@{kd304b.checked ? View.VISIBLE : View.GONE}'/>
 
                     <CheckBox
                         android:id="@+id/kd304d"
@@ -412,6 +423,37 @@
                 android:text='@{kd30596.checked ? kd30596x.getText.toString : ""}'
                 android:visibility='@{kd30596.checked ? View.VISIBLE : View.GONE}' />
 
+            <!--  = = = = =  END OF FORM FIELDS  = = = = = -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="80dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_End"
+                    style="@style/buttons"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/red"
+                    android:onClick="@{() -> callback.BtnEnd()}"
+                    android:text="@string/end_interview"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/btn_Continue"
+                    style="@style/buttons"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#1ed61e"
+                    android:onClick="@{() -> callback.BtnContinue()}"
+                    android:text="@string/nextSection"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 </layout>
