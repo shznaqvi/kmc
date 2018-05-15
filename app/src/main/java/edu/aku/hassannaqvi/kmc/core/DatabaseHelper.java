@@ -55,9 +55,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             FormsTable.COLUMN_SA1 + " TEXT," +
             FormsTable.COLUMN_SB1 + " TEXT," +
             FormsTable.COLUMN_SB2 + " TEXT," +
-            FormsTable.COLUMN_SA4 + " TEXT," +
-            FormsTable.COLUMN_SA5 + " TEXT," +
-            FormsTable.COLUMN_SB4 + " TEXT," +
             FormsTable.COLUMN_SC1 + " TEXT," +
             FormsTable.COLUMN_SC2 + " TEXT," +
             FormsTable.COLUMN_SC3 + " TEXT," +
@@ -80,6 +77,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             FormsTable.COLUMN_SYNCED + " TEXT," +
             FormsTable.COLUMN_SYNCED_DATE + " TEXT," +
             FormsTable.COLUMN_APPVERSION + " TEXT"
+
 
             + " );";
 

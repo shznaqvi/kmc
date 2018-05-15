@@ -22,7 +22,7 @@ import edu.aku.hassannaqvi.kmc.validation.validatorClass;
 
 public class SectionC4Activity extends AppCompatActivity {
 
-    private static final String TAG = SectionEActivity.class.getName();
+    private static final String TAG = SectionC4Activity.class.getName();
     String dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
 
     ActivitySectionC4Binding bi;
@@ -197,12 +197,7 @@ public class SectionC4Activity extends AppCompatActivity {
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, bi.kc407, bi.kc407a, getString(R.string.kc407))) {
-            return false;
-        }
-
-
-        return true;
+        return validatorClass.EmptyRadioButton(this, bi.kc407, bi.kc407a, getString(R.string.kc407));
     }
 
 
