@@ -1,10 +1,13 @@
 package edu.aku.hassannaqvi.kmc.ui;
 
 import android.app.Activity;
+import android.content.ContentResolver;
+import android.content.ContentValues;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.databinding.DataBindingUtil;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
@@ -23,6 +26,7 @@ import java.util.Map;
 
 import edu.aku.hassannaqvi.kmc.R;
 import edu.aku.hassannaqvi.kmc.contracts.FormsContract;
+import edu.aku.hassannaqvi.kmc.contracts.FormsContract.FormsTable;
 import edu.aku.hassannaqvi.kmc.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc.core.MainApp;
 import edu.aku.hassannaqvi.kmc.databinding.ActivitySectionInfoKmcBinding;
@@ -32,6 +36,7 @@ public class SectionInfoKmcActivity extends Activity {
 
     ArrayList<String> lablesUCs;
     Map<String, String> ucsMap;
+    private ContentResolver mContentResolver;
 
 
     private static final String TAG = SectionInfoKmcActivity.class.getName();
@@ -46,6 +51,9 @@ public class SectionInfoKmcActivity extends Activity {
 
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_info_kmc);
         bi.setCallback(this);
+
+
+        mContentResolver = SectionInfoKmcActivity.this.getContentResolver();
 
 
         lablesUCs = new ArrayList<>();
@@ -132,6 +140,38 @@ public class SectionInfoKmcActivity extends Activity {
         MainApp.fc.setsInfo(String.valueOf(sInfo));
     }
 
+    private boolean insertForm() {
+
+        ContentValues values = new ContentValues();
+        values.put(FormsTable.COLUMN_DEVICETAGID, MainApp.fc.getDevicetagID());
+        values.put(FormsTable.COLUMN_FORMDATE, MainApp.fc.getFormDate());
+        values.put(FormsTable.COLUMN_USER, MainApp.fc.getUser());
+        values.put(FormsTable.COLUMN_DEVICEID, MainApp.fc.getDeviceID());
+        values.put(FormsTable.COLUMN_APPVERSION, MainApp.fc.getAppversion());
+        values.put(FormsTable.COLUMN_SINFO, MainApp.fc.getsInfo());
+        Uri returned = mContentResolver.insert(FormsContract.URI_TABLE, values);
+        Log.d(TAG, "record id returned is " + returned.toString());
+        String id = FormsTable.getFormsUID(returned);
+        MainApp.fc.set_ID(id);
+
+
+        if (Long.valueOf(id) > 0) {
+            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+
+            MainApp.fc.setUID(
+                    (MainApp.fc.getDeviceID() + MainApp.fc.get_ID()));
+
+            ContentValues valueUID = new ContentValues();
+            valueUID.put(FormsTable.COLUMN__UID, MainApp.fc.getUID());
+            //Uri returned = mContentResolver.update(MainApp.fc.URI_TABLE, values,, );
+            return true;
+        } else {
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+    }
+
 
     public void BtnEnd() {
         Toast.makeText(this, "Processing End Section", Toast.LENGTH_SHORT).show();
@@ -192,11 +232,12 @@ public class SectionInfoKmcActivity extends Activity {
             MainApp.fc.setUID(
                     (MainApp.fc.getDeviceID() + MainApp.fc.get_ID()));
             db.updateFormID();
+            return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            return false;
         }
 
-        return true;
     }
 
 }

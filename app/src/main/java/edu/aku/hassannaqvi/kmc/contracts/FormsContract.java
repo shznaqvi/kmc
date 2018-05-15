@@ -588,11 +588,11 @@ public class FormsContract {
         public static final String CONTENT_TYPE = "vnd.android.cursor.dir/vnd." + CONTENT_AUTHORITY + ".forms";
         public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/vnd." + CONTENT_AUTHORITY + ".forms";
 
-        public static Uri buildCountryUri(String uid) {
+        public static Uri buildFormsUri(String uid) {
             return CONTENT_URI.buildUpon().appendEncodedPath(uid).build();
         }
 
-        public static String getCountryId(Uri uri) {
+        public static String getFormsUID(Uri uri) {
             return uri.getPathSegments().get(1);
         }
     }

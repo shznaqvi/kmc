@@ -5,9 +5,11 @@ import android.content.ContentValues;
 import android.content.UriMatcher;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.text.TextUtils;
 import android.util.Log;
 
 import static edu.aku.hassannaqvi.kmc.contracts.FormsContract.CONTENT_AUTHORITY;
@@ -56,7 +58,28 @@ public class MainContentProvider extends ContentProvider {
     @Nullable
     @Override
     public Cursor query(@NonNull Uri uri, @Nullable String[] strings, @Nullable String s, @Nullable String[] strings1, @Nullable String s1) {
-        return null;
+
+        final SQLiteDatabase db = dbhelper.getReadableDatabase();
+
+        SQLiteQueryBuilder queryBuilder = new SQLiteQueryBuilder();
+
+        queryBuilder.setTables(FormsTable.TABLE_NAME);
+
+        switch (uriMatcher.match(uri)) {
+            case FORMS:
+                break;
+            case FORMS_UID:
+                String uid = FormsTable.getFormsUID(uri);
+                queryBuilder.appendWhere(FormsTable.COLUMN__UID + "=" + uid);
+                break;
+            default:
+                throw new IllegalArgumentException("Unknown URI : " + uri);
+        }
+
+        // Projection : Columns to return
+        Cursor cursor = queryBuilder.query(db, strings, s, strings1, null, null, s1);
+        return cursor;
+
     }
 
     @Nullable
@@ -88,7 +111,7 @@ public class MainContentProvider extends ContentProvider {
             case FORMS:
                 // Create a new record
                 long recordId = db.insertOrThrow(FormsTable.TABLE_NAME, null, values);
-                return FormsTable.buildCountryUri(String.valueOf(recordId));
+                return FormsTable.buildFormsUri(String.valueOf(recordId));
             default:
                 throw new IllegalArgumentException("Unknown URI : " + uri);
         }
@@ -100,7 +123,24 @@ public class MainContentProvider extends ContentProvider {
     }
 
     @Override
-    public int update(@NonNull Uri uri, @Nullable ContentValues contentValues, @Nullable String s, @Nullable String[] strings) {
-        return 0;
+    public int update(@NonNull Uri uri, @Nullable ContentValues values, @Nullable String s, @Nullable String[] strings) {
+        Log.v(TAG, "update(uri=" + uri + ", values=" + values.toString());
+        final SQLiteDatabase db = dbhelper.getWritableDatabase();
+
+        String selectionCriteria;
+
+        switch (uriMatcher.match(uri)) {
+
+            case FORMS_UID:
+                String uid = FormsTable.getFormsUID(uri);
+                selectionCriteria = FormsTable.COLUMN__UID + "=" + uid
+                        + (!TextUtils.isEmpty(s) ? " AND (" + s + ")" : "");
+                break;
+            default:
+                throw new IllegalArgumentException("This is an Unknown URI " + uri);
+        }
+        int updateCount = db.update(FormsTable.TABLE_NAME, values, selectionCriteria, strings);
+        return updateCount;
+
     }
 }
