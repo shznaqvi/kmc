@@ -241,7 +241,6 @@ public class MainActivity extends Activity {
         /*Add data in Serial date wrt date*/
 
 
-
     }
 
     public void openForm() {
@@ -504,6 +503,77 @@ public class MainActivity extends Activity {
             }, 3 * 1000);
 
         }
+    }
+
+
+    public void openA1(View v) {
+        Intent dbmanager = new Intent(getApplicationContext(), SectionA1Activity.class);
+        startActivity(dbmanager);
+    }
+
+    public void openB1(View v) {
+        Intent dbmanager = new Intent(getApplicationContext(), SectionB1Activity.class);
+        startActivity(dbmanager);
+    }
+
+    public void openB2(View v) {
+        Intent dbmanager = new Intent(getApplicationContext(), SectionB2Activity.class);
+        startActivity(dbmanager);
+    }
+
+    public void openC1(View v) {
+        Intent dbmanager = new Intent(getApplicationContext(), SectionC1Activity.class);
+        startActivity(dbmanager);
+    }
+
+    public void openC2(View v) {
+        Intent dbmanager = new Intent(getApplicationContext(), SectionC2Activity.class);
+        startActivity(dbmanager);
+    }
+
+    public void openC3(View v) {
+        Intent dbmanager = new Intent(getApplicationContext(), SectionC3Activity.class);
+        startActivity(dbmanager);
+    }
+
+    public void openC4(View v) {
+        Intent dbmanager = new Intent(getApplicationContext(), SectionC4Activity.class);
+        startActivity(dbmanager);
+    }
+
+    public void openC5(View v) {
+        Intent dbmanager = new Intent(getApplicationContext(), SectionC5Activity.class);
+        startActivity(dbmanager);
+    }
+
+    public void openC6(View v) {
+        Intent dbmanager = new Intent(getApplicationContext(), SectionC6Activity.class);
+        startActivity(dbmanager);
+    }
+
+    public void openD1(View v) {
+        Intent dbmanager = new Intent(getApplicationContext(), SectionD1Activity.class);
+        startActivity(dbmanager);
+    }
+
+    public void openD2(View v) {
+        Intent dbmanager = new Intent(getApplicationContext(), SectionD2Activity.class);
+        startActivity(dbmanager);
+    }
+
+    public void openD3(View v) {
+        Intent dbmanager = new Intent(getApplicationContext(), SectionD3Activity.class);
+        startActivity(dbmanager);
+    }
+
+    public void openE(View v) {
+        Intent dbmanager = new Intent(getApplicationContext(), SectionEActivity.class);
+        startActivity(dbmanager);
+    }
+
+    public void openF(View v) {
+        Intent dbmanager = new Intent(getApplicationContext(), SectionFActivity.class);
+        startActivity(dbmanager);
     }
 
 }

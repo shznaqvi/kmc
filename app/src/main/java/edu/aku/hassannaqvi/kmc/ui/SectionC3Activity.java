@@ -122,7 +122,8 @@ public class SectionC3Activity extends AppCompatActivity {
 
                 finish();
 
-                startActivity(new Intent(this, SectionC4Activity.class));
+                //startActivity(new Intent(this, SectionC4Activity.class));
+                startActivity(new Intent(this, MainActivity.class));
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
@@ -384,7 +385,7 @@ public class SectionC3Activity extends AppCompatActivity {
 
     private boolean UpdateDB() {
 
-        //Long rowId;
+        /*//Long rowId;
         DatabaseHelper db = new DatabaseHelper(this);
 
         int updcount = db.updateSC3();
@@ -395,6 +396,8 @@ public class SectionC3Activity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }
+        }*/
+
+        return true;
     }
 }

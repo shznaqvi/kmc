@@ -167,7 +167,8 @@ public class SectionInfoKmcActivity extends Activity {
 
                 finish();
 
-                startActivity(new Intent(this, SectionA1Activity.class));
+                //startActivity(new Intent(this, SectionA1Activity.class));
+                startActivity(new Intent(this, MainActivity.class));
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
@@ -178,7 +179,7 @@ public class SectionInfoKmcActivity extends Activity {
 
     private boolean UpdateDB() {
 
-        DatabaseHelper db = new DatabaseHelper(this);
+        /*DatabaseHelper db = new DatabaseHelper(this);
 
         long updcount = db.addForm(MainApp.fc);
 
@@ -192,7 +193,8 @@ public class SectionInfoKmcActivity extends Activity {
             db.updateFormID();
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
-        }
+        }*/
+
         return true;
     }
 
