@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.kmc.contracts;
 
 import android.database.Cursor;
+import android.net.Uri;
 import android.provider.BaseColumns;
 
 import org.json.JSONException;
@@ -27,10 +28,6 @@ public class FormsContract {
 
     private String sC2 = "";
     private String sC3 = "";
-
-    private String sA4 = ""; // sA4
-    private String sA5 = ""; //
-    private String sB4 = "";
     private String sC1 = "";
     private String sC4 = "";
     private String sC5 = "";
@@ -51,6 +48,15 @@ public class FormsContract {
     private String synced = "";
     private String synced_date = "";
     private String appversion;
+
+    public static final String CONTENT_AUTHORITY = "edu.aku.hassannaqvi.kmc.contracts.provider";
+    public static final Uri BASE_CONTENT_URI = Uri.parse("content://" + CONTENT_AUTHORITY);
+
+    public static final String PATH_FORMS = "forms";
+
+    public static final Uri URI_TABLE = Uri.parse(BASE_CONTENT_URI.toString() + "/" + PATH_FORMS);
+
+    public static final String[] TOP_LEVEL_PATHS = {PATH_FORMS};
 
     public FormsContract() {
     }
@@ -73,9 +79,7 @@ public class FormsContract {
         this.sC2 = jsonObject.getString(FormsTable.COLUMN_SC2);
         this.sC3 = jsonObject.getString(FormsTable.COLUMN_SC3);
 
-        this.sA4 = jsonObject.getString(FormsTable.COLUMN_SA4);
-        this.sA5 = jsonObject.getString(FormsTable.COLUMN_SA5);
-        this.sB4 = jsonObject.getString(FormsTable.COLUMN_SB4);
+
         this.sC1 = jsonObject.getString(FormsTable.COLUMN_SC1);
         this.sC2 = jsonObject.getString(FormsTable.COLUMN_SC2);
         this.sC3 = jsonObject.getString(FormsTable.COLUMN_SC3);
@@ -122,9 +126,6 @@ public class FormsContract {
         this.sC3 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SC3));
 
 
-        this.sA4 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SA4));
-        this.sA5 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SA5));
-        this.sB4 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SB4));
         this.sC1 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SC1));
         this.sC2 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SC2));
         this.sC3 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SC3));
@@ -556,11 +557,6 @@ public class FormsContract {
         public static final String COLUMN_SA1 = "sa1";
         public static final String COLUMN_SB1 = "sb1";
         public static final String COLUMN_SB2 = "sb2";
-
-
-        public static final String COLUMN_SA4 = "sa4";
-        public static final String COLUMN_SA5 = "sa5";
-        public static final String COLUMN_SB4 = "sb4";
         public static final String COLUMN_SC1 = "sc1";
         public static final String COLUMN_SC2 = "sc2";
         public static final String COLUMN_SC3 = "sc3";
@@ -585,5 +581,19 @@ public class FormsContract {
         public static final String COLUMN_APPVERSION = "appversion";
 
         public static String _URL = "forms.php";
+
+        public static final Uri CONTENT_URI = BASE_CONTENT_URI.buildUpon().appendEncodedPath(PATH_FORMS).build();
+
+        // Accessing content directory and item
+        public static final String CONTENT_TYPE = "vnd.android.cursor.dir/vnd." + CONTENT_AUTHORITY + ".forms";
+        public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/vnd." + CONTENT_AUTHORITY + ".forms";
+
+        public static Uri buildCountryUri(String uid) {
+            return CONTENT_URI.buildUpon().appendEncodedPath(uid).build();
+        }
+
+        public static String getCountryId(Uri uri) {
+            return uri.getPathSegments().get(1);
+        }
     }
 }
