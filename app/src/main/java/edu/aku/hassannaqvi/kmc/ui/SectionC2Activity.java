@@ -408,6 +408,7 @@ public class SectionC2Activity extends AppCompatActivity {
                 }
             }
 
+
         }
 
         return true;
