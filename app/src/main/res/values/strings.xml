@@ -151,9 +151,10 @@
     <string name="ka109sub01"> کوٽيل کوهه </string>
     <string name="ka109f"> ڍڪيل کوهه </string>
     <string name="ka109g"> اڻ ڍڪيل کوهه </string>
+    <string name="ka109sub02"> چشمو جو پاڻي </string>
     <string name="ka109h"> محفوظ چشمو </string>
     <string name="ka109i"> غير محفوظ چشمو </string>
-    <string name="kasub03"> ٻيا ذريعا </string>
+    <string name="ka109sub03"> ٻيا ذريعا </string>
     <string name="ka109j"> برساتي پاڻي </string>
     <string name="ka109k"> ٽينڪر يا ٽرڪ </string>
     <string name="ka109l"> فلٽر ٿيل پاڻي </string>
@@ -170,6 +171,7 @@
     <string name="ka110sub01"> کوٽيل کوهه </string>
     <string name="ka110f"> ڍڪيل کوهه </string>
     <string name="ka110g"> اڻ ڍڪيل کوهه </string>
+    <string name="ka110sub02"> چشمو جو پاڻي </string>
     <string name="ka110h"> محفوظ چشمو </string>
     <string name="ka110i"> غير محفوظ چشمو </string>
     <string name="ka110sub03"> ٻيا ذريعا </string>
@@ -217,6 +219,7 @@
     آهيو؟ </string>
     <string name="ka118"> جيڪڏهن ها ته ٻيا گهڻا گهرليٽرين جي اها سهولت
     استعمال ڪندا آهن؟ </string>
+    <string name="ka118a">تعداد</string>
 
     <string name="ka119"> ڇا توهان حاجت پوري ڪرڻ کان پوءِ پنهنجا هٿ ڌوئندا
     آهيو؟ </string>
