@@ -95,17 +95,25 @@ public class SectionD2Activity extends AppCompatActivity {
     private boolean formValidation(){
         Toast.makeText(context, "Validating This Section ", Toast.LENGTH_SHORT).show();
 
-        if (!validatorClass.EmptyTextBox(context, bi.kd201d, getString(R.string.days))) {
+        if (!validatorClass.EmptyRadioButton(context, bi.kd201,bi.kd201a, getString(R.string.kd201))) {
             return false;
         }
-        if (!validatorClass.EmptyTextBox(context, bi.kd201m, getString(R.string.months))) {
-            return false;
+        if(bi.kd201a.isChecked()){
+
+            if (!validatorClass.EmptyTextBox(context, bi.kd201d, getString(R.string.kd201a))) {
+                return false;
+            }
+            if (!validatorClass.RangeTextBox(context, bi.kd201d,1, 29, getString(R.string.days), "days")) {
+                return false;
+            }
         }
-        if (!validatorClass.RangeTextBox(context, bi.kd201d,1, 29, getString(R.string.days), "days")) {
-            return false;
-        }
-        if (!validatorClass.RangeTextBox(context, bi.kd201m,1, 11, getString(R.string.months), "months")) {
-            return false;
+        if (bi.kd201b.isChecked()){
+            if (!validatorClass.EmptyTextBox(context, bi.kd201m, getString(R.string.kd201b))) {
+                return false;
+            }
+            if (!validatorClass.RangeTextBox(context, bi.kd201m,1, 11, getString(R.string.months), "months")) {
+                return false;
+            }
         }
 
         if (!validatorClass.EmptyCheckBox(context, bi.kd202, bi.kd20296,bi.kd20296x, getString(R.string.other))){

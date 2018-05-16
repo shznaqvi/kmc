@@ -8,6 +8,9 @@ import android.widget.Toast;
 
 import org.json.JSONException;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import edu.aku.hassannaqvi.kmc.R;
 import edu.aku.hassannaqvi.kmc.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc.core.MainApp;
@@ -16,6 +19,7 @@ import edu.aku.hassannaqvi.kmc.databinding.ActivityEndingBinding;
 public class EndingActivity extends AppCompatActivity {
 
     private static final String TAG = EndingActivity.class.getSimpleName();
+    String dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
 
     ActivityEndingBinding binding;
 
@@ -80,6 +84,7 @@ public class EndingActivity extends AppCompatActivity {
                 : "0");
 
 //        MainApp.fc.setIstatus88x(istatus88x.getText().toString());
+        MainApp.fc.setEndingdatetime(dtToday);
 
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
@@ -87,6 +92,7 @@ public class EndingActivity extends AppCompatActivity {
 
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
+
 
         int updcount = db.updateEnding();
 
