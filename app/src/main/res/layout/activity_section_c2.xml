@@ -68,13 +68,6 @@
                     android:layout_weight="1"
                     android:text="@string/no" />
 
-                <RadioButton
-                    android:id="@+id/kc20198"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:layout_weight="1"
-                    android:text="@string/dkn" />
 
             </RadioGroup>
 
@@ -173,7 +166,11 @@
                     android:visibility='@{kc20296.checked ? View.VISIBLE : View.GONE}' />
 
             </LinearLayout>
-
+<LinearLayout
+    android:id="@+id/fldGrpkc203"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
             <!--kc203-->
             <TextView
                 android:layout_width="match_parent"
@@ -946,6 +943,8 @@
                     android:text="@string/dkn" />
 
             </LinearLayout>
+
+</LinearLayout>
 
 
             <!--  = = = = =  END OF FORM FIELDS  = = = = = -->

@@ -2,6 +2,7 @@ package edu.aku.hassannaqvi.kmc.ui;
 
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
+import android.opengl.Visibility;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -47,8 +48,28 @@ public class SectionC2Activity extends AppCompatActivity {
                     bi.kc202.clearCheck();
                     bi.kc20296x.setText(null);
                     bi.fldGrpkc201.setVisibility(View.GONE);
+                    bi.fldGrpkc203.setVisibility(View.VISIBLE);
                 } else {
                     bi.fldGrpkc201.setVisibility(View.VISIBLE);
+                    bi.fldGrpkc203.setVisibility(View.GONE);
+                    bi.kc203.setText(null);
+                    bi.kc20398.setChecked(false);
+                    bi.kc204.clearCheck();
+                    bi.kc205.clearCheck();
+                    bi.kc20596x.setText(null);
+                    bi.kc206.clearCheck();
+                    bi.kc20696x.setText(null);
+                    bi.kc207.clearCheck();
+                    bi.kc20796x.setText(null);
+                    bi.kc208.clearCheck();
+                    bi.kc209.clearCheck();
+                    bi.kc20996x.setText(null);
+                    bi.kc210.clearCheck();
+                    bi.kc211.clearCheck();
+                    bi.kc212.clearCheck();
+                    bi.kc213.clearCheck();
+                    bi.kc214.setText(null);
+                    bi.kc21498.setChecked(false);
                 }
             }
         });
@@ -91,7 +112,6 @@ public class SectionC2Activity extends AppCompatActivity {
 
         sC2.put("kc201", bi.kc201a.isChecked() ? "1"
                 : bi.kc201b.isChecked() ? "2"
-                : bi.kc20198.isChecked() ? "98"
                 : "0");
 
 
@@ -219,11 +239,14 @@ public class SectionC2Activity extends AppCompatActivity {
         if (!validatorClass.EmptyRadioButton(this, bi.kc201, bi.kc201a, getString(R.string.kc201))) {
             return false;
         }
+        if (bi.kc201b.isChecked()) {
 
-        if (!validatorClass.EmptyRadioButton(this, bi.kc202, bi.kc202a, getString(R.string.kc202))) {
-            return false;
+            if (!validatorClass.EmptyRadioButton(this, bi.kc202, bi.kc202a, getString(R.string.kc202))) {
+                return false;
+            }
+
         }
-
+        if (bi.kc201a.isChecked()) {
 
         if (bi.kc20296.isChecked()) {
 
@@ -323,6 +346,8 @@ public class SectionC2Activity extends AppCompatActivity {
         if (!bi.kc21498.isChecked()) {
 
             return validatorClass.EmptyTextBox(this, bi.kc214, getString(R.string.kc214));
+        }
+
         }
 
         return true;
