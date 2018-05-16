@@ -345,6 +345,7 @@
     <string name="kb220e"> سرڪاري ڊسپينسري </string>
     <string name="kb220f"> خانگي اسپتال </string>
     <string name="kb220g"> خانگي ڪلينڪ </string>
+    <string name="kcheading">سڀ کان ننڍي ٻار جي باري ۾ معلومات </string>
     <string name="kc1heading"> آخري حمل جي باري ۾ معلومات </string>
     <string name="kc101"> توهان جي گذريل حمل جو نتيجو ڇا هيو؟ </string>
     <string name="kc101a"> حمل جو ضايح ڪرائڻ(28 هفتن ۾) </string>
@@ -590,15 +591,16 @@
     <string name="kc403h"> مائيٽ </string>
     <string name="kc403i"> دوست </string>
     <string name="kc404"> ڇا توهان ڪڏهن پنهنجي گھٽ وزن واري ٻار کي ڇاتيءَ سان لڳايو آهي؟ </string>
-    <string name="kc405"> ڇا ڇاتيءَ سان لڳائڻ ٻار کي کير پيارڻ ۾ مدد ڪري ٿو؟ </string>
-    <string name="kc406"> توهان جي خيال مطابق ڇاتيءَ سان لڳائڻ ڪيئن مدد ڪري ٿو؟ </string>
-    <string name="kc406a"> ٿڌ </string>
-    <string name="kc406b"> ٻارن جو وزن وڌائي </string>
-    <string name="kc406c"> ماءُ کي بيماري کان بچائي ٿو </string>
-    <string name="kc406d"> نئي ڄاول ٻار کي بيماري کان بچائي ٿو </string>
-    <string name="kc406e"> ٿڃ کي يقيني بڻائي ٿو </string>
-    <string name="kc406f"> ماءُ جي رشتي کي مضبوط بڻائي ٿو </string>
-    <string name="kc407"> جيڪڏهن مستقبل ۾ توهان جو ٻار گھٽ وزن وارو يا ننڍو پيدا ٿئي ته ڇا توهان ٻار کي ڇاتي سان لڳائيندا؟ </string>
+    <string name="kc405"> ڪيتري وقت توهان پنهنجي ٻار کي ڇاتي سان لڳائي سگھو ٿا</string>
+    <string name="kc406"> ڇا ڇاتيءَ سان لڳائڻ ٻار کي کير پيارڻ ۾ مدد ڪري ٿو؟ </string>
+    <string name="kc407"> توهان جي خيال مطابق ڇاتيءَ سان لڳائڻ ڪيئن مدد ڪري ٿو؟ </string>
+    <string name="kc407a"> ٿڌ </string>
+    <string name="kc407b"> ٻارن جو وزن وڌائي </string>
+    <string name="kc407c"> ماءُ کي بيماري کان بچائي ٿو </string>
+    <string name="kc407d"> نئي ڄاول ٻار کي بيماري کان بچائي ٿو </string>
+    <string name="kc407e"> ٿڃ کي يقيني بڻائي ٿو </string>
+    <string name="kc407f"> ماءُ جي رشتي کي مضبوط بڻائي ٿو </string>
+    <string name="kc408"> جيڪڏهن مستقبل ۾ توهان جو ٻار گھٽ وزن وارو يا ننڍو پيدا ٿئي ته ڇا توهان ٻار کي ڇاتي سان لڳائيندا؟ </string>
     <string name="kc5heading"> SECTION C5: SKIN MASSAGE HISTORY: </string>
     <string name="kc501"> ڇا توهان ٻار کي تيل ماليش ڪندا آهيو؟ </string>
     <string name="kc502"> توهان ڪڏهن ٻار کي تيل جي ماليش شروع ڪئي </string>
@@ -614,13 +616,13 @@
     <string name="kd1heading"> کير پيارڻ جي شروعات </string>
     <string name="kd102"> روزانو ڪيترا ڀيرا توهان ٻار کي ٿڄ پياريندا آهيو؟ </string>
     <string name="number"> نمبر </string>
-    <string name="kd102b"> ON DEMAND </string>
+    <string name="kd102b"> ضرورت مطابق</string>
     <string name="kd101"> ڇا توهان جو ٻار اڃا تائين ٿڄ پئي ٿو؟ </string>
     <string name="kd103"> ڇا توهان ٻار کي پنهنجي ٿڄ ڇاتيءَ سان پياريندا آهيو يا ڪڍي چمچي يا بوتل ۾ پياريندا آهيو؟ </string>
     <string name="kd103a"> ڇاتيءَ سان </string>
     <string name="kd103b"> ڪپ ۽ چمچي سان </string>
     <string name="kd103c"> بوتل سان </string>
-    <string name="kd103d"> beaker </string>
+    <string name="kd103d">سوراخن وارو ڪپ </string>
     <string name="kd104">
     جيڪڏهن ٻيو طريقو اختيار ڪندا آهيو ته ڇو ڪندا آهيو؟ </string>
     <string name="kd104a"> ٻار گھٽ وزن جو هيو </string>
@@ -651,8 +653,8 @@
     <string name="kd204c"> زيرو </string>
     <string name="kd204d"> سڪو ميوو </string>
     <string name="kd204e"> گيھ </string>
-    <string name="kd204f"> brown sugar </string>
-    <string name="kd204g"> pop corns </string>
+    <string name="kd204f"> ڀوري کنڊ </string>
+    <string name="kd204g"> ڦلا</string>
     <string name="kd3heading"> گڏيل خوراڪ </string>
     <string name="kd301">
     توهان پنهنجي ٻار کي ڪيتري عمر ۾پنهنجي کير کان علاوه چانھ جوس يا ٻيو ڪجھ ڏيندا آهيو؟

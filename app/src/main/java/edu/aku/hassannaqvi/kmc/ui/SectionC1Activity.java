@@ -37,8 +37,18 @@ public class SectionC1Activity extends AppCompatActivity {
                     bi.kc102.clearCheck();
                     bi.kc103d.setText(null);
                     bi.kc103m.setText(null);
-
+                    bi.fldGrpkc102twin.setVisibility(View.GONE);
+                    bi.kc102twin.clearCheck();
+                    bi.kc103dtwin.setText(null);
+                    bi.kc103mtwin.setText(null);
+                } else if (bi.kc101e.isChecked()) {
+                    bi.fldGrpkc102.setVisibility(View.VISIBLE);
+                    bi.fldGrpkc102twin.setVisibility(View.VISIBLE);
                 } else {
+                    bi.fldGrpkc102twin.setVisibility(View.GONE);
+                    bi.kc102twin.clearCheck();
+                    bi.kc103dtwin.setText(null);
+                    bi.kc103mtwin.setText(null);
                     bi.fldGrpkc102.setVisibility(View.VISIBLE);
                 }
             }
@@ -58,6 +68,19 @@ public class SectionC1Activity extends AppCompatActivity {
                 }
             }
         });
+        bi.kc102twin.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+
+                if (bi.kc102atwin.isChecked()) {
+                    bi.fldGrpkc103twin.setVisibility(View.GONE);
+                    bi.kc103mtwin.setText(null);
+                    bi.kc103dtwin.setText(null);
+                } else {
+                    bi.fldGrpkc103twin.setVisibility(View.VISIBLE);
+                }
+            }
+        });
     }
 
 
@@ -72,12 +95,28 @@ public class SectionC1Activity extends AppCompatActivity {
                 return false;
             }
 
-            if (bi.kc102a.isChecked()) {
+            if (!bi.kc102a.isChecked()) {
                 if (!validatorClass.EmptyTextBox(this, bi.kc103d, getString(R.string.kc103y))) {
                     return false;
                 }
+                if (!validatorClass.EmptyTextBox(this, bi.kc103m, getString(R.string.kc103m))) {
+                    return false;
+                }
+            }
+            if (bi.kc101e.isChecked()) {
 
-                return validatorClass.EmptyTextBox(this, bi.kc103m, getString(R.string.kc103m));
+                if (!validatorClass.EmptyRadioButton(this, bi.kc102twin, bi.kc102atwin, getString(R.string.kc102))) {
+                    return false;
+                }
+
+                if (!bi.kc102atwin.isChecked()) {
+                    if (!validatorClass.EmptyTextBox(this, bi.kc103dtwin, getString(R.string.kc103y))) {
+                        return false;
+                    }
+                    if (!validatorClass.EmptyTextBox(this, bi.kc103mtwin, getString(R.string.kc103m))) {
+                        return false;
+                    }
+                }
 
             }
         }
@@ -107,6 +146,12 @@ public class SectionC1Activity extends AppCompatActivity {
 
         sn.put("kc103d", bi.kc103d.getText().toString());
         sn.put("kc103m", bi.kc103m.getText().toString());
+        sn.put("kc102twin", bi.kc102atwin.isChecked() ? "1"
+                : bi.kc102btwin.isChecked() ? "2"
+                : "0");
+
+        sn.put("kc103dtwin", bi.kc103dtwin.getText().toString());
+        sn.put("kc103mtwin", bi.kc103mtwin.getText().toString());
 
         //MainApp.fc.sets(String.valueOf(sn));
 
