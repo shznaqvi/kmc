@@ -6,6 +6,7 @@ import android.opengl.Visibility;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -45,7 +46,15 @@ public class SectionC2Activity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (bi.kc201a.isChecked()) {
-                    bi.kc202.clearCheck();
+
+                    bi.kc202a.setChecked(false);
+                    bi.kc202b.setChecked(false);
+                    bi.kc202c.setChecked(false);
+                    bi.kc202d.setChecked(false);
+                    bi.kc202e.setChecked(false);
+                    bi.kc202f.setChecked(false);
+                    bi.kc20296.setChecked(false);
+
                     bi.kc20296x.setText(null);
                     bi.fldGrpkc201.setVisibility(View.GONE);
                     bi.fldGrpkc203.setVisibility(View.VISIBLE);
@@ -59,10 +68,29 @@ public class SectionC2Activity extends AppCompatActivity {
                     bi.kc20596x.setText(null);
                     bi.kc206.clearCheck();
                     bi.kc20696x.setText(null);
-                    bi.kc207.clearCheck();
+
+
+                    bi.kc207a.setChecked(false);
+                    bi.kc207b.setChecked(false);
+                    bi.kc207c.setChecked(false);
+                    bi.kc207d.setChecked(false);
+                    bi.kc207e.setChecked(false);
+                    bi.kc207f.setChecked(false);
+                    bi.kc207g.setChecked(false);
+                    bi.kc207h.setChecked(false);
+                    bi.kc207i.setChecked(false);
+                    bi.kc20796.setChecked(false);
+
+
                     bi.kc20796x.setText(null);
                     bi.kc208.clearCheck();
-                    bi.kc209.clearCheck();
+
+                    bi.kc209a.setChecked(false);
+                    bi.kc209b.setChecked(false);
+                    bi.kc209c.setChecked(false);
+                    bi.kc20996.setChecked(false);
+
+
                     bi.kc20996x.setText(null);
                     bi.kc210.clearCheck();
                     bi.kc211.clearCheck();
@@ -74,13 +102,30 @@ public class SectionC2Activity extends AppCompatActivity {
             }
         });
 
+        bi.kc20398.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    bi.kc203.setText(null);
+                    bi.kc203.setVisibility(View.GONE);
+                } else {
+                    bi.kc203.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
         bi.kc208.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (bi.kc208a.isChecked()) {
                     bi.fldGrpkc208.setVisibility(View.VISIBLE);
                 } else {
-                    bi.kc209.clearCheck();
+
+                    bi.kc209a.setChecked(false);
+                    bi.kc209b.setChecked(false);
+                    bi.kc209c.setChecked(false);
+                    bi.kc20996.setChecked(false);
+
                     bi.kc210.clearCheck();
                     bi.kc211.clearCheck();
                     bi.kc212.clearCheck();
@@ -103,6 +148,19 @@ public class SectionC2Activity extends AppCompatActivity {
             }
         });
 
+
+        bi.kc21498.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (bi.kc21498.isChecked()) {
+                    bi.kc214.setText(null);
+                    bi.kc214.setVisibility(View.GONE);
+                } else {
+                    bi.kc214.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
     }
 
 
@@ -115,14 +173,14 @@ public class SectionC2Activity extends AppCompatActivity {
                 : "0");
 
 
-        sC2.put("kc202", bi.kc202a.isChecked() ? "1"
-                : bi.kc202b.isChecked() ? "2"
-                : bi.kc202c.isChecked() ? "3"
-                : bi.kc202d.isChecked() ? "4"
-                : bi.kc202e.isChecked() ? "5"
-                : bi.kc202f.isChecked() ? "6"
-                : bi.kc20296.isChecked() ? "96"
-                : "0");
+        sC2.put("kc202a", bi.kc202a.isChecked() ? "1" : "0");
+        sC2.put("kc202b", bi.kc202b.isChecked() ? "2" : "0");
+        sC2.put("kc202c", bi.kc202c.isChecked() ? "3" : "0");
+        sC2.put("kc202d", bi.kc202d.isChecked() ? "4" : "0");
+        sC2.put("kc202e", bi.kc202e.isChecked() ? "5" : "0");
+        sC2.put("kc202f", bi.kc202f.isChecked() ? "6" : "0");
+        sC2.put("kc20296", bi.kc20296.isChecked() ? "96" : "0");
+
 
         sC2.put("kc20296", bi.kc20296x.getText().toString());
         sC2.put("kc203", bi.kc203.getText().toString());
@@ -161,17 +219,16 @@ public class SectionC2Activity extends AppCompatActivity {
         sC2.put("kc20696", bi.kc20696x.getText().toString());
 
 
-        sC2.put("kc207", bi.kc207a.isChecked() ? "1"
-                : bi.kc207b.isChecked() ? "2"
-                : bi.kc207c.isChecked() ? "3"
-                : bi.kc207d.isChecked() ? "4"
-                : bi.kc207e.isChecked() ? "5"
-                : bi.kc207f.isChecked() ? "6"
-                : bi.kc207g.isChecked() ? "7"
-                : bi.kc207h.isChecked() ? "8"
-                : bi.kc207i.isChecked() ? "9"
-                : bi.kc20796.isChecked() ? "96"
-                : "0");
+        sC2.put("kc207a", bi.kc207a.isChecked() ? "1" : "0");
+        sC2.put("kc207b", bi.kc207b.isChecked() ? "2" : "0");
+        sC2.put("kc207c", bi.kc207c.isChecked() ? "3" : "0");
+        sC2.put("kc207d", bi.kc207d.isChecked() ? "4" : "0");
+        sC2.put("kc207e", bi.kc207e.isChecked() ? "5" : "0");
+        sC2.put("kc207f", bi.kc207f.isChecked() ? "6" : "0");
+        sC2.put("kc207g", bi.kc207g.isChecked() ? "7" : "0");
+        sC2.put("kc207h", bi.kc207h.isChecked() ? "8" : "0");
+        sC2.put("kc207i", bi.kc207i.isChecked() ? "9" : "0");
+        sC2.put("kc20796", bi.kc20796.isChecked() ? "96" : "0");
 
 
         sC2.put("kc20796", bi.kc20796.getText().toString());
@@ -183,10 +240,10 @@ public class SectionC2Activity extends AppCompatActivity {
                 : "0");
 
 
-        sC2.put("kc209", bi.kc209a.isChecked() ? "1"
-                : bi.kc209b.isChecked() ? "2"
-                : bi.kc20996.isChecked() ? "96"
-                : "0");
+        sC2.put("kc209a", bi.kc209a.isChecked() ? "1" : "0");
+        sC2.put("kc209b", bi.kc209b.isChecked() ? "2" : "0");
+        sC2.put("kc209c", bi.kc209c.isChecked() ? "3" : "0");
+        sC2.put("kc20996", bi.kc20996.isChecked() ? "96" : "0");
 
 
         sC2.put("kc20996x", bi.kc20996x.getText().toString());
@@ -239,13 +296,14 @@ public class SectionC2Activity extends AppCompatActivity {
         if (!validatorClass.EmptyRadioButton(this, bi.kc201, bi.kc201a, getString(R.string.kc201))) {
             return false;
         }
+
         if (bi.kc201b.isChecked()) {
 
-            if (!validatorClass.EmptyRadioButton(this, bi.kc202, bi.kc202a, getString(R.string.kc202))) {
+            if (!validatorClass.EmptyCheckBox(this, bi.fldGrpkc202, bi.kc202a, getString(R.string.kc202))) {
                 return false;
             }
-
         }
+
         if (bi.kc201a.isChecked()) {
 
             if (bi.kc20296.isChecked()) {
@@ -294,7 +352,7 @@ public class SectionC2Activity extends AppCompatActivity {
             }
 
 
-            if (!validatorClass.EmptyRadioButton(this, bi.kc207, bi.kc207a, getString(R.string.kc207))) {
+            if (!validatorClass.EmptyCheckBox(this, bi.fldGrpkc206, bi.kc207a, getString(R.string.kc207))) {
                 return false;
             }
 
@@ -313,7 +371,7 @@ public class SectionC2Activity extends AppCompatActivity {
 
             if (bi.kc208a.isChecked()) {
 
-                if (!validatorClass.EmptyRadioButton(this, bi.kc209, bi.kc209a, getString(R.string.kc209))) {
+                if (!validatorClass.EmptyCheckBox(this, bi.fldGrpkc209, bi.kc209a, getString(R.string.kc209))) {
                     return false;
                 }
 

@@ -188,7 +188,7 @@
                             android:digits="0123456789"
                             android:hint="@string/weeks"
                             android:inputType="number"
-                            android:maxLength="2" />
+                            android:maxLength="1" />
 
                         <!--months-->
                         <TextView
@@ -208,7 +208,7 @@
                             android:digits="0123456789"
                             android:hint="@string/months"
                             android:inputType="number"
-                            android:maxLength="2" />
+                            android:maxLength="1" />
 
                     </LinearLayout>
 
@@ -302,6 +302,17 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/btn_Continue"
+                    style="@style/buttons"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#1ed61e"
+                    android:onClick="@{() -> callback.BtnContinue()}"
+                    android:text="@string/nextSection"
+                    android:textColor="@color/white" />
+
+                <Button
                     android:id="@+id/btn_End"
                     style="@style/buttons"
                     android:layout_width="0dp"
@@ -312,16 +323,6 @@
                     android:text="@string/end_interview"
                     android:textColor="@color/white" />
 
-                <Button
-                    android:id="@+id/btn_Continue"
-                    style="@style/buttons"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#1ed61e"
-                    android:onClick="@{() -> callback.BtnContinue()}"
-                    android:text="@string/nextSection"
-                    android:textColor="@color/white" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

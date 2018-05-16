@@ -147,9 +147,21 @@ public class SectionB1Activity extends AppCompatActivity {
                     return false;
                 }
 
+
+                if (!validatorClass.RangeTextBox(this, bi.kb202w, 0, 3, getString(R.string.weeks), "weeks")) {
+                    return false;
+                }
+
+
                 if (!validatorClass.EmptyTextBox(this, bi.kb202m, getString(R.string.months))) {
                     return false;
                 }
+
+
+                if (!validatorClass.RangeTextBox(this, bi.kb202m, 0, 9, getString(R.string.months), "months")) {
+                    return false;
+                }
+
             }
 
             if (!validatorClass.EmptyRadioButton(this, bi.kb203, bi.kb203a, getString(R.string.kb203))) {

@@ -418,6 +418,11 @@ public class SectionA1Activity extends AppCompatActivity {
         }
 
 
+        if (!validatorClass.RangeTextBox(this, bi.ka106, 1, 15, getString(R.string.ka106), "Rooms")) {
+            return false;
+        }
+
+
         if (!validatorClass.EmptyRadioButton(this, bi.ka107, bi.ka107a, getString(R.string.ka107))) {
             return false;
         }
@@ -523,6 +528,10 @@ public class SectionA1Activity extends AppCompatActivity {
         if (bi.ka117a.isChecked()) {
 
             if (!validatorClass.EmptyTextBox(this, bi.ka118, getString(R.string.ka118))) {
+                return false;
+            }
+
+            if (!validatorClass.RangeTextBox(this, bi.ka118, 1, 15, getString(R.string.ka118), "Toilet")) {
                 return false;
             }
         }
