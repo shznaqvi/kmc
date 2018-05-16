@@ -1,7 +1,9 @@
 package edu.aku.hassannaqvi.kmc.core;
 
+import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.location.Location;
 import android.location.LocationListener;
@@ -212,6 +214,7 @@ public class MainApp extends Application {
 
         }
     }
+
 
 
 }
