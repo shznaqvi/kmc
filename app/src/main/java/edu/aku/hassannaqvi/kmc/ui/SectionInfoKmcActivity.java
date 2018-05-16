@@ -64,7 +64,6 @@ public class SectionInfoKmcActivity extends Activity {
         lablesUCs.add("UC2");
 
 
-
         bi.crauc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, lablesUCs));
 
     }

@@ -715,7 +715,7 @@ public class SectionA1Activity extends AppCompatActivity {
 
         int updcount = db.updateSA1();
 
-        if (updcount >0) {
+        if (updcount > 0) {
             //Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
