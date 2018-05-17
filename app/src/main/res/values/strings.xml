@@ -35,6 +35,7 @@
     <string name="no"> نه </string>
     <string name="na"> لاڳو نه آهي </string>
     <string name="dkn"> خبر ناهي </string>
+    <string name="drem">ياد ناهي </string>
     <string name="kg"> ڪلوگرام </string>
     <string name="weeks"> هفتا </string>
     <string name="days"> ڏينهن </string>
@@ -609,7 +610,7 @@
     <string name="kc405"> ڪيتري وقت توهان پنهنجي ٻار کي ڇاتي سان لڳائي سگھو ٿا</string>
     <string name="kc406"> ڇا ڇاتيءَ سان لڳائڻ ٻار کي کير پيارڻ ۾ مدد ڪري ٿو؟ </string>
     <string name="kc407"> توهان جي خيال مطابق ڇاتيءَ سان لڳائڻ ڪيئن مدد ڪري ٿو؟ </string>
-    <string name="kc407a"> ٿڌ </string>
+    <string name="kc407a">ٿڌ کان بچائڻ لاءِ </string>
     <string name="kc407b"> ٻارن جو وزن وڌائي </string>
     <string name="kc407c"> ماءُ کي بيماري کان بچائي ٿو </string>
     <string name="kc407d"> نئي ڄاول ٻار کي بيماري کان بچائي ٿو </string>
