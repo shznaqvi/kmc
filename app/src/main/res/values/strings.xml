@@ -562,14 +562,14 @@
     <string name="kc609g"> ليڊي هيلٿ وزيٽر </string>
     <string name="kc609h"> دائي </string>
     <string name="kc610"> طبي معائني ۾ ڇا ڪيو هو؟ </string>
+    <string name="kc610sub"> حفاذتي ٽڪا </string>
     <string name="kc610a"> نئي ٻار جو معائنو </string>
     <string name="kc610b"> وزن جي چڪاس </string>
     <string name="kc610c"> ڊيگھ جي چڪاس </string>
     <string name="kc610d"> دوا ڏني </string>
     <string name="kc610e"> صحت مرڪز ڏانهن موڪلڻ </string>
-    <string name="kc610f"> حفاذتي ٽڪا </string>
-    <string name="kc610h"> پوليو جا قطرا </string>
-    <string name="kc610i"> ٽي بي کان بچاءَ جو ٽڪو </string>
+    <string name="kc610f"> پوليو جا قطرا </string>
+    <string name="kc610g"> ٽي بي کان بچاءَ جو ٽڪو </string>
     <string name="kc611"> ڇا ٻار پهرين ٻن مهينن ۾ شديد بيمار ٿيو هيو؟ </string>
     <string name="kc612"> جيڪڏهن ها ته بيماري جي دوران ڪهريون (نشانيون/علامتون) موجود هيون </string>
     <string name="kc612a"> ڄمڻ کان پوءِ سهي سان کير نه پيئڻ </string>
@@ -703,7 +703,6 @@
     <string name="kd305g"> ليڊي هيلٿ ورڪر مشورو ڏنو </string>
     <string name="kfheading"> نون ڄاول ٻارن جي مرڻ جي باري ۾ معلومات </string>
     <string name="ka109sub04">Missing string</string>
-    <string name="kc610g">Missing String</string>
 
 
     <string name="keheading">Paternal Parenting Information</string>

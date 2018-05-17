@@ -121,7 +121,7 @@ public class SectionC6Activity extends AppCompatActivity {
                     bi.fldGrpkc607.setVisibility(View.VISIBLE);
                 } else {
                     bi.fldGrpkc607.setVisibility(View.GONE);
-                   // bi.kc607.clearCheck();
+                    bi.kc60798.setChecked(false);
                     bi.kc607day.setText(null);
                     bi.kc607week.setText(null);
                     bi.kc608.setText(null);
@@ -135,9 +135,42 @@ public class SectionC6Activity extends AppCompatActivity {
                     bi.kc610e.setChecked(false);
                     bi.kc610f.setChecked(false);
                     bi.kc610g.setChecked(false);
+                    bi.kc61098.setChecked(false);
                     bi.kc61096.setChecked(false);
                     bi.kc61096x.setText(null);
 
+                }
+            }
+        });
+        bi.kc61098.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    bi.kc610a.setChecked(false);
+                    bi.kc610b.setChecked(false);
+                    bi.kc610c.setChecked(false);
+                    bi.kc610d.setChecked(false);
+                    bi.kc610e.setChecked(false);
+                    bi.kc610f.setChecked(false);
+                    bi.kc610g.setChecked(false);
+                    bi.kc61096.setChecked(false);
+                    bi.kc610a.setEnabled(false);
+                    bi.kc610b.setEnabled(false);
+                    bi.kc610c.setEnabled(false);
+                    bi.kc610d.setEnabled(false);
+                    bi.kc610e.setEnabled(false);
+                    bi.kc610f.setEnabled(false);
+                    bi.kc610g.setEnabled(false);
+                    bi.kc61096.setEnabled(false);
+                }else{
+                    bi.kc610a.setEnabled(true);
+                    bi.kc610b.setEnabled(true);
+                    bi.kc610c.setEnabled(true);
+                    bi.kc610d.setEnabled(true);
+                    bi.kc610e.setEnabled(true);
+                    bi.kc610f.setEnabled(true);
+                    bi.kc610g.setEnabled(true);
+                    bi.kc61096.setEnabled(true);
                 }
             }
         });
@@ -149,8 +182,56 @@ public class SectionC6Activity extends AppCompatActivity {
                     bi.fldGrpkc612.setVisibility(View.VISIBLE);
                 } else {
                     bi.fldGrpkc612.setVisibility(View.GONE);
-                    bi.kc612.clearCheck();
+                    bi.kc612a.setChecked(false);
+                    bi.kc612b.setChecked(false);
+                    bi.kc612c.setChecked(false);
+                    bi.kc612d.setChecked(false);
+                    bi.kc612e.setChecked(false);
+                    bi.kc612f.setChecked(false);
+                    bi.kc612g.setChecked(false);
+                    bi.kc612h.setChecked(false);
+                    bi.kc61296.setChecked(false);
+                    bi.kc61298.setChecked(false);
                     bi.kc61296x.setText(null);
+                }
+            }
+        });
+        bi.kc61298.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    bi.kc612a.setChecked(false);
+                    bi.kc612b.setChecked(false);
+                    bi.kc612c.setChecked(false);
+                    bi.kc612d.setChecked(false);
+                    bi.kc612e.setChecked(false);
+                    bi.kc612f.setChecked(false);
+                    bi.kc612g.setChecked(false);
+                    bi.kc612h.setChecked(false);
+                    bi.kc61296.setChecked(false);
+                    bi.kc612a.setEnabled(false);
+                    bi.kc612a.setEnabled(false);
+                    bi.kc612b.setEnabled(false);
+                    bi.kc612c.setEnabled(false);
+                    bi.kc612d.setEnabled(false);
+                    bi.kc612e.setEnabled(false);
+                    bi.kc612f.setEnabled(false);
+                    bi.kc612g.setEnabled(false);
+                    bi.kc612h.setEnabled(false);
+                    bi.kc61296.setEnabled(false);
+
+                }else{
+
+                    bi.kc612a.setEnabled(true);
+                    bi.kc612a.setEnabled(true);
+                    bi.kc612b.setEnabled(true);
+                    bi.kc612c.setEnabled(true);
+                    bi.kc612d.setEnabled(true);
+                    bi.kc612e.setEnabled(true);
+                    bi.kc612f.setEnabled(true);
+                    bi.kc612g.setEnabled(true);
+                    bi.kc612h.setEnabled(true);
+                    bi.kc61296.setEnabled(true);
                 }
             }
         });
@@ -261,6 +342,9 @@ public class SectionC6Activity extends AppCompatActivity {
                 if (!validatorClass.EmptyTextBox(this, bi.kc608, getString(R.string.kc608))) {
                     return false;
                 }
+                if (!validatorClass.RangeTextBox(this, bi.kc608, 1, 10, getString(R.string.kc608), " times")) {
+                    return false;
+                }
             }
 
             if (!validatorClass.EmptyRadioButton(this, bi.kc609, bi.kc60996, bi.kc60996x, getString(R.string.kc609))) {
@@ -278,11 +362,10 @@ public class SectionC6Activity extends AppCompatActivity {
         }
 
         if (bi.kc611a.isChecked()) {
-            return validatorClass.EmptyRadioButton(this, bi.kc612, bi.kc61296, bi.kc61296x, getString(R.string.kc612));
-
+            if (!validatorClass.EmptyCheckBox(this, bi.kc612, bi.kc61296, bi.kc61296x, getString(R.string.kc612))) {
+                return false;
+            }
         }
-
-
         return true;
     }
 
@@ -356,6 +439,7 @@ public class SectionC6Activity extends AppCompatActivity {
                 : bi.kc609f.isChecked() ? "6"
                 : bi.kc609g.isChecked() ? "7"
                 : bi.kc609h.isChecked() ? "8"
+                : bi.kc60998.isChecked() ? "98"
                 : bi.kc60996.isChecked() ? "96"
                 : "0");
 
@@ -368,6 +452,7 @@ public class SectionC6Activity extends AppCompatActivity {
         sn.put("kc705e", bi.kc610e.isChecked() ? "5" : "0");
         sn.put("kc705f", bi.kc610f.isChecked() ? "6" : "0");
         sn.put("kc705g", bi.kc610g.isChecked() ? "7" : "0");
+        sn.put("kc70598", bi.kc61098.isChecked() ? "98" : "0");
         sn.put("kc70596", bi.kc61096.isChecked() ? "96" : "0");
         sn.put("kc70596x", bi.kc61096x.getText().toString());
 
@@ -375,16 +460,17 @@ public class SectionC6Activity extends AppCompatActivity {
                 : bi.kc611b.isChecked() ? "2"
                 : "0");
 
-        sn.put("kc707", bi.kc612a.isChecked() ? "1"
-                : bi.kc612b.isChecked() ? "2"
-                : bi.kc612c.isChecked() ? "3"
-                : bi.kc612d.isChecked() ? "4"
-                : bi.kc612e.isChecked() ? "5"
-                : bi.kc612f.isChecked() ? "6"
-                : bi.kc612g.isChecked() ? "7"
-                : bi.kc612h.isChecked() ? "8"
-                : bi.kc61296.isChecked() ? "96"
-                : "0");
+        sn.put("kc707a", bi.kc612a.isChecked() ? "1" : "0");
+        sn.put("kc707b",  bi.kc612b.isChecked() ? "2" : "0");
+        sn.put("kc707c",  bi.kc612c.isChecked() ? "3" : "0");
+        sn.put("kc707d",  bi.kc612d.isChecked() ? "4" : "0");
+        sn.put("kc707e",  bi.kc612e.isChecked() ? "5" : "0");
+        sn.put("kc707f",  bi.kc612f.isChecked() ? "6" : "0");
+        sn.put("kc707g",  bi.kc612g.isChecked() ? "7" : "0");
+        sn.put("kc707h",  bi.kc612h.isChecked() ? "8" : "0");
+        sn.put("kc70798", bi.kc61298.isChecked() ? "98" : "0");
+        sn.put("kc70796",  bi.kc61296.isChecked() ? "96" : "0");
+        sn.put("kc70796x", bi.kc61296x.getText().toString());
 
         //MainApp.fc.sets(String.valueOf(sn));
 
