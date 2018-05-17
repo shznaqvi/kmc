@@ -54,7 +54,17 @@ public class SectionA1Activity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (bi.ka114b.isChecked()) {
-                    bi.ka115.clearCheck();
+
+                    bi.ka115a.setChecked(false);
+                    bi.ka115b.setChecked(false);
+                    bi.ka115c.setChecked(false);
+                    bi.ka115d.setChecked(false);
+                    bi.ka115e.setChecked(false);
+                    bi.ka115f.setChecked(false);
+                    bi.ka11596.setChecked(false);
+
+                    bi.ka11596x.setText(null);
+
                     bi.fldGrpka114.setVisibility(View.GONE);
                 } else {
                     bi.fldGrpka114.setVisibility(View.VISIBLE);
@@ -271,14 +281,14 @@ public class SectionA1Activity extends AppCompatActivity {
                 : "0");
 
 
-        sA1.put("ka115", bi.ka115a.isChecked() ? "1"
-                : bi.ka115b.isChecked() ? "2"
-                : bi.ka115c.isChecked() ? "3"
-                : bi.ka115d.isChecked() ? "4"
-                : bi.ka115e.isChecked() ? "5"
-                : bi.ka115f.isChecked() ? "6"
-                : bi.ka11596.isChecked() ? "96"
-                : "0");
+        sA1.put("ka115a", bi.ka115a.isChecked() ? "1" : "0");
+        sA1.put("ka115b", bi.ka115b.isChecked() ? "2" : "0");
+        sA1.put("ka115c", bi.ka115c.isChecked() ? "3" : "0");
+        sA1.put("ka115d", bi.ka115d.isChecked() ? "4" : "0");
+        sA1.put("ka115e", bi.ka115e.isChecked() ? "5" : "0");
+        sA1.put("ka115f", bi.ka115f.isChecked() ? "6" : "0");
+        sA1.put("ka11596", bi.ka11596.isChecked() ? "96" : "0");
+
 
         sA1.put("ka11596x", bi.ka11596x.getText().toString());
 
@@ -347,6 +357,7 @@ public class SectionA1Activity extends AppCompatActivity {
         sA1.put("ka12418", bi.ka12418.getText().toString());
         sA1.put("ka12419", bi.ka12419.getText().toString());
         sA1.put("ka12420", bi.ka12420.getText().toString());
+        sA1.put("ka12496", bi.ka12496.getText().toString());
 
 
         MainApp.fc.setsA1(String.valueOf(sA1));
@@ -446,15 +457,7 @@ public class SectionA1Activity extends AppCompatActivity {
         }
 
 
-        if (bi.ka10996.isChecked()) {
-
-            if (!validatorClass.EmptyTextBox(this, bi.ka10996x, getString(R.string.other))) {
-                return false;
-            }
-        }
-
-
-        /*if (!validatorClass.EmptyRadioButton(this, bi.ka110, bi.ka110a, getString(R.string.ka110))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.ka110, bi.ka110a, getString(R.string.ka110))) {
             return false;
         }
 
@@ -464,7 +467,7 @@ public class SectionA1Activity extends AppCompatActivity {
             if (!validatorClass.EmptyTextBox(this, bi.ka11096x, getString(R.string.other))) {
                 return false;
             }
-        }*/
+        }
 
 
         if (!validatorClass.EmptyRadioButton(this, bi.ka111, bi.ka111a, getString(R.string.ka111))) {
@@ -492,7 +495,7 @@ public class SectionA1Activity extends AppCompatActivity {
 
         if (bi.ka114a.isChecked()) {
 
-            if (!validatorClass.EmptyRadioButton(this, bi.ka115, bi.ka115a, getString(R.string.ka115))) {
+            if (!validatorClass.EmptyCheckBox(this, bi.fldGrpka115, bi.ka115a, getString(R.string.ka115))) {
                 return false;
             }
 
@@ -578,7 +581,17 @@ public class SectionA1Activity extends AppCompatActivity {
         }
 
 
+        if (!validatorClass.RangeTextBox(this, bi.ka12401, 3, 20, getString(R.string.ka12401), "Quantity")) {
+            return false;
+        }
+
+
         if (!validatorClass.EmptyTextBox(this, bi.ka12402, getString(R.string.ka12402))) {
+            return false;
+        }
+
+
+        if (!validatorClass.RangeTextBox(this, bi.ka12402, 3, 20, getString(R.string.ka12402), "Quantity")) {
             return false;
         }
 
@@ -588,7 +601,17 @@ public class SectionA1Activity extends AppCompatActivity {
         }
 
 
+        if (!validatorClass.RangeTextBox(this, bi.ka12403, 3, 20, getString(R.string.ka12403), "Quantity")) {
+            return false;
+        }
+
+
         if (!validatorClass.EmptyTextBox(this, bi.ka12404, getString(R.string.ka12404))) {
+            return false;
+        }
+
+
+        if (!validatorClass.RangeTextBox(this, bi.ka12404, 3, 20, getString(R.string.ka12404), "Quantity")) {
             return false;
         }
 
@@ -598,7 +621,17 @@ public class SectionA1Activity extends AppCompatActivity {
         }
 
 
+        if (!validatorClass.RangeTextBox(this, bi.ka12405, 3, 20, getString(R.string.ka12405), "Quantity")) {
+            return false;
+        }
+
+
         if (!validatorClass.EmptyTextBox(this, bi.ka12406, getString(R.string.ka12406))) {
+            return false;
+        }
+
+
+        if (!validatorClass.RangeTextBox(this, bi.ka12406, 3, 20, getString(R.string.ka12406), "Quantity")) {
             return false;
         }
 
@@ -608,7 +641,17 @@ public class SectionA1Activity extends AppCompatActivity {
         }
 
 
+        if (!validatorClass.RangeTextBox(this, bi.ka12407, 3, 20, getString(R.string.ka12407), "Quantity")) {
+            return false;
+        }
+
+
         if (!validatorClass.EmptyTextBox(this, bi.ka12408, getString(R.string.ka12408))) {
+            return false;
+        }
+
+
+        if (!validatorClass.RangeTextBox(this, bi.ka12408, 3, 20, getString(R.string.ka12408), "Quantity")) {
             return false;
         }
 
@@ -618,7 +661,17 @@ public class SectionA1Activity extends AppCompatActivity {
         }
 
 
+        if (!validatorClass.RangeTextBox(this, bi.ka12409, 3, 20, getString(R.string.ka12409), "Quantity")) {
+            return false;
+        }
+
+
         if (!validatorClass.EmptyTextBox(this, bi.ka12410, getString(R.string.ka12410))) {
+            return false;
+        }
+
+
+        if (!validatorClass.RangeTextBox(this, bi.ka12410, 3, 20, getString(R.string.ka12410), "Quantity")) {
             return false;
         }
 
@@ -628,7 +681,17 @@ public class SectionA1Activity extends AppCompatActivity {
         }
 
 
+        if (!validatorClass.RangeTextBox(this, bi.ka12411, 3, 20, getString(R.string.ka12411), "Quantity")) {
+            return false;
+        }
+
+
         if (!validatorClass.EmptyTextBox(this, bi.ka12412, getString(R.string.ka12412))) {
+            return false;
+        }
+
+
+        if (!validatorClass.RangeTextBox(this, bi.ka12412, 3, 20, getString(R.string.ka12412), "Quantity")) {
             return false;
         }
 
@@ -638,7 +701,17 @@ public class SectionA1Activity extends AppCompatActivity {
         }
 
 
+        if (!validatorClass.RangeTextBox(this, bi.ka12413, 3, 20, getString(R.string.ka12413), "Quantity")) {
+            return false;
+        }
+
+
         if (!validatorClass.EmptyTextBox(this, bi.ka12414, getString(R.string.ka12414))) {
+            return false;
+        }
+
+
+        if (!validatorClass.RangeTextBox(this, bi.ka12414, 3, 20, getString(R.string.ka12414), "Quantity")) {
             return false;
         }
 
@@ -648,7 +721,17 @@ public class SectionA1Activity extends AppCompatActivity {
         }
 
 
+        if (!validatorClass.RangeTextBox(this, bi.ka12415, 3, 20, getString(R.string.ka12415), "Quantity")) {
+            return false;
+        }
+
+
         if (!validatorClass.EmptyTextBox(this, bi.ka12416, getString(R.string.ka12415))) {
+            return false;
+        }
+
+
+        if (!validatorClass.RangeTextBox(this, bi.ka12416, 3, 20, getString(R.string.ka12416), "Quantity")) {
             return false;
         }
 
@@ -658,7 +741,17 @@ public class SectionA1Activity extends AppCompatActivity {
         }
 
 
+        if (!validatorClass.RangeTextBox(this, bi.ka12417, 3, 20, getString(R.string.ka12417), "Quantity")) {
+            return false;
+        }
+
+
         if (!validatorClass.EmptyTextBox(this, bi.ka12418, getString(R.string.ka12418))) {
+            return false;
+        }
+
+
+        if (!validatorClass.RangeTextBox(this, bi.ka12418, 3, 20, getString(R.string.ka12418), "Quantity")) {
             return false;
         }
 
@@ -668,7 +761,22 @@ public class SectionA1Activity extends AppCompatActivity {
         }
 
 
-        return validatorClass.EmptyTextBox(this, bi.ka12420, getString(R.string.ka12420));
+        if (!validatorClass.RangeTextBox(this, bi.ka12419, 3, 20, getString(R.string.ka12419), "Quantity")) {
+            return false;
+        }
+
+
+        if (validatorClass.EmptyTextBox(this, bi.ka12420, getString(R.string.ka12420))) {
+            return false;
+        }
+
+
+        if (!validatorClass.RangeTextBox(this, bi.ka12420, 3, 20, getString(R.string.ka12420), "Quantity")) {
+            return false;
+        }
+
+        return true;
+
     }
 
     public void BtnEnd() {
