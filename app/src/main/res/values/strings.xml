@@ -36,6 +36,7 @@
     <string name="na"> لاڳو نه آهي </string>
     <string name="dkn"> خبر ناهي </string>
     <string name="drem">ياد ناهي </string>
+    <string name="dkndrem">خبر ناهي/ياد ناهي</string>
     <string name="kg"> ڪلوگرام </string>
     <string name="weeks"> هفتا </string>
     <string name="days"> ڏينهن </string>
@@ -511,9 +512,7 @@
     <string name="kc315c"> يل/مکڻ </string>
     <string name="kc315d"> سرمو </string>
     <string name="kc315e"> ڇيڻو </string>
-    <string name="kc316">
-    ڄمڻ کان پوءِ پهريون دفعو ڪڏهن ٻار کي ونهجاريو ويو؟
-    </string>
+    <string name="kc316">ڄمڻ کان پوءِ پهريون دفعو ڪڏهن ٻار کي ونهجاريو ويو؟</string>
     <string name="kc316a"> يڪدم هڪ ڪلاڪ اندر </string>
     <string name="kc316b"> ڪلاڪ </string>
     <string name="kc316c"> ڏينهن </string>
@@ -531,14 +530,14 @@
     <string name="kc604d"> ڪمنيونٽي هيلٿ ورڪر </string>
     <string name="kc604e"> ليڊي هيلٿ ورڪر </string>
     <string name="kc604f"> ڪمنيونٽي مڊوائيف </string>
-    <string name="kc604g"> Traditional birth attendant </string>
+    <string name="kc604g"> ويم ڪراڻڻ واري(دائي) </string>
     <string name="kc604h"> ليڊي هيلٿ وزيٽر </string>
-    <string name="kc604i"> دائي </string>
     <string name="kc605"> هن طبي معائني ۾ ڇا ڪيو هو؟ </string>
     <string name="kc605a"> بلڊ پريشر چيڪ </string>
     <string name="kc605b"> بخار چيڪ </string>
     <string name="kc605c"> ٻچي داني جي چڪاس </string>
     <string name="kc605d"> دوا ڏني </string>
+    <string name="kc605dx"> جيڪڏهن ها ته ڇا ڏنو</string>
     <string name="kc605e"> خوراڪ جي باري ۾ سمجھاڻي </string>
     <string name="kc605f"> پنهنجو کير پيارڻ بابت سمجھاڻي </string>
     <string name="kc605g"> ٻارن ۾ وقفي جي بابت سمجھاڻي </string>
@@ -548,7 +547,7 @@
     <string name="kc605k"> ڇاتيءَ سان لڳائڻ جي باري ۾ مشورو </string>
     <string name="kc605l"> اضافي خوراڪ واري دوا </string>
     <string name="kc605m"> وقفي واري دوا ڏيڻ </string>
-    <string name="kc6ssub1"> PNC FOR BABY </string>
+    <string name="kc6ssub1">  ٻار جي ڄمڻ کان پوءِ جي سارسنڀال</string>
     <string name="kc606"> ويم کان پوءِ ٻار جو طبي معائنو ڪرايو هو؟ </string>
     <string name="kc607"> جيڪڏهن ها ته ويم کان پوءِ ڪيترا ڏينهن/هفتن کان پوءِ ڪرايو هو؟ </string>
     <string name="kc608"> ويم کان پوءِ ٻار جو ڪيترا ڀيرا معائنو ڪرايو هو؟ </string>
@@ -613,13 +612,17 @@
     <string name="kc408"> جيڪڏهن مستقبل ۾ توهان جو ٻار گھٽ وزن وارو يا ننڍو پيدا ٿئي ته ڇا توهان ٻار کي ڇاتي سان لڳائيندا؟ </string>
     <string name="kc5heading"> SECTION C5: SKIN MASSAGE HISTORY: </string>
     <string name="kc501"> ڇا توهان ٻار کي تيل ماليش ڪندا آهيو؟ </string>
-    <string name="kc502"> توهان ڪڏهن ٻار کي تيل جي ماليش شروع ڪئي </string>
-    <string name="kc502a"> STARTED ______DAYS AFTER BIRTH </string>
-    <string name="kc503"> ڏينهن ۾ ڪيترا ڀيرا ماليش ڪندا آهيو؟ </string>
-    <string name="kc503a"> APPLIED ________TIME PER DAY </string>
-    <string name="kc504"> توهان ڪيتري دير ٻار کي تيل جي ماليش ڪندا آهيو؟ </string>
-    <string name="kc504a"> APPLIED TILL ________ DAYS</string>
-    <string name="kc504b"> CONTINUE TILL DATE </string>
+    <string name="kc502">ڪهڙو تيل استعمال ڪندا آهيو؟ </string>
+    <string name="kc502a">سرنهن جو تيل </string>
+    <string name="kc502b">کوپري جو تيل </string>
+    <string name="kc502c">ذيتون جو تيل</string>
+    <string name="kc503"> توهان ڪڏهن ٻار کي تيل جي ماليش شروع ڪئي </string>
+    <string name="kc503a"> ڄمڻ کان پوءِ ڪيترا ڏينهن_______ شروع </string>
+    <string name="kc504"> ڏينهن ۾ ڪيترا ڀيرا ماليش ڪندا آهيو؟ </string>
+    <string name="kc504a">	روزانو ڪيترا ڀيرا _____لڳايو ويو</string>
+    <string name="kc505"> توهان ڪيتري دير ٻار کي تيل جي ماليش ڪندا آهيو؟ </string>
+    <string name="kc505a">ڪيستائين هنيو	ڏينهن _____</string>
+    <string name="kc505b"> اڄ ڏينهن تائين جاري آهي</string>
 
     <string name="kdheading1"> هڪ سال کان گھٽ ٻارن ۾ کير پيارڻ جو عمل </string>
     <string name="kd001"> توهان جي آخري ٻار جي عمر ڇا آهي؟ </string>

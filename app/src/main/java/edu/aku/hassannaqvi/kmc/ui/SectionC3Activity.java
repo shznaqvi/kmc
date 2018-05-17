@@ -64,7 +64,7 @@ public class SectionC3Activity extends AppCompatActivity {
         bi.kc314.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (bi.kc314a.isChecked()) {
+                if (!bi.kc314a.isChecked()) {
                     bi.fldGrpkc315.setVisibility(View.GONE);
                     bi.kc315.clearCheck();
                     bi.kc31596x.setText(null);
@@ -73,14 +73,6 @@ public class SectionC3Activity extends AppCompatActivity {
                 }
             }
         });
-
-
-
-
-
-
-
-
 
 
     }
@@ -189,26 +181,19 @@ public class SectionC3Activity extends AppCompatActivity {
                 return false;
             }
         }*/
-        if (!bi.kc310a.isChecked()) {
-
+        if (bi.kc310a.isChecked()) {
             if (!validatorClass.EmptyRadioButton(this, bi.kc311, bi.kc311a, getString(R.string.kc311))) {
                 return false;
             }
-
-
             if (bi.kc31196.isChecked()) {
-
                 if (!validatorClass.EmptyTextBox(this, bi.kc31196x, getString(R.string.other))) {
                     return false;
                 }
             }
-
         }
         if (!validatorClass.EmptyRadioButton(this, bi.kc312, bi.kc312a, getString(R.string.kc312))) {
             return false;
         }
-
-
         /*if (bi.kc31296.isChecked()) {
 
             if (!validatorClass.EmptyTextBox(this, bi.kc31296x, getString(R.string.other))) {
@@ -216,19 +201,19 @@ public class SectionC3Activity extends AppCompatActivity {
             }
         }*/
 
-
         if (!validatorClass.EmptyRadioButton(this, bi.kc313, bi.kc313a, getString(R.string.kc313))) {
             return false;
         }
 
-
+/*
         if (bi.kc313b.isChecked()) {
-
-            if (!validatorClass.EmptyRadioButton(this, bi.kc314, bi.kc314a, getString(R.string.kc314))) {
-                return false;
-            }
-
+*/
+        if (!validatorClass.EmptyRadioButton(this, bi.kc314, bi.kc314a, getString(R.string.kc314))) {
+            return false;
         }
+/*
+        }
+        */
             /*if (bi.kc31496.isChecked()) {
 
                 if (!validatorClass.EmptyTextBox(this, bi.kc31496x, getString(R.string.other))) {
@@ -236,15 +221,17 @@ public class SectionC3Activity extends AppCompatActivity {
                 }
             }*/
 
+        if (bi.kc314a.isChecked()) {
+            if (!validatorClass.EmptyRadioButton(this, bi.kc315, bi.kc315a, getString(R.string.kc315))) {
+                return false;
+            }
+        }
 
-        if (!validatorClass.EmptyRadioButton(this, bi.kc315, bi.kc315a, getString(R.string.kc315))) {
+
+        if (!validatorClass.EmptyRadioButton(this, bi.kc316, bi.kc316a, getString(R.string.kc316))) {
             return false;
         }
 
-        if (bi.kc315a.isChecked()) {
-
-            return validatorClass.EmptyRadioButton(this, bi.kc316, bi.kc316a, getString(R.string.kc316));
-        }
 
         return true;
     }
