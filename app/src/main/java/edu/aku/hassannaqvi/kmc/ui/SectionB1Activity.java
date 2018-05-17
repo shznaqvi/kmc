@@ -12,6 +12,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 import edu.aku.hassannaqvi.kmc.R;
@@ -33,8 +34,20 @@ public class SectionB1Activity extends AppCompatActivity {
         bi.setCallback(this);
         bi.kb204.setManager(getSupportFragmentManager());
         bi.kb204.setMaxDate(dateToday);
-        bi.kb205.setManager(getSupportFragmentManager());
-        bi.kb205.setMinDate(dateToday);
+
+        bi.kb205lmp.setManager(getSupportFragmentManager());
+        bi.kb205lmp.setMaxDate(dateToday);
+
+        bi.kb205rec.setManager(getSupportFragmentManager());
+        bi.kb205rec.setMinDate(dateToday);
+
+        bi.kb205edd.setManager(getSupportFragmentManager());
+        bi.kb205edd.setMinDate(dateToday);
+
+        bi.kb205lmp.setDate(Calendar.getInstance());
+        bi.kb205rec.setDate(Calendar.getInstance());
+        bi.kb205edd.setDate(Calendar.getInstance());
+
         setupView();
     }
 
@@ -77,11 +90,13 @@ public class SectionB1Activity extends AppCompatActivity {
 
                     bi.kb202w.setText(null);
                     bi.kb202m.setText(null);
-                    bi.kb203.clearCheck();
                     bi.kb204.setText(null);
-                    bi.kb205.setText(null);
+                    bi.kb203.clearCheck();
+                    bi.kb205.clearCheck();
 
                     bi.fldGrpkb201.setVisibility(View.GONE);
+                    bi.fldGrpkb202.setVisibility(View.GONE);
+
                 } else if (bi.kb20198.isChecked()) {
 
                     bi.kb202w.setText(null);
@@ -93,6 +108,38 @@ public class SectionB1Activity extends AppCompatActivity {
                 } else {
                     bi.fldGrpkb201.setVisibility(View.VISIBLE);
                     bi.fldGrpkb202.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+
+        bi.kb205.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (bi.kb205a.isChecked()) {
+
+                    bi.kb205rec.setText(null);
+                    bi.kb205edd.setText(null);
+
+                    bi.kb205lmp.setVisibility(View.VISIBLE);
+                    bi.kb205rec.setVisibility(View.GONE);
+                    bi.kb205edd.setVisibility(View.GONE);
+                } else if (bi.kb205b.isChecked()) {
+
+                    bi.kb205lmp.setText(null);
+                    bi.kb205edd.setText(null);
+
+                    bi.kb205rec.setVisibility(View.VISIBLE);
+                    bi.kb205lmp.setVisibility(View.GONE);
+                    bi.kb205edd.setVisibility(View.GONE);
+                } else if (bi.kb205c.isChecked()) {
+
+                    bi.kb205rec.setText(null);
+                    bi.kb205lmp.setText(null);
+
+                    bi.kb205edd.setVisibility(View.VISIBLE);
+                    bi.kb205rec.setVisibility(View.GONE);
+                    bi.kb205lmp.setVisibility(View.GONE);
                 }
             }
         });
@@ -116,13 +163,23 @@ public class SectionB1Activity extends AppCompatActivity {
         sB1.put("kb202w", bi.kb202w.getText().toString());
         sB1.put("kb202m", bi.kb202m.getText().toString());
 
+
+        sB1.put("kb204", bi.kb204.getText().toString());
+
         sB1.put("kb203", bi.kb203a.isChecked() ? "1"
                 : bi.kb203b.isChecked() ? "2"
                 : "0");
 
-        sB1.put("kb204", bi.kb204.getText().toString());
-        sB1.put("kb205", bi.kb205.getText().toString());
 
+        sB1.put("kb205", bi.kb205a.isChecked() ? "1"
+                : bi.kb205b.isChecked() ? "2"
+                : bi.kb205c.isChecked() ? "3"
+                : "0");
+
+
+        sB1.put("kb205lmp", bi.kb205lmp.getText().toString());
+        sB1.put("kb205rec", bi.kb205rec.getText().toString());
+        sB1.put("kb205edd", bi.kb205edd.getText().toString());
 
         MainApp.fc.setsB1(String.valueOf(sB1));
 
@@ -164,15 +221,43 @@ public class SectionB1Activity extends AppCompatActivity {
 
             }
 
-            if (!validatorClass.EmptyRadioButton(this, bi.kb203, bi.kb203a, getString(R.string.kb203))) {
-                return false;
-            }
 
             if (!validatorClass.EmptyTextBox(this, bi.kb204, getString(R.string.kb204))) {
                 return false;
             }
 
-            return validatorClass.EmptyTextBox(this, bi.kb205, getString(R.string.kb205));
+
+            if (!validatorClass.EmptyRadioButton(this, bi.kb203, bi.kb203a, getString(R.string.kb203))) {
+                return false;
+            }
+
+
+            if (!validatorClass.EmptyRadioButton(this, bi.kb205, bi.kb205a, getString(R.string.kb205))) {
+                return false;
+            }
+
+
+            if (bi.kb205a.isChecked()) {
+
+                if (!validatorClass.EmptyTextBox(this, bi.kb205lmp, getString(R.string.kb205a))) {
+                    return false;
+                }
+
+            } else if (bi.kb205b.isChecked()) {
+
+                if (!validatorClass.EmptyTextBox(this, bi.kb205rec, getString(R.string.kb205b))) {
+                    return false;
+                }
+
+            } else if (bi.kb205c.isChecked()) {
+
+                if (!validatorClass.EmptyTextBox(this, bi.kb205edd, getString(R.string.kb205c))) {
+                    return false;
+                }
+
+            }
+
+
         }
 
         return true;

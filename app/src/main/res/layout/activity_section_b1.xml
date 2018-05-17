@@ -115,8 +115,7 @@
                 <RadioGroup
                     android:id="@+id/kb201"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:layout_height="wrap_content">
 
                     <RadioButton
                         android:id="@+id/kb201a"
@@ -140,8 +139,69 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
-                        android:text="@string/dkn" />
+                        android:text="@string/kb201dkn" />
                 </RadioGroup>
+
+
+                <LinearLayout
+                    android:id="@+id/fldGrpkb202"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    tools:visibility="visible">
+
+                    <!--kb202-->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/colorPrimary"
+                        android:text="@string/kb202"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@android:color/white" />
+
+                    <!--weeks-->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/colorPrimaryAlpha"
+                        android:text="@string/weeks"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@android:color/white" />
+
+                    <EditText
+                        android:id="@+id/kb202w"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:digits="0123456789"
+                        android:hint="@string/weeks"
+                        android:inputType="number"
+                        android:maxLength="1" />
+
+                    <!--months-->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/colorPrimaryAlpha"
+                        android:text="@string/months"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@android:color/white" />
+
+                    <EditText
+                        android:id="@+id/kb202m"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:digits="0123456789"
+                        android:hint="@string/months"
+                        android:inputType="number"
+                        android:maxLength="1" />
+
+                </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/fldGrpkb201"
@@ -150,100 +210,6 @@
                     android:orientation="vertical"
                     android:visibility="gone"
                     tools:visibility="visible">
-
-
-                    <LinearLayout
-                        android:id="@+id/fldGrpkb202"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:visibility="gone"
-                        tools:visibility="visible">
-
-                        <!--kb202-->
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
-                            android:background="@color/colorPrimary"
-                            android:text="@string/kb202"
-                            android:textAppearance="?android:attr/textAppearanceLarge"
-                            android:textColor="@android:color/white" />
-
-                        <!--weeks-->
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
-                            android:background="@color/colorPrimaryAlpha"
-                            android:text="@string/weeks"
-                            android:textAppearance="?android:attr/textAppearanceLarge"
-                            android:textColor="@android:color/white" />
-
-                        <EditText
-                            android:id="@+id/kb202w"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
-                            android:digits="0123456789"
-                            android:hint="@string/weeks"
-                            android:inputType="number"
-                            android:maxLength="1" />
-
-                        <!--months-->
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
-                            android:background="@color/colorPrimaryAlpha"
-                            android:text="@string/months"
-                            android:textAppearance="?android:attr/textAppearanceLarge"
-                            android:textColor="@android:color/white" />
-
-                        <EditText
-                            android:id="@+id/kb202m"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
-                            android:digits="0123456789"
-                            android:hint="@string/months"
-                            android:inputType="number"
-                            android:maxLength="1" />
-
-                    </LinearLayout>
-
-                    <!--kb203-->
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:background="@color/colorPrimary"
-                        android:text="@string/kb203"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:textColor="@android:color/white" />
-
-                    <RadioGroup
-                        android:id="@+id/kb203"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <RadioButton
-                            android:id="@+id/kb203a"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="1dp"
-                            android:layout_weight="1"
-                            android:text="@string/yes" />
-
-                        <RadioButton
-                            android:id="@+id/kb203b"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="1dp"
-                            android:layout_weight="1"
-                            android:text="@string/no" />
-                    </RadioGroup>
 
                     <!--kb204-->
                     <TextView
@@ -267,6 +233,50 @@
                         app:dateFormat="dd-MM-yyyy"
                         app:minDate="01/01/1917" />
 
+
+                    <!--kb203-->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/colorPrimary"
+                        android:text="@string/kb203"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@android:color/white" />
+
+                    <RadioGroup
+                        android:id="@+id/kb203"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:background="@color/colorPrimary"
+                            android:text="@string/kb203a"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="@android:color/white" />
+
+                        <RadioButton
+                            android:id="@+id/kb203a"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:layout_weight="1"
+                            android:text="@string/yes" />
+
+                        <RadioButton
+                            android:id="@+id/kb203b"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:layout_weight="1"
+                            android:text="@string/no" />
+
+                    </RadioGroup>
+
+
                     <!--kb205-->
                     <TextView
                         android:layout_width="match_parent"
@@ -277,17 +287,75 @@
                         android:textAppearance="?android:attr/textAppearanceLarge"
                         android:textColor="@android:color/white" />
 
-                    <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                    <RadioGroup
                         android:id="@+id/kb205"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="1dp"
-                        android:focusable="true"
-                        android:hint="@string/kb205"
-                        android:padding="15dp"
-                        android:textColor="@android:color/black"
-                        app:dateFormat="dd-MM-yyyy"
-                        app:minDate="01/01/1917" />
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/kb205a"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:layout_weight="1"
+                            android:text="@string/kb205a" />
+
+                        <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                            android:id="@+id/kb205lmp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:focusable="true"
+                            android:hint="@string/kb205a"
+                            android:padding="15dp"
+                            android:textColor="@android:color/black"
+                            android:visibility="gone"
+                            app:dateFormat="dd-MM-yyyy"
+                            app:minDate="01/01/1917" />
+
+                        <RadioButton
+                            android:id="@+id/kb205b"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:layout_weight="1"
+                            android:text="@string/kb205b" />
+
+                        <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                            android:id="@+id/kb205rec"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:focusable="true"
+                            android:hint="@string/kb205b"
+                            android:padding="15dp"
+                            android:textColor="@android:color/black"
+                            android:visibility="gone"
+                            app:dateFormat="dd-MM-yyyy"
+                            app:minDate="01/01/1917" />
+
+                        <RadioButton
+                            android:id="@+id/kb205c"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:layout_weight="1"
+                            android:text="@string/kb205c" />
+
+                        <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                            android:id="@+id/kb205edd"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:focusable="true"
+                            android:hint="@string/kb205c"
+                            android:padding="15dp"
+                            android:textColor="@android:color/black"
+                            android:visibility="gone"
+                            app:dateFormat="dd-MM-yyyy"
+                            app:minDate="01/01/1917" />
+
+                    </RadioGroup>
 
                 </LinearLayout>
 

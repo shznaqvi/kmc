@@ -257,10 +257,15 @@
     <string name="kb102"> مڪمل ويمن جو تعداد </string>
     <string name="kb2heading"> موجوده حمل جي باري ۾ معلومات </string>
     <string name="kb201"> ڇا توهان هن وقت حمل سان آهيو؟ </string>
+    <string name="kb201dkn"> يقين ناهي </string>
     <string name="kb202"> توهان ڪيترن هفتن/مهينن جي حمل سان آهيو؟ پورا ڪيل هفتن ۽ مهينن جو تعداد </string>
-    <string name="kb203"> الٽرا سائونڊ موجود آهي </string>
-    <string name="kb204"> ماهواري جي آخري تاريخ </string>
-    <string name="kb205"> ويم جي متوقع تاريخ </string>
+    <string name="kb203"> ڇا توهان جو حمل دوران الٽراسائونڊ ٿيو آهي </string>
+    <string name="kb203a"> الٽرا سائونڊ موجود آهي </string>
+    <string name="kb204"> توهان جي آخري  ماهواري جي  تاريخ ڇا آهي </string>
+    <string name="kb205"> ماهواريء جي آخري تاريخ پڇو ۽ ويم جي متوقع تاريخ ڪلڪيوليٽ ڪريو </string>
+    <string name="kb205a"> ماهواري جي آخري تاريخ </string>
+    <string name="kb205b"> ويم جي متوقع تاريخ </string>
+    <string name="kb205c"> الٽراسائونڊ ڊريعي  ويم جي متوقع تاريخ </string>
     <string name="kb206"> ڇا توهان هن حمل جي دوران پنهنجو طبي معائنو
     ڪرايو؟ </string>
     <string name="kb207"> جيڪڏهن نه توهان معائنو ڇو نه ڪرايو؟ </string>
@@ -273,9 +278,9 @@
     <string name="kb208"> جيڪڏهن ها ته ڪيترا دفعا؟ </string>
     <string name="kb209"> حمل جي ڪهڙي مهيني ۾ توهان پنهنجو طبي معائنو
     ڪرايو </string>
-    <string name="kb209a"> 3rd trimester </string>
-    <string name="kb209b"> 2nd trimester </string>
-    <string name="kb209c"> 1st trimester </string>
+    <string name="kb209a"> حمل جي 6 کان 9 مهينن تائين </string>
+    <string name="kb209b"> حمل جي ٽن مهينن کان 6 مهينن تائين </string>
+    <string name="kb209c"> حمل جي پهرين مهينن کان 3 مهينن تائين </string>
     <string name="kb210"> اوهان جو طبي معائنو ڪنهن ڪيو </string>
     <string name="kb210sub1">Health Personnel</string>
     <string name="kb210sub2">Other Person</string>
@@ -309,6 +314,7 @@
     <string name="kb212h"> پنهنجو کير پيارڻ بابت سمجھاڻي </string>
     <string name="kb212i"> ٻارن ۾ وقفي جي بابت سمجھاڻي </string>
     <string name="kb213"> موجوده حمل دوران ڇا اوهان اضافي غذائي خوراڪ استعمال ڪئي آهي؟ </string>
+    <string name="kb213dkn"> خبر ناهي/ياد ناهي </string>
     <string name="kb214"> جيڪڏهن ها ته توهان ڇا وٺو پيا؟ </string>
     <string name="kb214a"> فولاد ۽ فولڪ اسڊ جون گوريون </string>
     <string name="kb214b"> اضافي خوراڪ مان ٺهيل شيون </string>
