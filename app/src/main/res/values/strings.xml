@@ -33,6 +33,8 @@
     <string name="female"> عورت </string>
     <string name="yes"> ها </string>
     <string name="no"> نه </string>
+    <string name="alive">جيئرو </string>
+    <string name="died">مري ويو </string>
     <string name="na"> لاڳو نه آهي </string>
     <string name="dkn"> خبر ناهي </string>
     <string name="drem">ياد ناهي </string>
