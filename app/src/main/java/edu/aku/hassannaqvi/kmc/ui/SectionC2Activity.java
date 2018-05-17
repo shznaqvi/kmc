@@ -304,7 +304,8 @@ public class SectionC2Activity extends AppCompatActivity {
             }
         }
 
-        if (bi.kc201a.isChecked()) {
+
+        if (bi.kc201b.isChecked()) {
 
             if (bi.kc20296.isChecked()) {
 
@@ -312,7 +313,10 @@ public class SectionC2Activity extends AppCompatActivity {
                     return false;
                 }
             }
+        }
 
+
+        if (bi.kc201a.isChecked()) {
 
             if (!bi.kc20398.isChecked()) {
                 if (!validatorClass.EmptyTextBox(this, bi.kc203, getString(R.string.kc203))) {
