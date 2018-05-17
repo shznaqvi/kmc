@@ -103,6 +103,7 @@ public class SectionC1Activity extends AppCompatActivity {
                     return false;
                 }
             }
+
             if (bi.kc101e.isChecked()) {
 
                 if (!validatorClass.EmptyRadioButton(this, bi.kc102twin, bi.kc102atwin, getString(R.string.kc102))) {

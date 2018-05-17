@@ -49,8 +49,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_weight="1.5"
-                android:orientation="vertical">
+                android:layout_weight="1.5">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/kb210sub1"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/white" />
 
                 <RadioButton
                     android:id="@+id/kc301a"
@@ -91,6 +99,22 @@
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
                     android:text="@string/kc301e" />
+
+                <RadioButton
+                    android:id="@+id/kc301f"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:layout_weight="1"
+                    android:text="@string/kc301f" />
+
+                <RadioButton
+                    android:id="@+id/kc301g"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:layout_weight="1"
+                    android:text="@string/kc301g" />
 
                 <RadioButton
                     android:id="@+id/kc30198"
@@ -136,8 +160,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_weight="1.5"
-                android:orientation="horizontal">
+                android:layout_weight="1.5">
 
                 <RadioButton
                     android:id="@+id/kc302a"
@@ -188,8 +211,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:layout_weight="1.5"
-                    android:orientation="vertical">
+                    android:layout_weight="1.5">
 
                     <RadioButton
                         android:id="@+id/kc303a"
@@ -256,6 +278,14 @@
                         android:text="@string/kc303h" />
 
                     <RadioButton
+                        android:id="@+id/kc303i"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="1"
+                        android:text="@string/kc303i" />
+
+                    <RadioButton
                         android:id="@+id/kc30396"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -275,7 +305,6 @@
                     android:text='@{kc30396.checked ? kc30396x.getText.toString : ""}'
                     android:visibility='@{kc30396.checked ? View.VISIBLE : View.GONE}' />
 
-
             </LinearLayout>
 
             <!--kc304-->
@@ -293,8 +322,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_weight="1.5"
-                android:orientation="vertical">
+                android:layout_weight="1.5">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/kb211sub1"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/white" />
 
                 <RadioButton
                     android:id="@+id/kc304a"
@@ -311,6 +348,15 @@
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
                     android:text="@string/kc304b" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/kb211sub2"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/white" />
 
                 <RadioButton
                     android:id="@+id/kc304c"
@@ -335,6 +381,15 @@
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
                     android:text="@string/kc304e" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/kb211sub3"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/white" />
 
                 <RadioButton
                     android:id="@+id/kc304f"
@@ -404,8 +459,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_weight="1.5"
-                android:orientation="horizontal">
+                android:layout_weight="1.5">
 
                 <RadioButton
                     android:id="@+id/kc305a"
@@ -449,8 +503,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_weight="1.5"
-                android:orientation="vertical">
+                android:layout_weight="1.5">
 
                 <RadioButton
                     android:id="@+id/kc306a"
@@ -479,15 +532,45 @@
                     android:maxLength="5"
                     android:visibility="gone" />
 
-                <RadioButton
+                <!--<RadioButton
                     android:id="@+id/kc30698"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
-                    android:text="@string/dkn" />
+                    android:text="@string/dkn" />-->
 
             </RadioGroup>
+
+
+            <!--kc307a-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
+                android:text="@string/kc307a"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+
+            <EditText
+                android:id="@+id/kc307rec"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:digits="0123456789."
+                android:hint="@string/kg"
+                android:inputType="numberDecimal"
+                android:maxLength="5"
+                android:visibility="gone" />
+
+            <CheckBox
+                android:id="@+id/kc30777"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="1"
+                android:text="@string/kc307rec" />
 
 
             <!--kc307-->
@@ -505,8 +588,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_weight="1.5"
-                android:orientation="vertical">
+                android:layout_weight="1.5">
 
                 <RadioButton
                     android:id="@+id/kc307a"
@@ -514,7 +596,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
-                    android:text="@string/kc307" />
+                    android:text="@string/kc307a" />
 
                 <RadioButton
                     android:id="@+id/kc307b"
@@ -523,7 +605,6 @@
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
                     android:text="@string/kc307b" />
-
 
                 <RadioButton
                     android:id="@+id/kc307c"
@@ -575,8 +656,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_weight="1.5"
-                android:orientation="horizontal">
+                android:layout_weight="1.5">
 
                 <RadioButton
                     android:id="@+id/kc308a"
@@ -620,8 +700,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_weight="1.5"
-                android:orientation="horizontal">
+                android:layout_weight="1.5">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/kc309a"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/white" />
 
                 <RadioButton
                     android:id="@+id/kc309a"
@@ -665,8 +753,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_weight="1.5"
-                android:orientation="horizontal">
+                android:layout_weight="1.5">
 
                 <RadioButton
                     android:id="@+id/kc310a"
@@ -715,8 +802,7 @@
                     android:id="@+id/kc311"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:orientation="vertical">
+                    android:layout_marginTop="16dp">
 
                     <RadioButton
                         android:id="@+id/kc311a"
@@ -795,8 +881,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_weight="1.5"
-                android:orientation="horizontal">
+                android:layout_weight="1.5">
 
                 <RadioButton
                     android:id="@+id/kc312a"
@@ -840,8 +925,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_weight="1.5"
-                android:orientation="horizontal">
+                android:layout_weight="1.5">
 
                 <RadioButton
                     android:id="@+id/kc313a"
@@ -885,8 +969,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_weight="1.5"
-                android:orientation="horizontal">
+                android:layout_weight="1.5">
 
                 <RadioButton
                     android:id="@+id/kc314a"
@@ -930,15 +1013,13 @@
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@android:color/white" />
 
-                <RadioGroup
-                    android:id="@+id/kc315"
+                <LinearLayout
+                    android:id="@+id/fldGrpkc315a"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:layout_weight="1.5"
                     android:orientation="vertical">
 
-                    <RadioButton
+                    <CheckBox
                         android:id="@+id/kc315a"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -954,7 +1035,7 @@
                         android:layout_weight="1"
                         android:text="@string/kc315b" />
 
-                    <RadioButton
+                    <CheckBox
                         android:id="@+id/kc315c"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -962,7 +1043,7 @@
                         android:layout_weight="1"
                         android:text="@string/kc315c" />
 
-                    <RadioButton
+                    <CheckBox
                         android:id="@+id/kc315d"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -970,7 +1051,7 @@
                         android:layout_weight="1"
                         android:text="@string/kc315d" />
 
-                    <RadioButton
+                    <CheckBox
                         android:id="@+id/kc315e"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -978,7 +1059,15 @@
                         android:layout_weight="1"
                         android:text="@string/kc315e" />
 
-                    <RadioButton
+                    <CheckBox
+                        android:id="@+id/kc315f"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="1"
+                        android:text="@string/kc315f" />
+
+                    <CheckBox
                         android:id="@+id/kc31596"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -986,7 +1075,7 @@
                         android:layout_weight="1"
                         android:text="@string/other" />
 
-                    <RadioButton
+                    <CheckBox
                         android:id="@+id/kc31598"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -994,18 +1083,17 @@
                         android:layout_weight="1"
                         android:text="@string/dkn" />
 
-                </RadioGroup>
+                    <EditText
+                        android:id="@+id/kc31596x"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                        android:hint="@string/other"
+                        android:text='@{kc31596.checked ? kc31596x.getText.toString : ""}'
+                        android:visibility='@{kc31596.checked ? View.VISIBLE : View.GONE}' />
 
-                <EditText
-                    android:id="@+id/kc31596x"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                    android:hint="@string/other"
-                    android:text='@{kc31596.checked ? kc31596x.getText.toString : ""}'
-                    android:visibility='@{kc31596.checked ? View.VISIBLE : View.GONE}' />
-
+                </LinearLayout>
 
             </LinearLayout>
             <!--kc316-->
@@ -1023,8 +1111,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_weight="1.5"
-                android:orientation="vertical">
+                android:layout_weight="1.5">
 
                 <RadioButton
                     android:id="@+id/kc316a"
@@ -1067,6 +1154,7 @@
                     android:text="@string/dkn" />
 
             </RadioGroup>
+
 
             <!--  = = = = =  END OF FORM FIELDS  = = = = = -->
             <LinearLayout
