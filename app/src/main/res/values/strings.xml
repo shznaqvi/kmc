@@ -386,9 +386,9 @@
     <string name="kc203"> جيڪڏهن ها ته ڪيترا ڀيرا ڪرايو؟ </string>
     <string name="kc204"> حمل جي ڪيترن مهينن ۾ توهان طبي معائنو
     ڪرايو؟ </string>
-    <string name="kc204a"> 3rd TRIMESTER </string>
-    <string name="kc204b"> 2nd TRIMESTER </string>
-    <string name="kc204c"> 1st TRIMESTER </string>
+    <string name="kc204a"> حمل جي 6 کان 9 مهينن تائين </string>
+    <string name="kc204b">حمل جي ٽن مهينن کان 6 مهينن تائين</string>
+    <string name="kc204c"> حمل جي پهرين مهينن کان 3 مهينن تائين </string>
     <string name="kc205"> ڪنهن کان طبي معائنو ڪرايو؟ </string>
     <string name="kc205a1"> HEALTH PERSONNEL </string>
     <string name="kc205a"> ڊاڪٽر </string>
