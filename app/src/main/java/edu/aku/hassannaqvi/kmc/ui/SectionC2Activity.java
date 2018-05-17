@@ -143,20 +143,8 @@ public class SectionC2Activity extends AppCompatActivity {
                     bi.fldGrpkc213.setVisibility(View.VISIBLE);
                 } else {
                     bi.kc214.setText(null);
+                    bi.kc21498.setChecked(false);
                     bi.fldGrpkc213.setVisibility(View.GONE);
-                }
-            }
-        });
-
-
-        bi.kc21498.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (bi.kc21498.isChecked()) {
-                    bi.kc214.setText(null);
-                    bi.kc214.setVisibility(View.GONE);
-                } else {
-                    bi.kc214.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -408,7 +396,9 @@ public class SectionC2Activity extends AppCompatActivity {
             }
             if (bi.kc213a.isChecked()) {
                 if (!bi.kc21498.isChecked()) {
-                    return validatorClass.EmptyTextBox(this, bi.kc214, getString(R.string.kc214));
+                    if (!validatorClass.EmptyTextBox(this, bi.kc214, getString(R.string.kc214))) {
+                        return false;
+                    }
                 }
             }
 

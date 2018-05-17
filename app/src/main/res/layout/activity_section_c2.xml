@@ -596,8 +596,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:layout_weight="1.5"
-                    android:orientation="vertical">
+                    android:orientation="horizontal">
 
                     <RadioButton
                         android:id="@+id/kc208a"
@@ -621,7 +620,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
-                        android:text="@string/dkn" />
+                        android:text="@string/drem" />
 
                 </RadioGroup>
 
@@ -972,7 +971,9 @@
                         android:digits="0123456789"
                         android:hint="@string/kc214"
                         android:inputType="number"
-                        android:maxLength="2" />
+                        android:maxLength="2"
+                        android:text='@{kc21498.checked ? "": kc214.getText.toString }'
+                        android:visibility='@{kc21498.checked ? View.GONE : View.VISIBLE}'/>
 
                     <CheckBox
                         android:id="@+id/kc21498"

@@ -33,6 +33,8 @@
     <string name="female"> عورت </string>
     <string name="yes"> ها </string>
     <string name="no"> نه </string>
+    <string name="alive">جيئرو </string>
+    <string name="died">مري ويو </string>
     <string name="na"> لاڳو نه آهي </string>
     <string name="dkn"> خبر ناهي </string>
     <string name="drem">ياد ناهي </string>
@@ -391,9 +393,9 @@
     <string name="kc203"> جيڪڏهن ها ته ڪيترا ڀيرا ڪرايو؟ </string>
     <string name="kc204"> حمل جي ڪيترن مهينن ۾ توهان طبي معائنو
     ڪرايو؟ </string>
-    <string name="kc204a"> 3rd TRIMESTER </string>
-    <string name="kc204b"> 2nd TRIMESTER </string>
-    <string name="kc204c"> 1st TRIMESTER </string>
+    <string name="kc204a"> حمل جي 6 کان 9 مهينن تائين </string>
+    <string name="kc204b">حمل جي ٽن مهينن کان 6 مهينن تائين</string>
+    <string name="kc204c"> حمل جي پهرين مهينن کان 3 مهينن تائين </string>
     <string name="kc205"> ڪنهن کان طبي معائنو ڪرايو؟ </string>
     <string name="kc205a1"> HEALTH PERSONNEL </string>
     <string name="kc205a"> ڊاڪٽر </string>
@@ -574,14 +576,14 @@
     <string name="kc609g"> ليڊي هيلٿ وزيٽر </string>
     <string name="kc609h"> دائي </string>
     <string name="kc610"> طبي معائني ۾ ڇا ڪيو هو؟ </string>
+    <string name="kc610sub"> حفاذتي ٽڪا </string>
     <string name="kc610a"> نئي ٻار جو معائنو </string>
     <string name="kc610b"> وزن جي چڪاس </string>
     <string name="kc610c"> ڊيگھ جي چڪاس </string>
     <string name="kc610d"> دوا ڏني </string>
     <string name="kc610e"> صحت مرڪز ڏانهن موڪلڻ </string>
-    <string name="kc610f"> حفاذتي ٽڪا </string>
-    <string name="kc610h"> پوليو جا قطرا </string>
-    <string name="kc610i"> ٽي بي کان بچاءَ جو ٽڪو </string>
+    <string name="kc610f"> پوليو جا قطرا </string>
+    <string name="kc610g"> ٽي بي کان بچاءَ جو ٽڪو </string>
     <string name="kc611"> ڇا ٻار پهرين ٻن مهينن ۾ شديد بيمار ٿيو هيو؟ </string>
     <string name="kc612"> جيڪڏهن ها ته بيماري جي دوران ڪهريون (نشانيون/علامتون) موجود هيون </string>
     <string name="kc612a"> ڄمڻ کان پوءِ سهي سان کير نه پيئڻ </string>
@@ -715,7 +717,6 @@
     <string name="kd305g"> ليڊي هيلٿ ورڪر مشورو ڏنو </string>
     <string name="kfheading"> نون ڄاول ٻارن جي مرڻ جي باري ۾ معلومات </string>
     <string name="ka109sub04">Missing string</string>
-    <string name="kc610g">Missing String</string>
 
 
     <string name="keheading">Paternal Parenting Information</string>
