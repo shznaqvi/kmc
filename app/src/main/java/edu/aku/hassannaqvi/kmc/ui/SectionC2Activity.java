@@ -5,6 +5,7 @@ import android.databinding.DataBindingUtil;
 import android.opengl.Visibility;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.RadioGroup;
@@ -310,6 +311,12 @@ public class SectionC2Activity extends AppCompatActivity {
                 if (!validatorClass.EmptyTextBox(this, bi.kc203, getString(R.string.kc203))) {
                     return false;
                 }
+
+
+                if (!validatorClass.RangeTextBox(this, bi.kc203, 1, 15, getString(R.string.kc203), "Times")) {
+                    return false;
+                }
+
             }
 
 
@@ -344,8 +351,28 @@ public class SectionC2Activity extends AppCompatActivity {
             }
 
 
-            if (!validatorClass.EmptyCheckBox(this, bi.fldGrpkc206, bi.kc207a, getString(R.string.kc207))) {
+            /*if (!validatorClass.EmptyCheckBox(this, bi.fldGrpkc206, bi.kc207a, getString(R.string.kc207))) {
                 return false;
+            }*/
+
+
+            if (!bi.kc207a.isChecked()
+                    && !bi.kc207b.isChecked()
+                    && !bi.kc207c.isChecked()
+                    && !bi.kc207d.isChecked()
+                    && !bi.kc207e.isChecked()
+                    && !bi.kc207f.isChecked()
+                    && !bi.kc207g.isChecked()
+                    && !bi.kc207h.isChecked()
+                    && !bi.kc207i.isChecked()
+                    && !bi.kc20796.isChecked()
+                    ) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.kc207a), Toast.LENGTH_SHORT).show();
+                bi.kc207a.setError("This data is Required!");
+                Log.i(TAG, "kc207a: This data is Required!");
+                return false;
+            } else {
+                bi.kc207a.setError(null);
             }
 
 
@@ -363,8 +390,22 @@ public class SectionC2Activity extends AppCompatActivity {
 
             if (bi.kc208a.isChecked()) {
 
-                if (!validatorClass.EmptyCheckBox(this, bi.fldGrpkc209, bi.kc209a, getString(R.string.kc209))) {
+                /*if (!validatorClass.EmptyCheckBox(this, bi.fldGrpkc209, bi.kc209a, getString(R.string.kc209))) {
                     return false;
+                }*/
+
+
+                if (!bi.kc209a.isChecked()
+                        && !bi.kc209b.isChecked()
+                        && !bi.kc209c.isChecked()
+                        && !bi.kc20996.isChecked()
+                        ) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.kc209a), Toast.LENGTH_SHORT).show();
+                    bi.kc209a.setError("This data is Required!");
+                    Log.i(TAG, "kc209a: This data is Required!");
+                    return false;
+                } else {
+                    bi.kc209a.setError(null);
                 }
 
 
@@ -399,6 +440,12 @@ public class SectionC2Activity extends AppCompatActivity {
                     if (!validatorClass.EmptyTextBox(this, bi.kc214, getString(R.string.kc214))) {
                         return false;
                     }
+
+
+                    if (!validatorClass.RangeTextBox(this, bi.kc214, 1, 15, getString(R.string.kc214), "Times")) {
+                        return false;
+                    }
+
                 }
             }
 

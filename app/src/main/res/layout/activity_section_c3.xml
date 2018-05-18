@@ -543,7 +543,6 @@
             </RadioGroup>
 
 
-
             <!--kc307a-->
             <TextView
                 android:layout_width="match_parent"
@@ -865,8 +864,8 @@
                     android:text='@{kc31196.checked ? kc31196x.getText.toString : ""}'
                     android:visibility='@{kc31196.checked ? View.VISIBLE : View.GONE}' />
 
-
             </LinearLayout>
+
             <!--kc312-->
             <TextView
                 android:layout_width="match_parent"
@@ -911,6 +910,50 @@
             </RadioGroup>
 
 
+            <!--kc313a-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
+                android:text="@string/kc313"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+
+            <RadioGroup
+                android:id="@+id/kc313"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_weight="1.5">
+
+                <RadioButton
+                    android:id="@+id/kc313a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:layout_weight="1"
+                    android:text="@string/yes" />
+
+                <RadioButton
+                    android:id="@+id/kc313b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:layout_weight="1"
+                    android:text="@string/no" />
+
+                <RadioButton
+                    android:id="@+id/kc31398"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:layout_weight="1"
+                    android:text="@string/dkndrem" />
+
+            </RadioGroup>
+
+
             <!--kc313-->
             <TextView
                 android:layout_width="match_parent"
@@ -950,7 +993,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
-                    android:text="@string/dkn" />
+                    android:text="@string/dkndrem" />
 
             </RadioGroup>
 
@@ -994,7 +1037,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
-                    android:text="@string/dkn" />
+                    android:text="@string/dkndrem" />
 
             </RadioGroup>
 
@@ -1097,6 +1140,7 @@
                 </LinearLayout>
 
             </LinearLayout>
+
             <!--kc316-->
             <TextView
                 android:layout_width="match_parent"
