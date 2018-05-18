@@ -499,7 +499,8 @@
     <string name="kc306"> جيڪڏهن ها ته ٻار جو پيدائشي وزن ڪيترو هو؟ جيڪڏهن ڪارڊ موجود آهي ته ان تان وزن لکو </string>
     <string name="kc306a"> kg </string>
     <string name="kc306c"> ڪارڊ موجود آهي </string>
-    <string name="kc306b"> From recall </string>
+    <string name="kc307a1"> جيڪڏهن نه ته وزن بابت پڇو </string>
+    <string name="kc307b1"> وزن بابت يادگيري ڪرايو </string>
     <string name="kc307">
     ٻار جي پيدائش وقت ٻار تمام وڏو،وڏو،وچولو،ننڍو يا صفا ننڍو هيو؟ تصوير ڏيکاريو </string>"
     <string name="kc307a"> تمام وڏو </string>
