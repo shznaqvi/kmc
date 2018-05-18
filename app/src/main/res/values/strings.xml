@@ -499,18 +499,15 @@
     <string name="kc306"> جيڪڏهن ها ته ٻار جو پيدائشي وزن ڪيترو هو؟ جيڪڏهن ڪارڊ موجود آهي ته ان تان وزن لکو </string>
     <string name="kc306a"> kg </string>
     <string name="kc306c"> ڪارڊ موجود آهي </string>
-    <string name="kc307a1"> جيڪڏهن نه ته وزن بابت پڇو </string>
     <string name="kc307b1"> وزن بابت يادگيري ڪرايو </string>
-    <string name="kc307">
-    ٻار جي پيدائش وقت ٻار تمام وڏو،وڏو،وچولو،ننڍو يا صفا ننڍو هيو؟ تصوير ڏيکاريو </string>"
+    <string name="kc307"> جيڪڏهن نه ته وزن بابت پڇو </string>
     <string name="kc307a"> تمام وڏو </string>
     <string name="kc307b"> عام ٻارن جي مقابلي ۾ وڏو </string>
     <string name="kc307c"> نارمل </string>
     <string name="kc307d"> عام ٻارن جي مقابلي ۾ ننڍو </string>
     <string name="kc307e"> تمام ننڍو </string>
-    <string name="kc308">    جيڪڏهن ٻار گھٽ وزن وارو هيو ته پڇو ته ٻار جي پيدائش 37 هفتن کان پهريائين ٿئي هئي؟
-    </string>
-    <string name="kc309"> ڇا ٻار کي ڄمڻ کان پوءِ هڪ ڪلاڪ جي اندر توهان پنهنجي ڇاتي سان لڳايو هو؟ </string>
+    <string name="kc308"> ٻار جي پيدائش وقت ٻار تمام وڏو،وڏو،وچولو،ننڍو يا صفا ننڍو هيو؟ </string>
+    <string name="kc309"> جيڪڏهن ٻار گھٽ وزن وارو هيو ته پڇو ته ٻار جي پيدائش 37 هفتن کان پهريائين ٿئي هئي؟ </string>
     <string name="kc309a"> PRETERM BIRTH </string>
     <string name="kc310"> ڇا ٻار ڄمڻ کان پوءِ هڪدم رنو هو؟ </string>
     <string name="kc311"> ٻار کي روئائڻ لاءِ ڇا ڪيو ويو هو؟ </string>
