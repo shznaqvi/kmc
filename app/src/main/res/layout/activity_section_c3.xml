@@ -421,7 +421,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
-                    android:text="@string/dkn" />
+                    android:text="@string/dkndrem" />
 
                 <RadioButton
                     android:id="@+id/kc30496"
@@ -500,7 +500,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:background="@color/colorPrimary"
-                    android:text="@string/kc306"
+                    android:text="@string/kc306c"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@android:color/white" />
 
@@ -510,6 +510,15 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:layout_weight="1.5">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/colorPrimary"
+                        android:text="@string/kc306"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@android:color/white" />
 
                     <RadioButton
                         android:id="@+id/kc306a"
@@ -761,7 +770,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
-                        android:text="@string/dkn" />
+                        android:text="@string/dkndrem" />
 
                 </RadioGroup>
 
@@ -807,7 +816,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
-                    android:text="@string/dkn" />
+                    android:text="@string/dkndrem" />
 
             </RadioGroup>
 
@@ -872,7 +881,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
-                        android:text="@string/dkn" />
+                        android:text="@string/dkndrem" />
 
                     <RadioButton
                         android:id="@+id/kc31196"
@@ -935,7 +944,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
-                    android:text="@string/dkn" />
+                    android:text="@string/dkndrem" />
 
             </RadioGroup>
 
