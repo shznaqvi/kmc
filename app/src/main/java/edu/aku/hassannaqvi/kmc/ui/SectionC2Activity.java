@@ -67,7 +67,18 @@ public class SectionC2Activity extends AppCompatActivity {
                     bi.kc204.clearCheck();
                     bi.kc205.clearCheck();
                     bi.kc20596x.setText(null);
-                    bi.kc206.clearCheck();
+
+                    bi.kc206a.setChecked(false);
+                    bi.kc206b.setChecked(false);
+                    bi.kc206c.setChecked(false);
+                    bi.kc206d.setChecked(false);
+                    bi.kc206e.setChecked(false);
+                    bi.kc206f.setChecked(false);
+                    bi.kc206g.setChecked(false);
+                    bi.kc206h.setChecked(false);
+                    bi.kc20698.setChecked(false);
+                    bi.kc20696.setChecked(false);
+
                     bi.kc20696x.setText(null);
 
 
@@ -193,20 +204,18 @@ public class SectionC2Activity extends AppCompatActivity {
         sC2.put("kc20596", bi.kc20596x.getText().toString());
 
 
-        sC2.put("kc206", bi.kc206a.isChecked() ? "1"
-                : bi.kc206b.isChecked() ? "2"
-                : bi.kc206c.isChecked() ? "3"
-                : bi.kc206d.isChecked() ? "4"
-                : bi.kc206e.isChecked() ? "5"
-                : bi.kc206f.isChecked() ? "6"
-                : bi.kc206g.isChecked() ? "7"
-                : bi.kc206h.isChecked() ? "8"
-                : bi.kc20698.isChecked() ? "98"
-                : bi.kc20696.isChecked() ? "96"
-                : "0");
+        sC2.put("kc206a", bi.kc206a.isChecked() ? "1" : "0");
+        sC2.put("kc206b", bi.kc206b.isChecked() ? "2" : "0");
+        sC2.put("kc206c", bi.kc206c.isChecked() ? "3" : "0");
+        sC2.put("kc206d", bi.kc206d.isChecked() ? "4" : "0");
+        sC2.put("kc206e", bi.kc206e.isChecked() ? "5" : "0");
+        sC2.put("kc206f", bi.kc206f.isChecked() ? "6" : "0");
+        sC2.put("kc206g", bi.kc206g.isChecked() ? "7" : "0");
+        sC2.put("kc206h", bi.kc206h.isChecked() ? "8" : "0");
+        sC2.put("kc20698", bi.kc20698.isChecked() ? "98" : "0");
+        sC2.put("kc20696", bi.kc20696.isChecked() ? "96" : "0");
 
-        sC2.put("kc20696", bi.kc20696x.getText().toString());
-
+        sC2.put("kc20696x", bi.kc20696x.getText().toString());
 
         sC2.put("kc207a", bi.kc207a.isChecked() ? "1" : "0");
         sC2.put("kc207b", bi.kc207b.isChecked() ? "2" : "0");
@@ -338,8 +347,28 @@ public class SectionC2Activity extends AppCompatActivity {
             }
 
 
-            if (!validatorClass.EmptyRadioButton(this, bi.kc206, bi.kc206a, getString(R.string.kc206))) {
+            /*if (!validatorClass.EmptyRadioButton(this, bi.kc206, bi.kc206a, getString(R.string.kc206))) {
                 return false;
+            }*/
+
+
+            if (!bi.kc206a.isChecked()
+                    && !bi.kc206b.isChecked()
+                    && !bi.kc206c.isChecked()
+                    && !bi.kc206d.isChecked()
+                    && !bi.kc206e.isChecked()
+                    && !bi.kc206f.isChecked()
+                    && !bi.kc206g.isChecked()
+                    && !bi.kc206h.isChecked()
+                    && !bi.kc20698.isChecked()
+                    && !bi.kc20696.isChecked()
+                    ) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.kc206a), Toast.LENGTH_SHORT).show();
+                bi.kc206a.setError("This data is Required!");
+                Log.i(TAG, "kc206a: This data is Required!");
+                return false;
+            } else {
+                bi.kc206a.setError(null);
             }
 
 
