@@ -177,8 +177,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:digits="0123456789"
-                android:hint="@string/ke403"
-                android:text="" />
+                android:inputType="number"
+                android:maxLength="2"
+                android:hint="@string/ke403hr"
+                 />
 
 
             <!--ke404-->
@@ -267,8 +269,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:digits="0123456789"
+                android:inputType="number"
+                android:maxLength="2"
                 android:hint="@string/ke403hr"
-                android:text="" />
+                 />
 
 
             <!--ke406-->
@@ -594,6 +598,14 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:text="@string/ke411a" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:background="@color/colorPrimaryAlpha"
+                        android:text="@string/ke411subh"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="@android:color/black" />
 
                     <CheckBox
                         android:id="@+id/ke411b"
@@ -1283,8 +1295,7 @@
                 android:id="@+id/ke421"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_weight="1.5">
+                android:layout_marginTop="16dp">
 
                 <RadioButton
                     android:id="@+id/ke421a"
@@ -1306,6 +1317,20 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:text="@string/ke421c" />
+
+                <RadioButton
+                    android:id="@+id/ke421d"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/ke421d" />
+
+                <RadioButton
+                    android:id="@+id/ke421e"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/ke421e" />
 
                 <RadioButton
                     android:id="@+id/ke42196"
