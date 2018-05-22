@@ -16,7 +16,6 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.StrictMode;
-import android.provider.CalendarContract;
 import android.text.InputType;
 import android.util.Log;
 import android.view.View;
@@ -294,9 +293,9 @@ public class MainActivity extends Activity {
 //        }
     }
 
-
+/*
     public void openA(View v) {
-        Intent iA = new Intent(this, SectionB1Activity.class);
+     Intent iA = new Intent(this, SectionB1Activity.class);
         startActivity(iA);
     }
 
@@ -306,7 +305,7 @@ public class MainActivity extends Activity {
     }
 
 
-    /*public void openD(View v) {
+    public void openD(View v) {
         Intent iD = new Intent(this, SectionDActivity.class);
         startActivity(iD);
     }

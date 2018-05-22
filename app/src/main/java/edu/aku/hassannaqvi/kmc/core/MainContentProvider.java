@@ -21,13 +21,13 @@ public class MainContentProvider extends ContentProvider {
     //private static UriMatcher sUriMatcher = buildUriMatcher();
     public static final Uri CONTENT_URI = Uri.parse("content://" + CONTENT_AUTHORITY + "/" + PATH_FORMS);
     private static final int FORMS = 100;
-    private static final int FORMS_UID = 110;
+    private static final int FORMS_ID = 110;
     private static final UriMatcher uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
     private static String TAG = MainContentProvider.class.getSimpleName();
 
     static {
-        uriMatcher.addURI(CONTENT_AUTHORITY, PATH_FORMS, FORMS_UID);
-        uriMatcher.addURI(CONTENT_AUTHORITY, PATH_FORMS + "/#", FORMS_UID);
+        uriMatcher.addURI(CONTENT_AUTHORITY, PATH_FORMS, FORMS);
+        uriMatcher.addURI(CONTENT_AUTHORITY, PATH_FORMS + "/#", FORMS_ID);
     }
 
     private DatabaseHelper dbhelper;
@@ -68,9 +68,9 @@ public class MainContentProvider extends ContentProvider {
         switch (uriMatcher.match(uri)) {
             case FORMS:
                 break;
-            case FORMS_UID:
-                String uid = FormsTable.getFormsUID(uri);
-                queryBuilder.appendWhere(FormsTable.COLUMN__UID + "=" + uid);
+            case FORMS_ID:
+                String id = FormsTable.getFormsID(uri);
+                queryBuilder.appendWhere(FormsTable.COLUMN__ID + "=" + id);
                 break;
             default:
                 throw new IllegalArgumentException("Unknown URI : " + uri);
@@ -90,7 +90,7 @@ public class MainContentProvider extends ContentProvider {
         switch (uriMatcher.match(uri)) {
             case FORMS:
                 return FormsTable.CONTENT_TYPE;
-            case FORMS_UID:
+            case FORMS_ID:
                 return FormsTable.CONTENT_ITEM_TYPE;
             default:
                 throw new IllegalArgumentException("Unknown URI : " + uri);
@@ -131,9 +131,9 @@ public class MainContentProvider extends ContentProvider {
 
         switch (uriMatcher.match(uri)) {
 
-            case FORMS_UID:
-                String uid = FormsTable.getFormsUID(uri);
-                selectionCriteria = FormsTable.COLUMN__UID + "=" + uid
+            case FORMS_ID:
+                String id = FormsTable.getFormsID(uri);
+                selectionCriteria = FormsTable.COLUMN__ID + "=" + id
                         + (!TextUtils.isEmpty(s) ? " AND (" + s + ")" : "");
                 break;
             default:

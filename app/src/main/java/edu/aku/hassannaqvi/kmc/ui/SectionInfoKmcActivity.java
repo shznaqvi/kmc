@@ -34,15 +34,12 @@ import edu.aku.hassannaqvi.kmc.validation.validatorClass;
 
 public class SectionInfoKmcActivity extends Activity {
 
+    private static final String TAG = SectionInfoKmcActivity.class.getName();
     ArrayList<String> lablesUCs;
     Map<String, String> ucsMap;
-    private ContentResolver mContentResolver;
-
-
-    private static final String TAG = SectionInfoKmcActivity.class.getName();
     String dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
-
     ActivitySectionInfoKmcBinding bi;
+    private ContentResolver mContentResolver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -150,20 +147,31 @@ public class SectionInfoKmcActivity extends Activity {
         values.put(FormsTable.COLUMN_SINFO, MainApp.fc.getsInfo());
         Uri returned = mContentResolver.insert(FormsContract.URI_TABLE, values);
         Log.d(TAG, "record id returned is " + returned.toString());
-        String id = FormsTable.getFormsUID(returned);
+        String id = FormsTable.getFormsID(returned);
         MainApp.fc.set_ID(id);
 
 
         if (Long.valueOf(id) > 0) {
-            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Adding new form... Successful!", Toast.LENGTH_SHORT).show();
 
             MainApp.fc.setUID(
                     (MainApp.fc.getDeviceID() + MainApp.fc.get_ID()));
 
             ContentValues valueUID = new ContentValues();
             valueUID.put(FormsTable.COLUMN__UID, MainApp.fc.getUID());
-            //Uri returned = mContentResolver.update(MainApp.fc.URI_TABLE, values,, );
-            return true;
+
+            int updateUID = mContentResolver.update(FormsContract.URI_TABLE, values, FormsTable.COLUMN__ID + "=?", new String[]{id});
+
+            if (updateUID > 0) {
+
+                Toast.makeText(this, "Updating UID... Successful!", Toast.LENGTH_SHORT).show();
+                return true;
+
+            } else {
+
+                Toast.makeText(this, "Updating UID... Failed!", Toast.LENGTH_SHORT).show();
+                return false;
+            }
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
@@ -180,7 +188,7 @@ public class SectionInfoKmcActivity extends Activity {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            if (UpdateDB()) {
+            if (insertForm()) {
                 Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
 
                 finish();
@@ -202,7 +210,7 @@ public class SectionInfoKmcActivity extends Activity {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            if (UpdateDB()) {
+            if (insertForm()) {
                 Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
 
                 finish();

@@ -115,11 +115,11 @@
             android:theme="@style/AppTheme1" />
 
         <provider
-            android:name="edu.aku.hassannaqvi.kmc.core.MainContentProvider"
+            android:name=".core.MainContentProvider"
             android:authorities="edu.aku.hassannaqvi.kmc.provider"
             android:exported="true"
-            android:readPermission="edu.aku.hassannaqvi.kmc.provider.READWRITE"
-            android:writePermission="edu.aku.hassannaqvi.kmc.provider.READWRITE" />
+            android:readPermission="edu.aku.hassannaqvi.kmc.core.MainContentProvider.READWRITE"
+            android:writePermission="edu.aku.hassannaqvi.kmc.core.MainContentProvider.READWRITE" />
     </application>
 
 </manifest>

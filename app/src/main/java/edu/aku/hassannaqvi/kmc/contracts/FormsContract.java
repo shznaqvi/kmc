@@ -50,7 +50,7 @@ public class FormsContract {
     private String synced_date = "";
     private String appversion;
 
-    public static final String CONTENT_AUTHORITY = "edu.aku.hassannaqvi.kmc.contracts.provider";
+    public static final String CONTENT_AUTHORITY = "edu.aku.hassannaqvi.kmc.provider";
     public static final Uri BASE_CONTENT_URI = Uri.parse("content://" + CONTENT_AUTHORITY);
 
     public static final String PATH_FORMS = "forms";
@@ -601,11 +601,11 @@ public class FormsContract {
         public static final String CONTENT_TYPE = "vnd.android.cursor.dir/vnd." + CONTENT_AUTHORITY + ".forms";
         public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/vnd." + CONTENT_AUTHORITY + ".forms";
 
-        public static Uri buildFormsUri(String uid) {
-            return CONTENT_URI.buildUpon().appendEncodedPath(uid).build();
+        public static Uri buildFormsUri(String id) {
+            return CONTENT_URI.buildUpon().appendEncodedPath(id).build();
         }
 
-        public static String getFormsUID(Uri uri) {
+        public static String getFormsID(Uri uri) {
             return uri.getPathSegments().get(1);
         }
     }
