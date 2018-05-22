@@ -71,7 +71,7 @@ public class UCsContract {
         public static final String TABLE_NAME = "ucs";
         public static final String COLUMN_UCCODE = "uc_code";
         public static final String COLUMN_UCS_NAME = "uc_name";
-        public static final String COLUMN_TALUKA_CODE = "town_code";
+        public static final String COLUMN_TALUKA_CODE = "taluka_code";
 
         public static final String _URI = "ucs.php";
     }

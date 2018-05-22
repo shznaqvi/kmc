@@ -18,12 +18,18 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
+import edu.aku.hassannaqvi.kmc.contracts.DistrictsContract;
+import edu.aku.hassannaqvi.kmc.contracts.DistrictsContract.singleDistrict;
 import edu.aku.hassannaqvi.kmc.contracts.FormsContract;
 import edu.aku.hassannaqvi.kmc.contracts.FormsContract.FormsTable;
 import edu.aku.hassannaqvi.kmc.contracts.UCsContract;
 import edu.aku.hassannaqvi.kmc.contracts.UCsContract.UCsTable;
 import edu.aku.hassannaqvi.kmc.contracts.UsersContract;
 import edu.aku.hassannaqvi.kmc.contracts.UsersContract.UsersTable;
+import edu.aku.hassannaqvi.kmc.contracts.VillagesContract;
+import edu.aku.hassannaqvi.kmc.contracts.VillagesContract.singleVillage;
+import edu.aku.hassannaqvi.kmc.contracts.MwraContract;
+import edu.aku.hassannaqvi.kmc.contracts.MwraContract.MwraEntry;
 
 /**
  * Created by hassan.naqvi on 11/30/2016.
@@ -67,7 +73,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             FormsTable.COLUMN_SE + " TEXT," +
             FormsTable.COLUMN_SF + " TEXT," +
             FormsTable.COLUMN_COUNT + " TEXT," +
-            FormsTable.COLUMN_ENDINGDATETIME + " TEXT,"+
+            FormsTable.COLUMN_ENDINGDATETIME + " TEXT," +
             FormsTable.COLUMN_GPSLAT + " TEXT," +
             FormsTable.COLUMN_GPSLNG + " TEXT," +
             FormsTable.COLUMN_GPSDT + " TEXT," +
@@ -78,8 +84,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             FormsTable.COLUMN_SYNCED + " TEXT," +
             FormsTable.COLUMN_SYNCED_DATE + " TEXT," +
             FormsTable.COLUMN_APPVERSION + " TEXT"
+            + " );";
 
 
+    private static final String SQL_CREATE_MWRA = "CREATE TABLE " +
+            MwraEntry.TABLE_NAME + "(" +
+            MwraEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+            MwraEntry.MWRA_MUID + " TEXT," +
+            MwraEntry.MWRA_DUID + " TEXT," +
+            MwraEntry.MWRA_HH02 + " TEXT," +
+            MwraEntry.MWRA_HHNO + " TEXT," +
+            MwraEntry.MWRA_SNO + " TEXT," +
+            MwraEntry.MWRA_WNAME + " TEXT," +
+            MwraEntry.MWRA_DLVRDATE + " TEXT," +
+            MwraEntry.MWRA_HH08 + " TEXT," +
+            MwraEntry.MWRA_HH09 + " TEXT"
             + " );";
 
 
@@ -89,14 +108,31 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             "DROP TABLE IF EXISTS " + FormsTable.TABLE_NAME;
 
 
+    private static final String SQL_DELETE_TALUKA = "DROP TABLE IF EXISTS " + singleDistrict.TABLE_NAME;
     private static final String SQL_DELETE_UCS = "DROP TABLE IF EXISTS " + UCsTable.TABLE_NAME;
+    private static final String SQL_DELETE_VILLAGE = "DROP TABLE IF EXISTS " + singleVillage.TABLE_NAME;
+    private static final String SQL_DELETE_MWRA = "DROP TABLE IF EXISTS " + MwraEntry.TABLE_NAME;
 
+
+    final String SQL_CREATE_DISTRICT_TABLE = "CREATE TABLE " + singleDistrict.TABLE_NAME + " (" +
+            singleDistrict._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+            singleDistrict.COLUMN_DISTRICT_CODE + " TEXT, " +
+            singleDistrict.COLUMN_DISTRICT_NAME + " TEXT " +
+            ");";
 
     final String SQL_CREATE_UC = "CREATE TABLE " + UCsTable.TABLE_NAME + " (" +
             UCsTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
             UCsTable.COLUMN_UCCODE + " TEXT, " +
             UCsTable.COLUMN_UCS_NAME + " TEXT, " +
             UCsTable.COLUMN_TALUKA_CODE + " TEXT " +
+            ");";
+
+    final String SQL_CREATE_PSU_TABLE = "CREATE TABLE " + singleVillage.TABLE_NAME + " (" +
+            singleVillage._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+            singleVillage.COLUMN_VILLAGE_CODE + " TEXT, " +
+            singleVillage.COLUMN_VILLAGE_NAME + " TEXT, " +
+            singleVillage.COLUMN_DISTRICT_CODE + " TEXT, " +
+            singleVillage.COLUMN_UC_CODE + " TEXT " +
             ");";
 
 
@@ -116,8 +152,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_USERS);
         db.execSQL(SQL_CREATE_FORMS);
 
+        db.execSQL(SQL_CREATE_DISTRICT_TABLE);
         db.execSQL(SQL_CREATE_UC);
-
+        db.execSQL(SQL_CREATE_PSU_TABLE);
+        db.execSQL(SQL_CREATE_MWRA);
     }
 
     @Override
@@ -125,9 +163,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_DELETE_USERS);
         db.execSQL(SQL_DELETE_FORMS);
 
+        db.execSQL(SQL_DELETE_TALUKA);
         db.execSQL(SQL_DELETE_UCS);
-
-
+        db.execSQL(SQL_DELETE_VILLAGE);
+        db.execSQL(SQL_DELETE_MWRA);
     }
 
 
@@ -154,6 +193,51 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         } finally {
             db.close();
         }
+    }
+
+
+    public Collection<DistrictsContract> getAllDistricts() {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                singleDistrict._ID,
+                singleDistrict.COLUMN_DISTRICT_CODE,
+                singleDistrict.COLUMN_DISTRICT_NAME
+        };
+
+        String whereClause = null;
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                singleDistrict.COLUMN_DISTRICT_NAME + " ASC";
+
+        Collection<DistrictsContract> allDC = new ArrayList<DistrictsContract>();
+        try {
+            c = db.query(
+                    singleDistrict.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                DistrictsContract dc = new DistrictsContract();
+                allDC.add(dc.hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allDC;
     }
 
 
@@ -201,6 +285,165 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allPC;
     }
 
+
+    public Collection<VillagesContract> getAllPSUsByDistrict(String district_code, String uc_code) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                singleVillage._ID,
+                singleVillage.COLUMN_VILLAGE_CODE,
+                singleVillage.COLUMN_VILLAGE_NAME,
+                singleVillage.COLUMN_DISTRICT_CODE,
+                singleVillage.COLUMN_UC_CODE
+        };
+
+        String whereClause = singleVillage.COLUMN_DISTRICT_CODE + " =? AND " + singleVillage.COLUMN_UC_CODE + " =?";
+
+        String[] whereArgs = {district_code, uc_code};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                singleVillage.COLUMN_VILLAGE_NAME + " ASC";
+
+        Collection<VillagesContract> allPC = new ArrayList<VillagesContract>();
+        try {
+            c = db.query(
+                    singleVillage.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                VillagesContract pc = new VillagesContract();
+                allPC.add(pc.hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allPC;
+    }
+
+
+    public Collection<MwraContract> getMWRA(String hhno, String villageCode) {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                MwraEntry._ID,
+                MwraEntry.MWRA_MUID,
+                MwraEntry.MWRA_DUID,
+                MwraEntry.MWRA_HH02,
+                MwraEntry.MWRA_HHNO,
+                MwraEntry.MWRA_SNO,
+                MwraEntry.MWRA_WNAME,
+                MwraEntry.MWRA_DLVRDATE,
+                MwraEntry.MWRA_HH08,
+                MwraEntry.MWRA_HH09
+        };
+
+        String whereClause = MwraEntry.MWRA_HHNO + " =? AND " + MwraEntry.MWRA_HH02 + " =?";
+        String[] whereArgs = new String[]{hhno, villageCode};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                MwraEntry.MWRA_DLVRDATE + " ASC";
+
+        Collection<MwraContract> allEB = new ArrayList<>();
+
+        try {
+            c = db.query(
+                    MwraEntry.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                MwraContract mwra = new MwraContract();
+                allEB.add(mwra.hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allEB;
+    }
+
+
+    public List<String> getMWRA1(String hhno, String villageCode) {
+
+        int index = 0;
+        List<String> lst = new ArrayList<>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                MwraEntry._ID,
+                MwraEntry.MWRA_MUID,
+                MwraEntry.MWRA_DUID,
+                MwraEntry.MWRA_HH02,
+                MwraEntry.MWRA_HHNO,
+                MwraEntry.MWRA_SNO,
+                MwraEntry.MWRA_WNAME,
+                MwraEntry.MWRA_DLVRDATE,
+                MwraEntry.MWRA_HH08,
+                MwraEntry.MWRA_HH09
+        };
+
+        String whereClause = MwraEntry.MWRA_HHNO + " =? AND " + MwraEntry.MWRA_HH02 + " =?";
+        String[] whereArgs = new String[]{hhno, villageCode};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                MwraEntry.MWRA_DLVRDATE + " ASC";
+
+        MwraContract allEB = null;
+
+        try {
+            c = db.query(
+                    MwraEntry.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                allEB = new MwraContract().hydrate(c);
+
+                lst.add(Integer.parseInt(c.getColumnName(c.getColumnIndex("sno"))), c.getColumnName(c.getColumnIndex("wname")));
+
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return lst;
+    }
+
+
     public void syncUser(JSONArray userlist) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(UsersTable.TABLE_NAME, null, null);
@@ -227,6 +470,131 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             db.close();
         }
     }
+
+
+    public void syncDistricts(JSONArray talukalist) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(singleDistrict.TABLE_NAME, null, null);
+        try {
+            JSONArray jsonArray = talukalist;
+            for (int i = 0; i < jsonArray.length(); i++) {
+
+                JSONObject jsonObjectUser = jsonArray.getJSONObject(i);
+
+                DistrictsContract user = new DistrictsContract();
+                user.sync(jsonObjectUser);
+                ContentValues values = new ContentValues();
+
+                values.put(singleDistrict.COLUMN_DISTRICT_CODE, user.getDistrictCode());
+                values.put(singleDistrict.COLUMN_DISTRICT_NAME, user.getDistrictName());
+                db.insert(singleDistrict.TABLE_NAME, null, values);
+            }
+
+        } catch (Exception e) {
+            Log.d(TAG, "syncTalukas(e): " + e);
+        } finally {
+            db.close();
+        }
+    }
+
+
+    /*public void syncListing(JSONArray listing) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(MwraEntry.TABLE_NAME, null, null);
+        try {
+            JSONArray jsonArray = listing;
+            for (int i = 0; i < jsonArray.length(); i++) {
+
+                JSONObject jsonObjectUser = jsonArray.getJSONObject(i);
+
+                MwraContract user = new MwraContract();
+                user.sync(jsonObjectUser);
+                ContentValues values = new ContentValues();
+
+                values.put(MwraEntry.MWRA_MW01, user.getMw01());
+                values.put(MwraEntry.MWRA_MW02, user.getMw02());
+                values.put(MwraEntry.MWRA_MW03, user.getMw03());
+                values.put(MwraEntry.MWRA_MW04, user.getMw04());
+                values.put(MwraEntry.MWRA_MW05, user.getMw05());
+
+
+                db.insert(MwraEntry.TABLE_NAME, null, values);
+            }
+
+        } catch (Exception e) {
+            Log.d(TAG, "syncTalukas(e): " + e);
+        } finally {
+            db.close();
+        }
+    }*/
+
+
+    public void syncMWRA(JSONArray pcList) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(MwraEntry.TABLE_NAME, null, null);
+
+        try {
+            JSONArray jsonArray = pcList;
+
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObjectPSU = jsonArray.getJSONObject(i);
+
+                MwraContract vc = new MwraContract();
+                vc.sync(jsonObjectPSU);
+                Log.i(TAG, "MWRA: " + jsonObjectPSU.toString());
+
+                ContentValues values = new ContentValues();
+
+                values.put(MwraEntry.MWRA_MUID, vc.getMuid());
+                values.put(MwraEntry.MWRA_DUID, vc.getDuid());
+                values.put(MwraEntry.MWRA_HH02, vc.getHh02());
+                values.put(MwraEntry.MWRA_HHNO, vc.getHhno());
+                values.put(MwraEntry.MWRA_SNO, vc.getSno());
+                values.put(MwraEntry.MWRA_WNAME, vc.getWname());
+                values.put(MwraEntry.MWRA_DLVRDATE, vc.getDlvr_date());
+                values.put(MwraEntry.MWRA_HH08, vc.getHh08());
+                values.put(MwraEntry.MWRA_HH09, vc.getHh09());
+
+                db.insert(MwraEntry.TABLE_NAME, null, values);
+            }
+            db.close();
+
+        } catch (Exception e) {
+            Log.d(TAG, "syncMWRA: " + e.getMessage());
+        }
+    }
+
+
+    public void syncVillages(JSONArray pcList) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(singleVillage.TABLE_NAME, null, null);
+
+        try {
+            JSONArray jsonArray = pcList;
+
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObjectPSU = jsonArray.getJSONObject(i);
+
+                VillagesContract vc = new VillagesContract();
+                vc.sync(jsonObjectPSU);
+                Log.i(TAG, "syncVillages: " + jsonObjectPSU.toString());
+
+                ContentValues values = new ContentValues();
+
+                values.put(singleVillage.COLUMN_UC_CODE, vc.getUcCode());
+                values.put(singleVillage.COLUMN_VILLAGE_CODE, vc.getVillageCode());
+                values.put(singleVillage.COLUMN_VILLAGE_NAME, vc.getVillageName());
+                values.put(singleVillage.COLUMN_DISTRICT_CODE, vc.getDistrictCode());
+
+                db.insert(singleVillage.TABLE_NAME, null, values);
+            }
+            db.close();
+
+        } catch (Exception e) {
+
+        }
+    }
+
 
     public boolean Login(String username, String password) throws SQLException {
 

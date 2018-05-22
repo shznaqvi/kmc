@@ -49,6 +49,10 @@ import edu.aku.hassannaqvi.kmc.core.AndroidDatabaseManager;
 import edu.aku.hassannaqvi.kmc.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc.core.MainApp;
 import edu.aku.hassannaqvi.kmc.databinding.ActivityMainBinding;
+import edu.aku.hassannaqvi.kmc.get.GetMwra;
+import edu.aku.hassannaqvi.kmc.get.GetTehsils;
+import edu.aku.hassannaqvi.kmc.get.GetUCs;
+import edu.aku.hassannaqvi.kmc.get.GetVillages;
 import edu.aku.hassannaqvi.kmc.sync.SyncForms;
 
 public class MainActivity extends Activity {
@@ -473,6 +477,20 @@ public class MainActivity extends Activity {
 
             // Sync Random
             /*new GetBLRandom(this).execute();*/
+
+
+            Toast.makeText(getApplicationContext(), "Syncing Woman", Toast.LENGTH_SHORT).show();
+            new GetMwra(this).execute();
+
+            Toast.makeText(getApplicationContext(), "Syncing Villages", Toast.LENGTH_SHORT).show();
+            new GetVillages(this).execute();
+
+            Toast.makeText(getApplicationContext(), "Syncing UCs", Toast.LENGTH_SHORT).show();
+            new GetUCs(this).execute();
+
+            Toast.makeText(getApplicationContext(), "Syncing Talukas", Toast.LENGTH_SHORT).show();
+            new GetTehsils(this).execute();
+
 
             SharedPreferences syncPref = getSharedPreferences("SyncInfo", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = syncPref.edit();

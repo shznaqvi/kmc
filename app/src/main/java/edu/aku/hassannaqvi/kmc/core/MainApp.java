@@ -18,6 +18,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 import edu.aku.hassannaqvi.kmc.contracts.FormsContract;
+import edu.aku.hassannaqvi.kmc.contracts.MwraContract;
 
 /**
  * Created by hassan.naqvi on 11/30/2016.
@@ -61,6 +62,18 @@ public class MainApp extends Application {
     public static String userName = "0000";
     public static int versionCode;
     public static String versionName;
+
+    public static String talukaCode = "0000";
+    public static String ucCode;
+    public static String villageCode;
+    public static String wSerialNo;
+    public static String wName;
+    public static String wMuid;
+    public static String wDuid;
+    public static String dlvr_date;
+    public static String wHh08;
+    public static String wHh09;
+
 
     protected static LocationManager locationManager;
 
