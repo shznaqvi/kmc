@@ -738,7 +738,7 @@ public class SectionFActivity extends AppCompatActivity {
         sn.put("bd04dob5", bi.bd03dob5.getText().toString());
 
 
-        //MainApp.fc.sets(String.valueOf(sn));
+        MainApp.fc.setsF(String.valueOf(sn));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }

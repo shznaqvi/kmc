@@ -14,6 +14,7 @@ import org.json.JSONObject;
 
 import edu.aku.hassannaqvi.kmc.R;
 import edu.aku.hassannaqvi.kmc.core.DatabaseHelper;
+import edu.aku.hassannaqvi.kmc.core.MainApp;
 import edu.aku.hassannaqvi.kmc.databinding.ActivitySectionC6Binding;
 import edu.aku.hassannaqvi.kmc.validation.validatorClass;
 
@@ -472,7 +473,7 @@ public class SectionC6Activity extends AppCompatActivity {
         sn.put("kc70796", bi.kc61296.isChecked() ? "96" : "0");
         sn.put("kc70796x", bi.kc61296x.getText().toString());
 
-        //MainApp.fc.sets(String.valueOf(sn));
+        MainApp.fc.setsC6(String.valueOf(sn));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }

@@ -13,6 +13,7 @@ import org.json.JSONObject;
 
 import edu.aku.hassannaqvi.kmc.R;
 import edu.aku.hassannaqvi.kmc.core.DatabaseHelper;
+import edu.aku.hassannaqvi.kmc.core.MainApp;
 import edu.aku.hassannaqvi.kmc.databinding.ActivitySectionC1Binding;
 import edu.aku.hassannaqvi.kmc.validation.validatorClass;
 
@@ -163,10 +164,10 @@ public class SectionC1Activity extends AppCompatActivity {
     private void SaveDraft() throws JSONException {
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
-        JSONObject sn = new JSONObject();
+        JSONObject sc1 = new JSONObject();
 
 
-        sn.put("kc101", bi.kc101a.isChecked() ? "1"
+        sc1.put("kc101", bi.kc101a.isChecked() ? "1"
                 : bi.kc101b.isChecked() ? "2"
                 : bi.kc101c.isChecked() ? "3"
                 : bi.kc101d.isChecked() ? "4"
@@ -176,20 +177,20 @@ public class SectionC1Activity extends AppCompatActivity {
                 : "0");
 
 
-        sn.put("kc102", bi.kc102a.isChecked() ? "1"
+        sc1.put("kc102", bi.kc102a.isChecked() ? "1"
                 : bi.kc102b.isChecked() ? "2"
                 : "0");
 
-        sn.put("kc103d", bi.kc103d.getText().toString());
-        sn.put("kc103m", bi.kc103m.getText().toString());
-        sn.put("kc102twin", bi.kc102atwin.isChecked() ? "1"
+        sc1.put("kc103d", bi.kc103d.getText().toString());
+        sc1.put("kc103m", bi.kc103m.getText().toString());
+        sc1.put("kc102twin", bi.kc102atwin.isChecked() ? "1"
                 : bi.kc102btwin.isChecked() ? "2"
                 : "0");
 
-        sn.put("kc103dtwin", bi.kc103dtwin.getText().toString());
-        sn.put("kc103mtwin", bi.kc103mtwin.getText().toString());
+        sc1.put("kc103dtwin", bi.kc103dtwin.getText().toString());
+        sc1.put("kc103mtwin", bi.kc103mtwin.getText().toString());
 
-        //MainApp.fc.sets(String.valueOf(sn));
+        MainApp.fc.setsC1(String.valueOf(sc1));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }

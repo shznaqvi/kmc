@@ -68,11 +68,6 @@ public class MainApp extends Application {
     public static String villageCode;
     public static String wSerialNo;
     public static String wName;
-    public static String wMuid;
-    public static String wDuid;
-    public static String dlvr_date;
-    public static String wHh08;
-    public static String wHh09;
 
 
     protected static LocationManager locationManager;

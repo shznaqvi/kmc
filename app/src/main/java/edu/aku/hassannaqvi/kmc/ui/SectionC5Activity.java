@@ -147,9 +147,8 @@ public class SectionC5Activity extends AppCompatActivity {
         sC5.put("kc503", bi.kc503.getText().toString());
         sC5.put("kc504", bi.kc504.getText().toString());
         sC5.put("kc505", bi.kc505.getText().toString());
-        sC5.put("kc505",
-                bi.kc50598.isChecked() ? "98"
-                        : "0");
+        sC5.put("kc505", bi.kc50598.isChecked() ? "98"
+                : "0");
 
         MainApp.fc.setsC5(String.valueOf(sC5));
     }

@@ -242,8 +242,15 @@ public class SectionInfoKmcActivity extends Activity {
         }
 
 
-        if (!validatorClass.EmptySpinner(this, bi.crwoman, getString(R.string.crwoman))) {
+        if (bi.crwoman.getSelectedItemPosition() == 0) {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crwoman), Toast.LENGTH_SHORT).show();
+            ((TextView) bi.crwoman.getSelectedView()).setText("This Data is Required");
+            ((TextView) bi.crwoman.getSelectedView()).setTextColor(Color.RED);
+            bi.crwoman.requestFocus();
+            Log.i(TAG, "crwoman: This Data is Required!");
             return false;
+        } else {
+            ((TextView) bi.crwoman.getSelectedView()).setError(null);
         }
 
 
