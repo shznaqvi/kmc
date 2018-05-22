@@ -322,6 +322,11 @@ public class SectionB2Activity extends AppCompatActivity {
             }
 
 
+            if (!validatorClass.RangeTextBox(this, bi.kb208, 1, 15, getString(R.string.kb208), "Number")) {
+                return false;
+            }
+
+
             if (!validatorClass.EmptyRadioButton(this, bi.kb209, bi.kb209a, getString(R.string.kb209))) {
                 return false;
             }
@@ -414,6 +419,12 @@ public class SectionB2Activity extends AppCompatActivity {
                     if (!validatorClass.EmptyTextBox(this, bi.kb219, getString(R.string.kb219))) {
                         return false;
                     }
+
+
+                    if (!validatorClass.RangeTextBox(this, bi.kb219, 1, 15, getString(R.string.kb219), "Number")) {
+                        return false;
+                    }
+
                 }
 
             }
@@ -438,23 +449,23 @@ public class SectionB2Activity extends AppCompatActivity {
     public void BtnEnd() {
 
         Toast.makeText(this, "Processing End Section", Toast.LENGTH_SHORT).show();
-        if (formValidation()) {
-            try {
-                SaveDraft();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            if (UpdateDB()) {
-                Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
-
-                finish();
-
-                startActivity(new Intent(this, EndingActivity.class));
-
-            } else {
-                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
-            }
+        //if (formValidation()) {
+        try {
+            SaveDraft();
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
+        if (UpdateDB()) {
+            Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
+
+            finish();
+
+            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+
+        } else {
+            Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+        }
+        //}
     }
 
     public void BtnContinue() {

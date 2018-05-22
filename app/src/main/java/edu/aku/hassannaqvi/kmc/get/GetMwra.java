@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -15,33 +16,31 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import edu.aku.hassannaqvi.kmc.contracts.DistrictsContract;
+import edu.aku.hassannaqvi.kmc.contracts.MwraContract;
+import edu.aku.hassannaqvi.kmc.contracts.VillagesContract;
 import edu.aku.hassannaqvi.kmc.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc.core.MainApp;
 
-/**
- * Created by ali.azaz on 7/14/2017.
- */
+public class GetMwra extends AsyncTask<String, String, String> {
 
-public class GetTehsils extends AsyncTask<String, String, String> {
-
-    private final String TAG = "GetDistricts()";
+    private final String TAG = "GetMwra()";
     HttpURLConnection urlConnection;
     private Context mContext;
     private ProgressDialog pd;
 
-    public GetTehsils(Context context) {
+
+    public GetMwra(Context context) {
         mContext = context;
     }
+
 
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
         pd = new ProgressDialog(mContext);
-        pd.setTitle("Syncing Talukas");
+        pd.setTitle("Syncing MWRAs");
         pd.setMessage("Getting connected to server...");
         pd.show();
-
     }
 
     @Override
@@ -51,7 +50,7 @@ public class GetTehsils extends AsyncTask<String, String, String> {
 
         URL url = null;
         try {
-            url = new URL(MainApp._HOST_URL + DistrictsContract.singleDistrict._URI);
+            url = new URL(MainApp._HOST_URL + MwraContract.MwraEntry._URL);
             urlConnection = (HttpURLConnection) url.openConnection();
             urlConnection.setReadTimeout(10000 /* milliseconds */);
             urlConnection.setConnectTimeout(15000 /* milliseconds */);
@@ -63,11 +62,12 @@ public class GetTehsils extends AsyncTask<String, String, String> {
 
                 String line;
                 while ((line = reader.readLine()) != null) {
-                    Log.i(TAG, "Talukas In: " + line);
+                    Log.i(TAG, "GetMwra In: " + line);
                     result.append(line);
                 }
             }
         } catch (java.net.SocketTimeoutException e) {
+            Log.d(TAG, "exceptionhai: " + e.getMessage());
             return null;
         } catch (java.io.IOException e) {
             return null;
@@ -90,7 +90,7 @@ public class GetTehsils extends AsyncTask<String, String, String> {
                 DatabaseHelper db = new DatabaseHelper(mContext);
                 try {
                     JSONArray jsonArray = new JSONArray(json);
-                    db.syncDistricts(jsonArray);
+                    db.syncMWRA(jsonArray);
                     pd.setMessage("Received: " + jsonArray.length());
                     pd.show();
                 } catch (JSONException e) {
@@ -106,4 +106,5 @@ public class GetTehsils extends AsyncTask<String, String, String> {
             pd.show();
         }
     }
+
 }

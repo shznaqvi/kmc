@@ -37,13 +37,14 @@ public class SectionC5Activity extends AppCompatActivity {
                     @Override
                     public void onCheckedChanged(RadioGroup group, int checkedId) {
                         if (checkedId == R.id.kc501a) {
-                            bi.fldGrpkc502.setVisibility(View.VISIBLE);
+                            bi.fldGrpkc503.setVisibility(View.VISIBLE);
                         } else {
-                            bi.fldGrpkc502.setVisibility(View.GONE);
-                            bi.kc502.setText(null);
+                            bi.fldGrpkc503.setVisibility(View.GONE);
+                            bi.kc502.clearCheck();
                             bi.kc503.setText(null);
                             bi.kc504.setText(null);
-                            bi.kc50498.setChecked(false);
+                            bi.kc505.setText(null);
+                            bi.kc50598.setChecked(false);
                         }
                     }
                 });
@@ -54,23 +55,23 @@ public class SectionC5Activity extends AppCompatActivity {
     public void BtnEnd() {
 
         Toast.makeText(this, "Processing End Section", Toast.LENGTH_SHORT).show();
-        if (formValidation()) {
-            try {
-                SaveDraft();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            if (UpdateDB()) {
-                Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
-
-                finish();
-
-                startActivity(new Intent(this, EndingActivity.class));
-
-            } else {
-                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
-            }
+        //if (formValidation()) {
+        try {
+            SaveDraft();
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
+        if (UpdateDB()) {
+            Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
+
+            finish();
+
+            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+
+        } else {
+            Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+        }
+        //}
     }
 
     public void BtnContinue() {
@@ -102,13 +103,27 @@ public class SectionC5Activity extends AppCompatActivity {
             return false;
         }
         if (bi.kc501a.isChecked()) {
-            if (!validatorClass.EmptyTextBox(this, bi.kc502, getString(R.string.kc502))) {
+            if (!validatorClass.EmptyRadioButton(this, bi.kc502, bi.kc50296, bi.kc50296x, getString(R.string.kc502))) {
                 return false;
             }
             if (!validatorClass.EmptyTextBox(this, bi.kc503, getString(R.string.kc503))) {
                 return false;
             }
-            return validatorClass.EmptyTextBox(this, bi.kc504, getString(R.string.kc504));
+            if (!validatorClass.EmptyTextBox(this, bi.kc504, getString(R.string.kc504))) {
+                return false;
+            }
+            if (!validatorClass.RangeTextBox(this, bi.kc504, 1, 4, getString(R.string.kc504), "per day")) {
+                return false;
+            }
+            if (!bi.kc50598.isChecked()) {
+                if (!validatorClass.EmptyTextBox(this, bi.kc505, getString(R.string.kc505))) {
+                    return false;
+                }
+                if (!validatorClass.RangeTextBox(this, bi.kc505, 1, 45, getString(R.string.kc505), "days")) {
+                    return false;
+                }
+            }
+
         }
 
 
@@ -123,11 +138,17 @@ public class SectionC5Activity extends AppCompatActivity {
                 : bi.kc501b.isChecked() ? "2"
                 : bi.kc50198.isChecked() ? "98"
                 : "0");
-        sC5.put("kc502", bi.kc502.getText().toString());
+        sC5.put("kc502", bi.kc502a.isChecked() ? "1"
+                : bi.kc502b.isChecked() ? "2"
+                : bi.kc502c.isChecked() ? "3"
+                : bi.kc50296.isChecked() ? "96"
+                : "0");
+        sC5.put("kc50296x", bi.kc50296x.getText().toString());
         sC5.put("kc503", bi.kc503.getText().toString());
         sC5.put("kc504", bi.kc504.getText().toString());
-        sC5.put("kc504",
-                bi.kc50498.isChecked() ? "98"
+        sC5.put("kc505", bi.kc505.getText().toString());
+        sC5.put("kc505",
+                bi.kc50598.isChecked() ? "98"
                         : "0");
 
         MainApp.fc.setsC5(String.valueOf(sC5));

@@ -57,7 +57,15 @@ public class SectionC4Activity extends AppCompatActivity {
                     bi.kc40396x.setText(null);
                     bi.kc404.clearCheck();
                     bi.kc406.clearCheck();
-                    bi.kc407.clearCheck();
+                    bi.kc405.setText(null);
+                    bi.kc407a.setChecked(false);
+                    bi.kc407b.setChecked(false);
+                    bi.kc407c.setChecked(false);
+                    bi.kc407d.setChecked(false);
+                    bi.kc407e.setChecked(false);
+                    bi.kc407f.setChecked(false);
+                    bi.kc40798.setChecked(false);
+                    bi.kc40796.setChecked(false);
                     bi.kc40796x.setText(null);
                     bi.kc408.clearCheck();
                 } else {
@@ -68,7 +76,7 @@ public class SectionC4Activity extends AppCompatActivity {
         bi.kc40399.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked){
+                if (isChecked) {
                     bi.kc403a.setChecked(false);
                     bi.kc403b.setChecked(false);
                     bi.kc403c.setChecked(false);
@@ -90,7 +98,7 @@ public class SectionC4Activity extends AppCompatActivity {
                     bi.kc403h.setEnabled(false);
                     bi.kc403i.setEnabled(false);
                     bi.kc40396.setEnabled(false);
-                }else {
+                } else {
                     bi.kc403a.setEnabled(true);
                     bi.kc403b.setEnabled(true);
                     bi.kc403c.setEnabled(true);
@@ -110,16 +118,49 @@ public class SectionC4Activity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (checkedId == R.id.kc404b) {
                     bi.fldGrpkc406.setVisibility(View.GONE);
-
+                    bi.kc405.setText(null);
                     bi.kc406.clearCheck();
-                    bi.kc407.clearCheck();
+                    bi.kc407a.setChecked(false);
+                    bi.kc407b.setChecked(false);
+                    bi.kc407c.setChecked(false);
+                    bi.kc407d.setChecked(false);
+                    bi.kc407e.setChecked(false);
+                    bi.kc407f.setChecked(false);
+                    bi.kc40798.setChecked(false);
+                    bi.kc40796.setChecked(false);
                     bi.kc40796x.setText(null);
                     bi.kc408.clearCheck();
-
-
-
                 } else {
                     bi.fldGrpkc406.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+        bi.kc40798.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    bi.kc407a.setChecked(false);
+                    bi.kc407b.setChecked(false);
+                    bi.kc407c.setChecked(false);
+                    bi.kc407d.setChecked(false);
+                    bi.kc407e.setChecked(false);
+                    bi.kc407f.setChecked(false);
+                    bi.kc40796.setChecked(false);
+                    bi.kc407a.setEnabled(false);
+                    bi.kc407b.setEnabled(false);
+                    bi.kc407c.setEnabled(false);
+                    bi.kc407d.setEnabled(false);
+                    bi.kc407e.setEnabled(false);
+                    bi.kc407f.setEnabled(false);
+                    bi.kc40796.setEnabled(false);
+                } else {
+                    bi.kc407a.setEnabled(true);
+                    bi.kc407b.setEnabled(true);
+                    bi.kc407c.setEnabled(true);
+                    bi.kc407d.setEnabled(true);
+                    bi.kc407e.setEnabled(true);
+                    bi.kc407f.setEnabled(true);
+                    bi.kc40796.setEnabled(true);
                 }
             }
         });
@@ -145,17 +186,17 @@ public class SectionC4Activity extends AppCompatActivity {
                 : bi.kc402b.isChecked() ? "2"
                 : "0");
 
-        sC4.put("kc403a", bi.kc403a.isChecked() ? "1": "0");
-        sC4.put("kc403b", bi.kc403b.isChecked() ? "2": "0");
-        sC4.put("kc403c", bi.kc403c.isChecked() ? "3": "0");
-        sC4.put("kc403d", bi.kc403d.isChecked() ? "4": "0");
-        sC4.put("kc403e", bi.kc403e.isChecked() ? "5": "0");
-        sC4.put("kc403f", bi.kc403f.isChecked() ? "6": "0");
-        sC4.put("kc403g", bi.kc403g.isChecked() ? "7": "0");
-        sC4.put("kc403h", bi.kc403h.isChecked() ? "8": "0");
-        sC4.put("kc403i", bi.kc403i.isChecked() ? "9": "0");
-        sC4.put("kc40399", bi.kc40399.isChecked() ? "99": "0");
-        sC4.put("kc40396", bi.kc40396.isChecked() ? "96": "0");
+        sC4.put("kc403a", bi.kc403a.isChecked() ? "1" : "0");
+        sC4.put("kc403b", bi.kc403b.isChecked() ? "2" : "0");
+        sC4.put("kc403c", bi.kc403c.isChecked() ? "3" : "0");
+        sC4.put("kc403d", bi.kc403d.isChecked() ? "4" : "0");
+        sC4.put("kc403e", bi.kc403e.isChecked() ? "5" : "0");
+        sC4.put("kc403f", bi.kc403f.isChecked() ? "6" : "0");
+        sC4.put("kc403g", bi.kc403g.isChecked() ? "7" : "0");
+        sC4.put("kc403h", bi.kc403h.isChecked() ? "8" : "0");
+        sC4.put("kc403i", bi.kc403i.isChecked() ? "9" : "0");
+        sC4.put("kc40399", bi.kc40399.isChecked() ? "99" : "0");
+        sC4.put("kc40396", bi.kc40396.isChecked() ? "96" : "0");
         sC4.put("kc40396x", bi.kc40396x.getText().toString());
 
 
@@ -169,15 +210,15 @@ public class SectionC4Activity extends AppCompatActivity {
                 : bi.kc40698.isChecked() ? "98"
                 : "0");
 
-        sC4.put("kc407", bi.kc407a.isChecked() ? "1"
-                : bi.kc407b.isChecked() ? "2"
-                : bi.kc407c.isChecked() ? "3"
-                : bi.kc407d.isChecked() ? "4"
-                : bi.kc407e.isChecked() ? "5"
-                : bi.kc407f.isChecked() ? "6"
-                : bi.kc40798.isChecked() ? "98"
-                : bi.kc40796.isChecked() ? "96"
-                : "0");
+        sC4.put("kc407a", bi.kc407a.isChecked() ? "1" : "0");
+        sC4.put("kc407b", bi.kc407b.isChecked() ? "2" : "0");
+        sC4.put("kc407c", bi.kc407c.isChecked() ? "3" : "0");
+        sC4.put("kc407d", bi.kc407d.isChecked() ? "4" : "0");
+        sC4.put("kc407e", bi.kc407e.isChecked() ? "5" : "0");
+        sC4.put("kc407f", bi.kc407f.isChecked() ? "6" : "0");
+        sC4.put("kc40798", bi.kc40798.isChecked() ? "98" : "0");
+        sC4.put("kc40796", bi.kc40796.isChecked() ? "96" : "0");
+
 
         sC4.put("kc40796x", bi.kc40796x.getText().toString());
 
@@ -203,40 +244,43 @@ public class SectionC4Activity extends AppCompatActivity {
         }
         if (bi.kc402a.isChecked()) {
 
-        if (!validatorClass.EmptyCheckBox(this, bi.kc403, bi.kc40396, bi.kc40396x, getString(R.string.kc403))) {
-            return false;
-        }
-
-
-        if (!validatorClass.EmptyRadioButton(this, bi.kc404, bi.kc404a, getString(R.string.kc404))) {
-            return false;
-        }
-        if (!validatorClass.EmptyTextBox(this, bi.kc405, getString(R.string.kc405))) {
-            return false;
-        }
-
-
-        if (!validatorClass.EmptyRadioButton(this, bi.kc406, bi.kc406a, getString(R.string.kc406))) {
-            return false;
-        }
-
-
-        if (!validatorClass.EmptyRadioButton(this, bi.kc407, bi.kc407a, getString(R.string.kc407))) {
-            return false;
-        }
-
-
-        if (bi.kc40796.isChecked()) {
-
-            if (!validatorClass.EmptyTextBox(this, bi.kc40796x, getString(R.string.other))) {
+            if (!validatorClass.EmptyCheckBox(this, bi.kc403, bi.kc40396, bi.kc40396x, getString(R.string.kc403))) {
                 return false;
             }
-        }
-            if (!validatorClass.EmptyRadioButton(this, bi.kc408, bi.kc408a, getString(R.string.kc408))) {
+
+
+            if (!validatorClass.EmptyRadioButton(this, bi.kc404, bi.kc404a, getString(R.string.kc404))) {
                 return false;
             }
-        }
+            if (bi.kc404a.isChecked()) {
 
+                if (!validatorClass.EmptyTextBox(this, bi.kc405, getString(R.string.kc405))) {
+                    return false;
+                }
+
+
+                if (!validatorClass.EmptyRadioButton(this, bi.kc406, bi.kc406a, getString(R.string.kc406))) {
+                    return false;
+                }
+
+
+                if (!validatorClass.EmptyCheckBox(this, bi.kc407, bi.kc407a, getString(R.string.kc407))) {
+                    return false;
+                }
+
+
+                if (bi.kc40796.isChecked()) {
+
+                    if (!validatorClass.EmptyTextBox(this, bi.kc40796x, getString(R.string.other))) {
+                        return false;
+                    }
+                }
+                if (!validatorClass.EmptyRadioButton(this, bi.kc408, bi.kc408a, getString(R.string.kc408))) {
+                    return false;
+                }
+            }
+
+        }
 
         return true;
     }
@@ -245,23 +289,23 @@ public class SectionC4Activity extends AppCompatActivity {
     public void BtnEnd() {
 
         Toast.makeText(this, "Processing End Section", Toast.LENGTH_SHORT).show();
-        if (formValidation()) {
-            try {
-                SaveDraft();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            if (UpdateDB()) {
-                Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
-
-                finish();
-
-                startActivity(new Intent(this, EndingActivity.class));
-
-            } else {
-                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
-            }
+        //if (formValidation()) {
+        try {
+            SaveDraft();
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
+        if (UpdateDB()) {
+            Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
+
+            finish();
+
+            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+
+        } else {
+            Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+        }
+        //}
     }
 
     public void BtnContinue() {

@@ -59,25 +59,25 @@ public class SectionD1Activity extends AppCompatActivity {
 
 
     public void BtnEnd() {
-/*
+
         Toast.makeText(this, "Processing End Section", Toast.LENGTH_SHORT).show();
-        if (formValidation()) {
-            try {
-                SaveDraft();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            if (UpdateDB()) {
-                Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
+        //if (formValidation()) {
+        try {
+            SaveDraft();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        if (UpdateDB()) {
+            Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
 
-                finish();
+            finish();
 
-                startActivity(new Intent(this, EndingActivity.class));
+            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
 
-            } else {
-                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
-            }
-        }*/
+        } else {
+            Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+        }
+        //}
     }
 
     public void BtnContinue() {
@@ -133,7 +133,7 @@ public class SectionD1Activity extends AppCompatActivity {
         if (!validatorClass.EmptyRadioButton(context, bi.kd101, bi.kd101a, getString(R.string.kd101))) {
             return false;
         }
-        if (!validatorClass.EmptyRadioButton(context, bi.kd102, bi.kd102a,bi.kd102ax, getString(R.string.kd102))) {
+        if (!validatorClass.EmptyRadioButton(context, bi.kd102, bi.kd102a, bi.kd102ax, getString(R.string.kd102))) {
             return false;
         }
         if (!validatorClass.EmptyRadioButton(context, bi.kd103, bi.kd10396, bi.kd10396x, getString(R.string.kd103))) {

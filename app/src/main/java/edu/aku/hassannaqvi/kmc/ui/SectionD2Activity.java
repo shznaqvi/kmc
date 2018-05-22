@@ -22,6 +22,7 @@ public class SectionD2Activity extends AppCompatActivity {
     ActivitySectionD2Binding bi;
     Context context;
     DatabaseHelper db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,8 +42,7 @@ public class SectionD2Activity extends AppCompatActivity {
                     bi.fldGrpkd204.setVisibility(View.GONE);
                     bi.kd204.clearCheck();
                     bi.kd20496x.setText(null);
-                }
-                else{
+                } else {
                     bi.fldGrpkd204.setVisibility(View.VISIBLE);
                 }
             }
@@ -52,27 +52,28 @@ public class SectionD2Activity extends AppCompatActivity {
     public void BtnEnd() {
 
         Toast.makeText(this, "Processing End Section", Toast.LENGTH_SHORT).show();
-        if (formValidation()) {
-            try {
-                SaveDraft();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            if (UpdateDB()) {
-                Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
-
-                finish();
-
-                startActivity(new Intent(this, EndingActivity.class));
-
-            } else {
-                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
-            }
+        //if (formValidation()) {
+        try {
+            SaveDraft();
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
+        if (UpdateDB()) {
+            Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
+
+            finish();
+
+            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+
+        } else {
+            Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+        }
+        //}
     }
+
     public void BtnContinue() {
 
-       Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
             try {
                 SaveDraft();
@@ -92,41 +93,43 @@ public class SectionD2Activity extends AppCompatActivity {
             }
         }
     }
-    private boolean formValidation(){
+
+    private boolean formValidation() {
         Toast.makeText(context, "Validating This Section ", Toast.LENGTH_SHORT).show();
 
-        if (!validatorClass.EmptyRadioButton(context, bi.kd201,bi.kd201a, getString(R.string.kd201))) {
+        if (!validatorClass.EmptyRadioButton(context, bi.kd201, bi.kd201a, getString(R.string.kd201))) {
             return false;
         }
-        if(bi.kd201a.isChecked()){
+        if (bi.kd201a.isChecked()) {
 
             if (!validatorClass.EmptyTextBox(context, bi.kd201d, getString(R.string.kd201a))) {
                 return false;
             }
-            if (!validatorClass.RangeTextBox(context, bi.kd201d,1, 29, getString(R.string.days), "days")) {
+            if (!validatorClass.RangeTextBox(context, bi.kd201d, 1, 29, getString(R.string.days), "days")) {
                 return false;
             }
         }
-        if (bi.kd201b.isChecked()){
+        if (bi.kd201b.isChecked()) {
             if (!validatorClass.EmptyTextBox(context, bi.kd201m, getString(R.string.kd201b))) {
                 return false;
             }
-            if (!validatorClass.RangeTextBox(context, bi.kd201m,1, 11, getString(R.string.months), "months")) {
+            if (!validatorClass.RangeTextBox(context, bi.kd201m, 1, 11, getString(R.string.months), "months")) {
                 return false;
             }
         }
 
-        if (!validatorClass.EmptyCheckBox(context, bi.kd202, bi.kd20296,bi.kd20296x, getString(R.string.other))){
+        if (!validatorClass.EmptyCheckBox(context, bi.kd202, bi.kd20296, bi.kd20296x, getString(R.string.other))) {
             return false;
         }
         if (!validatorClass.EmptyRadioButton(context, bi.kd203, bi.kd203a, getString(R.string.kd203))) {
             return false;
         }
-        if(!bi.kd203b.isChecked()){
+        if (!bi.kd203b.isChecked()) {
             return validatorClass.EmptyRadioButton(context, bi.kd204, bi.kd20496, bi.kd20496x, getString(R.string.kd204));
         }
         return true;
     }
+
     private void SaveDraft() throws JSONException {
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
@@ -134,10 +137,10 @@ public class SectionD2Activity extends AppCompatActivity {
         sd2.put("kd201",
                 bi.kd201a.isChecked() ? "1" :
                         bi.kd201b.isChecked() ? "2" :
-                        bi.kd20199.isChecked() ? "99" :
-                        bi.kd20177.isChecked() ? "77" :
-                                bi.kd20198.isChecked() ? "98" :
-                                        "0");
+                                bi.kd20199.isChecked() ? "99" :
+                                        bi.kd20177.isChecked() ? "77" :
+                                                bi.kd20198.isChecked() ? "98" :
+                                                        "0");
         sd2.put("kd201d", bi.kd201d.getText().toString());
         sd2.put("kd201m", bi.kd201m.getText().toString());
 
@@ -153,17 +156,17 @@ public class SectionD2Activity extends AppCompatActivity {
         sd2.put("kd203",
                 bi.kd203a.isChecked() ? "1" :
                         bi.kd203b.isChecked() ? "2" :
-                                        "0");
+                                "0");
         sd2.put("kd204",
                 bi.kd204a.isChecked() ? "1" :
                         bi.kd204b.isChecked() ? "2" :
-                        bi.kd204c.isChecked() ? "3" :
-                        bi.kd204d.isChecked() ? "4" :
-                        bi.kd204e.isChecked() ? "5" :
-                        bi.kd204f.isChecked() ? "6" :
-                        bi.kd204g.isChecked() ? "7" :
-                        bi.kd20496.isChecked() ? "96" :
-                                        "0");
+                                bi.kd204c.isChecked() ? "3" :
+                                        bi.kd204d.isChecked() ? "4" :
+                                                bi.kd204e.isChecked() ? "5" :
+                                                        bi.kd204f.isChecked() ? "6" :
+                                                                bi.kd204g.isChecked() ? "7" :
+                                                                        bi.kd20496.isChecked() ? "96" :
+                                                                                "0");
         sd2.put("kd20496x", bi.kd20496x.getText().toString());
 
         MainApp.fc.setsD2(String.valueOf(sd2));
