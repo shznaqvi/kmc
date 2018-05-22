@@ -229,7 +229,7 @@ public class SectionC2Activity extends AppCompatActivity {
         sC2.put("kc20796", bi.kc20796.isChecked() ? "96" : "0");
 
 
-        sC2.put("kc20796", bi.kc20796.getText().toString());
+        sC2.put("kc20796x", bi.kc20796x.getText().toString());
 
 
         sC2.put("kc208", bi.kc208a.isChecked() ? "1"
