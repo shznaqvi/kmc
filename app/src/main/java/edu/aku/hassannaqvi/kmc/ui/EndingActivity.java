@@ -15,6 +15,7 @@ import edu.aku.hassannaqvi.kmc.R;
 import edu.aku.hassannaqvi.kmc.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc.core.MainApp;
 import edu.aku.hassannaqvi.kmc.databinding.ActivityEndingBinding;
+import edu.aku.hassannaqvi.kmc.validation.validatorClass;
 
 public class EndingActivity extends AppCompatActivity {
 
@@ -81,6 +82,8 @@ public class EndingActivity extends AppCompatActivity {
 
         MainApp.fc.setIstatus(binding.istatusa.isChecked() ? "1"
                 : binding.istatusb.isChecked() ? "2"
+                : binding.istatusc.isChecked() ? "3"
+                : binding.istatusd.isChecked() ? "4"
                 : "0");
 
 //        MainApp.fc.setIstatus88x(istatus88x.getText().toString());
@@ -109,9 +112,9 @@ public class EndingActivity extends AppCompatActivity {
     private boolean formValidation() {
         Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
 
-        /*if (!validatorClass.EmptyRadioButton(this, binding.istatus, binding.istatusb, getString(R.string.istatus))) {
+        if (!validatorClass.EmptyRadioButton(this, binding.istatus, binding.istatusa, getString(R.string.istatus))) {
             return false;
-        }*/
+        }
 
         /*if (istatus88.isChecked()) {
 

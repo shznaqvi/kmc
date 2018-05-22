@@ -147,9 +147,9 @@ public class SectionEActivity extends AppCompatActivity {
         });
 
 
-        bi.ke410b.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        bi.ke410.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (bi.ke410b.isChecked()) {
 
                     bi.ke411a.setChecked(false);
@@ -192,9 +192,9 @@ public class SectionEActivity extends AppCompatActivity {
         });
 
 
-        bi.ke413b.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        bi.ke413.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (bi.ke413b.isChecked()) {
 
                     bi.ke414a.setChecked(false);
@@ -288,9 +288,9 @@ public class SectionEActivity extends AppCompatActivity {
         });
 
 
-        bi.ke421b.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        bi.ke421.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (bi.ke421b.isChecked()) {
 
                     bi.ke422a.setChecked(false);
@@ -332,8 +332,6 @@ public class SectionEActivity extends AppCompatActivity {
                 }
             }
         });
-
-
     }
 
 
