@@ -177,10 +177,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:digits="0123456789"
-                android:inputType="number"
-                android:maxLength="2"
                 android:hint="@string/ke403hr"
-                 />
+                android:inputType="number"
+                android:maxLength="2" />
 
 
             <!--ke404-->
@@ -269,10 +268,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:digits="0123456789"
-                android:inputType="number"
-                android:maxLength="2"
                 android:hint="@string/ke403hr"
-                 />
+                android:inputType="number"
+                android:maxLength="2" />
 
 
             <!--ke406-->
@@ -598,6 +596,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:text="@string/ke411a" />
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -628,17 +627,17 @@
                         android:layout_marginBottom="1dp"
                         android:text="@string/other" />
 
-                </LinearLayout>
+                    <EditText
+                        android:id="@+id/ke41196x"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                        android:hint="@string/others"
+                        android:text='@{ke41196.checked ? ke41196x.getText.toString : ""}'
+                        android:visibility='@{ke41196.checked ? View.VISIBLE : View.GONE}' />
 
-                <EditText
-                    android:id="@+id/ke41196x"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                    android:hint="@string/others"
-                    android:text='@{ke41196.checked ? ke41196x.getText.toString : ""}'
-                    android:visibility='@{ke41196.checked ? View.VISIBLE : View.GONE}' />
+                </LinearLayout>
 
             </LinearLayout>
 

@@ -99,14 +99,14 @@ public class SectionC1Activity extends AppCompatActivity {
                 if (!validatorClass.EmptyTextBox(this, bi.kc103d, getString(R.string.kc103y))) {
                     return false;
                 }
-                if (!validatorClass.RangeTextBox(this,bi.kc103d,0,29,getString(R.string.kc103y),"days")) {
+                if (!validatorClass.RangeTextBox(this, bi.kc103d, 0, 29, getString(R.string.kc103y), "days")) {
                     return false;
                 }
                 if (!validatorClass.EmptyTextBox(this, bi.kc103m, getString(R.string.kc103m))) {
                     return false;
                 }
 
-                if (!validatorClass.RangeTextBox(this,bi.kc103m,0,11,getString(R.string.kc103m)," months")) {
+                if (!validatorClass.RangeTextBox(this, bi.kc103m, 0, 11, getString(R.string.kc103m), " months")) {
                     return false;
                 }
                 if (bi.kc103d.getText().toString().equals("0") && bi.kc103m.getText().toString().equals("0")) {
@@ -132,13 +132,13 @@ public class SectionC1Activity extends AppCompatActivity {
                     if (!validatorClass.EmptyTextBox(this, bi.kc103dtwin, getString(R.string.kc103y))) {
                         return false;
                     }
-                    if (!validatorClass.RangeTextBox(this,bi.kc103dtwin,0,29,getString(R.string.kc103y),"days")) {
+                    if (!validatorClass.RangeTextBox(this, bi.kc103dtwin, 0, 29, getString(R.string.kc103y), "days")) {
                         return false;
                     }
                     if (!validatorClass.EmptyTextBox(this, bi.kc103mtwin, getString(R.string.kc103m))) {
                         return false;
                     }
-                    if (!validatorClass.RangeTextBox(this,bi.kc103mtwin,0,11,getString(R.string.kc103m)," months")) {
+                    if (!validatorClass.RangeTextBox(this, bi.kc103mtwin, 0, 11, getString(R.string.kc103m), " months")) {
                         return false;
                     }
                     if (bi.kc103dtwin.getText().toString().equals("0") && bi.kc103mtwin.getText().toString().equals("0")) {
@@ -212,23 +212,23 @@ public class SectionC1Activity extends AppCompatActivity {
     public void BtnEnd() {
 
         Toast.makeText(this, "Processing End Section", Toast.LENGTH_SHORT).show();
-        if (ValidateForm()) {
-            try {
-                SaveDraft();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            if (UpdateDB()) {
-                Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
-
-                finish();
-
-                startActivity(new Intent(this, EndingActivity.class));
-
-            } else {
-                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
-            }
+        //if (ValidateForm()) {
+        try {
+            SaveDraft();
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
+        if (UpdateDB()) {
+            Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
+
+            finish();
+
+            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+
+        } else {
+            Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+        }
+        //}
     }
 
     public void BtnContinue() {

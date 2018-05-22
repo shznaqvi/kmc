@@ -58,25 +58,25 @@ public class SectionEActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                   bi.ke404a.setChecked(false);
-                   bi.ke404b.setChecked(false);
-                   bi.ke404c.setChecked(false);
-                   bi.ke404d.setChecked(false);
-                   bi.ke404e.setChecked(false);
-                   bi.ke404f.setChecked(false);
-                   bi.ke404a.setEnabled(false);
-                   bi.ke404b.setEnabled(false);
-                   bi.ke404c.setEnabled(false);
-                   bi.ke404d.setEnabled(false);
-                   bi.ke404e.setEnabled(false);
-                   bi.ke404f.setEnabled(false);
+                    bi.ke404a.setChecked(false);
+                    bi.ke404b.setChecked(false);
+                    bi.ke404c.setChecked(false);
+                    bi.ke404d.setChecked(false);
+                    bi.ke404e.setChecked(false);
+                    bi.ke404f.setChecked(false);
+                    bi.ke404a.setEnabled(false);
+                    bi.ke404b.setEnabled(false);
+                    bi.ke404c.setEnabled(false);
+                    bi.ke404d.setEnabled(false);
+                    bi.ke404e.setEnabled(false);
+                    bi.ke404f.setEnabled(false);
                 } else {
                     bi.ke404a.setEnabled(true);
-                   bi.ke404b.setEnabled(true);
-                   bi.ke404c.setEnabled(true);
-                   bi.ke404d.setEnabled(true);
-                   bi.ke404e.setEnabled(true);
-                   bi.ke404f.setEnabled(true);
+                    bi.ke404b.setEnabled(true);
+                    bi.ke404c.setEnabled(true);
+                    bi.ke404d.setEnabled(true);
+                    bi.ke404e.setEnabled(true);
+                    bi.ke404f.setEnabled(true);
                 }
             }
         });
@@ -84,24 +84,24 @@ public class SectionEActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                   bi.ke415a.setChecked(false);
-                   bi.ke415b.setChecked(false);
-                   bi.ke415c.setChecked(false);
-                   bi.ke415d.setChecked(false);
-                   bi.ke41596.setChecked(false);
+                    bi.ke415a.setChecked(false);
+                    bi.ke415b.setChecked(false);
+                    bi.ke415c.setChecked(false);
+                    bi.ke415d.setChecked(false);
+                    bi.ke41596.setChecked(false);
 
-                   bi.ke415a.setEnabled(false);
-                   bi.ke415b.setEnabled(false);
-                   bi.ke415c.setEnabled(false);
-                   bi.ke415d.setEnabled(false);
-                   bi.ke41596.setEnabled(false);
+                    bi.ke415a.setEnabled(false);
+                    bi.ke415b.setEnabled(false);
+                    bi.ke415c.setEnabled(false);
+                    bi.ke415d.setEnabled(false);
+                    bi.ke41596.setEnabled(false);
 
                 } else {
                     bi.ke415a.setEnabled(true);
-                   bi.ke415b.setEnabled(true);
-                   bi.ke415c.setEnabled(true);
-                   bi.ke415d.setEnabled(true);
-                   bi.ke41596.setEnabled(true);
+                    bi.ke415b.setEnabled(true);
+                    bi.ke415c.setEnabled(true);
+                    bi.ke415d.setEnabled(true);
+                    bi.ke41596.setEnabled(true);
 
                 }
             }
@@ -786,23 +786,23 @@ public class SectionEActivity extends AppCompatActivity {
     public void BtnEnd() {
 
         Toast.makeText(this, "Processing End Section", Toast.LENGTH_SHORT).show();
-        if (formValidation()) {
-            try {
-                SaveDraft();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            if (UpdateDB()) {
-                Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
-
-                finish();
-
-                startActivity(new Intent(this, EndingActivity.class));
-
-            } else {
-                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
-            }
+        //if (formValidation()) {
+        try {
+            SaveDraft();
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
+        if (UpdateDB()) {
+            Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
+
+            finish();
+
+            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+
+        } else {
+            Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+        }
+        //}
     }
 
     public void BtnContinue() {

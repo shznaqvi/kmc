@@ -71,6 +71,26 @@ public class SectionInfoKmcActivity extends Activity {
 
         populateSpinner(this);
 
+
+        bi.cra04.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                clearFields();
+                bi.fldGrpcra04.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+
         //setUp();
 
     }
@@ -217,17 +237,22 @@ public class SectionInfoKmcActivity extends Activity {
         }
 
 
+        if (!validatorClass.EmptyTextBox(this, bi.cra04, getString(R.string.cra04))) {
+            return false;
+        }
+
+
+        if (!validatorClass.EmptySpinner(this, bi.crwoman, getString(R.string.crwoman))) {
+            return false;
+        }
+
+
         if (!validatorClass.EmptyTextBox(this, bi.cravillage, getString(R.string.crvillage))) {
             return false;
         }
 
 
         if (!validatorClass.EmptyTextBox(this, bi.cra03, getString(R.string.cra03))) {
-            return false;
-        }
-
-
-        if (!validatorClass.EmptyTextBox(this, bi.cra04, getString(R.string.cra04))) {
             return false;
         }
 
@@ -304,7 +329,7 @@ public class SectionInfoKmcActivity extends Activity {
 
                 finish();
 
-                startActivity(new Intent(this, EndingActivity.class));
+                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();

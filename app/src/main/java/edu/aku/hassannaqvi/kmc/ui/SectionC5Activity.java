@@ -55,23 +55,23 @@ public class SectionC5Activity extends AppCompatActivity {
     public void BtnEnd() {
 
         Toast.makeText(this, "Processing End Section", Toast.LENGTH_SHORT).show();
-        if (formValidation()) {
-            try {
-                SaveDraft();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            if (UpdateDB()) {
-                Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
-
-                finish();
-
-                startActivity(new Intent(this, EndingActivity.class));
-
-            } else {
-                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
-            }
+        //if (formValidation()) {
+        try {
+            SaveDraft();
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
+        if (UpdateDB()) {
+            Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
+
+            finish();
+
+            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+
+        } else {
+            Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+        }
+        //}
     }
 
     public void BtnContinue() {
@@ -112,14 +112,14 @@ public class SectionC5Activity extends AppCompatActivity {
             if (!validatorClass.EmptyTextBox(this, bi.kc504, getString(R.string.kc504))) {
                 return false;
             }
-            if (!validatorClass.RangeTextBox(this,bi.kc504,1,4,getString(R.string.kc504),"per day")) {
+            if (!validatorClass.RangeTextBox(this, bi.kc504, 1, 4, getString(R.string.kc504), "per day")) {
                 return false;
             }
             if (!bi.kc50598.isChecked()) {
                 if (!validatorClass.EmptyTextBox(this, bi.kc505, getString(R.string.kc505))) {
                     return false;
                 }
-                if (!validatorClass.RangeTextBox(this,bi.kc505,1,45,getString(R.string.kc505),"days")) {
+                if (!validatorClass.RangeTextBox(this, bi.kc505, 1, 45, getString(R.string.kc505), "days")) {
                     return false;
                 }
             }

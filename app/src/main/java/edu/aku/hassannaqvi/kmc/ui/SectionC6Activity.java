@@ -94,7 +94,7 @@ public class SectionC6Activity extends AppCompatActivity {
                     bi.kc605l.setEnabled(false);
                     bi.kc605m.setEnabled(false);
                     bi.kc60596.setEnabled(false);
-                }else{
+                } else {
                     bi.kc605a.setEnabled(true);
                     bi.kc605b.setEnabled(true);
                     bi.kc605c.setEnabled(true);
@@ -162,7 +162,7 @@ public class SectionC6Activity extends AppCompatActivity {
                     bi.kc610f.setEnabled(false);
                     bi.kc610g.setEnabled(false);
                     bi.kc61096.setEnabled(false);
-                }else{
+                } else {
                     bi.kc610a.setEnabled(true);
                     bi.kc610b.setEnabled(true);
                     bi.kc610c.setEnabled(true);
@@ -220,7 +220,7 @@ public class SectionC6Activity extends AppCompatActivity {
                     bi.kc612h.setEnabled(false);
                     bi.kc61296.setEnabled(false);
 
-                }else{
+                } else {
 
                     bi.kc612a.setEnabled(true);
                     bi.kc612a.setEnabled(true);
@@ -265,12 +265,12 @@ public class SectionC6Activity extends AppCompatActivity {
                     return false;
                 }
                 if (bi.kc602day.getText().toString().equals("0") && bi.kc602week.getText().toString().equals("0")) {
-                    Toast.makeText(this,"Days and weeks cannot be 0 at the same time! ",Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "Days and weeks cannot be 0 at the same time! ", Toast.LENGTH_LONG).show();
                     bi.kc602day.setError("Days and weeks cannot be 0 at the same time!");
                     bi.kc602week.setError("Days and weeks cannot be 0 at the same time!");
                     bi.kc602day.requestFocus();
                     return false;
-                }else {
+                } else {
                     bi.kc602day.setError(null);
                     bi.kc602week.setError(null);
                     bi.kc602day.clearFocus();
@@ -296,9 +296,9 @@ public class SectionC6Activity extends AppCompatActivity {
             }
             if (bi.kc605d.isChecked()) {
 
-            if (!validatorClass.EmptyTextBox(this,bi.kc605dx,getString(R.string.kc605))) {
-                return false;
-            }
+                if (!validatorClass.EmptyTextBox(this, bi.kc605dx, getString(R.string.kc605))) {
+                    return false;
+                }
 
             }
         }
@@ -461,15 +461,15 @@ public class SectionC6Activity extends AppCompatActivity {
                 : "0");
 
         sn.put("kc707a", bi.kc612a.isChecked() ? "1" : "0");
-        sn.put("kc707b",  bi.kc612b.isChecked() ? "2" : "0");
-        sn.put("kc707c",  bi.kc612c.isChecked() ? "3" : "0");
-        sn.put("kc707d",  bi.kc612d.isChecked() ? "4" : "0");
-        sn.put("kc707e",  bi.kc612e.isChecked() ? "5" : "0");
-        sn.put("kc707f",  bi.kc612f.isChecked() ? "6" : "0");
-        sn.put("kc707g",  bi.kc612g.isChecked() ? "7" : "0");
-        sn.put("kc707h",  bi.kc612h.isChecked() ? "8" : "0");
+        sn.put("kc707b", bi.kc612b.isChecked() ? "2" : "0");
+        sn.put("kc707c", bi.kc612c.isChecked() ? "3" : "0");
+        sn.put("kc707d", bi.kc612d.isChecked() ? "4" : "0");
+        sn.put("kc707e", bi.kc612e.isChecked() ? "5" : "0");
+        sn.put("kc707f", bi.kc612f.isChecked() ? "6" : "0");
+        sn.put("kc707g", bi.kc612g.isChecked() ? "7" : "0");
+        sn.put("kc707h", bi.kc612h.isChecked() ? "8" : "0");
         sn.put("kc70798", bi.kc61298.isChecked() ? "98" : "0");
-        sn.put("kc70796",  bi.kc61296.isChecked() ? "96" : "0");
+        sn.put("kc70796", bi.kc61296.isChecked() ? "96" : "0");
         sn.put("kc70796x", bi.kc61296x.getText().toString());
 
         //MainApp.fc.sets(String.valueOf(sn));
@@ -495,23 +495,23 @@ public class SectionC6Activity extends AppCompatActivity {
     public void BtnEnd() {
 
         Toast.makeText(this, "Processing End Section", Toast.LENGTH_SHORT).show();
-        if (ValidateForm()) {
-            try {
-                SaveDraft();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            if (UpdateDB()) {
-                Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
-
-                finish();
-
-                startActivity(new Intent(this, EndingActivity.class));
-
-            } else {
-                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
-            }
+        //if (ValidateForm()) {
+        try {
+            SaveDraft();
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
+        if (UpdateDB()) {
+            Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
+
+            finish();
+
+            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+
+        } else {
+            Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+        }
+        //}
     }
 
     public void BtnContinue() {
