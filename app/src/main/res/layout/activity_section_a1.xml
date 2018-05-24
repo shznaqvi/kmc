@@ -272,7 +272,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
-                    android:text="@string/ka102c" />
+                    android:text="@string/ka103c" />
 
                 <RadioButton
                     android:id="@+id/ka103d"
@@ -339,12 +339,20 @@
                     android:text="@string/ka103k" />
 
                 <RadioButton
+                    android:id="@+id/ka103l"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:layout_weight="1"
+                    android:text="@string/ka103l" />
+
+                <RadioButton
                     android:id="@+id/ka10396"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
-                    android:hint="@string/other" />
+                    android:text="@string/other" />
 
             </RadioGroup>
 
@@ -530,7 +538,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:digits="0123456789"
-                android:hint="@string/ka106"
+                android:hint="@string/ka106a"
                 android:inputType="number"
                 android:maxLength="2" />
 
@@ -1788,6 +1796,16 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@color/colorPrimary"
+                android:text="@string/ka124"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+
+            <!--ka12401-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
                 android:text="@string/ka12401"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@android:color/white" />
@@ -2197,7 +2215,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:digits="0123456789"
-                android:hint="@string/ka12419"
+                android:hint="@string/ka12420"
                 android:inputType="number"
                 android:maxLength="2" />
 

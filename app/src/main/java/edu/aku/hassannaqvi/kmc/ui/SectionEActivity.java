@@ -580,7 +580,7 @@ public class SectionEActivity extends AppCompatActivity {
                 : bi.ke40196.isChecked() ? "96"
                 : "0");
 
-        sE.put("ke40196", bi.ke40196x.getText().toString());
+        sE.put("ke40196x", bi.ke40196x.getText().toString());
 
 
         sE.put("ke402", bi.ke402a.isChecked() ? "1"
@@ -842,8 +842,11 @@ public class SectionEActivity extends AppCompatActivity {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
         }
-
     }
 
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
+    }
 
 }

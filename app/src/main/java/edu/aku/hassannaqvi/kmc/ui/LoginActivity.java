@@ -63,6 +63,10 @@ import edu.aku.hassannaqvi.kmc.contracts.UCsContract;
 import edu.aku.hassannaqvi.kmc.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc.core.MainApp;
 import edu.aku.hassannaqvi.kmc.get.GetAllData;
+import edu.aku.hassannaqvi.kmc.get.GetMwra;
+import edu.aku.hassannaqvi.kmc.get.GetTehsils;
+import edu.aku.hassannaqvi.kmc.get.GetUCs;
+import edu.aku.hassannaqvi.kmc.get.GetVillages;
 
 import static java.lang.Thread.sleep;
 
@@ -568,8 +572,21 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
                 @Override
                 public void run() {
-                    Toast.makeText(LoginActivity.this, "Sync Enum Blocks", Toast.LENGTH_LONG).show();
+                    //Toast.makeText(LoginActivity.this, "Sync Enum Blocks", Toast.LENGTH_LONG).show();
                     // new GetAllData(mContext, "EnumBlock").execute();
+
+                    Toast.makeText(getApplicationContext(), "Syncing Woman", Toast.LENGTH_SHORT).show();
+                    new GetMwra(LoginActivity.this).execute();
+
+                    Toast.makeText(getApplicationContext(), "Syncing Villages", Toast.LENGTH_SHORT).show();
+                    new GetVillages(LoginActivity.this).execute();
+
+                    Toast.makeText(getApplicationContext(), "Syncing UCs", Toast.LENGTH_SHORT).show();
+                    new GetUCs(LoginActivity.this).execute();
+
+                    Toast.makeText(getApplicationContext(), "Syncing Talukas", Toast.LENGTH_SHORT).show();
+                    new GetTehsils(LoginActivity.this).execute();
+
                     Toast.makeText(LoginActivity.this, "Sync Users", Toast.LENGTH_LONG).show();
                     new GetAllData(mContext, "User").execute();
                 }

@@ -25,6 +25,11 @@ public class SectionB1Activity extends AppCompatActivity {
 
     ActivitySectionB1Binding bi;
     String dateToday = new SimpleDateFormat("dd/MM/yyyy").format(new Date().getTime());
+    String lmpDate = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() -
+            ((MainApp.MILLISECONDS_IN_9MONTH) + MainApp.MILLISECONDS_IN_DAY));
+
+    String eddDate = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() +
+            ((MainApp.MILLISECONDS_IN_9MONTH) + MainApp.MILLISECONDS_IN_DAY));
 
 
     @Override
@@ -33,16 +38,21 @@ public class SectionB1Activity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_b1);
         bi.setCallback(this);
         bi.kb204.setManager(getSupportFragmentManager());
+        bi.kb204.setMinDate(lmpDate);
         bi.kb204.setMaxDate(dateToday);
 
+
         bi.kb205lmp.setManager(getSupportFragmentManager());
+        bi.kb205lmp.setMinDate(lmpDate);
         bi.kb205lmp.setMaxDate(dateToday);
 
         bi.kb205rec.setManager(getSupportFragmentManager());
         bi.kb205rec.setMinDate(dateToday);
+        bi.kb205rec.setMaxDate(eddDate);
 
         bi.kb205edd.setManager(getSupportFragmentManager());
         bi.kb205edd.setMinDate(dateToday);
+        bi.kb205edd.setMaxDate(eddDate);
 
         bi.kb205lmp.setDate(Calendar.getInstance());
         bi.kb205rec.setDate(Calendar.getInstance());
@@ -92,7 +102,6 @@ public class SectionB1Activity extends AppCompatActivity {
                     bi.kb202m.setText(null);
                     bi.kb204.setText(null);
                     bi.kb203.clearCheck();
-                    bi.kb205.clearCheck();
 
                     bi.fldGrpkb201.setVisibility(View.GONE);
                     bi.fldGrpkb202.setVisibility(View.GONE);
@@ -113,33 +122,22 @@ public class SectionB1Activity extends AppCompatActivity {
         });
 
 
-        bi.kb205.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        bi.kb203.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (bi.kb205a.isChecked()) {
-
-                    bi.kb205rec.setText(null);
-                    bi.kb205edd.setText(null);
-
+                if (bi.kb203a.isChecked()) {
                     bi.kb205lmp.setVisibility(View.VISIBLE);
-                    bi.kb205rec.setVisibility(View.GONE);
-                    bi.kb205edd.setVisibility(View.GONE);
-                } else if (bi.kb205b.isChecked()) {
-
-                    bi.kb205lmp.setText(null);
-                    bi.kb205edd.setText(null);
-
-                    bi.kb205rec.setVisibility(View.VISIBLE);
-                    bi.kb205lmp.setVisibility(View.GONE);
-                    bi.kb205edd.setVisibility(View.GONE);
-                } else if (bi.kb205c.isChecked()) {
+                    bi.kb205edd.setVisibility(View.VISIBLE);
 
                     bi.kb205rec.setText(null);
-                    bi.kb205lmp.setText(null);
-
-                    bi.kb205edd.setVisibility(View.VISIBLE);
                     bi.kb205rec.setVisibility(View.GONE);
-                    bi.kb205lmp.setVisibility(View.GONE);
+
+                } else {
+                    bi.kb205lmp.setVisibility(View.VISIBLE);
+                    bi.kb205rec.setVisibility(View.VISIBLE);
+
+                    bi.kb205edd.setText(null);
+                    bi.kb205edd.setVisibility(View.GONE);
                 }
             }
         });
@@ -171,12 +169,6 @@ public class SectionB1Activity extends AppCompatActivity {
                 : "0");
 
 
-        sB1.put("kb205", bi.kb205a.isChecked() ? "1"
-                : bi.kb205b.isChecked() ? "2"
-                : bi.kb205c.isChecked() ? "3"
-                : "0");
-
-
         sB1.put("kb205lmp", bi.kb205lmp.getText().toString());
         sB1.put("kb205rec", bi.kb205rec.getText().toString());
         sB1.put("kb205edd", bi.kb205edd.getText().toString());
@@ -191,6 +183,12 @@ public class SectionB1Activity extends AppCompatActivity {
         if (!validatorClass.EmptyTextBox(this, bi.kb101, getString(R.string.kb101))) {
             return false;
         }
+
+
+        if (!validatorClass.RangeTextBox(this, bi.kb101, 1, 15, getString(R.string.kb101), "Number")) {
+            return false;
+        }
+
 
         if (!validatorClass.EmptyRadioButton(this, bi.kb201, bi.kb201a, getString(R.string.kb201))) {
             return false;
@@ -232,32 +230,27 @@ public class SectionB1Activity extends AppCompatActivity {
             }
 
 
-            if (!validatorClass.EmptyRadioButton(this, bi.kb205, bi.kb205a, getString(R.string.kb205))) {
-                return false;
-            }
-
-
-            if (bi.kb205a.isChecked()) {
+            if (bi.kb203a.isChecked()) {
 
                 if (!validatorClass.EmptyTextBox(this, bi.kb205lmp, getString(R.string.kb205a))) {
                     return false;
                 }
 
-            } else if (bi.kb205b.isChecked()) {
-
-                if (!validatorClass.EmptyTextBox(this, bi.kb205rec, getString(R.string.kb205b))) {
-                    return false;
-                }
-
-            } else if (bi.kb205c.isChecked()) {
-
                 if (!validatorClass.EmptyTextBox(this, bi.kb205edd, getString(R.string.kb205c))) {
                     return false;
                 }
 
+            } else if (bi.kb203b.isChecked()) {
+
+                if (!validatorClass.EmptyTextBox(this, bi.kb205lmp, getString(R.string.kb205a))) {
+                    return false;
+                }
+
+
+                if (!validatorClass.EmptyTextBox(this, bi.kb205rec, getString(R.string.kb205b))) {
+                    return false;
+                }
             }
-
-
         }
 
         return true;
@@ -324,7 +317,10 @@ public class SectionB1Activity extends AppCompatActivity {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
         }
-
     }
 
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
+    }
 }
