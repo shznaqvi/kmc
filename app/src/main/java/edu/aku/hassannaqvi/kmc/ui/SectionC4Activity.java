@@ -174,10 +174,10 @@ public class SectionC4Activity extends AppCompatActivity {
         JSONObject sC4 = new JSONObject();
 
         sC4.put("kc401a", bi.kc401a.isChecked() ? "1" : "0");
-        sC4.put("kc401b", bi.kc401a.isChecked() ? "2" : "0");
-        sC4.put("kc401c", bi.kc401a.isChecked() ? "3" : "0");
-        sC4.put("kc401d", bi.kc401a.isChecked() ? "4" : "0");
-        sC4.put("kc401e", bi.kc401a.isChecked() ? "5" : "0");
+        sC4.put("kc401b", bi.kc401b.isChecked() ? "2" : "0");
+        sC4.put("kc401c", bi.kc401c.isChecked() ? "3" : "0");
+        sC4.put("kc401d", bi.kc401d.isChecked() ? "4" : "0");
+        sC4.put("kc401e", bi.kc401e.isChecked() ? "5" : "0");
         sC4.put("kc40196", bi.kc40196.isChecked() ? "96" : "0");
 
         sC4.put("kc40196x", bi.kc40196x.getText().toString());
@@ -256,6 +256,17 @@ public class SectionC4Activity extends AppCompatActivity {
 
                 if (!validatorClass.EmptyTextBox(this, bi.kc405, getString(R.string.kc405))) {
                     return false;
+                }
+
+
+                if (!bi.kc405.getText().toString().isEmpty()) {
+
+                    if (Integer.valueOf(bi.kc405.getText().toString()) <= 0) {
+                        Toast.makeText(this, "Must be greater than 0", Toast.LENGTH_SHORT).show();
+                        bi.kc405.requestFocus();
+                        return false;
+                    }
+
                 }
 
 

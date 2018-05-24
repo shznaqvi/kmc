@@ -33,21 +33,16 @@ public class SectionC5Activity extends AppCompatActivity {
         bi.kc501.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                bi.kc501.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(RadioGroup group, int checkedId) {
-                        if (checkedId == R.id.kc501a) {
-                            bi.fldGrpkc503.setVisibility(View.VISIBLE);
-                        } else {
-                            bi.fldGrpkc503.setVisibility(View.GONE);
-                            bi.kc502.clearCheck();
-                            bi.kc503.setText(null);
-                            bi.kc504.setText(null);
-                            bi.kc505.setText(null);
-                            bi.kc50598.setChecked(false);
-                        }
-                    }
-                });
+                if (checkedId == R.id.kc501a) {
+                    bi.fldGrpkc503.setVisibility(View.VISIBLE);
+                } else {
+                    bi.fldGrpkc503.setVisibility(View.GONE);
+                    bi.kc502.clearCheck();
+                    bi.kc503.setText(null);
+                    bi.kc504.setText(null);
+                    bi.kc505.setText(null);
+                    bi.kc50598.setChecked(false);
+                }
             }
         });
     }
@@ -119,7 +114,7 @@ public class SectionC5Activity extends AppCompatActivity {
                 if (!validatorClass.EmptyTextBox(this, bi.kc505, getString(R.string.kc505))) {
                     return false;
                 }
-                if (!validatorClass.RangeTextBox(this, bi.kc505, 1, 45, getString(R.string.kc505), "days")) {
+                if (!validatorClass.RangeTextBox(this, bi.kc505, 1, 99, getString(R.string.kc505), "days")) {
                     return false;
                 }
             }

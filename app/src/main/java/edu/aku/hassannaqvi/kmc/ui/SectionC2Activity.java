@@ -199,6 +199,8 @@ public class SectionC2Activity extends AppCompatActivity {
                 : bi.kc205c.isChecked() ? "3"
                 : bi.kc205d.isChecked() ? "4"
                 : bi.kc205e.isChecked() ? "5"
+                : bi.kc205f.isChecked() ? "6"
+                : bi.kc205g.isChecked() ? "7"
                 : bi.kc20596.isChecked() ? "96"
                 : "0");
 
@@ -472,7 +474,7 @@ public class SectionC2Activity extends AppCompatActivity {
                     }
 
 
-                    if (!validatorClass.RangeTextBox(this, bi.kc214, 1, 15, getString(R.string.kc214), "Times")) {
+                    if (!validatorClass.RangeTextBox(this, bi.kc214, 1, 5, getString(R.string.kc214), "Times")) {
                         return false;
                     }
 

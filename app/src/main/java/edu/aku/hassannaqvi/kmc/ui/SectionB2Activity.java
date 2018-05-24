@@ -149,7 +149,7 @@ public class SectionB2Activity extends AppCompatActivity {
 
                     bi.fldGrpkb202.setVisibility(View.GONE);
                     bi.fldGrpkb201.setVisibility(View.VISIBLE);
-                    bi.fldGrpSecB2.setVisibility(View.GONE);
+                    bi.fldGrpSecB2.setVisibility(View.VISIBLE);
 
                 } else {
                     bi.fldGrpkb201.setVisibility(View.VISIBLE);
@@ -542,149 +542,153 @@ public class SectionB2Activity extends AppCompatActivity {
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, bi.kb206, bi.kb206a, getString(R.string.kb206))) {
-            return false;
-        }
+        if (!bi.kb201b.isChecked()) {
 
-
-        if (!bi.kb206a.isChecked()) {
-
-            if (!validatorClass.EmptyCheckBox(this, bi.fldGrpkb207, bi.kb207a, getString(R.string.kb207))) {
+            if (!validatorClass.EmptyRadioButton(this, bi.kb206, bi.kb206a, getString(R.string.kb206))) {
                 return false;
             }
 
 
-            if (bi.kb20796.isChecked()) {
+            if (!bi.kb206a.isChecked()) {
 
-                if (!validatorClass.EmptyTextBox(this, bi.kb20796x, getString(R.string.other))) {
-                    return false;
-                }
-            }
-
-        } else {
-
-
-            if (!validatorClass.EmptyTextBox(this, bi.kb208, getString(R.string.kb208))) {
-                return false;
-            }
-
-
-            if (!validatorClass.RangeTextBox(this, bi.kb208, 1, 15, getString(R.string.kb208), "Number")) {
-                return false;
-            }
-
-
-            if (!validatorClass.EmptyRadioButton(this, bi.kb209, bi.kb209a, getString(R.string.kb209))) {
-                return false;
-            }
-
-
-            if (!validatorClass.EmptyRadioButton(this, bi.kb210, bi.kb210a, getString(R.string.kb210))) {
-                return false;
-            }
-
-
-            if (bi.kb21096.isChecked()) {
-
-                if (!validatorClass.EmptyTextBox(this, bi.kb21096x, getString(R.string.other))) {
-                    return false;
-                }
-            }
-
-
-            if (!validatorClass.EmptyCheckBox(this, bi.fldGrkb210, bi.kb211a, getString(R.string.kb211))) {
-                return false;
-            }
-
-
-            if (bi.kb21196.isChecked()) {
-
-                if (!validatorClass.EmptyTextBox(this, bi.kb21196x, getString(R.string.other))) {
-                    return false;
-                }
-            }
-
-
-            if (!validatorClass.EmptyCheckBox(this, bi.kb212, bi.kb212a, getString(R.string.kb212))) {
-                return false;
-            }
-
-
-            if (bi.kb21296.isChecked()) {
-
-                if (!validatorClass.EmptyTextBox(this, bi.kb21296x, getString(R.string.other))) {
-                    return false;
-                }
-            }
-
-
-            if (!validatorClass.EmptyRadioButton(this, bi.kb213, bi.kb213a, getString(R.string.kb213))) {
-                return false;
-            }
-
-
-            if (bi.kb213a.isChecked()) {
-
-                if (!validatorClass.EmptyCheckBox(this, bi.fldGrkb213, bi.kb214a, getString(R.string.kb214))) {
+                if (!validatorClass.EmptyCheckBox(this, bi.fldGrpkb207, bi.kb207a, getString(R.string.kb207))) {
                     return false;
                 }
 
 
-                if (bi.kb21496.isChecked()) {
+                if (bi.kb20796.isChecked()) {
 
-                    if (!validatorClass.EmptyTextBox(this, bi.kb21496x, getString(R.string.other))) {
+                    if (!validatorClass.EmptyTextBox(this, bi.kb20796x, getString(R.string.other))) {
+                        return false;
+                    }
+                }
+
+            } else {
+
+
+                if (!validatorClass.EmptyTextBox(this, bi.kb208, getString(R.string.kb208))) {
+                    return false;
+                }
+
+
+                if (!validatorClass.RangeTextBox(this, bi.kb208, 1, 15, getString(R.string.kb208), "Number")) {
+                    return false;
+                }
+
+
+                if (!validatorClass.EmptyRadioButton(this, bi.kb209, bi.kb209a, getString(R.string.kb209))) {
+                    return false;
+                }
+
+
+                if (!validatorClass.EmptyRadioButton(this, bi.kb210, bi.kb210a, getString(R.string.kb210))) {
+                    return false;
+                }
+
+
+                if (bi.kb21096.isChecked()) {
+
+                    if (!validatorClass.EmptyTextBox(this, bi.kb21096x, getString(R.string.other))) {
                         return false;
                     }
                 }
 
 
-                if (!validatorClass.EmptyRadioButton(this, bi.kb215, bi.kb215a, getString(R.string.kb215))) {
+                if (!validatorClass.EmptyCheckBox(this, bi.fldGrkb210, bi.kb211a, getString(R.string.kb211))) {
                     return false;
                 }
 
 
-                if (!validatorClass.EmptyRadioButton(this, bi.kb216, bi.kb216a, getString(R.string.kb216))) {
+                if (bi.kb21196.isChecked()) {
+
+                    if (!validatorClass.EmptyTextBox(this, bi.kb21196x, getString(R.string.other))) {
+                        return false;
+                    }
+                }
+
+
+                if (!validatorClass.EmptyCheckBox(this, bi.kb212, bi.kb212a, getString(R.string.kb212))) {
                     return false;
                 }
 
 
-                if (!validatorClass.EmptyRadioButton(this, bi.kb217, bi.kb217a, getString(R.string.kb217))) {
+                if (bi.kb21296.isChecked()) {
+
+                    if (!validatorClass.EmptyTextBox(this, bi.kb21296x, getString(R.string.other))) {
+                        return false;
+                    }
+                }
+
+
+                if (!validatorClass.EmptyRadioButton(this, bi.kb213, bi.kb213a, getString(R.string.kb213))) {
                     return false;
                 }
 
-            }
 
+                if (bi.kb213a.isChecked()) {
 
-            if (!validatorClass.EmptyRadioButton(this, bi.kb218, bi.kb218a, getString(R.string.kb218))) {
-                return false;
-            }
-
-
-            if (bi.kb218a.isChecked()) {
-
-                if (!bi.kb21998.isChecked()) {
-                    if (!validatorClass.EmptyTextBox(this, bi.kb219, getString(R.string.kb219))) {
+                    if (!validatorClass.EmptyCheckBox(this, bi.fldGrkb213, bi.kb214a, getString(R.string.kb214))) {
                         return false;
                     }
 
 
-                    if (!validatorClass.RangeTextBox(this, bi.kb219, 1, 5, getString(R.string.kb219), "Number")) {
+                    if (bi.kb21496.isChecked()) {
+
+                        if (!validatorClass.EmptyTextBox(this, bi.kb21496x, getString(R.string.other))) {
+                            return false;
+                        }
+                    }
+
+
+                    if (!validatorClass.EmptyRadioButton(this, bi.kb215, bi.kb215a, getString(R.string.kb215))) {
+                        return false;
+                    }
+
+
+                    if (!validatorClass.EmptyRadioButton(this, bi.kb216, bi.kb216a, getString(R.string.kb216))) {
+                        return false;
+                    }
+
+
+                    if (!validatorClass.EmptyRadioButton(this, bi.kb217, bi.kb217a, getString(R.string.kb217))) {
                         return false;
                     }
 
                 }
 
-            }
+
+                if (!validatorClass.EmptyRadioButton(this, bi.kb218, bi.kb218a, getString(R.string.kb218))) {
+                    return false;
+                }
 
 
-            if (!validatorClass.EmptyRadioButton(this, bi.kb220, bi.kb220a, getString(R.string.kb220))) {
-                return false;
-            }
+                if (bi.kb218a.isChecked()) {
+
+                    if (!bi.kb21998.isChecked()) {
+                        if (!validatorClass.EmptyTextBox(this, bi.kb219, getString(R.string.kb219))) {
+                            return false;
+                        }
 
 
-            if (bi.kb22096.isChecked()) {
+                        if (!validatorClass.RangeTextBox(this, bi.kb219, 1, 5, getString(R.string.kb219), "Number")) {
+                            return false;
+                        }
 
-                return validatorClass.EmptyTextBox(this, bi.kb22096x, getString(R.string.other));
+                    }
+
+                }
+
+
+                if (!validatorClass.EmptyRadioButton(this, bi.kb220, bi.kb220a, getString(R.string.kb220))) {
+                    return false;
+                }
+
+
+                if (bi.kb22096.isChecked()) {
+
+                    return validatorClass.EmptyTextBox(this, bi.kb22096x, getString(R.string.other));
+                }
+
             }
 
         }

@@ -311,6 +311,22 @@
                         android:text="@string/kc205e" />
 
                     <RadioButton
+                        android:id="@+id/kc205f"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="1"
+                        android:text="@string/kc205f" />
+
+                    <RadioButton
+                        android:id="@+id/kc205g"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="1"
+                        android:text="@string/kc205g" />
+
+                    <RadioButton
                         android:id="@+id/kc20596"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -618,7 +634,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
-                        android:text="@string/drem" />
+                        android:text="@string/dkndrem" />
 
                 </RadioGroup>
 
@@ -969,7 +985,7 @@
                         android:digits="0123456789"
                         android:hint="@string/kc214"
                         android:inputType="number"
-                        android:maxLength="2"
+                        android:maxLength="1"
                         android:text='@{kc21498.checked ? "": kc214.getText.toString }'
                         android:visibility='@{kc21498.checked ? View.GONE : View.VISIBLE}' />
 

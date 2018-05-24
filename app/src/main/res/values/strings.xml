@@ -396,10 +396,9 @@
     <string name="kc202e"> صحت مرڪز گھر کان تمام پري هو </string>
     <string name="kc202f"> اجازت نه هئي گھرواري جي/سربراه جي </string>
     <string name="kc203"> جيڪڏهن ها ته ڪيترا ڀيرا ڪرايو؟ </string>
-    <string name="kc204"> حمل جي ڪيترن مهينن ۾ توهان طبي معائنو
-    ڪرايو؟ </string>
+    <string name="kc204"> حمل جي ڪهڙي مهيني ۾ توهان پنهنجو پهريون طبي معائنو ڪرايو ؟ </string>
     <string name="kc204a"> حمل جي 6 کان 9 مهينن تائين </string>
-    <string name="kc204b">حمل جي ٽن مهينن کان 6 مهينن تائين</string>
+    <string name="kc204b">حمل جي ٽن مهينن کان 6 مهينن تائين </string>
     <string name="kc204c"> حمل جي پهرين مهينن کان 3 مهينن تائين </string>
     <string name="kc205"> ڪنهن کان طبي معائنو ڪرايو؟ </string>
     <string name="kc205a1"> HEALTH PERSONNEL </string>
@@ -422,9 +421,7 @@
     <string name="kc206f"> خانگي اسپتال </string>
     <string name="kc206g"> خانگي ڪلينڪ </string>
     <string name="kc206h"> خانگي ويم گھر </string>
-    <string name="kc207"> حمل جي طبي معائني جي دوران معائني جي فهرست
-    مان ڪهڙو معائنو ڪيو ويو هو) گھٽ ۾ گھٽ هڪ
-    ڀيرو( </string>
+    <string name="kc207"> حمل جي طبي معائني جي دوران معائني جي فهرست مان ڪهڙو معائنو ڪيو ويو هو( گھٽ ۾ گھٽ هڪ ڀيرو) (سڀ آپشن پڇو) </string>
     <string name="kc207a"> توهان جو وزن ٿيو </string>
     <string name="kc207b"> توهان جو قد ماپيو </string>
     <string name="kc207c"> توهان جو بلڊ پريشر چيڪ ٿيو </string>
@@ -626,7 +623,7 @@
     <string name="kd"> Module D: LOW BIRTH WEIGHT BABY </string>
     <string name="kc4heading"> ڊگھي عرصي لاءِ ٻار کي ماءُ جي ڇاتي سان لڳائڻ </string>
     <string name="kc401"> ڪمزور يا گھٽ وزن واري ٻار کي ڪيئين گرم رکندا آهيو؟ </string>
-    <string name="kc401a"> ڪپھ يا ڪمبل ۾ ويهريندا آهيو </string>
+    <string name="kc401a"> ڪپھ يا ڪمبل ۾ ويڙهيندا آهيو </string>
     <string name="kc401b"> ٻار کي پنهنجي ويجھو رکندا آهيو </string>
     <string name="kc401c"> ڇاتي سان لڳائيندا آهيو </string>
     <string name="kc401d"> گرم ڪپڙا پهرائيندا آهيو </string>
@@ -637,9 +634,9 @@
     <string name="kc403b"> ليڊي هيلٿ وزيٽر </string>
     <string name="kc403c"> ليڊي هيلٿ ورڪر </string>
     <string name="kc403d"> نرس </string>
-    <string name="kc403e"> مدوائيف </string>
+    <string name="kc403e"> مڊوائيف </string>
     <string name="kc403f"> ڪمنيونٽي هيلٿ ورڪر </string>
-    <string name="kc403g"> ڪمنيوڻٽي موباليزشن ورڪر </string>
+    <string name="kc403g"> ڪميونٽي موباليزشن ورڪر </string>
     <string name="kc403h"> مائيٽ </string>
     <string name="kc403i"> دوست </string>
     <string name="kc404"> ڇا توهان ڪڏهن پنهنجي گھٽ وزن واري ٻار کي ڇاتيءَ سان لڳايو آهي؟ </string>
@@ -663,7 +660,7 @@
     <string name="kc503a"> ڄمڻ کان پوءِ ڪيترا ڏينهن_______ شروع </string>
     <string name="kc504"> ڏينهن ۾ ڪيترا ڀيرا ماليش ڪندا آهيو؟ </string>
     <string name="kc504a">	روزانو ڪيترا ڀيرا _____لڳايو ويو</string>
-    <string name="kc505"> توهان ڪيتري دير ٻار کي تيل جي ماليش ڪندا آهيو؟ </string>
+    <string name="kc505"> توهان ٻار کي ڪيتري عرصي تائين تيل جي مالش ڪئي ؟ </string>
     <string name="kc505a">ڪيستائين هنيو	ڏينهن _____</string>
     <string name="kc505b"> اڄ ڏينهن تائين جاري آهي</string>
 

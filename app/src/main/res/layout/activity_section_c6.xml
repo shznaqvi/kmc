@@ -535,8 +535,7 @@
                     android:inputType="number"
                     android:maxLength="2"
                     android:text='@{kc60898.checked ? "" : kc608.getText.toString}'
-                    android:visibility='@{kc60898.checked ? View.GONE : View.VISIBLE}'
-                    />
+                    android:visibility='@{kc60898.checked ? View.GONE : View.VISIBLE}' />
 
                 <CheckBox
                     android:id="@+id/kc60898"
@@ -625,6 +624,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:text="@string/dkndrem" />
+
                     <RadioButton
                         android:id="@+id/kc60996"
                         android:layout_width="match_parent"
@@ -712,6 +712,7 @@
                         android:text="@string/kc610sub"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:textColor="@color/colorPrimaryDark" />
+
                     <CheckBox
                         android:id="@+id/kc610f"
                         android:layout_width="match_parent"
@@ -735,6 +736,7 @@
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:text="@string/dkndrem" />
+
                     <CheckBox
                         android:id="@+id/kc61096"
                         android:layout_width="match_parent"
@@ -884,6 +886,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:text="@string/dkndrem" />
+
                     <CheckBox
                         android:id="@+id/kc61296"
                         android:layout_width="match_parent"

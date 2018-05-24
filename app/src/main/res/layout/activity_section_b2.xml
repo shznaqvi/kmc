@@ -1196,7 +1196,7 @@
                             android:layout_marginBottom="1dp"
                             android:hint="@string/times"
                             android:inputType="number"
-                            android:maxLength="2"
+                            android:maxLength="1"
                             android:text='@{kb21998.checked ? kb219.getText.toString : ""}'
                             android:visibility='@{kb21998.checked ? View.GONE : View.VISIBLE}' />
 
