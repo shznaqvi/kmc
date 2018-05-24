@@ -1290,7 +1290,59 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@android:color/white" />
 
-            <RadioGroup
+            <LinearLayout
+                android:id="@+id/ke421"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_weight="1.5"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/ke421a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/ke421a" />
+
+                <CheckBox
+                    android:id="@+id/ke421b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/ke421b" />
+
+                <CheckBox
+                    android:id="@+id/ke421c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/ke421c" />
+
+                <CheckBox
+                    android:id="@+id/ke421d"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/ke421d" />
+
+                <CheckBox
+                    android:id="@+id/ke421e"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/ke421e" />
+
+                <CheckBox
+                    android:id="@+id/ke42196"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/others" />
+
+            </LinearLayout>
+
+            <!--<RadioGroup
                 android:id="@+id/ke421"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -1338,7 +1390,7 @@
                     android:layout_marginBottom="1dp"
                     android:text="@string/other" />
 
-            </RadioGroup>
+            </RadioGroup>-->
 
             <EditText
                 android:id="@+id/ke42196x"

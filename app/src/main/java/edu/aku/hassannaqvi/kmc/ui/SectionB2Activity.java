@@ -96,7 +96,9 @@ public class SectionB2Activity extends AppCompatActivity {
                     bi.kb21096x.setText(null);
 
 
-                    bi.kb211a.setChecked(false);
+                    bi.kb211.clearCheck();
+
+                    /*bi.kb211a.setChecked(false);
                     bi.kb211b.setChecked(false);
                     bi.kb211c.setChecked(false);
                     bi.kb211d.setChecked(false);
@@ -104,7 +106,8 @@ public class SectionB2Activity extends AppCompatActivity {
                     bi.kb211f.setChecked(false);
                     bi.kb211g.setChecked(false);
                     bi.kb211h.setChecked(false);
-                    bi.kb21196.setChecked(false);
+                    bi.kb21196.setChecked(false);*/
+
                     bi.kb21196x.setText(null);
 
                     bi.kb212a.setChecked(false);
@@ -205,7 +208,9 @@ public class SectionB2Activity extends AppCompatActivity {
                     bi.kb210.clearCheck();
                     bi.kb21096x.setText(null);
 
-                    bi.kb211a.setChecked(false);
+                    bi.kb211.clearCheck();
+
+                    /*bi.kb211a.setChecked(false);
                     bi.kb211b.setChecked(false);
                     bi.kb211c.setChecked(false);
                     bi.kb211d.setChecked(false);
@@ -213,7 +218,7 @@ public class SectionB2Activity extends AppCompatActivity {
                     bi.kb211f.setChecked(false);
                     bi.kb211g.setChecked(false);
                     bi.kb211h.setChecked(false);
-                    bi.kb21196.setChecked(false);
+                    bi.kb21196.setChecked(false);*/
 
 
                     bi.kb21196x.setText(null);
@@ -369,7 +374,19 @@ public class SectionB2Activity extends AppCompatActivity {
         sB2.put("kb21096x", bi.kb21096x.getText().toString());
 
 
-        sB2.put("kb211a", bi.kb211a.isChecked() ? "1" : "0");
+        sB2.put("kb211", bi.kb211a.isChecked() ? "1"
+                : bi.kb211b.isChecked() ? "2"
+                : bi.kb211c.isChecked() ? "3"
+                : bi.kb211d.isChecked() ? "4"
+                : bi.kb211e.isChecked() ? "5"
+                : bi.kb211f.isChecked() ? "6"
+                : bi.kb211g.isChecked() ? "7"
+                : bi.kb211h.isChecked() ? "8"
+                : bi.kb21196.isChecked() ? "96"
+                : "0");
+
+
+        /*sB2.put("kb211a", bi.kb211a.isChecked() ? "1" : "0");
         sB2.put("kb211b", bi.kb211b.isChecked() ? "2" : "0");
         sB2.put("kb211c", bi.kb211c.isChecked() ? "3" : "0");
         sB2.put("kb211d", bi.kb211d.isChecked() ? "4" : "0");
@@ -378,7 +395,7 @@ public class SectionB2Activity extends AppCompatActivity {
         sB2.put("kb211g", bi.kb211g.isChecked() ? "7" : "0");
         sB2.put("kb211h", bi.kb211h.isChecked() ? "8" : "0");
         sB2.put("kb21196", bi.kb21196.isChecked() ? "96" : "0");
-
+        */
 
         sB2.put("kb21196x", bi.kb21196x.getText().toString());
 
@@ -594,7 +611,7 @@ public class SectionB2Activity extends AppCompatActivity {
                 }
 
 
-                if (!validatorClass.EmptyCheckBox(this, bi.fldGrkb210, bi.kb211a, getString(R.string.kb211))) {
+                if (!validatorClass.EmptyRadioButton(this, bi.kb211, bi.kb211a, getString(R.string.kb211))) {
                     return false;
                 }
 

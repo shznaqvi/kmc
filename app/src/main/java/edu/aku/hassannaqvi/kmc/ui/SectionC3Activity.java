@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.CompoundButton;
@@ -170,7 +172,7 @@ public class SectionC3Activity extends AppCompatActivity {
                     bi.kc316e.setEnabled(false);
                     bi.kc316f.setEnabled(false);
                     bi.kc31696.setEnabled(false);
-                }else {
+                } else {
                     bi.kc316a.setEnabled(true);
                     bi.kc316b.setEnabled(true);
                     bi.kc316c.setEnabled(true);
@@ -317,21 +319,44 @@ public class SectionC3Activity extends AppCompatActivity {
             }
 
 
+            if (bi.kc306a.isChecked()) {
 
-        if (bi.kc306a.isChecked()) {
-
-            if (!validatorClass.EmptyTextBox(this, bi.kc306kg, getString(R.string.kc306))) {
-                return false;
-            }
-
-        } else if (!bi.kc306a.isChecked()) {
-
-
-            if (!bi.kc30777.isChecked()) {
-                if (!validatorClass.EmptyTextBox(this, bi.kc307rec, getString(R.string.kc307))) {
+                if (!validatorClass.EmptyTextBox(this, bi.kc306kg, getString(R.string.kc306))) {
                     return false;
                 }
-            }
+
+
+                /*if (bi.kc306kg.getText().toString().indexOf(".") != -1) {
+
+                    int[] count = {0};
+
+                    for (int a = 0; a < bi.kc306kg.getText().length(); a++) {
+                        if (bi.kc306kg.getText().toString().indexOf(".", a) != -1) {
+                            count[a] = bi.kc306kg.getText().toString().indexOf(".");
+                        }
+                    }
+
+                    int b = 0;
+
+                    for (int a = 0; a <= bi.kc306kg.getText().length() - 1; a++) {
+                        if (count[b] < count[b + 1]) {
+                            Toast.makeText(this, "Weight contains only 1 decimal point", Toast.LENGTH_LONG).show();
+                            bi.kc306kg.requestFocus();
+                            b++;
+                            return false;
+                        }
+                    }
+
+                }*/
+
+            } else if (!bi.kc306a.isChecked()) {
+
+
+                if (!bi.kc30777.isChecked()) {
+                    if (!validatorClass.EmptyTextBox(this, bi.kc307rec, getString(R.string.kc307))) {
+                        return false;
+                    }
+                }
 
 
 
@@ -342,16 +367,16 @@ public class SectionC3Activity extends AppCompatActivity {
                 }
             }*/
 
-        }
+            }
             if (!validatorClass.EmptyRadioButton(this, bi.kc308, bi.kc308a, getString(R.string.kc308))) {
                 return false;
             }
         }
 
 
-            if (!validatorClass.EmptyRadioButton(this, bi.kc309, bi.kc309a, getString(R.string.kc309))) {
-                return false;
-            }
+        if (!validatorClass.EmptyRadioButton(this, bi.kc309, bi.kc309a, getString(R.string.kc309))) {
+            return false;
+        }
 
 
         if (!validatorClass.EmptyRadioButton(this, bi.kc310, bi.kc310a, getString(R.string.kc310))) {
@@ -546,7 +571,7 @@ public class SectionC3Activity extends AppCompatActivity {
 
         sC3.put("kc306kg", bi.kc306kg.getText().toString());
 
-        sC3.put("kc307", bi.kc30777.isChecked() ? "77":bi.kc307rec.getText().toString());
+        sC3.put("kc307", bi.kc30777.isChecked() ? "77" : bi.kc307rec.getText().toString());
 
         sC3.put("kc308", bi.kc308a.isChecked() ? "1"
                 : bi.kc308b.isChecked() ? "2"

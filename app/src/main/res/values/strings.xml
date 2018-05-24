@@ -44,6 +44,7 @@
     <string name="kc307rec"> وزن بابت يادگيري ڪرايو </string>
     <string name="weeks"> هفتا </string>
     <string name="days"> ڏينهن </string>
+    <string name="age"> عمر </string>
     <string name="min"> منٽ </string>
     <string name="hours"> ڪلاڪ </string>
     <string name="cm"> cm </string>
@@ -711,19 +712,19 @@
     <string name="kd204d"> سڪو ميوو </string>
     <string name="kd204e"> گيھ </string>
     <string name="kd204f"> ڀوري کنڊ </string>
-    <string name="kd204g"> ڦلا</string>
+    <string name="kd204g"> ڦلا </string>
     <string name="kd3heading"> گڏيل خوراڪ </string>
     <string name="kd301">
     توهان پنهنجي ٻار کي ڪيتري عمر ۾پنهنجي کير کان علاوه چانھ جوس يا ٻيو ڪجھ ڏيندا آهيو؟
     </string>
     <string name="kd301d"> شروع نه ڪيو </string>
     <string name="kd302"> ڪهڙي پاڻياٺ ڏيندا آهيو؟ پڇو ٻئي ڪا شيءِ </string>
-    <string name="kd302a"> ماءُ جو کير )ماءُ جي کير کان علاوه( </string>
+    <string name="kd302a"> ماءُ جو کير (ماءُ جي کير کان علاوه) </string>
     <string name="kd302b"> سادو پاڻي </string>
     <string name="kd302c"> کنڊ يا گلوڪوس وارو پاڻي </string>
     <string name="kd302d"> گرائپ واٽر </string>
     <string name="kd302e"> کنڊ،لوڻ وارو پاڻي </string>
-    <string name="kd302f"> ڦلن جو جوس </string>
+    <string name="kd302f"> ميون جو جوس </string>
     <string name="kd302g"> نون ڃاول ٻارن جو فارمولو پيڪ </string>
     <string name="kd302h"> ديسي هربل دوائون / چانھ </string>
     <string name="kd302i"> ماکي ۽ پاڻي </string>
@@ -742,7 +743,7 @@
     <string name="kd305b"> ٻار جو وزن وڌائڻ لاءِ </string>
     <string name="kd305c"> ٻار ڪمزور هو ۽ ان جو وزن وڌي نه رهيو هو </string>
     <string name="kd305d"> ٻار جو پيدائش وقت وزن گھٽ هيو </string>
-    <string name="kd305e"> گھر جي ميمبر مشورو ڏنو / سس </string>
+    <string name="kd305e">سس / گھر جي ميمبر مشورو ڏنو </string>
     <string name="kd305f"> ڊاڪٽر مشورو ڏنو </string>
     <string name="kd305g"> ليڊي هيلٿ ورڪر مشورو ڏنو </string>
     <string name="kfheading"> نون ڄاول ٻارن جي مرڻ جي باري ۾ معلومات </string>
@@ -871,7 +872,7 @@
     <string name="ke418f">ٻين کي هنن جي ڪاميابيءَ جي باري ۾ ٻڌائيندو آهي</string>
     <string name="ke418g">تعريف نه ڪندو آهي</string>
 
-    <string name="ke419">ڇا هي محسوس ڪري ٿو ته پيءُ هجڻ جي ناتي هن تي گھڻيون ذميواريون آهن؟</string>
+    <string name="ke419">ڇا توهان ڪڏهن محسوس ڪيو آهي ته توهان جو مڙس پريشان رهي ٿو ؟</string>
     <string name="ke419c">ڪجھ ٽائيم</string>
 
     <string name="ke420">جيڪڏهن ها ته وضاحت ڪريو ڇو؟</string>
