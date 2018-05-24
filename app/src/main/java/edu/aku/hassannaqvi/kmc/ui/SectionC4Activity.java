@@ -252,6 +252,8 @@ public class SectionC4Activity extends AppCompatActivity {
             if (!validatorClass.EmptyRadioButton(this, bi.kc404, bi.kc404a, getString(R.string.kc404))) {
                 return false;
             }
+
+
             if (bi.kc404a.isChecked()) {
 
                 if (!validatorClass.EmptyTextBox(this, bi.kc405, getString(R.string.kc405))) {
