@@ -154,37 +154,38 @@
                     android:layout_marginTop="8dp"
                     android:text="@string/crvillage" />
 
-                <LinearLayout
+                <!--<LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal">-->
 
-                    <ToggleButton
-                        android:id="@+id/btnChangeVillage"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_weight="0.3"
-                        android:focusable="true"
-                        android:focusableInTouchMode="true"
-                        android:gravity="center"
-                        android:padding="5dp"
-                        android:textOff=""
-                        android:textOn="" />
+                <!--<ToggleButton
+                    android:id="@+id/btnChangeVillage"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="0.3"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:textOff=""
+                    android:textOn="" />-->
 
-                    <EditText
-                        android:id="@+id/cravillage"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:background="@color/colorHeading"
-                        android:hint="@string/crvillage" />
+                <EditText
+                    android:id="@+id/cravillage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789"
+                    android:hint="@string/crvillage"
+                    android:inputType="textCapWords" />
 
-                </LinearLayout>
+                <!--</LinearLayout>-->
 
 
-                <TextView
+                <!--<TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -197,22 +198,22 @@
                     android:digits="0123456789"
                     android:hint="@string/cra03"
                     android:inputType="number"
-                    android:maxLength="5" />
+                    android:maxLength="5" />-->
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/cra05" />
+                <!-- <TextView
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginTop="8dp"
+                     android:text="@string/cra05" />
 
-                <EditText
-                    android:id="@+id/cra05"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                    android:hint="@string/cra05"
-                    android:inputType="textCapWords"
-                    android:maxLength="50" />
+                 <EditText
+                     android:id="@+id/cra05"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                     android:hint="@string/cra05"
+                     android:inputType="textCapWords"
+                     android:maxLength="50" />-->
 
                 <TextView
                     android:layout_width="match_parent"
@@ -228,6 +229,41 @@
                     android:hint="@string/cra06"
                     android:inputType="number"
                     android:maxLength="2" />
+
+
+                <!--cra07-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/cra07"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/white" />
+
+                <RadioGroup
+                    android:id="@+id/cra07"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/cra07a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="1"
+                        android:text="@string/yes" />
+
+                    <RadioButton
+                        android:id="@+id/cra07b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="1"
+                        android:text="@string/no" />
+
+                </RadioGroup>
 
             </LinearLayout>
 
@@ -246,7 +282,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:paddingTop="32dp"
-                    android:visibility="visible">
+                    android:visibility="gone">
 
                     <Button
                         android:id="@+id/btnNext"
@@ -257,7 +293,7 @@
                         android:onClick="@{() -> callback.BtnContinue()}"
                         android:text="@string/nextSection"
                         android:textColor="@android:color/holo_green_light"
-                        android:textSize="20sp" />
+                        android:textSize="24sp" />
 
                     <Button
                         android:id="@+id/btnEnd"

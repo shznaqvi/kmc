@@ -180,7 +180,7 @@ public class SectionC4Activity extends AppCompatActivity {
         sC4.put("kc401e", bi.kc401a.isChecked() ? "5" : "0");
         sC4.put("kc40196", bi.kc40196.isChecked() ? "96" : "0");
 
-        sC4.put("kc40196", bi.kc40196x.getText().toString());
+        sC4.put("kc40196x", bi.kc40196x.getText().toString());
 
         sC4.put("kc402", bi.kc402a.isChecked() ? "1"
                 : bi.kc402b.isChecked() ? "2"
@@ -346,7 +346,10 @@ public class SectionC4Activity extends AppCompatActivity {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
         }
-
     }
 
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
+    }
 }

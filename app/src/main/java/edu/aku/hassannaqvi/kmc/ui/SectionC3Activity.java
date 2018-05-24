@@ -484,6 +484,7 @@ public class SectionC3Activity extends AppCompatActivity {
                 : bi.kc303h.isChecked() ? "8"
                 : bi.kc30396.isChecked() ? "96"
                 : "0");
+
         sC3.put("kc30396x", bi.kc30396x.getText().toString());
 
         sC3.put("kc304", bi.kc304a.isChecked() ? "1"
@@ -638,6 +639,10 @@ public class SectionC3Activity extends AppCompatActivity {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
         }
+    }
 
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
     }
 }

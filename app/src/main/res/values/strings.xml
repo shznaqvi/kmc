@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name"> Kangroo Mother Care </string>
+    <string name="app_name"> Kangroo Mother Care Baseline </string>
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
@@ -15,7 +15,7 @@
 
     <string name="end_interview"> اختتام </string>
     <string name="start_interview"> انٹروہو شروع کریں </string>
-    <string name="nextSection"> اگلا سیکشن </string>
+    <string name="nextSection"> اڳئين سيڪشن تي وڃو </string>
     <string name="searchwoman"> Search Woman </string>
     <string name="addMember"> افراد کا اندراج </string>
     <string name="istatus">انٹروہو کا نتیجہ</string>
@@ -74,6 +74,7 @@
     <string name="cra04"> گهر جو نمبر</string>
     <string name="cra05">توليدي عمر واري عورت جو نالو</string>
     <string name="cra06">توليدي عمر واري عورت جي عمر( 15-49 سالن تائين)</string>
+    <string name="cra07"> ڇا جواب ڏيندڙ تحقيق ۾ حصو وٺڻ لاءِ تيار آهي </string>
 
     <!--      CBT Vars       !-->
 
@@ -105,21 +106,22 @@
     <string name="ka102c"> ڪچين سرن / مٽي سان </string>
     <string name="ka102d"> ٿنڀا ، مٽي ۽ ٿوڻين سان </string>
     <string name="ka102e"> پٿر ، پڪين سرن ۽ مٽي سان </string>
-    <string name="ka102f"> سيمنٽ جون سرون، پڪيون سرون يا پٿر ۽ سمينٽ سان (پلستر نه ٿيل </string>
+    <string name="ka102f"> سيمنٽ جون سرون، پڪيون سرون يا پٿر ۽ سمينٽ سان (پلستر نه ٿيل) </string>
     <string name="ka102g"> سيمنٽ سان (پلستر ٿيل) </string>
     <string name="ka102h"> ڪاٺ جي تاڪن سان </string>
     <string name="ka103sub"> ب. ڇت جي جوڙ جڪ </string>
-    <string name="ka103a"> کجي يا ناريل جون ڇڙيون </string>
-    <string name="ka103b"> ٿنڀا يا کجي ۽ ڪچي مٽي سان ٺهيل ڇت </string>
-    <string name="ka103c"> تڏن يا ڪڙا </string>
-    <string name="ka103d"> ڪاٺ جي تاڪن </string>
-    <string name="ka103e"> سان </string>
-    <string name="ka103f"> لوهي چادرون </string>
-    <string name="ka103g"> سيمنٽ جي سرن جا سليب </string>
-    <string name="ka103h"> ڪنڪريٽ يا روڙي جي ڇت </string>
-    <string name="ka103i"> سيرامڪ ٽائيل يا سيمنٽ </string>
-    <string name="ka103j"> ڪنهن ڌاتو جي ڇت </string>
-    <string name="ka103k"> روفنگ شنگلس </string>
+    <string name="ka103a"> بغير ڇت جي </string>
+    <string name="ka103b"> کجي يا ناريل جون ڇڙيون </string>
+    <string name="ka103c"> ٿنڀا يا کجي ۽ ڪچي مٽي سان ٺهيل ڇت </string>
+    <string name="ka103d"> تڏن يا ڪڙا </string>
+    <string name="ka103e"> تڏن يا ڪڙا </string>
+    <string name="ka103f"> ڪاٺ جي تاڪن سان </string>
+    <string name="ka103g"> لوهي چادرون </string>
+    <string name="ka103h"> سيمنٽ جي سرن جا سليب </string>
+    <string name="ka103i"> ڪنڪريٽ يا روڙي جي ڇت </string>
+    <string name="ka103j"> سيرامڪ ٽائيل يا سيمنٽ </string>
+    <string name="ka103k"> ڪنهن ڌاتو جي ڇت </string>
+    <string name="ka103l"> روفنگ شنگلس </string>
     <string name="ka104sub"> ج. فرش جي جوڙ جڪ </string>
     <string name="ka104a"> ڪچي زمين، واري، مٽي </string>
     <string name="ka104b"> ڪاٺ جا تاڪ </string>
@@ -159,7 +161,7 @@
     <string name="ka109sub01"> کوٽيل کوهه </string>
     <string name="ka109f"> ڍڪيل کوهه </string>
     <string name="ka109g"> اڻ ڍڪيل کوهه </string>
-    <string name="ka109sub02"> چشمو جو پاڻي </string>
+    <string name="ka109sub02"> چشمي جو پاڻي </string>
     <string name="ka109h"> محفوظ چشمو </string>
     <string name="ka109i"> غير محفوظ چشمو </string>
     <string name="ka109sub03"> ٻيا ذريعا </string>
@@ -179,7 +181,7 @@
     <string name="ka110sub01"> کوٽيل کوهه </string>
     <string name="ka110f"> ڍڪيل کوهه </string>
     <string name="ka110g"> اڻ ڍڪيل کوهه </string>
-    <string name="ka110sub02"> چشمو جو پاڻي </string>
+    <string name="ka110sub02"> چشمي جو پاڻي </string>
     <string name="ka110h"> محفوظ چشمو </string>
     <string name="ka110i"> غير محفوظ چشمو </string>
     <string name="ka110sub03"> ٻيا ذريعا </string>
@@ -189,7 +191,7 @@
     <string name="ka110m"> ريڙهي واري ٽانڪي </string>
     <string name="ka110n"> زميني سطح وارو پاڻي ندي، ڊيم، ڍنڍ ، تلا، وهندڙ پاڻي، ڪينال </string>
     <string name="ka110o"> گهگهي وارو پاڻي </string>
-    <string name="ka111"> ا گهر جو ڪو ڀاتي ڪنهن وقت يا روزانو پاڻي کڻڻ لاءِ ويندو آهي؟ </string>
+    <string name="ka111"> ڇا گهر جو ڪو ڀاتي ڪنهن وقت يا روزانو پاڻي کڻڻ لاءِ ويندو آهي؟ </string>
     <string name="ka112"> پاڻي حاصل ڪرڻ ۽ کڻي اچڻ لاءِ ڪيترو وقت لڳي ٿو؟ </string>
     <string name="ka112a"> منٽن جي حساب سان </string>
     <string name="ka113"> گهڻو ڪري پاڻي ڀرڻ جي لاءِ گهر مان ڪير ويندو آهي؟

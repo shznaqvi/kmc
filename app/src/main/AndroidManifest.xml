@@ -120,6 +120,8 @@
             android:exported="true"
             android:readPermission="edu.aku.hassannaqvi.kmc.core.MainContentProvider.READWRITE"
             android:writePermission="edu.aku.hassannaqvi.kmc.core.MainContentProvider.READWRITE" />
+
+        <activity android:name=".ui.TestDate"></activity>
     </application>
 
 </manifest>

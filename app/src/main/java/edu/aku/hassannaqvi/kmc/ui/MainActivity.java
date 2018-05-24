@@ -99,6 +99,7 @@ public class MainActivity extends Activity {
         sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
         editor = sharedPref.edit();
 
+
         builder = new AlertDialog.Builder(MainActivity.this);
         final AlertDialog dialog = builder.create();
 
@@ -147,6 +148,16 @@ public class MainActivity extends Activity {
 //        Binding setting
         ActivityMainBinding mainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         mainBinding.setCallback(this);
+
+
+        if (MainApp.userName.equals("dmu@aku")) {
+            mainBinding.adminsec1.setVisibility(View.VISIBLE);
+            mainBinding.adminsec.setVisibility(View.VISIBLE);
+        } else {
+            mainBinding.adminsec1.setVisibility(View.GONE);
+            mainBinding.adminsec.setVisibility(View.GONE);
+        }
+
 
         DatabaseHelper db = new DatabaseHelper(this);
 
@@ -478,7 +489,7 @@ public class MainActivity extends Activity {
             /*new GetBLRandom(this).execute();*/
 
 
-            Toast.makeText(getApplicationContext(), "Syncing Woman", Toast.LENGTH_SHORT).show();
+            /*Toast.makeText(getApplicationContext(), "Syncing Woman", Toast.LENGTH_SHORT).show();
             new GetMwra(this).execute();
 
             Toast.makeText(getApplicationContext(), "Syncing Villages", Toast.LENGTH_SHORT).show();
@@ -488,7 +499,7 @@ public class MainActivity extends Activity {
             new GetUCs(this).execute();
 
             Toast.makeText(getApplicationContext(), "Syncing Talukas", Toast.LENGTH_SHORT).show();
-            new GetTehsils(this).execute();
+            new GetTehsils(this).execute();*/
 
 
             SharedPreferences syncPref = getSharedPreferences("SyncInfo", Context.MODE_PRIVATE);

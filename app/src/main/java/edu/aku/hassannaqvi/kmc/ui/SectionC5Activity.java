@@ -138,12 +138,15 @@ public class SectionC5Activity extends AppCompatActivity {
                 : bi.kc501b.isChecked() ? "2"
                 : bi.kc50198.isChecked() ? "98"
                 : "0");
+
         sC5.put("kc502", bi.kc502a.isChecked() ? "1"
                 : bi.kc502b.isChecked() ? "2"
                 : bi.kc502c.isChecked() ? "3"
                 : bi.kc50296.isChecked() ? "96"
                 : "0");
+
         sC5.put("kc50296x", bi.kc50296x.getText().toString());
+
         sC5.put("kc503", bi.kc503.getText().toString());
         sC5.put("kc504", bi.kc504.getText().toString());
         sC5.put("kc505", bi.kc505.getText().toString());
@@ -167,6 +170,10 @@ public class SectionC5Activity extends AppCompatActivity {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
         }
+    }
 
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
     }
 }
