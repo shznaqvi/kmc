@@ -30,6 +30,7 @@ public class SectionC6Activity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_c6);
         bi.setCallback(this);
 
+
         bi.kc601.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
