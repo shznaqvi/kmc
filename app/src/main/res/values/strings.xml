@@ -500,24 +500,26 @@
     <string name="kc304h"> خانگي ويم گھر </string>
     <string name="kc305"> ڇا ٻار جو پيدائش وقت وزن ٿيو هو؟ </string>
     <string name="kc306"> جيڪڏهن ها ته ٻار جو پيدائشي وزن ڪيترو هو؟ جيڪڏهن ڪارڊ موجود آهي ته ان تان وزن لکو </string>
-    <string name="kc306a"> kg </string>
-    <string name="kc306c"> ڪارڊ موجود آهي </string>
+    <string name="kc306sub"> ڪارڊ موجود آهي </string>
     <string name="kc307b1"> وزن بابت يادگيري ڪرايو </string>
-    <string name="kc307"> جيڪڏهن نه ته وزن بابت پڇو </string>
-    <string name="kc307a"> تمام وڏو </string>
-    <string name="kc307b"> عام ٻارن جي مقابلي ۾ وڏو </string>
-    <string name="kc307c"> نارمل </string>
-    <string name="kc307d"> عام ٻارن جي مقابلي ۾ ننڍو </string>
-    <string name="kc307e"> تمام ننڍو </string>
+    <string name="kc307">  جيڪڏهن ڪارڊ موجود نه آهي ته وزن ياداشت مان پڇو</string>
+    <!--<string name="kc307"> جيڪڏهن نه ته وزن بابت پڇو </string>-->
+
+
     <string name="kc308"> ٻار جي پيدائش وقت ٻار تمام وڏو،وڏو،وچولو،ننڍو يا صفا ننڍو هيو؟ </string>
+    <string name="kc308a"> تمام وڏو </string>
+    <string name="kc308b"> عام ٻارن جي مقابلي ۾ وڏو </string>
+    <string name="kc308c"> نارمل </string>
+    <string name="kc308d"> عام ٻارن جي مقابلي ۾ ننڍو </string>
+    <string name="kc308e"> تمام ننڍو </string>
     <string name="kc309"> جيڪڏهن ٻار گھٽ وزن وارو هيو ته پڇو ته ٻار جي پيدائش 37 هفتن کان پهريائين ٿئي هئي؟ </string>
-    <string name="kc309a"> PRETERM BIRTH </string>
+    <string name="kc309sub"> PRETERM BIRTH </string>
     <string name="kc310"> ڇا ٻار ڄمڻ کان پوءِ هڪدم رنو هو؟ </string>
     <string name="kc311"> ٻار کي روئائڻ لاءِ ڇا ڪيو ويو هو؟ </string>
     <string name="kc311a"> مهٽيو </string>
     <string name="kc311b"> وات جي ذريعي ساه کڻايو </string>
     <string name="kc311c"> امبو بيگنگ </string>
-    <string name="kc311d"> ٻار آڪسيجن تي هيو </string>
+    <!--<string name="kc311d"> ٻار آڪسيجن تي هيو </string>-->
     <string name="kc312"> ڇا ويم ڪرائڻ واريءَ توهان جي ٻار کي خشڪ/صاف ڪيو هو </string>
     <string name="kc313"> ڇا ٻار کي ڄمڻ کان پوءِ هڪ ڪلاڪ جي اندر توهان پنهنجي ڇاتي سان لڳايو هو؟ </string>
     <string name="kc314"> ڇاتيءَ سان لڳائڻ کان پهرئين ڇا ٻار کي ويڙهيو ويو هيو؟ </string>
@@ -552,12 +554,14 @@
     <string name="kc321c"> ڄمڻ جي1 ڪلاڪ کان 6 ڪلاڪن تائينِ </string>
     <string name="kc321d"> 6 ڪلاڪن کان مٿي پر 24 ڪلاڪن کان گھٽ </string>
     <string name="kc321e"> 24 ڪلاڪ يا ان کان مٿي </string>
-    <string name="kc322"> توهان پنهنجي ٻار کي پهريون ڀيرو ڪڏهن کير ڏنو؟ </string>
+    <string name="kc322">جيڪڏهن 24 ڪلاڪن يا ان کان وڌيڪ ٽائيم کان پوءِ کير پياريو ته ان جي ڪهڙي وجه هئي؟</string>
     <string name="kc322a">  ٻار ڪمزور هو / سائز ۾ ننڍو هو </string>
     <string name="kc322b"> ٻار کير پيئڻ جي قابل نه هو </string>
     <string name="kc322c"> مونکي ان وقت کير نه آيو هو </string>
     <string name="kc322d"> آئون ان وقت ڪمزور /  بيمار هئيس </string>
     <string name="kc322e"> منهنجي سس ان وقت اجازت نه ڏني هئي </string>
+
+
     <string name="kc6heading"> ويم کان پوءِ طبي معائنو (گذريل حمل) </string>
     <string name="kc6sub"> ويم کان پوءِ ماءُ جو طبي معائنو </string>
     <string name="kc601"> ويم کان پوءِ ڇا توهان پنهنجو طبي معائنو ڪرايو هو؟ </string>

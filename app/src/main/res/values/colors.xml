@@ -3,6 +3,7 @@
     <color name="colorPrimaryDark">#3e2723</color>
     <!--<color name="colorPrimary">#880E4F</color>-->
     <color name="colorPrimary">#880e4f</color>
+    <color name="colorPrimaryBeta">#d795ab</color>
     <!--<color name="colorPrimary">#3e2723</color>-->
     <color name="colorPrimaryAlpha">#607d8b</color>
     <color name="colorAccent">#880e4f</color>
