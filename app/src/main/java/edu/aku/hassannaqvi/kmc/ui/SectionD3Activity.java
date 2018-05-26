@@ -41,10 +41,10 @@ public class SectionD3Activity extends AppCompatActivity {
 
     private void setupViews() {
 
-        bi.kd301.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        bi.kd30298.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (bi.kd301d.isChecked()) {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
 
                     bi.kd302a.setChecked(false);
                     bi.kd302b.setChecked(false);
@@ -69,6 +69,8 @@ public class SectionD3Activity extends AppCompatActivity {
                 }
             }
         });
+
+
         bi.kd302g.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -81,6 +83,8 @@ public class SectionD3Activity extends AppCompatActivity {
                 }
             }
         });
+
+
         bi.kd30298.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -122,6 +126,7 @@ public class SectionD3Activity extends AppCompatActivity {
                 }
             }
         });
+
         bi.kd304c.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -144,10 +149,12 @@ public class SectionD3Activity extends AppCompatActivity {
 
         sD3.put("kd301", bi.kd301a.isChecked() ? "1"
                 : bi.kd301b.isChecked() ? "2"
-                : bi.kd301c.isChecked() ? "3"
-                : bi.kd301d.isChecked() ? "4"
                 : bi.kd30198.isChecked() ? "98"
                 : "0");
+
+        sD3.put("kd301day", bi.kd301wk.getText().toString());
+        sD3.put("kd301mon", bi.kd301mon.getText().toString());
+        sD3.put("kd301yr", bi.kd301yr.getText().toString());
 
 
         sD3.put("kd302a", bi.kd302a.isChecked() ? "1" : "0");
@@ -174,9 +181,13 @@ public class SectionD3Activity extends AppCompatActivity {
                 : "0");
         sD3.put("kd30396x", bi.kd30396x.getText().toString());
 
+
+        sD3.put("kd304", bi.kd304a.isChecked() ? "1"
+                : bi.kd304c.isChecked() ? "3"
+                : bi.kd30498.isChecked() ? "98" : "0");
+
         sD3.put("kd304m", bi.kd304m.getText().toString());
         sD3.put("kd304y", bi.kd304y.getText().toString());
-        sD3.put("kd304", bi.kd304a.isChecked() ? "1" : bi.kd304b.isChecked() ? "2" : bi.kd304c.isChecked() ? "3" : bi.kd30498.isChecked() ? "98" : "0");
 
 
         sD3.put("kd305", bi.kd305a.isChecked() ? "1"
@@ -203,7 +214,42 @@ public class SectionD3Activity extends AppCompatActivity {
             return false;
         }
 
-        if (!bi.kd301d.isChecked()) {
+
+        if (bi.kd301a.isChecked()) {
+
+            if (!validatorClass.EmptyTextBox(this, bi.kd301wk, getString(R.string.weeks))) {
+                return false;
+            }
+
+
+            if (!validatorClass.RangeTextBox(this, bi.kd301wk, 0, 3, getString(R.string.weeks), "Weeks")) {
+                return false;
+            }
+
+
+            if (!validatorClass.EmptyTextBox(this, bi.kd301mon, getString(R.string.months))) {
+                return false;
+            }
+
+
+            if (!validatorClass.RangeTextBox(this, bi.kd301mon, 0, 11, getString(R.string.months), "Months")) {
+                return false;
+            }
+
+
+            if (!validatorClass.EmptyTextBox(this, bi.kd301yr, getString(R.string.years))) {
+                return false;
+            }
+
+
+            if (!validatorClass.RangeTextBox(this, bi.kd301yr, 0, 2, getString(R.string.years), "Years")) {
+                return false;
+            }
+
+        }
+
+
+        if (!bi.kd301b.isChecked()) {
 
             if (!validatorClass.EmptyCheckBox(this, bi.kd302, bi.kd30296, bi.kd30296x, getString(R.string.kd302))) {
                 return false;
@@ -219,17 +265,30 @@ public class SectionD3Activity extends AppCompatActivity {
         if (!validatorClass.EmptyRadioButton(this, bi.kd304, bi.kd304a, getString(R.string.kd304))) {
             return false;
         }
+
         if (bi.kd304a.isChecked()) {
 
             if (!validatorClass.EmptyTextBox(this, bi.kd304m, getString(R.string.months))) {
                 return false;
             }
-        }
-        if (bi.kd304b.isChecked()) {
+
+
+            if (!validatorClass.RangeTextBox(this, bi.kd304m, 0, 11, getString(R.string.months), "Months")) {
+                return false;
+            }
+
+
             if (!validatorClass.EmptyTextBox(this, bi.kd304y, getString(R.string.years))) {
                 return false;
             }
+
+
+            if (!validatorClass.RangeTextBox(this, bi.kd304y, 0, 2, getString(R.string.years), "Years")) {
+                return false;
+            }
+
         }
+
 
         if (!bi.kd304c.isChecked()) {
 
@@ -303,7 +362,10 @@ public class SectionD3Activity extends AppCompatActivity {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
         }
-
     }
 
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
+    }
 }

@@ -108,6 +108,8 @@ public class SectionD1Activity extends AppCompatActivity {
         if (!validatorClass.EmptyTextBox(context, bi.kd001d, getString(R.string.days))) {
             return false;
         }
+
+
         if (!validatorClass.EmptyTextBox(context, bi.kd001m, getString(R.string.months))) {
             return false;
         }
@@ -136,6 +138,11 @@ public class SectionD1Activity extends AppCompatActivity {
         if (!validatorClass.EmptyRadioButton(context, bi.kd102, bi.kd102a, bi.kd102ax, getString(R.string.kd102))) {
             return false;
         }
+
+        if (!validatorClass.RangeTextBox(context, bi.kd102ax, 1, 18, getString(R.string.number), "Number ")) {
+            return false;
+        }
+
         if (!validatorClass.EmptyRadioButton(context, bi.kd103, bi.kd10396, bi.kd10396x, getString(R.string.kd103))) {
             return false;
         }
@@ -201,8 +208,10 @@ public class SectionD1Activity extends AppCompatActivity {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
         }
-
-
     }
 
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
+    }
 }

@@ -35,12 +35,39 @@ public class SectionD2Activity extends AppCompatActivity {
     }
 
     private void setupView() {
+
+        bi.kd201.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (bi.kd201a.isChecked()) {
+                    bi.kd201d.setVisibility(View.VISIBLE);
+                    bi.kd201m.setVisibility(View.VISIBLE);
+                } else {
+                    bi.kd201d.setText(null);
+                    bi.kd201m.setText(null);
+
+                    bi.kd201d.setVisibility(View.GONE);
+                    bi.kd201m.setVisibility(View.GONE);
+                }
+            }
+        });
+
         bi.kd203.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (checkedId == R.id.kd203b) {
                     bi.fldGrpkd204.setVisibility(View.GONE);
-                    bi.kd204.clearCheck();
+
+                    bi.kd204a.setChecked(false);
+                    bi.kd204b.setChecked(false);
+                    bi.kd204c.setChecked(false);
+                    bi.kd204d.setChecked(false);
+                    bi.kd204e.setChecked(false);
+                    bi.kd204f.setChecked(false);
+                    bi.kd204g.setChecked(false);
+                    bi.kd20496.setChecked(false);
+
+                    //bi.kd204.clearCheck();
                     bi.kd20496x.setText(null);
                 } else {
                     bi.fldGrpkd204.setVisibility(View.VISIBLE);
@@ -100,23 +127,28 @@ public class SectionD2Activity extends AppCompatActivity {
         if (!validatorClass.EmptyRadioButton(context, bi.kd201, bi.kd201a, getString(R.string.kd201))) {
             return false;
         }
+
         if (bi.kd201a.isChecked()) {
 
             if (!validatorClass.EmptyTextBox(context, bi.kd201d, getString(R.string.kd201a))) {
                 return false;
             }
-            if (!validatorClass.RangeTextBox(context, bi.kd201d, 1, 29, getString(R.string.days), "days")) {
+
+
+            if (!validatorClass.RangeTextBox(context, bi.kd201d, 0, 29, getString(R.string.days), "days")) {
                 return false;
             }
-        }
-        if (bi.kd201b.isChecked()) {
+
             if (!validatorClass.EmptyTextBox(context, bi.kd201m, getString(R.string.kd201b))) {
                 return false;
             }
-            if (!validatorClass.RangeTextBox(context, bi.kd201m, 1, 11, getString(R.string.months), "months")) {
+
+            if (!validatorClass.RangeTextBox(context, bi.kd201m, 0, 14, getString(R.string.months), "months")) {
                 return false;
             }
+
         }
+
 
         if (!validatorClass.EmptyCheckBox(context, bi.kd202, bi.kd20296, bi.kd20296x, getString(R.string.other))) {
             return false;
@@ -125,7 +157,7 @@ public class SectionD2Activity extends AppCompatActivity {
             return false;
         }
         if (!bi.kd203b.isChecked()) {
-            return validatorClass.EmptyRadioButton(context, bi.kd204, bi.kd20496, bi.kd20496x, getString(R.string.kd204));
+            return validatorClass.EmptyCheckBox(context, bi.kd204, bi.kd20496, bi.kd20496x, getString(R.string.kd204));
         }
         return true;
     }
@@ -136,11 +168,11 @@ public class SectionD2Activity extends AppCompatActivity {
         JSONObject sd2 = new JSONObject();
         sd2.put("kd201",
                 bi.kd201a.isChecked() ? "1" :
-                        bi.kd201b.isChecked() ? "2" :
-                                bi.kd20199.isChecked() ? "99" :
-                                        bi.kd20177.isChecked() ? "77" :
-                                                bi.kd20198.isChecked() ? "98" :
-                                                        "0");
+                        bi.kd20199.isChecked() ? "99" :
+                                bi.kd20177.isChecked() ? "77" :
+                                        bi.kd20198.isChecked() ? "98" :
+                                                "0");
+
         sd2.put("kd201d", bi.kd201d.getText().toString());
         sd2.put("kd201m", bi.kd201m.getText().toString());
 
@@ -157,7 +189,7 @@ public class SectionD2Activity extends AppCompatActivity {
                 bi.kd203a.isChecked() ? "1" :
                         bi.kd203b.isChecked() ? "2" :
                                 "0");
-        sd2.put("kd204",
+        /*sd2.put("kd204",
                 bi.kd204a.isChecked() ? "1" :
                         bi.kd204b.isChecked() ? "2" :
                                 bi.kd204c.isChecked() ? "3" :
@@ -166,7 +198,18 @@ public class SectionD2Activity extends AppCompatActivity {
                                                         bi.kd204f.isChecked() ? "6" :
                                                                 bi.kd204g.isChecked() ? "7" :
                                                                         bi.kd20496.isChecked() ? "96" :
-                                                                                "0");
+                                                                                "0");*/
+
+
+        sd2.put("kd204a", bi.kd204a.isChecked() ? "1" : "0");
+        sd2.put("kd204b", bi.kd204b.isChecked() ? "2" : "0");
+        sd2.put("kd204c", bi.kd204c.isChecked() ? "3" : "0");
+        sd2.put("kd204d", bi.kd204d.isChecked() ? "4" : "0");
+        sd2.put("kd204e", bi.kd204e.isChecked() ? "5" : "0");
+        sd2.put("kd204f", bi.kd204f.isChecked() ? "6" : "0");
+        sd2.put("kd204g", bi.kd204g.isChecked() ? "7" : "0");
+        sd2.put("kd20496", bi.kd20496.isChecked() ? "96" : "0");
+
         sd2.put("kd20496x", bi.kd20496x.getText().toString());
 
         MainApp.fc.setsD2(String.valueOf(sd2));
@@ -185,7 +228,10 @@ public class SectionD2Activity extends AppCompatActivity {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
         }
-
     }
 
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
+    }
 }

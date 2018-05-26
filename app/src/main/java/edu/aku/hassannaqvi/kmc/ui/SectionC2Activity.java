@@ -68,7 +68,9 @@ public class SectionC2Activity extends AppCompatActivity {
                     bi.kc205.clearCheck();
                     bi.kc20596x.setText(null);
 
-                    bi.kc206a.setChecked(false);
+                    bi.kc206.clearCheck();
+
+                    /*bi.kc206a.setChecked(false);
                     bi.kc206b.setChecked(false);
                     bi.kc206c.setChecked(false);
                     bi.kc206d.setChecked(false);
@@ -77,7 +79,7 @@ public class SectionC2Activity extends AppCompatActivity {
                     bi.kc206g.setChecked(false);
                     bi.kc206h.setChecked(false);
                     bi.kc20698.setChecked(false);
-                    bi.kc20696.setChecked(false);
+                    bi.kc20696.setChecked(false);*/
 
                     bi.kc20696x.setText(null);
 
@@ -182,7 +184,8 @@ public class SectionC2Activity extends AppCompatActivity {
         sC2.put("kc20296", bi.kc20296.isChecked() ? "96" : "0");
 
 
-        sC2.put("kc20296", bi.kc20296x.getText().toString());
+        sC2.put("kc20296x", bi.kc20296x.getText().toString());
+
         sC2.put("kc203", bi.kc203.getText().toString());
         sC2.put("kc20398", bi.kc20398.isChecked() ? "1" : "0");
 
@@ -198,13 +201,27 @@ public class SectionC2Activity extends AppCompatActivity {
                 : bi.kc205c.isChecked() ? "3"
                 : bi.kc205d.isChecked() ? "4"
                 : bi.kc205e.isChecked() ? "5"
+                : bi.kc205f.isChecked() ? "6"
+                : bi.kc205g.isChecked() ? "7"
                 : bi.kc20596.isChecked() ? "96"
                 : "0");
 
-        sC2.put("kc20596", bi.kc20596x.getText().toString());
+        sC2.put("kc20596x", bi.kc20596x.getText().toString());
 
 
-        sC2.put("kc206a", bi.kc206a.isChecked() ? "1" : "0");
+        sC2.put("kc206", bi.kc206a.isChecked() ? "1"
+                : bi.kc206b.isChecked() ? "2"
+                : bi.kc206c.isChecked() ? "3"
+                : bi.kc206d.isChecked() ? "4"
+                : bi.kc206e.isChecked() ? "5"
+                : bi.kc206f.isChecked() ? "6"
+                : bi.kc206g.isChecked() ? "7"
+                : bi.kc206h.isChecked() ? "8"
+                : bi.kc20698.isChecked() ? "98"
+                : bi.kc20696.isChecked() ? "96"
+                : "0");
+
+        /*sC2.put("kc206a", bi.kc206a.isChecked() ? "1" : "0");
         sC2.put("kc206b", bi.kc206b.isChecked() ? "2" : "0");
         sC2.put("kc206c", bi.kc206c.isChecked() ? "3" : "0");
         sC2.put("kc206d", bi.kc206d.isChecked() ? "4" : "0");
@@ -214,6 +231,7 @@ public class SectionC2Activity extends AppCompatActivity {
         sC2.put("kc206h", bi.kc206h.isChecked() ? "8" : "0");
         sC2.put("kc20698", bi.kc20698.isChecked() ? "98" : "0");
         sC2.put("kc20696", bi.kc20696.isChecked() ? "96" : "0");
+        */
 
         sC2.put("kc20696x", bi.kc20696x.getText().toString());
 
@@ -347,12 +365,12 @@ public class SectionC2Activity extends AppCompatActivity {
             }
 
 
-            /*if (!validatorClass.EmptyRadioButton(this, bi.kc206, bi.kc206a, getString(R.string.kc206))) {
+            if (!validatorClass.EmptyRadioButton(this, bi.kc206, bi.kc206a, getString(R.string.kc206))) {
                 return false;
-            }*/
+            }
 
 
-            if (!bi.kc206a.isChecked()
+            /*if (!bi.kc206a.isChecked()
                     && !bi.kc206b.isChecked()
                     && !bi.kc206c.isChecked()
                     && !bi.kc206d.isChecked()
@@ -369,7 +387,7 @@ public class SectionC2Activity extends AppCompatActivity {
                 return false;
             } else {
                 bi.kc206a.setError(null);
-            }
+            }*/
 
 
             if (bi.kc20696.isChecked()) {
@@ -471,7 +489,7 @@ public class SectionC2Activity extends AppCompatActivity {
                     }
 
 
-                    if (!validatorClass.RangeTextBox(this, bi.kc214, 1, 15, getString(R.string.kc214), "Times")) {
+                    if (!validatorClass.RangeTextBox(this, bi.kc214, 1, 5, getString(R.string.kc214), "Times")) {
                         return false;
                     }
 
@@ -544,6 +562,10 @@ public class SectionC2Activity extends AppCompatActivity {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
         }
+    }
 
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
     }
 }

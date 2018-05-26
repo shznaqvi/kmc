@@ -116,6 +116,8 @@
         <item name="android:textColor">#ff0000</item>
         <item name="android:background">#d6d6d6</item>
         <item name="android:padding">16dp</item>
+
+
     </style>
 
     <style name="spinnerItemStyle">
@@ -166,7 +168,9 @@
         <item name="android:radius">2dp</item>
         <item name="android:elevation">5dp</item>
         <item name="android:background">@drawable/background_grad</item>
+        <item name="android:textColor">#CCCFFF</item>
     </style>
+
 
     <style name="checkbox" parent="android:Widget.Material.Light.CompoundButton.CheckBox">
         <item name="android:layout_gravity">right</item>

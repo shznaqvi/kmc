@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name"> Kangroo Mother Care </string>
+    <string name="app_name"> Kangroo Mother Care Baseline </string>
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
@@ -15,7 +15,7 @@
 
     <string name="end_interview"> اختتام </string>
     <string name="start_interview"> انٹروہو شروع کریں </string>
-    <string name="nextSection"> اگلا سیکشن </string>
+    <string name="nextSection"> اڳئين سيڪشن تي وڃو </string>
     <string name="searchwoman"> Search Woman </string>
     <string name="addMember"> افراد کا اندراج </string>
     <string name="istatus">انٹروہو کا نتیجہ</string>
@@ -44,6 +44,7 @@
     <string name="kc307rec"> وزن بابت يادگيري ڪرايو </string>
     <string name="weeks"> هفتا </string>
     <string name="days"> ڏينهن </string>
+    <string name="age"> عمر </string>
     <string name="min"> منٽ </string>
     <string name="hours"> ڪلاڪ </string>
     <string name="cm"> cm </string>
@@ -74,6 +75,7 @@
     <string name="cra04"> گهر جو نمبر</string>
     <string name="cra05">توليدي عمر واري عورت جو نالو</string>
     <string name="cra06">توليدي عمر واري عورت جي عمر( 15-49 سالن تائين)</string>
+    <string name="cra07"> ڇا جواب ڏيندڙ تحقيق ۾ حصو وٺڻ لاءِ تيار آهي </string>
 
     <!--      CBT Vars       !-->
 
@@ -105,21 +107,22 @@
     <string name="ka102c"> ڪچين سرن / مٽي سان </string>
     <string name="ka102d"> ٿنڀا ، مٽي ۽ ٿوڻين سان </string>
     <string name="ka102e"> پٿر ، پڪين سرن ۽ مٽي سان </string>
-    <string name="ka102f"> سيمنٽ جون سرون، پڪيون سرون يا پٿر ۽ سمينٽ سان (پلستر نه ٿيل </string>
+    <string name="ka102f"> سيمنٽ جون سرون، پڪيون سرون يا پٿر ۽ سمينٽ سان (پلستر نه ٿيل) </string>
     <string name="ka102g"> سيمنٽ سان (پلستر ٿيل) </string>
     <string name="ka102h"> ڪاٺ جي تاڪن سان </string>
     <string name="ka103sub"> ب. ڇت جي جوڙ جڪ </string>
-    <string name="ka103a"> کجي يا ناريل جون ڇڙيون </string>
-    <string name="ka103b"> ٿنڀا يا کجي ۽ ڪچي مٽي سان ٺهيل ڇت </string>
-    <string name="ka103c"> تڏن يا ڪڙا </string>
-    <string name="ka103d"> ڪاٺ جي تاڪن </string>
-    <string name="ka103e"> سان </string>
-    <string name="ka103f"> لوهي چادرون </string>
-    <string name="ka103g"> سيمنٽ جي سرن جا سليب </string>
-    <string name="ka103h"> ڪنڪريٽ يا روڙي جي ڇت </string>
-    <string name="ka103i"> سيرامڪ ٽائيل يا سيمنٽ </string>
-    <string name="ka103j"> ڪنهن ڌاتو جي ڇت </string>
-    <string name="ka103k"> روفنگ شنگلس </string>
+    <string name="ka103a"> بغير ڇت جي </string>
+    <string name="ka103b"> کجي يا ناريل جون ڇڙيون </string>
+    <string name="ka103c"> ٿنڀا يا کجي ۽ ڪچي مٽي سان ٺهيل ڇت </string>
+    <string name="ka103d"> تڏن يا ڪڙا </string>
+    <string name="ka103e"> تڏن يا ڪڙا </string>
+    <string name="ka103f"> ڪاٺ جي تاڪن سان </string>
+    <string name="ka103g"> لوهي چادرون </string>
+    <string name="ka103h"> سيمنٽ جي سرن جا سليب </string>
+    <string name="ka103i"> ڪنڪريٽ يا روڙي جي ڇت </string>
+    <string name="ka103j"> سيرامڪ ٽائيل يا سيمنٽ </string>
+    <string name="ka103k"> ڪنهن ڌاتو جي ڇت </string>
+    <string name="ka103l"> روفنگ شنگلس </string>
     <string name="ka104sub"> ج. فرش جي جوڙ جڪ </string>
     <string name="ka104a"> ڪچي زمين، واري، مٽي </string>
     <string name="ka104b"> ڪاٺ جا تاڪ </string>
@@ -159,7 +162,7 @@
     <string name="ka109sub01"> کوٽيل کوهه </string>
     <string name="ka109f"> ڍڪيل کوهه </string>
     <string name="ka109g"> اڻ ڍڪيل کوهه </string>
-    <string name="ka109sub02"> چشمو جو پاڻي </string>
+    <string name="ka109sub02"> چشمي جو پاڻي </string>
     <string name="ka109h"> محفوظ چشمو </string>
     <string name="ka109i"> غير محفوظ چشمو </string>
     <string name="ka109sub03"> ٻيا ذريعا </string>
@@ -179,7 +182,7 @@
     <string name="ka110sub01"> کوٽيل کوهه </string>
     <string name="ka110f"> ڍڪيل کوهه </string>
     <string name="ka110g"> اڻ ڍڪيل کوهه </string>
-    <string name="ka110sub02"> چشمو جو پاڻي </string>
+    <string name="ka110sub02"> چشمي جو پاڻي </string>
     <string name="ka110h"> محفوظ چشمو </string>
     <string name="ka110i"> غير محفوظ چشمو </string>
     <string name="ka110sub03"> ٻيا ذريعا </string>
@@ -189,7 +192,7 @@
     <string name="ka110m"> ريڙهي واري ٽانڪي </string>
     <string name="ka110n"> زميني سطح وارو پاڻي ندي، ڊيم، ڍنڍ ، تلا، وهندڙ پاڻي، ڪينال </string>
     <string name="ka110o"> گهگهي وارو پاڻي </string>
-    <string name="ka111"> ا گهر جو ڪو ڀاتي ڪنهن وقت يا روزانو پاڻي کڻڻ لاءِ ويندو آهي؟ </string>
+    <string name="ka111"> ڇا گهر جو ڪو ڀاتي ڪنهن وقت يا روزانو پاڻي کڻڻ لاءِ ويندو آهي؟ </string>
     <string name="ka112"> پاڻي حاصل ڪرڻ ۽ کڻي اچڻ لاءِ ڪيترو وقت لڳي ٿو؟ </string>
     <string name="ka112a"> منٽن جي حساب سان </string>
     <string name="ka113"> گهڻو ڪري پاڻي ڀرڻ جي لاءِ گهر مان ڪير ويندو آهي؟
@@ -394,10 +397,9 @@
     <string name="kc202e"> صحت مرڪز گھر کان تمام پري هو </string>
     <string name="kc202f"> اجازت نه هئي گھرواري جي/سربراه جي </string>
     <string name="kc203"> جيڪڏهن ها ته ڪيترا ڀيرا ڪرايو؟ </string>
-    <string name="kc204"> حمل جي ڪيترن مهينن ۾ توهان طبي معائنو
-    ڪرايو؟ </string>
+    <string name="kc204"> حمل جي ڪهڙي مهيني ۾ توهان پنهنجو پهريون طبي معائنو ڪرايو ؟ </string>
     <string name="kc204a"> حمل جي 6 کان 9 مهينن تائين </string>
-    <string name="kc204b">حمل جي ٽن مهينن کان 6 مهينن تائين</string>
+    <string name="kc204b">حمل جي ٽن مهينن کان 6 مهينن تائين </string>
     <string name="kc204c"> حمل جي پهرين مهينن کان 3 مهينن تائين </string>
     <string name="kc205"> ڪنهن کان طبي معائنو ڪرايو؟ </string>
     <string name="kc205a1"> HEALTH PERSONNEL </string>
@@ -420,9 +422,7 @@
     <string name="kc206f"> خانگي اسپتال </string>
     <string name="kc206g"> خانگي ڪلينڪ </string>
     <string name="kc206h"> خانگي ويم گھر </string>
-    <string name="kc207"> حمل جي طبي معائني جي دوران معائني جي فهرست
-    مان ڪهڙو معائنو ڪيو ويو هو) گھٽ ۾ گھٽ هڪ
-    ڀيرو( </string>
+    <string name="kc207"> حمل جي طبي معائني جي دوران معائني جي فهرست مان ڪهڙو معائنو ڪيو ويو هو( گھٽ ۾ گھٽ هڪ ڀيرو) (سڀ آپشن پڇو) </string>
     <string name="kc207a"> توهان جو وزن ٿيو </string>
     <string name="kc207b"> توهان جو قد ماپيو </string>
     <string name="kc207c"> توهان جو بلڊ پريشر چيڪ ٿيو </string>
@@ -500,24 +500,26 @@
     <string name="kc304h"> خانگي ويم گھر </string>
     <string name="kc305"> ڇا ٻار جو پيدائش وقت وزن ٿيو هو؟ </string>
     <string name="kc306"> جيڪڏهن ها ته ٻار جو پيدائشي وزن ڪيترو هو؟ جيڪڏهن ڪارڊ موجود آهي ته ان تان وزن لکو </string>
-    <string name="kc306a"> kg </string>
-    <string name="kc306c"> ڪارڊ موجود آهي </string>
+    <string name="kc306sub"> ڪارڊ موجود آهي </string>
     <string name="kc307b1"> وزن بابت يادگيري ڪرايو </string>
-    <string name="kc307"> جيڪڏهن نه ته وزن بابت پڇو </string>
-    <string name="kc307a"> تمام وڏو </string>
-    <string name="kc307b"> عام ٻارن جي مقابلي ۾ وڏو </string>
-    <string name="kc307c"> نارمل </string>
-    <string name="kc307d"> عام ٻارن جي مقابلي ۾ ننڍو </string>
-    <string name="kc307e"> تمام ننڍو </string>
+    <string name="kc307">  جيڪڏهن ڪارڊ موجود نه آهي ته وزن ياداشت مان پڇو</string>
+    <!--<string name="kc307"> جيڪڏهن نه ته وزن بابت پڇو </string>-->
+
+
     <string name="kc308"> ٻار جي پيدائش وقت ٻار تمام وڏو،وڏو،وچولو،ننڍو يا صفا ننڍو هيو؟ </string>
+    <string name="kc308a"> تمام وڏو </string>
+    <string name="kc308b"> عام ٻارن جي مقابلي ۾ وڏو </string>
+    <string name="kc308c"> نارمل </string>
+    <string name="kc308d"> عام ٻارن جي مقابلي ۾ ننڍو </string>
+    <string name="kc308e"> تمام ننڍو </string>
     <string name="kc309"> جيڪڏهن ٻار گھٽ وزن وارو هيو ته پڇو ته ٻار جي پيدائش 37 هفتن کان پهريائين ٿئي هئي؟ </string>
-    <string name="kc309a"> PRETERM BIRTH </string>
+    <string name="kc309sub"> PRETERM BIRTH </string>
     <string name="kc310"> ڇا ٻار ڄمڻ کان پوءِ هڪدم رنو هو؟ </string>
     <string name="kc311"> ٻار کي روئائڻ لاءِ ڇا ڪيو ويو هو؟ </string>
     <string name="kc311a"> مهٽيو </string>
     <string name="kc311b"> وات جي ذريعي ساه کڻايو </string>
     <string name="kc311c"> امبو بيگنگ </string>
-    <string name="kc311d"> ٻار آڪسيجن تي هيو </string>
+    <!--<string name="kc311d"> ٻار آڪسيجن تي هيو </string>-->
     <string name="kc312"> ڇا ويم ڪرائڻ واريءَ توهان جي ٻار کي خشڪ/صاف ڪيو هو </string>
     <string name="kc313"> ڇا ٻار کي ڄمڻ کان پوءِ هڪ ڪلاڪ جي اندر توهان پنهنجي ڇاتي سان لڳايو هو؟ </string>
     <string name="kc314"> ڇاتيءَ سان لڳائڻ کان پهرئين ڇا ٻار کي ويڙهيو ويو هيو؟ </string>
@@ -552,12 +554,14 @@
     <string name="kc321c"> ڄمڻ جي1 ڪلاڪ کان 6 ڪلاڪن تائينِ </string>
     <string name="kc321d"> 6 ڪلاڪن کان مٿي پر 24 ڪلاڪن کان گھٽ </string>
     <string name="kc321e"> 24 ڪلاڪ يا ان کان مٿي </string>
-    <string name="kc322"> توهان پنهنجي ٻار کي پهريون ڀيرو ڪڏهن کير ڏنو؟ </string>
+    <string name="kc322">جيڪڏهن 24 ڪلاڪن يا ان کان وڌيڪ ٽائيم کان پوءِ کير پياريو ته ان جي ڪهڙي وجه هئي؟</string>
     <string name="kc322a">  ٻار ڪمزور هو / سائز ۾ ننڍو هو </string>
     <string name="kc322b"> ٻار کير پيئڻ جي قابل نه هو </string>
     <string name="kc322c"> مونکي ان وقت کير نه آيو هو </string>
     <string name="kc322d"> آئون ان وقت ڪمزور /  بيمار هئيس </string>
     <string name="kc322e"> منهنجي سس ان وقت اجازت نه ڏني هئي </string>
+
+
     <string name="kc6heading"> ويم کان پوءِ طبي معائنو (گذريل حمل) </string>
     <string name="kc6sub"> ويم کان پوءِ ماءُ جو طبي معائنو </string>
     <string name="kc601"> ويم کان پوءِ ڇا توهان پنهنجو طبي معائنو ڪرايو هو؟ </string>
@@ -624,7 +628,7 @@
     <string name="kd"> Module D: LOW BIRTH WEIGHT BABY </string>
     <string name="kc4heading"> ڊگھي عرصي لاءِ ٻار کي ماءُ جي ڇاتي سان لڳائڻ </string>
     <string name="kc401"> ڪمزور يا گھٽ وزن واري ٻار کي ڪيئين گرم رکندا آهيو؟ </string>
-    <string name="kc401a"> ڪپھ يا ڪمبل ۾ ويهريندا آهيو </string>
+    <string name="kc401a"> ڪپھ يا ڪمبل ۾ ويڙهيندا آهيو </string>
     <string name="kc401b"> ٻار کي پنهنجي ويجھو رکندا آهيو </string>
     <string name="kc401c"> ڇاتي سان لڳائيندا آهيو </string>
     <string name="kc401d"> گرم ڪپڙا پهرائيندا آهيو </string>
@@ -635,9 +639,9 @@
     <string name="kc403b"> ليڊي هيلٿ وزيٽر </string>
     <string name="kc403c"> ليڊي هيلٿ ورڪر </string>
     <string name="kc403d"> نرس </string>
-    <string name="kc403e"> مدوائيف </string>
+    <string name="kc403e"> مڊوائيف </string>
     <string name="kc403f"> ڪمنيونٽي هيلٿ ورڪر </string>
-    <string name="kc403g"> ڪمنيوڻٽي موباليزشن ورڪر </string>
+    <string name="kc403g"> ڪميونٽي موباليزشن ورڪر </string>
     <string name="kc403h"> مائيٽ </string>
     <string name="kc403i"> دوست </string>
     <string name="kc404"> ڇا توهان ڪڏهن پنهنجي گھٽ وزن واري ٻار کي ڇاتيءَ سان لڳايو آهي؟ </string>
@@ -661,7 +665,7 @@
     <string name="kc503a"> ڄمڻ کان پوءِ ڪيترا ڏينهن_______ شروع </string>
     <string name="kc504"> ڏينهن ۾ ڪيترا ڀيرا ماليش ڪندا آهيو؟ </string>
     <string name="kc504a">	روزانو ڪيترا ڀيرا _____لڳايو ويو</string>
-    <string name="kc505"> توهان ڪيتري دير ٻار کي تيل جي ماليش ڪندا آهيو؟ </string>
+    <string name="kc505"> توهان ٻار کي ڪيتري عرصي تائين تيل جي مالش ڪئي ؟ </string>
     <string name="kc505a">ڪيستائين هنيو	ڏينهن _____</string>
     <string name="kc505b"> اڄ ڏينهن تائين جاري آهي</string>
 
@@ -708,19 +712,19 @@
     <string name="kd204d"> سڪو ميوو </string>
     <string name="kd204e"> گيھ </string>
     <string name="kd204f"> ڀوري کنڊ </string>
-    <string name="kd204g"> ڦلا</string>
+    <string name="kd204g"> ڦلا </string>
     <string name="kd3heading"> گڏيل خوراڪ </string>
     <string name="kd301">
     توهان پنهنجي ٻار کي ڪيتري عمر ۾پنهنجي کير کان علاوه چانھ جوس يا ٻيو ڪجھ ڏيندا آهيو؟
     </string>
     <string name="kd301d"> شروع نه ڪيو </string>
     <string name="kd302"> ڪهڙي پاڻياٺ ڏيندا آهيو؟ پڇو ٻئي ڪا شيءِ </string>
-    <string name="kd302a"> ماءُ جو کير )ماءُ جي کير کان علاوه( </string>
+    <string name="kd302a"> ماءُ جو کير (ماءُ جي کير کان علاوه) </string>
     <string name="kd302b"> سادو پاڻي </string>
     <string name="kd302c"> کنڊ يا گلوڪوس وارو پاڻي </string>
     <string name="kd302d"> گرائپ واٽر </string>
     <string name="kd302e"> کنڊ،لوڻ وارو پاڻي </string>
-    <string name="kd302f"> ڦلن جو جوس </string>
+    <string name="kd302f"> ميون جو جوس </string>
     <string name="kd302g"> نون ڃاول ٻارن جو فارمولو پيڪ </string>
     <string name="kd302h"> ديسي هربل دوائون / چانھ </string>
     <string name="kd302i"> ماکي ۽ پاڻي </string>
@@ -739,7 +743,7 @@
     <string name="kd305b"> ٻار جو وزن وڌائڻ لاءِ </string>
     <string name="kd305c"> ٻار ڪمزور هو ۽ ان جو وزن وڌي نه رهيو هو </string>
     <string name="kd305d"> ٻار جو پيدائش وقت وزن گھٽ هيو </string>
-    <string name="kd305e"> گھر جي ميمبر مشورو ڏنو / سس </string>
+    <string name="kd305e">سس / گھر جي ميمبر مشورو ڏنو </string>
     <string name="kd305f"> ڊاڪٽر مشورو ڏنو </string>
     <string name="kd305g"> ليڊي هيلٿ ورڪر مشورو ڏنو </string>
     <string name="kfheading"> نون ڄاول ٻارن جي مرڻ جي باري ۾ معلومات </string>
@@ -868,7 +872,7 @@
     <string name="ke418f">ٻين کي هنن جي ڪاميابيءَ جي باري ۾ ٻڌائيندو آهي</string>
     <string name="ke418g">تعريف نه ڪندو آهي</string>
 
-    <string name="ke419">ڇا هي محسوس ڪري ٿو ته پيءُ هجڻ جي ناتي هن تي گھڻيون ذميواريون آهن؟</string>
+    <string name="ke419">ڇا توهان ڪڏهن محسوس ڪيو آهي ته توهان جو مڙس پريشان رهي ٿو ؟</string>
     <string name="ke419c">ڪجھ ٽائيم</string>
 
     <string name="ke420">جيڪڏهن ها ته وضاحت ڪريو ڇو؟</string>

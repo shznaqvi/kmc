@@ -471,6 +471,80 @@ public class SectionFActivity extends AppCompatActivity {
     public boolean ValidateForm() {
 
 
+        //======================== Q 3 ==========================
+
+        if (bi.bd03s.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.bd03), Toast.LENGTH_SHORT).show();
+            bi.bd03s.setError("This data is Required!");
+            Log.i(TAG, "bd03s: This data is Required!");
+            return false;
+        } else {
+            bi.bd03s.setError(null);
+        }
+
+        if (Integer.valueOf(bi.bd03s.getText().toString()) == 1) {
+            if (bi.bd03dob1.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bd03), Toast.LENGTH_SHORT).show();
+                bi.bd03dob1.setError("This data is Required!");
+                Log.i(TAG, "bd03dob1: This data is Required!");
+                return false;
+            } else {
+                bi.bd03dob1.setError(null);
+            }
+        }
+
+        if (Integer.valueOf(bi.bd03s.getText().toString()) == 2) {
+            if (bi.bd03dob2.getText().toString().isEmpty() || bi.bd03dob1.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bd03), Toast.LENGTH_SHORT).show();
+                bi.bd03dob2.setError("This data is Required!");
+                Log.i(TAG, "bd03dob2: This data is Required!");
+                return false;
+            } else {
+                bi.bd03dob2.setError(null);
+            }
+        }
+
+        if (Integer.valueOf(bi.bd03s.getText().toString()) == 3) {
+            if (bi.bd03dob3.getText().toString().isEmpty() || bi.bd03dob1.getText().toString().isEmpty()
+                    || bi.bd03dob2.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bd03), Toast.LENGTH_SHORT).show();
+                bi.bd03dob3.setError("This data is Required!");
+                Log.i(TAG, "bd03dob3: This data is Required!");
+                return false;
+            } else {
+                bi.bd03dob3.setError(null);
+            }
+        }
+
+        if (Integer.valueOf(bi.bd03s.getText().toString()) == 4) {
+            if (bi.bd03dob4.getText().toString().isEmpty() || bi.bd03dob3.getText().toString().isEmpty()
+                    || bi.bd03dob1.getText().toString().isEmpty()
+                    || bi.bd03dob2.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bd03), Toast.LENGTH_SHORT).show();
+                bi.bd03dob4.setError("This data is Required!");
+                Log.i(TAG, "bd03dob4: This data is Required!");
+                return false;
+            } else {
+                bi.bd03dob4.setError(null);
+            }
+        }
+
+        if (Integer.valueOf(bi.bd03s.getText().toString()) == 5) {
+            if (bi.bd03dob5.getText().toString().isEmpty() || bi.bd03dob4.getText().toString().isEmpty()
+                    || bi.bd03dob3.getText().toString().isEmpty()
+                    || bi.bd03dob1.getText().toString().isEmpty()
+                    || bi.bd03dob2.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bd03), Toast.LENGTH_SHORT).show();
+                bi.bd03dob5.setError("This data is Required!");
+                Log.i(TAG, "bd03dob5: This data is Required!");
+                return false;
+            } else {
+                bi.bd03dob5.setError(null);
+            }
+
+        }
+
+
         //================ Q4============
 
         if (bi.bd04s.getText().toString().isEmpty()) {
@@ -628,80 +702,6 @@ public class SectionFActivity extends AppCompatActivity {
         }
 
 
-        //======================== Q 3 ==========================
-
-        if (bi.bd03s.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.bd03), Toast.LENGTH_SHORT).show();
-            bi.bd03s.setError("This data is Required!");
-            Log.i(TAG, "bd03s: This data is Required!");
-            return false;
-        } else {
-            bi.bd03s.setError(null);
-        }
-
-        if (Integer.valueOf(bi.bd03s.getText().toString()) == 1) {
-            if (bi.bd03dob1.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bd03), Toast.LENGTH_SHORT).show();
-                bi.bd03dob1.setError("This data is Required!");
-                Log.i(TAG, "bd03dob1: This data is Required!");
-                return false;
-            } else {
-                bi.bd03dob1.setError(null);
-            }
-        }
-
-        if (Integer.valueOf(bi.bd03s.getText().toString()) == 2) {
-            if (bi.bd03dob2.getText().toString().isEmpty() || bi.bd03dob1.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bd03), Toast.LENGTH_SHORT).show();
-                bi.bd03dob2.setError("This data is Required!");
-                Log.i(TAG, "bd03dob2: This data is Required!");
-                return false;
-            } else {
-                bi.bd03dob2.setError(null);
-            }
-        }
-
-        if (Integer.valueOf(bi.bd03s.getText().toString()) == 3) {
-            if (bi.bd03dob3.getText().toString().isEmpty() || bi.bd03dob1.getText().toString().isEmpty()
-                    || bi.bd03dob2.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bd03), Toast.LENGTH_SHORT).show();
-                bi.bd03dob3.setError("This data is Required!");
-                Log.i(TAG, "bd03dob3: This data is Required!");
-                return false;
-            } else {
-                bi.bd03dob3.setError(null);
-            }
-        }
-
-        if (Integer.valueOf(bi.bd03s.getText().toString()) == 4) {
-            if (bi.bd03dob4.getText().toString().isEmpty() || bi.bd03dob3.getText().toString().isEmpty()
-                    || bi.bd03dob1.getText().toString().isEmpty()
-                    || bi.bd03dob2.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bd03), Toast.LENGTH_SHORT).show();
-                bi.bd03dob4.setError("This data is Required!");
-                Log.i(TAG, "bd03dob4: This data is Required!");
-                return false;
-            } else {
-                bi.bd03dob4.setError(null);
-            }
-        }
-
-        if (Integer.valueOf(bi.bd03s.getText().toString()) == 5) {
-            if (bi.bd03dob5.getText().toString().isEmpty() || bi.bd03dob4.getText().toString().isEmpty()
-                    || bi.bd03dob3.getText().toString().isEmpty()
-                    || bi.bd03dob1.getText().toString().isEmpty()
-                    || bi.bd03dob2.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bd03), Toast.LENGTH_SHORT).show();
-                bi.bd03dob5.setError("This data is Required!");
-                Log.i(TAG, "bd03dob5: This data is Required!");
-                return false;
-            } else {
-                bi.bd03dob5.setError(null);
-            }
-
-        }
-
-
         return true;
 
     }
@@ -711,6 +711,12 @@ public class SectionFActivity extends AppCompatActivity {
 
         JSONObject sn = new JSONObject();
 
+
+        sn.put("bd03s", bi.bd06s.getText().toString());
+        sn.put("bd03dob1", bi.bd06dob1.getText().toString());
+        sn.put("bd03dob2", bi.bd06dob2.getText().toString());
+        sn.put("bd03dod1", bi.bd06dod1.getText().toString());
+        sn.put("bd03dod2", bi.bd06dod2.getText().toString());
 
         sn.put("bd01s", bi.bd04s.getText().toString());
         sn.put("bd01dob1", bi.bd04dob1.getText().toString());
@@ -724,11 +730,6 @@ public class SectionFActivity extends AppCompatActivity {
         sn.put("bd02dod1", bi.bd05dod1.getText().toString());
         sn.put("bd02dod2", bi.bd05dod2.getText().toString());
 
-        sn.put("bd03s", bi.bd06s.getText().toString());
-        sn.put("bd03dob1", bi.bd06dob1.getText().toString());
-        sn.put("bd03dob2", bi.bd06dob2.getText().toString());
-        sn.put("bd03dod1", bi.bd06dod1.getText().toString());
-        sn.put("bd03dod2", bi.bd06dod2.getText().toString());
 
         sn.put("bd04s", bi.bd03s.getText().toString());
         sn.put("bd04dob1", bi.bd03dob1.getText().toString());
@@ -738,7 +739,7 @@ public class SectionFActivity extends AppCompatActivity {
         sn.put("bd04dob5", bi.bd03dob5.getText().toString());
 
 
-        //MainApp.fc.sets(String.valueOf(sn));
+        MainApp.fc.setsF(String.valueOf(sn));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }
