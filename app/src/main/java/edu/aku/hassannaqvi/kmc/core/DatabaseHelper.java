@@ -22,14 +22,14 @@ import edu.aku.hassannaqvi.kmc.contracts.DistrictsContract;
 import edu.aku.hassannaqvi.kmc.contracts.DistrictsContract.singleDistrict;
 import edu.aku.hassannaqvi.kmc.contracts.FormsContract;
 import edu.aku.hassannaqvi.kmc.contracts.FormsContract.FormsTable;
+import edu.aku.hassannaqvi.kmc.contracts.MwraContract;
+import edu.aku.hassannaqvi.kmc.contracts.MwraContract.MwraEntry;
 import edu.aku.hassannaqvi.kmc.contracts.UCsContract;
 import edu.aku.hassannaqvi.kmc.contracts.UCsContract.UCsTable;
 import edu.aku.hassannaqvi.kmc.contracts.UsersContract;
 import edu.aku.hassannaqvi.kmc.contracts.UsersContract.UsersTable;
 import edu.aku.hassannaqvi.kmc.contracts.VillagesContract;
 import edu.aku.hassannaqvi.kmc.contracts.VillagesContract.singleVillage;
-import edu.aku.hassannaqvi.kmc.contracts.MwraContract;
-import edu.aku.hassannaqvi.kmc.contracts.MwraContract.MwraEntry;
 
 /**
  * Created by hassan.naqvi on 11/30/2016.
@@ -72,13 +72,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             FormsTable.COLUMN_SD3 + " TEXT," +
             FormsTable.COLUMN_SE + " TEXT," +
             FormsTable.COLUMN_SF + " TEXT," +
-            FormsTable.COLUMN_COUNT + " TEXT," +
             FormsTable.COLUMN_ENDINGDATETIME + " TEXT," +
             FormsTable.COLUMN_GPSLAT + " TEXT," +
             FormsTable.COLUMN_GPSLNG + " TEXT," +
             FormsTable.COLUMN_GPSDT + " TEXT," +
             FormsTable.COLUMN_GPSACC + " TEXT," +
-            FormsTable.COLUMN_GPSELEV + " TEXT," +
             FormsTable.COLUMN_DEVICEID + " TEXT," +
             FormsTable.COLUMN_DEVICETAGID + " TEXT," +
             FormsTable.COLUMN_SYNCED + " TEXT," +
@@ -677,7 +675,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_GPSLNG, fc.getGpsLng());
         values.put(FormsTable.COLUMN_GPSDT, fc.getGpsDT());
         values.put(FormsTable.COLUMN_GPSACC, fc.getGpsAcc());
-        values.put(FormsTable.COLUMN_GPSELEV, fc.getGpsElev());
         values.put(FormsTable.COLUMN_DEVICEID, fc.getDeviceID());
         values.put(FormsTable.COLUMN_DEVICETAGID, fc.getDevicetagID());
         values.put(FormsTable.COLUMN_SYNCED, fc.getSynced());
@@ -761,13 +758,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_SD3,
                 FormsTable.COLUMN_SE,
                 FormsTable.COLUMN_SF,
-                FormsTable.COLUMN_COUNT,
                 FormsTable.COLUMN_ENDINGDATETIME,
                 FormsTable.COLUMN_GPSLAT,
                 FormsTable.COLUMN_GPSLNG,
                 FormsTable.COLUMN_GPSDT,
                 FormsTable.COLUMN_GPSACC,
-                FormsTable.COLUMN_GPSELEV,
                 FormsTable.COLUMN_DEVICEID,
                 FormsTable.COLUMN_DEVICETAGID,
                 FormsTable.COLUMN_SYNCED,

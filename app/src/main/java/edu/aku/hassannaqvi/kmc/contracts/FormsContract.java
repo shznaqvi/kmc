@@ -37,13 +37,11 @@ public class FormsContract {
     private String sD3 = "";
     private String sE = "";
     private String sF = "";
-    private String count = "";
     private String endingdatetime = "";
     private String gpsLat = "";
     private String gpsLng = "";
     private String gpsDT = "";
     private String gpsAcc = "";
-    private String gpsElev = "";
     private String deviceID = "";
     private String devicetagID = "";
     private String synced = "";
@@ -92,13 +90,11 @@ public class FormsContract {
         this.sD3 = jsonObject.getString(FormsTable.COLUMN_SD3);
         this.sE = jsonObject.getString(FormsTable.COLUMN_SE);
         this.sF = jsonObject.getString(FormsTable.COLUMN_SF);
-        this.count = jsonObject.getString(FormsTable.COLUMN_COUNT);
         this.endingdatetime= jsonObject.getString(FormsTable.COLUMN_ENDINGDATETIME);
         this.gpsLat = jsonObject.getString(FormsTable.COLUMN_GPSLAT);
         this.gpsLng = jsonObject.getString(FormsTable.COLUMN_GPSLNG);
         this.gpsDT = jsonObject.getString(FormsTable.COLUMN_GPSDT);
         this.gpsAcc = jsonObject.getString(FormsTable.COLUMN_GPSACC);
-        this.gpsElev = jsonObject.getString(FormsTable.COLUMN_GPSELEV);
         this.deviceID = jsonObject.getString(FormsTable.COLUMN_DEVICEID);
         this.devicetagID = jsonObject.getString(FormsTable.COLUMN_DEVICETAGID);
         this.synced = jsonObject.getString(FormsTable.COLUMN_SYNCED);
@@ -139,13 +135,11 @@ public class FormsContract {
         this.sD3 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SD3));
         this.sE = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SE));
         this.sF = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SF));
-        this.count = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_COUNT));
         this.endingdatetime = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ENDINGDATETIME));
         this.gpsLat = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_GPSLAT));
         this.gpsLng = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_GPSLNG));
         this.gpsDT = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_GPSDT));
         this.gpsAcc = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_GPSACC));
-        this.gpsElev = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_GPSELEV));
         this.deviceID = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_DEVICEID));
         this.devicetagID = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_DEVICETAGID));
         this.synced = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SYNCED));
@@ -185,9 +179,7 @@ public class FormsContract {
         json.put(FormsTable.COLUMN_SD3, this.sD3 == null ? JSONObject.NULL : this.sD3);
         json.put(FormsTable.COLUMN_SE, this.sE == null ? JSONObject.NULL : this.sE);
         json.put(FormsTable.COLUMN_SF, this.sF == null ? JSONObject.NULL : this.sF);
-        json.put(FormsTable.COLUMN_COUNT, this.count == null ? JSONObject.NULL : this.count);
         json.put(FormsTable.COLUMN_ENDINGDATETIME, this.endingdatetime == null ? JSONObject.NULL : this.endingdatetime);
-        json.put(FormsTable.COLUMN_GPSELEV, this.gpsElev == null ? JSONObject.NULL : this.gpsElev);
 
 
         if (!this.sInfo.equals("")) {
@@ -219,12 +211,6 @@ public class FormsContract {
 
         if (!this.sC3.equals("")) {
             json.put(FormsTable.COLUMN_SC3, this.sC3.equals("") ? JSONObject.NULL : new JSONObject(this.sC3));
-        }
-
-
-        if (!this.count.equals("")) {
-
-            json.put(FormsTable.COLUMN_COUNT, this.count.equals("") ? JSONObject.NULL : new JSONObject(this.count));
         }
 
 
@@ -264,7 +250,6 @@ public class FormsContract {
         json.put(FormsTable.COLUMN_GPSLNG, this.gpsLng == null ? JSONObject.NULL : this.gpsLng);
         json.put(FormsTable.COLUMN_GPSDT, this.gpsDT == null ? JSONObject.NULL : this.gpsDT);
         json.put(FormsTable.COLUMN_GPSACC, this.gpsAcc == null ? JSONObject.NULL : this.gpsAcc);
-        json.put(FormsTable.COLUMN_GPSELEV, this.gpsElev == null ? JSONObject.NULL : this.gpsElev);
         json.put(FormsTable.COLUMN_DEVICEID, this.deviceID == null ? JSONObject.NULL : this.deviceID);
         json.put(FormsTable.COLUMN_DEVICETAGID, this.devicetagID == null ? JSONObject.NULL : this.devicetagID);
         json.put(FormsTable.COLUMN_SYNCED, this.synced == null ? JSONObject.NULL : this.synced);
@@ -283,13 +268,7 @@ public class FormsContract {
         this.endingdatetime = endingdatetime;
     }
 
-    public String getCount() {
-        return count;
-    }
 
-    public void setCount(String count) {
-        this.count = count;
-    }
 
     public String getProjectName() {
         return projectName;
@@ -473,13 +452,6 @@ public class FormsContract {
         this.sF = sF;
     }
 
-    public String getGpsElev() {
-        return gpsElev;
-    }
-
-    public void setGpsElev(String gpsElev) {
-        this.gpsElev = gpsElev;
-    }
 
     public String getGpsLat() {
         return gpsLat;
@@ -580,13 +552,11 @@ public class FormsContract {
         public static final String COLUMN_SD3 = "sd3";
         public static final String COLUMN_SE = "se";
         public static final String COLUMN_SF = "sf";
-        public static final String COLUMN_COUNT = "count";
         public static final String COLUMN_ENDINGDATETIME = "endingdatetime";
         public static final String COLUMN_GPSLAT = "gpslat";
         public static final String COLUMN_GPSLNG = "gpslng";
         public static final String COLUMN_GPSDT = "gpsdt";
         public static final String COLUMN_GPSACC = "gpsacc";
-        public static final String COLUMN_GPSELEV = "gpselev";
         public static final String COLUMN_DEVICEID = "deviceid";
         public static final String COLUMN_DEVICETAGID = "devicetagid";
         public static final String COLUMN_SYNCED = "synced";
