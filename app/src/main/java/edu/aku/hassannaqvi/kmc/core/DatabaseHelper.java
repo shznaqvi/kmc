@@ -59,7 +59,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             FormsTable.COLUMN_ISTATUS88X + " TEXT," +
             FormsTable.COLUMN_SINFO + " TEXT," +
             FormsTable.COLUMN_SA1 + " TEXT," +
-            FormsTable.COLUMN_SB1 + " TEXT," +
             FormsTable.COLUMN_SB2 + " TEXT," +
             FormsTable.COLUMN_SC1 + " TEXT," +
             FormsTable.COLUMN_SC2 + " TEXT," +
@@ -659,7 +658,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_ISTATUS88X, fc.getIstatus88x());
         values.put(FormsTable.COLUMN_SINFO, fc.getsInfo());
         values.put(FormsTable.COLUMN_SA1, fc.getsA1());
-        values.put(FormsTable.COLUMN_SB1, fc.getsB1());
         values.put(FormsTable.COLUMN_SB2, fc.getsB2());
         values.put(FormsTable.COLUMN_SC1, fc.getsC1());
         values.put(FormsTable.COLUMN_SC2, fc.getsC2());
@@ -738,9 +736,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
+                FormsTable._ID,
                 FormsTable.COLUMN_PROJECTNAME,
                 FormsTable.COLUMN_SURVEYTYPE,
-                FormsTable.COLUMN__ID,
                 FormsTable.COLUMN__UID,
                 FormsTable.COLUMN_FORMDATE,
                 FormsTable.COLUMN_USER,
@@ -748,7 +746,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_ISTATUS88X,
                 FormsTable.COLUMN_SINFO,
                 FormsTable.COLUMN_SA1,
-                FormsTable.COLUMN_SB1,
                 FormsTable.COLUMN_SB2,
                 FormsTable.COLUMN_SC1,
                 FormsTable.COLUMN_SC2,
@@ -924,7 +921,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return count;
     }
 
-    // mwra - uPDATE
+    /*// mwra - uPDATE
     public int updateSB1() {
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -941,7 +938,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selection,
                 selectionArgs);
         return count;
-    }
+    }*/
 
 
     // mwra - uPDATE

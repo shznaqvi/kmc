@@ -170,7 +170,6 @@ public class SectionA1Activity extends AppCompatActivity {
                 : bi.ka103i.isChecked() ? "9"
                 : bi.ka103j.isChecked() ? "10"
                 : bi.ka103k.isChecked() ? "11"
-                : bi.ka103l.isChecked() ? "12"
                 : bi.ka10396.isChecked() ? "96"
                 : "0");
 
@@ -788,6 +787,12 @@ public class SectionA1Activity extends AppCompatActivity {
             return false;
         }
 
+
+        if (!validatorClass.EmptyTextBox(this, bi.ka12496, getString(R.string.other))) {
+            return false;
+        }
+
+
         return true;
 
     }
@@ -828,7 +833,7 @@ public class SectionA1Activity extends AppCompatActivity {
 
                 finish();
 
-                startActivity(new Intent(this, SectionB1Activity.class));
+                startActivity(new Intent(this, SectionB2Activity.class));
                 //startActivity(new Intent(this, MainActivity.class));
 
             } else {

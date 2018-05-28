@@ -339,14 +339,6 @@
                     android:text="@string/ka103k" />
 
                 <RadioButton
-                    android:id="@+id/ka103l"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:layout_weight="1"
-                    android:text="@string/ka103l" />
-
-                <RadioButton
                     android:id="@+id/ka10396"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -1765,20 +1757,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
-                    android:digits="0123456789"
                     android:hint="@string/ka123acr"
-                    android:inputType="number"
-                    android:maxLength="3" />
+                    android:inputType="numberDecimal"
+                    android:maxLength="4" />
 
                 <EditText
                     android:id="@+id/ka123k"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
-                    android:digits="0123456789"
                     android:hint="@string/ka123can"
-                    android:inputType="number"
-                    android:maxLength="3" />
+                    android:inputType="numberDecimal"
+                    android:maxLength="4" />
 
                 <CheckBox
                     android:id="@+id/ka12398"

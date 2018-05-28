@@ -34,7 +34,7 @@ public class SectionB1Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+       /* super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_b1);
         bi.setCallback(this);
         bi.kb204.setManager(getSupportFragmentManager());
@@ -58,12 +58,12 @@ public class SectionB1Activity extends AppCompatActivity {
         bi.kb205rec.setDate(Calendar.getInstance());
         bi.kb205edd.setDate(Calendar.getInstance());
 
-        setupView();
+        setupView();*/
     }
 
-    private void setupView() {
+    /*private void setupView() {
 
-        /*bi.kb101.addTextChangedListener(new TextWatcher() {
+        *//*bi.kb101.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -71,7 +71,7 @@ public class SectionB1Activity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-  *//*              if(Integer.valueOf(bi.kb102.getText().toString()) == 0){
+  *//**//*              if(Integer.valueOf(bi.kb102.getText().toString()) == 0){
                     bi.fldGrpkb101.setVisibility(View.GONE);
 //                    clearing edit texts
                     bi.kb202w.setText("0");
@@ -83,14 +83,14 @@ public class SectionB1Activity extends AppCompatActivity {
                 else{
                     bi.fldGrpkb101.setVisibility(View.VISIBLE);
                 }
-*//*
+*//**//*
             }
 
             @Override
             public void afterTextChanged(Editable s) {
 
             }
-        });*/
+        });*//*
 
 
         bi.kb201.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -143,12 +143,12 @@ public class SectionB1Activity extends AppCompatActivity {
         });
 
 
-    }
+    }*/
 
 
     private void SaveDraft() throws JSONException {
 
-        JSONObject sB1 = new JSONObject();
+        /*JSONObject sB1 = new JSONObject();
 
         sB1.put("kb101", bi.kb101.getText().toString());
 
@@ -173,14 +173,14 @@ public class SectionB1Activity extends AppCompatActivity {
         sB1.put("kb205rec", bi.kb205rec.getText().toString());
         sB1.put("kb205edd", bi.kb205edd.getText().toString());
 
-        MainApp.fc.setsB1(String.valueOf(sB1));
+        MainApp.fc.setsB1(String.valueOf(sB1));*/
 
     }
 
 
     private boolean formValidation() {
 
-        if (!validatorClass.EmptyTextBox(this, bi.kb101, getString(R.string.kb101))) {
+        /*if (!validatorClass.EmptyTextBox(this, bi.kb101, getString(R.string.kb101))) {
             return false;
         }
 
@@ -251,7 +251,7 @@ public class SectionB1Activity extends AppCompatActivity {
                     return false;
                 }
             }
-        }
+        }*/
 
         return true;
     }
@@ -259,7 +259,7 @@ public class SectionB1Activity extends AppCompatActivity {
 
     public void BtnEnd() {
 
-        Toast.makeText(this, "Processing End Section", Toast.LENGTH_SHORT).show();
+        /*Toast.makeText(this, "Processing End Section", Toast.LENGTH_SHORT).show();
         //if (formValidation()) {
         try {
             SaveDraft();
@@ -275,13 +275,13 @@ public class SectionB1Activity extends AppCompatActivity {
 
         } else {
             Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
-        }
+        }*/
         //}
     }
 
     public void BtnContinue() {
 
-        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
+        /*Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
             try {
                 SaveDraft();
@@ -299,13 +299,13 @@ public class SectionB1Activity extends AppCompatActivity {
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        }
+        }*/
     }
 
 
     private boolean UpdateDB() {
 
-        //Long rowId;
+       /* //Long rowId;
         DatabaseHelper db = new DatabaseHelper(this);
 
         int updcount = db.updateSB1();
@@ -316,7 +316,9 @@ public class SectionB1Activity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }
+        }*/
+
+       return true;
     }
 
     @Override

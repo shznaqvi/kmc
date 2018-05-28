@@ -281,8 +281,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:paddingTop="32dp"
-                    android:visibility="gone">
+                    android:paddingTop="32dp">
 
                     <Button
                         android:id="@+id/btnNext"

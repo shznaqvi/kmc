@@ -41,7 +41,7 @@ public class SectionD3Activity extends AppCompatActivity {
 
     private void setupViews() {
 
-        bi.kd30298.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        /*bi.kd30298.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
@@ -62,6 +62,33 @@ public class SectionD3Activity extends AppCompatActivity {
 
                     bi.kd303.clearCheck();
                     bi.kd30396x.setText(null);
+
+                    bi.fldGrpkd301.setVisibility(View.GONE);
+                } else {
+                    bi.fldGrpkd301.setVisibility(View.VISIBLE);
+                }
+            }
+        });*/
+
+
+        bi.kd301.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (bi.kd301b.isChecked()) {
+
+                    bi.kd302a.setChecked(false);
+                    bi.kd302b.setChecked(false);
+                    bi.kd302c.setChecked(false);
+                    bi.kd302d.setChecked(false);
+                    bi.kd302e.setChecked(false);
+                    bi.kd302f.setChecked(false);
+                    bi.kd302g.setChecked(false);
+                    bi.kd302h.setChecked(false);
+                    bi.kd302i.setChecked(false);
+                    bi.kd302j.setChecked(false);
+                    bi.kd30298.setChecked(false);
+                    bi.kd30296.setChecked(false);
+                    bi.kd30296x.setText(null);
 
                     bi.fldGrpkd301.setVisibility(View.GONE);
                 } else {
@@ -111,6 +138,9 @@ public class SectionD3Activity extends AppCompatActivity {
                     bi.kd302i.setEnabled(false);
                     bi.kd302j.setEnabled(false);
                     bi.kd30296.setEnabled(false);
+
+                    bi.kd30296x.setText(null);
+                    bi.kd30296x.setVisibility(View.GONE);
                 } else {
                     bi.kd302a.setEnabled(true);
                     bi.kd302b.setEnabled(true);
@@ -152,7 +182,7 @@ public class SectionD3Activity extends AppCompatActivity {
                 : bi.kd30198.isChecked() ? "98"
                 : "0");
 
-        sD3.put("kd301day", bi.kd301wk.getText().toString());
+        sD3.put("kd301wk", bi.kd301wk.getText().toString());
         sD3.put("kd301mon", bi.kd301mon.getText().toString());
         sD3.put("kd301yr", bi.kd301yr.getText().toString());
 

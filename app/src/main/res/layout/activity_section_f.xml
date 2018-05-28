@@ -275,8 +275,6 @@
             </LinearLayout>
 
 
-
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -505,7 +503,7 @@
                         android:background="@color/colorAccent"></View>
 
                     <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                        android:id="@+id/bd06dob2"
+                        android:id="@+id/bd06dod1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="1dp"
@@ -513,7 +511,6 @@
                         android:focusable="true"
                         android:hint="@string/bdd"
                         android:textColor="@android:color/black"
-                        android:visibility="visible"
                         app:dateFormat="dd-MM-yyyy" />
 
                 </LinearLayout>
@@ -525,7 +522,7 @@
                     android:orientation="horizontal">
 
                     <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                        android:id="@+id/bd06dod1"
+                        android:id="@+id/bd06dob2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="1dp"
@@ -533,8 +530,8 @@
                         android:focusable="true"
                         android:hint="@string/bdc"
                         android:textColor="@android:color/black"
+                        android:visibility="visible"
                         app:dateFormat="dd-MM-yyyy" />
-
 
                     <View
                         android:layout_width="3dp"

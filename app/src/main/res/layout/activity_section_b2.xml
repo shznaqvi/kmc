@@ -344,16 +344,6 @@
                 android:orientation="vertical"
                 android:visibility="gone">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="2dp"
-                    android:background="@color/colorPrimaryDark"
-                    android:gravity="center"
-                    android:text="@string/kb2heading"
-                    android:textSize="40sp" />
-
                 <!--kb206-->
                 <TextView
                     android:layout_width="match_parent"

@@ -92,7 +92,8 @@ public class SectionInfoKmcActivity extends Activity {
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 clearFields();
                 bi.fldGrpcra04.setVisibility(View.GONE);
-                bi.fldGrpbtn.setVisibility(View.GONE);
+                bi.btnNext.setVisibility(View.GONE);
+                bi.btnEnd.setVisibility(View.GONE);
             }
 
             @Override
@@ -590,17 +591,20 @@ public class SectionInfoKmcActivity extends Activity {
                 if (dc.size() <= 0) {
                     clearFields();
                     bi.fldGrpcra04.setVisibility(View.GONE);
-                    bi.fldGrpbtn.setVisibility(View.GONE);
+                    bi.btnNext.setVisibility(View.GONE);
+                    bi.btnEnd.setVisibility(View.GONE);
                     Toast.makeText(this, "Household does not exist ", Toast.LENGTH_LONG).show();
                 } else {
                     Toast.makeText(this, "Household number exists", Toast.LENGTH_LONG).show();
                     bi.fldGrpcra04.setVisibility(View.VISIBLE);
-                    bi.fldGrpbtn.setVisibility(View.VISIBLE);
+                    bi.btnNext.setVisibility(View.VISIBLE);
+                    bi.btnEnd.setVisibility(View.VISIBLE);
                 }
             } else {
                 Toast.makeText(this, "Household number required", Toast.LENGTH_LONG).show();
                 clearFields();
-                bi.fldGrpbtn.setVisibility(View.GONE);
+                bi.btnNext.setVisibility(View.GONE);
+                bi.btnEnd.setVisibility(View.GONE);
                 bi.cra04.requestFocus();
             }
         }

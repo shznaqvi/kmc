@@ -81,6 +81,27 @@ public class SectionEActivity extends AppCompatActivity {
             }
         });
 
+        bi.ke406.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (bi.ke406b.isChecked()) {
+
+                    bi.ke407a.setChecked(false);
+                    bi.ke407b.setChecked(false);
+                    bi.ke407c.setChecked(false);
+                    bi.ke40796.setChecked(false);
+                    bi.ke40796x.setText(null);
+
+                    bi.ke408.clearCheck();
+                    bi.ke40896x.setText(null);
+
+                    bi.fldGrpke406.setVisibility(View.GONE);
+                } else {
+                    bi.fldGrpke406.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
 
         bi.ke409j.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -136,6 +157,7 @@ public class SectionEActivity extends AppCompatActivity {
                     bi.ke412e.setChecked(false);
                     bi.ke412f.setChecked(false);
                     bi.ke412g.setChecked(false);
+                    bi.ke412h.setChecked(false);
                     bi.ke412i.setChecked(false);
                     bi.ke412j.setChecked(false);
                     bi.ke412k.setChecked(false);
@@ -147,6 +169,7 @@ public class SectionEActivity extends AppCompatActivity {
                     bi.ke412e.setEnabled(false);
                     bi.ke412f.setEnabled(false);
                     bi.ke412g.setEnabled(false);
+                    bi.ke412h.setEnabled(false);
                     bi.ke412i.setEnabled(false);
                     bi.ke412j.setEnabled(false);
                     bi.ke412k.setEnabled(false);
@@ -161,6 +184,7 @@ public class SectionEActivity extends AppCompatActivity {
                     bi.ke412e.setEnabled(true);
                     bi.ke412f.setEnabled(true);
                     bi.ke412g.setEnabled(true);
+                    bi.ke412h.setEnabled(true);
                     bi.ke412i.setEnabled(true);
                     bi.ke412j.setEnabled(true);
                     bi.ke412k.setEnabled(true);
@@ -208,6 +232,7 @@ public class SectionEActivity extends AppCompatActivity {
                     bi.ke418d.setChecked(false);
                     bi.ke418e.setChecked(false);
                     bi.ke418f.setChecked(false);
+                    bi.ke41896.setChecked(false);
 
                     bi.ke418a.setEnabled(false);
                     bi.ke418b.setEnabled(false);
@@ -215,8 +240,8 @@ public class SectionEActivity extends AppCompatActivity {
                     bi.ke418d.setEnabled(false);
                     bi.ke418e.setEnabled(false);
                     bi.ke418f.setEnabled(false);
+                    bi.ke41896.setEnabled(false);
 
-                    bi.ke41896.setChecked(false);
                     bi.ke41896x.setText(null);
                 } else {
                     bi.ke418a.setEnabled(true);
@@ -225,6 +250,7 @@ public class SectionEActivity extends AppCompatActivity {
                     bi.ke418d.setEnabled(true);
                     bi.ke418e.setEnabled(true);
                     bi.ke418f.setEnabled(true);
+                    bi.ke41896.setEnabled(true);
                 }
             }
         });
@@ -387,7 +413,9 @@ public class SectionEActivity extends AppCompatActivity {
                     bi.ke420d.setChecked(false);
                     bi.ke420e.setChecked(false);
                     bi.ke42096.setChecked(false);
-                    bi.ke42096.setVisibility(View.GONE);
+
+                    bi.ke42096x.setText(null);
+                    bi.ke42096x.setVisibility(View.GONE);
 
                     bi.fldGrpke419.setVisibility(View.GONE);
                 } else {
@@ -463,7 +491,7 @@ public class SectionEActivity extends AppCompatActivity {
         }
 
 
-        if (!validatorClass.RangeTextBox(this, bi.ke403, 1, 18, getString(R.string.ke403hr), "Hours ")) {
+        if (!validatorClass.RangeTextBox(this, bi.ke403, 0, 18, getString(R.string.ke403hr), "Hours ")) {
             return false;
         }
 
@@ -488,28 +516,31 @@ public class SectionEActivity extends AppCompatActivity {
         }
 
 
-        if (!validatorClass.EmptyCheckBox(this, bi.ke407, bi.ke407a, getString(R.string.ke407))) {
-            return false;
-        }
+        if (bi.ke406a.isChecked()) {
 
-
-        if (bi.ke40796.isChecked()) {
-
-            if (!validatorClass.EmptyTextBox(this, bi.ke40796x, getString(R.string.other))) {
+            if (!validatorClass.EmptyCheckBox(this, bi.ke407, bi.ke407a, getString(R.string.ke407))) {
                 return false;
             }
-        }
 
 
-        if (!validatorClass.EmptyRadioButton(this, bi.ke408, bi.ke408a, getString(R.string.ke408))) {
-            return false;
-        }
+            if (bi.ke40796.isChecked()) {
+
+                if (!validatorClass.EmptyTextBox(this, bi.ke40796x, getString(R.string.other))) {
+                    return false;
+                }
+            }
 
 
-        if (bi.ke40896.isChecked()) {
-
-            if (!validatorClass.EmptyTextBox(this, bi.ke40896x, getString(R.string.other))) {
+            if (!validatorClass.EmptyRadioButton(this, bi.ke408, bi.ke408a, getString(R.string.ke408))) {
                 return false;
+            }
+
+
+            if (bi.ke40896.isChecked()) {
+
+                if (!validatorClass.EmptyTextBox(this, bi.ke40896x, getString(R.string.other))) {
+                    return false;
+                }
             }
         }
 
@@ -730,6 +761,8 @@ public class SectionEActivity extends AppCompatActivity {
                 : bi.ke408c.isChecked() ? "3"
                 : bi.ke40896.isChecked() ? "96"
                 : "0");
+
+        sE.put("ke40896x", bi.ke40896x.getText().toString());
 
 
         sE.put("ke409a", bi.ke409a.isChecked() ? "1" : "0");
