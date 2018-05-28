@@ -113,6 +113,8 @@ public class SectionD1Activity extends AppCompatActivity {
         if (!validatorClass.EmptyTextBox(context, bi.kd001m, getString(R.string.months))) {
             return false;
         }
+
+
         if (bi.kd001d.getText().equals("0") && bi.kd001m.getText().equals("0")) {
             bi.kd001d.requestFocus();
             bi.kd001d.setError("Days and month cannot be 0 at a time");
@@ -139,9 +141,12 @@ public class SectionD1Activity extends AppCompatActivity {
             return false;
         }
 
-        if (!validatorClass.RangeTextBox(context, bi.kd102ax, 1, 18, getString(R.string.number), "Number ")) {
-            return false;
+        if (bi.kd102a.isChecked()) {
+            if (!validatorClass.RangeTextBox(context, bi.kd102ax, 1, 18, getString(R.string.number), "Number ")) {
+                return false;
+            }
         }
+
 
         if (!validatorClass.EmptyRadioButton(context, bi.kd103, bi.kd10396, bi.kd10396x, getString(R.string.kd103))) {
             return false;

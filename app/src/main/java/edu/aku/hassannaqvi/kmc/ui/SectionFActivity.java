@@ -682,7 +682,7 @@ public class SectionFActivity extends AppCompatActivity {
         }
 
         if (Integer.valueOf(bi.bd06s.getText().toString()) == 2) {
-            if (bi.bd06dob2.getText().toString().isEmpty() || bi.bd06dob2.getText().toString().isEmpty()) {
+            if (bi.bd06dob2.getText().toString().isEmpty() || bi.bd06dob1.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bd06), Toast.LENGTH_SHORT).show();
                 bi.bd06dob2.setError("This data is Required!");
                 Log.i(TAG, "bd06dob2: This data is Required!");
@@ -691,7 +691,7 @@ public class SectionFActivity extends AppCompatActivity {
                 bi.bd06dob2.setError(null);
             }
 
-            if (bi.bd06dod2.getText().toString().isEmpty() || bi.bd06dod2.getText().toString().isEmpty()) {
+            if (bi.bd06dod2.getText().toString().isEmpty() || bi.bd06dod1.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bd06), Toast.LENGTH_SHORT).show();
                 bi.bd06dod2.setError("This data is Required!");
                 Log.i(TAG, "bd06dod2: This data is Required!");

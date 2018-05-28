@@ -23,7 +23,7 @@ public class FormsContract {
     private String istatus88x = ""; // Interview Status
     private String sInfo = "";    // Info Section
     private String sA1 = "";
-    private String sB1 = "";
+    //private String sB1 = "";
     private String sB2 = "";
 
     private String sC2 = "";
@@ -72,7 +72,7 @@ public class FormsContract {
         this.istatus88x = jsonObject.getString(FormsTable.COLUMN_ISTATUS88X);
         this.sInfo = jsonObject.getString(FormsTable.COLUMN_SINFO);
         this.sA1 = jsonObject.getString(FormsTable.COLUMN_SA1);
-        this.sB1 = jsonObject.getString(FormsTable.COLUMN_SB1);
+        //this.sB1 = jsonObject.getString(FormsTable.COLUMN_SB1);
         this.sB2 = jsonObject.getString(FormsTable.COLUMN_SB2);
 
         this.sC2 = jsonObject.getString(FormsTable.COLUMN_SC2);
@@ -117,7 +117,7 @@ public class FormsContract {
         this.istatus88x = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ISTATUS88X));
         this.sInfo = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SINFO));
         this.sA1 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SA1));
-        this.sB1 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SB1));
+        //this.sB1 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SB1));
         this.sB2 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SB2));
 
         this.sC2 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SC2));
@@ -164,21 +164,6 @@ public class FormsContract {
         json.put(FormsTable.COLUMN_USER, this.user == null ? JSONObject.NULL : this.user);
         json.put(FormsTable.COLUMN_ISTATUS, this.istatus == null ? JSONObject.NULL : this.istatus);
         json.put(FormsTable.COLUMN_ISTATUS88X, this.istatus88x == null ? JSONObject.NULL : this.istatus88x);
-        json.put(FormsTable.COLUMN_SINFO, this.sInfo == null ? JSONObject.NULL : this.sInfo);
-        json.put(FormsTable.COLUMN_SA1, this.sA1 == null ? JSONObject.NULL : this.sA1);
-        json.put(FormsTable.COLUMN_SB1, this.sB1 == null ? JSONObject.NULL : this.sB1);
-        json.put(FormsTable.COLUMN_SB2, this.sB2 == null ? JSONObject.NULL : this.sB2);
-        json.put(FormsTable.COLUMN_SC1, this.sC1 == null ? JSONObject.NULL : this.sC1);
-        json.put(FormsTable.COLUMN_SC2, this.sC2 == null ? JSONObject.NULL : this.sC2);
-        json.put(FormsTable.COLUMN_SC3, this.sC3 == null ? JSONObject.NULL : this.sC3);
-        json.put(FormsTable.COLUMN_SC4, this.sC4 == null ? JSONObject.NULL : this.sC4);
-        json.put(FormsTable.COLUMN_SC5, this.sC5 == null ? JSONObject.NULL : this.sC5);
-        json.put(FormsTable.COLUMN_SC6, this.sC6 == null ? JSONObject.NULL : this.sC6);
-        json.put(FormsTable.COLUMN_SD1, this.sD1 == null ? JSONObject.NULL : this.sD1);
-        json.put(FormsTable.COLUMN_SD2, this.sD2 == null ? JSONObject.NULL : this.sD2);
-        json.put(FormsTable.COLUMN_SD3, this.sD3 == null ? JSONObject.NULL : this.sD3);
-        json.put(FormsTable.COLUMN_SE, this.sE == null ? JSONObject.NULL : this.sE);
-        json.put(FormsTable.COLUMN_SF, this.sF == null ? JSONObject.NULL : this.sF);
         json.put(FormsTable.COLUMN_ENDINGDATETIME, this.endingdatetime == null ? JSONObject.NULL : this.endingdatetime);
 
 
@@ -193,10 +178,10 @@ public class FormsContract {
         }
 
 
-        if (!this.sB1.equals("")) {
+        /*if (!this.sB1.equals("")) {
 
             json.put(FormsTable.COLUMN_SB1, this.sB1.equals("") ? JSONObject.NULL : new JSONObject(this.sB1));
-        }
+        }*/
 
 
         if (!this.sB2.equals("")) {
@@ -243,6 +228,12 @@ public class FormsContract {
         if (!this.sE.equals("")) {
 
             json.put(FormsTable.COLUMN_SE, this.sE.equals("") ? JSONObject.NULL : new JSONObject(this.sE));
+        }
+
+
+        if (!this.sF.equals("")) {
+
+            json.put(FormsTable.COLUMN_SF, this.sF.equals("") ? JSONObject.NULL : new JSONObject(this.sF));
         }
 
 
@@ -355,13 +346,13 @@ public class FormsContract {
     }
 
 
-    public String getsB1() {
+    /*public String getsB1() {
         return sB1;
     }
 
     public void setsB1(String sB1) {
         this.sB1 = sB1;
-    }
+    }*/
 
 
     public String getsC1() {
@@ -539,7 +530,7 @@ public class FormsContract {
         public static final String COLUMN_ISTATUS88X = "istatus88x";
         public static final String COLUMN_SINFO = "sinfo";
         public static final String COLUMN_SA1 = "sa1";
-        public static final String COLUMN_SB1 = "sb1";
+        //public static final String COLUMN_SB1 = "sb1";
         public static final String COLUMN_SB2 = "sb2";
         public static final String COLUMN_SC1 = "sc1";
         public static final String COLUMN_SC2 = "sc2";

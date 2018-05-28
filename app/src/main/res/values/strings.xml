@@ -115,14 +115,13 @@
     <string name="ka103b"> کجي يا ناريل جون ڇڙيون </string>
     <string name="ka103c"> ٿنڀا يا کجي ۽ ڪچي مٽي سان ٺهيل ڇت </string>
     <string name="ka103d"> تڏن يا ڪڙا </string>
-    <string name="ka103e"> تڏن يا ڪڙا </string>
-    <string name="ka103f"> ڪاٺ جي تاڪن سان </string>
-    <string name="ka103g"> لوهي چادرون </string>
-    <string name="ka103h"> سيمنٽ جي سرن جا سليب </string>
-    <string name="ka103i"> ڪنڪريٽ يا روڙي جي ڇت </string>
-    <string name="ka103j"> سيرامڪ ٽائيل يا سيمنٽ </string>
-    <string name="ka103k"> ڪنهن ڌاتو جي ڇت </string>
-    <string name="ka103l"> روفنگ شنگلس </string>
+    <string name="ka103e"> ڪاٺ جي تاڪن سان </string>
+    <string name="ka103f"> لوهي چادرون </string>
+    <string name="ka103g"> سيمنٽ جي سرن جا سليب </string>
+    <string name="ka103h"> ڪنڪريٽ يا روڙي جي ڇت </string>
+    <string name="ka103i"> سيرامڪ ٽائيل يا سيمنٽ </string>
+    <string name="ka103j"> ڪنهن ڌاتو جي ڇت </string>
+    <string name="ka103k"> روفنگ شنگلس </string>
     <string name="ka104sub"> ج. فرش جي جوڙ جڪ </string>
     <string name="ka104a"> ڪچي زمين، واري، مٽي </string>
     <string name="ka104b"> ڪاٺ جا تاڪ </string>
@@ -527,7 +526,7 @@
     <string name="kc316"> ناڙي تي ڇا لڳايو هو؟ </string>
     <string name="kc316a"> ڪلورو هيگزڊين </string>
     <string name="kc316b"> ٻيا اينٽي سيپٽڪ (الڪوحل، اسپريٽ ،بلو دوا) </string>
-    <string name="kc316c"> يل/مکڻ </string>
+    <string name="kc316c"> تيل/مکڻ </string>
     <string name="kc316d"> سرمو </string>
     <string name="kc316e"> ڇار </string>
     <string name="kc316f"> ڇيڻو </string>
@@ -655,7 +654,7 @@
     <string name="kc407e"> ٿڃ کي يقيني بڻائي ٿو </string>
     <string name="kc407f"> ماءُ جي رشتي کي مضبوط بڻائي ٿو </string>
     <string name="kc408"> جيڪڏهن مستقبل ۾ توهان جو ٻار گھٽ وزن وارو يا ننڍو پيدا ٿئي ته ڇا توهان ٻار کي ڇاتي سان لڳائيندا؟ </string>
-    <string name="kc5heading"> SECTION C5: SKIN MASSAGE HISTORY: </string>
+    <string name="kc5heading"> چمڙيءَ جي مالش / آڍڻ جي معلومات </string>
     <string name="kc501"> ڇا توهان ٻار کي تيل ماليش ڪندا آهيو؟ </string>
     <string name="kc502">ڪهڙو تيل استعمال ڪندا آهيو؟ </string>
     <string name="kc502a">سرنهن جو تيل </string>
@@ -750,7 +749,7 @@
     <string name="ka109sub04">Missing string</string>
 
 
-    <string name="keheading">Paternal Parenting Information</string>
+    <string name="keheading">والدين جي معلومات</string>
 
     <string name="ke401">توهان جي مڙس جو ڪهڙو پيشو آهي؟</string>
     <string name="ke401a">غير ترتيب يافته مزدور</string>
@@ -917,8 +916,8 @@
     <string name="bda"> Indicators </string>
     <string name="bdb"> Statistics None = 0 </string>
     <string name="bdba"> Number </string>
-    <string name="bdc"> تاریخ پیدائش </string>
-    <string name="bdd"> تاریخ وفات </string>
+    <string name="bdc"> ڄمڻ جي تاريخ </string>
+    <string name="bdd"> وفات جي تاريخ </string>
     <string name="bd03"> زندہ پیدائش </string>
     <string name="bd04"> پيدائش کان 7 ڏينهن تائين </string>
     <string name="bd05"> 8 ڏينهن کان 28 ڏينهن تائين </string>

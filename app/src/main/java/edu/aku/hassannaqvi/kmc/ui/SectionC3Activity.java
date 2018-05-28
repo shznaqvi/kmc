@@ -60,7 +60,9 @@ public class SectionC3Activity extends AppCompatActivity {
                     bi.kc306.clearCheck();
                     bi.kc306kg.setText(null);
                     bi.kc307rec.setText(null);
-                    bi.kc30777.setChecked(false);
+
+                    //bi.kc30777.setChecked(false);
+
                     bi.kc308.clearCheck();
                 }
             }
@@ -74,7 +76,7 @@ public class SectionC3Activity extends AppCompatActivity {
                     bi.kc306kg.setVisibility(View.VISIBLE);
                     bi.fldGrpkc306.setVisibility(View.GONE);
                     bi.kc307rec.setText(null);
-                    bi.kc30777.setChecked(false);
+                    //bi.kc30777.setChecked(false);
 
 //                    bi.fldGrpkc307.setVisibility(View.GONE);
 //                    bi.fldGrpkc308.setVisibility(View.VISIBLE);
@@ -90,7 +92,7 @@ public class SectionC3Activity extends AppCompatActivity {
         });
 
 
-        bi.kc30777.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        /*bi.kc30777.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
@@ -103,7 +105,7 @@ public class SectionC3Activity extends AppCompatActivity {
 //                    bi.fldGrpkc307.setVisibility(View.GONE);
                 }
             }
-        });
+        });*/
 
 
         bi.kc310.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -180,6 +182,27 @@ public class SectionC3Activity extends AppCompatActivity {
                     bi.kc316e.setEnabled(true);
                     bi.kc316f.setEnabled(true);
                     bi.kc31696.setEnabled(true);
+                }
+            }
+        });
+
+
+        bi.kc317.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (bi.kc317b.isChecked()) {
+                    bi.kc317day.setText(null);
+                    bi.kc317hr.setVisibility(View.VISIBLE);
+                    bi.kc317day.setVisibility(View.GONE);
+                } else if (bi.kc317c.isChecked()) {
+                    bi.kc317hr.setText(null);
+                    bi.kc317hr.setVisibility(View.GONE);
+                    bi.kc317day.setVisibility(View.VISIBLE);
+                } else {
+                    bi.kc317hr.setText(null);
+                    bi.kc317day.setText(null);
+                    bi.kc317hr.setVisibility(View.GONE);
+                    bi.kc317day.setVisibility(View.GONE);
                 }
             }
         });
@@ -325,38 +348,22 @@ public class SectionC3Activity extends AppCompatActivity {
                     return false;
                 }
 
+                if (!validatorClass.RangeTextBox(this, bi.kc306kg, 1.20, 7.00, getString(R.string.kc306), "Weight")) {
+                    return false;
+                }
 
-                /*if (bi.kc306kg.getText().toString().indexOf(".") != -1) {
-
-                    int[] count = {0};
-
-                    for (int a = 0; a < bi.kc306kg.getText().length(); a++) {
-                        if (bi.kc306kg.getText().toString().indexOf(".", a) != -1) {
-                            count[a] = bi.kc306kg.getText().toString().indexOf(".");
-                        }
-                    }
-
-                    int b = 0;
-
-                    for (int a = 0; a <= bi.kc306kg.getText().length() - 1; a++) {
-                        if (count[b] < count[b + 1]) {
-                            Toast.makeText(this, "Weight contains only 1 decimal point", Toast.LENGTH_LONG).show();
-                            bi.kc306kg.requestFocus();
-                            b++;
-                            return false;
-                        }
-                    }
-
-                }*/
 
             } else if (!bi.kc306a.isChecked()) {
 
+                if (!validatorClass.EmptyTextBox(this, bi.kc307rec, getString(R.string.kc307))) {
+                    return false;
+                }
 
-                if (!bi.kc30777.isChecked()) {
+                /*if (!bi.kc30777.isChecked()) {
                     if (!validatorClass.EmptyTextBox(this, bi.kc307rec, getString(R.string.kc307))) {
                         return false;
                     }
-                }
+                }*/
 
 
 
@@ -436,6 +443,26 @@ public class SectionC3Activity extends AppCompatActivity {
 
         if (!validatorClass.EmptyRadioButton(this, bi.kc317, bi.kc317a, getString(R.string.kc317))) {
             return false;
+        }
+
+
+        if (bi.kc317b.isChecked()) {
+            if (!validatorClass.EmptyTextBox(this, bi.kc317hr, getString(R.string.hours))) {
+                return false;
+            }
+
+            if (!validatorClass.RangeTextBox(this, bi.kc317hr, 1, 23, getString(R.string.hours), "Hours")) {
+                return false;
+            }
+
+        } else if (bi.kc317c.isChecked()) {
+            if (!validatorClass.EmptyTextBox(this, bi.kc317day, getString(R.string.days))) {
+                return false;
+            }
+
+            if (!validatorClass.RangeTextBox(this, bi.kc317day, 1, 30, getString(R.string.days), "Days")) {
+                return false;
+            }
         }
 
 
@@ -571,7 +598,7 @@ public class SectionC3Activity extends AppCompatActivity {
 
         sC3.put("kc306kg", bi.kc306kg.getText().toString());
 
-        sC3.put("kc307", bi.kc30777.isChecked() ? "77" : bi.kc307rec.getText().toString());
+        sC3.put("kc307", bi.kc307rec.getText().toString());
 
         sC3.put("kc308", bi.kc308a.isChecked() ? "1"
                 : bi.kc308b.isChecked() ? "2"
@@ -644,6 +671,10 @@ public class SectionC3Activity extends AppCompatActivity {
                 : bi.kc317d.isChecked() ? "4"
                 : bi.kc31798.isChecked() ? "98"
                 : "0");
+
+
+        sC3.put("kc317hr", bi.kc317hr.getText().toString());
+        sC3.put("kc317day", bi.kc317day.getText().toString());
 
 
         sC3.put("kc318a", bi.kc318a.isChecked() ? "1" : "0");

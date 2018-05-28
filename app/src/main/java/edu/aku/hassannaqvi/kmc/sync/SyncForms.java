@@ -197,7 +197,6 @@ public class SyncForms extends AsyncTask<Void, Void, String> {
             pd.setTitle("Forms Sync Failed");
             pd.show();
 
-
         }
     }
 }
