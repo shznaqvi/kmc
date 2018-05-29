@@ -123,7 +123,6 @@ public class FormsContract {
         this.sC2 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SC2));
         this.sC3 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SC3));
 
-
         this.sC1 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SC1));
         this.sC2 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SC2));
         this.sC3 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SC3));
