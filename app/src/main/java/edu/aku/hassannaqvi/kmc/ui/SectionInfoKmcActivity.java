@@ -431,19 +431,19 @@ public class SectionInfoKmcActivity extends Activity {
         JSONObject sInfo = new JSONObject();
 
 
-        sInfo.put("crataluka", MainApp.talukaCode);
-        sInfo.put("crauc", MainApp.ucCode);
-        sInfo.put("crvillage", MainApp.villageCode);
+        sInfo.put("kaataluka", MainApp.talukaCode);
+        sInfo.put("kaauc", MainApp.ucCode);
+        sInfo.put("kavillage", MainApp.villageCode);
 
 
-        sInfo.put("cravillage", bi.cravillage.getText().toString());
+        sInfo.put("kaavillage", bi.cravillage.getText().toString());
 
         //sInfo.put("cra03", bi.cra03.getText().toString());
 
-        sInfo.put("cra04", bi.cra04.getText().toString());
+        sInfo.put("kaa04", bi.cra04.getText().toString());
 
         //sInfo.put("cra05", bi.cra05.getText().toString());
-        sInfo.put("cra06", bi.cra06.getText().toString());
+        sInfo.put("kaa06", bi.cra06.getText().toString());
 
 
         sInfo.put("sno", MainApp.wSerialNo);
@@ -454,7 +454,7 @@ public class SectionInfoKmcActivity extends Activity {
         sInfo.put("hh08", mapWRA.get(bi.crwoman.getSelectedItem().toString()).getHh08());
         sInfo.put("hh09", mapWRA.get(bi.crwoman.getSelectedItem().toString()).getHh09());
 
-        sInfo.put("cra07", bi.cra07a.isChecked() ? "1"
+        sInfo.put("kaa07", bi.cra07a.isChecked() ? "1"
                 : bi.cra07b.isChecked() ? "2"
                 : "0");
 
