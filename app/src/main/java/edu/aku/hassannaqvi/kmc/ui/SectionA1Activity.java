@@ -246,7 +246,7 @@ public class SectionA1Activity extends AppCompatActivity {
         sA1.put("ka10996x", bi.ka10996x.getText().toString());
 
 
-        /*sA1.put("ka110", bi.ka110a.isChecked() ? "1"
+        sA1.put("ka110", bi.ka110a.isChecked() ? "1"
                 : bi.ka110b.isChecked() ? "2"
                 : bi.ka110c.isChecked() ? "3"
                 : bi.ka110d.isChecked() ? "4"
@@ -264,7 +264,7 @@ public class SectionA1Activity extends AppCompatActivity {
                 : bi.ka11096.isChecked() ? "96"
                 : "0");
 
-        sA1.put("ka11096x", bi.ka11096x.getText().toString());*/
+        sA1.put("ka11096x", bi.ka11096x.getText().toString());
 
 
         sA1.put("ka111", bi.ka111a.isChecked() ? "1"

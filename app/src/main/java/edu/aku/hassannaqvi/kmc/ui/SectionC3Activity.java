@@ -359,6 +359,12 @@ public class SectionC3Activity extends AppCompatActivity {
                     return false;
                 }
 
+
+                if (!validatorClass.RangeTextBox(this, bi.kc307rec, 1.20, 7.00, getString(R.string.kc307rec), "Weight")) {
+                    return false;
+                }
+
+
                 /*if (!bi.kc30777.isChecked()) {
                     if (!validatorClass.EmptyTextBox(this, bi.kc307rec, getString(R.string.kc307))) {
                         return false;
@@ -653,6 +659,12 @@ public class SectionC3Activity extends AppCompatActivity {
                 : "0");
 
 
+        sC3.put("kc315", bi.kc315a.isChecked() ? "1"
+                : bi.kc315b.isChecked() ? "2"
+                : bi.kc31598.isChecked() ? "98"
+                : "0");
+
+
         sC3.put("kc316a", bi.kc316a.isChecked() ? "1" : "0");
         sC3.put("kc316b", bi.kc316b.isChecked() ? "2" : "0");
         sC3.put("kc316c", bi.kc316c.isChecked() ? "3" : "0");
@@ -677,12 +689,14 @@ public class SectionC3Activity extends AppCompatActivity {
         sC3.put("kc317day", bi.kc317day.getText().toString());
 
 
-        sC3.put("kc318a", bi.kc318a.isChecked() ? "1" : "0");
-        sC3.put("kc318b", bi.kc318b.isChecked() ? "2" : "0");
-        sC3.put("kc318c", bi.kc318c.isChecked() ? "3" : "0");
-        sC3.put("kc318d", bi.kc318d.isChecked() ? "4" : "0");
-        sC3.put("kc318e", bi.kc318e.isChecked() ? "5" : "0");
-        sC3.put("kc31896", bi.kc31896.isChecked() ? "96" : "0");
+        sC3.put("kc318", bi.kc318a.isChecked() ? "1"
+                : bi.kc318b.isChecked() ? "2"
+                : bi.kc318c.isChecked() ? "3"
+                : bi.kc318d.isChecked() ? "4"
+                : bi.kc318e.isChecked() ? "5"
+                : bi.kc31896.isChecked() ? "96"
+                : "0");
+
 
         sC3.put("kc31896x", bi.kc31896x.getText().toString());
 
@@ -703,14 +717,26 @@ public class SectionC3Activity extends AppCompatActivity {
         sC3.put("kc32096x", bi.kc32096x.getText().toString());
 
 
-        sC3.put("kc321a", bi.kc321a.isChecked() ? "1" : "0");
-        sC3.put("kc321b", bi.kc321b.isChecked() ? "2" : "0");
-        sC3.put("kc321c", bi.kc321c.isChecked() ? "3" : "0");
-        sC3.put("kc321d", bi.kc321d.isChecked() ? "4" : "0");
-        sC3.put("kc321e", bi.kc321e.isChecked() ? "5" : "0");
-        sC3.put("kc32196", bi.kc32196.isChecked() ? "96" : "0");
+        sC3.put("kc321", bi.kc321a.isChecked() ? "1"
+                : bi.kc321b.isChecked() ? "2"
+                : bi.kc321c.isChecked() ? "3"
+                : bi.kc321d.isChecked() ? "4"
+                : bi.kc321e.isChecked() ? "5"
+                : bi.kc32196.isChecked() ? "96"
+                : "0");
+
 
         sC3.put("kc32196x", bi.kc32196x.getText().toString());
+
+
+        sC3.put("kc322a", bi.kc322a.isChecked() ? "1" : "0");
+        sC3.put("kc322b", bi.kc322b.isChecked() ? "2" : "0");
+        sC3.put("kc322c", bi.kc322c.isChecked() ? "3" : "0");
+        sC3.put("kc322d", bi.kc322d.isChecked() ? "4" : "0");
+        sC3.put("kc322e", bi.kc322e.isChecked() ? "5" : "0");
+        sC3.put("kc32296", bi.kc32296.isChecked() ? "96" : "0");
+
+        sC3.put("kc32296x", bi.kc32296x.getText().toString());
 
 
         MainApp.fc.setsC3(String.valueOf(sC3));

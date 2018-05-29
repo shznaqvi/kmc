@@ -882,13 +882,12 @@ public class SectionEActivity extends AppCompatActivity {
         sE.put("ke42096x", bi.ke42096x.getText().toString());
 
 
-        sE.put("ke421", bi.ke421a.isChecked() ? "1"
-                : bi.ke421b.isChecked() ? "2"
-                : bi.ke421c.isChecked() ? "3"
-                : bi.ke421d.isChecked() ? "4"
-                : bi.ke421e.isChecked() ? "5"
-                : bi.ke42196.isChecked() ? "96"
-                : "0");
+        sE.put("ke421a", bi.ke421a.isChecked() ? "1" : "0");
+        sE.put("ke421b", bi.ke421b.isChecked() ? "2" : "0");
+        sE.put("ke421c", bi.ke421c.isChecked() ? "3" : "0");
+        sE.put("ke421d", bi.ke421d.isChecked() ? "4" : "0");
+        sE.put("ke421e", bi.ke421e.isChecked() ? "5" : "0");
+        sE.put("ke42196", bi.ke42196.isChecked() ? "96" : "0");
 
         sE.put("ke42196x", bi.ke42196x.getText().toString());
 

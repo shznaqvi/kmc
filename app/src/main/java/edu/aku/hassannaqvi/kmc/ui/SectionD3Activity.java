@@ -157,6 +157,52 @@ public class SectionD3Activity extends AppCompatActivity {
             }
         });
 
+
+        bi.kd302j.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (bi.kd302j.isChecked()) {
+                    bi.kd302a.setChecked(false);
+                    bi.kd302b.setChecked(false);
+                    bi.kd302c.setChecked(false);
+                    bi.kd302d.setChecked(false);
+                    bi.kd302e.setChecked(false);
+                    bi.kd302f.setChecked(false);
+                    bi.kd302g.setChecked(false);
+                    bi.kd302h.setChecked(false);
+                    bi.kd302i.setChecked(false);
+                    bi.kd30296.setChecked(false);
+                    bi.kd302a.setEnabled(false);
+                    bi.kd302b.setEnabled(false);
+                    bi.kd302c.setEnabled(false);
+                    bi.kd302d.setEnabled(false);
+                    bi.kd302e.setEnabled(false);
+                    bi.kd302f.setEnabled(false);
+                    bi.kd302g.setEnabled(false);
+                    bi.kd302h.setEnabled(false);
+                    bi.kd302i.setEnabled(false);
+                    bi.kd30296.setEnabled(false);
+                    bi.kd30298.setEnabled(false);
+
+                    bi.kd30296x.setText(null);
+                    bi.kd30296x.setVisibility(View.GONE);
+                } else {
+                    bi.kd302a.setEnabled(true);
+                    bi.kd302b.setEnabled(true);
+                    bi.kd302c.setEnabled(true);
+                    bi.kd302d.setEnabled(true);
+                    bi.kd302e.setEnabled(true);
+                    bi.kd302f.setEnabled(true);
+                    bi.kd302g.setEnabled(true);
+                    bi.kd302h.setEnabled(true);
+                    bi.kd302i.setEnabled(true);
+                    bi.kd30296.setEnabled(true);
+                    bi.kd30298.setEnabled(true);
+                }
+            }
+        });
+
+
         bi.kd304c.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
