@@ -341,6 +341,7 @@ public class SectionA1Activity extends AppCompatActivity {
 
         sA1.put("ka123a", bi.ka123a.getText().toString());
         sA1.put("ka123k", bi.ka123k.getText().toString());
+        sA1.put("ka12398", bi.ka12398.isChecked() ? "98" : "0");
 
         sA1.put("ka12401", bi.ka12401.getText().toString());
         sA1.put("ka12402", bi.ka12402.getText().toString());
