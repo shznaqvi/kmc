@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/kmc.iml" filepath="$PROJECT_DIR$/.idea/kmc.iml" />
       <module fileurl="file://$PROJECT_DIR$/kmc-baseline.iml" filepath="$PROJECT_DIR$/kmc-baseline.iml" />
     </modules>
   </component>
