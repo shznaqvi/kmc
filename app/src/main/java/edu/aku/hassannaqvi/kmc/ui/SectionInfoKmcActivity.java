@@ -13,6 +13,7 @@ import android.text.Editable;
 import android.text.InputType;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -459,6 +460,8 @@ public class SectionInfoKmcActivity extends Activity {
                 : "0");
 
         MainApp.fc.setsInfo(String.valueOf(sInfo));
+
+        setGPS();
     }
 
 
@@ -677,6 +680,38 @@ public class SectionInfoKmcActivity extends Activity {
 
         return true;
     }
+
+
+    public void setGPS() {
+        SharedPreferences GPSPref = getSharedPreferences("GPSCoordinates", Context.MODE_PRIVATE);
+        try {
+            String lat = GPSPref.getString("Latitude", "0");
+            String lang = GPSPref.getString("Longitude", "0");
+            String acc = GPSPref.getString("Accuracy", "0");
+            String elevation = GPSPref.getString("Elevation", "0");
+
+            if (lat == "0" && lang == "0") {
+                Toast.makeText(this, "Could not obtained GPS points", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "GPS set", Toast.LENGTH_SHORT).show();
+            }
+
+            String date = DateFormat.format("dd-MM-yyyy HH:mm", Long.parseLong(GPSPref.getString("Time", "0"))).toString();
+
+            MainApp.fc.setGpsLat(lat);
+            MainApp.fc.setGpsLng(lang);
+            MainApp.fc.setGpsAcc(acc);
+            MainApp.fc.setGpsDT(date); // Timestamp is converted to date above
+            MainApp.fc.setGpsElev(elevation);
+
+            Toast.makeText(this, "GPS set", Toast.LENGTH_SHORT).show();
+
+        } catch (Exception e) {
+            Log.e(TAG, "setGPS: " + e.getMessage());
+        }
+
+    }
+
 
     @Override
     public void onBackPressed() {

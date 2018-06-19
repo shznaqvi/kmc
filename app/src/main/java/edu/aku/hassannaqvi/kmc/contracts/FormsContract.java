@@ -42,6 +42,7 @@ public class FormsContract {
     private String gpsLng = "";
     private String gpsDT = "";
     private String gpsAcc = "";
+    private String gpsElev = "";
     private String deviceID = "";
     private String devicetagID = "";
     private String synced = "";
@@ -95,6 +96,7 @@ public class FormsContract {
         this.gpsLng = jsonObject.getString(FormsTable.COLUMN_GPSLNG);
         this.gpsDT = jsonObject.getString(FormsTable.COLUMN_GPSDT);
         this.gpsAcc = jsonObject.getString(FormsTable.COLUMN_GPSACC);
+        this.gpsElev = jsonObject.getString(FormsTable.COLUMN_GPSELEV);
         this.deviceID = jsonObject.getString(FormsTable.COLUMN_DEVICEID);
         this.devicetagID = jsonObject.getString(FormsTable.COLUMN_DEVICETAGID);
         this.synced = jsonObject.getString(FormsTable.COLUMN_SYNCED);
@@ -139,6 +141,7 @@ public class FormsContract {
         this.gpsLng = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_GPSLNG));
         this.gpsDT = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_GPSDT));
         this.gpsAcc = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_GPSACC));
+        this.gpsElev = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_GPSELEV));
         this.deviceID = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_DEVICEID));
         this.devicetagID = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_DEVICETAGID));
         this.synced = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SYNCED));
@@ -260,6 +263,7 @@ public class FormsContract {
         json.put(FormsTable.COLUMN_GPSLNG, this.gpsLng == null ? JSONObject.NULL : this.gpsLng);
         json.put(FormsTable.COLUMN_GPSDT, this.gpsDT == null ? JSONObject.NULL : this.gpsDT);
         json.put(FormsTable.COLUMN_GPSACC, this.gpsAcc == null ? JSONObject.NULL : this.gpsAcc);
+        json.put(FormsTable.COLUMN_GPSELEV, this.gpsElev == null ? JSONObject.NULL : this.gpsElev);
         json.put(FormsTable.COLUMN_DEVICEID, this.deviceID == null ? JSONObject.NULL : this.deviceID);
         json.put(FormsTable.COLUMN_DEVICETAGID, this.devicetagID == null ? JSONObject.NULL : this.devicetagID);
         json.put(FormsTable.COLUMN_SYNCED, this.synced == null ? JSONObject.NULL : this.synced);
@@ -494,6 +498,16 @@ public class FormsContract {
         this.gpsAcc = gpsAcc;
     }
 
+
+    public String getGpsElev() {
+        return gpsElev;
+    }
+
+    public void setGpsElev(String gpsElev) {
+        this.gpsElev = gpsElev;
+    }
+
+
     public String getDeviceID() {
         return deviceID;
     }
@@ -566,6 +580,7 @@ public class FormsContract {
         public static final String COLUMN_GPSLNG = "gpslng";
         public static final String COLUMN_GPSDT = "gpsdt";
         public static final String COLUMN_GPSACC = "gpsacc";
+        public static final String COLUMN_GPSELEV = "gpselev";
         public static final String COLUMN_DEVICEID = "deviceid";
         public static final String COLUMN_DEVICETAGID = "devicetagid";
         public static final String COLUMN_SYNCED = "synced";

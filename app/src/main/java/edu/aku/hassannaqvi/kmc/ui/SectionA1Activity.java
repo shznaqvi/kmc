@@ -1,11 +1,15 @@
 package edu.aku.hassannaqvi.kmc.ui;
 
 import android.app.ActionBar;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.databinding.DataBindingUtil;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.format.DateFormat;
+import android.util.Log;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.LinearLayout;
@@ -25,6 +29,7 @@ import edu.aku.hassannaqvi.kmc.validation.validatorClass;
 
 public class SectionA1Activity extends AppCompatActivity {
 
+    private static final String TAG = SectionA1Activity.class.getName();
     ActivitySectionA1Binding bi;
 
     @Override
@@ -367,7 +372,6 @@ public class SectionA1Activity extends AppCompatActivity {
 
 
         MainApp.fc.setsA1(String.valueOf(sA1));
-
     }
 
 
@@ -860,6 +864,7 @@ public class SectionA1Activity extends AppCompatActivity {
         }
 
     }
+
 
     @Override
     public void onBackPressed() {
