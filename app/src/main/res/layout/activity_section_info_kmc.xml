@@ -109,7 +109,7 @@
                     android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789-"
                     android:hint="@string/cra04"
                     android:inputType="textCapCharacters"
-                    android:maxLength="5" />
+                    android:maxLength="6" />
 
                 <Button
                     android:id="@+id/btnSearch"
