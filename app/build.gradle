@@ -23,7 +23,7 @@ android {
             targetSdkVersion 22
 
             versionCode code
-            versionName "0.9"
+            versionName "1.10"
             testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         }
     } else {
@@ -46,7 +46,7 @@ dependencies {
     implementation 'com.android.support:recyclerview-v7:27.1.1'
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.github.BlackBoxVision:datetimepicker-edittext:v0.3.3'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     testImplementation 'junit:junit:4.12'
     implementation 'com.github.amlcurran.showcaseview:library:5.4.3'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
