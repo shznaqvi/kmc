@@ -48,10 +48,6 @@ import edu.aku.hassannaqvi.kmc.core.AndroidDatabaseManager;
 import edu.aku.hassannaqvi.kmc.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc.core.MainApp;
 import edu.aku.hassannaqvi.kmc.databinding.ActivityMainBinding;
-import edu.aku.hassannaqvi.kmc.get.GetMwra;
-import edu.aku.hassannaqvi.kmc.get.GetTehsils;
-import edu.aku.hassannaqvi.kmc.get.GetUCs;
-import edu.aku.hassannaqvi.kmc.get.GetVillages;
 import edu.aku.hassannaqvi.kmc.sync.SyncForms;
 
 public class MainActivity extends Activity {
@@ -261,7 +257,7 @@ public class MainActivity extends Activity {
     public void openForm() {
 
 //        if (spAreas.getSelectedItemPosition() != 0) {
-        //final Intent oF = new Intent(MainActivity.this, SectionA1Activity.class);
+        //final Intent oF = new Intent(MainActivity.this, SectionA3Activity.class);
 
         final Intent oF = new Intent(MainActivity.this, SectionInfoKmcActivity.class);
 
@@ -537,9 +533,9 @@ public class MainActivity extends Activity {
 
     public void openA1(View v) {
 
-        startActivity1(SectionA1Activity.class);
+        startActivity1(SectionA3Activity.class);
 
-        /*Intent dbmanager = new Intent(getApplicationContext(), SectionA1Activity.class);
+        /*Intent dbmanager = new Intent(getApplicationContext(), SectionA3Activity.class);
         startActivity(dbmanager);*/
     }
 
@@ -553,7 +549,7 @@ public class MainActivity extends Activity {
 
     public void openB2(View v) {
 
-        startActivity1(SectionB2Activity.class);
+//        startActivity1(SectionB2Activity.class);
 
 //        Intent dbmanager = new Intent(getApplicationContext(), SectionB2Activity.class);
 //        startActivity(dbmanager);
@@ -561,9 +557,9 @@ public class MainActivity extends Activity {
 
     public void openC1(View v) {
 
-        startActivity1(SectionC1Activity.class);
+        startActivity1(SectionB1Activity.class);
 
-//        Intent dbmanager = new Intent(getApplicationContext(), SectionC1Activity.class);
+//        Intent dbmanager = new Intent(getApplicationContext(), SectionB1Activity.class);
 //        startActivity(dbmanager);
     }
 

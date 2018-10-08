@@ -1,6 +1,5 @@
 package edu.aku.hassannaqvi.kmc.ui;
 
-import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -500,7 +499,7 @@ public class SectionInfoKmcActivity extends Activity {
 
                 finish();
 
-                startActivity(new Intent(this, SectionA1Activity.class));
+                startActivity(new Intent(this, SectionA3Activity.class));
                 //startActivity(new Intent(this, MainActivity.class));
 
             } else {
