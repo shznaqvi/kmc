@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layoutDirection="rtl"
-    tools:context=".ui.SectionEActivity">
+    tools:context=".ui.SectionCActivity">
 
     <data>
 
@@ -10,7 +10,7 @@
 
         <variable
             name="callback"
-            type="edu.aku.hassannaqvi.kmc.ui.SectionEActivity" />
+            type="edu.aku.hassannaqvi.kmc.ui.SectionCActivity" />
     </data>
 
     <ScrollView

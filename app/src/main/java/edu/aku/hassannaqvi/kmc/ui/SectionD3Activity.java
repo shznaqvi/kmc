@@ -414,7 +414,7 @@ public class SectionD3Activity extends AppCompatActivity {
 
                 finish();
 
-                startActivity(new Intent(this, SectionEActivity.class));
+                startActivity(new Intent(this, SectionCActivity.class));
                 //startActivity(new Intent(this, MainActivity.class));
 
             } else {

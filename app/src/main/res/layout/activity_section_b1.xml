@@ -59,90 +59,135 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@android:color/white" />
 
-            <RadioGroup
+            <EditText
                 android:id="@+id/kb101"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                android:hint="@string/kb101"
+                android:inputType="text" />
+
+            <!--kb102-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
+                android:text="@string/kb102"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+
+            <EditText
+                android:id="@+id/kb102"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:digits="0123456789"
+                android:hint="@string/kb102"
+                android:inputType="number"
+                android:maxLength="2" />
+            <!--kb103-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
+                android:text="@string/kb103"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+
+            <EditText
+                android:id="@+id/kb103"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:digits="0123456789"
+                android:hint="@string/num"
+                android:inputType="number"
+                android:maxLength="2" />
+            <!--kb104-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
+                android:text="@string/kb104"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+
+            <EditText
+                android:id="@+id/kb104"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:digits="0123456789"
+                android:hint="@string/num"
+                android:inputType="number"
+                android:maxLength="2" />
+            <!--kb105-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
+                android:text="@string/kb105"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+
+            <RadioGroup
+                android:id="@+id/kb105"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:layout_weight="1.5"
-                android:orientation="vertical">
+                android:orientation="horizontal">
 
                 <RadioButton
-                    android:id="@+id/kb101a"
+                    android:id="@+id/kb105a"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
-                    android:text="@string/kb101a" />
+                    android:text="@string/yes" />
 
                 <RadioButton
-                    android:id="@+id/kb101b"
+                    android:id="@+id/kb105b"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
-                    android:text="@string/kb101b" />
+                    android:text="@string/no" />
 
                 <RadioButton
-                    android:id="@+id/kb101c"
+                    android:id="@+id/kb10598"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
-                    android:text="@string/kb101c" />
-
-                <RadioButton
-                    android:id="@+id/kb101d"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:layout_weight="1"
-                    android:text="@string/kb101d" />
-
-                <RadioButton
-                    android:id="@+id/kb101e"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:layout_weight="1"
-                    android:text="@string/kb101e" />
-
-                <RadioButton
-                    android:id="@+id/kb101f"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:layout_weight="1"
-                    android:text="@string/kb101f" />
-
-                <RadioButton
-                    android:id="@+id/kb101g"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:layout_weight="1"
-                    android:text="@string/kb101g" />
+                    android:text="@string/dkn" />
 
             </RadioGroup>
 
+
             <LinearLayout
-                android:id="@+id/fldGrpkb102"
+                android:id="@+id/fldGrpkb106"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-                <!--kb102-->
+                <!--kb106-->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:layout_weight="1"
                     android:background="@color/pink_100"
-                    android:text="@string/kb102"
+                    android:text="@string/kb106"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="@color/colorPrimaryDark" />
 
                 <RadioGroup
-                    android:id="@+id/kb102"
+                    android:id="@+id/kb106"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
@@ -150,7 +195,7 @@
                     android:orientation="horizontal">
 
                     <RadioButton
-                        android:id="@+id/kb102a"
+                        android:id="@+id/kb106a"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
@@ -158,7 +203,7 @@
                         android:text="@string/alive" />
 
                     <RadioButton
-                        android:id="@+id/kb102b"
+                        android:id="@+id/kb106b"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
@@ -169,36 +214,36 @@
 
 
                 <LinearLayout
-                    android:id="@+id/fldGrpkb103"
+                    android:id="@+id/fldGrpkb107"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <!--kb103-->
+                    <!--kb107-->
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
                         android:background="@color/colorPrimary"
-                        android:text="@string/kb103"
+                        android:text="@string/kb107"
                         android:textAppearance="?android:attr/textAppearanceLarge"
                         android:textColor="@android:color/white" />
 
                     <EditText
-                        android:id="@+id/kb103m"
+                        android:id="@+id/kb107m"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
-                        android:hint="@string/kb103m"
+                        android:hint="@string/kb107m"
                         android:inputType="number"
                         android:maxLength="2" />
 
                     <EditText
-                        android:id="@+id/kb103d"
+                        android:id="@+id/kb107d"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
-                        android:hint="@string/kb103y"
+                        android:hint="@string/kb107y"
                         android:inputType="number"
                         android:maxLength="2" />
 
@@ -206,24 +251,24 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/fldGrpkb102twin"
+                android:id="@+id/fldGrpkb106twin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:visibility="gone">
-                <!--kb102-->
+                <!--kb106-->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:layout_weight="1"
                     android:background="@color/pink_100"
-                    android:text="@string/kb102"
+                    android:text="@string/kb106"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="@color/colorPrimaryDark" />
 
                 <RadioGroup
-                    android:id="@+id/kb102twin"
+                    android:id="@+id/kb106twin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
@@ -231,7 +276,7 @@
                     android:orientation="horizontal">
 
                     <RadioButton
-                        android:id="@+id/kb102atwin"
+                        android:id="@+id/kb106atwin"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
@@ -239,7 +284,7 @@
                         android:text="@string/alive" />
 
                     <RadioButton
-                        android:id="@+id/kb102btwin"
+                        android:id="@+id/kb106btwin"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
@@ -250,36 +295,36 @@
 
 
                 <LinearLayout
-                    android:id="@+id/fldGrpkb103twin"
+                    android:id="@+id/fldGrpkb107twin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <!--kb103-->
+                    <!--kb107-->
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
                         android:background="@color/colorPrimary"
-                        android:text="@string/kb103"
+                        android:text="@string/kb107"
                         android:textAppearance="?android:attr/textAppearanceLarge"
                         android:textColor="@android:color/white" />
 
                     <EditText
-                        android:id="@+id/kb103mtwin"
+                        android:id="@+id/kb107mtwin"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
-                        android:hint="@string/kb103m"
+                        android:hint="@string/kb107m"
                         android:inputType="number"
                         android:maxLength="2" />
 
                     <EditText
-                        android:id="@+id/kb103dtwin"
+                        android:id="@+id/kb107dtwin"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
-                        android:hint="@string/kb103y"
+                        android:hint="@string/kb107y"
                         android:inputType="number"
                         android:maxLength="2" />
 

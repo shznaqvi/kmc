@@ -18,23 +18,23 @@ import java.util.Date;
 import edu.aku.hassannaqvi.kmc.R;
 import edu.aku.hassannaqvi.kmc.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc.core.MainApp;
-import edu.aku.hassannaqvi.kmc.databinding.ActivitySectionEBinding;
+import edu.aku.hassannaqvi.kmc.databinding.ActivitySectionCBinding;
 import edu.aku.hassannaqvi.kmc.validation.validatorClass;
 
-public class SectionEActivity extends AppCompatActivity {
+public class SectionCActivity extends AppCompatActivity {
 
-    private static final String TAG = SectionEActivity.class.getName();
+    private static final String TAG = SectionCActivity.class.getName();
     String dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
 
-    ActivitySectionEBinding bi;
+    ActivitySectionCBinding bi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //setContentView(R.layout.activity_section_e);
+        //setContentView(R.layout.activity_section_c);
 
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_e);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_c);
         bi.setCallback(this);
         setupViews();
     }

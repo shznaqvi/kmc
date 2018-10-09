@@ -322,7 +322,7 @@ public class MainActivity extends Activity {
     }
 
     public void openE(View v) {
-        Intent iE = new Intent(this, SectionEActivity.class);
+        Intent iE = new Intent(this, SectionCActivity.class);
         startActivity(iE);
     }
 
@@ -565,17 +565,17 @@ public class MainActivity extends Activity {
 
     public void openC2(View v) {
 
-        startActivity1(SectionC2Activity.class);
+        startActivity1(SectionB2Activity.class);
 
-//        Intent dbmanager = new Intent(getApplicationContext(), SectionC2Activity.class);
+//        Intent dbmanager = new Intent(getApplicationContext(), SectionB2Activity.class);
 //        startActivity(dbmanager);
     }
 
     public void openC3(View v) {
 
-        startActivity1(SectionC3Activity.class);
+        startActivity1(SectionB3Activity.class);
 
-        /*Intent dbmanager = new Intent(getApplicationContext(), SectionC3Activity.class);
+        /*Intent dbmanager = new Intent(getApplicationContext(), SectionB3Activity.class);
         startActivity(dbmanager);*/
     }
 
@@ -629,9 +629,9 @@ public class MainActivity extends Activity {
 
     public void openE(View v) {
 
-        startActivity1(SectionEActivity.class);
+        startActivity1(SectionCActivity.class);
 
-        /*Intent dbmanager = new Intent(getApplicationContext(), SectionEActivity.class);
+        /*Intent dbmanager = new Intent(getApplicationContext(), SectionCActivity.class);
         startActivity(dbmanager);*/
     }
 
