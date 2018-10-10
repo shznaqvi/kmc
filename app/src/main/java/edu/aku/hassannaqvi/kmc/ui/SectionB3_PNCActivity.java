@@ -521,7 +521,7 @@ public class SectionB3_PNCActivity extends AppCompatActivity {
 
                 finish();
 
-                startActivity(new Intent(this, SectionD1Activity.class));
+                startActivity(new Intent(this, SectionB4_3Activity.class));
                 //                startActivity(new Intent(this, MainActivity.class));
 
             } else {

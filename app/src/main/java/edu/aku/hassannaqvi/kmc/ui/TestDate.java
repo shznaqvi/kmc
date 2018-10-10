@@ -18,7 +18,7 @@ public class TestDate extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_test_date);
 
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_d2);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_b4_4);
         bi.setCallback(this);
 
         Calendar c = Calendar.getInstance();

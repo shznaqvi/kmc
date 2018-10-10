@@ -74,7 +74,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1" />
         <activity
-            android:name=".ui.SectionC4Activity"
+            android:name=".ui.SectionB4Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1" />
         <activity
@@ -82,15 +82,15 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1" />
         <activity
-            android:name=".ui.SectionD1Activity"
+            android:name=".ui.SectionB4_3Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1" />
         <activity
-            android:name=".ui.SectionD2Activity"
+            android:name=".ui.SectionB4_4Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1" />
         <activity
-            android:name=".ui.SectionD3Activity"
+            android:name=".ui.SectionB4_5Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1" />
         <activity
@@ -113,7 +113,8 @@
             android:readPermission="edu.aku.hassannaqvi.kmc.core.MainContentProvider.READWRITE"
             android:writePermission="edu.aku.hassannaqvi.kmc.core.MainContentProvider.READWRITE" />
 
-        <activity android:name=".ui.TestDate"></activity>
+        <activity android:name=".ui.TestDate" />
+        <activity android:name=".ui.SectionB4_2Activity"></activity>
     </application>
 
 </manifest>

@@ -581,9 +581,9 @@ public class MainActivity extends Activity {
 
     public void openC4(View v) {
 
-        startActivity1(SectionC4Activity.class);
+        startActivity1(SectionB4Activity.class);
 
-        /*Intent dbmanager = new Intent(getApplicationContext(), SectionC4Activity.class);
+        /*Intent dbmanager = new Intent(getApplicationContext(), SectionB4Activity.class);
         startActivity(dbmanager);*/
     }
 
@@ -605,25 +605,25 @@ public class MainActivity extends Activity {
 
     public void openD1(View v) {
 
-        startActivity1(SectionD1Activity.class);
+        startActivity1(SectionB4_3Activity.class);
 
-        /*Intent dbmanager = new Intent(getApplicationContext(), SectionD1Activity.class);
+        /*Intent dbmanager = new Intent(getApplicationContext(), SectionB4_3Activity.class);
         startActivity(dbmanager);*/
     }
 
     public void openD2(View v) {
 
-        startActivity1(SectionD2Activity.class);
+        startActivity1(SectionB4_4Activity.class);
 
-        /*Intent dbmanager = new Intent(getApplicationContext(), SectionD2Activity.class);
+        /*Intent dbmanager = new Intent(getApplicationContext(), SectionB4_4Activity.class);
         startActivity(dbmanager);*/
     }
 
     public void openD3(View v) {
 
-        startActivity1(SectionD3Activity.class);
+        startActivity1(SectionB4_5Activity.class);
 
-        /*Intent dbmanager = new Intent(getApplicationContext(), SectionD3Activity.class);
+        /*Intent dbmanager = new Intent(getApplicationContext(), SectionB4_5Activity.class);
         startActivity(dbmanager);*/
     }
 
