@@ -70,7 +70,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1" />
         <activity
-            android:name=".ui.SectionC6Activity"
+            android:name=".ui.SectionB3_PNCActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1" />
         <activity

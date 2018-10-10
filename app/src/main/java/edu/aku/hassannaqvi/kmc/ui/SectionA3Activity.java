@@ -36,86 +36,86 @@ public class SectionA3Activity extends AppCompatActivity {
 
     private void setupViews() {
 
-        bi.ka311.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        bi.kac11.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (bi.ka311b.isChecked()) {
-                    bi.ka312.setText(null);
-                    bi.ka313.clearCheck();
+                if (bi.kac11b.isChecked()) {
+                    bi.kac12.setText(null);
+                    bi.kac13.clearCheck();
 
-                    bi.fldGrpka311.setVisibility(View.GONE);
+                    bi.fldGrpkac11.setVisibility(View.GONE);
                 } else {
-                    bi.fldGrpka311.setVisibility(View.VISIBLE);
+                    bi.fldGrpkac11.setVisibility(View.VISIBLE);
                 }
             }
         });
 
 
-        bi.ka314.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        bi.kac14.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (bi.ka314b.isChecked()) {
+                if (bi.kac14b.isChecked()) {
 
-                    bi.ka315a.setChecked(false);
-                    bi.ka315b.setChecked(false);
-                    bi.ka315c.setChecked(false);
-                    bi.ka315d.setChecked(false);
-                    bi.ka315e.setChecked(false);
-                    bi.ka315f.setChecked(false);
-                    bi.ka31596.setChecked(false);
+                    bi.kac15a.setChecked(false);
+                    bi.kac15b.setChecked(false);
+                    bi.kac15c.setChecked(false);
+                    bi.kac15d.setChecked(false);
+                    bi.kac15e.setChecked(false);
+                    bi.kac15f.setChecked(false);
+                    bi.kac1596.setChecked(false);
 
-                    bi.ka31596x.setText(null);
+                    bi.kac1596x.setText(null);
 
-                    bi.fldGrpka314.setVisibility(View.GONE);
+                    bi.fldGrpkac14.setVisibility(View.GONE);
                 } else {
-                    bi.fldGrpka314.setVisibility(View.VISIBLE);
+                    bi.fldGrpkac14.setVisibility(View.VISIBLE);
                 }
             }
         });
 
 
-        bi.ka317.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        bi.kac17.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (bi.ka317b.isChecked()) {
-                    bi.ka318.setText(null);
-                    bi.fldGrpka317.setVisibility(View.GONE);
+                if (bi.kac17b.isChecked()) {
+                    bi.kac18.setText(null);
+                    bi.fldGrpkac17.setVisibility(View.GONE);
                 } else {
-                    bi.fldGrpka317.setVisibility(View.VISIBLE);
+                    bi.fldGrpkac17.setVisibility(View.VISIBLE);
                 }
             }
         });
 
 
-        bi.ka322.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        bi.kac22.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (bi.ka322b.isChecked()) {
-                    bi.ka323a.setText(null);
-                    bi.ka323k.setText(null);
-                    bi.ka32398.setChecked(false);
+                if (bi.kac22b.isChecked()) {
+                    bi.kac23a.setText(null);
+                    bi.kac23k.setText(null);
+                    bi.kac2398.setChecked(false);
 
-                    bi.fldGrpka322.setVisibility(View.GONE);
+                    bi.fldGrpkac22.setVisibility(View.GONE);
                 } else {
-                    bi.fldGrpka322.setVisibility(View.VISIBLE);
+                    bi.fldGrpkac22.setVisibility(View.VISIBLE);
                 }
             }
         });
 
 
-        bi.ka32398.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        bi.kac2398.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (bi.ka32398.isChecked()) {
-                    bi.ka323a.setText(null);
-                    bi.ka323k.setText(null);
+                if (bi.kac2398.isChecked()) {
+                    bi.kac23a.setText(null);
+                    bi.kac23k.setText(null);
 
-                    bi.ka323a.setVisibility(View.GONE);
-                    bi.ka323k.setVisibility(View.GONE);
+                    bi.kac23a.setVisibility(View.GONE);
+                    bi.kac23k.setVisibility(View.GONE);
 
                 } else {
-                    bi.ka323a.setVisibility(View.VISIBLE);
-                    bi.ka323k.setVisibility(View.VISIBLE);
+                    bi.kac23a.setVisibility(View.VISIBLE);
+                    bi.kac23k.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -129,237 +129,237 @@ public class SectionA3Activity extends AppCompatActivity {
 
         JSONObject sA1 = new JSONObject();
 
-        sA1.put("ka301", bi.ka301a.isChecked() ? "1"
-                : bi.ka301b.isChecked() ? "2"
-                : bi.ka301c.isChecked() ? "3"
-                : bi.ka301d.isChecked() ? "4"
-                : bi.ka301e.isChecked() ? "5"
-                : bi.ka301f.isChecked() ? "6"
-                : bi.ka30196.isChecked() ? "96"
+        sA1.put("kac01", bi.kac01a.isChecked() ? "1"
+                : bi.kac01b.isChecked() ? "2"
+                : bi.kac01c.isChecked() ? "3"
+                : bi.kac01d.isChecked() ? "4"
+                : bi.kac01e.isChecked() ? "5"
+                : bi.kac01f.isChecked() ? "6"
+                : bi.kac0196.isChecked() ? "96"
                 : "0");
 
-        sA1.put("ka30196x", bi.ka30196x.getText().toString());
+        sA1.put("kac0196x", bi.kac0196x.getText().toString());
 
 
-        sA1.put("ka302", bi.ka302a.isChecked() ? "1"
-                : bi.ka302b.isChecked() ? "2"
-                : bi.ka302c.isChecked() ? "3"
-                : bi.ka302d.isChecked() ? "4"
-                : bi.ka302e.isChecked() ? "5"
-                : bi.ka302f.isChecked() ? "6"
-                : bi.ka302g.isChecked() ? "7"
-                : bi.ka302h.isChecked() ? "8"
-                : bi.ka30296.isChecked() ? "96"
+        sA1.put("kac02", bi.kac02a.isChecked() ? "1"
+                : bi.kac02b.isChecked() ? "2"
+                : bi.kac02c.isChecked() ? "3"
+                : bi.kac02d.isChecked() ? "4"
+                : bi.kac02e.isChecked() ? "5"
+                : bi.kac02f.isChecked() ? "6"
+                : bi.kac02g.isChecked() ? "7"
+                : bi.kac02h.isChecked() ? "8"
+                : bi.kac0296.isChecked() ? "96"
                 : "0");
 
-        sA1.put("ka30296x", bi.ka30296x.getText().toString());
+        sA1.put("kac0296x", bi.kac0296x.getText().toString());
 
 
-        sA1.put("ka303", bi.ka303a.isChecked() ? "1"
-                : bi.ka303b.isChecked() ? "2"
-                : bi.ka303c.isChecked() ? "3"
-                : bi.ka303d.isChecked() ? "4"
-                : bi.ka303e.isChecked() ? "5"
-                : bi.ka303f.isChecked() ? "6"
-                : bi.ka303g.isChecked() ? "7"
-                : bi.ka303h.isChecked() ? "8"
-                : bi.ka303i.isChecked() ? "9"
-                : bi.ka303j.isChecked() ? "10"
-                : bi.ka303k.isChecked() ? "11"
-                : bi.ka30396.isChecked() ? "96"
+        sA1.put("kac03", bi.kac03a.isChecked() ? "1"
+                : bi.kac03b.isChecked() ? "2"
+                : bi.kac03c.isChecked() ? "3"
+                : bi.kac03d.isChecked() ? "4"
+                : bi.kac03e.isChecked() ? "5"
+                : bi.kac03f.isChecked() ? "6"
+                : bi.kac03g.isChecked() ? "7"
+                : bi.kac03h.isChecked() ? "8"
+                : bi.kac03i.isChecked() ? "9"
+                : bi.kac03j.isChecked() ? "10"
+                : bi.kac03k.isChecked() ? "11"
+                : bi.kac0396.isChecked() ? "96"
                 : "0");
 
-        sA1.put("ka30396x", bi.ka30396x.getText().toString());
+        sA1.put("kac0396x", bi.kac0396x.getText().toString());
 
 
-        sA1.put("ka304", bi.ka304a.isChecked() ? "1"
-                : bi.ka304b.isChecked() ? "2"
-                : bi.ka304c.isChecked() ? "3"
-                : bi.ka304d.isChecked() ? "4"
-                : bi.ka304e.isChecked() ? "5"
-                : bi.ka304f.isChecked() ? "6"
-                : bi.ka304g.isChecked() ? "7"
-                : bi.ka304h.isChecked() ? "8"
-                : bi.ka304i.isChecked() ? "9"
-                : bi.ka30496.isChecked() ? "96"
-                : "0");
-
-
-        sA1.put("ka30496x", bi.ka30496x.getText().toString());
-
-
-        sA1.put("ka305", bi.ka305a.isChecked() ? "1"
-                : bi.ka305b.isChecked() ? "2"
-                : bi.ka305c.isChecked() ? "3"
+        sA1.put("kac04", bi.kac04a.isChecked() ? "1"
+                : bi.kac04b.isChecked() ? "2"
+                : bi.kac04c.isChecked() ? "3"
+                : bi.kac04d.isChecked() ? "4"
+                : bi.kac04e.isChecked() ? "5"
+                : bi.kac04f.isChecked() ? "6"
+                : bi.kac04g.isChecked() ? "7"
+                : bi.kac04h.isChecked() ? "8"
+                : bi.kac04i.isChecked() ? "9"
+                : bi.kac0496.isChecked() ? "96"
                 : "0");
 
 
-        sA1.put("ka306", bi.ka306.getText().toString());
+        sA1.put("kac0496x", bi.kac0496x.getText().toString());
 
 
-        sA1.put("ka307", bi.ka307a.isChecked() ? "1"
-                : bi.ka307b.isChecked() ? "2"
+        sA1.put("kac05", bi.kac05a.isChecked() ? "1"
+                : bi.kac05b.isChecked() ? "2"
+                : bi.kac05c.isChecked() ? "3"
                 : "0");
 
 
-        sA1.put("ka308", bi.ka308a.isChecked() ? "1"
-                : bi.ka308b.isChecked() ? "2"
-                : bi.ka308c.isChecked() ? "3"
-                : bi.ka308d.isChecked() ? "4"
-                : bi.ka308e.isChecked() ? "5"
-                : bi.ka308f.isChecked() ? "6"
-                : bi.ka308g.isChecked() ? "7"
-                : bi.ka308h.isChecked() ? "8"
-                : bi.ka308i.isChecked() ? "9"
-                : bi.ka308j.isChecked() ? "10"
-                : bi.ka308k.isChecked() ? "11"
-                : bi.ka30896.isChecked() ? "96"
+        sA1.put("kac06", bi.kac06.getText().toString());
+
+
+        sA1.put("kac07", bi.kac07a.isChecked() ? "1"
+                : bi.kac07b.isChecked() ? "2"
                 : "0");
 
 
-        sA1.put("ka30896x", bi.ka30896x.getText().toString());
-
-
-        sA1.put("ka309", bi.ka309a.isChecked() ? "1"
-                : bi.ka309b.isChecked() ? "2"
-                : bi.ka309c.isChecked() ? "3"
-                : bi.ka309d.isChecked() ? "4"
-                : bi.ka309e.isChecked() ? "5"
-                : bi.ka309f.isChecked() ? "6"
-                : bi.ka309g.isChecked() ? "7"
-                : bi.ka309h.isChecked() ? "8"
-                : bi.ka309i.isChecked() ? "9"
-                : bi.ka309j.isChecked() ? "10"
-                : bi.ka309k.isChecked() ? "11"
-                : bi.ka309l.isChecked() ? "12"
-                : bi.ka309m.isChecked() ? "13"
-                : bi.ka309n.isChecked() ? "14"
-                : bi.ka309o.isChecked() ? "15"
-                : bi.ka30996.isChecked() ? "96"
+        sA1.put("kac08", bi.kac08a.isChecked() ? "1"
+                : bi.kac08b.isChecked() ? "2"
+                : bi.kac08c.isChecked() ? "3"
+                : bi.kac08d.isChecked() ? "4"
+                : bi.kac08e.isChecked() ? "5"
+                : bi.kac08f.isChecked() ? "6"
+                : bi.kac08g.isChecked() ? "7"
+                : bi.kac08h.isChecked() ? "8"
+                : bi.kac08i.isChecked() ? "9"
+                : bi.kac08j.isChecked() ? "10"
+                : bi.kac08k.isChecked() ? "11"
+                : bi.kac0896.isChecked() ? "96"
                 : "0");
 
 
-        sA1.put("ka30996x", bi.ka30996x.getText().toString());
+        sA1.put("kac0896x", bi.kac0896x.getText().toString());
 
 
-        sA1.put("ka310", bi.ka310a.isChecked() ? "1"
-                : bi.ka310b.isChecked() ? "2"
-                : bi.ka310c.isChecked() ? "3"
-                : bi.ka310d.isChecked() ? "4"
-                : bi.ka310e.isChecked() ? "5"
-                : bi.ka310f.isChecked() ? "6"
-                : bi.ka310g.isChecked() ? "7"
-                : bi.ka310h.isChecked() ? "8"
-                : bi.ka310i.isChecked() ? "9"
-                : bi.ka310j.isChecked() ? "10"
-                : bi.ka310k.isChecked() ? "11"
-                : bi.ka310l.isChecked() ? "12"
-                : bi.ka310m.isChecked() ? "13"
-                : bi.ka310n.isChecked() ? "14"
-                : bi.ka310o.isChecked() ? "15"
-                : bi.ka31096.isChecked() ? "96"
-                : "0");
-
-        sA1.put("ka31096x", bi.ka31096x.getText().toString());
-
-
-        sA1.put("ka311", bi.ka311a.isChecked() ? "1"
-                : bi.ka311b.isChecked() ? "2"
-                : "0");
-
-        sA1.put("ka312", bi.ka312.getText().toString());
-
-
-        sA1.put("ka313", bi.ka313a.isChecked() ? "1"
-                : bi.ka313b.isChecked() ? "2"
-                : bi.ka313c.isChecked() ? "3"
-                : bi.ka313d.isChecked() ? "4"
+        sA1.put("kac09", bi.kac09a.isChecked() ? "1"
+                : bi.kac09b.isChecked() ? "2"
+                : bi.kac09c.isChecked() ? "3"
+                : bi.kac09d.isChecked() ? "4"
+                : bi.kac09e.isChecked() ? "5"
+                : bi.kac09f.isChecked() ? "6"
+                : bi.kac09g.isChecked() ? "7"
+                : bi.kac09h.isChecked() ? "8"
+                : bi.kac09i.isChecked() ? "9"
+                : bi.kac09j.isChecked() ? "10"
+                : bi.kac09k.isChecked() ? "11"
+                : bi.kac09l.isChecked() ? "12"
+                : bi.kac09m.isChecked() ? "13"
+                : bi.kac09n.isChecked() ? "14"
+                : bi.kac09o.isChecked() ? "15"
+                : bi.kac0996.isChecked() ? "96"
                 : "0");
 
 
-        sA1.put("ka314", bi.ka314a.isChecked() ? "1"
-                : bi.ka314b.isChecked() ? "2"
+        sA1.put("kac0996x", bi.kac0996x.getText().toString());
+
+
+        sA1.put("kac10", bi.kac10a.isChecked() ? "1"
+                : bi.kac10b.isChecked() ? "2"
+                : bi.kac10c.isChecked() ? "3"
+                : bi.kac10d.isChecked() ? "4"
+                : bi.kac10e.isChecked() ? "5"
+                : bi.kac10f.isChecked() ? "6"
+                : bi.kac10g.isChecked() ? "7"
+                : bi.kac10h.isChecked() ? "8"
+                : bi.kac10i.isChecked() ? "9"
+                : bi.kac10j.isChecked() ? "10"
+                : bi.kac10k.isChecked() ? "11"
+                : bi.kac10l.isChecked() ? "12"
+                : bi.kac10m.isChecked() ? "13"
+                : bi.kac10n.isChecked() ? "14"
+                : bi.kac10o.isChecked() ? "15"
+                : bi.kac1096.isChecked() ? "96"
+                : "0");
+
+        sA1.put("kac1096x", bi.kac1096x.getText().toString());
+
+
+        sA1.put("kac11", bi.kac11a.isChecked() ? "1"
+                : bi.kac11b.isChecked() ? "2"
+                : "0");
+
+        sA1.put("kac12", bi.kac12.getText().toString());
+
+
+        sA1.put("kac13", bi.kac13a.isChecked() ? "1"
+                : bi.kac13b.isChecked() ? "2"
+                : bi.kac13c.isChecked() ? "3"
+                : bi.kac13d.isChecked() ? "4"
                 : "0");
 
 
-        sA1.put("ka315a", bi.ka315a.isChecked() ? "1" : "0");
-        sA1.put("ka315b", bi.ka315b.isChecked() ? "2" : "0");
-        sA1.put("ka315c", bi.ka315c.isChecked() ? "3" : "0");
-        sA1.put("ka315d", bi.ka315d.isChecked() ? "4" : "0");
-        sA1.put("ka315e", bi.ka315e.isChecked() ? "5" : "0");
-        sA1.put("ka315f", bi.ka315f.isChecked() ? "6" : "0");
-        sA1.put("ka31596", bi.ka31596.isChecked() ? "96" : "0");
-
-
-        sA1.put("ka31596x", bi.ka31596x.getText().toString());
-
-
-        sA1.put("ka316", bi.ka316a.isChecked() ? "1"
-                : bi.ka316b.isChecked() ? "2"
-                : bi.ka316c.isChecked() ? "3"
-                : bi.ka316d.isChecked() ? "4"
-                : bi.ka316e.isChecked() ? "5"
-                : bi.ka316f.isChecked() ? "6"
-                : bi.ka316g.isChecked() ? "7"
-                : bi.ka316h.isChecked() ? "8"
-                : bi.ka316i.isChecked() ? "9"
-                : bi.ka316j.isChecked() ? "10"
-                : bi.ka316k.isChecked() ? "11"
-                : bi.ka31696.isChecked() ? "96"
-                : "0");
-
-        sA1.put("ka31696x", bi.ka31696x.getText().toString());
-
-        sA1.put("ka317", bi.ka317a.isChecked() ? "1"
-                : bi.ka317b.isChecked() ? "2"
-                : "0");
-
-        sA1.put("ka318", bi.ka318.getText().toString());
-
-
-        sA1.put("ka319", bi.ka319a.isChecked() ? "1"
-                : bi.ka319b.isChecked() ? "2"
+        sA1.put("kac14", bi.kac14a.isChecked() ? "1"
+                : bi.kac14b.isChecked() ? "2"
                 : "0");
 
 
-        sA1.put("ka320", bi.ka320a.isChecked() ? "1"
-                : bi.ka320b.isChecked() ? "2"
+        sA1.put("kac15a", bi.kac15a.isChecked() ? "1" : "0");
+        sA1.put("kac15b", bi.kac15b.isChecked() ? "2" : "0");
+        sA1.put("kac15c", bi.kac15c.isChecked() ? "3" : "0");
+        sA1.put("kac15d", bi.kac15d.isChecked() ? "4" : "0");
+        sA1.put("kac15e", bi.kac15e.isChecked() ? "5" : "0");
+        sA1.put("kac15f", bi.kac15f.isChecked() ? "6" : "0");
+        sA1.put("kac1596", bi.kac1596.isChecked() ? "96" : "0");
+
+
+        sA1.put("kac1596x", bi.kac1596x.getText().toString());
+
+
+        sA1.put("kac16", bi.kac16a.isChecked() ? "1"
+                : bi.kac16b.isChecked() ? "2"
+                : bi.kac16c.isChecked() ? "3"
+                : bi.kac16d.isChecked() ? "4"
+                : bi.kac16e.isChecked() ? "5"
+                : bi.kac16f.isChecked() ? "6"
+                : bi.kac16g.isChecked() ? "7"
+                : bi.kac16h.isChecked() ? "8"
+                : bi.kac16i.isChecked() ? "9"
+                : bi.kac16j.isChecked() ? "10"
+                : bi.kac16k.isChecked() ? "11"
+                : bi.kac1696.isChecked() ? "96"
                 : "0");
 
-        sA1.put("ka321", bi.ka321a.isChecked() ? "1"
-                : bi.ka321b.isChecked() ? "2"
+        sA1.put("kac1696x", bi.kac1696x.getText().toString());
+
+        sA1.put("kac17", bi.kac17a.isChecked() ? "1"
+                : bi.kac17b.isChecked() ? "2"
                 : "0");
 
-        sA1.put("ka322", bi.ka322a.isChecked() ? "1"
-                : bi.ka322b.isChecked() ? "2"
+        sA1.put("kac18", bi.kac18.getText().toString());
+
+
+        sA1.put("kac19", bi.kac19a.isChecked() ? "1"
+                : bi.kac19b.isChecked() ? "2"
                 : "0");
 
 
-        sA1.put("ka323a", bi.ka323a.getText().toString());
-        sA1.put("ka323k", bi.ka323k.getText().toString());
-        sA1.put("ka32398", bi.ka32398.isChecked() ? "98" : "0");
+        sA1.put("kac20", bi.kac20a.isChecked() ? "1"
+                : bi.kac20b.isChecked() ? "2"
+                : "0");
 
-        sA1.put("ka32401", bi.ka32401.getText().toString());
-        sA1.put("ka32402", bi.ka32402.getText().toString());
-        sA1.put("ka32403", bi.ka32403.getText().toString());
-        sA1.put("ka32404", bi.ka32404.getText().toString());
-        sA1.put("ka32405", bi.ka32405.getText().toString());
-        sA1.put("ka32406", bi.ka32406.getText().toString());
-        sA1.put("ka32407", bi.ka32407.getText().toString());
-        sA1.put("ka32408", bi.ka32408.getText().toString());
-        sA1.put("ka32409", bi.ka32409.getText().toString());
-        sA1.put("ka32410", bi.ka32410.getText().toString());
-        sA1.put("ka32411", bi.ka32411.getText().toString());
-        sA1.put("ka32412", bi.ka32412.getText().toString());
-        sA1.put("ka32413", bi.ka32413.getText().toString());
-        sA1.put("ka32414", bi.ka32414.getText().toString());
-        sA1.put("ka32415", bi.ka32415.getText().toString());
-        sA1.put("ka32416", bi.ka32416.getText().toString());
-        sA1.put("ka32417", bi.ka32417.getText().toString());
-        sA1.put("ka32418", bi.ka32418.getText().toString());
-        sA1.put("ka32419", bi.ka32419.getText().toString());
-        sA1.put("ka32420", bi.ka32420.getText().toString());
-        sA1.put("ka32496", bi.ka32496.getText().toString());
+        sA1.put("kac21", bi.kac21a.isChecked() ? "1"
+                : bi.kac21b.isChecked() ? "2"
+                : "0");
+
+        sA1.put("kac22", bi.kac22a.isChecked() ? "1"
+                : bi.kac22b.isChecked() ? "2"
+                : "0");
+
+
+        sA1.put("kac23a", bi.kac23a.getText().toString());
+        sA1.put("kac23k", bi.kac23k.getText().toString());
+        sA1.put("kac2398", bi.kac2398.isChecked() ? "98" : "0");
+
+        sA1.put("kac2401", bi.kac2401.getText().toString());
+        sA1.put("kac2402", bi.kac2402.getText().toString());
+        sA1.put("kac2403", bi.kac2403.getText().toString());
+        sA1.put("kac2404", bi.kac2404.getText().toString());
+        sA1.put("kac2405", bi.kac2405.getText().toString());
+        sA1.put("kac2406", bi.kac2406.getText().toString());
+        sA1.put("kac2407", bi.kac2407.getText().toString());
+        sA1.put("kac2408", bi.kac2408.getText().toString());
+        sA1.put("kac2409", bi.kac2409.getText().toString());
+        sA1.put("kac2410", bi.kac2410.getText().toString());
+        sA1.put("kac2411", bi.kac2411.getText().toString());
+        sA1.put("kac2412", bi.kac2412.getText().toString());
+        sA1.put("kac2413", bi.kac2413.getText().toString());
+        sA1.put("kac2414", bi.kac2414.getText().toString());
+        sA1.put("kac2415", bi.kac2415.getText().toString());
+        sA1.put("kac2416", bi.kac2416.getText().toString());
+        sA1.put("kac2417", bi.kac2417.getText().toString());
+        sA1.put("kac2418", bi.kac2418.getText().toString());
+        sA1.put("kac2419", bi.kac2419.getText().toString());
+        sA1.put("kac2420", bi.kac2420.getText().toString());
+        sA1.put("kac2496", bi.kac2496.getText().toString());
 
 
         MainApp.fc.setsA1(String.valueOf(sA1));
@@ -368,149 +368,149 @@ public class SectionA3Activity extends AppCompatActivity {
 
     private boolean formValidation() {
 
-        if (!validatorClass.EmptyRadioButton(this, bi.ka301, bi.ka301a, getString(R.string.ka301))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.kac01, bi.kac01a, getString(R.string.kac01))) {
             return false;
         }
 
 
-        if (bi.ka30196.isChecked()) {
+        if (bi.kac0196.isChecked()) {
 
-            if (!validatorClass.EmptyTextBox(this, bi.ka30196x, getString(R.string.other))) {
+            if (!validatorClass.EmptyTextBox(this, bi.kac0196x, getString(R.string.other))) {
                 return false;
             }
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, bi.ka302, bi.ka302a, getString(R.string.ka302))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.kac02, bi.kac02a, getString(R.string.kac02))) {
             return false;
         }
 
 
-        if (bi.ka30296.isChecked()) {
+        if (bi.kac0296.isChecked()) {
 
-            if (!validatorClass.EmptyTextBox(this, bi.ka30296x, getString(R.string.other))) {
+            if (!validatorClass.EmptyTextBox(this, bi.kac0296x, getString(R.string.other))) {
                 return false;
             }
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, bi.ka303, bi.ka303a, getString(R.string.ka303sub))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.kac03, bi.kac03a, getString(R.string.kac03sub))) {
             return false;
         }
 
 
-        if (bi.ka30396.isChecked()) {
+        if (bi.kac0396.isChecked()) {
 
-            if (!validatorClass.EmptyTextBox(this, bi.ka30396x, getString(R.string.other))) {
+            if (!validatorClass.EmptyTextBox(this, bi.kac0396x, getString(R.string.other))) {
                 return false;
             }
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, bi.ka304, bi.ka304a, getString(R.string.ka304sub))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.kac04, bi.kac04a, getString(R.string.kac04sub))) {
             return false;
         }
 
 
-        if (bi.ka30496.isChecked()) {
+        if (bi.kac0496.isChecked()) {
 
-            if (!validatorClass.EmptyTextBox(this, bi.ka30496x, getString(R.string.other))) {
+            if (!validatorClass.EmptyTextBox(this, bi.kac0496x, getString(R.string.other))) {
                 return false;
             }
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, bi.ka305, bi.ka305a, getString(R.string.ka305))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.kac05, bi.kac05a, getString(R.string.kac05))) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyTextBox(this, bi.ka306, getString(R.string.ka306))) {
+        if (!validatorClass.EmptyTextBox(this, bi.kac06, getString(R.string.kac06))) {
             return false;
         }
 
 
-        if (!validatorClass.RangeTextBox(this, bi.ka306, 1, 15, getString(R.string.ka306), "Rooms")) {
+        if (!validatorClass.RangeTextBox(this, bi.kac06, 1, 15, getString(R.string.kac06), "Rooms")) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, bi.ka307, bi.ka307a, getString(R.string.ka307))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.kac07, bi.kac07a, getString(R.string.kac07))) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, bi.ka308, bi.ka308a, getString(R.string.ka308))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.kac08, bi.kac08a, getString(R.string.kac08))) {
             return false;
         }
 
 
-        if (bi.ka30896.isChecked()) {
+        if (bi.kac0896.isChecked()) {
 
-            if (!validatorClass.EmptyTextBox(this, bi.ka30896x, getString(R.string.other))) {
+            if (!validatorClass.EmptyTextBox(this, bi.kac0896x, getString(R.string.other))) {
                 return false;
             }
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, bi.ka309, bi.ka309a, getString(R.string.ka309))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.kac09, bi.kac09a, getString(R.string.kac09))) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, bi.ka310, bi.ka310a, getString(R.string.ka310))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.kac10, bi.kac10a, getString(R.string.kac10))) {
             return false;
         }
 
 
-        if (bi.ka31096.isChecked()) {
+        if (bi.kac1096.isChecked()) {
 
-            if (!validatorClass.EmptyTextBox(this, bi.ka31096x, getString(R.string.other))) {
+            if (!validatorClass.EmptyTextBox(this, bi.kac1096x, getString(R.string.other))) {
                 return false;
             }
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, bi.ka311, bi.ka311a, getString(R.string.ka311))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.kac11, bi.kac11a, getString(R.string.kac11))) {
             return false;
         }
 
 
-        if (bi.ka311a.isChecked()) {
+        if (bi.kac11a.isChecked()) {
 
-            if (!validatorClass.EmptyTextBox(this, bi.ka312, getString(R.string.ka312))) {
+            if (!validatorClass.EmptyTextBox(this, bi.kac12, getString(R.string.kac12))) {
                 return false;
             }
 
 
-            if (Integer.valueOf(bi.ka312.getText().toString()) <= 0) {
+            if (Integer.valueOf(bi.kac12.getText().toString()) <= 0) {
                 Toast.makeText(this, "Must be greater than 0 ", Toast.LENGTH_SHORT).show();
-                bi.ka312.requestFocus();
+                bi.kac12.requestFocus();
                 return false;
             }
 
 
-            if (!validatorClass.EmptyRadioButton(this, bi.ka313, bi.ka313a, getString(R.string.ka313))) {
+            if (!validatorClass.EmptyRadioButton(this, bi.kac13, bi.kac13a, getString(R.string.kac13))) {
                 return false;
             }
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, bi.ka314, bi.ka314a, getString(R.string.ka314))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.kac14, bi.kac14a, getString(R.string.kac14))) {
             return false;
         }
 
 
-        if (bi.ka314a.isChecked()) {
+        if (bi.kac14a.isChecked()) {
 
-            if (!validatorClass.EmptyCheckBox(this, bi.fldGrpka315, bi.ka315a, getString(R.string.ka315))) {
+            if (!validatorClass.EmptyCheckBox(this, bi.fldGrpkac15, bi.kac15a, getString(R.string.kac15))) {
                 return false;
             }
 
 
-            if (bi.ka31596.isChecked()) {
+            if (bi.kac1596.isChecked()) {
 
-                if (!validatorClass.EmptyTextBox(this, bi.ka31596x, getString(R.string.other))) {
+                if (!validatorClass.EmptyTextBox(this, bi.kac1596x, getString(R.string.other))) {
                     return false;
                 }
             }
@@ -518,273 +518,273 @@ public class SectionA3Activity extends AppCompatActivity {
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, bi.ka316, bi.ka316a, getString(R.string.ka316))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.kac16, bi.kac16a, getString(R.string.kac16))) {
             return false;
         }
 
 
-        if (bi.ka31696.isChecked()) {
+        if (bi.kac1696.isChecked()) {
 
-            if (!validatorClass.EmptyTextBox(this, bi.ka31696x, getString(R.string.other))) {
+            if (!validatorClass.EmptyTextBox(this, bi.kac1696x, getString(R.string.other))) {
                 return false;
             }
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, bi.ka317, bi.ka317a, getString(R.string.ka317))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.kac17, bi.kac17a, getString(R.string.kac17))) {
             return false;
         }
 
 
-        if (bi.ka317a.isChecked()) {
+        if (bi.kac17a.isChecked()) {
 
-            if (!validatorClass.EmptyTextBox(this, bi.ka318, getString(R.string.ka318))) {
+            if (!validatorClass.EmptyTextBox(this, bi.kac18, getString(R.string.kac18))) {
                 return false;
             }
 
-            if (!validatorClass.RangeTextBox(this, bi.ka318, 1, 15, getString(R.string.ka318), "Toilet")) {
+            if (!validatorClass.RangeTextBox(this, bi.kac18, 1, 15, getString(R.string.kac18), "Toilet")) {
                 return false;
             }
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, bi.ka319, bi.ka319a, getString(R.string.ka319))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.kac19, bi.kac19a, getString(R.string.kac19))) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, bi.ka320, bi.ka320a, getString(R.string.ka320))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.kac20, bi.kac20a, getString(R.string.kac20))) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, bi.ka321, bi.ka321a, getString(R.string.ka321))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.kac21, bi.kac21a, getString(R.string.kac21))) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, bi.ka322, bi.ka322a, getString(R.string.ka322))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.kac22, bi.kac22a, getString(R.string.kac22))) {
             return false;
         }
 
 
-        if (bi.ka322a.isChecked()) {
+        if (bi.kac22a.isChecked()) {
 
-            if (!bi.ka32398.isChecked()) {
+            if (!bi.kac2398.isChecked()) {
 
-                if (!validatorClass.EmptyTextBox(this, bi.ka323a, getString(R.string.ka323acr))) {
+                if (!validatorClass.EmptyTextBox(this, bi.kac23a, getString(R.string.kac23acr))) {
                     return false;
                 }
 
 
-                if (!validatorClass.EmptyTextBox(this, bi.ka323k, getString(R.string.ka323can))) {
+                if (!validatorClass.EmptyTextBox(this, bi.kac23k, getString(R.string.kac23can))) {
                     return false;
                 }
             }
         }
 
 
-        if (!validatorClass.EmptyTextBox(this, bi.ka32401, getString(R.string.ka32401))) {
+        if (!validatorClass.EmptyTextBox(this, bi.kac2401, getString(R.string.kac2401))) {
             return false;
         }
 
 
-        if (!validatorClass.RangeTextBox(this, bi.ka32401, 0, 99, getString(R.string.ka32401), "Quantity")) {
+        if (!validatorClass.RangeTextBox(this, bi.kac2401, 0, 99, getString(R.string.kac2401), "Quantity")) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyTextBox(this, bi.ka32402, getString(R.string.ka32402))) {
+        if (!validatorClass.EmptyTextBox(this, bi.kac2402, getString(R.string.kac2402))) {
             return false;
         }
 
 
-        if (!validatorClass.RangeTextBox(this, bi.ka32402, 0, 99, getString(R.string.ka32402), "Quantity")) {
+        if (!validatorClass.RangeTextBox(this, bi.kac2402, 0, 99, getString(R.string.kac2402), "Quantity")) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyTextBox(this, bi.ka32403, getString(R.string.ka32403))) {
+        if (!validatorClass.EmptyTextBox(this, bi.kac2403, getString(R.string.kac2403))) {
             return false;
         }
 
 
-        if (!validatorClass.RangeTextBox(this, bi.ka32403, 0, 10, getString(R.string.ka32403), "Quantity")) {
+        if (!validatorClass.RangeTextBox(this, bi.kac2403, 0, 10, getString(R.string.kac2403), "Quantity")) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyTextBox(this, bi.ka32404, getString(R.string.ka32404))) {
+        if (!validatorClass.EmptyTextBox(this, bi.kac2404, getString(R.string.kac2404))) {
             return false;
         }
 
 
-        if (!validatorClass.RangeTextBox(this, bi.ka32404, 0, 10, getString(R.string.ka32404), "Quantity")) {
+        if (!validatorClass.RangeTextBox(this, bi.kac2404, 0, 10, getString(R.string.kac2404), "Quantity")) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyTextBox(this, bi.ka32405, getString(R.string.ka32405))) {
+        if (!validatorClass.EmptyTextBox(this, bi.kac2405, getString(R.string.kac2405))) {
             return false;
         }
 
 
-        if (!validatorClass.RangeTextBox(this, bi.ka32405, 0, 10, getString(R.string.ka32405), "Quantity")) {
+        if (!validatorClass.RangeTextBox(this, bi.kac2405, 0, 10, getString(R.string.kac2405), "Quantity")) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyTextBox(this, bi.ka32406, getString(R.string.ka32406))) {
+        if (!validatorClass.EmptyTextBox(this, bi.kac2406, getString(R.string.kac2406))) {
             return false;
         }
 
 
-        if (!validatorClass.RangeTextBox(this, bi.ka32406, 0, 10, getString(R.string.ka32406), "Quantity")) {
+        if (!validatorClass.RangeTextBox(this, bi.kac2406, 0, 10, getString(R.string.kac2406), "Quantity")) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyTextBox(this, bi.ka32407, getString(R.string.ka32407))) {
+        if (!validatorClass.EmptyTextBox(this, bi.kac2407, getString(R.string.kac2407))) {
             return false;
         }
 
 
-        if (!validatorClass.RangeTextBox(this, bi.ka32407, 0, 10, getString(R.string.ka32407), "Quantity")) {
+        if (!validatorClass.RangeTextBox(this, bi.kac2407, 0, 10, getString(R.string.kac2407), "Quantity")) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyTextBox(this, bi.ka32408, getString(R.string.ka32408))) {
+        if (!validatorClass.EmptyTextBox(this, bi.kac2408, getString(R.string.kac2408))) {
             return false;
         }
 
 
-        if (!validatorClass.RangeTextBox(this, bi.ka32408, 0, 10, getString(R.string.ka32408), "Quantity")) {
+        if (!validatorClass.RangeTextBox(this, bi.kac2408, 0, 10, getString(R.string.kac2408), "Quantity")) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyTextBox(this, bi.ka32409, getString(R.string.ka32409))) {
+        if (!validatorClass.EmptyTextBox(this, bi.kac2409, getString(R.string.kac2409))) {
             return false;
         }
 
 
-        if (!validatorClass.RangeTextBox(this, bi.ka32409, 0, 10, getString(R.string.ka32409), "Quantity")) {
+        if (!validatorClass.RangeTextBox(this, bi.kac2409, 0, 10, getString(R.string.kac2409), "Quantity")) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyTextBox(this, bi.ka32410, getString(R.string.ka32410))) {
+        if (!validatorClass.EmptyTextBox(this, bi.kac2410, getString(R.string.kac2410))) {
             return false;
         }
 
 
-        if (!validatorClass.RangeTextBox(this, bi.ka32410, 0, 10, getString(R.string.ka32410), "Quantity")) {
+        if (!validatorClass.RangeTextBox(this, bi.kac2410, 0, 10, getString(R.string.kac2410), "Quantity")) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyTextBox(this, bi.ka32411, getString(R.string.ka32411))) {
+        if (!validatorClass.EmptyTextBox(this, bi.kac2411, getString(R.string.kac2411))) {
             return false;
         }
 
 
-        if (!validatorClass.RangeTextBox(this, bi.ka32411, 0, 10, getString(R.string.ka32411), "Quantity")) {
+        if (!validatorClass.RangeTextBox(this, bi.kac2411, 0, 10, getString(R.string.kac2411), "Quantity")) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyTextBox(this, bi.ka32412, getString(R.string.ka32412))) {
+        if (!validatorClass.EmptyTextBox(this, bi.kac2412, getString(R.string.kac2412))) {
             return false;
         }
 
 
-        if (!validatorClass.RangeTextBox(this, bi.ka32412, 0, 10, getString(R.string.ka32412), "Quantity")) {
+        if (!validatorClass.RangeTextBox(this, bi.kac2412, 0, 10, getString(R.string.kac2412), "Quantity")) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyTextBox(this, bi.ka32413, getString(R.string.ka32413))) {
+        if (!validatorClass.EmptyTextBox(this, bi.kac2413, getString(R.string.kac2413))) {
             return false;
         }
 
 
-        if (!validatorClass.RangeTextBox(this, bi.ka32413, 0, 10, getString(R.string.ka32413), "Quantity")) {
+        if (!validatorClass.RangeTextBox(this, bi.kac2413, 0, 10, getString(R.string.kac2413), "Quantity")) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyTextBox(this, bi.ka32414, getString(R.string.ka32414))) {
+        if (!validatorClass.EmptyTextBox(this, bi.kac2414, getString(R.string.kac2414))) {
             return false;
         }
 
 
-        if (!validatorClass.RangeTextBox(this, bi.ka32414, 0, 10, getString(R.string.ka32414), "Quantity")) {
+        if (!validatorClass.RangeTextBox(this, bi.kac2414, 0, 10, getString(R.string.kac2414), "Quantity")) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyTextBox(this, bi.ka32415, getString(R.string.ka32415))) {
+        if (!validatorClass.EmptyTextBox(this, bi.kac2415, getString(R.string.kac2415))) {
             return false;
         }
 
 
-        if (!validatorClass.RangeTextBox(this, bi.ka32415, 0, 10, getString(R.string.ka32415), "Quantity")) {
+        if (!validatorClass.RangeTextBox(this, bi.kac2415, 0, 10, getString(R.string.kac2415), "Quantity")) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyTextBox(this, bi.ka32416, getString(R.string.ka32415))) {
+        if (!validatorClass.EmptyTextBox(this, bi.kac2416, getString(R.string.kac2415))) {
             return false;
         }
 
 
-        if (!validatorClass.RangeTextBox(this, bi.ka32416, 0, 10, getString(R.string.ka32416), "Quantity")) {
+        if (!validatorClass.RangeTextBox(this, bi.kac2416, 0, 10, getString(R.string.kac2416), "Quantity")) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyTextBox(this, bi.ka32417, getString(R.string.ka32417))) {
+        if (!validatorClass.EmptyTextBox(this, bi.kac2417, getString(R.string.kac2417))) {
             return false;
         }
 
 
-        if (!validatorClass.RangeTextBox(this, bi.ka32417, 0, 10, getString(R.string.ka32417), "Quantity")) {
+        if (!validatorClass.RangeTextBox(this, bi.kac2417, 0, 10, getString(R.string.kac2417), "Quantity")) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyTextBox(this, bi.ka32418, getString(R.string.ka32418))) {
+        if (!validatorClass.EmptyTextBox(this, bi.kac2418, getString(R.string.kac2418))) {
             return false;
         }
 
 
-        if (!validatorClass.RangeTextBox(this, bi.ka32418, 0, 10, getString(R.string.ka32418), "Quantity")) {
+        if (!validatorClass.RangeTextBox(this, bi.kac2418, 0, 10, getString(R.string.kac2418), "Quantity")) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyTextBox(this, bi.ka32419, getString(R.string.ka32419))) {
+        if (!validatorClass.EmptyTextBox(this, bi.kac2419, getString(R.string.kac2419))) {
             return false;
         }
 
 
-        if (!validatorClass.RangeTextBox(this, bi.ka32419, 0, 10, getString(R.string.ka32419), "Quantity")) {
+        if (!validatorClass.RangeTextBox(this, bi.kac2419, 0, 10, getString(R.string.kac2419), "Quantity")) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyTextBox(this, bi.ka32420, getString(R.string.ka32420))) {
+        if (!validatorClass.EmptyTextBox(this, bi.kac2420, getString(R.string.kac2420))) {
             return false;
         }
 
 
-        if (!validatorClass.RangeTextBox(this, bi.ka32420, 0, 10, getString(R.string.ka32420), "Quantity")) {
+        if (!validatorClass.RangeTextBox(this, bi.kac2420, 0, 10, getString(R.string.kac2420), "Quantity")) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyTextBox(this, bi.ka32496, getString(R.string.other))) {
+        if (!validatorClass.EmptyTextBox(this, bi.kac2496, getString(R.string.other))) {
             return false;
         }
 

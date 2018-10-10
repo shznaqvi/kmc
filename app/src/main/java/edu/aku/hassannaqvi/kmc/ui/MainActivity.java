@@ -597,9 +597,9 @@ public class MainActivity extends Activity {
 
     public void openC6(View v) {
 
-        startActivity1(SectionC6Activity.class);
+        startActivity1(SectionB3_PNCActivity.class);
 
-        /*Intent dbmanager = new Intent(getApplicationContext(), SectionC6Activity.class);
+        /*Intent dbmanager = new Intent(getApplicationContext(), SectionB3_PNCActivity.class);
         startActivity(dbmanager);*/
     }
 

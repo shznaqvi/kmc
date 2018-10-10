@@ -83,7 +83,7 @@ public class SectionC5Activity extends AppCompatActivity {
 
                 finish();
 
-                startActivity(new Intent(this, SectionC6Activity.class));
+                startActivity(new Intent(this, SectionB3_PNCActivity.class));
                 //startActivity(new Intent(this, MainActivity.class));
 
             } else {
