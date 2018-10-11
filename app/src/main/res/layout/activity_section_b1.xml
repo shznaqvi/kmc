@@ -28,9 +28,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
+                android:background="@color/colorPrimaryBeta"
                 android:text="@string/kbheading"
                 android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="32dp"
+                android:gravity="center"
                 android:textColor="@android:color/white" />
 
             <View

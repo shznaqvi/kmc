@@ -78,10 +78,6 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1" />
         <activity
-            android:name=".ui.SectionC5Activity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme1" />
-        <activity
             android:name=".ui.SectionB4_3Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1" />
@@ -94,15 +90,11 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1" />
         <activity
-            android:name=".ui.SectionFActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme1" />
-        <activity
             android:name=".ui.SectionCActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1" />
         <activity
-            android:name=".ui.SectionInfoKmcActivity"
+            android:name=".ui.SectionA1Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1" />
 
@@ -114,7 +106,12 @@
             android:writePermission="edu.aku.hassannaqvi.kmc.core.MainContentProvider.READWRITE" />
 
         <activity android:name=".ui.TestDate" />
-        <activity android:name=".ui.SectionB4_2Activity"></activity>
+        <activity android:name=".ui.SectionB4_2Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1"/>
+        <activity android:name=".ui.SectionA2Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1"/>
     </application>
 
 </manifest>

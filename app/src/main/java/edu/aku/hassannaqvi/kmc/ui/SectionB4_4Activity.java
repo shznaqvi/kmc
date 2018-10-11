@@ -101,7 +101,6 @@ public class SectionB4_4Activity extends AppCompatActivity {
 
     public void BtnContinue() {
 
-        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
             try {
                 SaveDraft();
@@ -109,7 +108,6 @@ public class SectionB4_4Activity extends AppCompatActivity {
                 e.printStackTrace();
             }
             if (UpdateDB()) {
-                Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
 
                 finish();
 
@@ -213,14 +211,14 @@ public class SectionB4_4Activity extends AppCompatActivity {
 
         sd2.put("kbdd0496x", bi.kbdd0496x.getText().toString());
 
-        MainApp.fc.setsD2(String.valueOf(sd2));
+        MainApp.fc.setsb4_4(String.valueOf(sd2));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }
 
     private boolean UpdateDB() {
         db = new DatabaseHelper(context);
-        int updcount = db.updateSD2();
+        int updcount = db.updateSB4_4();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();

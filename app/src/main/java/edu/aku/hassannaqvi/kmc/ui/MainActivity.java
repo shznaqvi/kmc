@@ -259,7 +259,7 @@ public class MainActivity extends Activity {
 //        if (spAreas.getSelectedItemPosition() != 0) {
         //final Intent oF = new Intent(MainActivity.this, SectionA3Activity.class);
 
-        final Intent oF = new Intent(MainActivity.this, SectionInfoKmcActivity.class);
+        final Intent oF = new Intent(MainActivity.this, SectionA1Activity.class);
 
         if (sharedPref.getString("tagName", null) != "" && sharedPref.getString("tagName", null) != null && !MainApp.userName.equals("0000")) {
             startActivity(oF);
@@ -299,79 +299,7 @@ public class MainActivity extends Activity {
 
             builder.show();
         }
-//        } else {
-//            Toast.makeText(getApplicationContext(), "Please select data from combobox!!", Toast.LENGTH_LONG).show();
-//        }
     }
-
-/*
-    public void openA(View v) {
-     Intent iA = new Intent(this, SectionB1Activity.class);
-        startActivity(iA);
-    }
-
-    public void openB(View v) {
-        //Intent iB = new Intent(this, SectionA2Activity.class);
-//        startActivity(iB);
-    }
-
-
-    public void openD(View v) {
-        Intent iD = new Intent(this, SectionDActivity.class);
-        startActivity(iD);
-    }
-
-    public void openE(View v) {
-        Intent iE = new Intent(this, SectionCActivity.class);
-        startActivity(iE);
-    }
-
-    public void openF(View v) {
-        Intent iF = new Intent(this, SectionFActivity.class);
-        startActivity(iF);
-    }
-
-    public void openG(View v) {
-        Intent iG = new Intent(this, SectionGActivity.class);
-        startActivity(iG);
-    }
-
-    public void openI(View v) {
-        Intent iI = new Intent(this, SectionIActivity.class);
-        startActivity(iI);
-    }
-
-    public void openJ(View v) {
-        Intent iJ = new Intent(this, SectionJActivity.class);
-        startActivity(iJ);
-    }
-
-    public void openK(View v) {
-        Intent iK = new Intent(this, SectionKActivity.class);
-        startActivity(iK);
-    }
-
-    public void openL(View v) {
-        Intent iL = new Intent(this, SectionLActivity.class);
-        startActivity(iL);
-    }
-
-    public void openM(View v) {
-        Intent iM = new Intent(this, SectionMActivity.class);
-        startActivity(iM);
-    }
-
-
-    public void openHA(View v) {
-        Intent iB = new Intent(this, SectionHAActivity.class);
-        startActivity(iB);
-    }
-
-    public void openHB(View v) {
-        Intent iB = new Intent(this, SectionHBActivity.class);
-        startActivity(iB);
-    }*/
-
 
     public void testGPS(View v) {
 
@@ -531,116 +459,54 @@ public class MainActivity extends Activity {
     }
 
 
-    public void openA1(View v) {
-
+    public void openA2(View v) {
+        startActivity1(SectionA2Activity.class);
+    }
+    public void openA3(View v) {
         startActivity1(SectionA3Activity.class);
-
-        /*Intent dbmanager = new Intent(getApplicationContext(), SectionA3Activity.class);
-        startActivity(dbmanager);*/
     }
 
     public void openB1(View v) {
-
         startActivity1(SectionB1Activity.class);
-
-        /*Intent dbmanager = new Intent(getApplicationContext(), SectionB1Activity.class);
-        startActivity(dbmanager);*/
     }
 
     public void openB2(View v) {
-
-//        startActivity1(SectionB2Activity.class);
-
-//        Intent dbmanager = new Intent(getApplicationContext(), SectionB2Activity.class);
-//        startActivity(dbmanager);
-    }
-
-    public void openC1(View v) {
-
-        startActivity1(SectionB1Activity.class);
-
-//        Intent dbmanager = new Intent(getApplicationContext(), SectionB1Activity.class);
-//        startActivity(dbmanager);
-    }
-
-    public void openC2(View v) {
-
         startActivity1(SectionB2Activity.class);
 
-//        Intent dbmanager = new Intent(getApplicationContext(), SectionB2Activity.class);
-//        startActivity(dbmanager);
     }
-
-    public void openC3(View v) {
-
+    public void openB3(View v) {
         startActivity1(SectionB3Activity.class);
 
-        /*Intent dbmanager = new Intent(getApplicationContext(), SectionB3Activity.class);
-        startActivity(dbmanager);*/
     }
-
-    public void openC4(View v) {
-
-        startActivity1(SectionB4Activity.class);
-
-        /*Intent dbmanager = new Intent(getApplicationContext(), SectionB4Activity.class);
-        startActivity(dbmanager);*/
-    }
-
-    public void openC5(View v) {
-
-        startActivity1(SectionC5Activity.class);
-
-        /*Intent dbmanager = new Intent(getApplicationContext(), SectionC5Activity.class);
-        startActivity(dbmanager);*/
-    }
-
-    public void openC6(View v) {
-
+    public void openB3_PNC(View v) {
         startActivity1(SectionB3_PNCActivity.class);
 
-        /*Intent dbmanager = new Intent(getApplicationContext(), SectionB3_PNCActivity.class);
-        startActivity(dbmanager);*/
     }
+    public void openB4(View v) {
+        startActivity1(SectionB4Activity.class);
 
-    public void openD1(View v) {
+    }
+    public void openB4_2(View v) {
+        startActivity1(SectionB4_2Activity.class);
 
+    }
+    public void openB4_3(View v) {
         startActivity1(SectionB4_3Activity.class);
 
-        /*Intent dbmanager = new Intent(getApplicationContext(), SectionB4_3Activity.class);
-        startActivity(dbmanager);*/
     }
-
-    public void openD2(View v) {
-
+    public void openB4_4(View v) {
         startActivity1(SectionB4_4Activity.class);
 
-        /*Intent dbmanager = new Intent(getApplicationContext(), SectionB4_4Activity.class);
-        startActivity(dbmanager);*/
     }
-
-    public void openD3(View v) {
-
+    public void openB4_5(View v) {
         startActivity1(SectionB4_5Activity.class);
 
-        /*Intent dbmanager = new Intent(getApplicationContext(), SectionB4_5Activity.class);
-        startActivity(dbmanager);*/
     }
 
-    public void openE(View v) {
+    public void openC(View v) {
 
         startActivity1(SectionCActivity.class);
 
-        /*Intent dbmanager = new Intent(getApplicationContext(), SectionCActivity.class);
-        startActivity(dbmanager);*/
-    }
-
-    public void openF(View v) {
-
-        startActivity1(SectionFActivity.class);
-
-        /*Intent dbmanager = new Intent(getApplicationContext(), SectionFActivity.class);
-        startActivity(dbmanager);*/
     }
 
     private void startActivity1(final Class<? extends Activity> ActivityToOpen) {

@@ -40,11 +40,11 @@ import edu.aku.hassannaqvi.kmc.contracts.UCsContract;
 import edu.aku.hassannaqvi.kmc.contracts.VillagesContract;
 import edu.aku.hassannaqvi.kmc.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc.core.MainApp;
-import edu.aku.hassannaqvi.kmc.databinding.ActivitySectionInfoKmcBinding;
+import edu.aku.hassannaqvi.kmc.databinding.ActivitySectionA1Binding;
 import edu.aku.hassannaqvi.kmc.validation.validatorClass;
 
 
-public class SectionInfoKmcActivity extends Activity {
+public class SectionA1Activity extends Activity {
 
     public List<String> psuName, districtNames, villageNames, wName;
     public List<String> psuCode, districtCodes, villageCodes, wSno;
@@ -55,18 +55,17 @@ public class SectionInfoKmcActivity extends Activity {
 
     Collection<MwraContract> mwra;
 
-    private static final String TAG = SectionInfoKmcActivity.class.getName();
+    private static final String TAG = SectionA1Activity.class.getName();
     String dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
 
-    ActivitySectionInfoKmcBinding bi;
+    ActivitySectionA1Binding bi;
     int length = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_section_info_kmc);
 
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_info_kmc);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_a1);
         bi.setCallback(this);
 
         db = new DatabaseHelper(getApplicationContext());
@@ -405,8 +404,51 @@ public class SectionInfoKmcActivity extends Activity {
         }
 
 
+
         if (!validatorClass.EmptyRadioButton(this, bi.cra07, bi.cra07a, getString(R.string.cra07))) {
             return false;
+        }
+
+        if (!validatorClass.EmptyTextBox(this, bi.kaa05, getString(R.string.kaa05))) {
+            return false;
+        }
+        if (!validatorClass.EmptyTextBox(this, bi.kaa06, getString(R.string.kaa06))) {
+            return false;
+        }
+        if (!validatorClass.EmptyTextBox(this, bi.kaa07, getString(R.string.kaa07))) {
+            return false;
+        }
+        if (!validatorClass.EmptyTextBox(this, bi.kaa08, getString(R.string.kaa08))) {
+            return false;
+        }
+        if (!validatorClass.EmptyTextBox(this, bi.kaa09, getString(R.string.kaa09))) {
+            return false;
+        }
+        if (!validatorClass.EmptyTextBox(this, bi.kaa10, getString(R.string.kaa10))) {
+            return false;
+        }
+        if (!validatorClass.EmptyTextBox(this, bi.kaa10a, getString(R.string.kaa10a))) {
+            return false;
+        }
+        if (!validatorClass.EmptyTextBox(this, bi.kaa10b, getString(R.string.kaa10b))) {
+            return false;
+        }
+        if (!validatorClass.EmptyTextBox(this, bi.kaa10c, getString(R.string.kaa10c))) {
+            return false;
+        }
+        int totalchildu5 = Integer.parseInt(bi.kaa10a.getText().toString())+Integer.parseInt(bi.kaa10b.getText().toString())+Integer.parseInt(bi.kaa10b.getText().toString());
+        if(Integer.parseInt(bi.kaa10.getText().toString()) != totalchildu5){
+            bi.kaa10.setError("Wrong calculation of child under 5");
+            bi.kaa10a.setError("Wrong calculation of child under 5");
+            bi.kaa10b.setError("Wrong calculation of child under 5");
+            bi.kaa10c.setError("Wrong calculation of child under 5");
+            Toast.makeText(this,"Wrong calculation of child under 5",Toast.LENGTH_SHORT).show();
+            return false;
+        }else{
+            bi.kaa10.setError(null);
+            bi.kaa10a.setError(null);
+            bi.kaa10b.setError(null);
+            bi.kaa10c.setError(null);
         }
 
 
@@ -440,10 +482,10 @@ public class SectionInfoKmcActivity extends Activity {
 
         //sInfo.put("cra03", bi.cra03.getText().toString());
 
-        sInfo.put("kaa04", bi.cra04.getText().toString());
+        sInfo.put("cra04", bi.cra04.getText().toString());
 
         //sInfo.put("cra05", bi.cra05.getText().toString());
-        sInfo.put("kaa06", bi.cra06.getText().toString());
+        sInfo.put("cra06", bi.cra06.getText().toString());
 
 
         sInfo.put("sno", MainApp.wSerialNo);
@@ -454,11 +496,20 @@ public class SectionInfoKmcActivity extends Activity {
         sInfo.put("hh08", mapWRA.get(bi.crwoman.getSelectedItem().toString()).getHh08());
         sInfo.put("hh09", mapWRA.get(bi.crwoman.getSelectedItem().toString()).getHh09());
 
-        sInfo.put("kaa07", bi.cra07a.isChecked() ? "1"
+        sInfo.put("cra07a", bi.cra07a.isChecked() ? "1"
                 : bi.cra07b.isChecked() ? "2"
                 : "0");
+        sInfo.put("kaa05", bi.kaa05.getText().toString());
+        sInfo.put("kaa06", bi.kaa06.getText().toString());
+        sInfo.put("kaa07", bi.kaa07.getText().toString());
+        sInfo.put("kaa08", bi.kaa08.getText().toString());
+        sInfo.put("kaa09", bi.kaa09.getText().toString());
+        sInfo.put("kaa10", bi.kaa10.getText().toString());
+        sInfo.put("kaa10a", bi.kaa10a.getText().toString());
+        sInfo.put("kaa10b", bi.kaa10b.getText().toString());
+        sInfo.put("kaa10c", bi.kaa10c.getText().toString());
 
-        MainApp.fc.setsInfo(String.valueOf(sInfo));
+        MainApp.fc.setsa1(String.valueOf(sInfo));
 
         setGPS();
     }
@@ -487,7 +538,6 @@ public class SectionInfoKmcActivity extends Activity {
 
     public void BtnContinue() {
 
-        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
             try {
                 SaveDraft();
@@ -499,7 +549,7 @@ public class SectionInfoKmcActivity extends Activity {
 
                 finish();
 
-                startActivity(new Intent(this, SectionA3Activity.class));
+                startActivity(new Intent(this, SectionA2Activity.class));
                 //startActivity(new Intent(this, MainActivity.class));
 
             } else {
@@ -593,12 +643,14 @@ public class SectionInfoKmcActivity extends Activity {
                 if (dc.size() <= 0) {
                     clearFields();
                     bi.fldGrpcra04.setVisibility(View.GONE);
+                    bi.womeninfo.setVisibility(View.GONE);
                     bi.btnNext.setVisibility(View.GONE);
                     bi.btnEnd.setVisibility(View.GONE);
                     Toast.makeText(this, "Household does not exist ", Toast.LENGTH_LONG).show();
                 } else {
                     Toast.makeText(this, "Household number exists", Toast.LENGTH_LONG).show();
                     bi.fldGrpcra04.setVisibility(View.VISIBLE);
+                    bi.womeninfo.setVisibility(View.VISIBLE);
                     bi.btnNext.setVisibility(View.VISIBLE);
                     bi.btnEnd.setVisibility(View.VISIBLE);
                 }
@@ -607,6 +659,7 @@ public class SectionInfoKmcActivity extends Activity {
                 clearFields();
                 bi.btnNext.setVisibility(View.GONE);
                 bi.btnEnd.setVisibility(View.GONE);
+                bi.womeninfo.setVisibility(View.GONE);
                 bi.cra04.requestFocus();
             }
         }
@@ -670,8 +723,7 @@ public class SectionInfoKmcActivity extends Activity {
         if (updcount > 0) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
 
-            MainApp.fc.setUID(
-                    (MainApp.fc.getDeviceID() + MainApp.fc.get_ID()));
+            MainApp.fc.setUID((MainApp.fc.getDeviceID() + MainApp.fc.get_ID()));
             db.updateFormID();
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
@@ -712,9 +764,5 @@ public class SectionInfoKmcActivity extends Activity {
     }
 
 
-    @Override
-    public void onBackPressed() {
-        Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
-    }
 
 }

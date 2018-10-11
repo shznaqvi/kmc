@@ -279,7 +279,7 @@ public class SectionB4_5Activity extends AppCompatActivity {
                 : "0");
         sD3.put("kbde0596x", bi.kbde0596x.getText().toString());
 
-        MainApp.fc.setsD3(String.valueOf(sD3));
+        MainApp.fc.setsb4_5(String.valueOf(sD3));
 
     }
 
@@ -402,7 +402,6 @@ public class SectionB4_5Activity extends AppCompatActivity {
 
     public void BtnContinue() {
 
-        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
             try {
                 SaveDraft();
@@ -411,11 +410,10 @@ public class SectionB4_5Activity extends AppCompatActivity {
             }
 
             if (UpdateDB()) {
-                Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
 
                 finish();
 
-                startActivity(new Intent(this, SectionCActivity.class));
+                startActivity(new Intent(this, SectionB4Activity.class));
                 //startActivity(new Intent(this, MainActivity.class));
 
             } else {
@@ -430,7 +428,7 @@ public class SectionB4_5Activity extends AppCompatActivity {
         //Long rowId;
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateSD3();
+        int updcount = db.updateSB4_5();
 
         if (updcount == 1) {
             //Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();

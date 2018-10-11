@@ -362,7 +362,7 @@ public class SectionA3Activity extends AppCompatActivity {
         sA1.put("kac2496", bi.kac2496.getText().toString());
 
 
-        MainApp.fc.setsA1(String.valueOf(sA1));
+        MainApp.fc.setsa3(String.valueOf(sA1));
     }
 
 
@@ -817,7 +817,6 @@ public class SectionA3Activity extends AppCompatActivity {
 
     public void BtnContinue() {
 
-        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
             try {
                 SaveDraft();
@@ -825,11 +824,10 @@ public class SectionA3Activity extends AppCompatActivity {
                 e.printStackTrace();
             }
             if (UpdateDB()) {
-                Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
 
                 finish();
 
-                startActivity(new Intent(this, SectionB2Activity.class));
+                startActivity(new Intent(this, SectionB1Activity.class));
                 //startActivity(new Intent(this, MainActivity.class));
 
             } else {
@@ -844,7 +842,7 @@ public class SectionA3Activity extends AppCompatActivity {
         //Long rowId;
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateSA1();
+        int updcount = db.updateSA3();
 
         if (updcount > 0) {
             //Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();

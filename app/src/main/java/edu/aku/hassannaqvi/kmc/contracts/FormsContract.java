@@ -21,22 +21,19 @@ public class FormsContract {
     private String user = ""; // Interviewer
     private String istatus = ""; // Interview Status
     private String istatus88x = ""; // Interview Status
-    private String sInfo = "";    // Info Section
-    private String sA1 = "";
-    //private String sB1 = "";
-    private String sB2 = "";
-
-    private String sC2 = "";
-    private String sC3 = "";
-    private String sC1 = "";
-    private String sC4 = "";
-    private String sC5 = "";
-    private String sC6 = "";
-    private String sD1 = "";
-    private String sD2 = "";
-    private String sD3 = "";
-    private String sE = "";
-    private String sF = "";
+    private String sa1 = "";
+    private String sa2 = "";
+    private String sa3 = "";
+    private String sb1 = "";
+    private String sb2 = "";
+    private String sb3 = "";
+    private String sb3_pnc = "";
+    private String sb4 = "";
+    private String sb4_2 = "";
+    private String sb4_3 = "";
+    private String sb4_4 = "";
+    private String sb4_5 = "";
+    private String sc = "";
     private String endingdatetime = "";
     private String gpsLat = "";
     private String gpsLng = "";
@@ -71,26 +68,20 @@ public class FormsContract {
         this.user = jsonObject.getString(FormsTable.COLUMN_USER);
         this.istatus = jsonObject.getString(FormsTable.COLUMN_ISTATUS);
         this.istatus88x = jsonObject.getString(FormsTable.COLUMN_ISTATUS88X);
-        this.sInfo = jsonObject.getString(FormsTable.COLUMN_SINFO);
-        this.sA1 = jsonObject.getString(FormsTable.COLUMN_SA1);
-        //this.sB1 = jsonObject.getString(FormsTable.COLUMN_SB1);
-        this.sB2 = jsonObject.getString(FormsTable.COLUMN_SB2);
+        this.sa1= jsonObject.getString(FormsTable.COLUMN_SA1);
+        this.sa2= jsonObject.getString(FormsTable.COLUMN_SA2);
+        this.sa3= jsonObject.getString(FormsTable.COLUMN_SA3);
+        this.sb1= jsonObject.getString(FormsTable.COLUMN_SB1);
+        this.sb2= jsonObject.getString(FormsTable.COLUMN_SB2);
+        this.sb3= jsonObject.getString(FormsTable.COLUMN_SB3);
+        this.sb3_pnc= jsonObject.getString(FormsTable.COLUMN_SB3_PNC);
+        this.sb4= jsonObject.getString(FormsTable.COLUMN_SB4);
+        this.sb4_2= jsonObject.getString(FormsTable.COLUMN_SB4_2);
+        this.sb4_3= jsonObject.getString(FormsTable.COLUMN_SB4_3);
+        this.sb4_4= jsonObject.getString(FormsTable.COLUMN_SB4_4);
+        this.sb4_5= jsonObject.getString(FormsTable.COLUMN_SB4_5);
+        this.sc= jsonObject.getString(FormsTable.COLUMN_SC);
 
-        this.sC2 = jsonObject.getString(FormsTable.COLUMN_SC2);
-        this.sC3 = jsonObject.getString(FormsTable.COLUMN_SC3);
-
-
-        this.sC1 = jsonObject.getString(FormsTable.COLUMN_SC1);
-        this.sC2 = jsonObject.getString(FormsTable.COLUMN_SC2);
-        this.sC3 = jsonObject.getString(FormsTable.COLUMN_SC3);
-        this.sC4 = jsonObject.getString(FormsTable.COLUMN_SC4);
-        this.sC5 = jsonObject.getString(FormsTable.COLUMN_SC5);
-        this.sC6 = jsonObject.getString(FormsTable.COLUMN_SC6);
-        this.sD1 = jsonObject.getString(FormsTable.COLUMN_SD1);
-        this.sD2 = jsonObject.getString(FormsTable.COLUMN_SD2);
-        this.sD3 = jsonObject.getString(FormsTable.COLUMN_SD3);
-        this.sE = jsonObject.getString(FormsTable.COLUMN_SE);
-        this.sF = jsonObject.getString(FormsTable.COLUMN_SF);
         this.endingdatetime = jsonObject.getString(FormsTable.COLUMN_ENDINGDATETIME);
         this.gpsLat = jsonObject.getString(FormsTable.COLUMN_GPSLAT);
         this.gpsLng = jsonObject.getString(FormsTable.COLUMN_GPSLNG);
@@ -117,25 +108,20 @@ public class FormsContract {
         this.user = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_USER));
         this.istatus = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ISTATUS));
         this.istatus88x = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ISTATUS88X));
-        this.sInfo = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SINFO));
-        this.sA1 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SA1));
-        //this.sB1 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SB1));
-        this.sB2 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SB2));
+        this.sa1 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SA1));
+        this.sa2 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SA2));
+        this.sa3 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SA3));
+        this.sb1 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SB1));
+        this.sb2 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SB2));
+        this.sb3 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SB3));
+        this.sb3_pnc = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SB3_PNC));
+        this.sb4 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SB4));
+        this.sb4_2 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SB4_2));
+        this.sb4_3 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SB4_3));
+        this.sb4_4 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SB4_4));
+        this.sb4_5 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SB4_5));
+        this.sc = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SC));
 
-        this.sC2 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SC2));
-        this.sC3 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SC3));
-
-        this.sC1 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SC1));
-        this.sC2 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SC2));
-        this.sC3 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SC3));
-        this.sC4 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SC4));
-        this.sC5 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SC5));
-        this.sC6 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SC6));
-        this.sD1 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SD1));
-        this.sD2 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SD2));
-        this.sD3 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SD3));
-        this.sE = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SE));
-        this.sF = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SF));
         this.endingdatetime = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ENDINGDATETIME));
         this.gpsLat = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_GPSLAT));
         this.gpsLng = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_GPSLNG));
@@ -169,95 +155,62 @@ public class FormsContract {
         json.put(FormsTable.COLUMN_ENDINGDATETIME, this.endingdatetime == null ? JSONObject.NULL : this.endingdatetime);
 
 
-        if (!this.sInfo.equals("")) {
-            json.put(FormsTable.COLUMN_SINFO, this.sInfo.equals("") ? JSONObject.NULL : new JSONObject(this.sInfo));
+        json.put(FormsTable.COLUMN_SA1, this.sa1 == null ? JSONObject.NULL : this.sa1);
+        json.put(FormsTable.COLUMN_SA2, this.sa2 == null ? JSONObject.NULL : this.sa2);
+        json.put(FormsTable.COLUMN_SA3, this.sa3 == null ? JSONObject.NULL : this.sa3);
+        json.put(FormsTable.COLUMN_SB1, this.sb1 == null ? JSONObject.NULL : this.sb1);
+        json.put(FormsTable.COLUMN_SB2, this.sb2 == null ? JSONObject.NULL : this.sb2);
+        json.put(FormsTable.COLUMN_SB3, this.sb3 == null ? JSONObject.NULL : this.sb3);
+        json.put(FormsTable.COLUMN_SB3_PNC, this.sb3_pnc == null ? JSONObject.NULL : this.sb3_pnc);
+        json.put(FormsTable.COLUMN_SB4, this.sb4 == null ? JSONObject.NULL : this.sb4);
+        json.put(FormsTable.COLUMN_SB4_2, this.sb4_2 == null ? JSONObject.NULL : this.sb4_2);
+        json.put(FormsTable.COLUMN_SB4_3, this.sb4_3 == null ? JSONObject.NULL : this.sb4_3);
+        json.put(FormsTable.COLUMN_SB4_4, this.sb4_4 == null ? JSONObject.NULL : this.sb4_4);
+        json.put(FormsTable.COLUMN_SB4_5, this.sb4_5 == null ? JSONObject.NULL : this.sb4_5);
+        json.put(FormsTable.COLUMN_SC, this.sc == null ? JSONObject.NULL : this.sc);
+
+        if (!this.sa1.equals("")) {
+            json.put(FormsTable.COLUMN_SA1, this.sa1.equals("") ? JSONObject.NULL : new JSONObject(this.sa1));
+        }
+        if (!this.sa2.equals("")) {
+            json.put(FormsTable.COLUMN_SA2, this.sa2.equals("") ? JSONObject.NULL : new JSONObject(this.sa2));
+        }
+        if (!this.sa3.equals("")) {
+            json.put(FormsTable.COLUMN_SA3, this.sa3.equals("") ? JSONObject.NULL : new JSONObject(this.sa3));
+        }
+        if (!this.sb1.equals("")) {
+            json.put(FormsTable.COLUMN_SB1, this.sb1.equals("") ? JSONObject.NULL : new JSONObject(this.sb1));
+        }
+        if (!this.sb2.equals("")) {
+            json.put(FormsTable.COLUMN_SB2, this.sb2.equals("") ? JSONObject.NULL : new JSONObject(this.sb2));
+        }
+        if (!this.sb3.equals("")) {
+            json.put(FormsTable.COLUMN_SB3, this.sb3.equals("") ? JSONObject.NULL : new JSONObject(this.sb3));
+        }
+        if (!this.sb3_pnc.equals("")) {
+            json.put(FormsTable.COLUMN_SB3_PNC, this.sb3_pnc.equals("") ? JSONObject.NULL : new JSONObject(this.sb3_pnc));
+        }
+        if (!this.sb4.equals("")) {
+            json.put(FormsTable.COLUMN_SB4, this.sb4.equals("") ? JSONObject.NULL : new JSONObject(this.sb4));
+        }
+        if (!this.sb4_2.equals("")) {
+            json.put(FormsTable.COLUMN_SB4_2, this.sb4_2.equals("") ? JSONObject.NULL : new JSONObject(this.sb4_2));
         }
 
-
-        if (!this.sA1.equals("")) {
-
-            json.put(FormsTable.COLUMN_SA1, this.sA1.equals("") ? JSONObject.NULL : new JSONObject(this.sA1));
+        if (!this.sb4_3.equals("")) {
+            json.put(FormsTable.COLUMN_SB4_3, this.sb4_3.equals("") ? JSONObject.NULL : new JSONObject(this.sb4_3));
         }
 
-
-        /*if (!this.sB1.equals("")) {
-
-            json.put(FormsTable.COLUMN_SB1, this.sB1.equals("") ? JSONObject.NULL : new JSONObject(this.sB1));
-        }*/
-
-
-        if (!this.sB2.equals("")) {
-            json.put(FormsTable.COLUMN_SB2, this.sB2.equals("") ? JSONObject.NULL : new JSONObject(this.sB2));
+        if (!this.sb4_4.equals("")) {
+            json.put(FormsTable.COLUMN_SB4_4, this.sb4_4.equals("") ? JSONObject.NULL : new JSONObject(this.sb4_4));
         }
 
-
-        if (!this.sC1.equals("")) {
-            json.put(FormsTable.COLUMN_SC1, this.sC1.equals("") ? JSONObject.NULL : new JSONObject(this.sC1));
+        if (!this.sb4_5.equals("")) {
+            json.put(FormsTable.COLUMN_SB4_5, this.sb4_5.equals("") ? JSONObject.NULL : new JSONObject(this.sb4_5));
         }
-
-
-        if (!this.sC2.equals("")) {
-            json.put(FormsTable.COLUMN_SC2, this.sC2.equals("") ? JSONObject.NULL : new JSONObject(this.sC2));
+        if (!this.sc.equals("")) {
+            json.put(FormsTable.COLUMN_SC, this.sc.equals("") ? JSONObject.NULL : new JSONObject(this.sc));
         }
-
-
-        if (!this.sC3.equals("")) {
-            json.put(FormsTable.COLUMN_SC3, this.sC3.equals("") ? JSONObject.NULL : new JSONObject(this.sC3));
-        }
-
-
-        if (!this.sC4.equals("")) {
-            json.put(FormsTable.COLUMN_SC4, this.sC4.equals("") ? JSONObject.NULL : new JSONObject(this.sC4));
-        }
-
-
-        if (!this.sC5.equals("")) {
-            json.put(FormsTable.COLUMN_SC5, this.sC5.equals("") ? JSONObject.NULL : new JSONObject(this.sC5));
-        }
-
-
-        if (!this.sC6.equals("")) {
-            json.put(FormsTable.COLUMN_SC6, this.sC6.equals("") ? JSONObject.NULL : new JSONObject(this.sC6));
-        }
-
-
-        /*if (!this.sA4.equals("")) {
-
-            json.put(FormsTable.COLUMN_SA3, this.sA4.equals("") ? JSONObject.NULL : new JSONObject(this.sA4));
-        }
-        if (!this.sA5.equals("")) {
-
-            json.put(FormsTable.COLUMN_SA5, this.sA5.equals("") ? JSONObject.NULL : new JSONObject(this.sA5));
-        }
-        if (!this.sB4.equals("")) {
-
-            json.put(FormsTable.COLUMN_SB4, this.sB4.equals("") ? JSONObject.NULL : new JSONObject(this.sB4));
-        }*/
-
-        if (!this.sD1.equals("")) {
-
-            json.put(FormsTable.COLUMN_SD1, this.sD1 == null ? JSONObject.NULL : new JSONObject(this.sD1));
-        }
-        if (!this.sD2.equals("")) {
-
-            json.put(FormsTable.COLUMN_SD2, this.sD2 == null ? JSONObject.NULL : new JSONObject(this.sD2));
-        }
-        if (!this.sD3.equals("")) {
-
-            json.put(FormsTable.COLUMN_SD3, this.sD3 == null ? JSONObject.NULL : new JSONObject(this.sD3));
-        }
-
-        if (!this.sE.equals("")) {
-
-            json.put(FormsTable.COLUMN_SE, this.sE.equals("") ? JSONObject.NULL : new JSONObject(this.sE));
-        }
-
-
-        if (!this.sF.equals("")) {
-
-            json.put(FormsTable.COLUMN_SF, this.sF.equals("") ? JSONObject.NULL : new JSONObject(this.sF));
-        }
-
 
         json.put(FormsTable.COLUMN_GPSLAT, this.gpsLat == null ? JSONObject.NULL : this.gpsLat);
         json.put(FormsTable.COLUMN_GPSLNG, this.gpsLng == null ? JSONObject.NULL : this.gpsLng);
@@ -269,7 +222,6 @@ public class FormsContract {
         json.put(FormsTable.COLUMN_SYNCED, this.synced == null ? JSONObject.NULL : this.synced);
         json.put(FormsTable.COLUMN_SYNCED_DATE, this.synced_date == null ? JSONObject.NULL : this.synced_date);
         json.put(FormsTable.COLUMN_APPVERSION, this.appversion == null ? JSONObject.NULL : this.appversion);
-
 
         return json;
     }
@@ -340,131 +292,109 @@ public class FormsContract {
         this.istatus88x = istatus88x;
     }
 
-
-    public String getsInfo() {
-        return sInfo;
+    public String getsa1() {
+        return sa1;
     }
 
-    public void setsInfo(String sInfo) {
-        this.sInfo = sInfo;
+    public void setsa1(String sa1) {
+        this.sa1 = sa1;
     }
 
-
-    public String getsA1() {
-        return sA1;
+    public String getsa2() {
+        return sa2;
     }
 
-    public void setsA1(String sA1) {
-        this.sA1 = sA1;
+    public void setsa2(String sa2) {
+        this.sa2 = sa2;
     }
 
-
-    public String getsB2() {
-        return sB2;
+    public String getsa3() {
+        return sa3;
     }
 
-    public void setsB2(String sB2) {
-        this.sB2 = sB2;
+    public void setsa3(String sa3) {
+        this.sa3 = sa3;
     }
 
-
-    /*public String getsB1() {
-        return sB1;
+    public String getsb1() {
+        return sb1;
     }
 
-    public void setsB1(String sB1) {
-        this.sB1 = sB1;
-    }*/
-
-
-    public String getsC1() {
-        return sC1;
+    public void setsb1(String sb1) {
+        this.sb1 = sb1;
     }
 
-    public void setsC1(String sC1) {
-        this.sC1 = sC1;
+    public String getsb2() {
+        return sb2;
     }
 
-    public String getsC2() {
-        return sC2;
+    public void setsb2(String sb2) {
+        this.sb2 = sb2;
     }
 
-    public void setsC2(String sC2) {
-        this.sC2 = sC2;
+    public String getsb3() {
+        return sb3;
     }
 
-    public String getsC3() {
-        return sC3;
+    public void setsb3(String sb3) {
+        this.sb3 = sb3;
     }
 
-    public void setsC3(String sC3) {
-        this.sC3 = sC3;
+    public String getsb3_pnc() {
+        return sb3_pnc;
     }
 
-    public String getsC4() {
-        return sC4;
+    public void setsb3_pnc(String sb3_pnc) {
+        this.sb3_pnc = sb3_pnc;
     }
 
-    public void setsC4(String sC4) {
-        this.sC4 = sC4;
+    public String getsb4() {
+        return sb4;
     }
 
-    public String getsC5() {
-        return sC5;
+    public void setsb4(String sb4) {
+        this.sb4 = sb4;
     }
 
-    public void setsC5(String sC5) {
-        this.sC5 = sC5;
+    public String getsb4_2() {
+        return sb4_2;
     }
 
-    public String getsC6() {
-        return sC6;
+    public void setsb4_2(String sb4_2) {
+        this.sb4_2 = sb4_2;
     }
 
-    public void setsC6(String sC6) {
-        this.sC6 = sC6;
+    public String getsb4_3() {
+        return sb4_3;
     }
 
-    public String getsD1() {
-        return sD1;
+    public void setsb4_3(String sb4_3) {
+        this.sb4_3 = sb4_3;
     }
 
-    public void setsD1(String sD1) {
-        this.sD1 = sD1;
+    public String getsb4_4() {
+        return sb4_4;
     }
 
-    public String getsD2() {
-        return sD2;
+    public void setsb4_4(String sb4_4) {
+        this.sb4_4 = sb4_4;
     }
 
-    public void setsD2(String sD2) {
-        this.sD2 = sD2;
+    public String getsb4_5() {
+        return sb4_5;
     }
 
-    public String getsD3() {
-        return sD3;
+    public void setsb4_5(String sb4_5) {
+        this.sb4_5 = sb4_5;
     }
 
-    public void setsD3(String sD3) {
-        this.sD3 = sD3;
+    public String getsc() {
+        return sc;
     }
 
-    public String getsE() {
-        return sE;
+    public void setsc(String sc) {
+        this.sc = sc;
     }
-
-    public void setsE(String sE) {
-        this.sE = sE;
-    }
-
-    public String getsF() {
-        return sF;
-    }
-
-    public void setsF(String sF) {
-        this.sF = sF;
-    }
-
 
     public String getGpsLat() {
         return gpsLat;
@@ -560,21 +490,19 @@ public class FormsContract {
         public static final String COLUMN_USER = "user";
         public static final String COLUMN_ISTATUS = "istatus";
         public static final String COLUMN_ISTATUS88X = "istatus88x";
-        public static final String COLUMN_SINFO = "sinfo";
         public static final String COLUMN_SA1 = "sa1";
-        //public static final String COLUMN_SB1 = "sb1";
+        public static final String COLUMN_SA2 = "sa2";
+        public static final String COLUMN_SA3 = "sa3";
+        public static final String COLUMN_SB1 = "sb1";
         public static final String COLUMN_SB2 = "sb2";
-        public static final String COLUMN_SC1 = "sc1";
-        public static final String COLUMN_SC2 = "sc2";
-        public static final String COLUMN_SC3 = "sc3";
-        public static final String COLUMN_SC4 = "sc4";
-        public static final String COLUMN_SC5 = "sc5";
-        public static final String COLUMN_SC6 = "sc6";
-        public static final String COLUMN_SD1 = "sd1";
-        public static final String COLUMN_SD2 = "sd2";
-        public static final String COLUMN_SD3 = "sd3";
-        public static final String COLUMN_SE = "se";
-        public static final String COLUMN_SF = "sf";
+        public static final String COLUMN_SB3 = "sb3";
+        public static final String COLUMN_SB3_PNC = "sb3_pnc";
+        public static final String COLUMN_SB4 = "sb4";
+        public static final String COLUMN_SB4_2 = "sb4_2";
+        public static final String COLUMN_SB4_3 = "sb4_3";
+        public static final String COLUMN_SB4_4 = "sb4_4";
+        public static final String COLUMN_SB4_5 = "sb4_5";
+        public static final String COLUMN_SC = "sc";
         public static final String COLUMN_ENDINGDATETIME = "endingdatetime";
         public static final String COLUMN_GPSLAT = "gpslat";
         public static final String COLUMN_GPSLNG = "gpslng";

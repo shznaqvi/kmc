@@ -320,7 +320,7 @@ public class SectionB2Activity extends AppCompatActivity {
         sC2.put("kbb1698", bi.kbb1698.isChecked() ? "1" : "0");
 
 
-        MainApp.fc.setsC2(String.valueOf(sC2));
+        MainApp.fc.setsb2(String.valueOf(sC2));
     }
 
 
@@ -552,7 +552,6 @@ public class SectionB2Activity extends AppCompatActivity {
 
     public void BtnContinue() {
 
-        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
             try {
                 SaveDraft();
@@ -560,7 +559,6 @@ public class SectionB2Activity extends AppCompatActivity {
                 e.printStackTrace();
             }
             if (UpdateDB()) {
-                Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
 
                 finish();
 
@@ -578,7 +576,7 @@ public class SectionB2Activity extends AppCompatActivity {
         //Long rowId;
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateSC2();
+        int updcount = db.updateSB2();
 
         if (updcount == 1) {
             //Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();

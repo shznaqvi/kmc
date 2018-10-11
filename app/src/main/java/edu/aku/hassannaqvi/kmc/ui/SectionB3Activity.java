@@ -170,7 +170,6 @@ public class SectionB3Activity extends AppCompatActivity {
 
     public void BtnContinue() {
 
-        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
             try {
                 SaveDraft();
@@ -178,11 +177,10 @@ public class SectionB3Activity extends AppCompatActivity {
                 e.printStackTrace();
             }
             if (UpdateDB()) {
-                Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
 
                 finish();
 
-                startActivity(new Intent(this, SectionB4Activity.class));
+                startActivity(new Intent(this, SectionB3_PNCActivity.class));
                 //startActivity(new Intent(this, MainActivity.class));
 
             } else {
@@ -480,14 +478,14 @@ public class SectionB3Activity extends AppCompatActivity {
 
 
 
-        MainApp.fc.setsC3(String.valueOf(sC3));
+        MainApp.fc.setsb3(String.valueOf(sC3));
     }
 
     private boolean UpdateDB() {
         //Long rowId;
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateSC3();
+        int updcount = db.updateSB3();
 
         if (updcount == 1) {
             //Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();

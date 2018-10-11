@@ -465,7 +465,7 @@ public class SectionB3_PNCActivity extends AppCompatActivity {
         sn.put("kc70796", bi.kbcc0296.isChecked() ? "96" : "0");
         sn.put("kc70796x", bi.kbcc0296x.getText().toString());
 
-        MainApp.fc.setsC6(String.valueOf(sn));
+        MainApp.fc.setsb3_pnc(String.valueOf(sn));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }
@@ -473,7 +473,7 @@ public class SectionB3_PNCActivity extends AppCompatActivity {
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateSC6();
+        int updcount = db.updateSB3_PNC();
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
@@ -509,7 +509,6 @@ public class SectionB3_PNCActivity extends AppCompatActivity {
 
     public void BtnContinue() {
 
-        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (ValidateForm()) {
             try {
                 SaveDraft();
@@ -517,11 +516,10 @@ public class SectionB3_PNCActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
             if (UpdateDB()) {
-                Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
 
                 finish();
 
-                startActivity(new Intent(this, SectionB4_3Activity.class));
+                startActivity(new Intent(this, SectionB4_2Activity.class));
                 //                startActivity(new Intent(this, MainActivity.class));
 
             } else {

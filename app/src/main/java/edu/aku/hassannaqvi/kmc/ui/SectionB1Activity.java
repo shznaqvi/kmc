@@ -76,7 +76,14 @@ public class SectionB1Activity extends AppCompatActivity {
         if (!validatorClass.EmptyTextBox(this, bi.kba04, getString(R.string.kba04))) {
             return false;
         }
+if(Integer.valueOf(bi.kba03.getText().toString()) >= Integer.valueOf(bi.kba04.getText().toString())){
 
+}else {
+            bi.kba03.setError("Total no of Pregnancies must be equal to or greater than Total no of Deliveries");
+            bi.kba04.setError("Total no of Pregnancies must be equal to or greater than Total no of Deliveries");
+            Toast.makeText(this,"Total no of Pregnancies must be equal to or greater than Total no of Deliveries",Toast.LENGTH_SHORT).show();
+            return false;
+}
         if (!validatorClass.EmptyRadioButton(this, bi.kba05, bi.kba05a, getString(R.string.kba05))) {
             return false;
         }
@@ -110,40 +117,7 @@ public class SectionB1Activity extends AppCompatActivity {
                 bi.kba07d.clearFocus();
             }
         }
-/*
-        if (bi.kba01e.isChecked()) {
 
-            if (!validatorClass.EmptyRadioButton(this, bi.kba06twin, bi.kba06atwin, getString(R.string.kba06))) {
-                return false;
-            }
-
-            if (!bi.kba06atwin.isChecked()) {
-                if (!validatorClass.EmptyTextBox(this, bi.kba07dtwin, getString(R.string.kba07y))) {
-                    return false;
-                }
-                if (!validatorClass.RangeTextBox(this, bi.kba07dtwin, 0, 29, getString(R.string.kba07y), "days")) {
-                    return false;
-                }
-                if (!validatorClass.EmptyTextBox(this, bi.kba07mtwin, getString(R.string.kba07m))) {
-                    return false;
-                }
-                if (!validatorClass.RangeTextBox(this, bi.kba07mtwin, 0, 11, getString(R.string.kba07m), " months")) {
-                    return false;
-                }
-                if (bi.kba07dtwin.getText().toString().equals("0") && bi.kba07mtwin.getText().toString().equals("0")) {
-                    Toast.makeText(this, "Days and months cannot be 0 at the same time! ", Toast.LENGTH_LONG).show();
-                    bi.kba07dtwin.setError("Days and months cannot be 0 at the same time!");
-                    bi.kba07mtwin.setError("Days and months cannot be 0 at the same time!");
-                    bi.kba07dtwin.requestFocus();
-                    return false;
-                } else {
-                    bi.kba07dtwin.setError(null);
-                    bi.kba07mtwin.setError(null);
-                    bi.kba07dtwin.clearFocus();
-                }
-            }
-
-        }*/
 
 
         return true;
@@ -178,7 +152,7 @@ public class SectionB1Activity extends AppCompatActivity {
         sc1.put("kba07dtwin", bi.kba07dtwin.getText().toString());
         sc1.put("kba07mtwin", bi.kba07mtwin.getText().toString());
 
-        MainApp.fc.setsC1(String.valueOf(sc1));
+        MainApp.fc.setsb1(String.valueOf(sc1));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }
@@ -222,7 +196,6 @@ public class SectionB1Activity extends AppCompatActivity {
 
     public void BtnContinue() {
 
-        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (ValidateForm()) {
             try {
                 SaveDraft();
@@ -230,7 +203,6 @@ public class SectionB1Activity extends AppCompatActivity {
                 e.printStackTrace();
             }
             if (UpdateDB()) {
-                Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
 
                 finish();
 
