@@ -98,6 +98,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1" />
 
+
         <provider
             android:name=".core.MainContentProvider"
             android:authorities="edu.aku.hassannaqvi.kmc.provider"
@@ -112,6 +113,9 @@
         <activity android:name=".ui.SectionA2Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1"/>
+        <activity
+            android:name=".ui.SyncActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

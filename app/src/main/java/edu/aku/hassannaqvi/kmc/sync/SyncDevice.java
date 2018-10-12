@@ -56,7 +56,6 @@ public class SyncDevice extends AsyncTask<Void, Integer, String> {
     @Override
     protected String doInBackground(Void... voids) {
         Log.d(TAG, "doInBackground: URL " + MainApp.DeviceURL);
-
         return downloadUrl();
     }
 
