@@ -1,6 +1,5 @@
 package edu.aku.hassannaqvi.kmc.ui;
 
-import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -406,12 +405,7 @@ public class SectionInfoKmcActivity extends Activity {
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, bi.cra07, bi.cra07a, getString(R.string.cra07))) {
-            return false;
-        }
-
-
-        return true;
+        return validatorClass.EmptyRadioButton(this, bi.cra07, bi.cra07a, getString(R.string.cra07));
     }
 
 
@@ -702,7 +696,6 @@ public class SectionInfoKmcActivity extends Activity {
             MainApp.fc.setGpsLng(lang);
             MainApp.fc.setGpsAcc(acc);
             MainApp.fc.setGpsDT(date); // Timestamp is converted to date above
-            MainApp.fc.setGpsElev(elevation);
 
             Toast.makeText(this, "GPS set", Toast.LENGTH_SHORT).show();
 
