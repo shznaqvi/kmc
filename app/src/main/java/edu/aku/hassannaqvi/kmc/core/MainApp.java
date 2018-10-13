@@ -26,8 +26,8 @@ import edu.aku.hassannaqvi.kmc.contracts.MwraContract;
 
 public class MainApp extends Application {
 
-//    public static final String _IP = "43.245.131.159"; // PHP server
-    public static final String _IP = "f49461"; // Test PHP server
+    public static final String _IP = "43.245.131.159"; // PHP server
+//    public static final String _IP = "f49461"; // Test PHP server
     public static final Integer _PORT = 8080; // Port - with colon (:)
     public static final String _HOST_URL = "http://" + MainApp._IP + ":" + MainApp._PORT + "/kmc/api/";
     public static final String _UPDATE_URL = "http://" + MainApp._IP + ":" + MainApp._PORT + "/kmc/app/app-debug.apk";

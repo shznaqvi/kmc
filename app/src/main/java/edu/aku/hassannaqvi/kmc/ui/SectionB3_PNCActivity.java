@@ -411,19 +411,19 @@ public class SectionB3_PNCActivity extends AppCompatActivity {
         sn.put("kbca0498", bi.kbca0498.isChecked() ? "98" : "0");
         sn.put("kbca0496x", bi.kbca0496x.getText().toString());
 
-        sn.put("kc701", bi.kbcb01a.isChecked() ? "1"
+        sn.put("kbcb01", bi.kbcb01a.isChecked() ? "1"
                 : bi.kbcb01b.isChecked() ? "2"
                 : bi.kbcb0198.isChecked() ? "98"
                 : "0");
 
 
-        sn.put("kc702day", bi.kbcb02day.getText().toString());
-        sn.put("kc702week", bi.kbcb02week.getText().toString());
-        sn.put("kc70298", bi.kbcb0298.isChecked() ? "98" : "0");
+        sn.put("kbcb02day", bi.kbcb02day.getText().toString());
+        sn.put("kbcb02week", bi.kbcb02week.getText().toString());
+        sn.put("kbcb0298", bi.kbcb0298.isChecked() ? "98" : "0");
 
-        sn.put("kc703", bi.kbcb0398.isChecked() ? "98" : bi.kbcb03.getText().toString());
+        sn.put("kbcb03", bi.kbcb0398.isChecked() ? "98" : bi.kbcb03.getText().toString());
 
-        sn.put("kc704", bi.kbcb04a.isChecked() ? "1"
+        sn.put("kbcb04", bi.kbcb04a.isChecked() ? "1"
                 : bi.kbcb04b.isChecked() ? "2"
                 : bi.kbcb04c.isChecked() ? "3"
                 : bi.kbcb04d.isChecked() ? "4"
@@ -435,35 +435,35 @@ public class SectionB3_PNCActivity extends AppCompatActivity {
                 : bi.kbcb0496.isChecked() ? "96"
                 : "0");
 
-        sn.put("kc70496x", bi.kbcb0496x.getText().toString());
+        sn.put("kbcb0496x", bi.kbcb0496x.getText().toString());
 
-        sn.put("kc705a", bi.kbcb05a.isChecked() ? "1" : "0");
-        sn.put("kc705b", bi.kbcb05b.isChecked() ? "2" : "0");
-        sn.put("kc705c", bi.kbcb05c.isChecked() ? "3" : "0");
-        sn.put("kc705d", bi.kbcb05d.isChecked() ? "4" : "0");
-        sn.put("kc705e", bi.kbcb05e.isChecked() ? "5" : "0");
-        sn.put("kc705f", bi.kbcb05f.isChecked() ? "6" : "0");
-        sn.put("kc705g", bi.kbcb05g.isChecked() ? "7" : "0");
-        sn.put("kc705h", bi.kbcb05h.isChecked() ? "8" : "0");
-        sn.put("kc70598", bi.kbcb0598.isChecked() ? "98" : "0");
-        sn.put("kc70596", bi.kbcb0596.isChecked() ? "96" : "0");
-        sn.put("kc70596x", bi.kbcb0596x.getText().toString());
+        sn.put("kbcb05a", bi.kbcb05a.isChecked() ? "1" : "0");
+        sn.put("kbcb05b", bi.kbcb05b.isChecked() ? "2" : "0");
+        sn.put("kbcb05c", bi.kbcb05c.isChecked() ? "3" : "0");
+        sn.put("kbcb05d", bi.kbcb05d.isChecked() ? "4" : "0");
+        sn.put("kbcb05e", bi.kbcb05e.isChecked() ? "5" : "0");
+        sn.put("kbcb05f", bi.kbcb05f.isChecked() ? "6" : "0");
+        sn.put("kbcb05g", bi.kbcb05g.isChecked() ? "7" : "0");
+        sn.put("kbcb05h", bi.kbcb05h.isChecked() ? "8" : "0");
+        sn.put("kbcb0598", bi.kbcb0598.isChecked() ? "98" : "0");
+        sn.put("kbcb0596", bi.kbcb0596.isChecked() ? "96" : "0");
+        sn.put("kbcb0596x", bi.kbcb0596x.getText().toString());
 
-        sn.put("kc706", bi.kbcc01a.isChecked() ? "1"
+        sn.put("kbcc01", bi.kbcc01a.isChecked() ? "1"
                 : bi.kbcc01b.isChecked() ? "2"
                 : "0");
 
-        sn.put("kc707a", bi.kbcc02a.isChecked() ? "1" : "0");
-        sn.put("kc707b", bi.kbcc02b.isChecked() ? "2" : "0");
-        sn.put("kc707c", bi.kbcc02c.isChecked() ? "3" : "0");
-        sn.put("kc707d", bi.kbcc02d.isChecked() ? "4" : "0");
-        sn.put("kc707e", bi.kbcc02e.isChecked() ? "5" : "0");
-        sn.put("kc707f", bi.kbcc02f.isChecked() ? "6" : "0");
-        sn.put("kc707g", bi.kbcc02g.isChecked() ? "7" : "0");
-        sn.put("kc707h", bi.kbcc02h.isChecked() ? "8" : "0");
-        sn.put("kc70798", bi.kbcc0298.isChecked() ? "98" : "0");
-        sn.put("kc70796", bi.kbcc0296.isChecked() ? "96" : "0");
-        sn.put("kc70796x", bi.kbcc0296x.getText().toString());
+        sn.put("kbcc02a", bi.kbcc02a.isChecked() ? "1" : "0");
+        sn.put("kbcc02b", bi.kbcc02b.isChecked() ? "2" : "0");
+        sn.put("kbcc02c", bi.kbcc02c.isChecked() ? "3" : "0");
+        sn.put("kbcc02d", bi.kbcc02d.isChecked() ? "4" : "0");
+        sn.put("kbcc02e", bi.kbcc02e.isChecked() ? "5" : "0");
+        sn.put("kbcc02f", bi.kbcc02f.isChecked() ? "6" : "0");
+        sn.put("kbcc02g", bi.kbcc02g.isChecked() ? "7" : "0");
+        sn.put("kbcc02h", bi.kbcc02h.isChecked() ? "8" : "0");
+        sn.put("kbcc0298", bi.kbcc0298.isChecked() ? "98" : "0");
+        sn.put("kbcc0296", bi.kbcc0296.isChecked() ? "96" : "0");
+        sn.put("kbcc0296x", bi.kbcc0296x.getText().toString());
 
         MainApp.fc.setsb3_pnc(String.valueOf(sn));
 
