@@ -202,7 +202,7 @@ public class SectionB2Activity extends AppCompatActivity {
         sC2.put("kbb0296x", bi.kbb0296x.getText().toString());
 
         sC2.put("kbb03", bi.kbb03.getText().toString());
-        sC2.put("kbb0398", bi.kbb0398.isChecked() ? "1" : "0");
+        sC2.put("kbb0398", bi.kbb0398.isChecked() ? "98" : "0");
 
 
         sC2.put("kbb04", bi.kbb04a.isChecked() ? "1"
@@ -283,6 +283,8 @@ public class SectionB2Activity extends AppCompatActivity {
                 : bi.kbb10b.isChecked() ? "2"
                 : bi.kbb1098.isChecked() ? "98"
                 : "0");
+        sC2.put("kbb10m", bi.kbb10m.getText().toString());
+        sC2.put("kbb10d", bi.kbb10d.getText().toString());
 
 
         sC2.put("kbb11", bi.kbb11a.isChecked() ? "1"
@@ -477,6 +479,15 @@ public class SectionB2Activity extends AppCompatActivity {
 
                 if (!validatorClass.EmptyRadioButton(this, bi.kbb10, bi.kbb10a, getString(R.string.kbb10))) {
                     return false;
+                }
+                if (bi.kbb10a.isChecked()) {
+                    if (!validatorClass.EmptyTextBox(this, bi.kbb10m, getString(R.string.kbb10a))) {
+                        return false;
+                    }
+                } else if (bi.kbb10b.isChecked()) {
+                    if (!validatorClass.EmptyTextBox(this, bi.kbb10d, getString(R.string.kbb10b))) {
+                        return false;
+                    }
                 }
 
 

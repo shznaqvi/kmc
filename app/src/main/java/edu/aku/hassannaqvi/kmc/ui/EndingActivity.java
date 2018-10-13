@@ -66,7 +66,7 @@ public class EndingActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
             if (UpdateDB()) {
-
+                MainApp.resName = "";
                 finish();
 
                 Intent endSec = new Intent(this, MainActivity.class);

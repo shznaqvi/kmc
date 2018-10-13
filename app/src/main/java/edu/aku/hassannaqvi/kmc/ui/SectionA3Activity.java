@@ -335,8 +335,8 @@ public class SectionA3Activity extends AppCompatActivity {
                 : "0");
 
 
-        sA1.put("kac23a", bi.kac23a.getText().toString());
-        sA1.put("kac23k", bi.kac23k.getText().toString());
+        sA1.put("kac23acr", bi.kac23a.getText().toString());
+        sA1.put("kac23kan", bi.kac23k.getText().toString());
         sA1.put("kac2398", bi.kac2398.isChecked() ? "98" : "0");
 
         sA1.put("kac2401", bi.kac2401.getText().toString());
@@ -359,7 +359,7 @@ public class SectionA3Activity extends AppCompatActivity {
         sA1.put("kac2418", bi.kac2418.getText().toString());
         sA1.put("kac2419", bi.kac2419.getText().toString());
         sA1.put("kac2420", bi.kac2420.getText().toString());
-        sA1.put("kac2496", bi.kac2496.getText().toString());
+        sA1.put("kac2496x", bi.kac2496x.getText().toString());
 
 
         MainApp.fc.setsa3(String.valueOf(sA1));
@@ -784,7 +784,7 @@ public class SectionA3Activity extends AppCompatActivity {
         }
 
 
-        if (!validatorClass.EmptyTextBox(this, bi.kac2496, getString(R.string.other))) {
+        if (!validatorClass.EmptyTextBox(this, bi.kac2496x, getString(R.string.other))) {
             return false;
         }
 

@@ -340,6 +340,21 @@ public class SectionB3Activity extends AppCompatActivity {
         if (!validatorClass.EmptyRadioButton(this, bi.kbc17, bi.kbc17a, getString(R.string.kbc17))) {
             return false;
         }
+        if (!validatorClass.EmptyCheckBox(this, bi.fldGrpkbc17a, bi.kbc18a, bi.kbc1896x, getString(R.string.kbc18))) {
+            return false;
+        }
+        if (!validatorClass.EmptyRadioButton(this, bi.kbc19, bi.kbc19a, getString(R.string.kbc19))) {
+            return false;
+        }
+        if(bi.kbc19b.isChecked()){
+            if (!validatorClass.EmptyTextBox(this, bi.kbc19hr, getString(R.string.hours))) {
+                return false;
+            }
+        }else if(bi.kbc19c.isChecked()){
+            if (!validatorClass.EmptyTextBox(this, bi.kbc19day, getString(R.string.days))) {
+                return false;
+            }
+        }
 
 
         return true;
@@ -376,6 +391,7 @@ public class SectionB3Activity extends AppCompatActivity {
                 : bi.kbc03f.isChecked() ? "6"
                 : bi.kbc03g.isChecked() ? "7"
                 : bi.kbc03h.isChecked() ? "8"
+                : bi.kbc03i.isChecked() ? "9"
                 : bi.kbc0396.isChecked() ? "96"
                 : "0");
 
@@ -439,7 +455,6 @@ public class SectionB3Activity extends AppCompatActivity {
         sC3.put("kbc12", bi.kbc12a.isChecked() ? "1"
                 : bi.kbc12b.isChecked() ? "2"
                 : bi.kbc12c.isChecked() ? "3"
-//                : bi.kbc12d.isChecked() ? "4"
                 : bi.kbc1296.isChecked() ? "96"
                 : bi.kbc1298.isChecked() ? "98"
                 : "0");
@@ -476,6 +491,25 @@ public class SectionB3Activity extends AppCompatActivity {
                 : bi.kbc1798.isChecked() ? "98"
                 : "0");
 
+        sC3.put("kbc18a", bi.kbc18a.isChecked() ? "1" : "0");
+        sC3.put("kbc18b", bi.kbc18b.isChecked() ? "2" : "0");
+        sC3.put("kbc18c", bi.kbc18c.isChecked() ? "3" : "0");
+        sC3.put("kbc18d", bi.kbc18d.isChecked() ? "4" : "0");
+        sC3.put("kbc18e", bi.kbc18e.isChecked() ? "5" : "0");
+        sC3.put("kbc18f", bi.kbc18f.isChecked() ? "6" : "0");
+        sC3.put("kbc1896", bi.kbc18f.isChecked() ? "96" : "0");
+        sC3.put("kbc1898", bi.kbc18f.isChecked() ? "98" : "0");
+
+        sC3.put("kbc1896x", bi.kbc1896x.getText().toString());
+
+        sC3.put("kbc19", bi.kbc19a.isChecked() ? "1"
+                : bi.kbc19b.isChecked() ? "2"
+                : bi.kbc19c.isChecked() ? "3"
+                : bi.kbc19d.isChecked() ? "4"
+                : bi.kbc1998.isChecked() ? "98"
+                : "0");
+        sC3.put("kbc19hr", bi.kbc19hr.getText().toString());
+        sC3.put("kbc19day", bi.kbc19day.getText().toString());
 
 
         MainApp.fc.setsb3(String.valueOf(sC3));

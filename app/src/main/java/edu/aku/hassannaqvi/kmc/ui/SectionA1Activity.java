@@ -549,6 +549,7 @@ public class SectionA1Activity extends Activity {
                 : bi.cra07b.isChecked() ? "2"
                 : "0");
         sInfo.put("kaa05", bi.kaa05.getText().toString());
+        MainApp.resName =  bi.kaa05.getText().toString();
         sInfo.put("kaa06", bi.kaa06.getText().toString());
         sInfo.put("kaa07", bi.kaa07.getText().toString());
         sInfo.put("kaa08", bi.kaa08.getText().toString());

@@ -68,6 +68,7 @@ public class MainApp extends Application {
     public static String talukaCode = "0000";
     public static String ucCode;
     public static String villageCode;
+    public static String resName;
     public static String wSerialNo;
     public static String wName;
     public static String DeviceURL = "devices.php";

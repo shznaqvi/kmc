@@ -129,10 +129,10 @@ if(Integer.valueOf(bi.kba03.getText().toString()) >= Integer.valueOf(bi.kba04.ge
         JSONObject sc1 = new JSONObject();
 
 
-        sc1.put("kba01", bi.kba01.getText());
-        sc1.put("kba02", bi.kba02.getText());
-        sc1.put("kba03", bi.kba03.getText());
-        sc1.put("kba04", bi.kba04.getText());
+        sc1.put("kba01", MainApp.resName);// Adding respondant name as Selected MWRA as amjad bhai said it is decided in the meeting
+        sc1.put("kba02", bi.kba02.getText().toString());
+        sc1.put("kba03", bi.kba03.getText().toString());
+        sc1.put("kba04", bi.kba04.getText().toString());
 
 
         sc1.put("kba05", bi.kba05a.isChecked() ? "1"
@@ -145,12 +145,12 @@ if(Integer.valueOf(bi.kba03.getText().toString()) >= Integer.valueOf(bi.kba04.ge
 
         sc1.put("kba07d", bi.kba07d.getText().toString());
         sc1.put("kba07m", bi.kba07m.getText().toString());
-        sc1.put("kba06twin", bi.kba06atwin.isChecked() ? "1"
+     /*   sc1.put("kba06twin", bi.kba06atwin.isChecked() ? "1"
                 : bi.kba06btwin.isChecked() ? "2"
                 : "0");
 
         sc1.put("kba07dtwin", bi.kba07dtwin.getText().toString());
-        sc1.put("kba07mtwin", bi.kba07mtwin.getText().toString());
+        sc1.put("kba07mtwin", bi.kba07mtwin.getText().toString());*/
 
         MainApp.fc.setsb1(String.valueOf(sc1));
 
