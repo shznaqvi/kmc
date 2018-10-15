@@ -86,7 +86,7 @@ public class SectionA1Activity extends Activity {
         bi.cra04.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                bi.cra04.setInputType(InputType.TYPE_TEXT_FLAG_CAP_CHARACTERS|InputType.TYPE_CLASS_TEXT);
+                bi.cra04.setInputType(InputType.TYPE_TEXT_FLAG_CAP_CHARACTERS | InputType.TYPE_CLASS_TEXT);
                 length = charSequence.toString().length();
             }
 
@@ -327,7 +327,7 @@ public class SectionA1Activity extends Activity {
                 bi.crvillage.setAdapter(new ArrayAdapter<>(context, android.R.layout.simple_spinner_dropdown_item, villageNames1));
                 if (position == 0) {
                     bi.hidden02.setVisibility(GONE);
-                }else{
+                } else {
                     bi.hidden02.setVisibility(VISIBLE);
                 }
 
@@ -436,7 +436,6 @@ public class SectionA1Activity extends Activity {
         }*/
 
 
-
         if (!validatorClass.EmptyTextBox(this, bi.kaa05, getString(R.string.kaa05))) {
             return false;
         }
@@ -449,30 +448,30 @@ public class SectionA1Activity extends Activity {
         if (!validatorClass.EmptyTextBox(this, bi.kaa07, getString(R.string.kaa07))) {
             return false;
         }
-        if (!validatorClass.RangeTextBox(this, bi.kaa07 ,0, 20, getString(R.string.cra07), "Class")) {
+        if (!validatorClass.RangeTextBox(this, bi.kaa07, 0, 20, getString(R.string.cra07), "Class")) {
             return false;
         }
         if (!validatorClass.EmptyTextBox(this, bi.kaa08, getString(R.string.kaa08))) {
             return false;
         }
-        if (!validatorClass.RangeTextBox(this, bi.kaa08 ,1, 50, getString(R.string.kaa08), " members")) {
+        if (!validatorClass.RangeTextBox(this, bi.kaa08, 1, 50, getString(R.string.kaa08), " members")) {
             return false;
         }
 
         if (!validatorClass.EmptyTextBox(this, bi.kaa09, getString(R.string.kaa09))) {
             return false;
         }
-        if (!validatorClass.RangeTextBox(this, bi.kaa09 ,0, 9, getString(R.string.kaa09), " members")) {
+        if (!validatorClass.RangeTextBox(this, bi.kaa09, 0, 9, getString(R.string.kaa09), " members")) {
             return false;
         }
         if (!validatorClass.EmptyTextBox(this, bi.kaa10, getString(R.string.kaa10))) {
             return false;
         }
-        if (!validatorClass.RangeTextBox(this, bi.kaa10 ,0, 20, getString(R.string.kaa10), " members")) {
+        if (!validatorClass.RangeTextBox(this, bi.kaa10, 0, 20, getString(R.string.kaa10), " members")) {
             return false;
         }
-        int totalmwraandchild = Integer.valueOf(bi.kaa09.getText().toString())+Integer.valueOf(bi.kaa10.getText().toString());
-        if ( totalmwraandchild <= Integer.valueOf(bi.kaa08.getText().toString())) {
+        int totalmwraandchild = Integer.valueOf(bi.kaa09.getText().toString()) + Integer.valueOf(bi.kaa10.getText().toString());
+        if (totalmwraandchild <= Integer.valueOf(bi.kaa08.getText().toString())) {
             bi.kaa08.setError(null);
             bi.kaa09.setError(null);
             bi.kaa10.setError(null);
@@ -486,19 +485,19 @@ public class SectionA1Activity extends Activity {
         if (!validatorClass.EmptyTextBox(this, bi.kaa10a, getString(R.string.kaa10a))) {
             return false;
         }
-        if (!validatorClass.RangeTextBox(this, bi.kaa10a ,0, 9, getString(R.string.kaa10a), " members")) {
+        if (!validatorClass.RangeTextBox(this, bi.kaa10a, 0, 9, getString(R.string.kaa10a), " members")) {
             return false;
         }
         if (!validatorClass.EmptyTextBox(this, bi.kaa10b, getString(R.string.kaa10b))) {
             return false;
         }
-        if (!validatorClass.RangeTextBox(this, bi.kaa10b ,0, 9, getString(R.string.kaa10b), " members")) {
+        if (!validatorClass.RangeTextBox(this, bi.kaa10b, 0, 9, getString(R.string.kaa10b), " members")) {
             return false;
         }
         if (!validatorClass.EmptyTextBox(this, bi.kaa10c, getString(R.string.kaa10c))) {
             return false;
         }
-        if (!validatorClass.RangeTextBox(this, bi.kaa10c ,0, 9, getString(R.string.kaa10c), " members")) {
+        if (!validatorClass.RangeTextBox(this, bi.kaa10c, 0, 9, getString(R.string.kaa10c), " members")) {
             return false;
         }
 
@@ -546,14 +545,14 @@ public class SectionA1Activity extends Activity {
         sInfo.put("kavillage", MainApp.villageCode);
 
 
-       // sInfo.put("kaavillage", bi.cravillage.getText().toString());
+        // sInfo.put("kaavillage", bi.cravillage.getText().toString());
 
         //sInfo.put("cra03", bi.cra03.getText().toString());
 
         sInfo.put("cra04", bi.cra04.getText().toString());
 
         //sInfo.put("cra05", bi.cra05.getText().toString());
-       // sInfo.put("cra06", bi.cra06.getText().toString());
+        // sInfo.put("cra06", bi.cra06.getText().toString());
 
 
        /* sInfo.put("sno", MainApp.wSerialNo);
@@ -568,7 +567,7 @@ public class SectionA1Activity extends Activity {
                 : bi.cra07b.isChecked() ? "2"
                 : "0");
         sInfo.put("kaa05", bi.kaa05.getText().toString());
-        MainApp.resName =  bi.kaa05.getText().toString();
+        MainApp.resName = bi.kaa05.getText().toString();
         sInfo.put("kaa06", bi.kaa06.getText().toString());
         sInfo.put("kaa07", bi.kaa07.getText().toString());
         sInfo.put("kaa08", bi.kaa08.getText().toString());
@@ -687,7 +686,7 @@ public class SectionA1Activity extends Activity {
                 wSno.add("....");
 
                 mapWRA = new HashMap<>();
-
+                /*
                 Collection<MwraContract> dc = db.getMWRA(bi.cra04.getText().toString(), MainApp.villageCode);
                 Log.d(TAG, "onCreate: " + dc.size());
                 for (MwraContract d : dc) {
@@ -723,6 +722,7 @@ public class SectionA1Activity extends Activity {
                     bi.btnNext.setVisibility(View.VISIBLE);
                     bi.btnEnd.setVisibility(View.VISIBLE);
                 }
+                */
             } else {
                 Toast.makeText(this, "Household number required", Toast.LENGTH_LONG).show();
                 clearFields();
@@ -778,7 +778,7 @@ public class SectionA1Activity extends Activity {
         bi.cravillage.setText(null);
         //bi.cra03.setText(null);
         //bi.cra05.setText(null);
-      //  bi.cra06.setText(null);
+        //  bi.cra06.setText(null);
         bi.cra07.clearCheck();
     }
 

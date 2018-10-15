@@ -52,7 +52,7 @@ public class SectionB4_2Activity extends AppCompatActivity {
                 if (checkedId != R.id.kbdb04e) {
                     bi.fldGrpbdb05.setVisibility(View.GONE);
                     ClearClass.ClearAllFields(bi.fldGrpbdb05, false);
-                }else {
+                } else {
                     bi.fldGrpbdb05.setVisibility(View.VISIBLE);
                     ClearClass.ClearAllFields(bi.fldGrpbdb05, true);
                 }
@@ -117,6 +117,7 @@ public class SectionB4_2Activity extends AppCompatActivity {
                                                 bi.kbdb04e.isChecked() ? "5" :
                                                         bi.kbdb0496.isChecked() ? "96"
                                                                 : "0");
+        kbdb.put("kbdb0496x", bi.kbdb0496x.getText().toString());
 
         kbdb.put("kbdb05a", bi.kbdb05a.isChecked() ? "1" : "0");
         kbdb.put("kbdb05b", bi.kbdb05b.isChecked() ? "2" : "0");

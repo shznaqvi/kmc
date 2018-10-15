@@ -484,10 +484,18 @@ public class SectionB2Activity extends AppCompatActivity {
                     if (!validatorClass.EmptyTextBox(this, bi.kbb10m, getString(R.string.kbb10a))) {
                         return false;
                     }
+                    if (!validatorClass.RangeTextBox(this, bi.kbb10m, 0, 29, getString(R.string.kbb10a), "days")) {
+                        return false;
+                    }
+
                 } else if (bi.kbb10b.isChecked()) {
                     if (!validatorClass.EmptyTextBox(this, bi.kbb10d, getString(R.string.kbb10b))) {
                         return false;
                     }
+                    if (!validatorClass.RangeTextBox(this, bi.kbb10d, 1, 9, getString(R.string.kbb10b), " months")) {
+                        return false;
+                    }
+
                 }
 
 

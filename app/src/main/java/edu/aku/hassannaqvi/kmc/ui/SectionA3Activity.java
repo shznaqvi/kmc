@@ -453,7 +453,7 @@ public class SectionA3Activity extends AppCompatActivity {
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, bi.kac09, bi.kac09a, getString(R.string.kac09))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.kac09, bi.kac0996,  bi.kac0996x, getString(R.string.kac09))) {
             return false;
         }
 

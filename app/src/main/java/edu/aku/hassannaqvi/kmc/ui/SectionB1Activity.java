@@ -61,29 +61,36 @@ public class SectionB1Activity extends AppCompatActivity {
 
     public boolean ValidateForm() {
 
-        if (!validatorClass.EmptyTextBox(this, bi.kba01, getString(R.string.kba01))) {
+      /*  if (!validatorClass.EmptyTextBox(this, bi.kba01, getString(R.string.kba01))) {
             return false;
-        }
+        }*/
         if (!validatorClass.EmptyTextBox(this, bi.kba02, getString(R.string.kba02))) {
             return false;
         }
-        if (!validatorClass.RangeTextBox(this, bi.kba02, 15, 49, getString(R.string.kba02)," years")) {
+        if (!validatorClass.RangeTextBox(this, bi.kba02, 15, 49, getString(R.string.kba02), " years")) {
             return false;
         }
         if (!validatorClass.EmptyTextBox(this, bi.kba03, getString(R.string.kba03))) {
             return false;
         }
+        if (!validatorClass.RangeTextBox(this, bi.kba03, 1, 15, getString(R.string.kba03), " Number")) {
+            return false;
+        }
         if (!validatorClass.EmptyTextBox(this, bi.kba04, getString(R.string.kba04))) {
             return false;
         }
-if(Integer.valueOf(bi.kba03.getText().toString()) >= Integer.valueOf(bi.kba04.getText().toString())){
 
-}else {
+        if (!validatorClass.RangeTextBox(this, bi.kba04, 1, 15, getString(R.string.kba04), " Number")) {
+            return false;
+        }
+        if (Integer.valueOf(bi.kba03.getText().toString()) >= Integer.valueOf(bi.kba04.getText().toString())) {
+
+        } else {
             bi.kba03.setError("Total no of Pregnancies must be equal to or greater than Total no of Deliveries");
             bi.kba04.setError("Total no of Pregnancies must be equal to or greater than Total no of Deliveries");
-            Toast.makeText(this,"Total no of Pregnancies must be equal to or greater than Total no of Deliveries",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Total no of Pregnancies must be equal to or greater than Total no of Deliveries", Toast.LENGTH_SHORT).show();
             return false;
-}
+        }
         if (!validatorClass.EmptyRadioButton(this, bi.kba05, bi.kba05a, getString(R.string.kba05))) {
             return false;
         }
@@ -102,7 +109,7 @@ if(Integer.valueOf(bi.kba03.getText().toString()) >= Integer.valueOf(bi.kba04.ge
                 return false;
             }
 
-            if (!validatorClass.RangeTextBox(this, bi.kba07m, 0, 11, getString(R.string.kba07m), " months")) {
+            if (!validatorClass.RangeTextBox(this, bi.kba07m, 0, 9, getString(R.string.kba07m), " months")) {
                 return false;
             }
             if (bi.kba07d.getText().toString().equals("0") && bi.kba07m.getText().toString().equals("0")) {
@@ -117,7 +124,6 @@ if(Integer.valueOf(bi.kba03.getText().toString()) >= Integer.valueOf(bi.kba04.ge
                 bi.kba07d.clearFocus();
             }
         }
-
 
 
         return true;

@@ -730,7 +730,7 @@ public class SectionCActivity extends AppCompatActivity {
                 : bi.kc02b.isChecked() ? "2"
                 : "0");
 
-        sE.put("kc03", bi.kc03.getText().toString());
+        sE.put("kc03hr", bi.kc03.getText().toString());
 
         sE.put("kc04a", bi.kc04a.isChecked() ? "1" : "0");
         sE.put("kc04b", bi.kc04b.isChecked() ? "2" : "0");
@@ -752,6 +752,7 @@ public class SectionCActivity extends AppCompatActivity {
         sE.put("kc07a", bi.kc07a.isChecked() ? "1" : "0");
         sE.put("kc07b", bi.kc07b.isChecked() ? "2" : "0");
         sE.put("kc07c", bi.kc07c.isChecked() ? "3" : "0");
+        sE.put("kc0796", bi.kc0796.isChecked() ? "96" : "0");
 
         sE.put("kc0796x", bi.kc0796x.getText().toString());
 
@@ -895,17 +896,17 @@ public class SectionCActivity extends AppCompatActivity {
         sE.put("kc22", bi.kc22a.isChecked() ? "1"
                 : bi.kc22b.isChecked() ? "2"
                 : bi.kc22c.isChecked() ? "3"
-                : bi.kc22c.isChecked() ? "4"
-                : bi.kc2299.isChecked() ? "96"
+                : bi.kc22d.isChecked() ? "4"
+                : bi.kc2298.isChecked() ? "98"
                 : "0");
 
         sE.put("kc23a", bi.kc23a.isChecked() ? "1" : "0");
         sE.put("kc23b", bi.kc23b.isChecked() ? "2" : "0");
         sE.put("kc23c", bi.kc23c.isChecked() ? "3" : "0");
         sE.put("kc23d", bi.kc23d.isChecked() ? "4" : "0");
-        sE.put("kc23e", bi.kc23e.isChecked() ? "6" : "0");
-        sE.put("kc23f", bi.kc23f.isChecked() ? "7" : "0");
-        sE.put("kc23g", bi.kc23g.isChecked() ? "8" : "0");
+        sE.put("kc23e", bi.kc23e.isChecked() ? "5" : "0");
+        sE.put("kc23f", bi.kc23f.isChecked() ? "6" : "0");
+        sE.put("kc23g", bi.kc23g.isChecked() ? "7" : "0");
         sE.put("kc2396", bi.kc2396.isChecked() ? "96" : "0");
 
 
@@ -916,7 +917,7 @@ public class SectionCActivity extends AppCompatActivity {
                 : bi.kc24b.isChecked() ? "2"
                 : bi.kc24c.isChecked() ? "3"
                 : bi.kc24d.isChecked() ? "4"
-                : bi.kc2499.isChecked() ? "99"
+                : bi.kc2498.isChecked() ? "98"
                 : "0");
 
 
