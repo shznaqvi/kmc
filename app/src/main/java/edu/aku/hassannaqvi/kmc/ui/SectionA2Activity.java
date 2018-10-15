@@ -86,6 +86,9 @@ ActivitySectionA2Binding bi;
             if (!validatorClass.EmptyTextBox(this, bi.kab02, getString(R.string.kab02))) {
                 return false;
             }
+            if (!validatorClass.RangeTextBox(this, bi.kab02, 1, 15, getString(R.string.kab02), " number")) {
+                return false;
+            }
         }
         if (!validatorClass.EmptyRadioButton(this, bi.kab03, bi.kab03a, getString(R.string.kab03))) {
             return false;
@@ -93,6 +96,9 @@ ActivitySectionA2Binding bi;
         if (bi.kab03a.isChecked()) {
 
             if (!validatorClass.EmptyTextBox(this, bi.kab04, getString(R.string.kab04))) {
+                return false;
+            }
+            if (!validatorClass.RangeTextBox(this, bi.kab04, 1, 15, getString(R.string.kab04), " number")) {
                 return false;
             }
         }
@@ -104,6 +110,9 @@ ActivitySectionA2Binding bi;
             if (!validatorClass.EmptyTextBox(this, bi.kab06, getString(R.string.kab06))) {
                 return false;
             }
+            if (!validatorClass.RangeTextBox(this, bi.kab06, 1, 9, getString(R.string.kab06), " number")) {
+                return false;
+            }
         }
         if (!validatorClass.EmptyRadioButton(this, bi.kab07, bi.kab07a, getString(R.string.kab07))) {
             return false;
@@ -111,6 +120,9 @@ ActivitySectionA2Binding bi;
         if (bi.kab07a.isChecked()) {
 
             if (!validatorClass.EmptyTextBox(this, bi.kab08, getString(R.string.kab08))) {
+                return false;
+            }
+            if (!validatorClass.RangeTextBox(this, bi.kab08, 1, 9, getString(R.string.kab08), " number")) {
                 return false;
             }
         }
@@ -122,13 +134,37 @@ ActivitySectionA2Binding bi;
             if (!validatorClass.EmptyTextBox(this, bi.kab10, getString(R.string.kab10))) {
                 return false;
             }
+            if (!validatorClass.RangeTextBox(this, bi.kab10, 1, 9, getString(R.string.kab10), " number")) {
+                return false;
+            }
         }
+        /*int questsum = Integer.valueOf(bi.kab08.getText().toString())+ Integer.valueOf(bi.kab10.getText().toString());
+        if(Integer.valueOf(bi.kab06.getText().toString()) == questsum){
+            bi.kab05a.setError(null);
+            bi.kab06.setError(null);
+            bi.kab07a.setError(null);
+            bi.kab08.setError(null);
+            bi.kab09a.setError(null);
+            bi.kab10.setError(null);
+        }else {
+            bi.kab05a.setError("");
+            bi.kab06.setError("Wrong calculation of death under 28 days!");
+            bi.kab07a.setError("");
+            bi.kab08.setError("Wrong calculation of death under 28 days!");
+            bi.kab09a.setError("");
+            bi.kab10.setError("Wrong calculation of death under 28 days!");
+            Toast.makeText(this,"Wrong calculation of deaths under 28 days!",Toast.LENGTH_SHORT).show();
+            return false;
+        }*/
         if (!validatorClass.EmptyRadioButton(this, bi.kab11, bi.kab11a, getString(R.string.kab11))) {
             return false;
         }
         if (bi.kab11a.isChecked()) {
 
             if (!validatorClass.EmptyTextBox(this, bi.kab12, getString(R.string.kab12))) {
+                return false;
+            }
+            if (!validatorClass.RangeTextBox(this, bi.kab12, 1, 9, getString(R.string.kab12), " number")) {
                 return false;
             }
         }
@@ -140,7 +176,40 @@ ActivitySectionA2Binding bi;
             if (!validatorClass.EmptyTextBox(this, bi.kab14, getString(R.string.kab14))) {
                 return false;
             }
+            if (!validatorClass.RangeTextBox(this, bi.kab14, 1, 9, getString(R.string.kab14), " number")) {
+                return false;
+            }
         }
+       /* int questsum2 = Integer.valueOf(bi.kab06.getText().toString())+ Integer.valueOf(bi.kab08.getText().toString())+ Integer.valueOf(bi.kab10.getText().toString())+ Integer.valueOf(bi.kab12.getText().toString())+ Integer.valueOf(bi.kab14.getText().toString());
+        if(Integer.valueOf(bi.kab04.getText().toString()) == questsum2){
+            bi.kab03a.setError(null);
+            bi.kab04.setError(null);
+            bi.kab05a.setError(null);
+            bi.kab06.setError(null);
+            bi.kab07a.setError(null);
+            bi.kab08.setError(null);
+            bi.kab09a.setError(null);
+            bi.kab10.setError(null);
+            bi.kab11a.setError(null);
+            bi.kab12.setError(null);
+            bi.kab13a.setError(null);
+            bi.kab14.setError(null);
+        }else {
+            bi.kab03a.setError("");
+            bi.kab04.setError("Wrong calculation of under 5 death during last 1 year");
+            bi.kab05a.setError("");
+            bi.kab06.setError("Wrong calculation of under 5 death during last 1 year");
+            bi.kab07a.setError("");
+            bi.kab08.setError("Wrong calculation of under 5 death during last 1 year");
+            bi.kab09a.setError("");
+            bi.kab10.setError("Wrong calculation of under 5 death during last 1 year");
+            bi.kab11a.setError("");
+            bi.kab12.setError("Wrong calculation of under 5 death during last 1 year");
+            bi.kab13a.setError("");
+            bi.kab14.setError("Wrong calculation of under 5 death during last 1 year");
+            Toast.makeText(this,"Wrong calculation of under 5 death during last 1 year",Toast.LENGTH_SHORT).show();
+            return false;
+        }*/
 
 
         return true;

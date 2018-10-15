@@ -1245,13 +1245,7 @@
                         android:layout_weight="1"
                         android:text="@string/kbc18f" />
 
-                    <CheckBox
-                        android:id="@+id/kbc1896"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:layout_weight="1"
-                        android:text="@string/other" />
+
 
                     <CheckBox
                         android:id="@+id/kbc1898"
@@ -1260,7 +1254,13 @@
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
                         android:text="@string/dkndrem" />
-
+                    <CheckBox
+                        android:id="@+id/kbc1896"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="1"
+                        android:text="@string/other" />
                     <EditText
                         android:id="@+id/kbc1896x"
                         android:layout_width="match_parent"

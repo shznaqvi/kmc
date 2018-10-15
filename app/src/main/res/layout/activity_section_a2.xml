@@ -214,7 +214,7 @@ tools:context=".ui.SectionA2Activity">
             android:digits="0123456789"
             android:hint="@string/num"
             android:inputType="number"
-            android:maxLength="2"
+            android:maxLength="1"
             android:text='@{kab05a.checked ? kab06.getText.toString : ""}'
             android:visibility='@{kab05a.checked ? View.VISIBLE : View.GONE}'/>
 
@@ -273,7 +273,7 @@ tools:context=".ui.SectionA2Activity">
             android:digits="0123456789"
             android:hint="@string/num"
             android:inputType="number"
-            android:maxLength="2"
+            android:maxLength="1"
             android:text='@{kab07a.checked ? kab08.getText.toString : ""}'
             android:visibility='@{kab07a.checked ? View.VISIBLE : View.GONE}'/>
 
@@ -332,7 +332,7 @@ tools:context=".ui.SectionA2Activity">
             android:digits="0123456789"
             android:hint="@string/num"
             android:inputType="number"
-            android:maxLength="2"
+            android:maxLength="1"
             android:text='@{kab09a.checked ? kab10.getText.toString : ""}'
             android:visibility='@{kab09a.checked ? View.VISIBLE : View.GONE}'/>
 
@@ -391,7 +391,7 @@ tools:context=".ui.SectionA2Activity">
             android:digits="0123456789"
             android:hint="@string/num"
             android:inputType="number"
-            android:maxLength="2"
+            android:maxLength="1"
             android:text='@{kab11a.checked ? kab12.getText.toString : ""}'
             android:visibility='@{kab11a.checked ? View.VISIBLE : View.GONE}'/>
 
@@ -450,7 +450,7 @@ tools:context=".ui.SectionA2Activity">
             android:digits="0123456789"
             android:hint="@string/num"
             android:inputType="number"
-            android:maxLength="2"
+            android:maxLength="1"
             android:text='@{kab13a.checked ? kab14.getText.toString : ""}'
             android:visibility='@{kab13a.checked ? View.VISIBLE : View.GONE}'/>
 

@@ -455,10 +455,20 @@ public class SectionA1Activity extends Activity {
         if (!validatorClass.EmptyTextBox(this, bi.kaa08, getString(R.string.kaa08))) {
             return false;
         }
+        if (!validatorClass.RangeTextBox(this, bi.kaa08 ,1, 50, getString(R.string.kaa08), " members")) {
+            return false;
+        }
+
         if (!validatorClass.EmptyTextBox(this, bi.kaa09, getString(R.string.kaa09))) {
             return false;
         }
+        if (!validatorClass.RangeTextBox(this, bi.kaa09 ,0, 9, getString(R.string.kaa09), " members")) {
+            return false;
+        }
         if (!validatorClass.EmptyTextBox(this, bi.kaa10, getString(R.string.kaa10))) {
+            return false;
+        }
+        if (!validatorClass.RangeTextBox(this, bi.kaa10 ,0, 20, getString(R.string.kaa10), " members")) {
             return false;
         }
         int totalmwraandchild = Integer.valueOf(bi.kaa09.getText().toString())+Integer.valueOf(bi.kaa10.getText().toString());
@@ -476,10 +486,19 @@ public class SectionA1Activity extends Activity {
         if (!validatorClass.EmptyTextBox(this, bi.kaa10a, getString(R.string.kaa10a))) {
             return false;
         }
+        if (!validatorClass.RangeTextBox(this, bi.kaa10a ,0, 9, getString(R.string.kaa10a), " members")) {
+            return false;
+        }
         if (!validatorClass.EmptyTextBox(this, bi.kaa10b, getString(R.string.kaa10b))) {
             return false;
         }
+        if (!validatorClass.RangeTextBox(this, bi.kaa10b ,0, 9, getString(R.string.kaa10b), " members")) {
+            return false;
+        }
         if (!validatorClass.EmptyTextBox(this, bi.kaa10c, getString(R.string.kaa10c))) {
+            return false;
+        }
+        if (!validatorClass.RangeTextBox(this, bi.kaa10c ,0, 9, getString(R.string.kaa10c), " members")) {
             return false;
         }
 

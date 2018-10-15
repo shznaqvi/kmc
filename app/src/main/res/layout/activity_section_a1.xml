@@ -344,7 +344,7 @@
                             android:digits="0123456789"
                             android:hint="@string/kaa09"
                             android:inputType="number"
-                            android:maxLength="2" />
+                            android:maxLength="1" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -380,7 +380,7 @@
                             android:digits="0123456789"
                             android:hint="@string/kaa10a"
                             android:inputType="number"
-                            android:maxLength="2" />
+                            android:maxLength="1" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -398,7 +398,7 @@
                             android:digits="0123456789"
                             android:hint="@string/kaa10b"
                             android:inputType="number"
-                            android:maxLength="2" />
+                            android:maxLength="1" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -416,7 +416,7 @@
                             android:digits="0123456789"
                             android:hint="@string/kaa10c"
                             android:inputType="number"
-                            android:maxLength="2" />
+                            android:maxLength="1" />
 
                         <!--cra07-->
                         <TextView
