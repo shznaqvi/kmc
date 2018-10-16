@@ -575,9 +575,9 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                     //Toast.makeText(LoginActivity.this, "Sync Enum Blocks", Toast.LENGTH_LONG).show();
                     // new GetAllData(mContext, "EnumBlock").execute();
 
-                    Toast.makeText(getApplicationContext(), "Syncing Woman", Toast.LENGTH_SHORT).show();
+                  /*  Toast.makeText(getApplicationContext(), "Syncing Woman", Toast.LENGTH_SHORT).show();
                     new GetMwra(LoginActivity.this).execute();
-
+*/
                     Toast.makeText(getApplicationContext(), "Syncing Villages", Toast.LENGTH_SHORT).show();
                     new GetVillages(LoginActivity.this).execute();
 

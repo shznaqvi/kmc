@@ -167,8 +167,8 @@ public class SectionB4_4Activity extends AppCompatActivity {
         JSONObject sd2 = new JSONObject();
         sd2.put("kbdd01",
                 bi.kbdd01a.isChecked() ? "1" :
-                        bi.kbdd0199.isChecked() ? "99" :
-                                bi.kbdd0177.isChecked() ? "77" :
+                        bi.kbdd0197.isChecked() ? "97" :
+                                bi.kbdd0177.isChecked() ? "4" :
                                         bi.kbdd0198.isChecked() ? "98" :
                                                 "0");
 

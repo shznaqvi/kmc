@@ -761,7 +761,7 @@
                             android:digits="0123456789"
                             android:hint="@string/kbb10b"
                             android:inputType="number"
-                            android:maxLength="2"
+                            android:maxLength="1"
                             android:text='@{kbb10b.checked ? kbb10d.getText.toString : ""}'
                             android:visibility='@{kbb10b.checked ? View.VISIBLE : View.GONE}' />
 

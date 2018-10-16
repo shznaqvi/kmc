@@ -356,8 +356,7 @@
     <string name="kbb07h"> خوراڪ جي باري ۾ سمجھاڻي </string>
     <string name="kbb07i"> پنهنجو کير پيارڻ بابت سمجھاڻي </string>
     <string name="kbb07j"> ٻارن ۾ وقفي جي بابت سمجھاڻي </string>
-    <string name="kbb08"> گذريل حمل دوران توهان ڪيترا ڀيرا فولاد ۽ فولڪ
-    ايسڊ استعمال ڪئي هئي؟ </string>
+    <string name="kbb08">گذريل حمل دوران توهان فولاد ۽ فولڪ ايسڊ استعمال ڪئي هئي؟</string>
     <string name="kbb09">جيڪڏهن ها ته ڪيترا ڀيرا؟ </string>
     <string name="kbb09a"> روزانو </string>
     <string name="kbb09b"> هفتي ۾ هڪ دفعو </string>
@@ -505,38 +504,38 @@
     <string name="kbcb04g"> ليڊي هيلٿ وزيٽر </string>
     <string name="kbcb04h"> دائي </string>
     <string name="kbcb05"> طبي معائني ۾ ڇا ڪيو هو؟ </string>
-    <string name="kbcb05sub"> حفاذتي ٽڪا </string>
-    <string name="kbcb05a"> نئي ٻار جو معائنو </string>
-    <string name="kbcb05b"> وزن جي چڪاس </string>
-    <string name="kbcb05c"> ڊيگھ جي چڪاس </string>
-    <string name="kbcb05d"> دوا ڏني </string>
-    <string name="kbcb05e"> صحت مرڪز ڏانهن موڪلڻ </string>
-    <string name="kbcb05f"> پوليو جا قطرا </string>
-    <string name="kbcb05g"> ٽي بي کان بچاءَ جو ٽڪو </string>
+    <string name="kbcb05sub">حفاذتي ٽڪا لڳايا ويا</string>
+    <string name="kbcb05a">نئين ٻار جو معائنو ڪيو ويو</string>
+    <string name="kbcb05b">وزن جي چڪاس ٿئي</string>
+    <string name="kbcb05c"> ڊيگھ جي چڪاس ٿئي</string>
+    <string name="kbcb05d">دوا ڏني وئي</string>
+    <string name="kbcb05e"> صحت مرڪز ڏانهن موڪليو ويو </string>
+    <string name="kbcb05f"> پوليو جا قطرا پياريا ويا </string>
+    <string name="kbcb05g"> ٽي بي کان بچاءَ جو ٽڪو لڳايو ويو </string>
     <string name="kbcb05h">خطرناڪ علامتن جي باري ۾ ٻڌايو ويو </string>
     <string name="kbccheading"> ممڪنه خطرناڪ  بيڪٽيريل انفيڪشن  </string>
     <string name="kbcc01"> ڇا ٻار پهرين ٻن مهينن ۾ شديد بيمار ٿيو هيو؟ </string>
     <string name="kbcc02"> جيڪڏهن ها ته بيماري جي دوران ڪهريون (نشانيون/علامتون) موجود هيون </string>
-    <string name="kbcc02a"> ڄمڻ کان پوءِ سهي سان کير نه پيئڻ </string>
+    <string name="kbcc02a"> ڄمڻ کان پوءِ صحيح سان کير نه پيئڻ يا کير جو بلڪل نه پيئڻ  </string>
     <string name="kbcc02b"> جھٽڪا </string>
     <string name="kbcc02c"> ساھ جو تيز کڻڻ </string>
     <string name="kbcc02d"> پاسراٽين ۾ کڏ پئجي وڃڻ </string>
     <string name="kbcc02e"> بخار 38 سيٽي گريڊ يا ان کان وڌيڪ </string>
     <string name="kbcc02f"> بخار جو 35.5 کان گھٽجي وڃڻ </string>
-    <string name="kbcc02g"> ٻار جو لوڏڻ سان چرپچ ڪرڻ يا بلڪل به نه هلڻ </string>
+    <string name="kbcc02g">ٻار جو لوڏڻ سان چرپر ڪرڻ يا بلڪل به چرپر نه ڪرڻ</string>
     <string name="kbcc02h"> ساڻو ٿي وڃڻ </string>
     <string name="kd"> Module D: LOW BIRTH WEIGHT BABY </string>
     <string name="kbdheading">ٻار جي ڄمڻ کان پوءِ جي سار سنڀال  (گزريل حمل) </string>
     <string name="kbdaheading">ڇاتي جو ڇاتي سان ملائڻ (بنا ڪپڙن جي) </string>
     <string name="kbd01">ڇا توهان ٻار کي تيل مالش ڪندا آهيو؟ </string>
     <string name="kbdainstruction"> هدايتون:  ڇاتيءَ جو ڇاتيءَ سان بنا ڪپڙن جي ملائڻ واريون تصويرون ڏيکارڻ کان پوءِ سوال پڇڻ شروع ڪيو   </string>
-    <string name="kbda01"> ڪمزور يا گھٽ وزن واري ٻار کي ڪيئين گرم رکندا آهيو؟ </string>
+    <string name="kbda01"> توهان پنهنجي ٻار کي ڪئين گرم رکندا هيا؟ </string>
     <string name="kbda01a"> ڪپھ يا ڪمبل ۾ ويڙهيندا آهيو </string>
     <string name="kbda01b"> گرم ڪپڙا پهرائيندا آهيو </string>
     <string name="kbda01c"> اس ۾ رکندا آهيو </string>
     <string name="kbda02"> ڇا ڪڏهن توهان گهڻي ديرتائين پنهنجي ٻار کي گرم رکڻ ءِ  کير پيارڻ لاءِ بنا ڪپڙن جي ڇاتي سان لڳايو هيو؟</string>
-    <string name="kbda02sub1">ٻار کي گرم رکڻ لاءِ</string>
-    <string name="kbda02sub2">ٻار کي کير پيارڻ لاءِ</string>
+    <string name="kbda02sub1">ٻار کي کير پيارڻ لاءِ</string>
+    <string name="kbda02sub2">ٻار کي گرم رکڻ لاءِ</string>
     <string name="kbda03">روزانو توهان ڪيتري وقت لاءِ  پنهنجي ٻار کي  گهڻي دير تاءين  بنا ڪپڙن جي ڇاتي سان  لڳايو  هيو؟  </string>
     <string name="kbda03a">ڪيترا ڪلاڪ </string>
     <string name="kbda04">توهان ڪيتري ڏينهن لاءِ  پنهنجي ٻار کي  گهڻي دير تاءين  بنا ڪپڙن جي ڇاتي سان  لڳايوهيو؟  </string>
@@ -620,7 +619,7 @@
     <string name="kbdd01"> ڪيترا مهينا توهان پنهنجي ٻار کي صرف پنهنجي ٿڄ پياري؟ صرف ٿڄ معنيٰ پنهنجو کير (دوائون سميت) </string>
     <string name="kbdd01a"> ڏينهن </string>
     <string name="kbdd01b"> مهينا </string>
-    <string name="kbdd0199"> ڪڏهن به نه </string>
+    <string name="kbdd0197"> ڪڏهن به نه </string>
     <string name="kbdd0177"> اڃا تائين صرف ماءُ جي کير تي آهي </string>
     <string name="kbdd02"> توهان کي ڪيئن خبر پئي ته توهان جي ٻارپيٽ ڀري کير پيتو آهي؟ </string>
     <string name="kbdd02a"> ٻار کير پي سمي پيو هو </string>
@@ -643,7 +642,7 @@
     </string>
     <string name="kbde01d"> شروع نه ڪيو </string>
     <string name="kbde02"> ڪهڙي پاڻياٺ ڏيندا آهيو؟ پڇو ٻئي ڪا شيءِ </string>
-    <string name="kbde02a"> ماءُ جو کير (ماءُ جي کير کان علاوه) </string>
+    <string name="kbde02a"> کير (ماءُ جي کير کان علاوه)</string>
     <string name="kbde02b"> سادو پاڻي </string>
     <string name="kbde02c"> کنڊ يا گلوڪوس وارو پاڻي </string>
     <string name="kbde02d"> گرائپ واٽر </string>
@@ -656,7 +655,7 @@
     <string name="kbde03"> جيڪڏهن دٻي جو کير پياريندا آهيو ته ان کير جي
     صلاح توهان کي ڪنهن ڏني؟ </string>
     <string name="kbde03a"> ڊاڪٽر </string>
-    <string name="kbde03b"> دوائون ڏيڻ وارو </string>
+    <string name="kbde03b"> ميڊيڪل اسٽور وارو</string>
     <string name="kbde03c"> مائيٽ </string>
     <string name="kbde04"> ڪيتري عمر ۾ توهان پنهنجي ٻار کي مٿان جي
     خوراڪ شروع ڪئي؟ </string>

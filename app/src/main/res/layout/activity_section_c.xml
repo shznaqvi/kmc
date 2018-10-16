@@ -1463,7 +1463,7 @@
                         android:text="@string/kc22d" />
 
                     <RadioButton
-                        android:id="@+id/kc2299"
+                        android:id="@+id/kc2298"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
@@ -1607,7 +1607,7 @@
                     android:text="@string/kc24d" />
 
                 <RadioButton
-                    android:id="@+id/kc2499"
+                    android:id="@+id/kc2498"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"

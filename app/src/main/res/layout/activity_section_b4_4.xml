@@ -78,11 +78,11 @@
                     android:visibility='@{kbdd01a.checked ? View.VISIBLE : View.GONE}' />
 
                 <RadioButton
-                    android:id="@+id/kbdd0199"
+                    android:id="@+id/kbdd0197"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
-                    android:text="@string/kbdd0199" />
+                    android:text="@string/kbdd0197" />
 
                 <RadioButton
                     android:id="@+id/kbdd0177"

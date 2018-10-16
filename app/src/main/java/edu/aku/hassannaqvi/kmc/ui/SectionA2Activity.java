@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,11 +27,12 @@ import edu.aku.hassannaqvi.kmc.databinding.ActivitySectionA3Binding;
 import edu.aku.hassannaqvi.kmc.validation.validatorClass;
 
 public class SectionA2Activity extends AppCompatActivity {
-ActivitySectionA2Binding bi;
+    ActivitySectionA2Binding bi;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bi = DataBindingUtil.setContentView(this,R.layout.activity_section_a2);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_a2);
         bi.setCallback(this);
     }
 
@@ -138,24 +140,36 @@ ActivitySectionA2Binding bi;
                 return false;
             }
         }
-        /*int questsum = Integer.valueOf(bi.kab08.getText().toString())+ Integer.valueOf(bi.kab10.getText().toString());
-        if(Integer.valueOf(bi.kab06.getText().toString()) == questsum){
+        int kab06 = 0;
+        int kab08 = 0;
+        int kab10 = 0;
+        if (!TextUtils.isEmpty(bi.kab08.getText().toString())) {
+            kab08 = Integer.valueOf(bi.kab08.getText().toString());
+        }
+        if (!TextUtils.isEmpty(bi.kab10.getText().toString())) {
+            kab10 = Integer.valueOf(bi.kab10.getText().toString());
+        }
+        if (!TextUtils.isEmpty(bi.kab06.getText().toString())) {
+            kab06 = Integer.valueOf(bi.kab06.getText().toString());
+        }
+        int questsum = kab08 + kab10;
+        if (kab06 == questsum) {
             bi.kab05a.setError(null);
             bi.kab06.setError(null);
             bi.kab07a.setError(null);
             bi.kab08.setError(null);
             bi.kab09a.setError(null);
             bi.kab10.setError(null);
-        }else {
+        } else {
             bi.kab05a.setError("");
             bi.kab06.setError("Wrong calculation of death under 28 days!");
             bi.kab07a.setError("");
             bi.kab08.setError("Wrong calculation of death under 28 days!");
             bi.kab09a.setError("");
             bi.kab10.setError("Wrong calculation of death under 28 days!");
-            Toast.makeText(this,"Wrong calculation of deaths under 28 days!",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Wrong calculation of deaths under 28 days!", Toast.LENGTH_SHORT).show();
             return false;
-        }*/
+        }
         if (!validatorClass.EmptyRadioButton(this, bi.kab11, bi.kab11a, getString(R.string.kab11))) {
             return false;
         }
@@ -180,8 +194,21 @@ ActivitySectionA2Binding bi;
                 return false;
             }
         }
-       /* int questsum2 = Integer.valueOf(bi.kab06.getText().toString())+ Integer.valueOf(bi.kab08.getText().toString())+ Integer.valueOf(bi.kab10.getText().toString())+ Integer.valueOf(bi.kab12.getText().toString())+ Integer.valueOf(bi.kab14.getText().toString());
-        if(Integer.valueOf(bi.kab04.getText().toString()) == questsum2){
+
+        int kab04 = 0;
+        int kab12 = 0;
+        int kab14 = 0;
+        if (!TextUtils.isEmpty(bi.kab04.getText().toString())) {
+            kab04 = Integer.valueOf(bi.kab04.getText().toString());
+        }
+        if (!TextUtils.isEmpty(bi.kab12.getText().toString())) {
+            kab12 = Integer.valueOf(bi.kab12.getText().toString());
+        }
+        if (!TextUtils.isEmpty(bi.kab14.getText().toString())) {
+            kab14 = Integer.valueOf(bi.kab14.getText().toString());
+        }
+        int questsum2 = kab06+ kab08+ kab10+ kab12+ kab14;
+        if(kab04 >= questsum2){
             bi.kab03a.setError(null);
             bi.kab04.setError(null);
             bi.kab05a.setError(null);
@@ -209,9 +236,7 @@ ActivitySectionA2Binding bi;
             bi.kab14.setError("Wrong calculation of under 5 death during last 1 year");
             Toast.makeText(this,"Wrong calculation of under 5 death during last 1 year",Toast.LENGTH_SHORT).show();
             return false;
-        }*/
-
-
+        }
         return true;
     }
 

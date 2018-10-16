@@ -72,6 +72,7 @@ public class SectionB3Activity extends AppCompatActivity {
                     bi.kbc06kg.setVisibility(View.VISIBLE);
                     bi.fldGrpkbc06.setVisibility(View.GONE);
                     bi.kbc07rec.setText(null);
+                    bi.kbc08.clearCheck();
                     //bi.kbc0777.setChecked(false);
 
 //                    bi.fldGrpkbc07.setVisibility(View.GONE);
@@ -332,11 +333,11 @@ public class SectionB3Activity extends AppCompatActivity {
                     return false;
                 }
             }*/
+                if (!validatorClass.EmptyRadioButton(this, bi.kbc08, bi.kbc08a, getString(R.string.kbc08))) {
+                    return false;
+                }
+            }
 
-            }
-            if (!validatorClass.EmptyRadioButton(this, bi.kbc08, bi.kbc08a, getString(R.string.kbc08))) {
-                return false;
-            }
         }
 
 

@@ -123,11 +123,11 @@ public class SectionB3_PNCActivity extends AppCompatActivity {
                     bi.fldGrpkbcb02.setVisibility(View.VISIBLE);
                 } else {
                     bi.fldGrpkbcb02.setVisibility(View.GONE);
-                    bi.kbcb0298.setChecked(false);
+                    bi.kbcb02.clearCheck();
                     bi.kbcb02day.setText(null);
                     bi.kbcb02week.setText(null);
-                    bi.kbcb03.setText(null);
-                    bi.kbcb0398.setChecked(false);
+                    bi.kbcb03times.setText(null);
+                    bi.kbcb03.clearCheck();
                     bi.kbcb04.clearCheck();
                     bi.kbcb0496x.setText(null);
                     bi.kbcb05a.setChecked(false);
@@ -253,36 +253,6 @@ public class SectionB3_PNCActivity extends AppCompatActivity {
         }
 
         if (bi.kbca01a.isChecked()) {
-          /*  if (!bi.kbca0298.isChecked()) {
-                if (!validatorClass.EmptyTextBox(this, bi.kbca02day, getString(R.string.kbca02))) {
-                    return false;
-                }
-
-                if (!validatorClass.RangeTextBox(this, bi.kbca02day, 0, 6, getString(R.string.kbca02), " days")) {
-                    return false;
-                }
-
-
-                if (!validatorClass.EmptyTextBox(this, bi.kbca02week, getString(R.string.kbca02))) {
-                    return false;
-                }
-
-                if (!validatorClass.RangeTextBox(this, bi.kbca02week, 0, 7, getString(R.string.kbca02), " weeks")) {
-                    return false;
-                }
-                if (bi.kbca02day.getText().toString().equals("0") && bi.kbca02week.getText().toString().equals("0")) {
-                    Toast.makeText(this, "Days and weeks cannot be 0 at the same time! ", Toast.LENGTH_LONG).show();
-                    bi.kbca02day.setError("Days and weeks cannot be 0 at the same time!");
-                    bi.kbca02week.setError("Days and weeks cannot be 0 at the same time!");
-                    bi.kbca02day.requestFocus();
-                    return false;
-                } else {
-                    bi.kbca02day.setError(null);
-                    bi.kbca02week.setError(null);
-                    bi.kbca02day.clearFocus();
-                }
-
-            }*/
             if (!validatorClass.EmptyRadioButton(this, bi.kbca02, bi.kbca02a, getString(R.string.kbca02))) {
                 return false;
             }
@@ -303,16 +273,6 @@ public class SectionB3_PNCActivity extends AppCompatActivity {
                 }
             }
 
-        /*    if (!bi.kbca0398.isChecked()) {
-                if (!validatorClass.EmptyTextBox(this, bi.kbca03, getString(R.string.kbca03))) {
-                    return false;
-                }
-                if (!validatorClass.RangeTextBox(this, bi.kbca03, 1, 10, getString(R.string.kbca03), " times")) {
-                    return false;
-                }
-            }
-
-*/
             if (!validatorClass.EmptyRadioButton(this, bi.kbca03, bi.kbca03a, bi.kbca03times, getString(R.string.kbca03))) {
                 return false;
             }
@@ -340,41 +300,31 @@ public class SectionB3_PNCActivity extends AppCompatActivity {
         }
 
         if (bi.kbcb01a.isChecked()) {
-            if (!validatorClass.EmptyRadioButton(this, bi.kbca02, bi.kbca02a, getString(R.string.kbca02))) {
+            if (!validatorClass.EmptyRadioButton(this, bi.kbcb02, bi.kbcb02a, getString(R.string.kbcb02))) {
                 return false;
             }
-            if (bi.kbca02a.isChecked()) {
-                if (!validatorClass.EmptyTextBox(this, bi.kbca02day, getString(R.string.days))) {
+            if (bi.kbcb02a.isChecked()) {
+                if (!validatorClass.EmptyTextBox(this, bi.kbcb02day, getString(R.string.days))) {
                     return false;
                 }
-                if (!validatorClass.RangeTextBox(this, bi.kbca02day, 0, 6, getString(R.string.kbca02), " days")) {
+                if (!validatorClass.RangeTextBox(this, bi.kbcb02day, 0, 6, getString(R.string.kbcb02), " days")) {
                     return false;
                 }
             }
-            if (bi.kbca02b.isChecked()) {
-                if (!validatorClass.EmptyTextBox(this, bi.kbca02week, getString(R.string.weeks))) {
+            if (bi.kbcb02b.isChecked()) {
+                if (!validatorClass.EmptyTextBox(this, bi.kbcb02week, getString(R.string.weeks))) {
                     return false;
                 }
-                if (!validatorClass.RangeTextBox(this, bi.kbca02week, 0, 7, getString(R.string.kbca02), " weeks")) {
+                if (!validatorClass.RangeTextBox(this, bi.kbcb02week, 0, 7, getString(R.string.kbcb02), " weeks")) {
                     return false;
                 }
             }
 
-        /*    if (!bi.kbca0398.isChecked()) {
-                if (!validatorClass.EmptyTextBox(this, bi.kbca03, getString(R.string.kbca03))) {
-                    return false;
-                }
-                if (!validatorClass.RangeTextBox(this, bi.kbca03, 1, 10, getString(R.string.kbca03), " times")) {
-                    return false;
-                }
-            }
-
-*/
-            if (!validatorClass.EmptyRadioButton(this, bi.kbca03, bi.kbca03a, bi.kbca03times, getString(R.string.kbca03))) {
+            if (!validatorClass.EmptyRadioButton(this, bi.kbcb03, bi.kbcb03a, bi.kbcb03times, getString(R.string.kbcb03))) {
                 return false;
             }
-            if (bi.kbca03a.isChecked()) {
-                if (!validatorClass.RangeTextBox(this, bi.kbca03times, 1, 10, getString(R.string.kbca03), " times")) {
+            if (bi.kbcb03a.isChecked()) {
+                if (!validatorClass.RangeTextBox(this, bi.kbcb03times, 1, 5, getString(R.string.kbcb03), " times")) {
                     return false;
                 }
             }
@@ -421,7 +371,7 @@ public class SectionB3_PNCActivity extends AppCompatActivity {
 
 
         sn.put("kbca03", bi.kbca03a.isChecked() ? "1"
-                : bi.kbca0298.isChecked() ? "98"
+                : bi.kbca0398.isChecked() ? "98"
                 : "0");
         sn.put("kbca03times", bi.kbca03times.getText().toString());
 
@@ -450,11 +400,19 @@ public class SectionB3_PNCActivity extends AppCompatActivity {
                 : "0");
 
 
+        sn.put("kbcb02", bi.kbcb02a.isChecked() ? "1"
+                : bi.kbcb02b.isChecked() ? "2"
+                : bi.kbcb0298.isChecked() ? "98"
+                : "0");
         sn.put("kbcb02day", bi.kbcb02day.getText().toString());
         sn.put("kbcb02week", bi.kbcb02week.getText().toString());
-        sn.put("kbcb0298", bi.kbcb0298.isChecked() ? "98" : "0");
 
-        sn.put("kbcb03", bi.kbcb0398.isChecked() ? "98" : bi.kbcb03.getText().toString());
+
+        sn.put("kbcb03", bi.kbcb03a.isChecked() ? "1"
+                : bi.kbcb0398.isChecked() ? "98"
+                : "0");
+        sn.put("kbcb03times", bi.kbcb03times.getText().toString());
+
 
         sn.put("kbcb04", bi.kbcb04a.isChecked() ? "1"
                 : bi.kbcb04b.isChecked() ? "2"
