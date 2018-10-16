@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.RadioGroup;
@@ -117,6 +120,27 @@ public class SectionA3Activity extends AppCompatActivity {
                     bi.kac23a.setVisibility(View.VISIBLE);
                     bi.kac23k.setVisibility(View.VISIBLE);
                 }
+            }
+        });
+        bi.kac2496x.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(!TextUtils.isEmpty(bi.kac2496x.getText().toString())){
+                    bi.kac2496.setVisibility(View.VISIBLE);
+                }else{
+                    bi.kac2496.setVisibility(View.GONE);
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
             }
         });
 
@@ -453,7 +477,7 @@ public class SectionA3Activity extends AppCompatActivity {
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, bi.kac09, bi.kac0996,  bi.kac0996x, getString(R.string.kac09))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.kac09, bi.kac0996, bi.kac0996x, getString(R.string.kac09))) {
             return false;
         }
 
@@ -479,6 +503,10 @@ public class SectionA3Activity extends AppCompatActivity {
         if (bi.kac11a.isChecked()) {
 
             if (!validatorClass.EmptyTextBox(this, bi.kac12, getString(R.string.kac12))) {
+                return false;
+            }
+
+            if (!validatorClass.RangeTextBox(this, bi.kac12, 2, 90, getString(R.string.kac12), " minutes")) {
                 return false;
             }
 
@@ -786,6 +814,11 @@ public class SectionA3Activity extends AppCompatActivity {
 
         if (!validatorClass.EmptyTextBox(this, bi.kac2496x, getString(R.string.other))) {
             return false;
+        }
+        if (!TextUtils.isEmpty(bi.kac2496x.toString())) {
+            if (!validatorClass.EmptyTextBox(this, bi.kac2496, getString(R.string.other))) {
+                return false;
+            }
         }
 
 

@@ -95,8 +95,8 @@
     <string name="kab02"> جيڪڏهن ها ته ڪيتريون زنده پيدائش ٿيون آهن؟ </string>
     <string name="kab03"> ڇا گذريل هڪ سال دوران 5 سالن کان گھٽ عمر وارن ٻارن جي فوتگي ٿي آهي؟</string>
     <string name="kab04">جيڪڏهن ها ته ڪيتريون 5 سالن کان گھٽ فوتگيون ٿيون آهن؟ </string>
-    <string name="kab05">ڇا گذريل هڪ سال دوران هن گھر ۾؟  28 ڏينهن  جي ٻار جي فوتگي ٿي آهي </string>
-    <string name="kab06">جيڪڏهن ها ته ڪيتريون فوتگيون ٿيون آهن؟  28 ڏينهن   جي ٻارن جون </string>
+    <string name="kab05">ڇا گذريل هڪ سال دوران هن گھر ۾  28  ڏينهن  کان گھٽ  جي ٻار جي فوتگي ٿي آهي؟</string>
+    <string name="kab06">جيڪڏهن ها ته  ڪيتريون فوتگيون ٿيون آهن 28  ڏينهن  کان گھٽ  جي ٻارن جون؟</string>
     <string name="kab07">ڇا گذريل هڪ سال دوران ڄمڻ کان 7 ڏينهن جي عمر جي ٻار جي فوتگي ٿي آهي؟ </string>
     <string name="kab08">جيڪڏهن ها ته گذريل هڪ سال ۾ ڄمڻ کان 7 ڏينهن جي عمر تائين ڪيترن ٻارن جي فوتگي ٿي آهي؟؟ </string>
     <string name="kab09"> ڇا گذريل هڪ سال دوران 8 کان 28 ڏينهن جي عمر تائين ٻارن جي فوتگي ٿي آهي؟</string>
@@ -134,7 +134,7 @@
     <string name="kac01f"> سرائڪي </string>
     <string name="kac02"> گهر جي تعمير ۾ ڪهڙو بنيادي مواد يا سامان استعمال ڪيو ويو آهي ( مشاهدو ڪريو ته ڪهڙو سامان وڌيڪ استعمال ڪيو ويوآهي؟ </string>
     <string name="kac02sub"> اي. ڀتن جي جوڙ جڪ </string>
-    <string name="kac02a"> ڀتبون نه آهن </string>
+    <string name="kac02a">ڀتيون نه آهن  </string>
     <string name="kac02b"> تمبو </string>
     <string name="kac02c"> ڪچين سرن / مٽي سان </string>
     <string name="kac02d"> ٿنڀا ، مٽي ۽ ٿوڻين سان </string>
@@ -256,7 +256,7 @@
     <string name="kac16i"> بالٽي واري حاجت جي جاءِ </string>
     <string name="kac16j"> ٽنگيل حاجت واري جاءِ </string>
     <string name="kac16sub02"> ٻيا </string>
-    <string name="kac16k"> بغير سهولت جي زمين يا ٻوڙن </string>
+    <string name="kac16k">بغير سهولت جي زمين يا ٻوڙن ۾ </string>
     <string name="kac17"> ڇا توهان اها ليٽرين ٻين گهرن کي به استعمال ڪرڻ ڏيندا
     آهيو؟ </string>
     <string name="kac18"> جيڪڏهن ها ته ٻيا گهڻا گهرليٽرين جي اها سهولت
@@ -324,7 +324,7 @@
     <string name="kbb04a"> حمل جي 6 کان 9 مهينن تائين </string>
     <string name="kbb04b">حمل جي ٽن مهينن کان 6 مهينن تائين </string>
     <string name="kbb04c"> حمل جي پهرين مهينن کان 3 مهينن تائين </string>
-    <string name="kbb05"> ڪنهن کان طبي معائنو ڪرايو؟ </string>
+    <string name="kbb05"> ڇا گذريل هڪ سال دوران هن گھر ۾  28  ڏينهن  کان گھٽ  جي ٻار جي فوتگي ٿي آهي؟ </string>
     <string name="kbb05a1"> HEALTH PERSONNEL </string>
     <string name="kbb05a"> ڊاڪٽر </string>
     <string name="kbb05b"> نرس </string>
@@ -333,7 +333,7 @@
     <string name="kbb05e"> ڪميونٽي مڊوائيف </string>
     <string name="kbb05f"> دائي-ٽي بي اي </string>
     <string name="kbb05g"> ليڊي هيلٿ ورڪر </string>
-    <string name="kbb06"> توهان ڪٿي حمل جو طبي معائنو ڪرايو؟ </string>
+    <string name="kbb06">جيڪڏهن ها ته  ڪيتريون فوتگيون ٿيون آهن 28  ڏينهن  کان گھٽ  جي ٻارن جون؟ </string>
     <string name="kbb06sub1"> HOME </string>
     <string name="kbb06a"> پنهنجي گھر </string>
     <string name="kbb06b"> ٻئي ڪنهن گھر </string>
@@ -353,9 +353,9 @@
     <string name="kbb07e"> توهان جي رت جو نمونو ورتو </string>
     <string name="kbb07f"> الٽراسائونڊ </string>
     <string name="kbb07g"> ڇا توهان ڪاغذائي سپليمينٽ ورتي</string>
-    <string name="kbb07h"> خوراڪ جي باري ۾ سمجھاڻي </string>
-    <string name="kbb07i"> پنهنجو کير پيارڻ بابت سمجھاڻي </string>
-    <string name="kbb07j"> ٻارن ۾ وقفي جي بابت سمجھاڻي </string>
+    <string name="kbb07h"> خوراڪ جي باري ۾ ٻڌايو ويو هو</string>
+    <string name="kbb07i"> پنهنجو کير پيارڻ بابت ٻڌايو ويو هو</string>
+    <string name="kbb07j"> ٻارن ۾ وقفي جي بابت ٻڌايو ويو هو </string>
     <string name="kbb08">گذريل حمل دوران توهان فولاد ۽ فولڪ ايسڊ استعمال ڪئي هئي؟</string>
     <string name="kbb09">جيڪڏهن ها ته ڪيترا ڀيرا؟ </string>
     <string name="kbb09a"> روزانو </string>
@@ -364,7 +364,7 @@
     <string name="kbb09d"> مهيني ۾ </string>
     <string name="kbb09e"> ڪڏهن ڪڏهن </string>
     <string name="kbb09f"> ڪڏهن به نه </string>
-    <string name="kbb10"> ڪيترن مهينن يا ڏينهن تائين توهان فولاد ۽ فولڪ ايسڊ ورتو </string>
+    <string name="kbb10"> ڏهن ها ته گذريل هڪ سال ۾ ڪيترن ٻارن جي فوتگي 8 کان 28 ڏينهن جي عمر ۾ ٿي آهي </string>
     <string name="kbb10a"> ڏينهن </string>
     <string name="kbb10b"> مهينا</string>
     <string name="kbb10c">خبر ناهي/ياد ناهي</string>
@@ -399,7 +399,7 @@
     <string name="kbc01g"> مائيٽ/دوست </string>
     <string name="kbc01h"> ڪنهن به نه </string>
 
-    <string name="kbc02"> ڇا توهان جي ويم دوران ٻئي ڪنهن مدد ڪئي؟ </string>
+    <string name="kbc02"> ڇا توهان جي ويم دوران  ٻئي ڪنهن ويم ڪرائڻ ۾ مدد ڪئي؟ </string>
     <string name="kbc03"> ويم ڪرائڻ جي دوران ويم ڪرائڻ ۾ ڪنهن مدد ڪئي؟ </string>
     <string name="kbc03a"> ڊاڪٽر </string>
     <string name="kbc03b"> ليڊي هيٿ وزيٽر </string>
@@ -423,7 +423,7 @@
     <string name="kbc06"> جيڪڏهن ها ته ٻار جو پيدائشي وزن ڪيترو هو؟ جيڪڏهن ڪارڊ موجود آهي ته ان تان وزن لکو </string>
     <string name="kbc06sub"> ڪارڊ موجود آهي </string>
     <string name="kbc07b1"> وزن بابت يادگيري ڪرايو </string>
-    <string name="kbc07">  جيڪڏهن ڪارڊ موجود نه آهي ته وزن ياداشت مان پڇو</string>
+    <string name="kbc07"> جيڪڏهن ڪارڊ موجود نه آهي ته وزن ياد ڪري ٻڌايو</string>
     <!--<string name="kbc07"> جيڪڏهن نه ته وزن بابت پڇو </string>-->
 
 

@@ -134,6 +134,7 @@ public class SectionB3_PNCActivity extends AppCompatActivity {
                     bi.kbcb05b.setChecked(false);
                     bi.kbcb05c.setChecked(false);
                     bi.kbcb05d.setChecked(false);
+                    bi.kbcb05dx.setText(null);
                     bi.kbcb05e.setChecked(false);
                     bi.kbcb05f.setChecked(false);
                     bi.kbcb05g.setChecked(false);
@@ -153,6 +154,7 @@ public class SectionB3_PNCActivity extends AppCompatActivity {
                     bi.kbcb05b.setChecked(false);
                     bi.kbcb05c.setChecked(false);
                     bi.kbcb05d.setChecked(false);
+                    bi.kbcb05dx.setText(null);
                     bi.kbcb05e.setChecked(false);
                     bi.kbcb05f.setChecked(false);
                     bi.kbcb05g.setChecked(false);
@@ -439,6 +441,7 @@ public class SectionB3_PNCActivity extends AppCompatActivity {
         sn.put("kbcb0598", bi.kbcb0598.isChecked() ? "98" : "0");
         sn.put("kbcb0596", bi.kbcb0596.isChecked() ? "96" : "0");
         sn.put("kbcb0596x", bi.kbcb0596x.getText().toString());
+        sn.put("kbcb05dx", bi.kbcb05dx.getText().toString());
 
         sn.put("kbcc01", bi.kbcc01a.isChecked() ? "1"
                 : bi.kbcc01b.isChecked() ? "2"
@@ -510,7 +513,7 @@ public class SectionB3_PNCActivity extends AppCompatActivity {
 
                 finish();
 
-                startActivity(new Intent(this, SectionB4_2Activity.class));
+                startActivity(new Intent(this, SectionB4Activity.class));
                 //                startActivity(new Intent(this, MainActivity.class));
 
             } else {

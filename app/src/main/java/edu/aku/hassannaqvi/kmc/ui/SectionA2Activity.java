@@ -9,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.widget.CompoundButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,6 +28,9 @@ import edu.aku.hassannaqvi.kmc.databinding.ActivitySectionA2Binding;
 import edu.aku.hassannaqvi.kmc.databinding.ActivitySectionA3Binding;
 import edu.aku.hassannaqvi.kmc.validation.validatorClass;
 
+import static android.view.View.GONE;
+import static android.view.View.VISIBLE;
+
 public class SectionA2Activity extends AppCompatActivity {
     ActivitySectionA2Binding bi;
 
@@ -34,6 +39,47 @@ public class SectionA2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_a2);
         bi.setCallback(this);
+        bi.kab05.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if(checkedId == R.id.kab05b){
+                    bi.fldGrpkab05.setVisibility(GONE);
+
+                    bi.kab06.setText(null);
+                    bi.kab07.clearCheck();
+                    bi.kab08.setText(null);
+                    bi.kab09.clearCheck();
+                    bi.kab10.setText(null);
+                }else{
+                    bi.fldGrpkab05.setVisibility(VISIBLE);
+                }
+            }
+        });
+
+
+        bi.kab07.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.kab07b) {
+                    bi.fldGrpkab08.setVisibility(GONE);
+                    bi.kab08.setText(null);
+                }else{
+                    bi.fldGrpkab08.setVisibility(VISIBLE);
+                }
+            }
+        });
+       bi.kab09.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+           @Override
+           public void onCheckedChanged(RadioGroup group, int checkedId) {
+               if (checkedId ==  R.id.kab09b) {
+                   bi.fldGrpkab10.setVisibility(GONE);
+                   bi.kab10.setText(null);
+               }else{
+                   bi.fldGrpkab10.setVisibility(VISIBLE);
+               }
+           }
+       });
+
     }
 
 
@@ -80,7 +126,12 @@ public class SectionA2Activity extends AppCompatActivity {
     }
 
     private boolean formValidation() {
-
+        int kab06 = 0;
+        int kab08 = 0;
+        int kab10 = 0;
+        int kab04 = 0;
+        int kab12 = 0;
+        int kab14 = 0;
         if (!validatorClass.EmptyRadioButton(this, bi.kab01, bi.kab01a, getString(R.string.kab01))) {
             return false;
         }
@@ -115,61 +166,61 @@ public class SectionA2Activity extends AppCompatActivity {
             if (!validatorClass.RangeTextBox(this, bi.kab06, 1, 9, getString(R.string.kab06), " number")) {
                 return false;
             }
-        }
-        if (!validatorClass.EmptyRadioButton(this, bi.kab07, bi.kab07a, getString(R.string.kab07))) {
-            return false;
-        }
-        if (bi.kab07a.isChecked()) {
+            if (!validatorClass.EmptyRadioButton(this, bi.kab07, bi.kab07a, getString(R.string.kab07))) {
+                return false;
+            }
+            if (bi.kab07a.isChecked()) {
 
-            if (!validatorClass.EmptyTextBox(this, bi.kab08, getString(R.string.kab08))) {
+                if (!validatorClass.EmptyTextBox(this, bi.kab08, getString(R.string.kab08))) {
+                    return false;
+                }
+                if (!validatorClass.RangeTextBox(this, bi.kab08, 1, 9, getString(R.string.kab08), " number")) {
+                    return false;
+                }
+            }
+            if (!validatorClass.EmptyRadioButton(this, bi.kab09, bi.kab09a, getString(R.string.kab09))) {
                 return false;
             }
-            if (!validatorClass.RangeTextBox(this, bi.kab08, 1, 9, getString(R.string.kab08), " number")) {
-                return false;
-            }
-        }
-        if (!validatorClass.EmptyRadioButton(this, bi.kab09, bi.kab09a, getString(R.string.kab09))) {
-            return false;
-        }
-        if (bi.kab09a.isChecked()) {
+            if (bi.kab09a.isChecked()) {
 
-            if (!validatorClass.EmptyTextBox(this, bi.kab10, getString(R.string.kab10))) {
+                if (!validatorClass.EmptyTextBox(this, bi.kab10, getString(R.string.kab10))) {
+                    return false;
+                }
+                if (!validatorClass.RangeTextBox(this, bi.kab10, 1, 9, getString(R.string.kab10), " number")) {
+                    return false;
+                }
+            }
+
+
+            if (!TextUtils.isEmpty(bi.kab08.getText().toString())) {
+                kab08 = Integer.valueOf(bi.kab08.getText().toString());
+            }
+            if (!TextUtils.isEmpty(bi.kab10.getText().toString())) {
+                kab10 = Integer.valueOf(bi.kab10.getText().toString());
+            }
+            if (!TextUtils.isEmpty(bi.kab06.getText().toString())) {
+                kab06 = Integer.valueOf(bi.kab06.getText().toString());
+            }
+            int questsum = kab08 + kab10;
+            if (kab06 == questsum) {
+                bi.kab05a.setError(null);
+                bi.kab06.setError(null);
+                bi.kab07a.setError(null);
+                bi.kab08.setError(null);
+                bi.kab09a.setError(null);
+                bi.kab10.setError(null);
+            } else {
+                bi.kab05a.setError("");
+                bi.kab06.setError("Wrong calculation of death under 28 days!");
+                bi.kab07a.setError("");
+                bi.kab08.setError("Wrong calculation of death under 28 days!");
+                bi.kab09a.setError("");
+                bi.kab10.setError("Wrong calculation of death under 28 days!");
+                Toast.makeText(this, "Wrong calculation of deaths under 28 days!", Toast.LENGTH_SHORT).show();
                 return false;
             }
-            if (!validatorClass.RangeTextBox(this, bi.kab10, 1, 9, getString(R.string.kab10), " number")) {
-                return false;
-            }
         }
-        int kab06 = 0;
-        int kab08 = 0;
-        int kab10 = 0;
-        if (!TextUtils.isEmpty(bi.kab08.getText().toString())) {
-            kab08 = Integer.valueOf(bi.kab08.getText().toString());
-        }
-        if (!TextUtils.isEmpty(bi.kab10.getText().toString())) {
-            kab10 = Integer.valueOf(bi.kab10.getText().toString());
-        }
-        if (!TextUtils.isEmpty(bi.kab06.getText().toString())) {
-            kab06 = Integer.valueOf(bi.kab06.getText().toString());
-        }
-        int questsum = kab08 + kab10;
-        if (kab06 == questsum) {
-            bi.kab05a.setError(null);
-            bi.kab06.setError(null);
-            bi.kab07a.setError(null);
-            bi.kab08.setError(null);
-            bi.kab09a.setError(null);
-            bi.kab10.setError(null);
-        } else {
-            bi.kab05a.setError("");
-            bi.kab06.setError("Wrong calculation of death under 28 days!");
-            bi.kab07a.setError("");
-            bi.kab08.setError("Wrong calculation of death under 28 days!");
-            bi.kab09a.setError("");
-            bi.kab10.setError("Wrong calculation of death under 28 days!");
-            Toast.makeText(this, "Wrong calculation of deaths under 28 days!", Toast.LENGTH_SHORT).show();
-            return false;
-        }
+
         if (!validatorClass.EmptyRadioButton(this, bi.kab11, bi.kab11a, getString(R.string.kab11))) {
             return false;
         }
@@ -195,9 +246,10 @@ public class SectionA2Activity extends AppCompatActivity {
             }
         }
 
-        int kab04 = 0;
-        int kab12 = 0;
-        int kab14 = 0;
+
+        if (!TextUtils.isEmpty(bi.kab06.getText().toString())) {
+            kab06 = Integer.valueOf(bi.kab06.getText().toString());
+        }
         if (!TextUtils.isEmpty(bi.kab04.getText().toString())) {
             kab04 = Integer.valueOf(bi.kab04.getText().toString());
         }
@@ -207,34 +259,26 @@ public class SectionA2Activity extends AppCompatActivity {
         if (!TextUtils.isEmpty(bi.kab14.getText().toString())) {
             kab14 = Integer.valueOf(bi.kab14.getText().toString());
         }
-        int questsum2 = kab06+ kab08+ kab10+ kab12+ kab14;
-        if(kab04 >= questsum2){
+        int questsum2 = kab06 + kab12 + kab14;
+        if (kab04 == questsum2) {
             bi.kab03a.setError(null);
             bi.kab04.setError(null);
             bi.kab05a.setError(null);
             bi.kab06.setError(null);
-            bi.kab07a.setError(null);
-            bi.kab08.setError(null);
-            bi.kab09a.setError(null);
-            bi.kab10.setError(null);
             bi.kab11a.setError(null);
             bi.kab12.setError(null);
             bi.kab13a.setError(null);
             bi.kab14.setError(null);
-        }else {
+        } else {
             bi.kab03a.setError("");
             bi.kab04.setError("Wrong calculation of under 5 death during last 1 year");
             bi.kab05a.setError("");
             bi.kab06.setError("Wrong calculation of under 5 death during last 1 year");
-            bi.kab07a.setError("");
-            bi.kab08.setError("Wrong calculation of under 5 death during last 1 year");
-            bi.kab09a.setError("");
-            bi.kab10.setError("Wrong calculation of under 5 death during last 1 year");
             bi.kab11a.setError("");
             bi.kab12.setError("Wrong calculation of under 5 death during last 1 year");
             bi.kab13a.setError("");
             bi.kab14.setError("Wrong calculation of under 5 death during last 1 year");
-            Toast.makeText(this,"Wrong calculation of under 5 death during last 1 year",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Wrong calculation of under 5 death during last 1 year", Toast.LENGTH_SHORT).show();
             return false;
         }
         return true;

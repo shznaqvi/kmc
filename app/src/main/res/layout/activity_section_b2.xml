@@ -264,7 +264,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@color/colorPrimary"
+                        android:background="@color/colorPrimaryAlpha"
                         android:text="@string/kbb05a1"
                         android:textAppearance="?android:attr/textAppearanceLarge"
                         android:textColor="@android:color/white" />
@@ -368,7 +368,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@color/colorPrimary"
+                        android:background="@color/colorPrimaryBeta"
                         android:text="@string/kbb06sub1"
                         android:textAppearance="?android:attr/textAppearanceLarge"
                         android:textColor="@android:color/white" />
@@ -392,7 +392,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@color/colorPrimary"
+                        android:background="@color/colorPrimaryBeta"
                         android:text="@string/kbb06sub2"
                         android:textAppearance="?android:attr/textAppearanceLarge"
                         android:textColor="@android:color/white" />
@@ -424,7 +424,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@color/colorPrimary"
+                        android:background="@color/colorPrimaryBeta"
                         android:text="@string/kbb06sub3"
                         android:textAppearance="?android:attr/textAppearanceLarge"
                         android:textColor="@android:color/white" />

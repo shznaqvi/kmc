@@ -53,6 +53,7 @@ public class SectionB3Activity extends AppCompatActivity {
                     bi.fldGrpkbc05.setVisibility(View.VISIBLE);
                 } else {
                     bi.fldGrpkbc05.setVisibility(View.GONE);
+                    bi.fldGrpkbc07.setVisibility(View.VISIBLE);
                     bi.kbc06.clearCheck();
                     bi.kbc06kg.setText(null);
                     bi.kbc07rec.setText(null);
@@ -71,6 +72,7 @@ public class SectionB3Activity extends AppCompatActivity {
                 if (bi.kbc06a.isChecked()) {
                     bi.kbc06kg.setVisibility(View.VISIBLE);
                     bi.fldGrpkbc06.setVisibility(View.GONE);
+                    bi.fldGrpkbc07.setVisibility(View.GONE);
                     bi.kbc07rec.setText(null);
                     bi.kbc08.clearCheck();
                     //bi.kbc0777.setChecked(false);
@@ -82,6 +84,7 @@ public class SectionB3Activity extends AppCompatActivity {
                     bi.kbc06kg.setVisibility(View.GONE);
 //                    bi.kbc09.clearCheck();
                     bi.fldGrpkbc06.setVisibility(View.VISIBLE);
+                    bi.fldGrpkbc07.setVisibility(View.VISIBLE);
 //                    bi.fldGrpkbc07.setVisibility(View.VISIBLE);
 //                    bi.fldGrpkbc08.setVisibility(View.GONE);
                 }
@@ -338,6 +341,10 @@ public class SectionB3Activity extends AppCompatActivity {
                 }
             }
 
+        }else{
+            if (!validatorClass.EmptyRadioButton(this, bi.kbc08, bi.kbc08a, getString(R.string.kbc08))) {
+                return false;
+            }
         }
 
 
@@ -407,8 +414,14 @@ public class SectionB3Activity extends AppCompatActivity {
             if (!validatorClass.EmptyTextBox(this, bi.kbc19hr, getString(R.string.hours))) {
                 return false;
             }
+            if (!validatorClass.RangeTextBox(this, bi.kbc19hr,1,23, getString(R.string.hours)," hours")) {
+                return false;
+            }
         } else if (bi.kbc19c.isChecked()) {
             if (!validatorClass.EmptyTextBox(this, bi.kbc19day, getString(R.string.days))) {
+                return false;
+            }
+            if (!validatorClass.RangeTextBox(this, bi.kbc19day,1,90, getString(R.string.days)," days")) {
                 return false;
             }
         }

@@ -413,7 +413,7 @@ public class SectionB4_5Activity extends AppCompatActivity {
 
                 finish();
 
-                startActivity(new Intent(this, SectionB4Activity.class));
+                startActivity(new Intent(this, SectionCActivity.class));
                 //startActivity(new Intent(this, MainActivity.class));
 
             } else {

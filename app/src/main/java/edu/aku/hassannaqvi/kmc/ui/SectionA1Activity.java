@@ -13,6 +13,7 @@ import android.text.InputType;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.text.format.DateFormat;
+import android.text.method.DigitsKeyListener;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -86,7 +87,8 @@ public class SectionA1Activity extends Activity {
         bi.cra04.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                bi.cra04.setInputType(InputType.TYPE_TEXT_FLAG_CAP_CHARACTERS | InputType.TYPE_CLASS_TEXT);
+//                bi.cra04.setInputType(InputType.TYPE_TEXT_FLAG_CAP_CHARACTERS | InputType.TYPE_CLASS_TEXT);
+//                bi.cra04.setKeyListener(DigitsKeyListener.getInstance("ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789-"));
                 length = charSequence.toString().length();
             }
 
@@ -99,19 +101,27 @@ public class SectionA1Activity extends Activity {
 */
 
                 if (!bi.cra04.getText().toString().isEmpty() && bi.cra04.getText().toString().length() == 3) {
-                    if (bi.cra04.getText().toString().substring(0, 3).matches("[0-9]+")) {
-                        if (length < 4) {
-                            bi.cra04.setText(bi.cra04.getText().toString() + "-");
-                            bi.cra04.setSelection(bi.cra04.getText().length());
-                            //binding.nh108.setInputType(InputType.TYPE_TEXT_FLAG_CAP_CHARACTERS);
+
+
+                        if (bi.cra04.getText().toString().substring(0, 3).matches("[0-9]+")) {
+                            if (length < 4) {
+                                bi.cra04.setText(bi.cra04.getText().toString() + "-");
+                                bi.cra04.setSelection(bi.cra04.getText().length());
+                                //binding.nh108.setInputType(InputType.TYPE_TEXT_FLAG_CAP_CHARACTERS);
+                            }
                         }
-                    }
+
                 }
             }
 
             @Override
             public void afterTextChanged(Editable editable) {
-
+         /*   if (bi.cra04.getText().toString().matches("[^A-Za-z0-9]")) {
+                bi.cra04.setError(null);
+            }else{
+                Toast.makeText(SectionA1Activity.this,"No special characters allowed!!!",Toast.LENGTH_SHORT).show();
+                bi.cra04.setError("No special characters allowed!!!");
+            }*/
             }
         });
 
@@ -398,6 +408,10 @@ public class SectionA1Activity extends Activity {
             return false;
         }
 
+        if (!validatorClass.EmptySpinner(this, bi.crvillage, getString(R.string.crvillage))) {
+            return false;
+        }
+
 
       /*  if (bi.crwoman.getSelectedItemPosition() == 0) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crwoman), Toast.LENGTH_SHORT).show();
@@ -442,13 +456,13 @@ public class SectionA1Activity extends Activity {
         if (!validatorClass.EmptyTextBox(this, bi.kaa06, getString(R.string.kaa06))) {
             return false;
         }
-        if (!validatorClass.RangeTextBox(this, bi.kaa06, 14, 49, getString(R.string.kaa06), "Age")) {
+        if (!validatorClass.RangeTextBox(this, bi.kaa06, 14, 49, getString(R.string.kaa06),  " Age")) {
             return false;
         }
         if (!validatorClass.EmptyTextBox(this, bi.kaa07, getString(R.string.kaa07))) {
             return false;
         }
-        if (!validatorClass.RangeTextBox(this, bi.kaa07, 0, 20, getString(R.string.cra07), "Class")) {
+        if (!validatorClass.RangeTextBox(this, bi.kaa07, 0, 20, getString(R.string.cra07), " Class")) {
             return false;
         }
         if (!validatorClass.EmptyTextBox(this, bi.kaa08, getString(R.string.kaa08))) {
@@ -461,7 +475,7 @@ public class SectionA1Activity extends Activity {
         if (!validatorClass.EmptyTextBox(this, bi.kaa09, getString(R.string.kaa09))) {
             return false;
         }
-        if (!validatorClass.RangeTextBox(this, bi.kaa09, 0, 9, getString(R.string.kaa09), " members")) {
+        if (!validatorClass.RangeTextBox(this, bi.kaa09, 1, 9, getString(R.string.kaa09), " members")) {
             return false;
         }
         if (!validatorClass.EmptyTextBox(this, bi.kaa10, getString(R.string.kaa10))) {
@@ -742,6 +756,7 @@ public class SectionA1Activity extends Activity {
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
                 bi.cra04.setInputType(InputType.TYPE_CLASS_NUMBER);
+
                 length = charSequence.toString().length();
             }
 

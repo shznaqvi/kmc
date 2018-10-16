@@ -269,7 +269,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                 getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
-
+//         startActivity(new Intent(this,SyncActivity.class));
             new syncData(this).execute();
 
         } else {

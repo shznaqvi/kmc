@@ -195,7 +195,7 @@ public class SectionB4Activity extends AppCompatActivity {
 
                 finish();
 
-                startActivity(new Intent(this, SectionCActivity.class));
+                startActivity(new Intent(this, SectionB4_2Activity.class));
                 //startActivity(new Intent(this, MainActivity.class));
 
             } else {

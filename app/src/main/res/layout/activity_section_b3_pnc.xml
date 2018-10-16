@@ -239,9 +239,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789"
                         android:hint="@string/kbca04dx"
                         android:inputType="text"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
                         android:text='@{kbca04d.checked ? kbca04dx.getText.toString : ""}'
                         android:visibility='@{kbca04d.checked ? View.VISIBLE : View.GONE}' />
 
@@ -641,7 +641,15 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:text="@string/kbcb05d" />
-
+                    <EditText
+                        android:id="@+id/kbcb05dx"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:hint="@string/kbcb05d"
+                        android:inputType="text"
+                        android:text='@{kbcb05d.checked ? kbcb05dx.getText.toString : ""}'
+                        android:visibility='@{kbcb05d.checked ? View.VISIBLE : View.GONE}' />
                     <CheckBox
                         android:id="@+id/kbcb05e"
                         android:layout_width="match_parent"
