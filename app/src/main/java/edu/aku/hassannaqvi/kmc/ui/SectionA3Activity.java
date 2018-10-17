@@ -817,7 +817,7 @@ public class SectionA3Activity extends AppCompatActivity {
         if (!validatorClass.EmptyTextBox(this, bi.kac2496x, getString(R.string.other))) {
             return false;
         }*/
-        if (!TextUtils.isEmpty(bi.kac2496x.toString())) {
+        if (!TextUtils.isEmpty(bi.kac2496x.getText().toString())) {
             if (!validatorClass.EmptyTextBox(this, bi.kac2496, getString(R.string.other))) {
                 return false;
             }
