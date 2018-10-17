@@ -134,6 +134,7 @@ public class SectionA3Activity extends AppCompatActivity {
                     bi.kac2496.setVisibility(View.VISIBLE);
                 }else{
                     bi.kac2496.setVisibility(View.GONE);
+                    bi.kac2496.setText(null);
                 }
 
             }
@@ -384,6 +385,7 @@ public class SectionA3Activity extends AppCompatActivity {
         sA1.put("kac2419", bi.kac2419.getText().toString());
         sA1.put("kac2420", bi.kac2420.getText().toString());
         sA1.put("kac2496x", bi.kac2496x.getText().toString());
+        sA1.put("kac2496", bi.kac2496.getText().toString());
 
 
         MainApp.fc.setsa3(String.valueOf(sA1));

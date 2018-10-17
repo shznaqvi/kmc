@@ -270,7 +270,7 @@ public class SectionB3_PNCActivity extends AppCompatActivity {
                 if (!validatorClass.EmptyTextBox(this, bi.kbca02week, getString(R.string.weeks))) {
                     return false;
                 }
-                if (!validatorClass.RangeTextBox(this, bi.kbca02week, 0, 7, getString(R.string.kbca02), " weeks")) {
+                if (!validatorClass.RangeTextBox(this, bi.kbca02week, 1, 9, getString(R.string.kbca02), " weeks")) {
                     return false;
                 }
             }
@@ -317,7 +317,7 @@ public class SectionB3_PNCActivity extends AppCompatActivity {
                 if (!validatorClass.EmptyTextBox(this, bi.kbcb02week, getString(R.string.weeks))) {
                     return false;
                 }
-                if (!validatorClass.RangeTextBox(this, bi.kbcb02week, 0, 7, getString(R.string.kbcb02), " weeks")) {
+                if (!validatorClass.RangeTextBox(this, bi.kbcb02week, 1, 9, getString(R.string.kbcb02), " weeks")) {
                     return false;
                 }
             }

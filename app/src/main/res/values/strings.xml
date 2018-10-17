@@ -100,7 +100,7 @@
     <string name="kab07">ڇا گذريل هڪ سال دوران ڄمڻ کان 7 ڏينهن جي عمر جي ٻار جي فوتگي ٿي آهي؟ </string>
     <string name="kab08">جيڪڏهن ها ته گذريل هڪ سال ۾ ڄمڻ کان 7 ڏينهن جي عمر تائين ڪيترن ٻارن جي فوتگي ٿي آهي؟؟ </string>
     <string name="kab09"> ڇا گذريل هڪ سال دوران 8 کان 28 ڏينهن جي عمر تائين ٻارن جي فوتگي ٿي آهي؟</string>
-    <string name="kab10"> ها ته گذريل هڪ سال ۾ ڪيترن ٻارن جي فوتگي 8 کان 28 ڏينهن جي عمر ۾ ٿي آهي؟</string>
+    <string name="kab10"> هن ها ته گذريل هڪ سال ۾ ڪيترن ٻارن جي فوتگي 8 کان 28 ڏينهن جي عمر ۾ ٿي آهي؟</string>
     <string name="kab11"> ڇا گذريل هڪ سال دوران 29 ڏينهن کان 1 سال جي عمر تائين ٻارن جي فوتگي ٿي آهي؟</string>
     <string name="kab12"> ڪڏهن ها ته گذريل هڪ سال ۾ ڪيترن ٻارن جي فوتگي 29 ڏينهن کان 1 سال جي عمر ۾ ٿي آهي؟</string>
     <string name="kab13"> ڇا گذريل هڪ سال دوران 1 کان 5 سالن جي عمر تائين ٻارن جي فوتگي ٿي آهي؟</string>
@@ -324,7 +324,7 @@
     <string name="kbb04a"> حمل جي 6 کان 9 مهينن تائين </string>
     <string name="kbb04b">حمل جي ٽن مهينن کان 6 مهينن تائين </string>
     <string name="kbb04c"> حمل جي پهرين مهينن کان 3 مهينن تائين </string>
-    <string name="kbb05"> ڇا گذريل هڪ سال دوران هن گھر ۾  28  ڏينهن  کان گھٽ  جي ٻار جي فوتگي ٿي آهي؟ </string>
+    <string name="kbb05">ڪنهن کان طبي معائنو ڪرايو؟ </string>
     <string name="kbb05a1"> HEALTH PERSONNEL </string>
     <string name="kbb05a"> ڊاڪٽر </string>
     <string name="kbb05b"> نرس </string>
@@ -333,7 +333,7 @@
     <string name="kbb05e"> ڪميونٽي مڊوائيف </string>
     <string name="kbb05f"> دائي-ٽي بي اي </string>
     <string name="kbb05g"> ليڊي هيلٿ ورڪر </string>
-    <string name="kbb06">جيڪڏهن ها ته  ڪيتريون فوتگيون ٿيون آهن 28  ڏينهن  کان گھٽ  جي ٻارن جون؟ </string>
+    <string name="kbb06">توهان پنهنجي حمل جو آّخري طبي معائنوڪٿان ڪرايو؟ </string>
     <string name="kbb06sub1"> HOME </string>
     <string name="kbb06a"> پنهنجي گھر </string>
     <string name="kbb06b"> ٻئي ڪنهن گھر </string>
@@ -364,7 +364,7 @@
     <string name="kbb09d"> مهيني ۾ </string>
     <string name="kbb09e"> ڪڏهن ڪڏهن </string>
     <string name="kbb09f"> ڪڏهن به نه </string>
-    <string name="kbb10"> ڏهن ها ته گذريل هڪ سال ۾ ڪيترن ٻارن جي فوتگي 8 کان 28 ڏينهن جي عمر ۾ ٿي آهي </string>
+    <string name="kbb10">ڪيترن مهينن يا ڏينهن تائين توهان فولاد ۽ فولڪ ايسڊ ورتو  </string>
     <string name="kbb10a"> ڏينهن </string>
     <string name="kbb10b"> مهينا</string>
     <string name="kbb10c">خبر ناهي/ياد ناهي</string>
@@ -389,7 +389,7 @@
     <string name="kbb16times">ڪيترا دفعه</string>
 
     <string name="kbcheading"> ويم ۽ ويم کان پوءِ جي سار سنڀال(آخري حمل) </string>
-    <string name="kbc01"> توهان جو گذريل حمل ڪنهن ڪرايوهو؟ </string>
+    <string name="kbc01">توهان جو گذريل ويم ڪنهن ڪرايوهو؟ </string>
     <string name="kbc01a"> ڊاڪٽر </string>
     <string name="kbc01b"> نرس </string>
     <string name="kbc01c"> مڊ وائيف </string>
