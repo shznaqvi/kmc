@@ -813,10 +813,10 @@ public class SectionA3Activity extends AppCompatActivity {
             return false;
         }
 
-
+/*
         if (!validatorClass.EmptyTextBox(this, bi.kac2496x, getString(R.string.other))) {
             return false;
-        }
+        }*/
         if (!TextUtils.isEmpty(bi.kac2496x.toString())) {
             if (!validatorClass.EmptyTextBox(this, bi.kac2496, getString(R.string.other))) {
                 return false;
