@@ -104,7 +104,7 @@
     <string name="kab11"> ڇا گذريل هڪ سال دوران 29 ڏينهن کان 1 سال جي عمر تائين ٻارن جي فوتگي ٿي آهي؟</string>
     <string name="kab12"> ڪڏهن ها ته گذريل هڪ سال ۾ ڪيترن ٻارن جي فوتگي 29 ڏينهن کان 1 سال جي عمر ۾ ٿي آهي؟</string>
     <string name="kab13"> ڇا گذريل هڪ سال دوران 1 کان 5 سالن جي عمر تائين ٻارن جي فوتگي ٿي آهي؟</string>
-    <string name="kab14"> يڪڏهن ها ته گذريل هڪ سال ۾ ڪيترن ٻارن جي فوتگي 1 کان 5 سالن جي عمر ۾ ٿي آهي؟</string>
+    <string name="kab14">جيڪڏهن ها ته گذريل هڪ سال ۾ ڪيترن ٻارن جي فوتگي 1 کان 5 سالن جي عمر ۾ ٿي آهي؟</string>
     <string name="kabsub1">نون ڄاول ٻارن جي فوتگي </string>
     <string name="kabsub2">29 ڏينهن کان هڪ سال تائين ٻارن جي فوتگي </string>
 
@@ -498,9 +498,9 @@
     <string name="kbcb04a"> ٻارن جو ڊاڪٽر </string>
     <string name="kbcb04b"> ٻيو ڪو ڊاڪٽر </string>
     <string name="kbcb04c"> نرس </string>
-    <string name="kbcb04d"> ڪمنيونٽي هيلٿ ورڪر </string>
+    <string name="kbcb04d">ڪميونٽي هيلٿ ورڪر </string>
     <string name="kbcb04e"> ليڊي هيلٿ ورڪر </string>
-    <string name="kbcb04f"> ڪمنيوڻتي مدوائيف </string>
+    <string name="kbcb04f">ڪميونٽي مدوائيف  </string>
     <string name="kbcb04g"> ليڊي هيلٿ وزيٽر </string>
     <string name="kbcb04h"> دائي </string>
     <string name="kbcb05"> طبي معائني ۾ ڇا ڪيو هو؟ </string>

@@ -821,6 +821,9 @@ public class SectionA3Activity extends AppCompatActivity {
             if (!validatorClass.EmptyTextBox(this, bi.kac2496, getString(R.string.other))) {
                 return false;
             }
+            if (!validatorClass.RangeTextBox(this, bi.kac2496 , 1, 20, getString(R.string.other), " number")) {
+                return false;
+            }
         }
 
 
