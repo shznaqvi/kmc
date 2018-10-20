@@ -5,6 +5,9 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.RadioGroup;
@@ -215,6 +218,43 @@ public class SectionB4_5Activity extends AppCompatActivity {
                 }
             }
         });
+        bi.kbde04.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.kbde04c) {
+                    bi.fldGrpkbde05.setVisibility(View.GONE);
+                    bi.kbde05.clearCheck();
+                } else {
+                    bi.fldGrpkbde05.setVisibility(View.VISIBLE);
+
+                }
+            }
+        });
+        bi.kbde04m.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (!TextUtils.isEmpty(bi.kbde04m.getText().toString())) {
+
+                    if (Integer.valueOf(bi.kbde04m.getText().toString()) > 6) {
+                        bi.fldGrpkbde05.setVisibility(View.GONE);
+                        bi.kbde05.clearCheck();
+                    } else {
+                        bi.fldGrpkbde05.setVisibility(View.VISIBLE);
+                    }
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
 
 
     }
@@ -367,12 +407,19 @@ public class SectionB4_5Activity extends AppCompatActivity {
         }
 
 
-        if (!bi.kbde04c.isChecked()) {
+        if (bi.kbde0498.isChecked()) {
 
             if (!validatorClass.EmptyRadioButton(this, bi.kbde05, bi.kbde0596, bi.kbde0596x, getString(R.string.kbde05))) {
                 return false;
             }
 
+        }
+        if (!TextUtils.isEmpty(bi.kbde04m.getText().toString())) {
+            if (Integer.valueOf(bi.kbde04m.getText().toString()) <= 6) {
+                if (!validatorClass.EmptyRadioButton(this, bi.kbde05, bi.kbde0596, bi.kbde0596x, getString(R.string.kbde05))) {
+                    return false;
+                }
+            }
         }
         return true;
     }
@@ -388,11 +435,7 @@ public class SectionB4_5Activity extends AppCompatActivity {
             e.printStackTrace();
         }
         if (UpdateDB()) {
-            Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
-
-            finish();
-
-            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+            MainApp.endActivity(this, this);
 
         } else {
             Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();

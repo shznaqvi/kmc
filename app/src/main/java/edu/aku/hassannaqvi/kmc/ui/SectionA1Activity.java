@@ -599,23 +599,19 @@ public class SectionA1Activity extends Activity {
 
     public void BtnEnd() {
         Toast.makeText(this, "Processing End Section", Toast.LENGTH_SHORT).show();
-        if (formValidation()) {
+//        if (formValidation()) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
                 e.printStackTrace();
             }
             if (UpdateDB()) {
-                Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
-
-                finish();
-
-                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+                MainApp.endActivity(this, this);
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        }
+//        }
     }
 
     public void BtnContinue() {

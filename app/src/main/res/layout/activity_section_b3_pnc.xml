@@ -85,6 +85,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
                 <!--kbca02-->
                 <TextView
                     android:layout_width="match_parent"
@@ -96,52 +97,33 @@
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@android:color/white" />
 
-                <RadioGroup
-                    android:id="@+id/kbca02"
+                <EditText
+                    android:id="@+id/kbca02day"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:hint="@string/days"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:text='@{kbca0298.checked ? "" : kbca02day.getText.toString }'
+                    android:visibility='@{kbca0298.checked ? View.GONE : View.VISIBLE}' />
 
-                    <RadioButton
-                        android:id="@+id/kbca02a"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/days" />
+                <EditText
+                    android:id="@+id/kbca02week"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:hint="@string/weeks"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:text='@{kbca0298.checked ? "": kbca02week.getText.toString}'
+                    android:visibility='@{kbca0298.checked ? View.GONE : View.VISIBLE}' />
 
-                    <EditText
-                        android:id="@+id/kbca02day"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:hint="@string/days"
-                        android:inputType="number"
-                        android:maxLength="1"
-                        android:text='@{kbca02a.checked ? kbca02day.getText.toString : ""}'
-                        android:visibility='@{kbca02a.checked ? View.VISIBLE : View.GONE}' />
-
-                    <RadioButton
-                        android:id="@+id/kbca02b"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/weeks" />
-
-                    <EditText
-                        android:id="@+id/kbca02week"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:hint="@string/weeks"
-                        android:inputType="number"
-                        android:maxLength="1"
-                        android:text='@{kbca02b.checked ? kbca02week.getText.toString : ""}'
-                        android:visibility='@{kbca02b.checked ? View.VISIBLE : View.GONE}' />
-
-                    <RadioButton
-                        android:id="@+id/kbca0298"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/dkndrem" />
-                </RadioGroup>
-
+                <CheckBox
+                    android:id="@+id/kbca0298"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dkndrem" />
 
                 <!--kbca03-->
                 <TextView
@@ -407,18 +389,6 @@
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@android:color/white" />
 
-
-                <RadioGroup
-                    android:id="@+id/kbcb02"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <RadioButton
-                        android:id="@+id/kbcb02a"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/days" />
-
                     <EditText
                         android:id="@+id/kbcb02day"
                         android:layout_width="match_parent"
@@ -427,14 +397,8 @@
                         android:hint="@string/days"
                         android:inputType="number"
                         android:maxLength="1"
-                        android:text='@{kbcb02a.checked ? kbca02day.getText.toString : ""}'
-                        android:visibility='@{kbcb02a.checked ? View.VISIBLE : View.GONE}' />
-
-                    <RadioButton
-                        android:id="@+id/kbcb02b"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/weeks" />
+                        android:text='@{kbcb0298.checked ? "" : kbcb02day.getText.toString }'
+                        android:visibility='@{kbcb0298.checked ? View.GONE : View.VISIBLE}' />
 
                     <EditText
                         android:id="@+id/kbcb02week"
@@ -444,15 +408,14 @@
                         android:hint="@string/weeks"
                         android:inputType="number"
                         android:maxLength="1"
-                        android:text='@{kbcb02b.checked ? kbcb02week.getText.toString : ""}'
-                        android:visibility='@{kbcb02b.checked ? View.VISIBLE : View.GONE}' />
+                        android:text='@{kbcb0298.checked ? "" : kbcb02week.getText.toString }'
+                        android:visibility='@{kbcb0298.checked ? View.GONE : View.VISIBLE}' />
 
-                    <RadioButton
+                    <CheckBox
                         android:id="@+id/kbcb0298"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/dkndrem" />
-                </RadioGroup>
 
 
                 <!--kbcb03-->

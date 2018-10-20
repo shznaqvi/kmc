@@ -43,7 +43,7 @@ public class SectionB1Activity extends AppCompatActivity {
                 }
             }
         });
-        bi.kba06twin.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+       /* bi.kba06twin.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
 
@@ -55,15 +55,15 @@ public class SectionB1Activity extends AppCompatActivity {
                     bi.fldGrpkba07twin.setVisibility(View.VISIBLE);
                 }
             }
-        });
+        });*/
     }
 
 
     public boolean ValidateForm() {
 
-      /*  if (!validatorClass.EmptyTextBox(this, bi.kba01, getString(R.string.kba01))) {
+        if (!validatorClass.EmptyTextBox(this, bi.kba01, getString(R.string.kba01))) {
             return false;
-        }*/
+        }
         if (!validatorClass.EmptyTextBox(this, bi.kba02, getString(R.string.kba02))) {
             return false;
         }
@@ -109,7 +109,7 @@ public class SectionB1Activity extends AppCompatActivity {
                 return false;
             }
 
-            if (!validatorClass.RangeTextBox(this, bi.kba07m, 0, 9, getString(R.string.kba07m), " months")) {
+            if (!validatorClass.RangeTextBox(this, bi.kba07m, 0, 11, getString(R.string.kba07m), " months")) {
                 return false;
             }
             if (bi.kba07d.getText().toString().equals("0") && bi.kba07m.getText().toString().equals("0")) {
@@ -135,7 +135,8 @@ public class SectionB1Activity extends AppCompatActivity {
         JSONObject sc1 = new JSONObject();
 
 
-        sc1.put("kba01", MainApp.resName);// Adding respondant name as Selected MWRA as amjad bhai said it is decided in the meeting
+        sc1.put("resName", MainApp.resName);// Adding respondant name as Selected MWRA as amjad bhai said it is decided in the meeting
+        sc1.put("kba01", bi.kba01.getText().toString());// Adding respondant name as Selected MWRA as amjad bhai said it is decided in the meeting
         sc1.put("kba02", bi.kba02.getText().toString());
         sc1.put("kba03", bi.kba03.getText().toString());
         sc1.put("kba04", bi.kba04.getText().toString());
@@ -188,11 +189,7 @@ public class SectionB1Activity extends AppCompatActivity {
             e.printStackTrace();
         }
         if (UpdateDB()) {
-            Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
-
-            finish();
-
-            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+            MainApp.endActivity(this, this);
 
         } else {
             Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();

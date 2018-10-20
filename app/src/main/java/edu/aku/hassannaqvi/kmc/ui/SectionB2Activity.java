@@ -99,7 +99,9 @@ public class SectionB2Activity extends AppCompatActivity {
                     bi.kbb08.clearCheck();
 
                     bi.kbb09.clearCheck();
-                    bi.kbb10.clearCheck();
+                    bi.kbb10m.setText(null);
+                    bi.kbb10d.setText(null);
+                    bi.kbb1098.setChecked(false);
                     bi.kbb11.clearCheck();
                     bi.kbb12.clearCheck();
                     bi.kbb13.clearCheck();
@@ -132,7 +134,9 @@ public class SectionB2Activity extends AppCompatActivity {
 
                     bi.kbb09.clearCheck();
 
-                    bi.kbb10.clearCheck();
+                    bi.kbb10m.setText(null);
+                    bi.kbb10d.setText(null);
+                    bi.kbb1098.setChecked(false);
 
                     bi.fldGrpkbb08.setVisibility(View.GONE);
                 }
@@ -279,12 +283,13 @@ public class SectionB2Activity extends AppCompatActivity {
                 : bi.kbb09f.isChecked() ? "6"
                 : "0");
 
-        sC2.put("kbb10", bi.kbb10a.isChecked() ? "1"
+       /* sC2.put("kbb10", bi.kbb10a.isChecked() ? "1"
                 : bi.kbb10b.isChecked() ? "2"
                 : bi.kbb1098.isChecked() ? "98"
-                : "0");
+                : "0");*/
         sC2.put("kbb10m", bi.kbb10m.getText().toString());
         sC2.put("kbb10d", bi.kbb10d.getText().toString());
+        sC2.put("kbb1098", bi.kbb1098.isChecked()? "98": "0");
 
 
         sC2.put("kbb11", bi.kbb11a.isChecked() ? "1"
@@ -477,10 +482,10 @@ public class SectionB2Activity extends AppCompatActivity {
                 }*/
 
 
-                if (!validatorClass.EmptyRadioButton(this, bi.kbb10, bi.kbb10a, getString(R.string.kbb10))) {
+              /*  if (!validatorClass.EmptyRadioButton(this, bi.kbb10, bi.kbb10a, getString(R.string.kbb10))) {
                     return false;
-                }
-                if (bi.kbb10a.isChecked()) {
+                }*/
+                if (!bi.kbb1098.isChecked()) {
                     if (!validatorClass.EmptyTextBox(this, bi.kbb10m, getString(R.string.kbb10a))) {
                         return false;
                     }
@@ -488,12 +493,22 @@ public class SectionB2Activity extends AppCompatActivity {
                         return false;
                     }
 
-                } else if (bi.kbb10b.isChecked()) {
                     if (!validatorClass.EmptyTextBox(this, bi.kbb10d, getString(R.string.kbb10b))) {
                         return false;
                     }
-                    if (!validatorClass.RangeTextBox(this, bi.kbb10d, 1, 9, getString(R.string.kbb10b), " months")) {
+                    if (!validatorClass.RangeTextBox(this, bi.kbb10d, 0, 9, getString(R.string.kbb10b), " months")) {
                         return false;
+                    }
+                    if (bi.kbb10m.getText().toString().equals("0") && bi.kbb10d.getText().toString().equals("0")) {
+                        Toast.makeText(this, "Days and months cannot be 0 at the same time! ", Toast.LENGTH_LONG).show();
+                        bi.kbb10m.setError("Days and months cannot be 0 at the same time!");
+                        bi.kbb10d.setError("Days and months cannot be 0 at the same time!");
+                        bi.kbb10m.requestFocus();
+                        return false;
+                    } else {
+                        bi.kbb10m.setError(null);
+                        bi.kbb10d.setError(null);
+                        bi.kbb10m.clearFocus();
                     }
 
                 }
@@ -557,11 +572,7 @@ public class SectionB2Activity extends AppCompatActivity {
             e.printStackTrace();
         }
         if (UpdateDB()) {
-            Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
-
-            finish();
-
-            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+            MainApp.endActivity(this, this);
 
         } else {
             Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();

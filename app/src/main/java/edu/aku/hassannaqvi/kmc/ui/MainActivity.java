@@ -91,7 +91,9 @@ public class MainActivity extends Activity {
         }
         lblheader.setText("Welcome! You're assigned to block ' " + MainApp.userName);
 
+
         /*TagID Start*/
+       /*
         sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
         editor = sharedPref.edit();
 
@@ -138,6 +140,7 @@ public class MainActivity extends Activity {
         if (sharedPref.getString("tagName", null) == "" || sharedPref.getString("tagName", null) == null) {
             builder.show();
         }
+        */
         /*TagID End*/
 
 
@@ -260,10 +263,14 @@ public class MainActivity extends Activity {
         //final Intent oF = new Intent(MainActivity.this, SectionA3Activity.class);
 
         final Intent oF = new Intent(MainActivity.this, SectionA1Activity.class);
-
-        if (sharedPref.getString("tagName", null) != "" && sharedPref.getString("tagName", null) != null && !MainApp.userName.equals("0000")) {
+        if (!MainApp.userName.equals("0000")) {
             startActivity(oF);
-        } else {
+        }else {
+            Toast.makeText(this,"Please Re-login App",Toast.LENGTH_SHORT).show();
+        }
+
+//        if (sharedPref.getString("tagName", null) != "" && sharedPref.getString("tagName", null) != null && !MainApp.userName.equals("0000")) {
+       /* } else {
 
             builder = new AlertDialog.Builder(MainActivity.this);
             ImageView img = new ImageView(getApplicationContext());
@@ -298,7 +305,7 @@ public class MainActivity extends Activity {
             });
 
             builder.show();
-        }
+        }*/
     }
 
     public void testGPS(View v) {
@@ -385,8 +392,10 @@ public class MainActivity extends Activity {
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
 
-            Toast.makeText(getApplicationContext(), "Syncing Forms", Toast.LENGTH_SHORT).show();
+          /*  Toast.makeText(getApplicationContext(), "Syncing Forms", Toast.LENGTH_SHORT).show();
             new SyncForms(this, true).execute();
+*/
+            startActivity(new Intent(this,SyncActivity.class));
 
 
             SharedPreferences syncPref = getSharedPreferences("SyncInfo", Context.MODE_PRIVATE);

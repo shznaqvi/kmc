@@ -619,7 +619,7 @@ public class SectionA3Activity extends AppCompatActivity {
         }
 
 
-        if (!validatorClass.RangeTextBox(this, bi.kac2401, 0, 99, getString(R.string.kac2401), "Quantity")) {
+        if (!validatorClass.RangeTextBox(this, bi.kac2401, 0, 999, getString(R.string.kac2401), "Quantity")) {
             return false;
         }
 
@@ -629,7 +629,7 @@ public class SectionA3Activity extends AppCompatActivity {
         }
 
 
-        if (!validatorClass.RangeTextBox(this, bi.kac2402, 0, 99, getString(R.string.kac2402), "Quantity")) {
+        if (!validatorClass.RangeTextBox(this, bi.kac2402, 0, 999, getString(R.string.kac2402), "Quantity")) {
             return false;
         }
 
@@ -639,7 +639,7 @@ public class SectionA3Activity extends AppCompatActivity {
         }
 
 
-        if (!validatorClass.RangeTextBox(this, bi.kac2403, 0, 10, getString(R.string.kac2403), "Quantity")) {
+        if (!validatorClass.RangeTextBox(this, bi.kac2403, 0, 999, getString(R.string.kac2403), "Quantity")) {
             return false;
         }
 
@@ -649,7 +649,7 @@ public class SectionA3Activity extends AppCompatActivity {
         }
 
 
-        if (!validatorClass.RangeTextBox(this, bi.kac2404, 0, 10, getString(R.string.kac2404), "Quantity")) {
+        if (!validatorClass.RangeTextBox(this, bi.kac2404, 0, 999, getString(R.string.kac2404), "Quantity")) {
             return false;
         }
 
@@ -659,7 +659,7 @@ public class SectionA3Activity extends AppCompatActivity {
         }
 
 
-        if (!validatorClass.RangeTextBox(this, bi.kac2405, 0, 10, getString(R.string.kac2405), "Quantity")) {
+        if (!validatorClass.RangeTextBox(this, bi.kac2405, 0, 999, getString(R.string.kac2405), "Quantity")) {
             return false;
         }
 
@@ -669,7 +669,7 @@ public class SectionA3Activity extends AppCompatActivity {
         }
 
 
-        if (!validatorClass.RangeTextBox(this, bi.kac2406, 0, 10, getString(R.string.kac2406), "Quantity")) {
+        if (!validatorClass.RangeTextBox(this, bi.kac2406, 0, 999, getString(R.string.kac2406), "Quantity")) {
             return false;
         }
 
@@ -679,7 +679,7 @@ public class SectionA3Activity extends AppCompatActivity {
         }
 
 
-        if (!validatorClass.RangeTextBox(this, bi.kac2407, 0, 10, getString(R.string.kac2407), "Quantity")) {
+        if (!validatorClass.RangeTextBox(this, bi.kac2407, 0, 999, getString(R.string.kac2407), "Quantity")) {
             return false;
         }
 
@@ -689,7 +689,7 @@ public class SectionA3Activity extends AppCompatActivity {
         }
 
 
-        if (!validatorClass.RangeTextBox(this, bi.kac2408, 0, 10, getString(R.string.kac2408), "Quantity")) {
+        if (!validatorClass.RangeTextBox(this, bi.kac2408, 0, 999, getString(R.string.kac2408), "Quantity")) {
             return false;
         }
 
@@ -699,7 +699,7 @@ public class SectionA3Activity extends AppCompatActivity {
         }
 
 
-        if (!validatorClass.RangeTextBox(this, bi.kac2409, 0, 10, getString(R.string.kac2409), "Quantity")) {
+        if (!validatorClass.RangeTextBox(this, bi.kac2409, 0, 999, getString(R.string.kac2409), "Quantity")) {
             return false;
         }
 
@@ -709,7 +709,7 @@ public class SectionA3Activity extends AppCompatActivity {
         }
 
 
-        if (!validatorClass.RangeTextBox(this, bi.kac2410, 0, 10, getString(R.string.kac2410), "Quantity")) {
+        if (!validatorClass.RangeTextBox(this, bi.kac2410, 0, 999, getString(R.string.kac2410), "Quantity")) {
             return false;
         }
 
@@ -719,7 +719,7 @@ public class SectionA3Activity extends AppCompatActivity {
         }
 
 
-        if (!validatorClass.RangeTextBox(this, bi.kac2411, 0, 10, getString(R.string.kac2411), "Quantity")) {
+        if (!validatorClass.RangeTextBox(this, bi.kac2411, 0, 999, getString(R.string.kac2411), "Quantity")) {
             return false;
         }
 
@@ -729,7 +729,7 @@ public class SectionA3Activity extends AppCompatActivity {
         }
 
 
-        if (!validatorClass.RangeTextBox(this, bi.kac2412, 0, 10, getString(R.string.kac2412), "Quantity")) {
+        if (!validatorClass.RangeTextBox(this, bi.kac2412, 0, 999, getString(R.string.kac2412), "Quantity")) {
             return false;
         }
 
@@ -739,7 +739,7 @@ public class SectionA3Activity extends AppCompatActivity {
         }
 
 
-        if (!validatorClass.RangeTextBox(this, bi.kac2413, 0, 10, getString(R.string.kac2413), "Quantity")) {
+        if (!validatorClass.RangeTextBox(this, bi.kac2413, 0, 999, getString(R.string.kac2413), "Quantity")) {
             return false;
         }
 
@@ -749,7 +749,7 @@ public class SectionA3Activity extends AppCompatActivity {
         }
 
 
-        if (!validatorClass.RangeTextBox(this, bi.kac2414, 0, 10, getString(R.string.kac2414), "Quantity")) {
+        if (!validatorClass.RangeTextBox(this, bi.kac2414, 0, 999, getString(R.string.kac2414), "Quantity")) {
             return false;
         }
 
@@ -759,7 +759,7 @@ public class SectionA3Activity extends AppCompatActivity {
         }
 
 
-        if (!validatorClass.RangeTextBox(this, bi.kac2415, 0, 10, getString(R.string.kac2415), "Quantity")) {
+        if (!validatorClass.RangeTextBox(this, bi.kac2415, 0, 999, getString(R.string.kac2415), "Quantity")) {
             return false;
         }
 
@@ -769,7 +769,7 @@ public class SectionA3Activity extends AppCompatActivity {
         }
 
 
-        if (!validatorClass.RangeTextBox(this, bi.kac2416, 0, 10, getString(R.string.kac2416), "Quantity")) {
+        if (!validatorClass.RangeTextBox(this, bi.kac2416, 0, 999, getString(R.string.kac2416), "Quantity")) {
             return false;
         }
 
@@ -779,7 +779,7 @@ public class SectionA3Activity extends AppCompatActivity {
         }
 
 
-        if (!validatorClass.RangeTextBox(this, bi.kac2417, 0, 10, getString(R.string.kac2417), "Quantity")) {
+        if (!validatorClass.RangeTextBox(this, bi.kac2417, 0, 999, getString(R.string.kac2417), "Quantity")) {
             return false;
         }
 
@@ -789,7 +789,7 @@ public class SectionA3Activity extends AppCompatActivity {
         }
 
 
-        if (!validatorClass.RangeTextBox(this, bi.kac2418, 0, 10, getString(R.string.kac2418), "Quantity")) {
+        if (!validatorClass.RangeTextBox(this, bi.kac2418, 0, 999, getString(R.string.kac2418), "Quantity")) {
             return false;
         }
 
@@ -799,7 +799,7 @@ public class SectionA3Activity extends AppCompatActivity {
         }
 
 
-        if (!validatorClass.RangeTextBox(this, bi.kac2419, 0, 10, getString(R.string.kac2419), "Quantity")) {
+        if (!validatorClass.RangeTextBox(this, bi.kac2419, 0, 999, getString(R.string.kac2419), "Quantity")) {
             return false;
         }
 
@@ -809,7 +809,7 @@ public class SectionA3Activity extends AppCompatActivity {
         }
 
 
-        if (!validatorClass.RangeTextBox(this, bi.kac2420, 0, 10, getString(R.string.kac2420), "Quantity")) {
+        if (!validatorClass.RangeTextBox(this, bi.kac2420, 0, 999, getString(R.string.kac2420), "Quantity")) {
             return false;
         }
 
@@ -821,7 +821,7 @@ public class SectionA3Activity extends AppCompatActivity {
             if (!validatorClass.EmptyTextBox(this, bi.kac2496, getString(R.string.other))) {
                 return false;
             }
-            if (!validatorClass.RangeTextBox(this, bi.kac2496 , 1, 20, getString(R.string.other), " number")) {
+            if (!validatorClass.RangeTextBox(this, bi.kac2496 , 1, 999, getString(R.string.other), " number")) {
                 return false;
             }
         }
@@ -841,11 +841,7 @@ public class SectionA3Activity extends AppCompatActivity {
             e.printStackTrace();
         }
         if (UpdateDB()) {
-            Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
-
-            finish();
-
-            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+            MainApp.endActivity(this, this);
 
         } else {
             Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();

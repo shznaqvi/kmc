@@ -720,20 +720,6 @@
                         android:textAppearance="?android:attr/textAppearanceLarge"
                         android:textColor="@android:color/white" />
 
-                    <RadioGroup
-                        android:id="@+id/kbb10"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:layout_weight="1.5"
-                        android:orientation="vertical">
-
-                        <RadioButton
-                            android:id="@+id/kbb10a"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="1dp"
-                            android:text="@string/kbb10a" />
                         <EditText
                             android:id="@+id/kbb10m"
                             android:layout_width="match_parent"
@@ -743,15 +729,9 @@
                             android:hint="@string/kbb10a"
                             android:inputType="number"
                             android:maxLength="2"
-                            android:text='@{kbb10a.checked ? kbb10m.getText.toString : ""}'
-                            android:visibility='@{kbb10a.checked ? View.VISIBLE : View.GONE}' />
+                            android:text='@{kbb1098.checked ? "" : kbb10m.getText.toString }'
+                            android:visibility='@{kbb1098.checked ? View.GONE : View.VISIBLE}' />
 
-                        <RadioButton
-                            android:id="@+id/kbb10b"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="1dp"
-                            android:text="@string/kbb10b" />
                         <EditText
                             android:id="@+id/kbb10d"
                             android:layout_width="match_parent"
@@ -761,17 +741,15 @@
                             android:hint="@string/kbb10b"
                             android:inputType="number"
                             android:maxLength="1"
-                            android:text='@{kbb10b.checked ? kbb10d.getText.toString : ""}'
-                            android:visibility='@{kbb10b.checked ? View.VISIBLE : View.GONE}' />
-
-                        <RadioButton
+                            android:text='@{kbb1098.checked ? "" : kbb10d.getText.toString}'
+                            android:visibility='@{kbb1098.checked ? View.GONE : View.VISIBLE}' />
+                        <CheckBox
                             android:id="@+id/kbb1098"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="1dp"
                             android:text="@string/kbb10c" />
 
-                    </RadioGroup>
                 </LinearLayout>
 
 

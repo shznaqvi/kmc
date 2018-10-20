@@ -31,16 +31,11 @@ public class SyncDevice extends AsyncTask<Void, Integer, String> {
     SharedPreferences sharedPref;
     SharedPreferences.Editor editor;
 
-    public SyncDevicInterface delegate;
 
-    boolean flag;
 
-    public SyncDevice(Context context, boolean flag) {
+    public SyncDevice(Context context) {
         this.context = context;
-        this.flag = flag;
 
-        delegate = (SyncDevicInterface) context;
-        delegate.processFinish(false);
     }
 
     @Override
@@ -139,12 +134,7 @@ public class SyncDevice extends AsyncTask<Void, Integer, String> {
                         sharedPref = context.getSharedPreferences("tagName", MODE_PRIVATE);
                         editor = sharedPref.edit();
                         editor.putString("tagName", tag);
-                        editor.putString("orgID", jsonObject.getString("id_org"));
                         editor.commit();
-
-                        if (flag) {
-                            delegate.processFinish(true);
-                        }
 
                     } else if (jsonObject.getString("status").equals("0") && jsonObject.getString("error").equals("1")) {
                     } else {
@@ -152,23 +142,16 @@ public class SyncDevice extends AsyncTask<Void, Integer, String> {
                     }
                 }
             } else {
-                if (flag) {
-                    delegate.processFinish(true);
-                }
+
             }
 //            Toast.makeText(context,  " synced: " + sSynced + "\r\n\r\n Errors: " + sSyncedError, Toast.LENGTH_SHORT).show();
 
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(context, "Failed to get TAG ID " + result, Toast.LENGTH_SHORT).show();
-            if (flag) {
-                delegate.processFinish(true);
-            }
+
         }
     }
 
-    public interface SyncDevicInterface {
-        void processFinish(boolean flag);
-    }
 
 }

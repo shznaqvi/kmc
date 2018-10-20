@@ -111,7 +111,7 @@ public class SectionB4Activity extends AppCompatActivity {
             if (!validatorClass.EmptyTextBox(this, bi.kbda03, getString(R.string.kbda03))) {
                 return false;
             }
-            if (!validatorClass.RangeTextBox(this, bi.kbda03, 1, 9, getString(R.string.kbda03), " days")) {
+            if (!validatorClass.RangeTextBox(this, bi.kbda03, 1, 9, getString(R.string.kbda03), " hours")) {
                 return false;
             }
 
@@ -171,11 +171,7 @@ public class SectionB4Activity extends AppCompatActivity {
             e.printStackTrace();
         }
         if (UpdateDB()) {
-            Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
-
-            finish();
-
-            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+            MainApp.endActivity(this, this);
 
         } else {
             Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();

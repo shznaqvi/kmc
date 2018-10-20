@@ -1808,7 +1808,7 @@
                 android:digits="0123456789"
                 android:hint="@string/kac2401"
                 android:inputType="number"
-                android:maxLength="2" />
+                android:maxLength="3" />
 
 
             <!--kac2402-->
@@ -1829,7 +1829,7 @@
                 android:digits="0123456789"
                 android:hint="@string/kac2402"
                 android:inputType="number"
-                android:maxLength="2" />
+                android:maxLength="3" />
 
 
             <!--kac2403-->
@@ -1850,7 +1850,7 @@
                 android:digits="0123456789"
                 android:hint="@string/kac2403"
                 android:inputType="number"
-                android:maxLength="2" />
+                android:maxLength="3" />
 
 
             <!--kac2404-->
@@ -1871,7 +1871,7 @@
                 android:digits="0123456789"
                 android:hint="@string/kac2404"
                 android:inputType="number"
-                android:maxLength="2" />
+                android:maxLength="3" />
 
 
             <!--kac2405-->
@@ -1892,7 +1892,7 @@
                 android:digits="0123456789"
                 android:hint="@string/kac2405"
                 android:inputType="number"
-                android:maxLength="2" />
+                android:maxLength="3" />
 
 
             <!--kac2406-->
@@ -1913,7 +1913,7 @@
                 android:digits="0123456789"
                 android:hint="@string/kac2406"
                 android:inputType="number"
-                android:maxLength="2" />
+                android:maxLength="3" />
 
 
             <!--kac2407-->
@@ -1934,7 +1934,7 @@
                 android:digits="0123456789"
                 android:hint="@string/kac2407"
                 android:inputType="number"
-                android:maxLength="2" />
+                android:maxLength="3" />
 
 
             <!--kac2408-->
@@ -1955,7 +1955,7 @@
                 android:digits="0123456789"
                 android:hint="@string/kac2408"
                 android:inputType="number"
-                android:maxLength="2" />
+                android:maxLength="3" />
 
 
             <!--kac2409-->
@@ -1976,7 +1976,7 @@
                 android:digits="0123456789"
                 android:hint="@string/kac2409"
                 android:inputType="number"
-                android:maxLength="2" />
+                android:maxLength="3" />
 
 
             <!--kac2410-->
@@ -1997,7 +1997,7 @@
                 android:digits="0123456789"
                 android:hint="@string/kac2410"
                 android:inputType="number"
-                android:maxLength="2" />
+                android:maxLength="3" />
 
 
             <!--kac2411-->
@@ -2018,7 +2018,7 @@
                 android:digits="0123456789"
                 android:hint="@string/kac2411"
                 android:inputType="number"
-                android:maxLength="2" />
+                android:maxLength="3" />
 
 
             <!--kac2412-->
@@ -2039,7 +2039,7 @@
                 android:digits="0123456789"
                 android:hint="@string/kac2412"
                 android:inputType="number"
-                android:maxLength="2" />
+                android:maxLength="3" />
 
 
             <!--kac2413-->
@@ -2060,7 +2060,7 @@
                 android:digits="0123456789"
                 android:hint="@string/kac2413"
                 android:inputType="number"
-                android:maxLength="2" />
+                android:maxLength="3" />
 
 
             <!--kac2414-->
@@ -2081,7 +2081,7 @@
                 android:digits="0123456789"
                 android:hint="@string/kac2414"
                 android:inputType="number"
-                android:maxLength="2" />
+                android:maxLength="3" />
 
 
             <!--kac2415-->
@@ -2102,7 +2102,7 @@
                 android:digits="0123456789"
                 android:hint="@string/kac2415"
                 android:inputType="number"
-                android:maxLength="2" />
+                android:maxLength="3" />
 
 
             <!--kac2416-->
@@ -2123,7 +2123,7 @@
                 android:digits="0123456789"
                 android:hint="@string/kac2416"
                 android:inputType="number"
-                android:maxLength="2" />
+                android:maxLength="3" />
 
 
             <!--kac2417-->
@@ -2144,7 +2144,7 @@
                 android:digits="0123456789"
                 android:hint="@string/kac2417"
                 android:inputType="number"
-                android:maxLength="2" />
+                android:maxLength="3" />
 
 
             <!--kac2418-->
@@ -2165,7 +2165,7 @@
                 android:digits="0123456789"
                 android:hint="@string/kac2418"
                 android:inputType="number"
-                android:maxLength="2" />
+                android:maxLength="3" />
 
 
             <!--kac2419-->
@@ -2186,7 +2186,7 @@
                 android:digits="0123456789"
                 android:hint="@string/kac2419"
                 android:inputType="number"
-                android:maxLength="2" />
+                android:maxLength="3" />
 
 
             <!--kac2420-->
@@ -2207,7 +2207,7 @@
                 android:digits="0123456789"
                 android:hint="@string/kac2420"
                 android:inputType="number"
-                android:maxLength="2" />
+                android:maxLength="3" />
 
 
             <!--kac2496-->
@@ -2239,7 +2239,7 @@
                 android:visibility="gone"
                 android:hint="@string/num"
                 android:inputType="number"
-                android:maxLength="2" />
+                android:maxLength="3" />
 
 
             <!--  = = = = =  END OF FORM FIELDS  = = = = = -->

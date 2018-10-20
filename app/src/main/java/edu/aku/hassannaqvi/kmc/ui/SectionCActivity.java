@@ -425,7 +425,7 @@ public class SectionCActivity extends AppCompatActivity {
         });
 
 
-        bi.kc21b.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+       /* bi.kc21b.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
@@ -436,7 +436,7 @@ public class SectionCActivity extends AppCompatActivity {
                 }
             }
         });
-
+*/
 
         bi.kc2196.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -683,11 +683,8 @@ public class SectionCActivity extends AppCompatActivity {
         }
 
 
-        if (!bi.kc21b.isChecked()) {
-
-            if (!validatorClass.EmptyRadioButton(this, bi.kc22, bi.kc22a, getString(R.string.kc22))) {
-                return false;
-            }
+        if (!validatorClass.EmptyRadioButton(this, bi.kc22, bi.kc22a, getString(R.string.kc22))) {
+            return false;
         }
 
 
@@ -935,11 +932,7 @@ public class SectionCActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         if (UpdateDB()) {
-
-            finish();
-
-            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
-
+            MainApp.endActivity(this, this);
         } else {
             Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
         }

@@ -24,6 +24,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.provider.ContactsContract;
+import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
@@ -156,6 +157,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         // Set up the login form.
 //        mEmailView = findViewById(R.id.email);
         populateAutoComplete();
+        gettingDeviceIMEI();
 
         Target viewTarget = new ViewTarget(R.id.syncData, this);
 
@@ -269,14 +271,17 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                 getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
-//         startActivity(new Intent(this,SyncActivity.class));
-            new syncData(this).execute();
+         startActivity(new Intent(this,SyncActivity.class));
+//            new syncData(this).execute();
 
         } else {
             Toast.makeText(this, "No network connection available.", Toast.LENGTH_SHORT).show();
         }
     }
+    private void gettingDeviceIMEI() {
+        MainApp.IMEI = ((TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE)).getDeviceId();
 
+    }
     private void populateAutoComplete() {
         getLoaderManager().initLoader(0, null, this);
     }
@@ -587,8 +592,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                     Toast.makeText(getApplicationContext(), "Syncing Talukas", Toast.LENGTH_SHORT).show();
                     new GetTehsils(LoginActivity.this).execute();
 
-                    Toast.makeText(LoginActivity.this, "Sync Users", Toast.LENGTH_LONG).show();
-                    new GetAllData(mContext, "User").execute();
+                   /* Toast.makeText(LoginActivity.this, "Sync Users", Toast.LENGTH_LONG).show();
+                    new GetAllData(mContext, "User").execute();*/
                 }
             });
 

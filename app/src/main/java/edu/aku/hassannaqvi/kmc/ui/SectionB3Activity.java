@@ -212,11 +212,7 @@ public class SectionB3Activity extends AppCompatActivity {
             e.printStackTrace();
         }
         if (UpdateDB()) {
-            Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
-
-            finish();
-
-            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+            MainApp.endActivity(this, this);
 
         } else {
             Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
@@ -305,7 +301,7 @@ public class SectionB3Activity extends AppCompatActivity {
                     return false;
                 }
 
-                if (!validatorClass.RangeTextBox(this, bi.kbc06kg, 1.20, 7.00, getString(R.string.kbc06), "Weight")) {
+                if (!validatorClass.RangeTextBox(this, bi.kbc06kg, 1.00, 5.00, getString(R.string.kbc06), "Weight")) {
                     return false;
                 }
 
@@ -317,7 +313,7 @@ public class SectionB3Activity extends AppCompatActivity {
                 }
 
 
-                if (!validatorClass.RangeTextBox(this, bi.kbc07rec, 1.20, 7.00, getString(R.string.kbc07rec), "Weight")) {
+                if (!validatorClass.RangeTextBox(this, bi.kbc07rec, 1.00, 5.00, getString(R.string.kbc07rec), "Weight")) {
                     return false;
                 }
 
