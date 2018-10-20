@@ -11,6 +11,8 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
+
 import edu.aku.hassannaqvi.kmc.R;
 import edu.aku.hassannaqvi.kmc.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc.core.MainApp;
@@ -28,6 +30,9 @@ public class SectionB1Activity extends AppCompatActivity {
 
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_b1);
         bi.setCallback(this);
+        bi.kba09.setManager(getSupportFragmentManager());
+        bi.kba09.setMaxDate(new SimpleDateFormat("dd/MM/yyyy").format(System.currentTimeMillis()));
+
 
 
         bi.kba06.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -70,6 +75,9 @@ public class SectionB1Activity extends AppCompatActivity {
         if (!validatorClass.RangeTextBox(this, bi.kba02, 15, 49, getString(R.string.kba02), " years")) {
             return false;
         }
+        if (!validatorClass.EmptyRadioButton(this, bi.kba05, bi.kba05a, getString(R.string.kba05))) {
+            return false;
+        }
         if (!validatorClass.EmptyTextBox(this, bi.kba03, getString(R.string.kba03))) {
             return false;
         }
@@ -91,9 +99,14 @@ public class SectionB1Activity extends AppCompatActivity {
             Toast.makeText(this, "Total no of Pregnancies must be equal to or greater than Total no of Deliveries", Toast.LENGTH_SHORT).show();
             return false;
         }
-        if (!validatorClass.EmptyRadioButton(this, bi.kba05, bi.kba05a, getString(R.string.kba05))) {
+
+        if (!validatorClass.EmptyRadioButton(this, bi.kba08, bi.kba08a, getString(R.string.kba08))) {
             return false;
         }
+        if (!validatorClass.EmptyTextBox(this, bi.kba09, getString(R.string.kba09))) {
+            return false;
+        }
+
         if (!validatorClass.EmptyRadioButton(this, bi.kba06, bi.kba06a, getString(R.string.kba06))) {
             return false;
         }
@@ -138,20 +151,30 @@ public class SectionB1Activity extends AppCompatActivity {
         sc1.put("resName", MainApp.resName);// Adding respondant name as Selected MWRA as amjad bhai said it is decided in the meeting
         sc1.put("kba01", bi.kba01.getText().toString());// Adding respondant name as Selected MWRA as amjad bhai said it is decided in the meeting
         sc1.put("kba02", bi.kba02.getText().toString());
-        sc1.put("kba03", bi.kba03.getText().toString());
-        sc1.put("kba04", bi.kba04.getText().toString());
-
-
-        sc1.put("kba05", bi.kba05a.isChecked() ? "1"
+        sc1.put("kba03", bi.kba05a.isChecked() ? "1"
                 : bi.kba05b.isChecked() ? "2"
                 : bi.kba0598.isChecked() ? "98"
                 : "0");
-        sc1.put("kba06", bi.kba06a.isChecked() ? "1"
+        sc1.put("kba04", bi.kba03.getText().toString());
+        sc1.put("kba05", bi.kba04.getText().toString());
+
+
+
+        sc1.put("kba06", bi.kba08a.isChecked() ? "1"
+                : bi.kba08b.isChecked() ? "2"
+                : bi.kba08c.isChecked() ? "3"
+                : bi.kba08d.isChecked() ? "4"
+                : bi.kba08e.isChecked() ? "5"
+                : bi.kba08f.isChecked() ? "6"
+                : "0");
+        sc1.put("kba07", bi.kba09.getText().toString());
+
+        sc1.put("kba08", bi.kba06a.isChecked() ? "1"
                 : bi.kba06b.isChecked() ? "2"
                 : "0");
 
-        sc1.put("kba07d", bi.kba07d.getText().toString());
-        sc1.put("kba07m", bi.kba07m.getText().toString());
+        sc1.put("kba09d", bi.kba07d.getText().toString());
+        sc1.put("kba09m", bi.kba07m.getText().toString());
      /*   sc1.put("kba06twin", bi.kba06atwin.isChecked() ? "1"
                 : bi.kba06btwin.isChecked() ? "2"
                 : "0");

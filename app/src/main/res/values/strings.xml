@@ -309,6 +309,14 @@
     <string name="kba07"> ٻار جي عمر وفات وقت ڪيتري هئي؟ </string>
     <string name="kba07m"> عمر مهينن ۾ </string>
     <string name="kba07y"> عمر  ڏينهن  ۾ </string>
+    <string name="kba08">.حمل جو نتيجو</string>
+    <string name="kba09">ويم جي تاريخ</string>
+    <string name="kba08a">ضايع ٿي وڃڻ</string>
+    <string name="kba08b"> مرده ٻار جي پيدائش </string>
+    <string name="kba08c"> زندهه ٻار جي پيدائش</string>
+    <string name="kba08d"> جاڙن ٻارن جي  پيدائش </string>
+    <string name="kba08e"> جڑواں مردہ بچوں کی پیدائش </string>
+    <string name="kba08f"> ایک زندہ ایک مردہ بچوں کی پیدائش </string>
 
     <string name="kbbheading"> حمل جي دوران طبي معائنو(گذريل حمل) </string>
     <string name="kbb01"> ڇا توهان گذريل حمل دوران طبي معائنو ڪرايو هو؟ </string>
@@ -537,7 +545,7 @@
     <string name="kbda02sub1">ٻار کي کير پيارڻ لاءِ</string>
     <string name="kbda02sub2">ٻار کي گرم رکڻ لاءِ</string>
     <string name="kbda03">روزانو توهان ڪيتري وقت لاءِ  پنهنجي ٻار کي  گهڻي دير تاءين  بنا ڪپڙن جي ڇاتي سان  لڳايو  هيو؟  </string>
-    <string name="kbda03a">ڪيترا ڪلاڪ </string>
+    <string name="kbda03a">سراسري ڪيترا ڪلاڪ </string>
     <string name="kbda04">توهان ڪيتري ڏينهن لاءِ  پنهنجي ٻار کي  گهڻي دير تاءين  بنا ڪپڙن جي ڇاتي سان  لڳايوهيو؟  </string>
     <string name="kbda04a"> ڏينهن ڪيترا </string>
     <string name="kbda05"> ڇا ڇاتيءَ سان لڳائڻ ٻار کي کير پيارڻ ۾ مدد ڪري ٿو؟ </string>

@@ -198,6 +198,7 @@ public class GetAllData extends AsyncTask<String, String, String> {
                             position = 3;
                             break;
 
+
                     }
 
                     pd.setMessage("Received: " + jsonArray.length());

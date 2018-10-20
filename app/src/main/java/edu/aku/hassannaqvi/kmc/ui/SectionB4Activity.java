@@ -75,9 +75,10 @@ public class SectionB4Activity extends AppCompatActivity {
         sC4.put("kbda02b", bi.kbda02b01.isChecked() ? "1"
                 : bi.kbda02b02.isChecked() ? "2"
                 : "0");
+        // As per sir imran directions Swaping 3 and 4
+        sC4.put("kbda03", bi.kbda04.getText().toString());
+        sC4.put("kbda04", bi.kbda03.getText().toString());
 
-        sC4.put("kbda03", bi.kbda03.getText().toString());
-        sC4.put("kbda04", bi.kbda04.getText().toString());
 
         sC4.put("kbda05", bi.kbda05a.isChecked() ? "1"
                 : bi.kbda05b.isChecked() ? "2"
@@ -108,10 +109,29 @@ public class SectionB4Activity extends AppCompatActivity {
         }
         if (!bi.kbda02b02.isChecked()) {
 
+
+
+            if (!validatorClass.EmptyTextBox(this, bi.kbda04, getString(R.string.kbda04))) {
+                return false;
+            }
+
+            if (!validatorClass.RangeTextBox(this, bi.kbda04, 1, 90, getString(R.string.kbda04), " days")) {
+                return false;
+            }
+
+            if (!bi.kbda04.getText().toString().isEmpty()) {
+
+                if (Integer.valueOf(bi.kbda04.getText().toString()) <= 0) {
+                    Toast.makeText(this, "Must be greater than 0", Toast.LENGTH_SHORT).show();
+                    bi.kbda04.requestFocus();
+                    return false;
+                }
+
+            }
             if (!validatorClass.EmptyTextBox(this, bi.kbda03, getString(R.string.kbda03))) {
                 return false;
             }
-            if (!validatorClass.RangeTextBox(this, bi.kbda03, 1, 9, getString(R.string.kbda03), " hours")) {
+            if (!validatorClass.RangeTextBox(this, bi.kbda03, 1, 24, getString(R.string.kbda03), " hours")) {
                 return false;
             }
 
@@ -125,25 +145,6 @@ public class SectionB4Activity extends AppCompatActivity {
                 }
 
             }
-
-            if (!validatorClass.EmptyTextBox(this, bi.kbda04, getString(R.string.kbda04))) {
-                return false;
-            }
-
-            if (!validatorClass.RangeTextBox(this, bi.kbda04, 1, 9, getString(R.string.kbda04), " days")) {
-                return false;
-            }
-
-            if (!bi.kbda04.getText().toString().isEmpty()) {
-
-                if (Integer.valueOf(bi.kbda04.getText().toString()) <= 0) {
-                    Toast.makeText(this, "Must be greater than 0", Toast.LENGTH_SHORT).show();
-                    bi.kbda04.requestFocus();
-                    return false;
-                }
-
-            }
-         
 
 
             if (!validatorClass.EmptyRadioButton(this, bi.kbda05, bi.kbda05a, getString(R.string.kbda05))) {

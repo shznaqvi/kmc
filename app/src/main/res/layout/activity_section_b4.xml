@@ -227,6 +227,25 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+                    <!--kbda04-->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/colorPrimary"
+                        android:text="@string/kbda04"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@android:color/white" />
+
+                    <EditText
+                        android:id="@+id/kbda04"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:digits="0123456789"
+                        android:hint="@string/kbda04a"
+                        android:inputType="number"
+                        android:maxLength="2" />
 
                     <!--kbda03-->
                     <TextView
@@ -246,26 +265,7 @@
                         android:digits="0123456789"
                         android:hint="@string/kbda03a"
                         android:inputType="number"
-                        android:maxLength="1" />
-                    <!--kbda04-->
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:background="@color/colorPrimary"
-                        android:text="@string/kbda04"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:textColor="@android:color/white" />
-
-                    <EditText
-                        android:id="@+id/kbda04"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:digits="0123456789"
-                        android:hint="@string/kbda04a"
-                        android:inputType="number"
-                        android:maxLength="1" />
+                        android:maxLength="2" />
 
                     <!--kbda05-->
                     <TextView
