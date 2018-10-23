@@ -164,6 +164,7 @@ public class SyncActivity extends AppCompatActivity {
                     MainApp._HOST_URL + FormsContract.FormsTable._URL,
                     db.getUnsyncedForms(), this.findViewById(R.id.adminsec), 0, uploadListAdapter, uploadlist
             ).execute();
+            bi.noDataItem.setVisibility(View.GONE);
 
             uploadlistActivityCreated = false;
 
