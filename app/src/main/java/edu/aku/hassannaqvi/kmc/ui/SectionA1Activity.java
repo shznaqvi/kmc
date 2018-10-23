@@ -563,7 +563,7 @@ public class SectionA1Activity extends Activity {
 
         //sInfo.put("cra03", bi.cra03.getText().toString());
 
-        sInfo.put("cra04", bi.cra04.getText().toString());
+        sInfo.put("cra04", bi.cra04.getText().toString().toUpperCase());
 
         //sInfo.put("cra05", bi.cra05.getText().toString());
         // sInfo.put("cra06", bi.cra06.getText().toString());
