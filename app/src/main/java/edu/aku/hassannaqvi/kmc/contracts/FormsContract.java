@@ -155,7 +155,7 @@ public class FormsContract {
         json.put(FormsTable.COLUMN_ENDINGDATETIME, this.endingdatetime == null ? JSONObject.NULL : this.endingdatetime);
 
 
-        json.put(FormsTable.COLUMN_SA1, this.sa1 == null ? JSONObject.NULL : this.sa1);
+   /*     json.put(FormsTable.COLUMN_SA1, this.sa1 == null ? JSONObject.NULL : this.sa1);
         json.put(FormsTable.COLUMN_SA2, this.sa2 == null ? JSONObject.NULL : this.sa2);
         json.put(FormsTable.COLUMN_SA3, this.sa3 == null ? JSONObject.NULL : this.sa3);
         json.put(FormsTable.COLUMN_SB1, this.sb1 == null ? JSONObject.NULL : this.sb1);
@@ -167,7 +167,7 @@ public class FormsContract {
         json.put(FormsTable.COLUMN_SB4_3, this.sb4_3 == null ? JSONObject.NULL : this.sb4_3);
         json.put(FormsTable.COLUMN_SB4_4, this.sb4_4 == null ? JSONObject.NULL : this.sb4_4);
         json.put(FormsTable.COLUMN_SB4_5, this.sb4_5 == null ? JSONObject.NULL : this.sb4_5);
-        json.put(FormsTable.COLUMN_SC, this.sc == null ? JSONObject.NULL : this.sc);
+        json.put(FormsTable.COLUMN_SC, this.sc == null ? JSONObject.NULL : this.sc);*/
 
         if (!this.sa1.equals("")) {
             json.put(FormsTable.COLUMN_SA1, this.sa1.equals("") ? JSONObject.NULL : new JSONObject(this.sa1));
