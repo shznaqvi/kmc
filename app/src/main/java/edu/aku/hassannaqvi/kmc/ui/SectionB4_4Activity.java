@@ -138,8 +138,20 @@ public class SectionB4_4Activity extends AppCompatActivity {
                 return false;
             }
 
-            if (!validatorClass.RangeTextBox(context, bi.kbdd01m, 0, 14, getString(R.string.months), "months")) {
+            if (!validatorClass.RangeTextBox(context, bi.kbdd01m, 0, 12, getString(R.string.months), "months")) {
                 return false;
+            }
+
+            if (bi.kbdd01d.getText().toString().equals("0") && bi.kbdd01m.getText().toString().equals("0")) {
+                Toast.makeText(this, "Days and months cannot be 0 at the same time! ", Toast.LENGTH_LONG).show();
+                bi.kbdd01d.setError("Days and months cannot be 0 at the same time!");
+                bi.kbdd01m.setError("Days and months cannot be 0 at the same time!");
+                bi.kbdd01d.requestFocus();
+                return false;
+            } else {
+                bi.kbdd01d.setError(null);
+                bi.kbdd01m.setError(null);
+                bi.kbdd01d.clearFocus();
             }
 
         }

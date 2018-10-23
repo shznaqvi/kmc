@@ -5,6 +5,7 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -17,7 +18,11 @@ import edu.aku.hassannaqvi.kmc.R;
 import edu.aku.hassannaqvi.kmc.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc.core.MainApp;
 import edu.aku.hassannaqvi.kmc.databinding.ActivitySectionB1Binding;
+import edu.aku.hassannaqvi.kmc.other.DateTimeUtils;
 import edu.aku.hassannaqvi.kmc.validation.validatorClass;
+
+import static android.view.View.GONE;
+import static android.view.View.VISIBLE;
 
 
 public class SectionB1Activity extends AppCompatActivity {
@@ -32,7 +37,7 @@ public class SectionB1Activity extends AppCompatActivity {
         bi.setCallback(this);
         bi.kba09.setManager(getSupportFragmentManager());
         bi.kba09.setMaxDate(new SimpleDateFormat("dd/MM/yyyy").format(System.currentTimeMillis()));
-
+        bi.kba09.setMinDate(DateTimeUtils.getYearsBack("dd/MM/yyyy", -1));
 
 
         bi.kba06.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -40,11 +45,41 @@ public class SectionB1Activity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
 
                 if (bi.kba06a.isChecked()) {
-                    bi.fldGrpkba07.setVisibility(View.GONE);
+                    bi.fldGrpkba07.setVisibility(GONE);
                     bi.kba07m.setText(null);
                     bi.kba07d.setText(null);
                 } else {
                     bi.fldGrpkba07.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+        bi.kba08.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.kba08a || checkedId == R.id.kba08b || checkedId == R.id.kba08c || checkedId == R.id.kba08f) {
+                    bi.fldGrpkba08.setVisibility(GONE);
+                    bi.kba09.setText(null);
+                    bi.kba06.clearCheck();
+                    bi.kba07m.setText(null);
+                    bi.kba07d.setText(null);
+
+                } else {
+                    bi.fldGrpkba08.setVisibility(VISIBLE);
+
+                }
+                if (checkedId == R.id.kba08e) {
+                    bi.kba06.clearCheck();
+                    bi.kba06a.setVisibility(GONE);
+                    bi.kba06b.setVisibility(GONE);
+                    bi.kba06c.setVisibility(VISIBLE);
+                    bi.kba06d.setVisibility(VISIBLE);
+                    bi.kba06e.setVisibility(VISIBLE);
+                } else {
+                    bi.kba06a.setVisibility(VISIBLE);
+                    bi.kba06b.setVisibility(VISIBLE);
+                    bi.kba06c.setVisibility(GONE);
+                    bi.kba06d.setVisibility(GONE);
+                    bi.kba06e.setVisibility(GONE);
                 }
             }
         });
@@ -103,9 +138,14 @@ public class SectionB1Activity extends AppCompatActivity {
         if (!validatorClass.EmptyRadioButton(this, bi.kba08, bi.kba08a, getString(R.string.kba08))) {
             return false;
         }
+        if(bi.kba08a.isChecked() || bi.kba08b.isChecked() || bi.kba08c.isChecked() || bi.kba08f.isChecked()){
+
+        }else {
+
         if (!validatorClass.EmptyTextBox(this, bi.kba09, getString(R.string.kba09))) {
             return false;
         }
+
 
         if (!validatorClass.EmptyRadioButton(this, bi.kba06, bi.kba06a, getString(R.string.kba06))) {
             return false;
@@ -137,6 +177,8 @@ public class SectionB1Activity extends AppCompatActivity {
                 bi.kba07d.clearFocus();
             }
         }
+        }
+
 
 
         return true;
@@ -159,7 +201,6 @@ public class SectionB1Activity extends AppCompatActivity {
         sc1.put("kba05", bi.kba04.getText().toString());
 
 
-
         sc1.put("kba06", bi.kba08a.isChecked() ? "1"
                 : bi.kba08b.isChecked() ? "2"
                 : bi.kba08c.isChecked() ? "3"
@@ -171,6 +212,9 @@ public class SectionB1Activity extends AppCompatActivity {
 
         sc1.put("kba08", bi.kba06a.isChecked() ? "1"
                 : bi.kba06b.isChecked() ? "2"
+                : bi.kba06c.isChecked() ? "3"
+                : bi.kba06d.isChecked() ? "4"
+                : bi.kba06e.isChecked() ? "5"
                 : "0");
 
         sc1.put("kba09d", bi.kba07d.getText().toString());

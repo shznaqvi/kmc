@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layoutDirection="rtl"
     tools:context=".ui.SectionB1Activity">
 
@@ -30,11 +30,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@color/colorPrimaryBeta"
+                android:gravity="center"
                 android:text="@string/kbheading"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textSize="32dp"
-                android:gravity="center"
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/white"
+                android:textSize="32dp" />
 
             <View
                 android:layout_width="match_parent"
@@ -60,8 +60,7 @@
                 android:background="@color/colorPrimary"
                 android:text="@string/kba01"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white"
-               />
+                android:textColor="@android:color/white" />
 
             <EditText
                 android:id="@+id/kba01"
@@ -174,6 +173,7 @@
                 android:hint="@string/num"
                 android:inputType="number"
                 android:maxLength="2" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -230,105 +230,137 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:text="@string/kba08f" />
+                <RadioButton
+                    android:id="@+id/kba08g"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/kba08g" />
 
             </RadioGroup>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/kba09"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
-
-            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                android:id="@+id/kba09"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:focusable="false"
-                android:hint="@string/kba09"
-                android:textColor="@android:color/black"
-                app:dateFormat="dd-MM-yyyy" />
-
             <LinearLayout
-                android:id="@+id/fldGrpkba06"
+                android:id="@+id/fldGrpkba08"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-                <!--kba06-->
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:layout_weight="1"
-                    android:background="@color/pink_100"
-                    android:text="@string/kba06"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/colorPrimaryDark" />
+                    android:background="@color/colorPrimary"
+                    android:text="@string/kba09"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/white" />
 
-                <RadioGroup
-                    android:id="@+id/kba06"
+                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                    android:id="@+id/kba09"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:layout_weight="1.5"
-                    android:orientation="horizontal">
-
-                    <RadioButton
-                        android:id="@+id/kba06a"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:layout_weight="1"
-                        android:text="@string/alive" />
-
-                    <RadioButton
-                        android:id="@+id/kba06b"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:layout_weight="1"
-                        android:text="@string/died" />
-
-                </RadioGroup>
-
+                    android:focusable="false"
+                    android:hint="@string/kba09"
+                    android:textColor="@android:color/black"
+                    app:dateFormat="dd-MM-yyyy" />
 
                 <LinearLayout
-                    android:id="@+id/fldGrpkba07"
+                    android:id="@+id/fldGrpkba06"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
-
-                    <!--kba07-->
+                    <!--kba06-->
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
-                        android:background="@color/colorPrimary"
-                        android:text="@string/kba07"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:textColor="@android:color/white" />
+                        android:layout_weight="1"
+                        android:background="@color/pink_100"
+                        android:text="@string/kba06"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/colorPrimaryDark" />
 
-                    <EditText
-                        android:id="@+id/kba07m"
+                    <RadioGroup
+                        android:id="@+id/kba06"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:hint="@string/kba07m"
-                        android:inputType="number"
-                        android:maxLength="2" />
+                        android:layout_marginTop="16dp"
+                        android:layout_weight="1.5"
+                        android:orientation="vertical">
 
-                    <EditText
-                        android:id="@+id/kba07d"
+                        <RadioButton
+                            android:id="@+id/kba06a"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:text="@string/alive" />
+
+                        <RadioButton
+                            android:id="@+id/kba06b"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:text="@string/died" />
+
+                        <RadioButton
+                            android:id="@+id/kba06c"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:text="@string/kba06c" />
+
+                        <RadioButton
+                            android:id="@+id/kba06d"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:text="@string/kba06d" />
+
+                        <RadioButton
+                            android:id="@+id/kba06e"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:text="@string/kba06e" />
+
+                    </RadioGroup>
+
+
+                    <LinearLayout
+                        android:id="@+id/fldGrpkba07"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:hint="@string/kba07y"
-                        android:inputType="number"
-                        android:maxLength="2" />
+                        android:orientation="vertical">
 
+                        <!--kba07-->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:background="@color/colorPrimary"
+                            android:text="@string/kba07"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="@android:color/white" />
+
+                        <EditText
+                            android:id="@+id/kba07m"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:hint="@string/kba07m"
+                            android:inputType="number"
+                            android:maxLength="2" />
+
+                        <EditText
+                            android:id="@+id/kba07d"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:hint="@string/kba07y"
+                            android:inputType="number"
+                            android:maxLength="2" />
+
+                    </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
 

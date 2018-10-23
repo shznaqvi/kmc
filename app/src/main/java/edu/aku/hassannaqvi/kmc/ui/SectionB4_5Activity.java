@@ -255,6 +255,31 @@ public class SectionB4_5Activity extends AppCompatActivity {
 
             }
         });
+        bi.kbde04y.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (!TextUtils.isEmpty(bi.kbde04y.getText().toString())) {
+
+                    if (Integer.valueOf(bi.kbde04y.getText().toString()) > 0) {
+                        bi.fldGrpkbde05.setVisibility(View.GONE);
+                        bi.kbde05.clearCheck();
+                    } else {
+                        bi.fldGrpkbde05.setVisibility(View.VISIBLE);
+                    }
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
 
 
     }
@@ -363,6 +388,20 @@ public class SectionB4_5Activity extends AppCompatActivity {
                 return false;
             }
 
+            if (bi.kbde01wk.getText().toString().equals("0") && bi.kbde01mon.getText().toString().equals("0")&& bi.kbde01yr.getText().toString().equals("0")) {
+                Toast.makeText(this, "Days, weeks and months cannot be 0 at the same time! ", Toast.LENGTH_LONG).show();
+                bi.kbde01wk.setError("Days, weeks and months cannot be 0 at the same time!");
+                bi.kbde01mon.setError("Days, weeks and months cannot be 0 at the same time!");
+                bi.kbde01yr.setError("Days, weeks and months cannot be 0 at the same time!");
+                bi.kbde01wk.requestFocus();
+                return false;
+            } else {
+                bi.kbde01wk.setError(null);
+                bi.kbde01mon.setError(null);
+                bi.kbde01yr.setError(null);
+                bi.kbde01wk.clearFocus();
+            }
+
         }
 
 
@@ -400,10 +439,20 @@ public class SectionB4_5Activity extends AppCompatActivity {
             }
 
 
-            if (!validatorClass.RangeTextBox(this, bi.kbde04y, 0, 2, getString(R.string.years), "Years")) {
+            if (!validatorClass.RangeTextBox(this, bi.kbde04y, 0, 1, getString(R.string.years), "Years")) {
                 return false;
             }
-
+            if (bi.kbde04y.getText().toString().equals("0") && bi.kbde04m.getText().toString().equals("0")) {
+                Toast.makeText(this, "Months and Years cannot be 0 at the same time! ", Toast.LENGTH_LONG).show();
+                bi.kbde04y.setError("Months and Years cannot be 0 at the same time!");
+                bi.kbde04m.setError("Months and Years cannot be 0 at the same time!");
+                bi.kbde04y.requestFocus();
+                return false;
+            } else {
+                bi.kbde04y.setError(null);
+                bi.kbde04m.setError(null);
+                bi.kbde04y.clearFocus();
+            }
         }
 
 
@@ -415,7 +464,7 @@ public class SectionB4_5Activity extends AppCompatActivity {
 
         }
         if (!TextUtils.isEmpty(bi.kbde04m.getText().toString())) {
-            if (Integer.valueOf(bi.kbde04m.getText().toString()) <= 6) {
+            if (Integer.valueOf(bi.kbde04m.getText().toString()) <= 6 && Integer.valueOf(bi.kbde04y.getText().toString()) == 0) {
                 if (!validatorClass.EmptyRadioButton(this, bi.kbde05, bi.kbde0596, bi.kbde0596x, getString(R.string.kbde05))) {
                     return false;
                 }
