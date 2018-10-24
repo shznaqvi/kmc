@@ -207,6 +207,7 @@ public class SectionB1Activity extends AppCompatActivity {
                 : bi.kba08d.isChecked() ? "4"
                 : bi.kba08e.isChecked() ? "5"
                 : bi.kba08f.isChecked() ? "6"
+                : bi.kba08g.isChecked() ? "7"
                 : "0");
         sc1.put("kba07", bi.kba09.getText().toString());
 
