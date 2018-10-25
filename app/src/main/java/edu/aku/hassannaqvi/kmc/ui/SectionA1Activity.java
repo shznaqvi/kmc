@@ -321,20 +321,20 @@ public class SectionA1Activity extends Activity {
 
                 villageCodes = new ArrayList<>();
                 villageNames = new ArrayList<>();
-                final List<String> villageNames1 = new ArrayList<>();
+//                final List<String> villageNames1 = new ArrayList<>();
 
                 villageCodes.add("....");
                 villageNames.add("....");
-                villageNames1.add("....");
+//                villageNames1.add("....");
 
                 Collection<VillagesContract> pc = db.getAllPSUsByDistrict(MainApp.talukaCode, MainApp.ucCode);
                 for (VillagesContract p : pc) {
                     villageCodes.add(p.getVillageCode());
                     villageNames.add(p.getVillageName());
-                    villageNames1.add(p.getVillageName().split("\\|")[2]);
+//                    villageNames1.add(p.getVillageName().split("\\|")[2]);
                 }
 
-                bi.crvillage.setAdapter(new ArrayAdapter<>(context, android.R.layout.simple_spinner_dropdown_item, villageNames1));
+                bi.crvillage.setAdapter(new ArrayAdapter<>(context, android.R.layout.simple_spinner_dropdown_item, villageNames));
                 if (position == 0) {
                     bi.hidden02.setVisibility(GONE);
                 } else {
@@ -356,7 +356,7 @@ public class SectionA1Activity extends Activity {
 
                 if (bi.crvillage.getSelectedItemPosition() != 0) {
                     MainApp.villageCode = villageCodes.get(i);
-                    String[] st = villageNames.get(i).split("\\|");
+                   // String[] st = villageNames.get(i).split("\\|");
 
                     /*districtN.setText(st[0]);
                     ucN.setText(st[1]);
