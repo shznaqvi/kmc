@@ -324,7 +324,7 @@ public class SectionB2Activity extends AppCompatActivity {
                 : "0");
 
         sC2.put("kbb16", bi.kbb16.getText().toString());
-        sC2.put("kbb1698", bi.kbb1698.isChecked() ? "1" : "0");
+        sC2.put("kbb1698", bi.kbb1698.isChecked() ? "98" : "0");
 
 
         MainApp.fc.setsb2(String.valueOf(sC2));
@@ -547,9 +547,7 @@ public class SectionB2Activity extends AppCompatActivity {
                     }
 
 
-                    if (!validatorClass.RangeTextBox(this, bi.kbb16, 1, 5, getString(R.string.kbb16), "Times")) {
-                        return false;
-                    }
+                    return validatorClass.RangeTextBox(this, bi.kbb16, 1, 5, getString(R.string.kbb16), "Times");
 
                 }
 
