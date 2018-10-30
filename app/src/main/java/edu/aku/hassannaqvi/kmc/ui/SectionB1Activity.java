@@ -46,11 +46,23 @@ public class SectionB1Activity extends AppCompatActivity {
 
                 if (bi.kba06a.isChecked()) {
                     bi.fldGrpkba07.setVisibility(GONE);
+                    bi.fldGrpkba07twin.setVisibility(GONE);
                     bi.kba07m.setText(null);
                     bi.kba07d.setText(null);
+                    bi.kba07mtwin.setText(null);
+                    bi.kba07dtwin.setText(null);
+                } else if (bi.kba06d.isChecked()) {
+                    bi.fldGrpkba07twin.setVisibility(VISIBLE);
+                    bi.fldGrpkba07.setVisibility(View.VISIBLE);
+
                 } else {
                     bi.fldGrpkba07.setVisibility(View.VISIBLE);
+                    bi.fldGrpkba07twin.setVisibility(GONE);
+                    bi.kba07mtwin.setText(null);
+                    bi.kba07dtwin.setText(null);
+
                 }
+
             }
         });
         bi.kba08.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -138,47 +150,72 @@ public class SectionB1Activity extends AppCompatActivity {
         if (!validatorClass.EmptyRadioButton(this, bi.kba08, bi.kba08a, getString(R.string.kba08))) {
             return false;
         }
-        if(bi.kba08a.isChecked() || bi.kba08b.isChecked() || bi.kba08c.isChecked() || bi.kba08f.isChecked()){
+        if (bi.kba08a.isChecked() || bi.kba08b.isChecked() || bi.kba08c.isChecked() || bi.kba08f.isChecked()) {
 
-        }else {
+        } else {
 
-        if (!validatorClass.EmptyTextBox(this, bi.kba09, getString(R.string.kba09))) {
-            return false;
+            if (!validatorClass.EmptyTextBox(this, bi.kba09, getString(R.string.kba09))) {
+                return false;
+            }
+
+
+            if (!validatorClass.EmptyRadioButton(this, bi.kba06, bi.kba06a, getString(R.string.kba06))) {
+                return false;
+            }
+
+            if (!bi.kba06a.isChecked()) {
+                if (!validatorClass.EmptyTextBox(this, bi.kba07d, getString(R.string.kba07y))) {
+                    return false;
+                }
+                if (!validatorClass.RangeTextBox(this, bi.kba07d, 0, 29, getString(R.string.kba07y), "days")) {
+                    return false;
+                }
+                if (!validatorClass.EmptyTextBox(this, bi.kba07m, getString(R.string.kba07m))) {
+                    return false;
+                }
+
+                if (!validatorClass.RangeTextBox(this, bi.kba07m, 0, 11, getString(R.string.kba07m), " months")) {
+                    return false;
+                }
+                if (bi.kba07d.getText().toString().equals("0") && bi.kba07m.getText().toString().equals("0")) {
+                    Toast.makeText(this, "Days and months cannot be 0 at the same time! ", Toast.LENGTH_LONG).show();
+                    bi.kba07d.setError("Days and months cannot be 0 at the same time!");
+                    bi.kba07m.setError("Days and months cannot be 0 at the same time!");
+                    bi.kba07d.requestFocus();
+                    return false;
+                } else {
+                    bi.kba07d.setError(null);
+                    bi.kba07m.setError(null);
+                    bi.kba07d.clearFocus();
+                }
+                if(bi.kba06d.isChecked()){
+                    if (!validatorClass.EmptyTextBox(this, bi.kba07dtwin, getString(R.string.kba07y))) {
+                        return false;
+                    }
+                    if (!validatorClass.RangeTextBox(this, bi.kba07dtwin, 0, 29, getString(R.string.kba07y), "days")) {
+                        return false;
+                    }
+                    if (!validatorClass.EmptyTextBox(this, bi.kba07mtwin, getString(R.string.kba07m))) {
+                        return false;
+                    }
+
+                    if (!validatorClass.RangeTextBox(this, bi.kba07mtwin, 0, 11, getString(R.string.kba07m), " months")) {
+                        return false;
+                    }
+                    if (bi.kba07dtwin.getText().toString().equals("0") && bi.kba07mtwin.getText().toString().equals("0")) {
+                        Toast.makeText(this, "Days and months cannot be 0 at the same time! ", Toast.LENGTH_LONG).show();
+                        bi.kba07dtwin.setError("Days and months cannot be 0 at the same time!");
+                        bi.kba07mtwin.setError("Days and months cannot be 0 at the same time!");
+                        bi.kba07dtwin.requestFocus();
+                        return false;
+                    } else {
+                        bi.kba07dtwin.setError(null);
+                        bi.kba07mtwin.setError(null);
+                        bi.kba07dtwin.clearFocus();
+                    }
+                }
+            }
         }
-
-
-        if (!validatorClass.EmptyRadioButton(this, bi.kba06, bi.kba06a, getString(R.string.kba06))) {
-            return false;
-        }
-
-        if (!bi.kba06a.isChecked()) {
-            if (!validatorClass.EmptyTextBox(this, bi.kba07d, getString(R.string.kba07y))) {
-                return false;
-            }
-            if (!validatorClass.RangeTextBox(this, bi.kba07d, 0, 29, getString(R.string.kba07y), "days")) {
-                return false;
-            }
-            if (!validatorClass.EmptyTextBox(this, bi.kba07m, getString(R.string.kba07m))) {
-                return false;
-            }
-
-            if (!validatorClass.RangeTextBox(this, bi.kba07m, 0, 11, getString(R.string.kba07m), " months")) {
-                return false;
-            }
-            if (bi.kba07d.getText().toString().equals("0") && bi.kba07m.getText().toString().equals("0")) {
-                Toast.makeText(this, "Days and months cannot be 0 at the same time! ", Toast.LENGTH_LONG).show();
-                bi.kba07d.setError("Days and months cannot be 0 at the same time!");
-                bi.kba07m.setError("Days and months cannot be 0 at the same time!");
-                bi.kba07d.requestFocus();
-                return false;
-            } else {
-                bi.kba07d.setError(null);
-                bi.kba07m.setError(null);
-                bi.kba07d.clearFocus();
-            }
-        }
-        }
-
 
 
         return true;
@@ -220,6 +257,8 @@ public class SectionB1Activity extends AppCompatActivity {
 
         sc1.put("kba09d", bi.kba07d.getText().toString());
         sc1.put("kba09m", bi.kba07m.getText().toString());
+        sc1.put("kba09dtwin", bi.kba07dtwin.getText().toString());
+        sc1.put("kba09mtwin", bi.kba07mtwin.getText().toString());
      /*   sc1.put("kba06twin", bi.kba06atwin.isChecked() ? "1"
                 : bi.kba06btwin.isChecked() ? "2"
                 : "0");

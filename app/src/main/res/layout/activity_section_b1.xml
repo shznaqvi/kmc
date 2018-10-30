@@ -361,6 +361,45 @@
                             android:maxLength="2" />
 
                     </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/fldGrpkba07twin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <!--kba07twin-->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:background="@color/colorPrimary"
+                            android:text="@string/kba07"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="@android:color/white" />
+
+                        <EditText
+                            android:id="@+id/kba07mtwin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:hint="@string/kba07m"
+                            android:inputType="number"
+                            android:maxLength="2" />
+
+                        <EditText
+                            android:id="@+id/kba07dtwin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:hint="@string/kba07y"
+                            android:inputType="number"
+                            android:maxLength="2" />
+
+                    </LinearLayout>
+
                 </LinearLayout>
             </LinearLayout>
 
@@ -409,12 +448,12 @@
 
 
                 <LinearLayout
-                    android:id="@+id/fldGrpkba07twin"
+                    android:id="@+id/fldGrpkba09twin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <!--kba07-->
+                    <!--kba09 twin-->
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -425,7 +464,7 @@
                         android:textColor="@android:color/white" />
 
                     <EditText
-                        android:id="@+id/kba07mtwin"
+                        android:id="@+id/kba09mtwin"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
@@ -434,7 +473,7 @@
                         android:maxLength="2" />
 
                     <EditText
-                        android:id="@+id/kba07dtwin"
+                        android:id="@+id/kba09dtwin"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
