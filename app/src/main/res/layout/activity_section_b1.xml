@@ -372,11 +372,12 @@
 
                         <!--kba07twin-->
                         <TextView
+                            android:id="@+id/lblkba07twin"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="16dp"
                             android:background="@color/colorPrimary"
-                            android:text="@string/kba07"
+                            android:text="@string/kba07twin"
                             android:textAppearance="?android:attr/textAppearanceLarge"
                             android:textColor="@android:color/white" />
 

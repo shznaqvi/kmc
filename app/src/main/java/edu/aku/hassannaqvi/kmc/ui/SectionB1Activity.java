@@ -44,14 +44,15 @@ public class SectionB1Activity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
 
-                if (bi.kba06a.isChecked()) {
+                if (bi.kba06a.isChecked()|| bi.kba06c.isChecked()) {
                     bi.fldGrpkba07.setVisibility(GONE);
                     bi.fldGrpkba07twin.setVisibility(GONE);
                     bi.kba07m.setText(null);
                     bi.kba07d.setText(null);
                     bi.kba07mtwin.setText(null);
                     bi.kba07dtwin.setText(null);
-                } else if (bi.kba06d.isChecked()) {
+                }
+                else if (bi.kba06d.isChecked()) {
                     bi.fldGrpkba07twin.setVisibility(VISIBLE);
                     bi.fldGrpkba07.setVisibility(View.VISIBLE);
 
@@ -163,7 +164,7 @@ public class SectionB1Activity extends AppCompatActivity {
                 return false;
             }
 
-            if (!bi.kba06a.isChecked()) {
+            if (!bi.kba06a.isChecked() && !bi.kba06c.isChecked()) {
                 if (!validatorClass.EmptyTextBox(this, bi.kba07d, getString(R.string.kba07y))) {
                     return false;
                 }
