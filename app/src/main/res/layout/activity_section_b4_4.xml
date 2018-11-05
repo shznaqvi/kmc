@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layoutDirection="rtl"
-    tools:context="edu.aku.hassannaqvi.kmc.ui.SectionB4_4Activity">
+    tools:context="edu.aku.hassannaqvi.kmc_validate_app.ui.SectionB4_4Activity">
 
     <data>
 
@@ -10,7 +10,7 @@
 
         <variable
             name="callback"
-            type="edu.aku.hassannaqvi.kmc.ui.SectionB4_4Activity" />
+            type="edu.aku.hassannaqvi.kmc_validate_app.ui.SectionB4_4Activity" />
     </data>
 
     <ScrollView
@@ -100,8 +100,9 @@
 
             </RadioGroup>
 
+<!--
 
-            <!--kbdd02-->
+            &lt;!&ndash;kbdd02&ndash;&gt;
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -170,7 +171,7 @@
                 android:text='@{kbdd0296.checked ? kbdd0296x.getText.toString : ""}'
                 android:visibility='@{kbdd0296.checked ? View.VISIBLE : View.GONE}' />
 
-            <!--kbdd03-->
+            &lt;!&ndash;kbdd03&ndash;&gt;
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -203,13 +204,13 @@
                     android:text="@string/no" />
 
             </RadioGroup>
-            <!--skip pattern kbdd04-->
+            &lt;!&ndash;skip pattern kbdd04&ndash;&gt;
             <LinearLayout
                 android:id="@+id/fldGrpkbdd04"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-                <!--kbdd04-->
+                &lt;!&ndash;kbdd04&ndash;&gt;
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -282,7 +283,7 @@
                 </LinearLayout>
 
 
-                <!--<RadioGroup
+                &lt;!&ndash;<RadioGroup
                     android:id="@+id/kbdd04"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -342,7 +343,7 @@
                         android:layout_marginBottom="1dp"
                         android:text="@string/other" />
 
-                </RadioGroup>-->
+                </RadioGroup>&ndash;&gt;
 
                 <EditText
                     android:id="@+id/kbdd0496x"
@@ -356,6 +357,7 @@
                     android:visibility='@{kbdd0496.checked ? View.VISIBLE : View.GONE}' />
 
             </LinearLayout>
+-->
 
 
             <!--  = = = = =  END OF FORM FIELDS  = = = = = -->

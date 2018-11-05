@@ -11,7 +11,7 @@
 
         <variable
             name="callback"
-            type="edu.aku.hassannaqvi.kmc.ui.SectionB1Activity" />
+            type="edu.aku.hassannaqvi.kmc_validate_app.ui.SectionB1Activity" />
     </data>
 
     <ScrollView
@@ -71,25 +71,6 @@
                 android:hint="@string/kba01"
                 android:inputType="text" />
 
-            <!--kba02-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/kba02"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
-
-            <EditText
-                android:id="@+id/kba02"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:digits="0123456789"
-                android:hint="@string/kba02"
-                android:inputType="number"
-                android:maxLength="2" />
             <!--kba05-->
             <TextView
                 android:layout_width="match_parent"
@@ -133,8 +114,8 @@
                     android:text="@string/dkn" />
 
             </RadioGroup>
-
-            <!--kba03-->
+<!--
+            &lt;!&ndash;kba03&ndash;&gt;
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -154,7 +135,7 @@
                 android:inputType="number"
                 android:maxLength="2" />
 
-            <!--kba04-->
+            &lt;!&ndash;kba04&ndash;&gt;
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -269,7 +250,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
-                    <!--kba06-->
+                    &lt;!&ndash;kba06&ndash;&gt;
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -332,7 +313,7 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                        <!--kba07-->
+                        &lt;!&ndash;kba07&ndash;&gt;
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -370,7 +351,7 @@
                         android:orientation="vertical"
                         android:visibility="gone">
 
-                        <!--kba07twin-->
+                        &lt;!&ndash;kba07twin&ndash;&gt;
                         <TextView
                             android:id="@+id/lblkba07twin"
                             android:layout_width="match_parent"
@@ -410,7 +391,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:visibility="gone">
-                <!--kba06-->
+                &lt;!&ndash;kba06&ndash;&gt;
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -454,7 +435,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <!--kba09 twin-->
+                    &lt;!&ndash;kba09 twin&ndash;&gt;
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -483,7 +464,7 @@
                         android:maxLength="2" />
 
                 </LinearLayout>
-            </LinearLayout>
+            </LinearLayout>-->
             <!--kba04-->
             <!--<TextView
                 android:layout_width="match_parent"

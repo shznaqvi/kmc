@@ -5,7 +5,7 @@
         <import type="android.view.View" />
         <variable
             name="callback"
-            type="edu.aku.hassannaqvi.kmc.ui.SyncActivity" />
+            type="edu.aku.hassannaqvi.kmc_validate_app.ui.SyncActivity" />
     </data>
 
     <android.support.v4.widget.NestedScrollView

@@ -10,7 +10,7 @@
 
         <variable
             name="callback"
-            type="edu.aku.hassannaqvi.kmc.ui.SectionA1Activity" />
+            type="edu.aku.hassannaqvi.kmc_validate_app.ui.SectionA1Activity" />
     </data>
 
     <ScrollView
@@ -274,7 +274,7 @@
                             android:hint="@string/kaa05"
                             android:inputType="textCapCharacters" />
 
-                        <TextView
+                       <!-- <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="16dp"
@@ -308,7 +308,7 @@
                             android:digits="0123456789"
                             android:hint="@string/kaa07"
                             android:inputType="number"
-                            android:maxLength="2"/>
+                            android:maxLength="2"/>-->
 
                         <TextView
                             android:layout_width="match_parent"
@@ -346,77 +346,6 @@
                             android:inputType="number"
                             android:maxLength="1" />
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
-                            android:background="@color/colorPrimary"
-                            android:text="@string/kaa10"
-                            android:textAppearance="?android:attr/textAppearanceLarge"
-                            android:textColor="@android:color/white" />
-
-                        <EditText
-                            android:id="@+id/kaa10"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:digits="0123456789"
-                            android:hint="@string/kaa10"
-                            android:inputType="number"
-                            android:maxLength="2" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
-                            android:background="@color/colorPrimary"
-                            android:text="@string/kaa10a"
-                            android:textAppearance="?android:attr/textAppearanceLarge"
-                            android:textColor="@android:color/white" />
-
-                        <EditText
-                            android:id="@+id/kaa10a"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:digits="0123456789"
-                            android:hint="@string/kaa10a"
-                            android:inputType="number"
-                            android:maxLength="1" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
-                            android:background="@color/colorPrimary"
-                            android:text="@string/kaa10b"
-                            android:textAppearance="?android:attr/textAppearanceLarge"
-                            android:textColor="@android:color/white" />
-
-                        <EditText
-                            android:id="@+id/kaa10b"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:digits="0123456789"
-                            android:hint="@string/kaa10b"
-                            android:inputType="number"
-                            android:maxLength="1" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
-                            android:background="@color/colorPrimary"
-                            android:text="@string/kaa10c"
-                            android:textAppearance="?android:attr/textAppearanceLarge"
-                            android:textColor="@android:color/white" />
-
-                        <EditText
-                            android:id="@+id/kaa10c"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:digits="0123456789"
-                            android:hint="@string/kaa10c"
-                            android:inputType="number"
-                            android:maxLength="1" />
 
                         <!--cra07-->
                         <TextView

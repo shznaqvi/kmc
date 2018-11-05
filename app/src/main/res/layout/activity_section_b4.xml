@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layoutDirection="rtl"
-    tools:context="edu.aku.hassannaqvi.kmc.ui.SectionB4Activity">
+    tools:context="edu.aku.hassannaqvi.kmc_validate_app.ui.SectionB4Activity">
 
     <data>
 
@@ -10,7 +10,7 @@
 
         <variable
             name="callback"
-            type="edu.aku.hassannaqvi.kmc.ui.SectionB4Activity" />
+            type="edu.aku.hassannaqvi.kmc_validate_app.ui.SectionB4Activity" />
     </data>
 
     <ScrollView
@@ -32,7 +32,7 @@
                 android:gravity="center"
                 android:text="@string/kbdheading"
                 android:textSize="40sp" />
-            <TextView
+           <!-- <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -71,7 +71,7 @@
                     android:text="@string/drem" />
 
             </RadioGroup>
-
+-->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -91,7 +91,7 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/colorPrimaryDark" />
 
-            <!--kbda01-->
+          <!--  &lt;!&ndash;kbda01&ndash;&gt;
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -146,7 +146,7 @@
                 android:text='@{kbda0196.checked ?kbda0196x.getText.toString : ""}'
                 android:visibility='@{kbda0196.checked ? View.VISIBLE : View.GONE}' />
 
-            <!--kbda02-->
+-->            <!--kbda02-->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -266,8 +266,8 @@
                         android:hint="@string/kbda03a"
                         android:inputType="number"
                         android:maxLength="2" />
-
-                    <!--kbda05-->
+<!--
+                    &lt;!&ndash;kbda05&ndash;&gt;
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -307,7 +307,7 @@
                             android:text="@string/drem" />
                     </RadioGroup>
 
-                    <!--kbda06-->
+                    &lt;!&ndash;kbda06&ndash;&gt;
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -345,7 +345,7 @@
                             android:layout_marginBottom="1dp"
                             android:layout_weight="1"
                             android:text="@string/dkn" />
-                    </RadioGroup>
+                    </RadioGroup>-->
                 </LinearLayout>
             </LinearLayout>
             <!--  = = = = =  END OF FORM FIELDS  = = = = = -->

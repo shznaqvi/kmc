@@ -10,7 +10,7 @@
 
         <variable
             name="callback"
-            type="edu.aku.hassannaqvi.kmc.ui.SectionB3_PNCActivity" />
+            type="edu.aku.hassannaqvi.kmc_validate_app.ui.SectionB3_PNCActivity" />
     </data>
 
     <ScrollView

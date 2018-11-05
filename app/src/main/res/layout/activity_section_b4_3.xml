@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layoutDirection="rtl"
-    tools:context="edu.aku.hassannaqvi.kmc.ui.SectionB4_3Activity">
+    tools:context="edu.aku.hassannaqvi.kmc_validate_app.ui.SectionB4_3Activity">
 
     <data>
 
@@ -10,7 +10,7 @@
 
         <variable
             name="callback"
-            type="edu.aku.hassannaqvi.kmc.ui.SectionB4_3Activity" />
+            type="edu.aku.hassannaqvi.kmc_validate_app.ui.SectionB4_3Activity" />
     </data>
 
     <ScrollView
