@@ -463,10 +463,8 @@ public class SectionA1Activity extends Activity {
         }*/
 
 
-        if (!validatorClass.EmptyTextBox(this, bi.kv01, "Name of Independent Supervisor")) {
-            return false;
-        }
-        if (!validatorClass.EmptyTextBox(this, bi.kv02, "Team Leader Name")) {
+
+        if (!validatorClass.EmptyTextBox(this, bi.kaa11, getString(R.string.kaa11))) {
             return false;
         }
         if (!validatorClass.EmptyTextBox(this, bi.kaa05, getString(R.string.kaa05))) {
@@ -599,8 +597,7 @@ public class SectionA1Activity extends Activity {
         sInfo.put("cra07a", bi.cra07a.isChecked() ? "1"
                 : bi.cra07b.isChecked() ? "2"
                 : "0");
-        sInfo.put("kv01", bi.kv01.getText().toString());
-        sInfo.put("kv02", bi.kv02.getText().toString());
+        sInfo.put("kaa11", bi.kaa11.getText().toString());  // Name of Head of Household
         sInfo.put("kaa05", bi.kaa05.getText().toString());
         MainApp.resName = bi.kaa05.getText().toString();
 //        sInfo.put("kaa06", bi.kaa06.getText().toString());
