@@ -407,6 +407,19 @@ public class SectionA1Activity extends Activity {
         if (!validatorClass.EmptyTextBox(this, bi.cra04, getString(R.string.cra04))) {
             return false;
         }
+        if (bi.cra04.getText().toString().length() == 5) {
+            String[] str = bi.cra04.getText().toString().split("-");
+            if (str.length > 2 || bi.cra04.getText().toString().charAt(3) != '-' || !str[0].matches("[0-9]+")
+                    || !str[1].matches("[A-Za-z]+")) {
+                bi.cra04.setError("Wrong presentation!! Please follow XXX-X this pattern");
+                Toast.makeText(this,"Wrong presentation!! Please follow XXX-X this pattern",Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        } else {
+            //Toast.makeText(this, "Invalid length: " + getString(R.string.nh108), Toast.LENGTH_SHORT).show();
+            bi.cra04.setError("Invalid length");
+            return false;
+        }
 
         if (!validatorClass.EmptySpinner(this, bi.crvillage, getString(R.string.crvillage))) {
             return false;
