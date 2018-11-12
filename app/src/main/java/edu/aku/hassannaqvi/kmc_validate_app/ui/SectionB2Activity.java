@@ -486,17 +486,17 @@ public class SectionB2Activity extends AppCompatActivity {
                     return false;
                 }*/
                 if (!bi.kbb1098.isChecked()) {
-                    if (!validatorClass.EmptyTextBox(this, bi.kbb10m, getString(R.string.kbb10a))) {
+                    if (!validatorClass.EmptyTextBox(this, bi.kbb10m, getString(R.string.kbb10b))) {
                         return false;
                     }
-                    if (!validatorClass.RangeTextBox(this, bi.kbb10m, 0, 29, getString(R.string.kbb10a), "days")) {
+                    if (!validatorClass.RangeTextBox(this, bi.kbb10m, 0, 29, getString(R.string.kbb10b), "months")) {
                         return false;
                     }
 
-                    if (!validatorClass.EmptyTextBox(this, bi.kbb10d, getString(R.string.kbb10b))) {
+                    if (!validatorClass.EmptyTextBox(this, bi.kbb10d, getString(R.string.kbb10a))) {
                         return false;
                     }
-                    if (!validatorClass.RangeTextBox(this, bi.kbb10d, 0, 9, getString(R.string.kbb10b), " months")) {
+                    if (!validatorClass.RangeTextBox(this, bi.kbb10d, 0, 9, getString(R.string.kbb10a), " days")) {
                         return false;
                     }
                     if (bi.kbb10m.getText().toString().equals("0") && bi.kbb10d.getText().toString().equals("0")) {
