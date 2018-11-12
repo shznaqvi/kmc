@@ -291,8 +291,13 @@ public class SyncActivity extends AppCompatActivity {
                         list.add(model);
                     }
                     new GetAllData(mContext, "Users", syncListAdapter, list).execute();
-
-
+                    Toast.makeText(SyncActivity.this, "Sync BL-Random", Toast.LENGTH_LONG).show();
+                    if (listActivityCreated) {
+                        model = new SyncModel();
+                        model.setstatusID(0);
+                        list.add(model);
+                    }
+                    new GetAllData(mContext, "BLRandom", syncListAdapter, list).execute();
                     listActivityCreated = false;
                 }
             });

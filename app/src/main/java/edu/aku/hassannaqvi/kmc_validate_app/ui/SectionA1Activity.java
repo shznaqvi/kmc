@@ -30,10 +30,12 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
 import edu.aku.hassannaqvi.kmc_validate_app.R;
+import edu.aku.hassannaqvi.kmc_validate_app.contracts.BLRandomContract;
 import edu.aku.hassannaqvi.kmc_validate_app.contracts.DistrictsContract;
 import edu.aku.hassannaqvi.kmc_validate_app.contracts.FormsContract;
 import edu.aku.hassannaqvi.kmc_validate_app.contracts.MwraContract;
@@ -103,13 +105,13 @@ public class SectionA1Activity extends Activity {
                 if (!bi.cra04.getText().toString().isEmpty() && bi.cra04.getText().toString().length() == 3) {
 
 
-                        if (bi.cra04.getText().toString().substring(0, 3).matches("[0-9]+")) {
-                            if (length < 4) {
-                                bi.cra04.setText(bi.cra04.getText().toString() + "-");
-                                bi.cra04.setSelection(bi.cra04.getText().length());
-                                //binding.nh108.setInputType(InputType.TYPE_TEXT_FLAG_CAP_CHARACTERS);
-                            }
+                    if (bi.cra04.getText().toString().substring(0, 3).matches("[0-9]+")) {
+                        if (length < 4) {
+                            bi.cra04.setText(bi.cra04.getText().toString() + "-");
+                            bi.cra04.setSelection(bi.cra04.getText().length());
+                            //binding.nh108.setInputType(InputType.TYPE_TEXT_FLAG_CAP_CHARACTERS);
                         }
+                    }
 
                 }
             }
@@ -129,10 +131,13 @@ public class SectionA1Activity extends Activity {
         bi.cra07.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
+
                 if (bi.cra07a.isChecked()) {
                     bi.btnNext.setVisibility(View.VISIBLE);
+
                 } else {
                     bi.btnNext.setVisibility(GONE);
+
                 }
             }
         });
@@ -356,7 +361,7 @@ public class SectionA1Activity extends Activity {
 
                 if (bi.crvillage.getSelectedItemPosition() != 0) {
                     MainApp.villageCode = villageCodes.get(i);
-                   // String[] st = villageNames.get(i).split("\\|");
+                    // String[] st = villageNames.get(i).split("\\|");
 
                     /*districtN.setText(st[0]);
                     ucN.setText(st[1]);
@@ -412,7 +417,7 @@ public class SectionA1Activity extends Activity {
             if (str.length > 2 || bi.cra04.getText().toString().charAt(3) != '-' || !str[0].matches("[0-9]+")
                     || !str[1].matches("[A-Za-z]+")) {
                 bi.cra04.setError("Wrong presentation!! Please follow XXX-X this pattern");
-                Toast.makeText(this,"Wrong presentation!! Please follow XXX-X this pattern",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Wrong presentation!! Please follow XXX-X this pattern", Toast.LENGTH_SHORT).show();
                 return false;
             }
         } else {
@@ -463,7 +468,6 @@ public class SectionA1Activity extends Activity {
         }*/
 
 
-
         if (!validatorClass.EmptyTextBox(this, bi.kaa11, getString(R.string.kaa11))) {
             return false;
         }
@@ -502,7 +506,7 @@ public class SectionA1Activity extends Activity {
             return false;
         }*/
 //        int totalmwraandchild = Integer.valueOf(bi.kaa09.getText().toString()) + Integer.valueOf(bi.kaa10.getText().toString());
-        if (Integer.valueOf(bi.kaa09.getText().toString())<= Integer.valueOf(bi.kaa08.getText().toString())) {
+        if (Integer.valueOf(bi.kaa09.getText().toString()) <= Integer.valueOf(bi.kaa08.getText().toString())) {
             bi.kaa08.setError(null);
             bi.kaa09.setError(null);
 //            bi.kaa10.setError(null);
@@ -574,13 +578,14 @@ public class SectionA1Activity extends Activity {
         sInfo.put("kaataluka", MainApp.talukaCode);
         sInfo.put("kaauc", MainApp.ucCode);
         sInfo.put("kavillage", MainApp.villageCode);
+        sInfo.put("kauid", MainApp.selectedHead.getLUID()); //Coming from Baseline- add it on server
 
 
         // sInfo.put("kaavillage", bi.cravillage.getText().toString());
 
         //sInfo.put("cra03", bi.cra03.getText().toString());
 
-        sInfo.put("cra04", bi.cra04.getText().toString().toUpperCase());
+        sInfo.put("cra04", bi.cra04.getText().toString().toUpperCase()); // household number!
 
         //sInfo.put("cra05", bi.cra05.getText().toString());
         // sInfo.put("cra06", bi.cra06.getText().toString());
@@ -618,17 +623,17 @@ public class SectionA1Activity extends Activity {
     public void BtnEnd() {
         Toast.makeText(this, "Processing End Section", Toast.LENGTH_SHORT).show();
 //        if (formValidation()) {
-            try {
-                SaveDraft();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            if (UpdateDB()) {
-                MainApp.endActivity(this, this);
+        try {
+            SaveDraft();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        if (UpdateDB()) {
+            MainApp.endActivity(this, this);
 
-            } else {
-                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
-            }
+        } else {
+            Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+        }
 //        }
     }
 
@@ -697,46 +702,46 @@ public class SectionA1Activity extends Activity {
     }
 
 
-    public void BtnSearchWoman() {
+
+    public void BtnSearchHH() {
 // Not using in new Form of KMC
         if (ValidSpiner()) {
-
             if (!TextUtils.isEmpty(bi.cra04.getText().toString())) {
-
                 db = new DatabaseHelper(this);
+                if (bi.cra04.getText().toString().matches("^[0-9]{3}\\-[A-Z]")) {
+                    Collection<BLRandomContract> blRandomContract = db.getAllBLRandom(MainApp.villageCode, bi.cra04.getText().toString());
+                    if (blRandomContract.size() != 0) {
+                        Toast.makeText(this, "Household found!", Toast.LENGTH_SHORT).show();
+                        for (BLRandomContract rnd : blRandomContract) {
+                            MainApp.selectedHead = new BLRandomContract(rnd);
+                        }
 
+                        if (MainApp.selectedHead.getSubVillageCode() != "") {
+                            bi.hidden03.setVisibility(VISIBLE);
+                            bi.womeninfo.setVisibility(VISIBLE);
+                            bi.btnEnd.setVisibility(VISIBLE);
+                        } else {
+                            bi.hidden03.setVisibility(GONE);
+                            clearFields();
+                            Toast.makeText(this, "Household Not found!", Toast.LENGTH_SHORT).show();
+                        }
+                    }else {
+                        bi.hidden03.setVisibility(GONE);
+                        clearFields();
+                        Toast.makeText(this, "Household Not found!!", Toast.LENGTH_SHORT).show();
 
-                // Spinner Drop down elements
-                wName = new ArrayList<>();
-                wSno = new ArrayList<>();
-
-                wName.add("....");
-                wSno.add("....");
-
-                mapWRA = new HashMap<>();
-                /*
-                Collection<MwraContract> dc = db.getMWRA(bi.cra04.getText().toString(), MainApp.villageCode);
-                Log.d(TAG, "onCreate: " + dc.size());
-                for (MwraContract d : dc) {
-                    wName.add(d.getWname() + "_" + d.getSno());
-                    wSno.add(d.getSno());
-
-                    mapWRA.put(d.getWname() + "_" + d.getSno(), d);
-
+                    }
+                } else {
+                    clearFields();
+                    Toast.makeText(this, "You entered a wrong household pattern!!!", Toast.LENGTH_SHORT).show();
                 }
-
-                // Creating adapter for spinner
-                ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(this,
-                        android.R.layout.simple_spinner_dropdown_item, wName);
-
-                // Drop down layout style - list view with radio button
-                dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-                // attaching data adapter to spinner
-                bi.crwoman.setAdapter(dataAdapter);
+            } else {
+                clearFields();
+                Toast.makeText(this, "Household is Empty", Toast.LENGTH_SHORT).show();
+            }
 
 
-                if (dc.size() <= 0) {
+               /* if (dc.size() <= 0) {
                     clearFields();
                     bi.fldGrpcra04.setVisibility(GONE);
                     bi.womeninfo.setVisibility(GONE);
@@ -751,19 +756,17 @@ public class SectionA1Activity extends Activity {
                     bi.btnEnd.setVisibility(View.VISIBLE);
                 }
                 */
-            } else {
-                Toast.makeText(this, "Household number required", Toast.LENGTH_LONG).show();
-                clearFields();
-                bi.btnNext.setVisibility(GONE);
-                bi.btnEnd.setVisibility(GONE);
-                bi.womeninfo.setVisibility(GONE);
-                bi.cra04.requestFocus();
-            }
+        } else {
+            Toast.makeText(this, "Household number required", Toast.LENGTH_LONG).show();
+            clearFields();
+
+
+            bi.cra04.requestFocus();
         }
     }
 
 
-    private void setUp() {
+   /* private void setUp() {
 
         bi.cra04.addTextChangedListener(new TextWatcher() {
             @Override
@@ -798,13 +801,18 @@ public class SectionA1Activity extends Activity {
         });
 
 
-    }
+    }*/
 
 
     public void clearFields() {
-        bi.fldGrpcra04.setVisibility(GONE);
-
-        bi.cravillage.setText(null);
+//        bi.fldGrpcra04.setVisibility(GONE);
+        bi.btnNext.setVisibility(GONE);
+        bi.btnEnd.setVisibility(GONE);
+        bi.womeninfo.setVisibility(GONE);
+        bi.kaa11.setText(null);
+        bi.kaa05.setText(null);
+        bi.kaa08.setText(null);
+        bi.kaa09.setText(null);
         //bi.cra03.setText(null);
         //bi.cra05.setText(null);
         //  bi.cra06.setText(null);

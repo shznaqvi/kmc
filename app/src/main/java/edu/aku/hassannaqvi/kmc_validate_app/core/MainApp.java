@@ -19,6 +19,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import edu.aku.hassannaqvi.kmc_validate_app.contracts.BLRandomContract;
 import edu.aku.hassannaqvi.kmc_validate_app.contracts.FormsContract;
 import edu.aku.hassannaqvi.kmc_validate_app.contracts.MwraContract;
 import edu.aku.hassannaqvi.kmc_validate_app.ui.EndingActivity;
@@ -71,6 +72,7 @@ public class MainApp extends Application {
     public static String talukaCode = "0000";
     public static String ucCode;
     public static String villageCode;
+    public static BLRandomContract selectedHead;
     public static String resName;
     public static String wSerialNo;
     public static String wName;

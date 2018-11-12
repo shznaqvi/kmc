@@ -21,6 +21,7 @@ import java.util.List;
 
 import edu.aku.hassannaqvi.kmc_validate_app.adapters.SyncListAdapter;
 import edu.aku.hassannaqvi.kmc_validate_app.adapters.UploadListAdapter;
+import edu.aku.hassannaqvi.kmc_validate_app.contracts.BLRandomContract;
 import edu.aku.hassannaqvi.kmc_validate_app.contracts.DistrictsContract;
 import edu.aku.hassannaqvi.kmc_validate_app.contracts.UCsContract;
 import edu.aku.hassannaqvi.kmc_validate_app.contracts.UsersContract;
@@ -72,6 +73,9 @@ public class GetAllData extends AsyncTask<String, String, String> {
             case "Users":
                 position = 3;
                 break;
+            case "BLRandom":
+                position = 4;
+                break;
         }
         list.get(position).settableName(syncClass);
     }
@@ -106,6 +110,9 @@ public class GetAllData extends AsyncTask<String, String, String> {
             case "Users":
                 position = 3;
                 break;
+            case "BLRandom":
+                position = 4;
+                break;
         }
         list.get(position).setstatus("Syncing");
         list.get(position).setstatusID(2);
@@ -136,6 +143,10 @@ public class GetAllData extends AsyncTask<String, String, String> {
                 case "Users":
                     url = new URL(MainApp._HOST_URL + UsersContract.UsersTable._URI);
                     position = 3;
+                    break;
+                case "BLRandom":
+                    url = new URL(MainApp._HOST_URL + BLRandomContract.singleRandomHH._URI);
+                    position = 4;
                     break;
             }
 
@@ -197,8 +208,10 @@ public class GetAllData extends AsyncTask<String, String, String> {
                             db.syncUser(jsonArray);
                             position = 3;
                             break;
-
-
+                        case "BLRandom":
+                            db.syncBLRandom(jsonArray);
+                            position = 4;
+                            break;
                     }
 
                     pd.setMessage("Received: " + jsonArray.length());

@@ -133,12 +133,21 @@
                             android:layout_width="0dp"
                             android:layout_height="70dp"
                             android:layout_weight="1"
-                            android:onClick="@{() -> callback.BtnSearchWoman()}"
-                            android:text="@string/searchwoman"
+                            android:onClick="@{() -> callback.BtnSearchHH()}"
+                            android:text="@string/searchhh"
                             android:textColor="@android:color/holo_green_light"
-                            android:visibility="gone" />
+                            android:visibility="visible" />
 
                     </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/hidden03"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    tools:visibility="visible">
 
                     <TextView
                         android:layout_width="match_parent"
@@ -158,7 +167,7 @@
                         android:prompt="@string/crwoman"
                         android:visibility="gone" />
 
-                    <LinearLayout
+             <!--       <LinearLayout
                         android:id="@+id/fldGrpcra04"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -171,13 +180,13 @@
                             android:layout_marginTop="8dp"
                             android:text="@string/crvillage" />
 
-                        <!--<LinearLayout
+                        &lt;!&ndash;<LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
-                            android:orientation="horizontal">-->
+                            android:orientation="horizontal">&ndash;&gt;
 
-                        <!--<ToggleButton
+                        &lt;!&ndash;<ToggleButton
                             android:id="@+id/btnChangeVillage"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -188,7 +197,7 @@
                             android:gravity="center"
                             android:padding="5dp"
                             android:textOff=""
-                            android:textOn="" />-->
+                            android:textOn="" />&ndash;&gt;
 
                         <EditText
                             android:id="@+id/cravillage"
@@ -199,10 +208,10 @@
                             android:hint="@string/crvillage"
                             android:inputType="textCapWords" />
 
-                        <!--</LinearLayout>-->
+                        &lt;!&ndash;</LinearLayout>&ndash;&gt;
 
 
-                        <!--<TextView
+                        &lt;!&ndash;<TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
@@ -215,9 +224,9 @@
                             android:digits="0123456789"
                             android:hint="@string/cra03"
                             android:inputType="number"
-                            android:maxLength="5" />-->
+                            android:maxLength="5" />&ndash;&gt;
 
-                        <!-- <TextView
+                        &lt;!&ndash; <TextView
                              android:layout_width="match_parent"
                              android:layout_height="wrap_content"
                              android:layout_marginTop="8dp"
@@ -230,27 +239,27 @@
                              android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
                              android:hint="@string/cra05"
                              android:inputType="textCapWords"
-                             android:maxLength="50" />-->
+                             android:maxLength="50" />&ndash;&gt;
 
-                    <!--    <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:text="@string/cra06" />
+                        &lt;!&ndash;    <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="@string/cra06" />
 
-                        <EditText
-                            android:id="@+id/cra06"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:digits="0123456789"
-                            android:hint="@string/cra06"
-                            android:inputType="number"
-                            android:maxLength="2" />
--->
+                            <EditText
+                                android:id="@+id/cra06"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:digits="0123456789"
+                                android:hint="@string/cra06"
+                                android:inputType="number"
+                                android:maxLength="2" />
+    &ndash;&gt;
 
 
                     </LinearLayout>
-
+-->
                     <LinearLayout
                         android:id="@+id/womeninfo"
                         android:layout_width="match_parent"
@@ -292,41 +301,41 @@
                             android:hint="@string/kaa05"
                             android:inputType="textCapCharacters" />
 
-                       <!-- <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
-                            android:background="@color/colorPrimary"
-                            android:text="@string/kaa06"
-                            android:textAppearance="?android:attr/textAppearanceLarge"
-                            android:textColor="@android:color/white" />
+                        <!-- <TextView
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:layout_marginTop="16dp"
+                             android:background="@color/colorPrimary"
+                             android:text="@string/kaa06"
+                             android:textAppearance="?android:attr/textAppearanceLarge"
+                             android:textColor="@android:color/white" />
 
-                        <EditText
-                            android:id="@+id/kaa06"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:digits="0123456789"
-                            android:hint="@string/kaa06"
-                            android:inputType="number"
-                            android:maxLength="2"/>
+                         <EditText
+                             android:id="@+id/kaa06"
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:digits="0123456789"
+                             android:hint="@string/kaa06"
+                             android:inputType="number"
+                             android:maxLength="2"/>
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
-                            android:background="@color/colorPrimary"
-                            android:text="@string/kaa07"
-                            android:textAppearance="?android:attr/textAppearanceLarge"
-                            android:textColor="@android:color/white" />
+                         <TextView
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:layout_marginTop="16dp"
+                             android:background="@color/colorPrimary"
+                             android:text="@string/kaa07"
+                             android:textAppearance="?android:attr/textAppearanceLarge"
+                             android:textColor="@android:color/white" />
 
-                        <EditText
-                            android:id="@+id/kaa07"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:digits="0123456789"
-                            android:hint="@string/kaa07"
-                            android:inputType="number"
-                            android:maxLength="2"/>-->
+                         <EditText
+                             android:id="@+id/kaa07"
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:digits="0123456789"
+                             android:hint="@string/kaa07"
+                             android:inputType="number"
+                             android:maxLength="2"/>-->
 
                         <TextView
                             android:layout_width="match_parent"
