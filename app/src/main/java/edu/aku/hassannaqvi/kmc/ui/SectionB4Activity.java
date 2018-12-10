@@ -62,6 +62,7 @@ public class SectionB4Activity extends AppCompatActivity {
 
         JSONObject sC4 = new JSONObject();
 
+        sC4.put("kbd01", bi.kbd01.isChecked() ? "1" : "0");
         sC4.put("kbda01a", bi.kbda01a.isChecked() ? "1" : "0");
         sC4.put("kbda01b", bi.kbda01b.isChecked() ? "2" : "0");
         sC4.put("kbda01c", bi.kbda01c.isChecked() ? "3" : "0");
