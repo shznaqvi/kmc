@@ -8,6 +8,7 @@
 
         <import type="android.view.View" />
 
+
         <variable
             name="callback"
             type="edu.aku.hassannaqvi.kmc.ui.SectionInfoKmcActivity" />
