@@ -48,7 +48,7 @@ import edu.aku.hassannaqvi.kmc_screening.core.AndroidDatabaseManager;
 import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc_screening.core.MainApp;
 import edu.aku.hassannaqvi.kmc_screening.databinding.ActivityMainBinding;
-import edu.aku.hassannaqvi.kmc_screening.sync.SyncForms;
+import edu.aku.hassannaqvi.kmc_screening.sync.SyncAllData;
 
 public class MainActivity extends Activity {
 
@@ -379,8 +379,14 @@ public class MainActivity extends Activity {
         if (networkInfo != null && networkInfo.isConnected()) {
 
             Toast.makeText(getApplicationContext(), "Syncing Forms", Toast.LENGTH_SHORT).show();
-            new SyncForms(this, true).execute();
-
+            new SyncAllData(
+                    this,
+                    "Forms",
+                    "updateSyncedForms",
+                    FormsContract.class,
+                    MainApp._HOST_URL + FormsContract.FormsTable._URL,
+                    new DatabaseHelper(this).getUnsyncedForms()
+            ).execute();
 
             SharedPreferences syncPref = getSharedPreferences("SyncInfo", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = syncPref.edit();

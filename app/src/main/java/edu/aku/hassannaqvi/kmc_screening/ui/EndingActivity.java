@@ -6,14 +6,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
-import org.json.JSONException;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import edu.aku.hassannaqvi.kmc_screening.R;
 import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
-import edu.aku.hassannaqvi.kmc_screening.core.MainApp;
 import edu.aku.hassannaqvi.kmc_screening.databinding.ActivityEndingBinding;
 import edu.aku.hassannaqvi.kmc_screening.validation.ValidatorClass;
 
@@ -60,11 +57,7 @@ public class EndingActivity extends AppCompatActivity {
 
         Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
-            try {
-                SaveDraft();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
+            SaveDraft();
             if (UpdateDB()) {
 
                 finish();
@@ -80,14 +73,14 @@ public class EndingActivity extends AppCompatActivity {
     private void SaveDraft() {
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
-        MainApp.fc.setIstatus(binding.istatusa.isChecked() ? "1"
+        SectionInfoKmcActivity.fc.setIstatus(binding.istatusa.isChecked() ? "1"
                 : binding.istatusb.isChecked() ? "2"
                 : binding.istatusc.isChecked() ? "3"
                 : binding.istatusd.isChecked() ? "4"
                 : "0");
 
-//        MainApp.fc.setIstatus88x(istatus88x.getText().toString());
-        MainApp.fc.setEndingdatetime(dtToday);
+//        SectionInfoKmcActivity.fc.setIstatus88x(istatus88x.getText().toString());
+        SectionInfoKmcActivity.fc.setEndingdatetime(dtToday);
 
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();

@@ -1,13 +1,10 @@
 package edu.aku.hassannaqvi.kmc_screening.sync;
 
-/**
- * Created by hassan.naqvi on 12/2/2016.
- */
-
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -18,82 +15,72 @@ import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.Collection;
 
-import edu.aku.hassannaqvi.kmc_screening.contracts.FormsContract;
 import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
-import edu.aku.hassannaqvi.kmc_screening.core.MainApp;
+
 
 /**
- * Created by hassan.naqvi on 7/26/2016.
+ * Created by ali.azaz on 3/14/2018.
  */
-public class SyncForms extends AsyncTask<Void, Void, String> {
 
-    private static final String TAG = "SyncForms";
-    Boolean flag = false;
+public class SyncAllData extends AsyncTask<Void, Void, String> {
+
+    private String TAG = "";
     private Context mContext;
     private ProgressDialog pd;
+    private String syncClass, url, updateSyncClass;
+    private Class contractClass;
+    private Collection dbData;
+    private TextView syncStatus;
 
 
-    public SyncForms(Context context, Boolean flag) {
+    public SyncAllData(Context context, String syncClass, String updateSyncClass, Class contractClass, String url, Collection dbData) {
         mContext = context;
-        this.flag = flag;
+        this.syncClass = syncClass;
+        this.updateSyncClass = updateSyncClass;
+        this.contractClass = contractClass;
+        this.url = url;
+        this.dbData = dbData;
+        //this.syncStatus = (TextView) syncStatus;
+        TAG = "Get" + syncClass;
     }
-
-    public static void longInfo(String str) {
-        if (str.length() > 4000) {
-            Log.i(TAG, str.substring(0, 4000));
-            longInfo(str.substring(4000));
-        } else
-            Log.i("TAG: ", str);
-    }
-
 
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
         pd = new ProgressDialog(mContext);
-        pd.setTitle("Please wait... Processing Forms");
+        pd.setTitle("Syncing " + syncClass);
+        pd.setMessage("Getting connected to server...");
         pd.show();
+        //syncStatus.setText(syncStatus.getText() + "\r\nSyncing " + syncClass);
     }
 
 
     @Override
     protected String doInBackground(Void... params) {
-        try {
-            String url;
-
-            url = MainApp._HOST_URL + FormsContract.FormsTable._URL;
-
-            Log.d(TAG, "doInBackground: URL " + url);
-            return downloadUrl(url);
-        } catch (IOException e) {
-            return "Unable to upload data. Server may be down.";
-        }
+        Log.d(TAG, "doInBackground: URL " + url);
+        return downloadUrl(contractClass);
     }
 
-    private String downloadUrl(String myurl) {
+    private String downloadUrl(Class<?> contractClass) {
         String line = "No Response";
 
-        DatabaseHelper db = new DatabaseHelper(mContext);
-        Collection<FormsContract> Forms;
-        //if (flag) {
-        Forms = db.getUnsyncedForms();
-        //} else {
-        //Forms = db.getFormsSg();
-        //}
-        Log.d(TAG, String.valueOf(Forms.size()));
+        Collection<?> DBData = dbData; // pass data that's coming from db
 
-        if (Forms.size() > 0) {
+        Log.d(TAG, String.valueOf(DBData.size()));
+
+        if (DBData.size() > 0) {
 
             HttpURLConnection connection = null;
             try {
-                String request = myurl;
-                //String request = "http://10.1.42.30:3000/Forms";
+                String request = url;
 
                 URL url = new URL(request);
                 connection = (HttpURLConnection) url.openConnection();
@@ -112,18 +99,31 @@ public class SyncForms extends AsyncTask<Void, Void, String> {
                     connection.setUseCaches(false);
                     connection.connect();
 
-
                     DataOutputStream wr = new DataOutputStream(connection.getOutputStream());
 
-//            pd.setMessage("Total Forms: " );
+                    try {
+                        while (contractClass != null) {
+                            for (Method method : contractClass.getDeclaredMethods()) {
+                                String methodName = method.getName();
+                                if (methodName.equals("toJSONObject")) {
+                                    for (Object fc : DBData) {
+                                        jsonSync.put(fc.getClass().getMethod(methodName).invoke(fc));
+                                    }
+                                    break;
+                                }
+                            }
+                            break;
+                        }
 
-                    for (FormsContract fc : Forms) {
-                        //if (fc.getIstatus().equals("1")) {
-                        jsonSync.put(fc.toJSONObject());
-                        //}
+                    } catch (NoSuchMethodException e) {
+                        e.printStackTrace();
+                    } catch (IllegalAccessException e) {
+                        e.printStackTrace();
+                    } catch (InvocationTargetException e) {
+                        e.printStackTrace();
                     }
+
                     wr.writeBytes(jsonSync.toString().replace("\uFEFF", "") + "\n");
-//                    longInfo(jsonSync.toString().replace("\uFEFF", "") + "\n");
                     wr.flush();
 
 
@@ -148,9 +148,6 @@ public class SyncForms extends AsyncTask<Void, Void, String> {
             } catch (IOException e) {
 
                 e.printStackTrace();
-            } catch (JSONException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
             } finally {
                 if (connection != null)
                     connection.disconnect();
@@ -172,32 +169,51 @@ public class SyncForms extends AsyncTask<Void, Void, String> {
             json = new JSONArray(result);
 
             DatabaseHelper db = new DatabaseHelper(mContext); // Database Helper
+
+            Method method = null;
+            for (Method method1 : db.getClass().getDeclaredMethods()) {
+                if (method1.getName().equals(updateSyncClass)) {
+                    method = method1;
+                    break;
+                }
+            }
+
             for (int i = 0; i < json.length(); i++) {
                 JSONObject jsonObject = new JSONObject(json.getString(i));
+
                 if (jsonObject.getString("status").equals("1") && jsonObject.getString("error").equals("0")) {
 
-                    db.updateSyncedForms(jsonObject.getString("id"));  // UPDATE SYNCED
+                    method.invoke(db, jsonObject.getString("id"));
+
                     sSynced++;
                 } else if (jsonObject.getString("status").equals("2") && jsonObject.getString("error").equals("0")) {
-                    db.updateSyncedForms(jsonObject.getString("id")); // UPDATE DUPLICATES
+
+                    method.invoke(db, jsonObject.getString("id"));
+
                     sDuplicate++;
                 } else {
                     sSyncedError += "\nError: " + jsonObject.getString("message");
                 }
             }
-            Toast.makeText(mContext, " Forms synced: " + sSynced + "\r\n\r\n Errors: " + sSyncedError, Toast.LENGTH_SHORT).show();
+            Toast.makeText(mContext, syncClass + " synced: " + sSynced + "\r\n\r\n Errors: " + sSyncedError, Toast.LENGTH_SHORT).show();
 
-            pd.setMessage(" Forms synced: " + sSynced + "\r\n\r\n Duplicates: " + sDuplicate + "\r\n\r\n Errors: " + sSyncedError);
-            pd.setTitle("Done uploading Forms data");
+
+            pd.setMessage(syncClass + " synced: " + sSynced + "\r\n\r\n Duplicates: " + sDuplicate + "\r\n\r\n Errors: " + sSyncedError);
+            pd.setTitle("Done uploading +" + syncClass + " data");
             pd.show();
+
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(mContext, "Failed Sync " + result, Toast.LENGTH_SHORT).show();
 
             pd.setMessage(result);
-            pd.setTitle("Forms Sync Failed");
+            pd.setTitle(syncClass + " Sync Failed");
             pd.show();
-
+            //syncStatus.setText(syncStatus.getText() + "\r\n" + syncClass + " Sync Failed");
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
         }
     }
 }

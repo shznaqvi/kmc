@@ -7,7 +7,6 @@ import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import edu.aku.hassannaqvi.kmc_screening.JSON.GeneratorClass;
@@ -40,16 +39,12 @@ public class SectionForm1Activity extends AppCompatActivity {
         if (!formValidation())
             return;
 
-        try {
-            SaveDraft();
-            if (UpdateDB()) {
+        SaveDraft();
+        if (UpdateDB()) {
 
 
-            } else {
-                Toast.makeText(this, "Error in updating db!!", Toast.LENGTH_SHORT).show();
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
+        } else {
+            Toast.makeText(this, "Error in updating db!!", Toast.LENGTH_SHORT).show();
         }
     }
 
