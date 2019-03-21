@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="edu.aku.hassannaqvi.kmc">
+    package="edu.aku.hassannaqvi.kmc_screening">
 
-    <permission android:name="edu.aku.hassannaqvi.kmc.provider.READWRITE" />
+    <permission android:name="edu.aku.hassannaqvi.kmc_screening.provider.READWRITE" />
 
     <uses-permission android:name="edu.aku.hassannaqvi.kmc.provider.READWRITE" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <!-- Needed only if your app targets Android 5.0 (API level 21) or higher. -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- Needed only if your app targets Android 5.0 (API level 21) or higher. -->
     <uses-feature android:name="android.hardware.location.gps" />
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.hardware.location.gps" />
-
-    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.hardware.location.gps" /> <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
@@ -58,70 +55,15 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1" />
         <activity
-            android:name=".ui.SectionB1Activity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme1" />
-        <activity
-            android:name=".ui.SectionB2Activity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme1" />
-        <activity
-            android:name=".ui.SectionC1Activity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme1" />
-        <activity
-            android:name=".ui.SectionC2Activity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme1" />
-        <activity
-            android:name=".ui.SectionC3Activity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme1" />
-        <activity
-            android:name=".ui.SectionC6Activity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme1" />
-        <activity
-            android:name=".ui.SectionC4Activity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme1" />
-        <activity
-            android:name=".ui.SectionC5Activity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme1" />
-        <activity
-            android:name=".ui.SectionD1Activity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme1" />
-        <activity
-            android:name=".ui.SectionD2Activity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme1" />
-        <activity
-            android:name=".ui.SectionD3Activity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme1" />
-        <activity
-            android:name=".ui.SectionFActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme1" />
-        <activity
-            android:name=".ui.SectionEActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme1" />
-        <activity
             android:name=".ui.SectionInfoKmcActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1" />
 
-        <provider
-            android:name=".core.MainContentProvider"
-            android:authorities="edu.aku.hassannaqvi.kmc.provider"
-            android:exported="true"
-            android:readPermission="edu.aku.hassannaqvi.kmc.core.MainContentProvider.READWRITE"
-            android:writePermission="edu.aku.hassannaqvi.kmc.core.MainContentProvider.READWRITE" />
+        <activity
+            android:name=".ui.SectionForm1Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1" />
 
-        <activity android:name=".ui.TestDate"></activity>
     </application>
 
 </manifest>

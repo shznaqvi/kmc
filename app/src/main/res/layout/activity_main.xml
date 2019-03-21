@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="edu.aku.hassannaqvi.kmc.edu.aku.hassannaqvi.kmc.MainActivity">
+    tools:context="edu.aku.hassannaqvi.kmc_screening.edu.aku.hassannaqvi.kmc.MainActivity">
 
     <data>
 
         <variable
             name="callback"
-            type="edu.aku.hassannaqvi.kmc.ui.MainActivity" />
+            type="edu.aku.hassannaqvi.kmc_screening.ui.MainActivity" />
     </data>
 
     <ScrollView
@@ -247,6 +247,7 @@
                     android:layout_marginBottom="8dp"
                     android:layout_marginTop="16dp"
                     android:onClick="syncDevice"
+                    android:visibility="gone"
                     android:text="Download Data" />
 
                 <Button

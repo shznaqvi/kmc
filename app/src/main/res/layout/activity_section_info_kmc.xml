@@ -11,7 +11,7 @@
 
         <variable
             name="callback"
-            type="edu.aku.hassannaqvi.kmc.ui.SectionInfoKmcActivity" />
+            type="edu.aku.hassannaqvi.kmc_screening.ui.SectionInfoKmcActivity" />
     </data>
 
     <ScrollView
@@ -28,8 +28,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
                 android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
                 android:background="@color/colorHeading"
                 android:text="@string/section_A"
                 android:textAlignment="center"
@@ -53,8 +53,8 @@
                 android:id="@+id/crataluka"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginBottom="15dp"
                 android:background="@color/colorHeading"
                 android:popupBackground="#d6d6d6"
                 android:prompt="@string/crataluka" />
@@ -69,8 +69,8 @@
                 android:id="@+id/crauc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginBottom="15dp"
                 android:background="@color/colorHeading"
                 android:popupBackground="#d6d6d6"
                 android:prompt="@string/cruc" />
@@ -85,8 +85,8 @@
                 android:id="@+id/crvillage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginBottom="15dp"
                 android:background="@color/colorHeading"
                 android:popupBackground="#d6d6d6"
                 android:prompt="@string/crvillage" />
@@ -129,7 +129,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:visibility="gone">
+                android:visibility="gone"
+                tools:visibility="visible">
 
 
                 <TextView
@@ -142,8 +143,8 @@
                     android:id="@+id/crwoman"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="15dp"
                     android:layout_marginTop="10dp"
+                    android:layout_marginBottom="15dp"
                     android:background="@color/colorHeading"
                     android:popupBackground="#d6d6d6"
                     android:prompt="@string/crwoman" />

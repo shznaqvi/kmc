@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
     def versionPropsFile = file('version.properties')
     dataBinding {
         enabled = true
@@ -18,12 +18,12 @@ android {
         versionProps.store(versionPropsFile.newWriter(), null)
 
         defaultConfig {
-            applicationId "edu.aku.hassannaqvi.kmc"
+            applicationId "edu.aku.hassannaqvi.kmc_screening"
             minSdkVersion 22
-            targetSdkVersion 22
+            targetSdkVersion 28
 
             versionCode code
-            versionName "1.13"
+            versionName "0.1"
             testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         }
     } else {
@@ -43,8 +43,9 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     implementation 'com.jakewharton:butterknife:8.8.1'
-    implementation 'com.android.support:recyclerview-v7:27.1.1'
-    implementation 'com.android.support:appcompat-v7:27.1.1'
+
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.github.BlackBoxVision:datetimepicker-edittext:v0.3.3'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     testImplementation 'junit:junit:4.12'
@@ -52,4 +53,6 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     implementation 'com.android.support:design:27.1.1'
     implementation 'com.intuit.sdp:sdp-android:1.0.5'
+
+    implementation 'com.android.support:cardview-v7:28.0.0'
 }
