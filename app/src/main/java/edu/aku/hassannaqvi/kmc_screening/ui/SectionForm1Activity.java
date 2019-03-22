@@ -29,6 +29,9 @@ public class SectionForm1Activity extends AppCompatActivity {
         setContentUI();
     }
 
+
+
+
     private void setContentUI() {
         this.setTitle(R.string.f1_secb);
         deviceID = Settings.Secure.getString(this.getContentResolver(), Settings.Secure.ANDROID_ID);
