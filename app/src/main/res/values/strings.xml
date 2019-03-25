@@ -284,4 +284,202 @@
     <string name="kf1b09c"> ٻي وضاحت ڪيو </string>
     <string name="kf1b10"> جيڪڏهن حصي وٺڻ واري راضپو ڏيکاريو آهي ته ڇا راضي نامي تي ان جي صحيح تاريخ ۽ شاهدي ورتي وئي ؟ </string>
     <string name="kf1b11"> حصي وٺڻ واري جو شناخت نمبر لکو( حصي وٺندڙن جي ڪتاب ۾ مڪمل درج ٿيل تفصيل) </string>
+
+
+    <!--KMC  Forms 2 section B-->
+
+
+    <string name="h1"> سيڪشن 1.سڃاڻپ ۽ داخلا جي معلومات </string>
+
+
+
+    <string name="kf2a01"> تحقيقي علائقو </string>
+    <string name="kf2a01a"> جوهي </string>
+    <string name="kf2a01b"> خير پور ناٿن شاهه </string>
+
+
+    <string name="kf2a02"> جانچ جي جڳهه </string>
+    <string name="kf2a02a"> صحت مرڪز </string>
+    <string name="kf2a02b"> گهر </string>
+
+
+    <string name="kf2a03"> يونين ڪائونسل جونالو. </string>
+
+
+    <string name="kf2a04"> گهراڻي جي </string>
+
+
+    <string name="kf2a05"> مڪمل رهائشي پتو. </string>
+    <string name="kf2a05a"> ويجھي مشهور جايون </string>
+
+
+    <string name="kf2a06"> رابطي جو نمبر </string>
+
+
+    <string name="kf2a07"> گهر جي فردن جو تعداد </string>
+
+
+    <string name="kf2a08"> 5سالن کان گهٽ عمر وارن ٻارن جو ڪل تعداد </string>
+
+
+    <string name="kf2a09"> نئي ڄاول ٻار جو اسٽيڊي نمبر </string>
+
+
+    <string name="kf2a10"> داخل ٿيل ماءُ جو نالو </string>
+
+
+    <string name="kf2a11"> داخل ٿيل ماءُ جي ID </string>
+
+
+    <string name="h2"> Section 2: Mother’s Reproductive History </string>
+
+    <string name="kf2b01"> ماءُ جي عمر </string>
+
+
+    <string name="kf2b02"> ماءُ جي تعليم </string>
+
+
+    <string name="kf2b03"> موجوده حمل جي ويم جي تاريخ </string>
+
+
+    <string name="kf2b04"> ڄمڻ جو ٽائيم ڇا آهي </string>
+
+
+    <string name="kf2b05"> ٻار جي جنس ڪهڙي آهي </string>
+
+
+    <string name="kf2b06"> ويم جو قسم </string>
+    <string name="kf2b06a"> قدرتي طريقي سان ويم </string>
+    <string name="kf2b06b"> ڪنهن اوزار جي مدد سان ويم </string>
+    <string name="kf2b06c"> وڏو آپريشن </string>
+    <string name="kf2b06d"> ٻيو ڪجھ </string>
+
+
+    <string name="kf2b07"> ڇا ڄم اڪيلو هو يا گهڻا هئا </string>
+    <string name="kf2b07a"> اڪيلو </string>
+    <string name="kf2b07b"> گهڻا </string>
+
+
+    <string name="kf2b08"> جيڪڏهن گهڻا هئا ته هن ٻار جي ڄم جو نمبر ڪهڙو هو </string>
+    <string name="kf2b08a"> نمبر </string>
+
+
+    <string name="kf2b09"> ڇا الٽراسائونڊ / ٽي وي ايڪسروحمل دوران ڪرايو. </string>
+
+
+
+
+    <string name="kf2b10"> ندازي مطانق حمل جو وقت ڪيترو آهي. ڏسو جيڪڏهن التراسائونڊ رپورٽ موجود آهي. </string>
+    <string name="kf2b10a"> الٽراسائونڊ موجود آهي </string>
+    <string name="kf2b10b"> الٽراسائونڊ موجود نه آهي </string>
+    <string name="kf2b10c"> هفته </string>
+    <string name="kf2b10d"> مهينن </string>
+
+
+    <string name="kf2b11"> ٻار جو وزن لکو جيڪڏهن وزن نه لکيل آ ته صحت جي عملي کي چئو وزن ڪري. </string>
+    <string name="kf2b11a"> وزن </string>
+
+
+    <string name="kf2b12"> ڪل حملن جو تعداد هن حمل سان گڏ </string>
+    <string name="kf2b12a"> نمبر </string>
+
+
+    <string name="kf2b13"> ڪل ويمن جو تعداد هن ڄم سان گڏ </string>
+    <string name="kf2b13a"> نمبر </string>
+
+
+    <string name="kf2b14"> ڇا توهان حمل دوران طبعي معائنو / چڪاس ڪرائي. </string>
+    <string name="kf2b14a"> نمبر </string>
+
+
+    <string name="kf2b15"> توهان جي حمل دوران طبعي چڪاس ۾ ڇا توهان ڪان KMC جي بار ي ۾ ٻڌايو ويو. </string>
+
+
+
+
+    <string name="kf2b16"> توهان کي KMC جي بار ي ۾ ڪنهن ٻڌايو </string>
+    <string name="kf2b16a"> ڊاڪٽر </string>
+    <string name="kf2b16b"> نرس </string>
+    <string name="kf2b16c"> ڪميونٽي مڊوائيف </string>
+    <string name="kf2b16d"> ليڊي هيلٿ ورڪر </string>
+    <string name="kf2b16e"> ايل ايڇ وي </string>
+    <string name="kf2b16f"> مائٽ/دوست </string>
+    <string name="kf2b16g"> مرد KMC چيمپئن </string>
+    <string name="kf2b16h"> عورتKMC چيمپئن </string>
+
+
+
+
+    <!-- KMC Form 2 Section 3 -->
+
+
+    <string name="kf2c01"> درجه حرارت / جسم جو گرمي پد </string>
+    <string name="kf2c01a"> بخار </string>
+
+
+    <string name="kf2c02"> دل جي رفتار / ڌڙڪن هڪ منٽ ۾ </string>
+    <string name="kf2c02a"> دل جي ڌڙڪڻ جي رفتار </string>
+
+
+    <string name="kf2c03"> ساهه کڻڻ جي رفتار </string>
+    <string name="kf2c03a"> ساهه کڻڻ جي رفتار </string>
+
+
+    <string name="kf2c04"> ڇا ٻار ڄمڻ کان پوءِ يڪدم رنو / رنو هيو. </string>
+
+
+
+
+
+
+
+
+    <string name="kf2c05"> ٻار کي روئائڻ لاءِ ڇا ڪيو ويو. </string>
+    <string name="kf2c05a"> ٻار جي پٺي مهٽي وئي/ ڌڪ هيو ويو. </string>
+    <string name="kf2c05b"> وات سان وات ملائي ان کي ساه ڏنو ويو. </string>
+    <string name="kf2c05c"> هٿرادو ساه ڏنو ويو. </string>
+    <string name="kf2c05d"> خبر ناهي. </string>
+
+
+
+    <string name="kf2c06"> ڄمڻ وقت ٻار جو رنگ ڪهڙو هو. </string>
+    <string name="kf2c06a"> ڦڪو </string>
+    <string name="kf2c06b"> نيرو </string>
+    <string name="kf2c06c"> گلابي </string>
+
+
+
+    <string name="kf2c07"> ڇا ٻار ڄمڻ کان پوءِ پاڻمرادو چر پر ڪري رهيو هو. </string>
+
+
+
+
+    <string name="kf2c08"> جنهن توهان جي ويم ڪرايو ڇا ٻار کي خشڪ/ سڪايو ۽ صاف ڪيو ويو. </string>
+
+
+
+
+    <string name="kf2c09"> ناڙي کي ڪٽڻ لاءِ ڇا استعمال ڪيو ويو. </string>
+    <string name="kf2c09a"> ڇري </string>
+    <string name="kf2c09b"> ڪينچي </string>
+    <string name="kf2c09c"> ڌاڳو </string>
+    <string name="kf2c09d"> بليڊ </string>
+
+
+
+    <string name="kf2c10"> ناڙي ڪٽڻ کان پوءِ ڇا ان تي ڪجھ لڳايو ويو. </string>
+
+
+
+
+
+    <string name="kf2c11"> ناڙي تي ڇالڳايو ويو. </string>
+    <string name="kf2c11a"> پايوڊين </string>
+    <string name="kf2c11b"> جراثيمن کان بچاءُ جي دوا. </string>
+    <string name="kf2c11c"> تيل يا مکڻ </string>
+    <string name="kf2c11d"> سۡرمو </string>
+    <string name="kf2c11e"> خاڪۡ </string>
+    <string name="kf2c11f"> جانورن جو ڇيڻو </string>
+
+
 </resources>

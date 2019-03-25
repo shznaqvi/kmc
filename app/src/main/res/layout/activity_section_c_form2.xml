@@ -9,7 +9,7 @@
 
         <variable
             name="callback"
-            type="edu.aku.hassannaqvi.kmc_screening.ui.SectionForm1Activity" />
+            type="edu.aku.hassannaqvi.kmc_screening.ui.SectionCForm2Activity" />
     </data>
 
     <ScrollView style="@style/i_scrollview">
@@ -17,7 +17,7 @@
         <LinearLayout style="@style/linearlayout_view">
 
             <LinearLayout
-                android:id="@+id/fldGrpSecB01"
+                android:id="@+id/fldGrpSecC01"
                 style="@style/linearlayout_view_wt_bound">
 
 
@@ -99,12 +99,12 @@
                             <RadioButton
                                 android:id="@+id/kf2c04a"
                                 style="@style/i_radiobutton"
-                                android:text="@string/kf2c04a" />
+                                android:text="@string/yes" />
 
                             <RadioButton
                                 android:id="@+id/kf2c04b"
                                 style="@style/i_radiobutton"
-                                android:text="@string/kf2c04b" />
+                                android:text="@string/no" />
                         </RadioGroup>
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
@@ -147,7 +147,7 @@
                             <EditText
                                 android:id="@+id/kf2c05x"
                                 style="@style/EditText"
-                                android:hint="@string/kf2c05x"
+
                                 android:maxLength="30" />
                         </RadioGroup>
                     </LinearLayout>
@@ -183,10 +183,6 @@
                                 style="@style/i_radiobutton"
                                 android:text="@string/kf2c06c" />
 
-                            <RadioButton
-                                android:id="@+id/kf2c06d"
-                                style="@style/i_radiobutton"
-                                android:text="@string/kf2c06d" />
                         </RadioGroup>
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
@@ -203,18 +199,18 @@
                             android:text="@string/kf2c07" />
 
                         <RadioGroup
-                            android:id="@+id/kf2c07a"
+                            android:id="@+id/kf2c07"
                             style="@style/i_radiogroup">
 
                             <RadioButton
                                 android:id="@+id/kf2c07a"
                                 style="@style/i_radiobutton"
-                                android:text="@string/kf2c07a" />
+                                android:text="@string/yes" />
 
                             <RadioButton
                                 android:id="@+id/kf2c07b"
                                 style="@style/i_radiobutton"
-                                android:text="@string/kf2c07b" />
+                                android:text="@string/no" />
                         </RadioGroup>
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
@@ -237,17 +233,17 @@
                             <RadioButton
                                 android:id="@+id/kf2c08a"
                                 style="@style/i_radiobutton"
-                                android:text="@string/kf2c08a" />
+                                android:text="@string/yes" />
 
                             <RadioButton
                                 android:id="@+id/kf2c08b"
                                 style="@style/i_radiobutton"
-                                android:text="@string/kf2c08b" />
+                                android:text="@string/no" />
 
                             <RadioButton
                                 android:id="@+id/kf2c08c"
                                 style="@style/i_radiobutton"
-                                android:text="@string/kf2c08c" />
+                                android:text="@string/dkn" />
                         </RadioGroup>
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
@@ -290,7 +286,7 @@
                             <EditText
                                 android:id="@+id/kf2c09x"
                                 style="@style/EditText"
-                                android:hint="@string/kf2c09x"
+
                                 android:maxLength="30" />
                         </RadioGroup>
                     </LinearLayout>
@@ -314,17 +310,17 @@
                             <RadioButton
                                 android:id="@+id/kf2c10a"
                                 style="@style/i_radiobutton"
-                                android:text="@string/kf2c10a" />
+                                android:text="@string/yes" />
 
                             <RadioButton
                                 android:id="@+id/kf2c10b"
                                 style="@style/i_radiobutton"
-                                android:text="@string/kf2c10b" />
+                                android:text="@string/no" />
 
                             <RadioButton
                                 android:id="@+id/kf2c10c"
                                 style="@style/i_radiobutton"
-                                android:text="@string/kf2c10c" />
+                                android:text="@string/dkn" />
                         </RadioGroup>
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
