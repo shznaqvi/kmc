@@ -5,6 +5,7 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import org.json.JSONObject;
@@ -13,6 +14,7 @@ import edu.aku.hassannaqvi.kmc_screening.JSON.GeneratorClass;
 import edu.aku.hassannaqvi.kmc_screening.R;
 import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc_screening.databinding.ActivitySectionBForm2Binding;
+import edu.aku.hassannaqvi.kmc_screening.validation.ClearClass;
 import edu.aku.hassannaqvi.kmc_screening.validation.ValidatorClass;
 
 public class SectionBForm2Activity extends AppCompatActivity {
@@ -74,4 +76,64 @@ public class SectionBForm2Activity extends AppCompatActivity {
         startActivity(new Intent(this, EndingActivity.class));
     }
 
+
+
+    private void setListeners() {
+
+
+        bi.kf2b07.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i != bi.kf2b07a.getId()) {
+
+                    ClearClass.ClearAllFields(bi.fldGrpCVkf2b08, false);
+
+                } else {
+
+                    ClearClass.ClearAllFields(bi.fldGrpCVkf2b08, true);
+
+
+                }
+            }
+        });
+
+
+        bi.kf2b14.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i != bi.kf2b14b.getId()) {
+
+                    ClearClass.ClearAllFields(bi.fldGrpCVkf2b15, false);
+                    ClearClass.ClearAllFields(bi.fldGrpCVkf2b16, false);
+
+
+                } else {
+
+                    ClearClass.ClearAllFields(bi.fldGrpCVkf2b15, true);
+                    ClearClass.ClearAllFields(bi.fldGrpCVkf2b16, true);
+
+
+                }
+            }
+        });
+
+        bi.kf2b15.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i != bi.kf2b15b.getId()) {
+
+
+                    ClearClass.ClearAllFields(bi.fldGrpCVkf2b16, false);
+
+
+                } else {
+
+
+                    ClearClass.ClearAllFields(bi.fldGrpCVkf2b16, true);
+
+
+                }
+            }
+        });
+    }
 }

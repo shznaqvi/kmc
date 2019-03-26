@@ -14,6 +14,7 @@ import edu.aku.hassannaqvi.kmc_screening.JSON.GeneratorClass;
 import edu.aku.hassannaqvi.kmc_screening.R;
 import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc_screening.databinding.ActivitySectionbForm2Binding;
+import edu.aku.hassannaqvi.kmc_screening.validation.ClearClass;
 import edu.aku.hassannaqvi.kmc_screening.validation.ValidatorClass;
 
 public class SectionCForm2Activity extends AppCompatActivity {
@@ -77,16 +78,16 @@ public class SectionCForm2Activity extends AppCompatActivity {
     private void setListeners() {
 
 
-        bi.jsif05.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        bi.kf2c04.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (i != bi.jsif05a.getId()) {
+                if (i != bi.kf2c04a.getId()) {
 
-                    ClearClass.ClearAllFields(bi.fldGrpCVjsif06, false);
+                    ClearClass.ClearAllFields(bi.fldGrpCVkf2c05, false);
 
                 } else {
 
-                    ClearClass.ClearAllFields(bi.fldGrpCVjsif06, true);
+                    ClearClass.ClearAllFields(bi.fldGrpCVkf2c05, true);
 
 
                 }
@@ -95,7 +96,39 @@ public class SectionCForm2Activity extends AppCompatActivity {
 
 
 
-    }
+        bi.kf2c10.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i != bi.kf2c10b.getId()) {
+
+                    ClearClass.ClearAllFields(bi.fldGrpCVkf2c11, false);
+
+                } else {
+
+                    ClearClass.ClearAllFields(bi.fldGrpCVkf2c11, true);
+
+
+                }
+            }
+        });
+
+
+        bi.kf2c10.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i != bi.kf2c10c.getId()) {
+
+                    ClearClass.ClearAllFields(bi.fldGrpCVkf2c11, false);
+
+                } else {
+
+                    ClearClass.ClearAllFields(bi.fldGrpCVkf2c11, true);
+
+
+                }
+            }
+        });
+
     }
 
 
