@@ -196,7 +196,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         sharedPref = getSharedPreferences("kmc", MODE_PRIVATE);
         editor = sharedPref.edit();
 
-        if (sharedPref.getBoolean("flag", false)) {
+        if (sharedPref.getBoolean("flag")) {
 
             String dt = sharedPref.getString("dt", new SimpleDateFormat("dd-MM-yy").format(new Date()));
 
@@ -591,7 +591,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
 //                    populateSpinner(mContext);
 
-                    editor.putBoolean("flag", true);
+                    editor.putBoolean("flag");
                     editor.commit();
 
                     dbBackup();

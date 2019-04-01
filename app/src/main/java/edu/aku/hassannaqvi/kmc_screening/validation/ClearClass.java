@@ -66,7 +66,7 @@ public class ClearClass {
         }
     }
 
-    public static void ClearAllFields(LinearLayout container) {
+    public static void ClearAllCardFields(LinearLayout container) {
         for (int i = 0; i < container.getChildCount(); i++) {
             View v = container.getChildAt(i);
             if (v instanceof CheckBox) {
@@ -83,7 +83,7 @@ public class ClearClass {
             } else if (v instanceof CardView) {
                 ClearAllCardFields((CardView) v);
             } else if (v instanceof LinearLayout) {
-                ClearAllFields((LinearLayout) v);
+                ClearAllCardFields((LinearLayout) v);
             }
         }
     }
