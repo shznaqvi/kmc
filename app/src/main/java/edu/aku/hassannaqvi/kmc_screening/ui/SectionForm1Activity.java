@@ -17,7 +17,7 @@ import edu.aku.hassannaqvi.kmc_screening.databinding.ActivitySectionForm1Binding
 import edu.aku.hassannaqvi.kmc_screening.validation.ClearClass;
 import edu.aku.hassannaqvi.kmc_screening.validation.ValidatorClass;
 
-public class SectionForm1Activity extends AppCompatActivity {
+public class SectionForm1Activity extends AppCompatActivity  {
 
     ActivitySectionForm1Binding bi;
     String deviceID;
@@ -31,7 +31,11 @@ public class SectionForm1Activity extends AppCompatActivity {
         setContentUI();
 
 
+
+
     }
+
+
 
 
     private void setContentUI() {
@@ -77,6 +81,355 @@ public class SectionForm1Activity extends AppCompatActivity {
     }
 
 
+    {
+        @Override
+        public void onCheckedChanged(RadioGroup radioGroup, int i) {
+            if (i != bi.kf1b10a.getId()) {
+
+
+                ClearClass.ClearAllFields(bi.fldGrpCVkf1b11, false);
+
+
+
+
+
+
+            } else {
+
+
+
+
+                ClearClass.ClearAllFields(bi.fldGrpCVkf1b11, true);
+
+            }
+        }
+    }
+
+
+           bi.kf1b010.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+
+    {
+        @Override
+        public void onCheckedChanged(RadioGroup radioGroup, int i) {
+            if (i != bi.kf1b04a01a.getId()) {
+
+                ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, false);
+
+            } else {
+
+                ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, true);
+
+
+            }
+        }
+    })
+
+
+            bi.kf1b04a01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+
+    {
+        @Override
+        public void onCheckedChanged(RadioGroup radioGroup, int i) {
+            if (i != bi.kf1b04a02a.getId()) {
+
+                ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, false);
+
+            } else {
+
+                ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, true);
+
+
+            }
+        }
+    })
+
+
+            bi.kf1b04a02.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+
+    {
+        @Override
+        public void onCheckedChanged(RadioGroup radioGroup, int i) {
+            if (i != bi.kf1b04a03a.getId()) {
+
+                ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, false);
+
+            } else {
+
+                ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, true);
+
+
+            }
+        }
+    })
+
+
+            bi.kf1b04a03.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+
+    {
+        @Override
+        public void onCheckedChanged(RadioGroup radioGroup, int i) {
+            if (i != bi.kf1b04a04a.getId()) {
+
+                ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, false);
+
+            } else {
+
+                ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, true);
+
+
+            }
+        }
+    })
+
+
+            bi.kf1b04a04.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+
+    {
+        @Override
+        public void onCheckedChanged(RadioGroup radioGroup, int i) {
+            if (i != bi.kf1b04a05a.getId()) {
+
+                ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, false);
+
+            } else {
+
+                ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, true);
+
+
+            }
+        }
+    })
+
+
+            bi.kf1b04a05.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+
+    {
+        @Override
+        public void onCheckedChanged(RadioGroup radioGroup, int i) {
+            if (i != bi.kf1b04b01a.getId()) {
+
+                ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, false);
+
+            } else {
+
+                ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, true);
+
+
+            }
+        }
+    })
+
+
+            bi.kf1b04b01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+
+    {
+        @Override
+        public void onCheckedChanged(RadioGroup radioGroup, int i) {
+            if (i != bi.kf1b04b01a.getId()) {
+
+                ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, false);
+
+            } else {
+
+                ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, true);
+
+
+            }
+        }
+    })
+
+            bi.kf1b04b01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+
+    {
+        @Override
+        public void onCheckedChanged(RadioGroup radioGroup, int i) {
+            if (i != bi.kf1b04b02a.getId()) {
+
+                ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, false);
+
+            } else {
+
+                ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, true);
+
+
+            }
+        }
+    })
+
+
+            bi.kf1b04b02.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+
+    {
+        @Override
+        public void onCheckedChanged(RadioGroup radioGroup, int i) {
+            if (i != bi.kf1b04b03a.getId()) {
+
+                ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, false);
+
+            } else {
+
+                ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, true);
+
+
+            }
+        }
+    })
+
+
+            bi.kf1b04b03.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+
+    {
+        @Override
+        public void onCheckedChanged(RadioGroup radioGroup, int i) {
+            if (i != bi.kf1b04b04a.getId()) {
+
+                ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, false);
+
+            } else {
+
+                ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, true);
+
+
+            }
+        }
+    })
+
+
+            bi.kf1b04b04.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+
+    {
+        @Override
+        public void onCheckedChanged(RadioGroup radioGroup, int i) {
+            if (i != bi.kf1b04b05a.getId()) {
+
+                ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, false);
+
+            } else {
+
+                ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, true);
+
+
+            }
+        }
+    })
+
+
+            bi.kf1b04b05.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+
+    {
+        @Override
+        public void onCheckedChanged(RadioGroup radioGroup, int i) {
+            if (i != bi.kf1b04b06a.getId()) {
+
+                ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, false);
+
+            } else {
+
+                ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, true);
+
+
+            }
+        }
+    })
+
+
+            bi.kf1b04b06.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+
+    {
+        @Override
+        public void onCheckedChanged(RadioGroup radioGroup, int i) {
+            if (i != bi.kf1b04b07a.getId()) {
+
+                ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, false);
+
+            } else {
+
+                ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, true);
+
+
+            }
+        }
+    })
+
+
+            bi.kf1b04b07.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+
+    {
+        @Override
+        public void onCheckedChanged(RadioGroup radioGroup, int i) {
+            if (i != bi.kf1b04b06a.getId()) {
+
+                ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, false);
+
+            } else {
+
+                ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, true);
+
+
+            }
+        }
+    })
+
+
+            bi.kf1ab04b06.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+
+    {
+        @Override
+        public void onCheckedChanged(RadioGroup radioGroup, int i) {
+            if (i != bi.kf1b04b07a.getId()) {
+
+                ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, false);
+
+            } else {
+
+                ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, true);
+
+
+            }
+        }
+    })
+
+
+            bi.kf1b04b07.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+
+    {
+        @Override
+        public void onCheckedChanged(RadioGroup radioGroup, int i) {
+            if (i != bi.kf1b04b09a.getId()) {
+
+                ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, false);
+
+            } else {
+
+                ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, true);
+
+
+            }
+        }
+    })
+
+
+            bi.kf1b04b09.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+
+    {
+        @Override
+        public void onCheckedChanged(RadioGroup radioGroup, int i) {
+            if (i != bi.kf1b04c01a.getId()) {
+
+                ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, false);
+
+            } else {
+
+                ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, true);
+
+
+            }
+        }
+    })
+
+
+            bi.kf1b04c01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+
     private void setListeners() {
 
 
@@ -85,11 +438,11 @@ public class SectionForm1Activity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (i != bi.kf1ab04b06a.getId()) {
 
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf1b04b07);
+                    ClearClass.ClearAllFields(bi.fldGrpCVkf1b04b07, false);
 
                 } else {
 
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf1b04b07);
+                    ClearClass.ClearAllFields(bi.fldGrpCVkf1b04b07, true);
 
 
                 }
@@ -102,17 +455,17 @@ public class SectionForm1Activity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (i != bi.kf1b04b07a.getId()) {
 
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf1b04b08);
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf1b04b09);
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf1b010);
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf1b11);
+                    ClearClass.ClearAllFields(bi.fldGrpCVkf1b04b08, false);
+                    ClearClass.ClearAllFields(bi.fldGrpCVkf1b04b09, false);
+                    ClearClass.ClearAllFields(bi.fldGrpCVkf1b010, false);
+                    ClearClass.ClearAllFields(bi.fldGrpCVkf1b11, false);
 
                 } else {
 
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf1b04b08);
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf1b04b09);
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf1b010);
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf1b11);
+                    ClearClass.ClearAllFields(bi.fldGrpCVkf1b04b08, true);
+                    ClearClass.ClearAllFields(bi.fldGrpCVkf1b04b09, true);
+                    ClearClass.ClearAllFields(bi.fldGrpCVkf1b010, true);
+                    ClearClass.ClearAllFields(bi.fldGrpCVkf1b11, true);
 
 
                 }
@@ -124,19 +477,19 @@ public class SectionForm1Activity extends AppCompatActivity {
                 if (i != bi.kf1b04b08a.getId()) {
 
 
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf1b04b09);
+                    ClearClass.ClearAllFields(bi.fldGrpCVkf1b04b09, false);
 
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf1b010);
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf1b11);
+                    ClearClass.ClearAllFields(bi.fldGrpCVkf1b010, true);
+                    ClearClass.ClearAllFields(bi.fldGrpCVkf1b11, true);
 
 
                 } else {
 
 
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf1b04b09);
+                    ClearClass.ClearAllFields(bi.fldGrpCVkf1b04b09, true);
 
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf1b010);
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf1b11);
+                    ClearClass.ClearAllFields(bi.fldGrpCVkf1b010, false);
+                    ClearClass.ClearAllFields(bi.fldGrpCVkf1b11, false);
 
 
                 }
@@ -150,326 +503,20 @@ public class SectionForm1Activity extends AppCompatActivity {
                 if (i != bi.kf1b10a.getId()) {
 
 
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf1b11);
+                    ClearClass.ClearAllFields(bi.fldGrpCVkf1b11, false);
 
 
                 } else {
 
 
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf1b11);
+                    ClearClass.ClearAllFields(bi.fldGrpCVkf1b11, true);
 
                 }
             }
         });
 
 
-        bi.kf1b010.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (i != bi.kf1b10a.getId()) {
-
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf1b11);
-
-
-                } else {
-
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf1b11);
-
-                }
-            }
-        });
-
-
-        bi.kf1b04a01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (i != bi.kf1b04a01a.getId()) {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-                } else {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-
-                }
-            }
-        });
-
-
-        bi.kf1b04a02.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (i != bi.kf1b04a02a.getId()) {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-                } else {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-
-                }
-            }
-        });
-
-
-        bi.kf1b04a03.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (i != bi.kf1b04a03a.getId()) {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-                } else {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-
-                }
-            }
-        });
-
-
-        bi.kf1b04a04.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (i != bi.kf1b04a04a.getId()) {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-                } else {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-
-                }
-            }
-        });
-
-
-        bi.kf1b04a05.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (i != bi.kf1b04a05a.getId()) {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-                } else {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-
-                }
-            }
-        });
-
-
-        bi.kf1b04b01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (i != bi.kf1b04b01a.getId()) {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-                } else {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-
-                }
-            }
-        });
-
-        bi.kf1b04b01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (i != bi.kf1b04b01a.getId()) {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-                } else {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-
-                }
-            }
-        });
-
-
-        bi.kf1b04b02.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (i != bi.kf1b04b02a.getId()) {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-                } else {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-
-                }
-            }
-        });
-
-
-        bi.kf1b04b03.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (i != bi.kf1b04b03a.getId()) {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-                } else {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-
-                }
-            }
-        });
-
-
-        bi.kf1b04b04.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (i != bi.kf1b04b04a.getId()) {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-                } else {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-
-                }
-            }
-        });
-
-
-        bi.kf1b04b05.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (i != bi.kf1b04b05a.getId()) {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-                } else {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-
-                }
-            }
-        });
-
-
-        bi.kf1b04b06.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (i != bi.kf1b04b06a.getId()) {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-                } else {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-
-                }
-            }
-        });
-
-
-        bi.kf1b04b07.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (i != bi.kf1b04b07a.getId()) {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-                } else {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-
-                }
-            }
-        });
-
-
-        bi.kf1ab04b06.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (i != bi.kf1b04b06a.getId()) {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-                } else {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-
-                }
-            }
-        });
-
-
-        bi.kf1b04b07.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (i != bi.kf1b04b07a.getId()) {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-                } else {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-
-                }
-            }
-        });
-
-
-        bi.kf1b04b09.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (i != bi.kf1b04b09a.getId()) {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-                } else {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-
-                }
-            }
-        });
-
-
-        bi.kf1b04c01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (i != bi.kf1b04c01a.getId()) {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-                } else {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-
-                }
-            }
-        });
-
-    }
+    })
 
 }
 
