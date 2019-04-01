@@ -64,7 +64,7 @@ public class SectionBForm2Activity extends AppCompatActivity {
     }
 
     private void SaveDraft() {
-        JSONObject sa1 = GeneratorClass.getContainerJSON(bi.fldGrpSecB02, true);
+        JSONObject sa1 = GeneratorClass.getContainerJSON(bi.fldGrpSecB02);
         SectionInfoKmcActivity.fc.setsA1(String.valueOf(sa1));
     }
 
@@ -86,11 +86,11 @@ public class SectionBForm2Activity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (i != bi.kf2b07a.getId()) {
 
-                    ClearClass.ClearAllFields(bi.fldGrpCVkf2b08, false);
+                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf2b08);
 
                 } else {
 
-                    ClearClass.ClearAllFields(bi.fldGrpCVkf2b08, true);
+                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf2b08);
 
 
                 }
@@ -103,14 +103,14 @@ public class SectionBForm2Activity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (i != bi.kf2b14b.getId()) {
 
-                    ClearClass.ClearAllFields(bi.fldGrpCVkf2b15, false);
-                    ClearClass.ClearAllFields(bi.fldGrpCVkf2b16, false);
+                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf2b15);
+                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf2b16);
 
 
                 } else {
 
-                    ClearClass.ClearAllFields(bi.fldGrpCVkf2b15, true);
-                    ClearClass.ClearAllFields(bi.fldGrpCVkf2b16, true);
+                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf2b15);
+                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf2b16);
 
 
                 }
@@ -123,13 +123,13 @@ public class SectionBForm2Activity extends AppCompatActivity {
                 if (i != bi.kf2b15b.getId()) {
 
 
-                    ClearClass.ClearAllFields(bi.fldGrpCVkf2b16, false);
+                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf2b16);
 
 
                 } else {
 
 
-                    ClearClass.ClearAllFields(bi.fldGrpCVkf2b16, true);
+                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf2b16);
 
 
                 }
