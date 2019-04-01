@@ -62,7 +62,7 @@ public class SectionCForm2Activity extends AppCompatActivity {
     }
 
     private void SaveDraft() {
-        JSONObject sa1 = GeneratorClass.getContainerJSON(bi.fldGrpSecC02, true);
+        JSONObject sa1 = GeneratorClass.getContainerJSON(bi.fldGrpSecC02);
         SectionInfoKmcActivity.fc.setsA1(String.valueOf(sa1));
     }
 
