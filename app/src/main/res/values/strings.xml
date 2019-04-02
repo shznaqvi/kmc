@@ -482,4 +482,424 @@
     <string name="kf2c11f"> جانورن جو ڇيڻو </string>
 
 
+    <!-- Form 3 strings -->
+
+
+    <string name="kf3a01"> داخلا جو علائقو. </string>
+    <string name="kf3a01a"> جوهي </string>
+    <string name="kf3a01b"> خير پور ناٿن شاهه </string>
+
+    <string name="kf3a02"> جانچ جي جڳهه </string>
+    <string name="kf3a02a"> صحت مرڪز </string>
+    <string name="kf3a02b"> گهر </string>
+
+    <string name="kf3a03"> خاندان جي سربراه جو نالو </string>
+
+    <string name="kf3a04"> رابطي جو نمبر </string>
+
+    <string name="kf3a05"> نئي ڄاول ٻارجواسٽيڊي نمبر </string>
+
+    <string name="kf3a06"> داخل ٿيل ماءُ جو نمبر </string>
+
+    <string name="kf3a07"> داخل ٿيل ماءُ جي شناخت جو نمبر </string>
+
+
+    <string name="kf3bh1"> سيڪشن 2. معاعني جي بنيادي معلومات </string>
+
+    <string name="kf3b01"> جائزي جو نمبر </string>
+    <string name="kf3b01a"> پهريون ڏينهن </string>
+    <string name="kf3b01b"> ٻيون ڏينهن </string>
+    <string name="kf3b01c"> ٽيون ڏينهن </string>
+    <string name="kf3b01d"> چوٿون ڏينهن </string>
+    <string name="kf3b01e"> پنجون ڏينهن </string>
+    <string name="kf3b01f"> ڇهون ڏينهن </string>
+    <string name="kf3b01g"> ستون ڏينهن </string>
+    <string name="kf3b01h"> اٺون ڏينهن </string>
+
+    <string name="kf3b02"> ماءُ جي موجوده صورت حال </string>
+    <string name="kf3b02a"> ماءُ موجود آهي </string>
+    <string name="kf3b02b"> ماءُ موجود نه آهي </string>
+    <string name="kf3b02c"> ماءُ زندهه نه آهي </string>
+
+    <string name="kf3b03"> ٻار جي موجوده صورت حال </string>
+    <string name="kf3b03a"> ٻار موجود آهي </string>
+    <string name="kf3b03b"> ٻار کي ڪنهن اسپتال منتقل ڪيو/ موڪليو ويو آهي </string>
+    <string name="kf3b03c"> ٻار زندهه نه آهي </string>
+
+
+    <string name="kf3b04"> جيڪڏهن ٻار زندهه نه آهي، ته ميڊيڪل رڪارڊ مطابق ان جي موت جو سبب ڪهڙو هيو؟ </string>
+    <string name="kf3b04a"> وزن گھٽ </string>
+    <string name="kf3b04b"> ٻٽيل ٻار </string>
+    <string name="kf3b04c"> ساهه کڻڻ جي بيماري </string>
+    <string name="kf3b04d"> انفيڪشن </string>
+    <string name="kf3b04e"> گردن ٽوڙ بخار </string>
+    <string name="kf3b04f"> پيدائشي نخص </string>
+    <string name="kf3b04g"> پيدائشي دل جي بيماري </string>
+    <string name="kf3b04h"> خبر نه آهي </string>
+    <string name="kf3b04i"> وڌيڪ وضاحت ڪيو </string>
+
+    <string name="kf3b05"> ٻار ڪٿي فوت ٿيو؟ </string>
+    <string name="kf3b05a"> گھر ۾ </string>
+    <string name="kf3b05b"> اسپتال ۾ </string>
+    <string name="kf3b05c"> بي ايڇ يو ۾ </string>
+    <string name="kf3b05d"> رستي تي </string>
+    <string name="kf3b05e"> وڌيڪ وضاحت ڪيو </string>
+
+    <string name="kf3b06"> مرڻ وقت ٻار جي عمر ڪيتري هئي. </string>
+    <string name="kf3b06a"> ڪلاڪن ۾ </string>
+    <string name="kf3b06b"> عمر ڏينهن ۾ </string>
+
+
+    <string name="kf3ch1"> سيڪشن 3. ڪي ايم سي جي مشغولي/ عمل </string>
+
+    <string name="kf3c01"> ڇا توهان گذريل 24 ڪلاڪن ۾ پنهنجي ٻار کي ڇاتي سان لڳائي ۽ چمڙي سان چمڙي ملائي رکيو؟ ڪي ايم سي ڏني؟ </string>
+
+
+    <string name="kf3c02"> گذريل 24 ڪلاڪن ۾ توهان ڪيترا دفعا ڪي ايم سي ڪئي/ ڏني؟ </string>
+    <string name="kf3c02a"> وقتن جو تعداد </string>
+
+    <string name="kf3c03"> گذريل 24 ڪلاڪن ۾ توهان ڪل ڪيترا ڪلاڪ ڪي ايم سي ڏني؟ </string>
+    <string name="kf3c03a"> ڪل ڪلاڪن ۽ منٽن جو تعداد </string>
+
+    <string name="kf3c04"> جيڪڏهن نه، ته ان جي وجهه ڇا هئي؟ </string>
+    <string name="kf3c04a"> ماءُ بيمار آهي. </string>
+    <string name="kf3c04b"> ٻار بيمار آهي. </string>
+    <string name="kf3c04c"> ٻيو وضاحت ڪيو </string>
+
+    <string name="kf3c05"> ڪيترن ڏينهن کان وٺي توهان پنهنجي ٻار کي چمڙيءَ جوچمڙيءَ سان لڳائي رکيو؟توهان ڪي ايم سي ڪل ڪيترا ڏينهن ڏني؟ </string>
+    <string name="kf3c05a"> ڏينهن جو تعداد </string>
+
+    <string name="kf3c06"> توهان وقت جي حساب سان ڪيتري وقفي ۾ پنهنجي ٻار کي چمڙيءَ جو چمڙيءَ سان ملائي رکيو؟ ڪي ايم سي ڏني؟ </string>
+    <string name="kf3c06a"> روزانو </string>
+    <string name="kf3c06b"> هر ٻئي ڏينهن تي </string>
+    <string name="kf3c06c"> ٻن ڏينهن کان پوءِ </string>
+    <string name="kf3c06d"> هفتي ۾ هڪ ڀيرو </string>
+    <string name="kf3c06e"> جيڏي مهل وقت ملي پيو </string>
+    <string name="kf3c06f"> ڪڏهن به نه </string>
+
+
+    <string name="kf3c07"> ڇا توهان جي ٻار کي ڪي ايم سي ڏيڻ ۾ توهانجي ڪنهن مدد ڪئي ؟ </string>
+
+
+    <string name="kf3c08"> ڪي ايم سي ڏيڻ ۾ توهان جي ڪنهن مدد ڪئي؟ </string>
+    <string name="kf3c08a"> منهنجي ماءُ </string>
+    <string name="kf3c08b"> منهنجو مڙس </string>
+    <string name="kf3c08c"> سس </string>
+    <string name="kf3c08d"> ڀيڻ </string>
+    <string name="kf3c08e"> دوست / پاڙيسري </string>
+
+
+    <string name="kf3c09"> هنن ڪهڙي طريقي جي مدد ڪئي ؟ </string>
+    <string name="kf3c09a"> هن/ هنن ٻار کي پنهنجو پاڻ ڪي ايم سي ڏئي ٿي . </string>
+    <string name="kf3c09b"> جڏهن توهان ڪي ايم سي ڪئي ان وقت گھر جا ڪم ڪار سرانجام ڏنئون. </string>
+    <string name=""> ٻيو وضاحت ڪيو </string>
+
+    <string name="kf3c10"> ڇا توهان جي مڙس ٻار کي چمڙي جي چمڙيءَ سان ميلاپ مهيا ڪيو؟ ڪي ايم سي ڏني؟ </string>
+
+
+    <string name="kf3c11"> توهان جي مڙس گذريل 24 ڪلاڪن ۾ ڪيترا دفعا ٻار کي ڪي ايم سي ڏني؟ </string>
+    <string name="kf3c11a"> وقتن جو تعداد </string>
+
+    <string name="kf3c12a"> توهان جي مڙس گذريل 24 ڪلاڪن ۾ ڪل ڪيترا ڪلاڪ ۽ منٽ ڪي ايم سي ڏني؟ </string>
+    <string name="kf3c12"> ڪل ڪلاڪن ۽ منٽن جو تعداد </string>
+
+    <string name="kf3c13"> ڪيترن ڏينهن کان وٺي توهان پنهنجي ٻار کي چمڙيءَ جوچمڙيءَ سان لڳائي رکيو. </string>
+    <string name="kf3c13a"> ڏينهن جو تعداد </string>
+
+    <string name="kf3c14"> جيڪڏهن نه، ته سبب ڇا هو. </string>
+
+
+    <string name="kf3c15"> ڇا توهان کي بنا ڪپڙن جي ٻار کي ماءُ جي ڇاتي سان لڳائڻ جا فائيدا خبر آهن؟ (KMC) </string>
+
+
+    <string name="kf3c16"> توهان جي خيال ۾ چمڙيءَ سان چمڙيءَ جو ميلاپ توهان ۽ توهان جي گھٽ وزن واري ٻار لاءَ ڪيترو فائدي مند رهيو؟ </string>
+    <string name="kf3c16a"> ٻار کي ٿڌ کان محفوظ رکي ٿي. </string>
+    <string name="kf3c16b"> ٻار جو وزن وڌائي ٿي </string>
+    <string name="kf3c16c"> نئي ڄاول ٻار کي بيمارين کان بچايو. </string>
+    <string name="kf3c16d"> ٻار جي ذهني صلاحيت کي بهتر بنائي ٿي </string>
+    <string name="kf3c16e"> ٻار جي دل جي ڌڙڪن ۽ ساهه کڻڻ جي رفتار کي مضبوط ۽ مطواضن </string>
+    <string name="kf3c16f"> ماءُ ۽ ٻار جي وچ ۾ تعلق ٺاهيو </string>
+    <string name="kf3c16g"> ماءُ کي بيمارين کان بچايو. </string>
+    <string name="kf3c16h"> ٿڃ پيارڻ کي يقيني بڻايو. </string>
+    <string name="kf3c16i"> ماءُ جي ٿڃ وٺڻ کي آسان بڻايو </string>
+    <string name="kf3c16j"> ماءُ جي اعتماد کي وڌايو ۽ همٿايو ننڍي ۽ گھٽ وزن واري ٻار جي لاءِ </string>
+
+
+    <string name="kf3c17"> ايندڙ وقت / مستقبل ۾ توهان چمڙيءَ سان چمڙيءَ جو ميلاپ جاري رکندوء. </string>
+
+
+    <string name="kf3c18"> جيڪڏهن نه ته سبب ڇا آهي. </string>
+    <string name="kf3c18a"> مون تي ڪم جو گھڻو وزن آهي/ مونکي گھڻو ڪم آهي. </string>
+    <string name="kf3c18b"> جڏهن مان چمڙيءَ سان چمڙيءَ جو ميلاپ ڪرايان ٿي ته منهنجي ڪير به مدد نٿو ڪري. </string>
+    <string name="kf3c18c"> ٻار ڏکيائي محسوس ٿو ڪري. </string>
+    <string name="kf3c18d"> مڙسۡ طرفان رڪاوٽ آهي </string>
+    <string name="kf3c18e"> گھر وارن طرفان رڪاوٽ آهي. </string>
+    <string name="kf3c18f"> مون وٽ وقت نه آهي </string>
+
+
+    <string name="kf3ch2"> ڄمڻ کان پوءِ چمڙي جو چمڙي سان ميلاپ جي وضاحت (صرف پهرين فالواپ ) </string>
+
+    <string name="kf3c19"> ڇا ٻار جي ڄمڻ کان پوءِ توهان کي ڪنهن چيو ته پنهنجي ٻار کي پنهنجي ڪپڙن کان بغير (اگهاڙي) ڇاتي تي رکڻ جو چيو/ مشورو ڏنو. </string>
+
+
+    <string name="kf3c20"> ڇا ٻار ڪپڙن کان بغير (اگهاڙو) هيو جڏهن توهان ان کي ڇاتي سان لڳايو. </string>
+
+
+    <string name="kf3c21"> ٻار جي ڄمڻ کان پوءِ ڪيتري وقت کان پوءِ وهنجاريو ويو. </string>
+    <string name="kf3c21a"> ڪلاڪ جي اندر </string>
+    <string name="kf3c21b"> ڪلاڪ </string>
+    <string name="kf3c21c"> ڏينهن </string>
+    <string name="kf3c21d"> ناهي وهنجاريو </string>
+
+
+    <string name="kf3dh1"> ٿڃ پيارڻ جو عمل  </string>
+
+
+    <string name="kf3d01"> توهان ٻار کي ڄمڻ جي ڪيتري وقت کانپوءِ پنهنجو کير پياريو. </string>
+    <string name="kf3d01a"> پيدائش کان پوء فوري طور تي </string>
+    <string name="kf3d01b"> پيدائش کان پوء پهرين ڪلاڪ اندر </string>
+    <string name="kf3d01c"> 1-6 ڪلاڪن کان پوءِ پيدائش </string>
+    <string name="kf3d01d"> 6 ڪلاڪن کانسواء 24 ڪلاڪن کان گهٽ </string>
+    <string name="kf3d01e"> 24 ڪلاڪ يا دير سان ڄم. </string>
+
+
+    <string name="kf3d02"> جيڪڏهن ماءُ 24 ڪلاڪن کان پوءِ کير پياريو ته سبب ڇا هيو. </string>
+    <string name="kf3d02a"> ماءُ جو سبب. </string>
+    <string name="kf3d02b"> مان بيمار آهيان. </string>
+    <string name="kf3d02c"> نپل ڏريل آهن. </string>
+    <string name="kf3d02d"> ڇاتي ۾ گوڙها آهن. </string>
+    <string name="kf3d02e"> نپل اندر موڙيل آهن. </string>
+    <string name="kf3d02f"> ٿڃ ناڪافي هئي. </string>
+    <string name="kf3d02g"> مان مصروف هئس ٿڃ نه پياري سگهيس </string>
+    <string name="kf3d02h"> سسۡ منع ڪيو. </string>
+    <string name="kf3d02i"> ٻار جو سبب </string>
+    <string name="kf3d02j"> ٻار ننڍو آهي. </string>
+    <string name="kf3d02k"> ٻار کير پيڻ جي لائق نه آهي. </string>
+    <string name="kf3d02l"> چپ ڪٽيل / وات جو تالو ڪٽيل آهي. </string>
+
+
+    <string name="kf3d03"> ٻار جي ڄمڻ کان پوءِ ان کي يڪدم ۾ ڇا ڏنو ويو. </string>
+    <string name="kf3d03a"> ماءُ جو کير </string>
+    <string name="kf3d03b"> گھٽي </string>
+    <string name="kf3d03c"> ماکي </string>
+    <string name="kf3d03d"> گرائپ واٽر </string>
+    <string name="kf3d03e"> ٻڪري جو کير </string>
+
+
+    <string name="kf3d04"> ڇا توهان ٻار کي پهريون گھاٽو کير/ٿڃ پياريو. </string>
+
+
+    <string name="kf3d05"> جيڪڏهن نه ته سبب ڇا هو. </string>
+    <string name="kf3d05h1"> ماءُ جا سبب. </string>
+    <string name="kf3d05a"> مان بيمار آهيان. </string>
+    <string name="kf3d05b"> نپل ڏريل آهن. </string>
+    <string name="kf3d05c"> ڇاتي ۾ گوڙها آهن. </string>
+    <string name="kf3d05d"> نپل اندر موڙيل آهن. </string>
+    <string name="kf3d05e"> ٿڃ ناڪافي هئي. </string>
+    <string name="kf3d05f"> مان مصروف هئس ٿڃ نه پياري سگهيس </string>
+    <string name="kf3d05g"> سسۡ منع ڪيو. </string>
+    <string name="kf3d05h2"> بار جا سبب </string>
+    <string name="kf3d05h"> ٻار ننڍو آهي. </string>
+    <string name="kf3d05i"> ٻار کير پيڻ جي لائق نه آهي. </string>
+    <string name="kf3d05j"> چپ ڪٽيل / وات جو تالو ڪٽيل آهي. </string>
+    <string name="kf3d05h3"> ٻيا سبب </string>
+    <string name="kf3d05k"> کير خراب هو </string>
+    <string name="kf3d05l"> ٻار جي بيمار ٿيڻ جو خطرو هو </string>
+    <string name="kf3d05m"> صفا گھڻو گھاٽو هو </string>
+    <string name="kf3d05n"> کڙ </string>
+
+
+    <string name="kf3d06"> ڇا توهان جو ٻاراڃا تائين توهان جو کير/ٿڃ پئي ٿو؟ </string>
+
+
+    <string name="kf3d07"> کير/ٿڃ نه پيارڻ جو سبب </string>
+    <string name="kf3d07h1"> ماءُ جو سبب </string>
+    <string name="kf3d07a"> مان بيمار آهيان. </string>
+    <string name="kf3d07b"> نپل ڏريل آهن. </string>
+    <string name="kf3d07c"> ڇاتي ۾ گوڙها آهن. </string>
+    <string name="kf3d07d"> نپل اندر موڙيل آهن. </string>
+    <string name="kf3d07e"> کير پورو نه هيو. </string>
+    <string name="kf3d07f"> مان مصروف هئس ٿڃ نه پياري سگهيس </string>
+    <string name="kf3d07h2"> ٻار جو سبب </string>
+    <string name="kf3d07g"> ٻار ننڍو آهي. </string>
+    <string name="kf3d07h"> ٻار کير پيڻ جي لائق نه آهي. </string>
+    <string name="kf3d07i"> ٻار ٿڃ پيئڻ کان پوءِ تمام گھڻو روئي پيو. </string>
+    <string name="kf3d07j"> چپ ڪٽيل / وات جو تالو ڪٽيل آهي. </string>
+
+
+    <string name="kf3d08"> ڇا توهان ٻار کي کير/ٿڃ پنهنجي ڇاتيءَ سان پياريو هيو؟ </string>
+
+
+    <string name="kf3d09"> ڇا توهان ٻار کي ڇاتيءَ جو کير/ٿڃ ڪڊي پياريو  </string>
+
+
+    <string name="kf3d10"> ڪهڙو طريقو استعمال ڪيو ويو. </string>
+    <string name="kf3d10a"> ڪپ ۽ چمچي سان </string>
+    <string name="kf3d10b"> بوتل سان </string>
+    <string name="kf3d10c"> ڪپ سان </string>
+
+
+    <string name="kf3d11"> توهان 24 ڪلاڪن جي دوران اندازن گھڻا دفعا کير/ٿڃ پياريو؟ </string>
+    <string name="kf3d11a"> وقت جو تعداد </string>
+
+    <string name="kf3d12"> ڇا توهان پنهنجي ٻار کي صرف ۽ صرف پنهنجي ٿڃ پياريو ٿا ؟ </string>
+
+
+    <string name="kf3d13"> توهان ڪيترن ڪلاڪن کان پنهنجي ٻآر کي صرف ۽ صرف پنهنجي ٿڃ تي رکيو آهي / صرف پنهنجي ٿڃ پياري آهي؟ </string>
+
+
+    <string name="kf3d14"> ڪيتري عرصي تائين توهان پنهنجي ٻار کي صرف ۽ صرف پنهنجو کير/ٿڃ پياريو. </string>
+
+
+    <string name="kf3d15"> ڇا توهان پنهنجي کير کان سواءِ ٻار کي ٻيو ڪجھ ڏنو؟ </string>
+
+
+    <string name="kf3d16"> ماءُ جي کير کان علاوه توهان پنهنجي ٻار کي ڪيتري عمر ۾پهريون دفعو چانھ، جوس يا ٻيو ڪجھ ڏنو؟ </string>
+    <string name="kf3d16a"> ڪلاڪن جو تعداد_______________ ڄم کان پوءِ </string>
+
+    <string name="kf3d16c"> ڏينهنِ </string>
+    <string name="kf3d16d"> هفتاِ </string>
+    <string name="kf3d16e"> ياد ناهيِ </string>
+
+
+    <string name="kf3d17"> ڪهڙيون پيئڻ واريون شيون ڏيندا آهيو؟ </string>
+    <string name="kf3d17a"> سادو پاڻي. </string>
+    <string name="kf3d17b"> کنڊ يا گلوڪوز جو پاڻي </string>
+    <string name="kf3d17c"> گرآئپ واٽر </string>
+    <string name="kf3d17d"> کنڊ ءِ لوڻ وارو پاڻي. </string>
+    <string name="kf3d17e"> فروٽ جوس. </string>
+    <string name="kf3d17f"> چانهه يا جڙي بوٽين جو ٺهيل مشروب </string>
+    <string name="kf3d17g"> ماکي ءِ پاڻي. </string>
+    <string name="kf3d17h"> ڊٻي جو کير </string>
+    <string name="kf3d17i"> ڍڳيءَ جو کير </string>
+    <string name="kf3d17j"> ٻڪري جو کير </string>
+    <string name="kf3d17k"> پيڻ لاءِ ڪجهه نه ڏنو ويو. </string>
+
+
+    <string name="kf3d18"> 24 ڪلاڪن ۾ توهان پنهنجي ٻار کي تقريبن ڪيترا دفعا ماءُ جي کير سان گڏ پاڻياٺ واريون شيون ڏنيون ؟</string>
+
+    <string name="kf3d18a"> وقت جو تعداد</string>
+
+
+    <string name="kf3eh1"> نئي ڄاول ٻار جو جائزو. </string>
+
+    <string name="kf3e01"> ٻار جو وزن ڪيو </string>
+    <string name="kf3e01a"> گرام </string>
+
+
+    <string name="kf3e02"> ڇا ٻار کي هن وقت دن جي چوڌاري ڳاڙهاڻ/ سوڄ ، پس يا زخم وغيره آهي. </string>
+
+
+    <string name="kf3e03"> جيڪڏهن ها ته انجي زخم جي شدت ڪيتري آهي؟ </string>
+    <string name="kf3e03a"> ناڙي ۾ ٿوري (ٿوري سوڄ جيڪا دن تائين محدود آهي. </string>
+    <string name="kf3e03b"> ٿوري وڌيڪ سوڄ جيڪا دن جي چوڌاري چمڙي جي 2cm اندر آهي. </string>
+    <string name="kf3e03c"> تمام گھڻي سوڄ جيڪا دن جي چوڌاري 2 cm کان وڌيڪ آهي. </string>
+
+
+    <string name="kf3eh2"> (بيڪٽيريا يا زخم) </string>
+
+
+    <string name="kf3eh3"> جسم جو درجه حرارت ڏسو </string>
+
+    <string name="kf3e04"> درجه حرارت (ٻيهر ريڊنگ وٺو جيڪڏهن 38 کان وڌيڪ يا 35.5 کان گهٽ آ </string>
+    <string name="kf3e04a"> پهرين لکت. </string>
+    <string name="kf3e04b"> ٻين لکت. </string>
+
+    <string name="kf3e05"> هڪ منٽ ۾ ساهه جي رفتار ڳڻيو </string>
+
+
+    <string name="kf3e06"> دهرايو جيڪڏهن 60 کان وڌيڪ آهي </string>
+
+
+    <string name="kf3e07"> ڇا ٻار کي ساهه کڻڻ ۾ تڪليف هئي. </string>
+
+
+    <string name="kf3e08"> ڇا ٻار جي ساهه جي رفتار تڪڙي آهي (هڪ منٽ ۾ 60 کان وڌيڪ) </string>
+
+
+    <string name="kf3eh4"> ڇاتيءَ ۾ ڳهٻ/کڏا پوڻ </string>
+
+    <string name="kf3e09"> ڇا ٻار کي ڇاتي ۾ شديد ڳهٻ/کڏا پون ٿا (ٻار جي ڇاتي جو ڪپڙو مٿي کڻي ڏسو. </string>
+
+
+    <string name="kf3e10"> ڇا ٻار کي سائي آهي (بار جون اکيون ۽ چمڙي پيلي/ڦڪي آهي). </string>
+
+
+    <string name="kf3e11"> ننڍي ٻار جي هٿن ۽ پيرن جي ترين کي ڏسو ڇا اهي پيلا يا ڦڪا آهن </string>
+
+
+    <string name="kf3e12_"> مٿي کان پيرن تائين سائي جي شدت جي درجه بندي ڪيو </string>
+
+    <string name="kf3e12a"> مٿو ۽ ڳچي.</string>
+    <string name="kf3e12b"> ڇاتي / سينو</string>
+    <string name="kf3e12c"> هيٺيون ڌڙ / جسمۡ ۽ پٺا.</string>
+    <string name="kf3e12d"> ٻانهو ۽ گوڏن کان هيٺ جون ٽنگون.</string>
+    <string name="kf3e12e"> هٿ ۽ پير.</string>
+
+    <string name="kf3eh5"> کير پيڻ جي سست رفتار جي چڪاس</string>
+
+    <string name="kf3eh6"> جھٽڪن جي چڪاس</string>
+
+
+    <string name="kf3e13"> ڇا ٻار پيدائش کان وٺي کير/ٿڃ پيئڻ جي قابل آهي </string>
+
+
+    <string name="kf3e14"> ڇا ٻار هاڻي چڳي طرح کير پيئڻ ڇڏي ڏنو آهي؟ </string>
+
+
+    <string name="kf3e15"> مشاهدي دوران بلڪل کير نه پيئو/ پئي يا چوسي. </string>
+
+
+    <string name="kf3e16"> ٻارجي کير پيئڻ جي صلاحيت ڪمزور آهي. </string>
+
+
+    <string name="kf3e17"> ٻارصفا کير پيئڻ جي لائق نه آهي؟ </string>
+
+
+    <string name="kf3e18"> ڇا ٻار کي ڪڏهن جھٽڪا ٿيا هئا </string>
+
+
+    <string name="kf3e19"> ڇا ٻار پاڻمرادو چر پر ڪري ٿو. </string>
+
+
+    <string name="kf3e20"> ڇا ٻار کي چورجي ته چر پر ڪري ٿو. </string>
+
+
+    <string name="kf3e21"> ٻار بلڪل چر پر نه ٿو ڪري؟ </string>
+
+
+    <string name="kf3fh1"> ڳوٺاڻي سطح تي ڪي ايم سي جي طربيت بابت ڄاڻ (عمل درآمد وارن علاعقن لاءِ) </string>
+
+    <string name="kf3f01"> توهان چمڙي جي چمڙي سان ميلاپ جي سکيا ڪاٿي ورتي. </string>
+    <string name="kf3f01a"> اسپتال </string>
+    <string name="kf3f01b"> ڳوٺاڻي گڏجاڻي </string>
+    <string name="kf3f01c"> گھر </string>
+
+    <string name="kf3f02"> توهان کي چمڙي جي چمڙي سان ميلاپ جي سکيا ڪنهن ڏني.  </string>
+    <string name="kf3f02a"> ڊاڪٽر </string>
+    <string name="kf3f02b"> نرسۡ </string>
+    <string name="kf3f02c"> ايل ايڇ وي </string>
+    <string name="kf3f02d"> ڪميونڙي موبلائزر </string>
+    <string name="kf3f02e"> ڪي ايم سي ماهر </string>
+
+
+    <string name="kf3f03"> ڇا توهان جي خاندان جا فرد ڪي ايم سي سکڻ ۾ توهان سان گڏ هئا. </string>
+
+
+    <string name="kf3f04"> جيڪڏهن ها، ته توهان سان گڏ سکيا ڪنهن وٺي؟  </string>
+    <string name="kf3f04a"> سسۡ </string>
+    <string name="kf3f04b"> ماءُ </string>
+    <string name="kf3f04c"> ڀيڻ </string>
+    <string name="kf3f04d"> مڙسۡ </string>
+
+
+    <string name="kf3f05"> سکيا لاءِ ڪهڙو مواد / طريقو استعمال ڪيو ويو.  </string>
+    <string name="kf3f05a"> عمل ڪري ڏيکاريو </string>
+    <string name="kf3f05b"> فلپ چارٽ </string>
+    <string name="kf3f05c"> وڊيو </string>
+
+
+    <string name="kf3f06"> ڇا تربيت / سکيا توهان لاءِ مدد گار ثابت ٿئي. </string>
+
+
 </resources>
