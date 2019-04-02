@@ -23,6 +23,12 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ui.SectionF_form3"></activity>
+        <activity android:name=".ui.SectionE_form3" />
+        <activity android:name=".ui.SectionD_form3" />
+        <activity android:name=".ui.SectionC_form3" />
+        <activity android:name=".ui.SectionB_form3" />
+        <activity android:name=".ui.SectionA_form3" />
         <activity
             android:name=".ui.SplashscreenActivity"
             android:screenOrientation="portrait">
@@ -58,12 +64,10 @@
             android:name=".ui.SectionInfoKmcActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1" />
-
         <activity
             android:name=".ui.SectionForm1Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1" />
-
     </application>
 
 </manifest>

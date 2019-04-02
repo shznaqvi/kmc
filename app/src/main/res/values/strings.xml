@@ -292,7 +292,6 @@
     <string name="h1"> سيڪشن 1.سڃاڻپ ۽ داخلا جي معلومات </string>
 
 
-
     <string name="kf2a01"> تحقيقي علائقو </string>
     <string name="kf2a01a"> جوهي </string>
     <string name="kf2a01b"> خير پور ناٿن شاهه </string>
@@ -367,8 +366,6 @@
     <string name="kf2b09"> ڇا الٽراسائونڊ / ٽي وي ايڪسروحمل دوران ڪرايو. </string>
 
 
-
-
     <string name="kf2b10"> ندازي مطانق حمل جو وقت ڪيترو آهي. ڏسو جيڪڏهن التراسائونڊ رپورٽ موجود آهي. </string>
     <string name="kf2b10a"> الٽراسائونڊ موجود آهي </string>
     <string name="kf2b10b"> الٽراسائونڊ موجود نه آهي </string>
@@ -395,8 +392,6 @@
     <string name="kf2b15"> توهان جي حمل دوران طبعي چڪاس ۾ ڇا توهان ڪان KMC جي بار ي ۾ ٻڌايو ويو. </string>
 
 
-
-
     <string name="kf2b16"> توهان کي KMC جي بار ي ۾ ڪنهن ٻڌايو </string>
     <string name="kf2b16a"> ڊاڪٽر </string>
     <string name="kf2b16b"> نرس </string>
@@ -406,8 +401,6 @@
     <string name="kf2b16f"> مائٽ/دوست </string>
     <string name="kf2b16g"> مرد KMC چيمپئن </string>
     <string name="kf2b16h"> عورتKMC چيمپئن </string>
-
-
 
 
     <!-- KMC Form 2 Section 3 -->
@@ -428,18 +421,11 @@
     <string name="kf2c04"> ڇا ٻار ڄمڻ کان پوءِ يڪدم رنو / رنو هيو. </string>
 
 
-
-
-
-
-
-
     <string name="kf2c05"> ٻار کي روئائڻ لاءِ ڇا ڪيو ويو. </string>
     <string name="kf2c05a"> ٻار جي پٺي مهٽي وئي/ ڌڪ هيو ويو. </string>
     <string name="kf2c05b"> وات سان وات ملائي ان کي ساه ڏنو ويو. </string>
     <string name="kf2c05c"> هٿرادو ساه ڏنو ويو. </string>
     <string name="kf2c05d"> خبر ناهي. </string>
-
 
 
     <string name="kf2c06"> ڄمڻ وقت ٻار جو رنگ ڪهڙو هو. </string>
@@ -448,15 +434,10 @@
     <string name="kf2c06c"> گلابي </string>
 
 
-
     <string name="kf2c07"> ڇا ٻار ڄمڻ کان پوءِ پاڻمرادو چر پر ڪري رهيو هو. </string>
 
 
-
-
     <string name="kf2c08"> جنهن توهان جي ويم ڪرايو ڇا ٻار کي خشڪ/ سڪايو ۽ صاف ڪيو ويو. </string>
-
-
 
 
     <string name="kf2c09"> ناڙي کي ڪٽڻ لاءِ ڇا استعمال ڪيو ويو. </string>
@@ -466,11 +447,7 @@
     <string name="kf2c09d"> بليڊ </string>
 
 
-
     <string name="kf2c10"> ناڙي ڪٽڻ کان پوءِ ڇا ان تي ڪجھ لڳايو ويو. </string>
-
-
-
 
 
     <string name="kf2c11"> ناڙي تي ڇالڳايو ويو. </string>

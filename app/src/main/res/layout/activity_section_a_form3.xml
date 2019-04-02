@@ -9,7 +9,7 @@
 
         <variable
             name="callback"
-            type="edu.aku.hassannaqvi.kmc_screening.ui.SectionAForm3Activity" />
+            type="edu.aku.hassannaqvi.kmc_screening.ui.SectionA_form3" />
     </data>
 
     <ScrollView style="@style/i_scrollview">

@@ -695,7 +695,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 // New value for one column
         ContentValues values = new ContentValues();
-        values.put(FormsTable.COLUMN_SYNCED);
+        values.put(FormsTable.COLUMN_SYNCED, true);
         values.put(FormsTable.COLUMN_SYNCED_DATE, new Date().toString());
 
 // Which row to update, based on the title

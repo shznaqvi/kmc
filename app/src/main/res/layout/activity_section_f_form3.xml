@@ -9,7 +9,7 @@
 
         <variable
             name="callback"
-            type="edu.aku.hassannaqvi.kmc_screening.ui.SectionFForm3Activity" />
+            type="edu.aku.hassannaqvi.kmc_screening.ui.SectionF_form3" />
     </data>
 
     <ScrollView style="@style/i_scrollview">
@@ -131,7 +131,8 @@
                 <!-- kf3f04-->
                 <android.support.v7.widget.CardView
                     android:id="@+id/fldGrpCVkf3f04"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility='@{kf3f03b.checked? View.GONE : View.VISIBLE}'>
 
                     <LinearLayout style="@style/linearlayout_view">
 
