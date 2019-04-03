@@ -22,7 +22,7 @@ public class FormsContract {
     private String istatus = ""; // Interview Status
     private String istatus88x = ""; // Interview Status
     private String sInfo = "";    // Info Section
-    private String sA1 = "";
+    private String sA = "";
     //private String sB1 = "";
     private String sB2 = "";
 
@@ -71,7 +71,7 @@ public class FormsContract {
         this.istatus = jsonObject.getString(FormsTable.COLUMN_ISTATUS);
         this.istatus88x = jsonObject.getString(FormsTable.COLUMN_ISTATUS88X);
         this.sInfo = jsonObject.getString(FormsTable.COLUMN_SINFO);
-        this.sA1 = jsonObject.getString(FormsTable.COLUMN_SA1);
+        this.sA = jsonObject.getString(FormsTable.COLUMN_SA1);
         //this.sB1 = jsonObject.getString(FormsTable.COLUMN_SB1);
         this.sB2 = jsonObject.getString(FormsTable.COLUMN_SB2);
 
@@ -116,7 +116,7 @@ public class FormsContract {
         this.istatus = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ISTATUS));
         this.istatus88x = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ISTATUS88X));
         this.sInfo = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SINFO));
-        this.sA1 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SA1));
+        this.sA = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SA1));
         //this.sB1 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SB1));
         this.sB2 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SB2));
 
@@ -171,9 +171,9 @@ public class FormsContract {
         }
 
 
-        if (!this.sA1.equals("")) {
+        if (!this.sA.equals("")) {
 
-            json.put(FormsTable.COLUMN_SA1, this.sA1.equals("") ? JSONObject.NULL : new JSONObject(this.sA1));
+            json.put(FormsTable.COLUMN_SA1, this.sA.equals("") ? JSONObject.NULL : new JSONObject(this.sA));
         }
 
 
@@ -346,12 +346,12 @@ public class FormsContract {
     }
 
 
-    public String getsA1() {
-        return sA1;
+    public String getsA() {
+        return sA;
     }
 
-    public void setsA1(String sA1) {
-        this.sA1 = sA1;
+    public void setsA(String sA) {
+        this.sA = sA;
     }
 
 

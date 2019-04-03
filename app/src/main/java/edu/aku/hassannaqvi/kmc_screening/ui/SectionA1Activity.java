@@ -362,7 +362,7 @@ public class SectionA1Activity extends AppCompatActivity {
         sA1.put("ka12496", bi.ka12496.getText().toString());
 
 
-        MainApp.fc.setsA1(String.valueOf(sA1));
+        MainApp.fc.setsA(String.valueOf(sA1));
     }
 
 
