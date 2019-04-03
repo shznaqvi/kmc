@@ -13,7 +13,7 @@ import org.json.JSONObject;
 import edu.aku.hassannaqvi.kmc_screening.JSON.GeneratorClass;
 import edu.aku.hassannaqvi.kmc_screening.R;
 import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
-import edu.aku.hassannaqvi.kmc_screening.databinding.ActivitySectionbForm2Binding;
+import edu.aku.hassannaqvi.kmc_screening.databinding.ActivitySectionCForm2Binding;
 import edu.aku.hassannaqvi.kmc_screening.validation.ClearClass;
 import edu.aku.hassannaqvi.kmc_screening.validation.ValidatorClass;
 
@@ -62,12 +62,12 @@ public class SectionCForm2Activity extends AppCompatActivity {
     }
 
     private void SaveDraft() {
-        JSONObject sa1 = GeneratorClass.getContainerJSON(bi.fldGrpSecC02, true);
-        SectionInfoKmcActivity.fc.setsA1(String.valueOf(sa1));
+        JSONObject sa1 = GeneratorClass.getContainerJSON(bi.fldGrpSecC01, true);
+        SectionInfoKmcActivity.fc.setsA(String.valueOf(sa1));
     }
 
     private boolean formValidation() {
-        return ValidatorClass.EmptyCheckingContainer(this, bi.fldGrpSecC02);
+        return ValidatorClass.EmptyCheckingContainer(this, bi.fldGrpSecC01);
     }
 
     public void BtnEnd() {
@@ -83,11 +83,11 @@ public class SectionCForm2Activity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (i != bi.kf2c04a.getId()) {
 
-                    ClearClass.ClearAllFields(bi.fldGrpCVkf2c05, false);
+                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf2c05);
 
                 } else {
 
-                    ClearClass.ClearAllFields(bi.fldGrpCVkf2c05, true);
+                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf2c05);
 
 
                 }
@@ -95,17 +95,16 @@ public class SectionCForm2Activity extends AppCompatActivity {
         });
 
 
-
         bi.kf2c10.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (i != bi.kf2c10b.getId()) {
 
-                    ClearClass.ClearAllFields(bi.fldGrpCVkf2c11, false);
+                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf2c11);
 
                 } else {
 
-                    ClearClass.ClearAllFields(bi.fldGrpCVkf2c11, true);
+                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf2c11);
 
 
                 }
@@ -118,11 +117,11 @@ public class SectionCForm2Activity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (i != bi.kf2c10c.getId()) {
 
-                    ClearClass.ClearAllFields(bi.fldGrpCVkf2c11, false);
+                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf2c11);
 
                 } else {
 
-                    ClearClass.ClearAllFields(bi.fldGrpCVkf2c11, true);
+                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf2c11);
 
 
                 }

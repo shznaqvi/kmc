@@ -655,7 +655,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_ISTATUS, fc.getIstatus());
         values.put(FormsTable.COLUMN_ISTATUS88X, fc.getIstatus88x());
         values.put(FormsTable.COLUMN_SINFO, fc.getsInfo());
-        values.put(FormsTable.COLUMN_SA1, fc.getsA1());
+        values.put(FormsTable.COLUMN_SA1, fc.getsA());
         values.put(FormsTable.COLUMN_SB2, fc.getsB2());
         values.put(FormsTable.COLUMN_SC1, fc.getsC1());
         values.put(FormsTable.COLUMN_SC2, fc.getsC2());
@@ -903,7 +903,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 // New value for one column
         ContentValues values = new ContentValues();
-        values.put(FormsTable.COLUMN_SA1, MainApp.fc.getsA1());
+        values.put(FormsTable.COLUMN_SA1, MainApp.fc.getsA());
 
 // Which row to update, based on the ID
         String selection = FormsTable._ID + " = ?";
