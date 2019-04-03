@@ -57,7 +57,7 @@ public class SectionForm1Activity extends AppCompatActivity {
     private boolean UpdateDB() {
 
         DatabaseHelper db = new DatabaseHelper(this);
-        long count = db.updateSA1();
+        long count = db.updateSA();
         if (count != -1) return true;
 
         Toast.makeText(this, "Error in updating DB", Toast.LENGTH_SHORT).show();

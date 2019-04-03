@@ -838,7 +838,7 @@ public class SectionA1Activity extends AppCompatActivity {
         //Long rowId;
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateSA1();
+        int updcount = db.updateSA();
 
         if (updcount > 0) {
             //Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
