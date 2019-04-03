@@ -9,6 +9,7 @@ import android.widget.Toast;
 import org.json.JSONException;
 
 import edu.aku.hassannaqvi.kmc_screening.R;
+import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc_screening.databinding.ActivitySectionAForm3Binding;
 
 public class SectionA_form3 extends AppCompatActivity {
@@ -29,6 +30,25 @@ public class SectionA_form3 extends AppCompatActivity {
     }
 
     public void BtnEnd() {
+
+        Toast.makeText(this, "Processing End Section", Toast.LENGTH_SHORT).show();
+        //if (formValidation()) {
+        try {
+            SaveDraft();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        if (UpdateDB()) {
+            Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
+
+            finish();
+
+            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+
+        } else {
+            Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+        }
+        //}
 
 
     }
@@ -60,7 +80,17 @@ public class SectionA_form3 extends AppCompatActivity {
 
     private boolean UpdateDB() {
 
-        return true;
+        DatabaseHelper db = new DatabaseHelper(this);
+
+        int updcount = db.updateSA();
+
+        if (updcount > 0) {
+            //Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+            return true;
+        } else {
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            return false;
+        }
     }
 
 
