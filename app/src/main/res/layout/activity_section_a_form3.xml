@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.SectionForm1Activity">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="callback"
+            type="edu.aku.hassannaqvi.kmc_screening.ui.SectionA_form3" />
+    </data>
+
+    <ScrollView style="@style/i_scrollview">
+
+        <LinearLayout style="@style/linearlayout_view">
+
+            <LinearLayout
+                android:id="@+id/fldGrpSecB02"
+                style="@style/linearlayout_view_wt_bound">
+
+
+                <!-- kf3a01-->
+                <android.support.v7.widget.CardView
+                    android:id="@+id/fldGrpCVkf3a01"
+                    style="@style/cardView">
+
+                    <LinearLayout style="@style/linearlayout_view">
+
+                        <TextView
+                            style="@style/i_textview"
+                            android:text="@string/kf3a01" />
+
+                        <RadioGroup
+                            android:id="@+id/kf3a01"
+                            style="@style/i_radiogroup">
+
+                            <RadioButton
+                                android:id="@+id/kf3a01a"
+                                style="@style/i_radiobutton"
+                                android:text="@string/kf3a01a" />
+
+                            <RadioButton
+                                android:id="@+id/kf3a01b"
+                                style="@style/i_radiobutton"
+                                android:text="@string/kf3a01b" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+                <!-- kf3a02-->
+                <android.support.v7.widget.CardView
+                    android:id="@+id/fldGrpCVkf3a02"
+                    style="@style/cardView">
+
+                    <LinearLayout style="@style/linearlayout_view">
+
+                        <TextView
+                            style="@style/i_textview"
+                            android:text="@string/kf3a02" />
+
+                        <RadioGroup
+                            android:id="@+id/kf3a02"
+                            style="@style/i_radiogroup">
+
+                            <RadioButton
+                                android:id="@+id/kf3a02a"
+                                style="@style/i_radiobutton"
+                                android:text="@string/kf3a02a" />
+
+                            <RadioButton
+                                android:id="@+id/kf3a02b"
+                                style="@style/i_radiobutton"
+                                android:text="@string/kf3a02b" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+                <!-- kf3a03-->
+                <android.support.v7.widget.CardView
+                    android:id="@+id/fldGrpCVkf3a03"
+                    style="@style/cardView">
+
+                    <LinearLayout style="@style/linearlayout_view">
+
+                        <TextView
+                            style="@style/i_textview"
+                            android:text="@string/kf3a03" />
+
+                        <EditText
+                            android:id="@+id/kf3a03x"
+                            style="@style/textInput"
+                            android:hint="@string/kf3a03"
+                            android:maxLength="4" />
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+                <!-- kf3a04-->
+                <android.support.v7.widget.CardView
+                    android:id="@+id/fldGrpCVkf3a04"
+                    style="@style/cardView">
+
+                    <LinearLayout style="@style/linearlayout_view">
+
+                        <TextView
+                            style="@style/i_textview"
+                            android:text="@string/kf3a04" />
+
+                        <EditText
+                            android:id="@+id/kf3a04x"
+                            style="@style/textInput"
+                            android:hint="@string/kf3a04"
+                            android:inputType="number"
+                            android:maxLength="4" />
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+                <!-- kf3a05-->
+                <android.support.v7.widget.CardView
+                    android:id="@+id/fldGrpCVkf3a05"
+                    style="@style/cardView">
+
+                    <LinearLayout style="@style/linearlayout_view">
+
+                        <TextView
+                            style="@style/i_textview"
+                            android:text="@string/kf3a05" />
+
+                        <EditText
+                            android:id="@+id/kf3a05x"
+                            style="@style/textInput"
+                            android:hint="@string/kf3a05"
+                            android:inputType="number"
+                            android:maxLength="4" />
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+                <!-- kf3a06-->
+                <android.support.v7.widget.CardView
+                    android:id="@+id/fldGrpCVkf3a06"
+                    style="@style/cardView">
+
+                    <LinearLayout style="@style/linearlayout_view">
+
+                        <TextView
+                            style="@style/i_textview"
+                            android:text="@string/kf3a06" />
+
+                        <EditText
+                            android:id="@+id/kf3a06x"
+                            style="@style/textInput"
+                            android:hint="@string/kf3a06"
+                            android:inputType="number"
+                            android:maxLength="4" />
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+                <!-- kf3a07-->
+                <android.support.v7.widget.CardView
+                    android:id="@+id/fldGrpCVkf3a07"
+                    style="@style/cardView">
+
+                    <LinearLayout style="@style/linearlayout_view">
+
+                        <TextView
+                            style="@style/i_textview"
+                            android:text="@string/kf3a07" />
+
+                        <EditText
+                            android:id="@+id/kf3a07x"
+                            style="@style/textInput"
+                            android:hint="@string/kf3a07"
+                            android:inputType="number"
+                            android:maxLength="4" />
+
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/linearlayout_view"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <Button
+                    android:id="@+id/btn_Continue"
+                    style="@style/buttons2"
+                    android:background="@color/colorPrimary"
+                    android:onClick="@{() -> callback.BtnContinue()}"
+                    android:text="@string/nextSection"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/btn_End"
+                    style="@style/buttons2"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/colorAccent"
+                    android:onClick="@{() -> callback.BtnEnd()}"
+                    android:text="@string/end_interview"
+                    android:textColor="@color/white" />
+
+                <!--'onClick' for btn_End will NOT change and always call 'endInterview'-->
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</layout>
