@@ -878,4 +878,34 @@
     <string name="kf3f06"> ڇا تربيت / سکيا توهان لاءِ مدد گار ثابت ٿئي. </string>
 
 
+    <!--Form 0-->
+    <string name="kapr01"> گھر جو نمبر </string>
+    <string name="kapr02"> حاملا عورت جو سڃاڻپ نمبر </string>
+    <string name="kapr03"> حاملا عورت جو نالو </string>
+    <string name="kapr04"> حاملا عورت جي عمر </string>
+    <string name="kapr05"> موجوده حمل جي متوقع ويم جي تاريخ </string>
+    <string name="kapr06"> مڙس جو نالو </string>
+    <string name="kapr07"> ذات </string>
+    <string name="kapr08"> محلا </string>
+    <string name="kapr09"> گھر جو سربراهه جو نالو </string>
+    <string name="kapr10"> گھر جي سربراهه جو رابطا نمبر </string>
+    <string name="kapr11"> گهر جا ڀاتي </string>
+    <string name="kapr12"> معائني جي صورتحال </string>
+    <string name="kapr12a"> حمل سان آهي </string>
+    <string name="kapr12b"> ويم ٿي ويو </string>
+    <string name="kapr12c"> حمل نه هيو </string>
+    <string name="kapr12d"> غير حاضر </string>
+    <string name="kapr12e"> انڪار ڪيائي </string>
+    <string name="kapr12f"> لڏي وئي </string>
+    <string name="kapr12g"> وفات </string>
+    <string name="kapr13"> حمل جو نتيجو </string>
+    <string name="kapr13a"> زنده پيدائش </string>
+    <string name="kapr13b"> ٻار ضايع ٿي ويو </string>
+    <string name="kapr13c"> ٻار ڪِري پيو </string>
+    <string name="kapr13d"> مئل ٻار ڄائو </string>
+    <string name="kapr13e"> جڙوه ٻارن جي زنده پيدائش </string>
+    <string name="kapr13f"> جڙوه ٻارن جي مرده پيدائش </string>
+    <string name="kapr13g"> هڪ ٻار جي مرده پيدائش ۽ هڪ ٻار جي زنده پيدائش </string>
+    <string name="kapr14"> تاريخ </string>
+
 </resources>
