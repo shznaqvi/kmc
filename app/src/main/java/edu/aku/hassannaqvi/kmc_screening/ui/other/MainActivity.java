@@ -51,6 +51,7 @@ import edu.aku.hassannaqvi.kmc_screening.databinding.ActivityMainBinding;
 import edu.aku.hassannaqvi.kmc_screening.sync.SyncAllData;
 import edu.aku.hassannaqvi.kmc_screening.ui.SectionA1Activity;
 import edu.aku.hassannaqvi.kmc_screening.ui.SectionInfoKmcActivity;
+import edu.aku.hassannaqvi.kmc_screening.ui.form0.SectionAForm0Activity;
 
 public class MainActivity extends Activity {
 
@@ -254,9 +255,9 @@ public class MainActivity extends Activity {
 
     }
 
-    public void openForm() {
+    public void openForm(int index) {
 
-        final Intent oF = new Intent(MainActivity.this, SectionInfoKmcActivity.class);
+        final Intent oF = new Intent(MainActivity.this, getClass(index));
 
         if (sharedPref.getString("tagName", null) != "" && sharedPref.getString("tagName", null) != null && !MainApp.userName.equals("0000")) {
             startActivity(oF);
@@ -298,6 +299,24 @@ public class MainActivity extends Activity {
         }
     }
 
+    private Class getClass(int a) {
+        Class intentClass = null;
+        switch (a) {
+            case 0:
+                intentClass = SectionAForm0Activity.class;
+                break;
+            case 1:
+            case 2:
+            case 3:
+                intentClass = SectionInfoKmcActivity.class;
+                break;
+            default:
+                break;
+        }
+
+        return intentClass;
+    }
+
     public void testGPS(View v) {
 
         SharedPreferences sharedPref = getSharedPreferences("GPSCoordinates", Context.MODE_PRIVATE);
@@ -306,7 +325,6 @@ public class MainActivity extends Activity {
         for (Map.Entry<String, ?> entry : allEntries.entrySet()) {
             Log.d("Map", entry.getKey() + ": " + entry.getValue().toString());
         }
-
     }
 
     public void updateApp(View v) {
