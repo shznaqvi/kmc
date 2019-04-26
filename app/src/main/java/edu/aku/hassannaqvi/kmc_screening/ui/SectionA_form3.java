@@ -25,7 +25,7 @@ public class SectionA_form3 extends AppCompatActivity {
 
     }
 
-    private void SaveDraft() {
+    private void SaveDraft() throws JSONException {
 
     }
 
