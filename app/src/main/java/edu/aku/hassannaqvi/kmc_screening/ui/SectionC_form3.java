@@ -6,8 +6,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
-import org.json.JSONException;
-
 import edu.aku.hassannaqvi.kmc_screening.R;
 import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc_screening.databinding.ActivitySectionCForm3Binding;
@@ -36,11 +34,7 @@ public class SectionC_form3 extends AppCompatActivity {
 
         Toast.makeText(this, "Processing End Section", Toast.LENGTH_SHORT).show();
         //if (formValidation()) {
-        try {
-            SaveDraft();
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+        SaveDraft();
         if (UpdateDB()) {
             Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
 
@@ -63,11 +57,7 @@ public class SectionC_form3 extends AppCompatActivity {
     public void BtnContinue() {
         Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
-            try {
-                SaveDraft();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
+            SaveDraft();
             if (UpdateDB()) {
                 Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
                 finish();

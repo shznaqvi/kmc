@@ -31,6 +31,7 @@ public class SectionF_form3 extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
         if (UpdateDB()) {
             Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
 
