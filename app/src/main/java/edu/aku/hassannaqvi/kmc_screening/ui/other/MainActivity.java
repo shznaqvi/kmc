@@ -1,4 +1,4 @@
-package edu.aku.hassannaqvi.kmc_screening.ui;
+package edu.aku.hassannaqvi.kmc_screening.ui.other;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -49,6 +49,8 @@ import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc_screening.core.MainApp;
 import edu.aku.hassannaqvi.kmc_screening.databinding.ActivityMainBinding;
 import edu.aku.hassannaqvi.kmc_screening.sync.SyncAllData;
+import edu.aku.hassannaqvi.kmc_screening.ui.SectionA1Activity;
+import edu.aku.hassannaqvi.kmc_screening.ui.SectionInfoKmcActivity;
 
 public class MainActivity extends Activity {
 
@@ -147,10 +149,8 @@ public class MainActivity extends Activity {
 
 
         if (MainApp.userName.equals("dmu@aku")) {
-            mainBinding.adminsec1.setVisibility(View.VISIBLE);
             mainBinding.adminsec.setVisibility(View.VISIBLE);
         } else {
-            mainBinding.adminsec1.setVisibility(View.GONE);
             mainBinding.adminsec.setVisibility(View.GONE);
         }
 

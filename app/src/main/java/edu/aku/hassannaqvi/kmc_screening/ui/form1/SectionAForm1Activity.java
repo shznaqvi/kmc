@@ -1,4 +1,4 @@
-package edu.aku.hassannaqvi.kmc_screening.ui;
+package edu.aku.hassannaqvi.kmc_screening.ui.form1;
 
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
@@ -13,19 +13,21 @@ import org.json.JSONObject;
 import edu.aku.hassannaqvi.kmc_screening.JSON.GeneratorClass;
 import edu.aku.hassannaqvi.kmc_screening.R;
 import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
-import edu.aku.hassannaqvi.kmc_screening.databinding.ActivitySectionForm1Binding;
+import edu.aku.hassannaqvi.kmc_screening.databinding.ActivitySectionAForm1Binding;
+import edu.aku.hassannaqvi.kmc_screening.ui.SectionInfoKmcActivity;
+import edu.aku.hassannaqvi.kmc_screening.ui.other.EndingActivity;
 import edu.aku.hassannaqvi.kmc_screening.validation.ClearClass;
 import edu.aku.hassannaqvi.kmc_screening.validation.ValidatorClass;
 
-public class SectionForm1Activity extends AppCompatActivity {
+public class SectionAForm1Activity extends AppCompatActivity {
 
-    ActivitySectionForm1Binding bi;
+    ActivitySectionAForm1Binding bi;
     String deviceID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_form1);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_a_form1);
         bi.setCallback(this);
 
         setContentUI();

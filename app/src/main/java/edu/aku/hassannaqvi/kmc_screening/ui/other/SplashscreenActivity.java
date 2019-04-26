@@ -1,4 +1,4 @@
-package edu.aku.hassannaqvi.kmc_screening.ui;
+package edu.aku.hassannaqvi.kmc_screening.ui.other;
 
 import android.annotation.SuppressLint;
 import android.app.ActionBar;

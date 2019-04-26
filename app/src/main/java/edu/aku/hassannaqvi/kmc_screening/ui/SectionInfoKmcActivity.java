@@ -41,6 +41,7 @@ import edu.aku.hassannaqvi.kmc_screening.contracts.VillagesContract;
 import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc_screening.core.MainApp;
 import edu.aku.hassannaqvi.kmc_screening.databinding.ActivitySectionInfoKmcBinding;
+import edu.aku.hassannaqvi.kmc_screening.ui.other.EndingActivity;
 import edu.aku.hassannaqvi.kmc_screening.validation.ValidatorClass;
 
 

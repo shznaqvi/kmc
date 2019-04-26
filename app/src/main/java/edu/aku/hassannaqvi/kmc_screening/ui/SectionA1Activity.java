@@ -16,6 +16,7 @@ import edu.aku.hassannaqvi.kmc_screening.R;
 import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc_screening.core.MainApp;
 import edu.aku.hassannaqvi.kmc_screening.databinding.ActivitySectionA1Binding;
+import edu.aku.hassannaqvi.kmc_screening.ui.other.EndingActivity;
 import edu.aku.hassannaqvi.kmc_screening.validation.ValidatorClass;
 
 public class SectionA1Activity extends AppCompatActivity {
@@ -26,8 +27,6 @@ public class SectionA1Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_section_a1);
-
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_a1);
         bi.setCallback(this);
         setupViews();

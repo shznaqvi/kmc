@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layoutDirection="rtl"
-    tools:context=".ui.SectionAForm0Activity">
+    tools:context=".ui.form0.SectionAForm0Activity">
 
     <data>
 
@@ -11,7 +11,7 @@
 
         <variable
             name="callback"
-            type="edu.aku.hassannaqvi.kmc_screening.ui.SectionAForm0Activity" />
+            type="edu.aku.hassannaqvi.kmc_screening.ui.form0.SectionAForm0Activity" />
     </data>
 
     <ScrollView

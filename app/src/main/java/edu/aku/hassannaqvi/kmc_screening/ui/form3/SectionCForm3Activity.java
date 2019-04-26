@@ -1,4 +1,4 @@
-package edu.aku.hassannaqvi.kmc_screening.ui;
+package edu.aku.hassannaqvi.kmc_screening.ui.form3;
 
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
@@ -10,55 +10,42 @@ import org.json.JSONException;
 
 import edu.aku.hassannaqvi.kmc_screening.R;
 import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
-import edu.aku.hassannaqvi.kmc_screening.databinding.ActivitySectionAForm3Binding;
+import edu.aku.hassannaqvi.kmc_screening.core.MainApp;
+import edu.aku.hassannaqvi.kmc_screening.databinding.ActivitySectionCForm3Binding;
+import edu.aku.hassannaqvi.kmc_screening.ui.other.EndingActivity;
 
-public class SectionA_form3 extends AppCompatActivity {
+public class SectionCForm3Activity extends AppCompatActivity {
 
-
-    ActivitySectionAForm3Binding bi;
+    ActivitySectionCForm3Binding bi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_a_form3);
+
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_c_form3);
         bi.setCallback(this);
 
+
+        setupViews();
     }
 
-    private void SaveDraft() throws JSONException {
+    private void setupViews() {
+
 
     }
 
     public void BtnEnd() {
 
-        Toast.makeText(this, "Processing End Section", Toast.LENGTH_SHORT).show();
-        //if (formValidation()) {
-        try {
-            SaveDraft();
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        if (UpdateDB()) {
-            Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
-
-            finish();
-
-            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
-
-        } else {
-            Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
-        }
-        //}
-
+        MainApp.endActivity(this, this);
 
     }
 
-    private boolean formValidation() {
-        return true;
+
+    private void SaveDraft() throws JSONException {
+
     }
 
     public void BtnContinue() {
-
         Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
             try {
@@ -76,13 +63,19 @@ public class SectionA_form3 extends AppCompatActivity {
             }
         }
 
+
+    }
+
+    private boolean formValidation() {
+
+        return true;
     }
 
     private boolean UpdateDB() {
 
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateSA();
+        int updcount = db.updateSC();
 
         if (updcount > 0) {
             //Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();

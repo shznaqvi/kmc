@@ -1,7 +1,11 @@
 package edu.aku.hassannaqvi.kmc_screening.core;
 
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Application;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.location.Location;
 import android.location.LocationListener;
@@ -16,6 +20,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 import edu.aku.hassannaqvi.kmc_screening.contracts.FormsContract;
+import edu.aku.hassannaqvi.kmc_screening.ui.other.EndingActivity;
 
 /**
  * Created by hassan.naqvi on 11/30/2016.
@@ -81,6 +86,32 @@ public class MainApp extends Application {
             e.printStackTrace();
         }
         return calendar;
+    }
+
+    public static void endActivity(final Context context, final Activity activity) {
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                context);
+        alertDialogBuilder
+                .setMessage("Do you want to Exit??")
+                .setCancelable(false)
+                .setPositiveButton("Yes",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog,
+                                                int id) {
+                                activity.finish();
+                                Intent end_intent = new Intent(context, EndingActivity.class);
+                                end_intent.putExtra("check", false);
+                                context.startActivity(end_intent);
+                            }
+                        });
+        alertDialogBuilder.setNegativeButton("No",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+        AlertDialog alert = alertDialogBuilder.create();
+        alert.show();
     }
 
     @Override

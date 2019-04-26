@@ -1,4 +1,4 @@
-package edu.aku.hassannaqvi.kmc_screening.ui;
+package edu.aku.hassannaqvi.kmc_screening.ui.other;
 
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
@@ -12,6 +12,7 @@ import java.util.Date;
 import edu.aku.hassannaqvi.kmc_screening.R;
 import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc_screening.databinding.ActivityEndingBinding;
+import edu.aku.hassannaqvi.kmc_screening.ui.SectionInfoKmcActivity;
 import edu.aku.hassannaqvi.kmc_screening.validation.ValidatorClass;
 
 public class EndingActivity extends AppCompatActivity {

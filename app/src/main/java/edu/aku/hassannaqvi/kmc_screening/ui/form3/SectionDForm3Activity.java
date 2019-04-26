@@ -1,4 +1,4 @@
-package edu.aku.hassannaqvi.kmc_screening.ui;
+package edu.aku.hassannaqvi.kmc_screening.ui.form3;
 
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
@@ -10,9 +10,11 @@ import org.json.JSONException;
 
 import edu.aku.hassannaqvi.kmc_screening.R;
 import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
+import edu.aku.hassannaqvi.kmc_screening.core.MainApp;
 import edu.aku.hassannaqvi.kmc_screening.databinding.ActivitySectionDForm3Binding;
+import edu.aku.hassannaqvi.kmc_screening.ui.other.EndingActivity;
 
-public class SectionD_form3 extends AppCompatActivity {
+public class SectionDForm3Activity extends AppCompatActivity {
 
     ActivitySectionDForm3Binding bi;
 
@@ -25,31 +27,11 @@ public class SectionD_form3 extends AppCompatActivity {
     }
 
     public void BtnEnd() {
-
-        Toast.makeText(this, "Processing End Section", Toast.LENGTH_SHORT).show();
-        //if (formValidation()) {
-        try {
-            SaveDraft();
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        if (UpdateDB()) {
-            Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
-
-            finish();
-
-            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
-
-        } else {
-            Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
-        }
-        //}
-
-
+        MainApp.endActivity(this, this);
     }
 
 
-    private void SaveDraft() {
+    private void SaveDraft() throws JSONException {
 
     }
 

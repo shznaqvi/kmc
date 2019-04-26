@@ -1,6 +1,5 @@
-package edu.aku.hassannaqvi.kmc_screening.ui;
+package edu.aku.hassannaqvi.kmc_screening.ui.form2;
 
-import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -13,7 +12,9 @@ import org.json.JSONObject;
 import edu.aku.hassannaqvi.kmc_screening.JSON.GeneratorClass;
 import edu.aku.hassannaqvi.kmc_screening.R;
 import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
+import edu.aku.hassannaqvi.kmc_screening.core.MainApp;
 import edu.aku.hassannaqvi.kmc_screening.databinding.ActivitySectionBForm2Binding;
+import edu.aku.hassannaqvi.kmc_screening.ui.SectionInfoKmcActivity;
 import edu.aku.hassannaqvi.kmc_screening.validation.ClearClass;
 import edu.aku.hassannaqvi.kmc_screening.validation.ValidatorClass;
 
@@ -73,9 +74,8 @@ public class SectionBForm2Activity extends AppCompatActivity {
     }
 
     public void BtnEnd() {
-        startActivity(new Intent(this, EndingActivity.class));
+        MainApp.endActivity(this, this);
     }
-
 
 
     private void setListeners() {

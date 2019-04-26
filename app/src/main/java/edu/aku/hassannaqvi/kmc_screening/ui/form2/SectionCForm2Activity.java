@@ -1,4 +1,4 @@
-package edu.aku.hassannaqvi.kmc_screening.ui;
+package edu.aku.hassannaqvi.kmc_screening.ui.form2;
 
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
@@ -14,6 +14,8 @@ import edu.aku.hassannaqvi.kmc_screening.JSON.GeneratorClass;
 import edu.aku.hassannaqvi.kmc_screening.R;
 import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc_screening.databinding.ActivitySectionCForm2Binding;
+import edu.aku.hassannaqvi.kmc_screening.ui.SectionInfoKmcActivity;
+import edu.aku.hassannaqvi.kmc_screening.ui.other.EndingActivity;
 import edu.aku.hassannaqvi.kmc_screening.validation.ClearClass;
 import edu.aku.hassannaqvi.kmc_screening.validation.ValidatorClass;
 
