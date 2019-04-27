@@ -70,6 +70,7 @@ public class MainApp extends Application {
     public static String villageCode;
     public static String wSerialNo;
     public static String wName;
+    public static String formType;
 
 
     protected static LocationManager locationManager;

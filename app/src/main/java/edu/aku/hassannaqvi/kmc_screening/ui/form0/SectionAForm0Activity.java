@@ -1,17 +1,19 @@
 package edu.aku.hassannaqvi.kmc_screening.ui.form0;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.databinding.DataBindingUtil;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.support.v7.app.AppCompatActivity;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -36,7 +38,7 @@ import edu.aku.hassannaqvi.kmc_screening.databinding.ActivitySectionAForm0Bindin
 import edu.aku.hassannaqvi.kmc_screening.ui.other.EndingActivity;
 
 
-public class SectionAForm0Activity extends Activity {
+public class SectionAForm0Activity extends AppCompatActivity {
 
     private static final String TAG = SectionAForm0Activity.class.getName();
     public static FormsContract fc;
@@ -52,46 +54,32 @@ public class SectionAForm0Activity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_section_info_kmc);
-
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_a_form0);
         bi.setCallback(this);
 
         db = new DatabaseHelper(getApplicationContext());
 
-        populateSpinner(this);
-//
-//        bi.cra04.addTextChangedListener(new TextWatcher() {
-//            @Override
-//            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-//
-//            }
-//
-//            @Override
-//            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-//                clearFields();
-//                bi.fldGrpcra04.setVisibility(View.GONE);
-//                bi.btnNext.setVisibility(View.GONE);
-//                bi.btnEnd.setVisibility(View.GONE);
-//            }
-//
-//            @Override
-//            public void afterTextChanged(Editable editable) {
-//
-//            }
-//        });
-//
-//
-//        bi.cra07.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(RadioGroup group, int checkedId) {
-//                if (bi.cra07a.isChecked()) {
-//                    bi.btnNext.setVisibility(View.VISIBLE);
-//                } else {
-//                    bi.btnNext.setVisibility(View.GONE);
-//                }
-//            }
-//        });
+        if (MainApp.formType.equals("sur")) {
+            bi.checkBtnLayout.setVisibility(View.VISIBLE);
+            bi.hhLayout.setVisibility(View.GONE);
+            bi.recruitmentLayout.setVisibility(View.GONE);
+            bi.fldGrpcra04.setVisibility(View.GONE);
+        } else {
+            bi.checkBtnLayout.setVisibility(View.GONE);
+            bi.hhLayout.setVisibility(View.VISIBLE);
+            bi.recruitmentLayout.setVisibility(View.VISIBLE);
+            bi.fldGrpcra04.setVisibility(View.VISIBLE);
+            bi.kapr12a.setEnabled(false);
+            bi.kapr12a.setChecked(true);
+            bi.kapr12b.setEnabled(false);
+            bi.kapr12c.setEnabled(false);
+            bi.kapr12d.setEnabled(false);
+            bi.kapr12e.setEnabled(false);
+            bi.kapr12f.setEnabled(false);
+            bi.kapr12g.setEnabled(false);
+        }
 
+        populateSpinner(this);
 
     }
 
@@ -204,22 +192,6 @@ public class SectionAForm0Activity extends Activity {
         });
 
 
-        bi.crwoman.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
-                if (bi.crwoman.getSelectedItemPosition() != 0) {
-                    MainApp.wSerialNo = wSno.get(i);
-                    MainApp.wName = wName.get(i);
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
-
     }
 
 
@@ -322,53 +294,55 @@ public class SectionAForm0Activity extends Activity {
     }
 
 
-//    private boolean ValidateSpinners() {
+    private boolean ValidateSpinners() {
 //
-//        if (bi.crataluka.getSelectedItemPosition() == 0) {
-//            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crataluka), Toast.LENGTH_SHORT).show();
-//            ((TextView) bi.crataluka.getSelectedView()).setText("This Data is Required");
-//            ((TextView) bi.crataluka.getSelectedView()).setTextColor(Color.RED);
-//            bi.crataluka.requestFocus();
-//            Log.i(TAG, "crataluka: This Data is Required!");
-//            return false;
-//        } else {
-//            ((TextView) bi.crataluka.getSelectedView()).setError(null);
-//        }
-//
-//
-//        if (bi.crauc.getSelectedItemPosition() == 0) {
-//            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cruc), Toast.LENGTH_SHORT).show();
-//            ((TextView) bi.crauc.getSelectedView()).setText("This Data is Required");
-//            ((TextView) bi.crauc.getSelectedView()).setTextColor(Color.RED);
-//            bi.crauc.requestFocus();
-//            Log.i(TAG, "spTehsil: This Data is Required!");
-//            return false;
-//        } else {
-//            ((TextView) bi.crauc.getSelectedView()).setError(null);
-//        }
-//
-//
-//        if (bi.crvillage.getSelectedItemPosition() == 0) {
-//            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crvillage), Toast.LENGTH_SHORT).show();
-//            ((TextView) bi.crvillage.getSelectedView()).setText("This Data is Required");
-//            ((TextView) bi.crvillage.getSelectedView()).setTextColor(Color.RED);
-//            bi.crvillage.requestFocus();
-//            Log.i(TAG, "crvillage: This Data is Required!");
-//            return false;
-//        } else {
-//            ((TextView) bi.crvillage.getSelectedView()).setError(null);
-//        }
-//
-//
-//        return true;
-//    }
+        if (bi.crataluka.getSelectedItemPosition() == 0) {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crataluka), Toast.LENGTH_SHORT).show();
+            ((TextView) bi.crataluka.getSelectedView()).setText("This Data is Required");
+            ((TextView) bi.crataluka.getSelectedView()).setTextColor(Color.RED);
+            bi.crataluka.requestFocus();
+            Log.i(TAG, "crataluka: This Data is Required!");
+            return false;
+        } else {
+            ((TextView) bi.crataluka.getSelectedView()).setError(null);
+        }
 
 
-//    public void BtnSearchWoman() {
-//
-//        if (ValidateSpinners()) {
-//
-//            if (!TextUtils.isEmpty(bi.cra04.getText().toString())) {
+        if (bi.crauc.getSelectedItemPosition() == 0) {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cruc), Toast.LENGTH_SHORT).show();
+            ((TextView) bi.crauc.getSelectedView()).setText("This Data is Required");
+            ((TextView) bi.crauc.getSelectedView()).setTextColor(Color.RED);
+            bi.crauc.requestFocus();
+            Log.i(TAG, "spTehsil: This Data is Required!");
+            return false;
+        } else {
+            ((TextView) bi.crauc.getSelectedView()).setError(null);
+        }
+
+
+        if (bi.crvillage.getSelectedItemPosition() == 0) {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crvillage), Toast.LENGTH_SHORT).show();
+            ((TextView) bi.crvillage.getSelectedView()).setText("This Data is Required");
+            ((TextView) bi.crvillage.getSelectedView()).setTextColor(Color.RED);
+            bi.crvillage.requestFocus();
+            Log.i(TAG, "crvillage: This Data is Required!");
+            return false;
+        } else {
+            ((TextView) bi.crvillage.getSelectedView()).setError(null);
+        }
+
+
+        return true;
+    }
+
+
+    public void BtnSearchWoman() {
+
+        if (ValidateSpinners()) {
+
+            bi.fldGrpcra04.setVisibility(View.VISIBLE);
+
+//            if (!TextUtils.isEmpty(bi.kapr02.getText().toString())) {
 //
 //                db = new DatabaseHelper(this);
 //
@@ -381,7 +355,7 @@ public class SectionAForm0Activity extends Activity {
 //
 //                mapWRA = new HashMap<>();
 //
-//                Collection<MwraContract> dc = db.getMWRA(bi.cra04.getText().toString(), MainApp.villageCode);
+//                Collection<MwraContract> dc = db.getMWRA(bi.kapr02.getText().toString(), MainApp.villageCode);
 //                Log.d(TAG, "onCreate: " + dc.size());
 //                for (MwraContract d : dc) {
 //                    wName.add(d.getWname() + "_" + d.getSno());
@@ -391,19 +365,8 @@ public class SectionAForm0Activity extends Activity {
 //
 //                }
 //
-//                // Creating adapter for spinner
-//                ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(this,
-//                        android.R.layout.simple_spinner_dropdown_item, wName);
-//
-//                // Drop down layout style - list view with radio button
-//                dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//
-//                // attaching data adapter to spinner
-//                bi.crwoman.setAdapter(dataAdapter);
-//
 //
 //                if (dc.size() <= 0) {
-//                    clearFields();
 //                    bi.fldGrpcra04.setVisibility(View.GONE);
 //                    bi.btnNext.setVisibility(View.GONE);
 //                    bi.btnEnd.setVisibility(View.GONE);
@@ -416,15 +379,16 @@ public class SectionAForm0Activity extends Activity {
 //                }
 //            } else {
 //                Toast.makeText(this, "Household number required", Toast.LENGTH_LONG).show();
-//                clearFields();
+//
 //                bi.btnNext.setVisibility(View.GONE);
 //                bi.btnEnd.setVisibility(View.GONE);
-//                bi.cra04.requestFocus();
+//                bi.kapr02.requestFocus();
 //            }
-//        }
-//    }
-//
-//    public void clearFields() {
+        }
+    }
+
+    //
+    public void clearFields() {
 //        bi.fldGrpcra04.setVisibility(View.GONE);
 //
 //        bi.cravillage.setText(null);
@@ -432,7 +396,7 @@ public class SectionAForm0Activity extends Activity {
 //        //bi.cra05.setText(null);
 //        bi.cra06.setText(null);
 //        bi.cra07.clearCheck();
-//    }
+    }
 
 
     private boolean UpdateDB() {

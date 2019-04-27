@@ -35,11 +35,7 @@
                 android:id="@+id/crataluka"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="15dp"
-                android:background="@color/colorPrimaryDark"
-                android:popupBackground="@color/colorPrimary"
-                android:prompt="@string/crataluka" />
+                android:padding="20dp" />
 
             <TextView
                 style="@style/i_textview"
@@ -49,11 +45,7 @@
                 android:id="@+id/crauc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="15dp"
-                android:background="@color/colorPrimaryDark"
-                android:popupBackground="#d6d6d6"
-                android:prompt="@string/cruc" />
+                android:padding="20dp" />
 
             <TextView
                 style="@style/i_textview"
@@ -63,39 +55,24 @@
                 android:id="@+id/crvillage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="15dp"
-                android:background="@color/colorPrimaryDark"
-                android:popupBackground="#d6d6d6"
-                android:prompt="@string/crvillage" />
+                android:padding="20dp" />
 
-            <TextView
-                style="@style/i_textview"
-                android:text="@string/kapr01" />
-
-            <EditText
-                android:id="@+id/kapr01"
-                style="@style/textInput"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/kapr01"
-                android:inputType="number"
-                android:maxLength="4" />
 
             <LinearLayout
-                android:layout_height="match_parent"
+                android:id="@+id/checkBtnLayout"
                 android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/kapr02"
+                    android:id="@+id/kapr02a"
                     style="@style/textInput"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789-"
-                    android:hint="@string/kapr02"
+                    android:hint="@string/kapr01"
                     android:inputType="textCapCharacters"
                     android:maxLength="6" />
 
@@ -104,10 +81,35 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:onClick="@{() -> callback.BtnSearchWoman()}"
                     android:background="@android:color/holo_red_light"
+                    android:onClick='@{() -> callback.BtnSearchWoman()}'
                     android:text="CHECK"
                     android:textColor="@color/white" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/hhLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/i_textview"
+                    android:text="@string/kapr01" />
+
+                <EditText
+                    android:id="@+id/kapr02b"
+                    style="@style/textInput"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789-"
+                    android:hint="@string/kapr01"
+                    android:inputType="textCapCharacters"
+                    android:maxLength="6" />
+
 
             </LinearLayout>
 
@@ -116,131 +118,132 @@
                 android:id="@+id/fldGrpcra04"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:visibility="visible">
+                android:orientation="vertical">
 
-
-                <TextView
-                    style="@style/i_textview"
-                    android:text="@string/kapr03" />
-
-                <Spinner
-                    android:id="@+id/crwoman"
+                <LinearLayout
+                    android:id="@+id/recruitmentLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="15dp"
-                    android:background="@color/colorPrimaryDark"
-                    android:popupBackground="#d6d6d6"
-                    android:prompt="@string/kapr03"
-                    android:spinnerMode="dialog" />
+                    android:orientation="vertical">
 
+                    <TextView
+                        style="@style/i_textview"
+                        android:text="@string/kapr03" />
 
-                <TextView
-                    style="@style/i_textview"
-                    android:text="@string/kapr04" />
+                    <EditText
+                        android:id="@+id/kapr03"
+                        style="@style/textInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:digits="0123456789"
+                        android:hint="@string/kapr03" />
 
-                <EditText
-                    android:id="@+id/kapr04"
-                    style="@style/textInput"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:digits="0123456789"
-                    android:hint="@string/kapr04"
-                    android:inputType="number"
-                    android:maxLength="2" />
+                    <TextView
+                        style="@style/i_textview"
+                        android:text="@string/kapr04" />
 
-                <TextView
-                    style="@style/i_textview"
-                    android:text="@string/kapr05" />
+                    <EditText
+                        android:id="@+id/kapr04"
+                        style="@style/textInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:digits="0123456789"
+                        android:hint="@string/kapr04"
+                        android:inputType="number"
+                        android:maxLength="2" />
 
-                <io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText
-                    android:id="@+id/kapr05"
-                    style="@style/textInput"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="dd/MM/yyyy"
-                    app:dateFormat="dd/MM/yyyy" />
+                    <TextView
+                        style="@style/i_textview"
+                        android:text="@string/kapr05" />
 
-                <TextView
-                    style="@style/i_textview"
-                    android:text="@string/kapr06" />
+                    <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                        android:id="@+id/kapr05"
+                        style="@style/textInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="dd/MM/yyyy"
+                        app:dateFormat="dd/MM/yyyy" />
 
-                <EditText
-                    android:id="@+id/kapr06"
-                    style="@style/textInput"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:digits="0123456789"
-                    android:hint="@string/kapr06"
-                    android:inputType="text" />
+                    <TextView
+                        style="@style/i_textview"
+                        android:text="@string/kapr06" />
 
-                <TextView
-                    style="@style/i_textview"
-                    android:text="@string/kapr07" />
+                    <EditText
+                        android:id="@+id/kapr06"
+                        style="@style/textInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:digits="0123456789"
+                        android:hint="@string/kapr06"
+                        android:inputType="text" />
 
-                <EditText
-                    android:id="@+id/kapr07"
-                    style="@style/textInput"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:digits="0123456789"
-                    android:hint="@string/kapr07"
-                    android:inputType="text" />
+                    <TextView
+                        style="@style/i_textview"
+                        android:text="@string/kapr07" />
 
-                <TextView
-                    style="@style/i_textview"
-                    android:text="@string/kapr08" />
+                    <EditText
+                        android:id="@+id/kapr07"
+                        style="@style/textInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:digits="0123456789"
+                        android:hint="@string/kapr07"
+                        android:inputType="text" />
 
-                <EditText
-                    android:id="@+id/kapr08"
-                    style="@style/textInput"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:digits="0123456789"
-                    android:hint="@string/kapr08"
-                    android:inputType="text" />
+                    <TextView
+                        style="@style/i_textview"
+                        android:text="@string/kapr08" />
 
-                <TextView
-                    style="@style/i_textview"
-                    android:text="@string/kapr09" />
+                    <EditText
+                        android:id="@+id/kapr08"
+                        style="@style/textInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:digits="0123456789"
+                        android:hint="@string/kapr08"
+                        android:inputType="text" />
 
-                <EditText
-                    android:id="@+id/kapr09"
-                    style="@style/textInput"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:digits="0123456789"
-                    android:hint="@string/kapr09"
-                    android:inputType="text" />
+                    <TextView
+                        style="@style/i_textview"
+                        android:text="@string/kapr09" />
 
-                <TextView
-                    style="@style/i_textview"
-                    android:text="@string/kapr10" />
+                    <EditText
+                        android:id="@+id/kapr09"
+                        style="@style/textInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:digits="0123456789"
+                        android:hint="@string/kapr09"
+                        android:inputType="text" />
 
-                <EditText
-                    android:id="@+id/kapr10"
-                    style="@style/textInput"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:digits="0123456789"
-                    android:hint="@string/kapr10"
-                    android:inputType="number"
-                    android:maxLength="11" />
+                    <TextView
+                        style="@style/i_textview"
+                        android:text="@string/kapr10" />
 
-                <TextView
-                    style="@style/i_textview"
-                    android:text="@string/kapr11" />
+                    <EditText
+                        android:id="@+id/kapr10"
+                        style="@style/textInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:digits="0123456789"
+                        android:hint="@string/kapr10"
+                        android:inputType="number"
+                        android:maxLength="11" />
 
-                <EditText
-                    android:id="@+id/kapr11"
-                    style="@style/textInput"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:digits="0123456789"
-                    android:hint="@string/kapr11"
-                    android:inputType="number"
-                    android:maxLength="2" />
+                    <TextView
+                        style="@style/i_textview"
+                        android:text="@string/kapr11" />
+
+                    <EditText
+                        android:id="@+id/kapr11"
+                        style="@style/textInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:digits="0123456789"
+                        android:hint="@string/kapr11"
+                        android:inputType="number"
+                        android:maxLength="2" />
+                </LinearLayout>
 
                 <TextView
                     style="@style/i_textview"
@@ -310,134 +313,140 @@
 
                 </RadioGroup>
 
-                <TextView
-                    style="@style/i_textview"
-                    android:text="@string/kapr13" />
-
-                <RadioGroup
-                    android:id="@+id/kapr13"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility='@{kapr12a.checked? View.GONE : View.VISIBLE}'>
 
-                    <RadioButton
-                        android:id="@+id/kapr13a"
+                    <TextView
+                        style="@style/i_textview"
+                        android:text="@string/kapr13" />
+
+                    <RadioGroup
+                        android:id="@+id/kapr13"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:layout_weight="1"
-                        android:text="@string/kapr13a" />
+                        android:orientation="vertical">
 
-                    <RadioButton
-                        android:id="@+id/kapr13b"
+                        <RadioButton
+                            android:id="@+id/kapr13a"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:layout_weight="1"
+                            android:text="@string/kapr13a" />
+
+                        <RadioButton
+                            android:id="@+id/kapr13b"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:layout_weight="1"
+                            android:text="@string/kapr13b" />
+
+                        <RadioButton
+                            android:id="@+id/kapr13c"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:layout_weight="1"
+                            android:text="@string/kapr13c" />
+
+                        <RadioButton
+                            android:id="@+id/kapr13d"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:layout_weight="1"
+                            android:text="@string/kapr13d" />
+
+                        <RadioButton
+                            android:id="@+id/kapr13e"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:layout_weight="1"
+                            android:text="@string/kapr13e" />
+
+                        <RadioButton
+                            android:id="@+id/kapr13f"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:layout_weight="1"
+                            android:text="@string/kapr13f" />
+
+                        <RadioButton
+                            android:id="@+id/kapr13g"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:layout_weight="1"
+                            android:text="@string/kapr13g" />
+
+                    </RadioGroup>
+
+                    <TextView
+                        style="@style/i_textview"
+                        android:text="@string/kapr14" />
+
+                    <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                        android:id="@+id/kapr14"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:layout_weight="1"
-                        android:text="@string/kapr13b" />
+                        android:hint="dd/MM/yyyy"
+                        app:dateFormat="dd-MM-yyyy" />
 
-                    <RadioButton
-                        android:id="@+id/kapr13c"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:layout_weight="1"
-                        android:text="@string/kapr13c" />
-
-                    <RadioButton
-                        android:id="@+id/kapr13d"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:layout_weight="1"
-                        android:text="@string/kapr13d" />
-
-                    <RadioButton
-                        android:id="@+id/kapr13e"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:layout_weight="1"
-                        android:text="@string/kapr13e" />
-
-                    <RadioButton
-                        android:id="@+id/kapr13f"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:layout_weight="1"
-                        android:text="@string/kapr13f" />
-
-                    <RadioButton
-                        android:id="@+id/kapr13g"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:layout_weight="1"
-                        android:text="@string/kapr13g" />
-
-                </RadioGroup>
-
-                <TextView
-                    style="@style/i_textview"
-                    android:text="@string/kapr14" />
-
-                <io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText
-                    android:id="@+id/kapr14"
-                    style="@style/textInput"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="dd/MM/yyyy"
-                    android:saveEnabled="@android:"
-                    app:dateFormat="dd/MM/yyyy" />
-
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:id="@+id/fldGrpcra02"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:visibility="visible">
+                </LinearLayout>
 
 
                 <LinearLayout
-                    android:id="@+id/fldGrpbtn"
+                    android:id="@+id/fldGrpcra02"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:paddingTop="32dp">
+                    android:orientation="vertical"
+                    android:visibility="visible">
 
-                    <Button
-                        android:id="@+id/btnNext"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="4dp"
-                        android:layout_weight="1"
-                        android:background="@android:color/holo_green_light"
-                        android:onClick="@{() -> callback.BtnContinue()}"
-                        android:text="@string/nextSection"
-                        android:textColor="@color/white"
-                        android:textSize="24sp" />
 
-                    <Button
-                        android:id="@+id/btnEnd"
-                        android:layout_width="0dp"
+                    <LinearLayout
+                        android:id="@+id/fldGrpbtn"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="4dp"
-                        android:layout_weight="1"
-                        android:background="@android:color/holo_red_light"
-                        android:onClick="@{() -> callback.BtnEnd()}"
-                        android:text="@string/endForm"
-                        android:textColor="@color/white"
-                        android:textSize="24sp"
-                        android:textStyle="bold" />
+                        android:orientation="horizontal"
+                        android:paddingTop="32dp">
+
+                        <Button
+                            android:id="@+id/btnNext"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            android:background="@android:color/holo_green_light"
+                            android:onClick="@{() -> callback.BtnContinue()}"
+                            android:text="@string/nextSection"
+                            android:textColor="@color/white"
+                            android:textSize="24sp" />
+
+                        <Button
+                            android:id="@+id/btnEnd"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            android:background="@android:color/holo_red_light"
+                            android:onClick="@{() -> callback.BtnEnd()}"
+                            android:text="@string/endForm"
+                            android:textColor="@color/white"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
             </LinearLayout>
+
 
         </LinearLayout>
     </ScrollView>

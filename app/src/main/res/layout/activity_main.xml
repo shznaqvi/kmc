@@ -93,6 +93,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="8dp"
+                android:onClick="@{(v) -> callback.openForm(4)}"
+                android:text="FORM-0 PW Survelliance" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
                 android:onClick="@{(v) -> callback.openForm(1)}"
                 android:text="FORM-1 PARTICIPANT ELIGIBILITY SCREENING" />
 

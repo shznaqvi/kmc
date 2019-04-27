@@ -81,6 +81,7 @@ public class MainActivity extends Activity {
     private ProgressDialog pd;
     private Boolean exit = false;
     private String rSumText = "";
+    String formType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -258,7 +259,6 @@ public class MainActivity extends Activity {
     public void openForm(int index) {
 
         final Intent oF = new Intent(MainActivity.this, getClass(index));
-
         if (sharedPref.getString("tagName", null) != "" && sharedPref.getString("tagName", null) != null && !MainApp.userName.equals("0000")) {
             startActivity(oF);
         } else {
@@ -303,6 +303,11 @@ public class MainActivity extends Activity {
         Class intentClass = null;
         switch (a) {
             case 0:
+                MainApp.formType = "recr";
+                intentClass = SectionAForm0Activity.class;
+                break;
+            case 4:
+                MainApp.formType = "sur";
                 intentClass = SectionAForm0Activity.class;
                 break;
             case 1:
