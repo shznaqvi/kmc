@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layoutDirection="rtl"
     tools:context=".ui.form0.SectionAForm0Activity">
@@ -25,28 +26,9 @@
             android:layoutDirection="rtl"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:background="@color/colorHeading"
-                android:text="@string/section_A"
-                android:textAlignment="center"
-                android:textColor="@android:color/black"
-                android:textSize="30sp"
-                android:textStyle="bold"
-                tools:typeface="serif" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="@color/colorPrimaryDark" />
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                style="@style/i_textview"
                 android:text="@string/crataluka" />
 
             <Spinner
@@ -55,14 +37,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="15dp"
-                android:background="@color/colorHeading"
-                android:popupBackground="#d6d6d6"
+                android:background="@color/colorPrimaryDark"
+                android:popupBackground="@color/colorPrimary"
                 android:prompt="@string/crataluka" />
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                style="@style/i_textview"
                 android:text="@string/cruc" />
 
             <Spinner
@@ -71,14 +51,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="15dp"
-                android:background="@color/colorHeading"
+                android:background="@color/colorPrimaryDark"
                 android:popupBackground="#d6d6d6"
                 android:prompt="@string/cruc" />
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                style="@style/i_textview"
                 android:text="@string/crvillage" />
 
             <Spinner
@@ -87,39 +65,49 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="15dp"
-                android:background="@color/colorHeading"
+                android:background="@color/colorPrimaryDark"
                 android:popupBackground="#d6d6d6"
                 android:prompt="@string/crvillage" />
 
             <TextView
+                style="@style/i_textview"
+                android:text="@string/kapr01" />
+
+            <EditText
+                android:id="@+id/kapr01"
+                style="@style/textInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/cra04" />
+                android:hint="@string/kapr01"
+                android:inputType="number"
+                android:maxLength="4" />
 
             <LinearLayout
+                android:layout_height="match_parent"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
+                android:layout_margin="5dp"
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/cra04"
-                    android:layout_width="230dp"
+                    android:id="@+id/kapr02"
+                    style="@style/textInput"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789-"
-                    android:hint="@string/cra04"
+                    android:hint="@string/kapr02"
                     android:inputType="textCapCharacters"
                     android:maxLength="6" />
 
                 <Button
                     android:id="@+id/btnSearch"
                     android:layout_width="0dp"
-                    android:layout_height="70dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:onClick="@{() -> callback.BtnSearchWoman()}"
-                    android:text="@string/searchwoman"
-                    android:textColor="@android:color/holo_green_light" />
+                    android:background="@android:color/holo_red_light"
+                    android:text="CHECK"
+                    android:textColor="@color/white" />
 
             </LinearLayout>
 
@@ -129,15 +117,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:visibility="gone"
-                tools:visibility="visible">
+                android:visibility="visible">
 
 
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/crwoman" />
+                    style="@style/i_textview"
+                    android:text="@string/kapr03" />
 
                 <Spinner
                     android:id="@+id/crwoman"
@@ -145,127 +130,267 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="15dp"
-                    android:background="@color/colorHeading"
+                    android:background="@color/colorPrimaryDark"
                     android:popupBackground="#d6d6d6"
-                    android:prompt="@string/crwoman" />
+                    android:prompt="@string/kapr03"
+                    android:spinnerMode="dialog" />
 
 
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/crvillage" />
-
-                <!--<LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:orientation="horizontal">-->
-
-                <!--<ToggleButton
-                    android:id="@+id/btnChangeVillage"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_weight="0.3"
-                    android:focusable="true"
-                    android:focusableInTouchMode="true"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:textOff=""
-                    android:textOn="" />-->
+                    style="@style/i_textview"
+                    android:text="@string/kapr04" />
 
                 <EditText
-                    android:id="@+id/cravillage"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789"
-                    android:hint="@string/crvillage"
-                    android:inputType="textCapWords" />
-
-                <!--</LinearLayout>-->
-
-
-                <!--<TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/cra03" />
-
-                <EditText
-                    android:id="@+id/cra03"
+                    android:id="@+id/kapr04"
+                    style="@style/textInput"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:digits="0123456789"
-                    android:hint="@string/cra03"
-                    android:inputType="number"
-                    android:maxLength="5" />-->
-
-                <!-- <TextView
-                     android:layout_width="match_parent"
-                     android:layout_height="wrap_content"
-                     android:layout_marginTop="8dp"
-                     android:text="@string/cra05" />
-
-                 <EditText
-                     android:id="@+id/cra05"
-                     android:layout_width="match_parent"
-                     android:layout_height="wrap_content"
-                     android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                     android:hint="@string/cra05"
-                     android:inputType="textCapWords"
-                     android:maxLength="50" />-->
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/cra06" />
-
-                <EditText
-                    android:id="@+id/cra06"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:digits="0123456789"
-                    android:hint="@string/cra06"
+                    android:hint="@string/kapr04"
                     android:inputType="number"
                     android:maxLength="2" />
 
-
-                <!--cra07-->
                 <TextView
+                    style="@style/i_textview"
+                    android:text="@string/kapr05" />
+
+                <io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText
+                    android:id="@+id/kapr05"
+                    style="@style/textInput"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@color/colorPrimary"
-                    android:text="@string/cra07"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/white" />
+                    android:hint="dd/MM/yyyy"
+                    app:dateFormat="dd/MM/yyyy" />
+
+                <TextView
+                    style="@style/i_textview"
+                    android:text="@string/kapr06" />
+
+                <EditText
+                    android:id="@+id/kapr06"
+                    style="@style/textInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="0123456789"
+                    android:hint="@string/kapr06"
+                    android:inputType="text" />
+
+                <TextView
+                    style="@style/i_textview"
+                    android:text="@string/kapr07" />
+
+                <EditText
+                    android:id="@+id/kapr07"
+                    style="@style/textInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="0123456789"
+                    android:hint="@string/kapr07"
+                    android:inputType="text" />
+
+                <TextView
+                    style="@style/i_textview"
+                    android:text="@string/kapr08" />
+
+                <EditText
+                    android:id="@+id/kapr08"
+                    style="@style/textInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="0123456789"
+                    android:hint="@string/kapr08"
+                    android:inputType="text" />
+
+                <TextView
+                    style="@style/i_textview"
+                    android:text="@string/kapr09" />
+
+                <EditText
+                    android:id="@+id/kapr09"
+                    style="@style/textInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="0123456789"
+                    android:hint="@string/kapr09"
+                    android:inputType="text" />
+
+                <TextView
+                    style="@style/i_textview"
+                    android:text="@string/kapr10" />
+
+                <EditText
+                    android:id="@+id/kapr10"
+                    style="@style/textInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="0123456789"
+                    android:hint="@string/kapr10"
+                    android:inputType="number"
+                    android:maxLength="11" />
+
+                <TextView
+                    style="@style/i_textview"
+                    android:text="@string/kapr11" />
+
+                <EditText
+                    android:id="@+id/kapr11"
+                    style="@style/textInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="0123456789"
+                    android:hint="@string/kapr11"
+                    android:inputType="number"
+                    android:maxLength="2" />
+
+                <TextView
+                    style="@style/i_textview"
+                    android:text="@string/kapr12" />
 
                 <RadioGroup
-                    android:id="@+id/cra07"
+                    android:id="@+id/kapr12"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
 
                     <RadioButton
-                        android:id="@+id/cra07a"
+                        android:id="@+id/kapr12a"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
-                        android:text="@string/yes" />
+                        android:text="@string/kapr12a" />
 
                     <RadioButton
-                        android:id="@+id/cra07b"
+                        android:id="@+id/kapr12b"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:layout_weight="1"
-                        android:text="@string/no" />
+                        android:text="@string/kapr12b" />
+
+                    <RadioButton
+                        android:id="@+id/kapr12c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="1"
+                        android:text="@string/kapr12c" />
+
+                    <RadioButton
+                        android:id="@+id/kapr12d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="1"
+                        android:text="@string/kapr12d" />
+
+                    <RadioButton
+                        android:id="@+id/kapr12e"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="1"
+                        android:text="@string/kapr12e" />
+
+                    <RadioButton
+                        android:id="@+id/kapr12f"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="1"
+                        android:text="@string/kapr12f" />
+
+                    <RadioButton
+                        android:id="@+id/kapr12g"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="1"
+                        android:text="@string/kapr12g" />
 
                 </RadioGroup>
+
+                <TextView
+                    style="@style/i_textview"
+                    android:text="@string/kapr13" />
+
+                <RadioGroup
+                    android:id="@+id/kapr13"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/kapr13a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="1"
+                        android:text="@string/kapr13a" />
+
+                    <RadioButton
+                        android:id="@+id/kapr13b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="1"
+                        android:text="@string/kapr13b" />
+
+                    <RadioButton
+                        android:id="@+id/kapr13c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="1"
+                        android:text="@string/kapr13c" />
+
+                    <RadioButton
+                        android:id="@+id/kapr13d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="1"
+                        android:text="@string/kapr13d" />
+
+                    <RadioButton
+                        android:id="@+id/kapr13e"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="1"
+                        android:text="@string/kapr13e" />
+
+                    <RadioButton
+                        android:id="@+id/kapr13f"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="1"
+                        android:text="@string/kapr13f" />
+
+                    <RadioButton
+                        android:id="@+id/kapr13g"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="1"
+                        android:text="@string/kapr13g" />
+
+                </RadioGroup>
+
+                <TextView
+                    style="@style/i_textview"
+                    android:text="@string/kapr14" />
+
+                <io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText
+                    android:id="@+id/kapr14"
+                    style="@style/textInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="dd/MM/yyyy"
+                    android:saveEnabled="@android:"
+                    app:dateFormat="dd/MM/yyyy" />
+
 
             </LinearLayout>
 
@@ -291,9 +416,10 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
                         android:layout_weight="1"
+                        android:background="@android:color/holo_green_light"
                         android:onClick="@{() -> callback.BtnContinue()}"
                         android:text="@string/nextSection"
-                        android:textColor="@android:color/holo_green_light"
+                        android:textColor="@color/white"
                         android:textSize="24sp" />
 
                     <Button
@@ -302,9 +428,10 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
                         android:layout_weight="1"
+                        android:background="@android:color/holo_red_light"
                         android:onClick="@{() -> callback.BtnEnd()}"
                         android:text="@string/endForm"
-                        android:textColor="@android:color/holo_red_light"
+                        android:textColor="@color/white"
                         android:textSize="24sp"
                         android:textStyle="bold" />
 
