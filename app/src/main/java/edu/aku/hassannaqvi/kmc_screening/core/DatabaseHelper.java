@@ -55,6 +55,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             FormsTable.COLUMN__UID + " TEXT," +
             FormsTable.COLUMN_FORMDATE + " TEXT," +
             FormsTable.COLUMN_USER + " TEXT," +
+            FormsTable.COLUMN_HHNO + " TEXT," +
+            FormsTable.COLUMN_TALUKA + " TEXT," +
+            FormsTable.COLUMN_UC + " TEXT," +
+            FormsTable.COLUMN_VILLAGE + " TEXT," +
             FormsTable.COLUMN_ISTATUS + " TEXT," +
             FormsTable.COLUMN_ISTATUS88X + " TEXT," +
             FormsTable.COLUMN_SINFO + " TEXT," +
@@ -666,6 +670,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_SYNCED, fc.getSynced());
         values.put(FormsTable.COLUMN_SYNCED_DATE, fc.getSynced_date());
         values.put(FormsTable.COLUMN_APPVERSION, fc.getAppversion());
+        values.put(FormsTable.COLUMN_HHNO, fc.getHhno());
+        values.put(FormsTable.COLUMN_UC, fc.getUc());
+        values.put(FormsTable.COLUMN_TALUKA, fc.getTaluka());
+        values.put(FormsTable.COLUMN_VILLAGE, fc.getVillage());
 
 
         // Insert the new row, returning the primary key value of the new row
@@ -746,7 +754,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_DEVICETAGID,
                 FormsTable.COLUMN_SYNCED,
                 FormsTable.COLUMN_SYNCED_DATE,
-                FormsTable.COLUMN_APPVERSION
+                FormsTable.COLUMN_APPVERSION,
+                FormsTable.COLUMN_HHNO,
+                FormsTable.COLUMN_UC,
+                FormsTable.COLUMN_VILLAGE,
+                FormsTable.COLUMN_TALUKA,
 
         };
         String whereClause = FormsTable.COLUMN_SYNCED + " is null OR " + FormsTable.COLUMN_SYNCED + " = '' ";

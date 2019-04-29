@@ -71,6 +71,7 @@ public class MainApp extends Application {
     public static String wSerialNo;
     public static String wName;
     public static String formType;
+    public static String surveyType;
 
 
     protected static LocationManager locationManager;

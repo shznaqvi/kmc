@@ -303,11 +303,13 @@ public class MainActivity extends Activity {
         Class intentClass = null;
         switch (a) {
             case 0:
-                MainApp.formType = "recr";
+                MainApp.surveyType = "f0a";
+                MainApp.formType = "f0";
                 intentClass = SectionAForm0Activity.class;
                 break;
             case 4:
-                MainApp.formType = "sur";
+                MainApp.surveyType = "f0b";
+                MainApp.formType = "f1";
                 intentClass = SectionAForm0Activity.class;
                 break;
             case 1:

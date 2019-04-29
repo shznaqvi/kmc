@@ -20,6 +20,7 @@
         android:layout_height="wrap_content">
 
         <LinearLayout
+            android:id="@+id/form0Layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:animateLayoutChanges="true"
@@ -65,15 +66,15 @@
                 android:layout_margin="5dp"
                 android:orientation="horizontal">
 
+
                 <EditText
                     android:id="@+id/kapr02a"
                     style="@style/textInput"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789-"
                     android:hint="@string/kapr01"
-                    android:inputType="textCapCharacters"
+                    android:inputType="number"
                     android:maxLength="6" />
 
                 <Button
@@ -91,9 +92,8 @@
             <LinearLayout
                 android:id="@+id/hhLayout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <TextView
                     style="@style/i_textview"
@@ -101,14 +101,19 @@
 
                 <EditText
                     android:id="@+id/kapr02b"
-                    style="@style/textInput"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789-"
+                    style="@style/EditText_number"
                     android:hint="@string/kapr01"
-                    android:inputType="textCapCharacters"
-                    android:maxLength="6" />
+                    android:maxLength="3" />
+
+                <TextView
+                    style="@style/i_textview"
+                    android:text="@string/kapr02" />
+
+                <EditText
+                    android:id="@+id/womenID"
+                    style="@style/EditText_number"
+                    android:hint="@string/kapr02"
+                    android:maxLength="1" />
 
 
             </LinearLayout>
@@ -135,8 +140,9 @@
                         style="@style/textInput"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:digits="0123456789"
-                        android:hint="@string/kapr03" />
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                        android:hint="@string/kapr03"
+                        android:inputType="text" />
 
                     <TextView
                         style="@style/i_textview"
@@ -173,7 +179,7 @@
                         style="@style/textInput"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:digits="0123456789"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
                         android:hint="@string/kapr06"
                         android:inputType="text" />
 
@@ -186,7 +192,7 @@
                         style="@style/textInput"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:digits="0123456789"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
                         android:hint="@string/kapr07"
                         android:inputType="text" />
 
@@ -199,7 +205,7 @@
                         style="@style/textInput"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:digits="0123456789"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
                         android:hint="@string/kapr08"
                         android:inputType="text" />
 
@@ -212,7 +218,7 @@
                         style="@style/textInput"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:digits="0123456789"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
                         android:hint="@string/kapr09"
                         android:inputType="text" />
 
