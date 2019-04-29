@@ -830,7 +830,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         };
         String whereClause =
                 FormsTable.COLUMN_FORMTYPE +
-                        " =? AND" +
+                        " =? AND " +
                         FormsTable.COLUMN_SURVEYTYPE +
                         " =? AND (" +
                         FormsTable.COLUMN_SYNCED +
