@@ -309,7 +309,7 @@ public class MainActivity extends Activity {
                 break;
             case 1:
                 MainApp.surveyType = "f0b";
-                MainApp.formType = "f1";
+                MainApp.formType = "f0";
                 intentClass = SectionAForm0Activity.class;
                 break;
             case 2:
