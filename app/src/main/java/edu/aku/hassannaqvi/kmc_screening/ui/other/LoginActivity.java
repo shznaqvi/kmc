@@ -156,9 +156,13 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             e.printStackTrace();
         }
 
-        // Set up the login form.
-//        mEmailView = findViewById(R.id.email);
-        populateAutoComplete();
+        Permissions.check(LoginActivity.this, permissions, null/*rationale*/, null/*options*/, new PermissionHandler() {
+            @Override
+            public void onGranted() {
+                // do your task.
+                populateAutoComplete();
+            }
+        });
 
         Target viewTarget = new ViewTarget(R.id.syncData, this);
 
@@ -190,15 +194,12 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                         attemptLogin();
                     }
                 });
-
-
             }
         });
 
         db = new DatabaseHelper(this);
 
 //        DB backup
-
         dbBackup();
     }
 
