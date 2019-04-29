@@ -74,6 +74,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             FormsTable.COLUMN_GPSLNG + " TEXT," +
             FormsTable.COLUMN_GPSDT + " TEXT," +
             FormsTable.COLUMN_GPSACC + " TEXT," +
+            FormsTable.COLUMN_GPSALTITUDE + " TEXT," +
             FormsTable.COLUMN_DEVICEID + " TEXT," +
             FormsTable.COLUMN_DEVICETAGID + " TEXT," +
             FormsTable.COLUMN_SYNCED + " TEXT," +
@@ -665,6 +666,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_GPSLNG, fc.getGpsLng());
         values.put(FormsTable.COLUMN_GPSDT, fc.getGpsDT());
         values.put(FormsTable.COLUMN_GPSACC, fc.getGpsAcc());
+        values.put(FormsTable.COLUMN_GPSALTITUDE, fc.getGpsAltitude());
         values.put(FormsTable.COLUMN_DEVICEID, fc.getDeviceID());
         values.put(FormsTable.COLUMN_DEVICETAGID, fc.getDevicetagID());
         values.put(FormsTable.COLUMN_SYNCED, fc.getSynced());
@@ -714,7 +716,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN__UID, MainApp.fc.getUID());
 
 // Which row to update, based on the ID
-        String selection = FormsTable._ID + " = ?";
+        String selection = FormsTable.COLUMN__ID + " = ?";
         String[] selectionArgs = {String.valueOf(MainApp.fc.get_ID())};
 
         int count = db.update(FormsTable.TABLE_NAME,
@@ -750,6 +752,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_GPSLNG,
                 FormsTable.COLUMN_GPSDT,
                 FormsTable.COLUMN_GPSACC,
+                FormsTable.COLUMN_GPSALTITUDE,
                 FormsTable.COLUMN_DEVICEID,
                 FormsTable.COLUMN_DEVICETAGID,
                 FormsTable.COLUMN_SYNCED,

@@ -45,18 +45,15 @@ public class SectionAForm0Activity extends AppCompatActivity {
 
     private static final String TAG = SectionAForm0Activity.class.getName();
     public static FormsContract fc;
-    public List<String> psuName, districtNames, villageNames, wName;
-    public List<String> psuCode, districtCodes, villageCodes, wSno;
+    public List<String> ucName, talukaNames, villageNames, wName;
+    public List<String> ucCode, talukaCodes, villageCodes, wSno;
     Map<String, MwraContract> mapWRA;
     DatabaseHelper db;
-    String dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
     ActivitySectionAForm0Binding bi;
-    int length = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_section_info_kmc);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_a_form0);
         bi.setCallback(this);
 
@@ -88,50 +85,47 @@ public class SectionAForm0Activity extends AppCompatActivity {
 
     public void populateSpinner(final Context context) {
         // Spinner Drop down elements
-        districtNames = new ArrayList<>();
-        districtCodes = new ArrayList<>();
+        talukaNames = new ArrayList<>();
+        talukaCodes = new ArrayList<>();
 
-        districtNames.add("....");
-        districtCodes.add("....");
+        talukaNames.add("....");
+        talukaCodes.add("....");
 
         Collection<DistrictsContract> dc = db.getAllDistricts();
         Log.d(TAG, "onCreate: " + dc.size());
         for (DistrictsContract d : dc) {
-            districtNames.add(d.getDistrictName());
-            districtCodes.add(d.getDistrictCode());
+            talukaNames.add(d.getDistrictName());
+            talukaCodes.add(d.getDistrictCode());
         }
 
         // Creating adapter for spinner
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(context,
-                android.R.layout.simple_spinner_dropdown_item, districtNames);
+                android.R.layout.simple_spinner_dropdown_item, talukaNames);
 
         // Drop down layout style - list view with radio button
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-
         // attaching data adapter to spinner
         bi.crataluka.setAdapter(dataAdapter);
-
 
         bi.crataluka.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                MainApp.talukaCode = districtCodes.get(position);
 
-                psuCode = new ArrayList<>();
-                psuName = new ArrayList<>();
+                if (position == 0) return;
 
+                ucCode = new ArrayList<>();
+                ucName = new ArrayList<>();
+                ucCode.add("....");
+                ucName.add("....");
 
-                psuCode.add("....");
-                psuName.add("....");
-
-                Collection<UCsContract> pc = db.getAllUCsByTalukas(districtCodes.get(position));
+                Collection<UCsContract> pc = db.getAllUCsByTalukas(talukaCodes.get(position));
                 for (UCsContract p : pc) {
-                    psuCode.add(p.getUccode());
-                    psuName.add(p.getUcsName());
+                    ucCode.add(p.getUccode());
+                    ucName.add(p.getUcsName());
                 }
                 ArrayAdapter<String> psuAdapter = new ArrayAdapter<>(context,
-                        android.R.layout.simple_spinner_dropdown_item, psuName);
+                        android.R.layout.simple_spinner_dropdown_item, ucName);
 
                 psuAdapter
                         .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -148,24 +142,22 @@ public class SectionAForm0Activity extends AppCompatActivity {
         bi.crauc.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                MainApp.ucCode = psuCode.get(position);
+
+                if (position == 0) return;
 
                 villageCodes = new ArrayList<>();
                 villageNames = new ArrayList<>();
-                final List<String> villageNames1 = new ArrayList<>();
 
                 villageCodes.add("....");
                 villageNames.add("....");
-                villageNames1.add("....");
 
                 Collection<VillagesContract> pc = db.getAllPSUsByDistrict(MainApp.talukaCode, MainApp.ucCode);
                 for (VillagesContract p : pc) {
                     villageCodes.add(p.getVillageCode());
-                    villageNames.add(p.getVillageName());
-                    villageNames1.add(p.getVillageName().split("\\|")[2]);
+                    villageNames.add(p.getVillageName().split("\\|")[2]);
                 }
 
-                bi.crvillage.setAdapter(new ArrayAdapter<>(context, android.R.layout.simple_spinner_dropdown_item, villageNames1));
+                bi.crvillage.setAdapter(new ArrayAdapter<>(context, android.R.layout.simple_spinner_dropdown_item, villageNames));
             }
 
             @Override
@@ -173,27 +165,6 @@ public class SectionAForm0Activity extends AppCompatActivity {
 
             }
         });
-
-        bi.crvillage.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
-                if (bi.crvillage.getSelectedItemPosition() != 0) {
-                    MainApp.villageCode = villageCodes.get(i);
-                    String[] st = villageNames.get(i).split("\\|");
-
-                    /*districtN.setText(st[0]);
-                    ucN.setText(st[1]);
-                    psuN.setText(st[2]);*/
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
-
 
     }
 
@@ -214,19 +185,16 @@ public class SectionAForm0Activity extends AppCompatActivity {
         SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
         fc = new FormsContract();
 
-
         fc.setDevicetagID(sharedPref.getString("tagName", null));
         fc.setFormDate(new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime()));
         fc.setUser(MainApp.userName);
-        fc.setDeviceID(Settings.Secure.getString(getApplicationContext().getContentResolver(),
-                Settings.Secure.ANDROID_ID));
+        fc.setDeviceID(Settings.Secure.getString(getApplicationContext().getContentResolver(), Settings.Secure.ANDROID_ID));
         fc.setAppversion(MainApp.versionName + "." + MainApp.versionCode);
-        fc.setTaluka(bi.crataluka.getSelectedItem().toString());
-        fc.setUc(bi.crauc.getSelectedItem().toString());
-        fc.setVillage(bi.crvillage.getSelectedItem().toString());
+        fc.setTaluka(talukaCodes.get(bi.crataluka.getSelectedItemPosition()));
+        fc.setUc(ucCode.get(bi.crauc.getSelectedItemPosition()));
+        fc.setVillage(villageCodes.get(bi.crvillage.getSelectedItemPosition()));
         fc.setSurveyType(MainApp.surveyType);
         fc.setFormType(MainApp.formType);
-        fc.setVillage(bi.crvillage.getSelectedItem().toString());
 
         JSONObject sInfo = new JSONObject();
 
@@ -301,7 +269,6 @@ public class SectionAForm0Activity extends AppCompatActivity {
 
 
     public void BtnEnd() {
-        Toast.makeText(this, "Processing End Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
             try {
                 SaveDraft();
@@ -322,8 +289,6 @@ public class SectionAForm0Activity extends AppCompatActivity {
     }
 
     public void BtnContinue() {
-
-        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
             try {
                 SaveDraft();
@@ -344,7 +309,6 @@ public class SectionAForm0Activity extends AppCompatActivity {
 
 
     private boolean ValidateSpinners() {
-//
         if (bi.crataluka.getSelectedItemPosition() == 0) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crataluka), Toast.LENGTH_SHORT).show();
             ((TextView) bi.crataluka.getSelectedView()).setText("This Data is Required");
@@ -453,8 +417,6 @@ public class SectionAForm0Activity extends AppCompatActivity {
         fc.set_ID(String.valueOf(updcount));
 
         if (updcount > 0) {
-            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
-
             fc.setUID(
                     (fc.getDeviceID() + fc.get_ID()));
             db.updateFormID();
@@ -486,8 +448,7 @@ public class SectionAForm0Activity extends AppCompatActivity {
             fc.setGpsLng(lang);
             fc.setGpsAcc(acc);
             fc.setGpsDT(date); // Timestamp is converted to date above
-
-            Toast.makeText(this, "GPS set", Toast.LENGTH_SHORT).show();
+            fc.setGpsAltitude(elevation);
 
         } catch (Exception e) {
             Log.e(TAG, "setGPS: " + e.getMessage());
