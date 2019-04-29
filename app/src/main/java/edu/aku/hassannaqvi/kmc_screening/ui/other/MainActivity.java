@@ -310,8 +310,13 @@ public class MainActivity extends Activity {
                 intentClass = SectionAForm0Activity.class;
                 break;
             case 2:
+                MainApp.formType = "f1";
+                intentClass = SectionInfoKmcActivity.class;
             case 3:
+                MainApp.formType = "f2";
+                intentClass = SectionInfoKmcActivity.class;
             case 4:
+                MainApp.formType = "f3";
                 intentClass = SectionInfoKmcActivity.class;
                 break;
             default:

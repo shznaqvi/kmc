@@ -908,4 +908,26 @@
     <string name="kapr13g"> هڪ ٻار جي مرده پيدائش ۽ هڪ ٻار جي زنده پيدائش </string>
     <string name="kapr14"> تاريخ </string>
 
+
+    <string name="kf1a1"> تحقيق ڪندڙ جو نالو ۽ سڃاڻپ </string>
+    <string name="kf1a2"> جانچ جو علائقو </string>
+    <string name="kf1a3"> ماءُ جو سڃاڻپ نمبر </string>
+    <string name="kf1a4"> ماءُ جو نالو </string>
+    <string name="kf1a5"> جانچ نمبر </string>
+
+
+    <string name="kf2a1"> مڪمل رهائشي پتو. </string>
+    <string name="kf2a2"> گهر جي سربراه جو نالو </string>
+    <string name="kf2a3"> رابطي جو نمبر </string>
+    <string name="kf2a4"> گهر جي فردن جو تعداد </string>
+    <string name="kf2a5"> داخل ٿيل ماءُ جو نالو </string>
+    <string name="kf2a6"> تحقيقي علائقو. </string>
+    <string name="kf2a7"> داخل ٿيل ماءُ جو سڃاڻپ نمبر </string>
+    <string name="kf2a8"> داخل ٿيل ماءُ جو نالو </string>
+
+
+    <string name="kf3a3"> داخل ٿيل ماءُ جو نالو </string>
+    <string name="kf3a4"> نئي ڄاول ٻارجواسٽيڊي نمبر </string>
+
+
 </resources>

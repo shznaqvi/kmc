@@ -7,28 +7,20 @@ import android.content.SharedPreferences;
 import android.databinding.DataBindingUtil;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.provider.Settings;
-import android.text.Editable;
-import android.text.InputType;
-import android.text.TextUtils;
-import android.text.TextWatcher;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -42,7 +34,6 @@ import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc_screening.core.MainApp;
 import edu.aku.hassannaqvi.kmc_screening.databinding.ActivitySectionInfoKmcBinding;
 import edu.aku.hassannaqvi.kmc_screening.ui.other.EndingActivity;
-import edu.aku.hassannaqvi.kmc_screening.validation.ValidatorClass;
 
 
 public class SectionInfoKmcActivity extends Activity {
@@ -79,41 +70,50 @@ public class SectionInfoKmcActivity extends Activity {
             populateSpinner(this);
         }*/
 
+//        if(MainApp.formType.equals("f1")){
+//            bi.form01.setVisibility(View.VISIBLE);
+//            bi.form02.setVisibility(View.VISIBLE);
+//            bi.form0203.setVisibility(View.VISIBLE);
+//            bi.form03.setVisibility(View.VISIBLE);
+//        }else if(MainApp.formType.equals("f2")){
+//
+//        }
+
 
         populateSpinner(this);
 
-
-        bi.cra04.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                clearFields();
-                bi.fldGrpcra04.setVisibility(View.GONE);
-                bi.btnNext.setVisibility(View.GONE);
-                bi.btnEnd.setVisibility(View.GONE);
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
-        });
-
-
-        bi.cra07.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (bi.cra07a.isChecked()) {
-                    bi.btnNext.setVisibility(View.VISIBLE);
-                } else {
-                    bi.btnNext.setVisibility(View.GONE);
-                }
-            }
-        });
+//
+//        bi.cra04.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//                clearFields();
+//                bi.fldGrpcra04.setVisibility(View.GONE);
+//                bi.btnNext.setVisibility(View.GONE);
+//                bi.btnEnd.setVisibility(View.GONE);
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable editable) {
+//
+//            }
+//        });
+//
+//
+//        bi.cra07.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(RadioGroup group, int checkedId) {
+//                if (bi.cra07a.isChecked()) {
+//                    bi.btnNext.setVisibility(View.VISIBLE);
+//                } else {
+//                    bi.btnNext.setVisibility(View.GONE);
+//                }
+//            }
+//        });
 
 
         //setUp();
@@ -331,130 +331,131 @@ public class SectionInfoKmcActivity extends Activity {
         });
 
 
-        bi.crwoman.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
-                if (bi.crwoman.getSelectedItemPosition() != 0) {
-                    MainApp.wSerialNo = wSno.get(i);
-                    MainApp.wName = wName.get(i);
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
+//        bi.crwoman.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+//
+//                if (bi.crwoman.getSelectedItemPosition() != 0) {
+//                    MainApp.wSerialNo = wSno.get(i);
+//                    MainApp.wName = wName.get(i);
+//                }
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> adapterView) {
+//
+//            }
+//        });
 
     }
 
 
     private boolean formValidation() {
 
-        if (bi.crauc.getSelectedItemPosition() == 0) {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cruc), Toast.LENGTH_SHORT).show();
-            ((TextView) bi.crauc.getSelectedView()).setText("This Data is Required");
-            ((TextView) bi.crauc.getSelectedView()).setTextColor(Color.RED);
-            bi.crauc.requestFocus();
-            Log.i(TAG, "spTehsil: This Data is Required!");
-            return false;
-        } else {
-            ((TextView) bi.crauc.getSelectedView()).setError(null);
-        }
-
-
-        if (!ValidatorClass.EmptyTextBox(this, bi.cra04, getString(R.string.cra04))) {
-            return false;
-        }
-
-
-        if (bi.crwoman.getSelectedItemPosition() == 0) {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crwoman), Toast.LENGTH_SHORT).show();
-            ((TextView) bi.crwoman.getSelectedView()).setText("This Data is Required");
-            ((TextView) bi.crwoman.getSelectedView()).setTextColor(Color.RED);
-            bi.crwoman.requestFocus();
-            Log.i(TAG, "crwoman: This Data is Required!");
-            return false;
-        } else {
-            ((TextView) bi.crwoman.getSelectedView()).setError(null);
-        }
-
-
-        if (!ValidatorClass.EmptyTextBox(this, bi.cravillage, getString(R.string.crvillage))) {
-            return false;
-        }
-
-
-        /*if (!ValidatorClass.EmptyTextBox(this, bi.cra03, getString(R.string.cra03))) {
-            return false;
-        }
-
-
-        if (!ValidatorClass.EmptyTextBox(this, bi.cra05, getString(R.string.cra05))) {
-            return false;
-        }
-*/
-
-        if (!ValidatorClass.EmptyTextBox(this, bi.cra06, getString(R.string.cra06))) {
-            return false;
-        }
-
-
-        if (!ValidatorClass.RangeTextBox(this, bi.cra06, 15, 49, getString(R.string.cra06), "Age")) {
-            return false;
-        }
-
-
-        return ValidatorClass.EmptyRadioButton(this, bi.cra07, bi.cra07a, getString(R.string.cra07));
+//        if (bi.crauc.getSelectedItemPosition() == 0) {
+//            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cruc), Toast.LENGTH_SHORT).show();
+//            ((TextView) bi.crauc.getSelectedView()).setText("This Data is Required");
+//            ((TextView) bi.crauc.getSelectedView()).setTextColor(Color.RED);
+//            bi.crauc.requestFocus();
+//            Log.i(TAG, "spTehsil: This Data is Required!");
+//            return false;
+//        } else {
+//            ((TextView) bi.crauc.getSelectedView()).setError(null);
+//        }
+//
+//
+//        if (!ValidatorClass.EmptyTextBox(this, bi.cra04, getString(R.string.cra04))) {
+//            return false;
+//        }
+//
+//
+//        if (bi.crwoman.getSelectedItemPosition() == 0) {
+//            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crwoman), Toast.LENGTH_SHORT).show();
+//            ((TextView) bi.crwoman.getSelectedView()).setText("This Data is Required");
+//            ((TextView) bi.crwoman.getSelectedView()).setTextColor(Color.RED);
+//            bi.crwoman.requestFocus();
+//            Log.i(TAG, "crwoman: This Data is Required!");
+//            return false;
+//        } else {
+//            ((TextView) bi.crwoman.getSelectedView()).setError(null);
+//        }
+//
+//
+//        if (!ValidatorClass.EmptyTextBox(this, bi.cravillage, getString(R.string.crvillage))) {
+//            return false;
+//        }
+//
+//
+//        /*if (!ValidatorClass.EmptyTextBox(this, bi.cra03, getString(R.string.cra03))) {
+//            return false;
+//        }
+//
+//
+//        if (!ValidatorClass.EmptyTextBox(this, bi.cra05, getString(R.string.cra05))) {
+//            return false;
+//        }
+//*/
+//
+//        if (!ValidatorClass.EmptyTextBox(this, bi.cra06, getString(R.string.cra06))) {
+//            return false;
+//        }
+//
+//
+//        if (!ValidatorClass.RangeTextBox(this, bi.cra06, 15, 49, getString(R.string.cra06), "Age")) {
+//            return false;
+//        }
+//
+//
+//        return ValidatorClass.EmptyRadioButton(this, bi.cra07, bi.cra07a, getString(R.string.cra07));
+        return true;
     }
 
 
-    private void SaveDraft() throws JSONException {
+    private void SaveDraft() {
 
-        Toast.makeText(this, "Saving Draft for this Section", Toast.LENGTH_SHORT).show();
-        SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
-        fc = new FormsContract();
-
-
-        fc.setDevicetagID(sharedPref.getString("tagName", null));
-        fc.setFormDate(new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime()));
-        fc.setUser(MainApp.userName);
-        fc.setDeviceID(Settings.Secure.getString(getApplicationContext().getContentResolver(),
-                Settings.Secure.ANDROID_ID));
-        fc.setAppversion(MainApp.versionName + "." + MainApp.versionCode);
-
-        JSONObject sInfo = new JSONObject();
-
-
-        sInfo.put("kaataluka", MainApp.talukaCode);
-        sInfo.put("kaauc", MainApp.ucCode);
-        sInfo.put("kavillage", MainApp.villageCode);
-
-
-        sInfo.put("kaavillage", bi.cravillage.getText().toString());
-
-        //sInfo.put("cra03", bi.cra03.getText().toString());
-
-        sInfo.put("kaa04", bi.cra04.getText().toString());
-
-        //sInfo.put("cra05", bi.cra05.getText().toString());
-        sInfo.put("kaa06", bi.cra06.getText().toString());
-
-
-        sInfo.put("sno", MainApp.wSerialNo);
-        sInfo.put("wname", MainApp.wName);
-        sInfo.put("muid", mapWRA.get(bi.crwoman.getSelectedItem().toString()).getMuid());
-        sInfo.put("duid", mapWRA.get(bi.crwoman.getSelectedItem().toString()).getDuid());
-        sInfo.put("delvr_date", mapWRA.get(bi.crwoman.getSelectedItem().toString()).getDlvr_date());
-        sInfo.put("hh08", mapWRA.get(bi.crwoman.getSelectedItem().toString()).getHh08());
-        sInfo.put("hh09", mapWRA.get(bi.crwoman.getSelectedItem().toString()).getHh09());
-
-        sInfo.put("kaa07", bi.cra07a.isChecked() ? "1"
-                : bi.cra07b.isChecked() ? "2"
-                : "0");
-
-        fc.setsInfo(String.valueOf(sInfo));
+//        Toast.makeText(this, "Saving Draft for this Section", Toast.LENGTH_SHORT).show();
+//        SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
+//        fc = new FormsContract();
+//
+//
+//        fc.setDevicetagID(sharedPref.getString("tagName", null));
+//        fc.setFormDate(new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime()));
+//        fc.setUser(MainApp.userName);
+//        fc.setDeviceID(Settings.Secure.getString(getApplicationContext().getContentResolver(),
+//                Settings.Secure.ANDROID_ID));
+//        fc.setAppversion(MainApp.versionName + "." + MainApp.versionCode);
+//
+//        JSONObject sInfo = new JSONObject();
+//
+//
+//        sInfo.put("kaataluka", MainApp.talukaCode);
+//        sInfo.put("kaauc", MainApp.ucCode);
+//        sInfo.put("kavillage", MainApp.villageCode);
+//
+//
+//        sInfo.put("kaavillage", bi.cravillage.getText().toString());
+//
+//        //sInfo.put("cra03", bi.cra03.getText().toString());
+//
+//        sInfo.put("kaa04", bi.cra04.getText().toString());
+//
+//        //sInfo.put("cra05", bi.cra05.getText().toString());
+//        sInfo.put("kaa06", bi.cra06.getText().toString());
+//
+//
+//        sInfo.put("sno", MainApp.wSerialNo);
+//        sInfo.put("wname", MainApp.wName);
+//        sInfo.put("muid", mapWRA.get(bi.crwoman.getSelectedItem().toString()).getMuid());
+//        sInfo.put("duid", mapWRA.get(bi.crwoman.getSelectedItem().toString()).getDuid());
+//        sInfo.put("delvr_date", mapWRA.get(bi.crwoman.getSelectedItem().toString()).getDlvr_date());
+//        sInfo.put("hh08", mapWRA.get(bi.crwoman.getSelectedItem().toString()).getHh08());
+//        sInfo.put("hh09", mapWRA.get(bi.crwoman.getSelectedItem().toString()).getHh09());
+//
+//        sInfo.put("kaa07", bi.cra07a.isChecked() ? "1"
+//                : bi.cra07b.isChecked() ? "2"
+//                : "0");
+//
+//        fc.setsInfo(String.valueOf(sInfo));
 
         setGPS();
     }
@@ -550,108 +551,119 @@ public class SectionInfoKmcActivity extends Activity {
     public void BtnSearchWoman() {
 
         if (ValidSpiner()) {
+            bi.mainLayout.setVisibility(View.VISIBLE);
 
-            if (!TextUtils.isEmpty(bi.cra04.getText().toString())) {
-
-                db = new DatabaseHelper(this);
-
-
-                // Spinner Drop down elements
-                wName = new ArrayList<>();
-                wSno = new ArrayList<>();
-
-                wName.add("....");
-                wSno.add("....");
-
-                mapWRA = new HashMap<>();
-
-                Collection<MwraContract> dc = db.getMWRA(bi.cra04.getText().toString(), MainApp.villageCode);
-                Log.d(TAG, "onCreate: " + dc.size());
-                for (MwraContract d : dc) {
-                    wName.add(d.getWname() + "_" + d.getSno());
-                    wSno.add(d.getSno());
-
-                    mapWRA.put(d.getWname() + "_" + d.getSno(), d);
-
-                }
-
-                // Creating adapter for spinner
-                ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(this,
-                        android.R.layout.simple_spinner_dropdown_item, wName);
-
-                // Drop down layout style - list view with radio button
-                dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-                // attaching data adapter to spinner
-                bi.crwoman.setAdapter(dataAdapter);
-
-
-                if (dc.size() <= 0) {
-                    clearFields();
-                    bi.fldGrpcra04.setVisibility(View.GONE);
-                    bi.btnNext.setVisibility(View.GONE);
-                    bi.btnEnd.setVisibility(View.GONE);
-                    Toast.makeText(this, "Household does not exist ", Toast.LENGTH_LONG).show();
-                } else {
-                    Toast.makeText(this, "Household number exists", Toast.LENGTH_LONG).show();
-                    bi.fldGrpcra04.setVisibility(View.VISIBLE);
-                    bi.btnNext.setVisibility(View.VISIBLE);
-                    bi.btnEnd.setVisibility(View.VISIBLE);
-                }
-            } else {
-                Toast.makeText(this, "Household number required", Toast.LENGTH_LONG).show();
-                clearFields();
-                bi.btnNext.setVisibility(View.GONE);
-                bi.btnEnd.setVisibility(View.GONE);
-                bi.cra04.requestFocus();
+            if (MainApp.formType.equals("f1")) {
+                bi.form01.setVisibility(View.VISIBLE);
+            } else if (MainApp.formType.equals("f2")) {
+                bi.form02.setVisibility(View.VISIBLE);
+                bi.form0203.setVisibility(View.VISIBLE);
+            } else if (MainApp.formType.equals("f3")) {
+                bi.form0203.setVisibility(View.VISIBLE);
+                bi.form03.setVisibility(View.VISIBLE);
             }
+
+//            if (!TextUtils.isEmpty(bi.cra04.getText().toString())) {
+//
+//                db = new DatabaseHelper(this);
+//
+//
+//                // Spinner Drop down elements
+//                wName = new ArrayList<>();
+//                wSno = new ArrayList<>();
+//
+//                wName.add("....");
+//                wSno.add("....");
+//
+//                mapWRA = new HashMap<>();
+//
+//                Collection<MwraContract> dc = db.getMWRA(bi.cra04.getText().toString(), MainApp.villageCode);
+//                Log.d(TAG, "onCreate: " + dc.size());
+//                for (MwraContract d : dc) {
+//                    wName.add(d.getWname() + "_" + d.getSno());
+//                    wSno.add(d.getSno());
+//
+//                    mapWRA.put(d.getWname() + "_" + d.getSno(), d);
+//
+//                }
+//
+//                // Creating adapter for spinner
+//                ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(this,
+//                        android.R.layout.simple_spinner_dropdown_item, wName);
+//
+//                // Drop down layout style - list view with radio button
+//                dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//
+//                // attaching data adapter to spinner
+//                bi.crwoman.setAdapter(dataAdapter);
+//
+//
+//                if (dc.size() <= 0) {
+//                    clearFields();
+//                    bi.fldGrpcra04.setVisibility(View.GONE);
+//                    bi.btnNext.setVisibility(View.GONE);
+//                    bi.btnEnd.setVisibility(View.GONE);
+//                    Toast.makeText(this, "Household does not exist ", Toast.LENGTH_LONG).show();
+//                } else {
+//                    Toast.makeText(this, "Household number exists", Toast.LENGTH_LONG).show();
+//                    bi.fldGrpcra04.setVisibility(View.VISIBLE);
+//                    bi.btnNext.setVisibility(View.VISIBLE);
+//                    bi.btnEnd.setVisibility(View.VISIBLE);
+//                }
+//            } else {
+//                Toast.makeText(this, "Household number required", Toast.LENGTH_LONG).show();
+//                clearFields();
+//                bi.btnNext.setVisibility(View.GONE);
+//                bi.btnEnd.setVisibility(View.GONE);
+//                bi.cra04.requestFocus();
+//            }
         }
     }
 
     private void setUp() {
 
-        bi.cra04.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-                bi.cra04.setInputType(InputType.TYPE_CLASS_NUMBER);
-                length = charSequence.toString().length();
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-                clearFields();
-
-
-                if (!bi.cra04.getText().toString().isEmpty() && bi.cra04.getText().toString().length() == 4) {
-                    if (bi.cra04.getText().toString().substring(0, 3).matches("[0-9]+")) {
-                        if (length < 5) {
-                            bi.cra04.setText(bi.cra04.getText().toString() + "-");
-                            bi.cra04.setSelection(bi.cra04.getText().length());
-                            //binding.nh108.setInputType(InputType.TYPE_TEXT_FLAG_CAP_CHARACTERS);
-                        }
-                    }
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
-        });
+//        bi.cra04.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//
+//                bi.cra04.setInputType(InputType.TYPE_CLASS_NUMBER);
+//                length = charSequence.toString().length();
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//
+//                clearFields();
+//
+//
+//                if (!bi.cra04.getText().toString().isEmpty() && bi.cra04.getText().toString().length() == 4) {
+//                    if (bi.cra04.getText().toString().substring(0, 3).matches("[0-9]+")) {
+//                        if (length < 5) {
+//                            bi.cra04.setText(bi.cra04.getText().toString() + "-");
+//                            bi.cra04.setSelection(bi.cra04.getText().length());
+//                            //binding.nh108.setInputType(InputType.TYPE_TEXT_FLAG_CAP_CHARACTERS);
+//                        }
+//                    }
+//                }
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable editable) {
+//
+//            }
+//        });
 
     }
 
 
     public void clearFields() {
-        bi.fldGrpcra04.setVisibility(View.GONE);
-
-        bi.cravillage.setText(null);
-        //bi.cra03.setText(null);
-        //bi.cra05.setText(null);
-        bi.cra06.setText(null);
-        bi.cra07.clearCheck();
+//        bi.fldGrpcra04.setVisibility(View.GONE);
+//
+//        bi.cravillage.setText(null);
+//        //bi.cra03.setText(null);
+//        //bi.cra05.setText(null);
+//        bi.cra06.setText(null);
+//        bi.cra07.clearCheck();
     }
 
 
