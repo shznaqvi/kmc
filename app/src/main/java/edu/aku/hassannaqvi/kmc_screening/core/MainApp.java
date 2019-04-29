@@ -93,8 +93,8 @@ public class MainApp extends Application {
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
      */
 
-    public static String[] permissions = {Manifest.permission.CAMERA, Manifest.permission.READ_CONTACTS, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE,
-            Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.GET_ACCOUNTS, Manifest.permission.ACCESS_NETWORK_STATE};
+    public static String[] permissions = {Manifest.permission.READ_CONTACTS, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.GET_ACCOUNTS};
 
     protected static LocationManager locationManager;
 
