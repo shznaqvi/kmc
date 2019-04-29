@@ -33,9 +33,9 @@ import java.util.List;
 import java.util.Map;
 
 import edu.aku.hassannaqvi.kmc_screening.R;
-import edu.aku.hassannaqvi.kmc_screening.contracts.DistrictsContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.FormsContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.MwraContract;
+import edu.aku.hassannaqvi.kmc_screening.contracts.TalukasContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.UCsContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.VillagesContract;
 import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
@@ -230,9 +230,9 @@ public class SectionInfoKmcActivity extends Activity {
         districtNames.add("....");
         districtCodes.add("....");
 
-        Collection<DistrictsContract> dc = db.getAllDistricts();
+        Collection<TalukasContract> dc = db.getAllDistricts();
         Log.d(TAG, "onCreate: " + dc.size());
-        for (DistrictsContract d : dc) {
+        for (TalukasContract d : dc) {
             districtNames.add(d.getDistrictName());
             districtCodes.add(d.getDistrictCode());
         }

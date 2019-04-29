@@ -167,7 +167,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="dd/MM/yyyy"
-                        app:dateFormat="dd/MM/yyyy" />
+                        app:dateFormat="dd-MM-yyyy" />
 
                     <TextView
                         style="@style/i_textview"

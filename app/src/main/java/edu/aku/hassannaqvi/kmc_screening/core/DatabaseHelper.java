@@ -18,12 +18,12 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
-import edu.aku.hassannaqvi.kmc_screening.contracts.DistrictsContract;
-import edu.aku.hassannaqvi.kmc_screening.contracts.DistrictsContract.singleDistrict;
 import edu.aku.hassannaqvi.kmc_screening.contracts.FormsContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.FormsContract.FormsTable;
 import edu.aku.hassannaqvi.kmc_screening.contracts.MwraContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.MwraContract.MwraEntry;
+import edu.aku.hassannaqvi.kmc_screening.contracts.TalukasContract;
+import edu.aku.hassannaqvi.kmc_screening.contracts.TalukasContract.singleTaluka;
 import edu.aku.hassannaqvi.kmc_screening.contracts.UCsContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.UCsContract.UCsTable;
 import edu.aku.hassannaqvi.kmc_screening.contracts.UsersContract;
@@ -51,35 +51,35 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + FormsTable.TABLE_NAME + "("
             + FormsTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
             FormsTable.COLUMN_PROJECTNAME + " TEXT," +
-            FormsTable.COLUMN_SURVEYTYPE + " TEXT," +
-            FormsTable.COLUMN__UID + " TEXT," +
-            FormsTable.COLUMN_FORMDATE + " TEXT," +
-            FormsTable.COLUMN_USER + " TEXT," +
-            FormsTable.COLUMN_HHNO + " TEXT," +
-            FormsTable.COLUMN_TALUKA + " TEXT," +
-            FormsTable.COLUMN_UC + " TEXT," +
-            FormsTable.COLUMN_VILLAGE + " TEXT," +
-            FormsTable.COLUMN_ISTATUS + " TEXT," +
-            FormsTable.COLUMN_ISTATUS88X + " TEXT," +
-            FormsTable.COLUMN_SINFO + " TEXT," +
-            FormsTable.COLUMN_SA + " TEXT," +
-            FormsTable.COLUMN_SB + " TEXT," +
+            FormsTable.COLUMN_DEVICEID + " TEXT," +
+            FormsTable.COLUMN_DEVICETAGID + " TEXT," +
+            FormsTable.COLUMN_APPVERSION + " TEXT," +
             FormsTable.COLUMN_FORMTYPE + " TEXT," +
-            FormsTable.COLUMN_SC + " TEXT," +
-            FormsTable.COLUMN_SD + " TEXT," +
-            FormsTable.COLUMN_SE + " TEXT," +
-            FormsTable.COLUMN_SF + " TEXT," +
-            FormsTable.COLUMN_ENDINGDATETIME + " TEXT," +
+            FormsTable.COLUMN_SURVEYTYPE + " TEXT," +
+            FormsTable.COLUMN_FORMDATE + " TEXT," +
+            FormsTable.COLUMN__UID + " TEXT," +
+            FormsTable.COLUMN_USER + " TEXT," +
             FormsTable.COLUMN_GPSLAT + " TEXT," +
             FormsTable.COLUMN_GPSLNG + " TEXT," +
             FormsTable.COLUMN_GPSDT + " TEXT," +
             FormsTable.COLUMN_GPSACC + " TEXT," +
             FormsTable.COLUMN_GPSALTITUDE + " TEXT," +
-            FormsTable.COLUMN_DEVICEID + " TEXT," +
-            FormsTable.COLUMN_DEVICETAGID + " TEXT," +
+            FormsTable.COLUMN_HHNO + " TEXT," +
+            FormsTable.COLUMN_TALUKA + " TEXT," +
+            FormsTable.COLUMN_UC + " TEXT," +
+            FormsTable.COLUMN_VILLAGE + " TEXT," +
+            FormsTable.COLUMN_SINFO + " TEXT," +
+            FormsTable.COLUMN_SA + " TEXT," +
+            FormsTable.COLUMN_SB + " TEXT," +
+            FormsTable.COLUMN_SC + " TEXT," +
+            FormsTable.COLUMN_SD + " TEXT," +
+            FormsTable.COLUMN_SE + " TEXT," +
+            FormsTable.COLUMN_SF + " TEXT," +
+            FormsTable.COLUMN_ENDINGDATETIME + " TEXT," +
+            FormsTable.COLUMN_ISTATUS + " TEXT," +
+            FormsTable.COLUMN_ISTATUS88X + " TEXT," +
             FormsTable.COLUMN_SYNCED + " TEXT," +
-            FormsTable.COLUMN_SYNCED_DATE + " TEXT," +
-            FormsTable.COLUMN_APPVERSION + " TEXT"
+            FormsTable.COLUMN_SYNCED_DATE + " TEXT"
             + " );";
 
 
@@ -104,16 +104,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             "DROP TABLE IF EXISTS " + FormsTable.TABLE_NAME;
 
 
-    private static final String SQL_DELETE_TALUKA = "DROP TABLE IF EXISTS " + singleDistrict.TABLE_NAME;
+    private static final String SQL_DELETE_TALUKA = "DROP TABLE IF EXISTS " + singleTaluka.TABLE_NAME;
     private static final String SQL_DELETE_UCS = "DROP TABLE IF EXISTS " + UCsTable.TABLE_NAME;
     private static final String SQL_DELETE_VILLAGE = "DROP TABLE IF EXISTS " + singleVillage.TABLE_NAME;
     private static final String SQL_DELETE_MWRA = "DROP TABLE IF EXISTS " + MwraEntry.TABLE_NAME;
 
 
-    final String SQL_CREATE_DISTRICT_TABLE = "CREATE TABLE " + singleDistrict.TABLE_NAME + " (" +
-            singleDistrict._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
-            singleDistrict.COLUMN_DISTRICT_CODE + " TEXT, " +
-            singleDistrict.COLUMN_DISTRICT_NAME + " TEXT " +
+    final String SQL_CREATE_DISTRICT_TABLE = "CREATE TABLE " + singleTaluka.TABLE_NAME + " (" +
+            singleTaluka._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+            singleTaluka.COLUMN_DISTRICT_CODE + " TEXT, " +
+            singleTaluka.COLUMN_DISTRICT_NAME + " TEXT " +
             ");";
 
     final String SQL_CREATE_UC = "CREATE TABLE " + UCsTable.TABLE_NAME + " (" +
@@ -192,14 +192,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public Collection<DistrictsContract> getAllDistricts() {
+    public Collection<TalukasContract> getAllDistricts() {
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
-                singleDistrict._ID,
-                singleDistrict.COLUMN_DISTRICT_CODE,
-                singleDistrict.COLUMN_DISTRICT_NAME
+                singleTaluka._ID,
+                singleTaluka.COLUMN_DISTRICT_CODE,
+                singleTaluka.COLUMN_DISTRICT_NAME
         };
 
         String whereClause = null;
@@ -208,12 +208,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String having = null;
 
         String orderBy =
-                singleDistrict.COLUMN_DISTRICT_NAME + " ASC";
+                singleTaluka.COLUMN_DISTRICT_NAME + " ASC";
 
-        Collection<DistrictsContract> allDC = new ArrayList<DistrictsContract>();
+        Collection<TalukasContract> allDC = new ArrayList<TalukasContract>();
         try {
             c = db.query(
-                    singleDistrict.TABLE_NAME,  // The table to query
+                    singleTaluka.TABLE_NAME,  // The table to query
                     columns,                   // The columns to return
                     whereClause,               // The columns for the WHERE clause
                     whereArgs,                 // The values for the WHERE clause
@@ -222,7 +222,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     orderBy                    // The sort order
             );
             while (c.moveToNext()) {
-                DistrictsContract dc = new DistrictsContract();
+                TalukasContract dc = new TalukasContract();
                 allDC.add(dc.hydrate(c));
             }
         } finally {
@@ -468,22 +468,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public void syncDistricts(JSONArray talukalist) {
+    public void syncTalukas(JSONArray talukalist) {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(singleDistrict.TABLE_NAME, null, null);
+        db.delete(singleTaluka.TABLE_NAME, null, null);
         try {
             JSONArray jsonArray = talukalist;
             for (int i = 0; i < jsonArray.length(); i++) {
 
                 JSONObject jsonObjectUser = jsonArray.getJSONObject(i);
 
-                DistrictsContract user = new DistrictsContract();
+                TalukasContract user = new TalukasContract();
                 user.sync(jsonObjectUser);
                 ContentValues values = new ContentValues();
 
-                values.put(singleDistrict.COLUMN_DISTRICT_CODE, user.getDistrictCode());
-                values.put(singleDistrict.COLUMN_DISTRICT_NAME, user.getDistrictName());
-                db.insert(singleDistrict.TABLE_NAME, null, values);
+                values.put(singleTaluka.COLUMN_DISTRICT_CODE, user.getDistrictCode());
+                values.put(singleTaluka.COLUMN_DISTRICT_NAME, user.getDistrictName());
+                db.insert(singleTaluka.TABLE_NAME, null, values);
             }
 
         } catch (Exception e) {

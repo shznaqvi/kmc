@@ -15,8 +15,8 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import edu.aku.hassannaqvi.kmc_screening.contracts.DistrictsContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.MwraContract;
+import edu.aku.hassannaqvi.kmc_screening.contracts.TalukasContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.UCsContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.UsersContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.VillagesContract;
@@ -25,6 +25,7 @@ import edu.aku.hassannaqvi.kmc_screening.core.MainApp;
 
 /**
  * Created by ali.azaz on 7/14/2017.
+ * Updated by ali.azaz on 4/29/2019.
  */
 
 public class GetAllData extends AsyncTask<String, String, String> {
@@ -61,14 +62,14 @@ public class GetAllData extends AsyncTask<String, String, String> {
             URL url = null;
             try {
                 switch (syncClass) {
-                    case "User":
+                    case "Users":
                         url = new URL(hostItem + UsersContract.UsersTable._URI);
                         break;
                     case "Mwra":
                         url = new URL(hostItem + MwraContract.MwraEntry._URI);
                         break;
-                    case "Tehsil":
-                        url = new URL(hostItem + DistrictsContract.singleDistrict._URI);
+                    case "Talukas":
+                        url = new URL(hostItem + TalukasContract.singleTaluka._URI);
                         break;
                     case "UCs":
                         url = new URL(hostItem + UCsContract.UCsTable._URI);
@@ -126,11 +127,11 @@ public class GetAllData extends AsyncTask<String, String, String> {
                         case "Mwra":
                             db.syncMWRA(jsonArray);
                             break;
-                        case "User":
+                        case "Users":
                             db.syncUser(jsonArray);
                             break;
-                        case "Tehsil":
-                            db.syncDistricts(jsonArray);
+                        case "Talukas":
+                            db.syncTalukas(jsonArray);
                             break;
                         case "UCs":
                             db.syncUCs(jsonArray);

@@ -6,27 +6,27 @@ import android.provider.BaseColumns;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class DistrictsContract {
+public class TalukasContract {
 
     private static String TAG = "";
 
     private String districtCode;
     private String districtName;
 
-    public DistrictsContract() {
+    public TalukasContract() {
     }
 
-    public DistrictsContract sync(JSONObject jsonObject) throws JSONException {
+    public TalukasContract sync(JSONObject jsonObject) throws JSONException {
 
-        this.districtCode = jsonObject.getString(singleDistrict.COLUMN_DISTRICT_CODE);
-        this.districtName = jsonObject.getString(singleDistrict.COLUMN_DISTRICT_NAME);
+        this.districtCode = jsonObject.getString(singleTaluka.COLUMN_DISTRICT_CODE);
+        this.districtName = jsonObject.getString(singleTaluka.COLUMN_DISTRICT_NAME);
 
         return this;
     }
 
-    public DistrictsContract hydrate(Cursor cursor) {
-        this.districtCode = cursor.getString(cursor.getColumnIndex(singleDistrict.COLUMN_DISTRICT_CODE));
-        this.districtName = cursor.getString(cursor.getColumnIndex(singleDistrict.COLUMN_DISTRICT_NAME));
+    public TalukasContract hydrate(Cursor cursor) {
+        this.districtCode = cursor.getString(cursor.getColumnIndex(singleTaluka.COLUMN_DISTRICT_CODE));
+        this.districtName = cursor.getString(cursor.getColumnIndex(singleTaluka.COLUMN_DISTRICT_NAME));
 
         return this;
     }
@@ -47,9 +47,9 @@ public class DistrictsContract {
         this.districtName = districtName;
     }
 
-    public static abstract class singleDistrict implements BaseColumns {
+    public static abstract class singleTaluka implements BaseColumns {
 
-        public static final String TABLE_NAME = "Districts";
+        public static final String TABLE_NAME = "talukas";
         public static final String COLUMN_NAME_NULLABLE = "nullColumnHack";
         public static final String _ID = "_ID";
         public static final String COLUMN_DISTRICT_CODE = "taluka_code";

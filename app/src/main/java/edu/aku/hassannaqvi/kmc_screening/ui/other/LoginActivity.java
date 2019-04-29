@@ -566,11 +566,9 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                 @Override
                 public void run() {
                     Toast.makeText(LoginActivity.this, "Sync Users", Toast.LENGTH_LONG).show();
-                    new GetAllData(mContext, "User").execute();
-                    Toast.makeText(LoginActivity.this, "Sync Mwra", Toast.LENGTH_LONG).show();
-                    new GetAllData(mContext, "Mwra").execute();
-                    Toast.makeText(LoginActivity.this, "Sync Tehsil", Toast.LENGTH_LONG).show();
-                    new GetAllData(mContext, "Tehsil").execute();
+                    new GetAllData(mContext, "Users").execute();
+                    Toast.makeText(LoginActivity.this, "Sync Talukas", Toast.LENGTH_LONG).show();
+                    new GetAllData(mContext, "Talukas").execute();
                     Toast.makeText(LoginActivity.this, "Sync UCs", Toast.LENGTH_LONG).show();
                     new GetAllData(mContext, "UCs").execute();
                     Toast.makeText(LoginActivity.this, "Sync Villages", Toast.LENGTH_LONG).show();

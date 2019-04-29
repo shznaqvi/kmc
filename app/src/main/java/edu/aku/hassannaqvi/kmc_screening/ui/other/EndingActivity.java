@@ -35,9 +35,10 @@ public class EndingActivity extends AppCompatActivity {
         if (check) {
             binding.istatusa.setEnabled(true);
             binding.istatusb.setEnabled(false);
+            binding.istatusc.setEnabled(false);
+            binding.istatusd.setEnabled(false);
         } else {
             binding.istatusa.setEnabled(false);
-            binding.istatusb.setEnabled(true);
         }
 
 /*        istatus.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
