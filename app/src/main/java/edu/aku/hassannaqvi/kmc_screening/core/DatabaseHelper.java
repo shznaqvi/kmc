@@ -82,7 +82,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             FormsTable.COLUMN_SYNCED_DATE + " TEXT"
             + " );";
 
-
     private static final String SQL_CREATE_MWRA = "CREATE TABLE " +
             MwraEntry.TABLE_NAME + "(" +
             MwraEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -96,18 +95,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             MwraEntry.MWRA_HH08 + " TEXT," +
             MwraEntry.MWRA_HH09 + " TEXT"
             + " );";
-
-
-    private static final String SQL_DELETE_USERS =
-            "DROP TABLE IF EXISTS " + UsersContract.UsersTable.TABLE_NAME;
-    private static final String SQL_DELETE_FORMS =
-            "DROP TABLE IF EXISTS " + FormsTable.TABLE_NAME;
-
-
-    private static final String SQL_DELETE_TALUKA = "DROP TABLE IF EXISTS " + singleTaluka.TABLE_NAME;
-    private static final String SQL_DELETE_UCS = "DROP TABLE IF EXISTS " + UCsTable.TABLE_NAME;
-    private static final String SQL_DELETE_VILLAGE = "DROP TABLE IF EXISTS " + singleVillage.TABLE_NAME;
-    private static final String SQL_DELETE_MWRA = "DROP TABLE IF EXISTS " + MwraEntry.TABLE_NAME;
 
 
     final String SQL_CREATE_DISTRICT_TABLE = "CREATE TABLE " + singleTaluka.TABLE_NAME + " (" +
@@ -131,12 +118,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             singleVillage.COLUMN_UC_CODE + " TEXT " +
             ");";
 
+    private static final String SQL_DELETE_USERS = "DROP TABLE IF EXISTS " + UsersContract.UsersTable.TABLE_NAME;
+    private static final String SQL_DELETE_FORMS = "DROP TABLE IF EXISTS " + FormsTable.TABLE_NAME;
+    private static final String SQL_DELETE_TALUKA = "DROP TABLE IF EXISTS " + singleTaluka.TABLE_NAME;
+    private static final String SQL_DELETE_UCS = "DROP TABLE IF EXISTS " + UCsTable.TABLE_NAME;
+    private static final String SQL_DELETE_VILLAGE = "DROP TABLE IF EXISTS " + singleVillage.TABLE_NAME;
+    private static final String SQL_DELETE_MWRA = "DROP TABLE IF EXISTS " + MwraEntry.TABLE_NAME;
 
     private final String TAG = "DatabaseHelper";
 
-
     public String spDateT = new SimpleDateFormat("dd-MM-yy").format(new Date().getTime());
-
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -147,7 +138,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         db.execSQL(SQL_CREATE_USERS);
         db.execSQL(SQL_CREATE_FORMS);
-
         db.execSQL(SQL_CREATE_DISTRICT_TABLE);
         db.execSQL(SQL_CREATE_UC);
         db.execSQL(SQL_CREATE_PSU_TABLE);
@@ -158,13 +148,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         db.execSQL(SQL_DELETE_USERS);
         db.execSQL(SQL_DELETE_FORMS);
-
         db.execSQL(SQL_DELETE_TALUKA);
         db.execSQL(SQL_DELETE_UCS);
         db.execSQL(SQL_DELETE_VILLAGE);
         db.execSQL(SQL_DELETE_MWRA);
     }
-
 
     public void syncUCs(JSONArray UCslist) {
         SQLiteDatabase db = this.getWritableDatabase();
