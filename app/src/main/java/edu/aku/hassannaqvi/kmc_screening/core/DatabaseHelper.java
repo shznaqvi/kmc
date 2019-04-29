@@ -727,7 +727,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public Collection<FormsContract> getUnsyncedForms() {
+    public Collection<FormsContract> getUnsyncedForms(String formType) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
@@ -764,15 +764,98 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_TALUKA,
 
         };
-        String whereClause = FormsTable.COLUMN_SYNCED + " is null OR " + FormsTable.COLUMN_SYNCED + " = '' ";
-        String[] whereArgs = null;
+        String whereClause =
+                FormsTable.COLUMN_FORMTYPE +
+                        " =? AND (" +
+                        FormsTable.COLUMN_SYNCED +
+                        " is null OR " +
+                        FormsTable.COLUMN_SYNCED + " = '') ";
+        String[] whereArgs = {formType};
         String groupBy = null;
         String having = null;
 
         String orderBy =
-                FormsTable._ID + " ASC";
+                FormsTable.COLUMN__ID + " ASC";
 
-        Collection<FormsContract> allFC = new ArrayList<FormsContract>();
+        Collection<FormsContract> allFC = new ArrayList<>();
+        try {
+            c = db.query(
+                    FormsTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                FormsContract fc = new FormsContract();
+                allFC.add(fc.Hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allFC;
+    }
+
+    public Collection<FormsContract> getUnsyncedForms0(String formType, String surveyType) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                FormsTable._ID,
+                FormsTable.COLUMN_PROJECTNAME,
+                FormsTable.COLUMN_SURVEYTYPE,
+                FormsTable.COLUMN__UID,
+                FormsTable.COLUMN_FORMDATE,
+                FormsTable.COLUMN_USER,
+                FormsTable.COLUMN_ISTATUS,
+                FormsTable.COLUMN_ISTATUS88X,
+                FormsTable.COLUMN_SINFO,
+                FormsTable.COLUMN_SA,
+                FormsTable.COLUMN_SB,
+                FormsTable.COLUMN_FORMTYPE,
+                FormsTable.COLUMN_SC,
+                FormsTable.COLUMN_SD,
+                FormsTable.COLUMN_SE,
+                FormsTable.COLUMN_SF,
+                FormsTable.COLUMN_ENDINGDATETIME,
+                FormsTable.COLUMN_GPSLAT,
+                FormsTable.COLUMN_GPSLNG,
+                FormsTable.COLUMN_GPSDT,
+                FormsTable.COLUMN_GPSACC,
+                FormsTable.COLUMN_GPSALTITUDE,
+                FormsTable.COLUMN_DEVICEID,
+                FormsTable.COLUMN_DEVICETAGID,
+                FormsTable.COLUMN_SYNCED,
+                FormsTable.COLUMN_SYNCED_DATE,
+                FormsTable.COLUMN_APPVERSION,
+                FormsTable.COLUMN_HHNO,
+                FormsTable.COLUMN_UC,
+                FormsTable.COLUMN_VILLAGE,
+                FormsTable.COLUMN_TALUKA,
+
+        };
+        String whereClause =
+                FormsTable.COLUMN_FORMTYPE +
+                        " =? AND" +
+                        FormsTable.COLUMN_SURVEYTYPE +
+                        " =? AND (" +
+                        FormsTable.COLUMN_SYNCED +
+                        " is null OR " +
+                        FormsTable.COLUMN_SYNCED + " = '') ";
+        String[] whereArgs = {formType, surveyType};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                FormsTable.COLUMN__ID + " ASC";
+
+        Collection<FormsContract> allFC = new ArrayList<>();
         try {
             c = db.query(
                     FormsTable.TABLE_NAME,  // The table to query
