@@ -54,54 +54,61 @@ public class GetAllData extends AsyncTask<String, String, String> {
 
     @Override
     protected String doInBackground(String... args) {
+        StringBuilder result = null;
 
-        StringBuilder result = new StringBuilder();
+        for (String hostItem : MainApp.HOST) {
 
-        URL url = null;
-        try {
-            switch (syncClass) {
-                case "User":
-                    url = new URL(MainApp._HOST_URL + UsersContract.UsersTable._URI);
-                    break;
-                case "Mwra":
-                    url = new URL(MainApp._HOST_URL + MwraContract.MwraEntry._URI);
-                    break;
-                case "Tehsil":
-                    url = new URL(MainApp._HOST_URL + DistrictsContract.singleDistrict._URI);
-                    break;
-                case "UCs":
-                    url = new URL(MainApp._HOST_URL + UCsContract.UCsTable._URI);
-                    break;
-                case "Villages":
-                    url = new URL(MainApp._HOST_URL + VillagesContract.singleVillage._URI);
-                    break;
-            }
-
-            urlConnection = (HttpURLConnection) url.openConnection();
-            urlConnection.setReadTimeout(100000 /* milliseconds */);
-            urlConnection.setConnectTimeout(150000 /* milliseconds */);
-            Log.d(TAG, "doInBackground: " + urlConnection.getResponseCode());
-            if (urlConnection.getResponseCode() == HttpURLConnection.HTTP_OK) {
-                InputStream in = new BufferedInputStream(urlConnection.getInputStream());
-
-                BufferedReader reader = new BufferedReader(new InputStreamReader(in));
-
-                String line;
-                while ((line = reader.readLine()) != null) {
-                    Log.i(TAG, syncClass + " In: " + line);
-                    result.append(line);
+            URL url = null;
+            try {
+                switch (syncClass) {
+                    case "User":
+                        url = new URL(hostItem + UsersContract.UsersTable._URI);
+                        break;
+                    case "Mwra":
+                        url = new URL(hostItem + MwraContract.MwraEntry._URI);
+                        break;
+                    case "Tehsil":
+                        url = new URL(hostItem + DistrictsContract.singleDistrict._URI);
+                        break;
+                    case "UCs":
+                        url = new URL(hostItem + UCsContract.UCsTable._URI);
+                        break;
+                    case "Villages":
+                        url = new URL(hostItem + VillagesContract.singleVillage._URI);
+                        break;
                 }
+
+                urlConnection = (HttpURLConnection) url.openConnection();
+                urlConnection.setReadTimeout(100000 /* milliseconds */);
+                urlConnection.setConnectTimeout(150000 /* milliseconds */);
+                Log.d(TAG, "doInBackground: " + urlConnection.getResponseCode());
+
+                result = new StringBuilder();
+
+                if (urlConnection.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                    InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+
+                    String line;
+                    while ((line = reader.readLine()) != null) {
+                        Log.i(TAG, syncClass + " In: " + line);
+                        result.append(line);
+                    }
+
+                    return result.toString();
+                }
+            } catch (java.net.SocketTimeoutException e) {
+                continue;
+            } catch (java.io.IOException e) {
+                continue;
             }
-        } catch (java.net.SocketTimeoutException e) {
-            return null;
-        } catch (java.io.IOException e) {
-            return null;
-        } finally {
-            urlConnection.disconnect();
         }
 
+        urlConnection.disconnect();
 
-        return result.toString();
+        return result == null ? null : result.toString();
+
     }
 
     @Override

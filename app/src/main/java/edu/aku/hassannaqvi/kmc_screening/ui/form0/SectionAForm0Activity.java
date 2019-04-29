@@ -217,27 +217,10 @@ public class SectionAForm0Activity extends AppCompatActivity {
                     : bi.kapr12f.isChecked() ? "6"
                     : bi.kapr12g.isChecked() ? "7"
                     : "0");
-            sInfo.put("kapr13", bi.kapr13a.isChecked() ? "1"
-                    : bi.kapr13b.isChecked() ? "2"
-                    : bi.kapr13c.isChecked() ? "3"
-                    : bi.kapr13d.isChecked() ? "4"
-                    : bi.kapr13e.isChecked() ? "5"
-                    : bi.kapr13f.isChecked() ? "6"
-                    : bi.kapr13g.isChecked() ? "7"
-                    : "0");
-            sInfo.put("kapr14", bi.kapr14.getText().toString());
         } else {
             fc.setHhno(bi.kapr02a.getText().toString());
             sInfo.put("kapr02", bi.womenID.getText().toString());
             sInfo.put("kapr03", bi.kapr03.getText().toString());
-            sInfo.put("kapr04", bi.kapr04.getText().toString());
-            sInfo.put("kapr05", bi.kapr05.getText().toString());
-            sInfo.put("kapr06", bi.kapr06.getText().toString());
-            sInfo.put("kapr07", bi.kapr07.getText().toString());
-            sInfo.put("kapr08", bi.kapr08.getText().toString());
-            sInfo.put("kapr09", bi.kapr09.getText().toString());
-            sInfo.put("kapr10", bi.kapr10.getText().toString());
-            sInfo.put("kapr11", bi.kapr11.getText().toString());
             sInfo.put("kapr12", bi.kapr12a.isChecked() ? "1"
                     : bi.kapr12b.isChecked() ? "2"
                     : bi.kapr12c.isChecked() ? "3"
@@ -256,7 +239,6 @@ public class SectionAForm0Activity extends AppCompatActivity {
                     : "0");
             sInfo.put("kapr14", bi.kapr14.getText().toString());
         }
-
 
 //        sInfo.put("sno", MainApp.wSerialNo);
 //        sInfo.put("wname", MainApp.wName);
