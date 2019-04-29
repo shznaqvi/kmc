@@ -164,7 +164,6 @@ public class MainActivity extends Activity {
             mainBinding.adminsec.setVisibility(View.VISIBLE);
 
             Collection<FormsContract> todaysForms = db.getTodayForms();
-            Collection<FormsContract> unsyncedForms = db.getUnsyncedForms();
 
             rSumText += "TODAY'S RECORDS SUMMARY\r\n";
 
@@ -216,8 +215,6 @@ public class MainActivity extends Activity {
             rSumText += "\r\n";
             rSumText += "Last Data Upload: \t" + syncPref.getString("LastUpSyncServer", "Never Synced");
             rSumText += "\r\n";
-            rSumText += "\r\n";
-            rSumText += "Unsynced Forms: \t" + unsyncedForms.size();
             rSumText += "\r\n";
 
             Log.d(TAG, "onCreate: " + rSumText);
@@ -403,14 +400,24 @@ public class MainActivity extends Activity {
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
 
-            Toast.makeText(getApplicationContext(), "Syncing Forms", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Syncing Forms - PW Registration", Toast.LENGTH_SHORT).show();
             new SyncAllData(
                     this,
-                    "Forms",
+                    "Forms - PW Registration",
                     "updateSyncedForms",
                     FormsContract.class,
-                    MainApp._HOST_URL + FormsContract.FormsTable._URL,
-                    new DatabaseHelper(this).getUnsyncedForms()
+                    FormsContract.FormsTable._URL.replace(".php", "_f0a.php"),
+                    new DatabaseHelper(this).getUnsyncedForms0("f0", "f0a")
+            ).execute();
+
+            Toast.makeText(getApplicationContext(), "Syncing Forms - PW Survillence", Toast.LENGTH_SHORT).show();
+            new SyncAllData(
+                    this,
+                    "Forms - PW Survillence",
+                    "updateSyncedForms",
+                    FormsContract.class,
+                    FormsContract.FormsTable._URL.replace(".php", "_f0b.php"),
+                    new DatabaseHelper(this).getUnsyncedForms0("f0", "f0b")
             ).execute();
 
             SharedPreferences syncPref = getSharedPreferences("SyncInfo", Context.MODE_PRIVATE);
