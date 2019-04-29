@@ -42,6 +42,8 @@ import android.widget.Toast;
 import com.github.amlcurran.showcaseview.ShowcaseView;
 import com.github.amlcurran.showcaseview.targets.Target;
 import com.github.amlcurran.showcaseview.targets.ViewTarget;
+import com.nabinbhandari.android.permissions.PermissionHandler;
+import com.nabinbhandari.android.permissions.Permissions;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -64,6 +66,7 @@ import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc_screening.core.MainApp;
 import edu.aku.hassannaqvi.kmc_screening.get.GetAllData;
 
+import static edu.aku.hassannaqvi.kmc_screening.core.MainApp.permissions;
 import static java.lang.Thread.sleep;
 
 
@@ -125,6 +128,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     private UserLoginTask mAuthTask = null;
     private int clicks;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -179,8 +183,15 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
+                Permissions.check(LoginActivity.this, permissions, null/*rationale*/, null/*options*/, new PermissionHandler() {
+                    @Override
+                    public void onGranted() {
+                        // do your task.
+                        attemptLogin();
+                    }
+                });
 
-                attemptLogin();
+
             }
         });
 
