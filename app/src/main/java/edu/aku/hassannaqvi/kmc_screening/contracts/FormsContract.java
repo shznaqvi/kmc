@@ -227,7 +227,6 @@ public class FormsContract {
         this.endingdatetime = endingdatetime;
     }
 
-
     public String getProjectName() {
         return projectName;
     }
