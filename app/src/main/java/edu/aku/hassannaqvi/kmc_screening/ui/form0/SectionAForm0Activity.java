@@ -172,11 +172,8 @@ public class SectionAForm0Activity extends AppCompatActivity {
 
     private boolean formValidation() {
 
-        if (MainApp.surveyType.equalsIgnoreCase("f0a")) {
-            return ValidatorClass.EmptyCheckingContainer(this, bi.form0Layout);
-        } else {
-            return ValidatorClass.EmptyCheckingContainer(this, bi.fldGrpcra04);
-        }
+        return ValidatorClass.EmptyCheckingContainer(this, bi.form0Layout);
+
 
     }
 
