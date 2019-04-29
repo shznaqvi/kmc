@@ -171,16 +171,11 @@ public class SectionAForm0Activity extends AppCompatActivity {
 
 
     private boolean formValidation() {
-
         return ValidatorClass.EmptyCheckingContainer(this, bi.form0Layout);
-
-
     }
 
 
     private void SaveDraft() throws JSONException {
-
-        Toast.makeText(this, "Saving Draft for this Section", Toast.LENGTH_SHORT).show();
         SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
         fc = new FormsContract();
 
@@ -287,7 +282,6 @@ public class SectionAForm0Activity extends AppCompatActivity {
             }
         }
     }
-
 
     private boolean ValidateSpinners() {
         if (bi.crataluka.getSelectedItemPosition() == 0) {

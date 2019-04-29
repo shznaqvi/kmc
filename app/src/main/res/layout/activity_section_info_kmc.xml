@@ -56,41 +56,41 @@
                 android:padding="20dp" />
 
             <LinearLayout
+                android:id="@+id/checkBtnLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:orientation="horizontal">
+
+
+                <EditText
+                    android:id="@+id/kapr02a"
+                    style="@style/textInput"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/kapr01"
+                    android:inputType="number"
+                    android:maxLength="6" />
+
+                <Button
+                    android:id="@+id/btnSearch"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@android:color/holo_red_light"
+                    android:onClick='@{() -> callback.BtnSearchWoman()}'
+                    android:text="CHECK"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/fldGrpcra02"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:visibility="visible">
-
-                <LinearLayout
-                    android:id="@+id/checkBtnLayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp"
-                    android:orientation="horizontal">
-
-
-                    <EditText
-                        android:id="@+id/kapr02a"
-                        style="@style/textInput"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:hint="@string/kapr01"
-                        android:inputType="number"
-                        android:maxLength="6" />
-
-                    <Button
-                        android:id="@+id/btnSearch"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:background="@android:color/holo_red_light"
-                        android:onClick='@{() -> callback.BtnSearchWoman()}'
-                        android:text="CHECK"
-                        android:textColor="@color/white" />
-
-                </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/mainLayout"
@@ -357,7 +357,6 @@
 
 
                 </LinearLayout>
-
 
                 <LinearLayout
                     android:id="@+id/fldGrpbtn"
