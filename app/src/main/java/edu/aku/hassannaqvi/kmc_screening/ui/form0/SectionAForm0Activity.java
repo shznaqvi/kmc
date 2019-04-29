@@ -40,11 +40,12 @@ import edu.aku.hassannaqvi.kmc_screening.databinding.ActivitySectionAForm0Bindin
 import edu.aku.hassannaqvi.kmc_screening.ui.other.EndingActivity;
 import edu.aku.hassannaqvi.kmc_screening.validation.ValidatorClass;
 
+import static edu.aku.hassannaqvi.kmc_screening.core.MainApp.fc;
+
 
 public class SectionAForm0Activity extends AppCompatActivity {
 
     private static final String TAG = SectionAForm0Activity.class.getName();
-    public static FormsContract fc;
     public List<String> ucName, talukaNames, villageNames, wName;
     public List<String> ucCode, talukaCodes, villageCodes, wSno;
     Map<String, MwraContract> mapWRA;
@@ -171,11 +172,12 @@ public class SectionAForm0Activity extends AppCompatActivity {
 
     private boolean formValidation() {
 
-        if (!MainApp.formType.equalsIgnoreCase("sur")) {
+        if (MainApp.surveyType.equalsIgnoreCase("f0a")) {
             return ValidatorClass.EmptyCheckingContainer(this, bi.form0Layout);
+        } else {
+            return ValidatorClass.EmptyCheckingContainer(this, bi.fldGrpcra04);
         }
 
-        return true;
     }
 
 
