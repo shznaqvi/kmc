@@ -151,7 +151,7 @@ public class SectionAForm0Activity extends AppCompatActivity {
                 villageCodes.add("....");
                 villageNames.add("....");
 
-                Collection<VillagesContract> pc = db.getAllPSUsByDistrict(MainApp.talukaCode, MainApp.ucCode);
+                Collection<VillagesContract> pc = db.getAllPSUsByDistrict(talukaCodes.get(bi.crataluka.getSelectedItemPosition()), ucCode.get(position));
                 for (VillagesContract p : pc) {
                     villageCodes.add(p.getVillageCode());
                     villageNames.add(p.getVillageName().split("\\|")[2]);
