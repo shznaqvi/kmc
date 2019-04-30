@@ -19,11 +19,26 @@
         android:layout_height="wrap_content">
 
         <LinearLayout
+            android:id="@+id/infoMainLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:animateLayoutChanges="true"
             android:layoutDirection="rtl"
             android:orientation="vertical">
+
+            <TextView
+                style="@style/i_textview"
+                android:text="@string/kf1a0" />
+
+            <EditText
+                android:id="@+id/kf1a0"
+                style="@style/textInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                android:hint="@string/kf1a0"
+                android:inputType="text" />
 
             <TextView
                 style="@style/i_textview"

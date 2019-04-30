@@ -14,10 +14,11 @@ import edu.aku.hassannaqvi.kmc_screening.JSON.GeneratorClass;
 import edu.aku.hassannaqvi.kmc_screening.R;
 import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc_screening.databinding.ActivitySectionAForm1Binding;
-import edu.aku.hassannaqvi.kmc_screening.ui.SectionInfoKmcActivity;
 import edu.aku.hassannaqvi.kmc_screening.ui.other.EndingActivity;
 import edu.aku.hassannaqvi.kmc_screening.validation.ClearClass;
 import edu.aku.hassannaqvi.kmc_screening.validation.ValidatorClass;
+
+import static edu.aku.hassannaqvi.kmc_screening.core.MainApp.fc;
 
 public class SectionAForm1Activity extends AppCompatActivity {
 
@@ -68,7 +69,7 @@ public class SectionAForm1Activity extends AppCompatActivity {
 
     private void SaveDraft() {
         JSONObject sa1 = GeneratorClass.getContainerJSON(bi.fldGrpSecB01, true);
-        SectionInfoKmcActivity.fc.setsA(String.valueOf(sa1));
+        fc.setsA(String.valueOf(sa1));
     }
 
     private boolean formValidation() {

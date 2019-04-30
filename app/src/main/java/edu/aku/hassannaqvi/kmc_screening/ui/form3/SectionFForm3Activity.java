@@ -46,7 +46,7 @@ public class SectionFForm3Activity extends AppCompatActivity {
             if (UpdateDB()) {
                 Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
                 finish();
-                startActivity(new Intent(this, EndingActivity.class));
+                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();

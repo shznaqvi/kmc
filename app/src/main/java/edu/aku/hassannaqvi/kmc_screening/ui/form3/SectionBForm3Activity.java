@@ -14,7 +14,6 @@ import edu.aku.hassannaqvi.kmc_screening.R;
 import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc_screening.core.MainApp;
 import edu.aku.hassannaqvi.kmc_screening.databinding.ActivitySectionBForm3Binding;
-import edu.aku.hassannaqvi.kmc_screening.ui.other.EndingActivity;
 
 public class SectionBForm3Activity extends AppCompatActivity {
 
@@ -73,7 +72,7 @@ public class SectionBForm3Activity extends AppCompatActivity {
             }
             if (UpdateDB()) {
                 finish();
-                startActivity(new Intent(this, EndingActivity.class));
+                startActivity(new Intent(this, SectionCForm3Activity.class));
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
