@@ -1,7 +1,6 @@
 package edu.aku.hassannaqvi.kmc_screening.contracts;
 
 import android.database.Cursor;
-import android.net.Uri;
 import android.provider.BaseColumns;
 
 import org.json.JSONException;
@@ -14,7 +13,7 @@ import org.json.JSONObject;
 public class FormsContract {
 
     private String projectName = "KMC";
-    private String surveyType = "BL";
+    private String surveyType = "";
     private String _ID = "";
     private String _UID = "";
     private String formDate = ""; // Date
@@ -26,6 +25,7 @@ public class FormsContract {
     private String sB = "";
     private String sC = "";
     private String sD = "";
+    private String taluka;
     private String sE = "";
     private String sF = "";
     private String formType = "";
@@ -34,24 +34,63 @@ public class FormsContract {
     private String gpsLng = "";
     private String gpsDT = "";
     private String gpsAcc = "";
+    private String gpsAltitude = "";
     private String deviceID = "";
     private String devicetagID = "";
     private String synced = "";
     private String synced_date = "";
     private String appversion;
+    private String uc;
+    private String village;
+    private String formtype;
+    private String hhno;
 
-    public static final String CONTENT_AUTHORITY = "edu.aku.hassannaqvi.kmc.provider";
-    public static final Uri BASE_CONTENT_URI = Uri.parse("content://" + CONTENT_AUTHORITY);
+    public void setSurveyType(String surveyType) {
+        this.surveyType = surveyType;
+    }
 
-    public static final String PATH_FORMS = "forms";
+    public String getTaluka() {
+        return taluka;
+    }
 
-    public static final Uri URI_TABLE = Uri.parse(BASE_CONTENT_URI.toString() + "/" + PATH_FORMS);
+    public void setTaluka(String taluka) {
+        this.taluka = taluka;
+    }
 
-    public static final String[] TOP_LEVEL_PATHS = {PATH_FORMS};
+    public String getUc() {
+        return uc;
+    }
+
+    public void setUc(String uc) {
+        this.uc = uc;
+    }
+
+    public String getVillage() {
+        return village;
+    }
+
+    public void setVillage(String village) {
+        this.village = village;
+    }
+
+    public String getFormtype() {
+        return formtype;
+    }
+
+    public void setFormtype(String formtype) {
+        this.formtype = formtype;
+    }
+
+    public String getHhno() {
+        return hhno;
+    }
+
+    public void setHhno(String hhno) {
+        this.hhno = hhno;
+    }
 
     public FormsContract() {
     }
-
 
     public FormsContract Sync(JSONObject jsonObject) throws JSONException {
         this.projectName = jsonObject.getString(FormsTable.COLUMN_PROJECTNAME);
@@ -77,11 +116,16 @@ public class FormsContract {
         this.gpsLng = jsonObject.getString(FormsTable.COLUMN_GPSLNG);
         this.gpsDT = jsonObject.getString(FormsTable.COLUMN_GPSDT);
         this.gpsAcc = jsonObject.getString(FormsTable.COLUMN_GPSACC);
+        this.gpsAltitude = jsonObject.getString(FormsTable.COLUMN_GPSALTITUDE);
         this.deviceID = jsonObject.getString(FormsTable.COLUMN_DEVICEID);
         this.devicetagID = jsonObject.getString(FormsTable.COLUMN_DEVICETAGID);
         this.synced = jsonObject.getString(FormsTable.COLUMN_SYNCED);
         this.synced_date = jsonObject.getString(FormsTable.COLUMN_SYNCED_DATE);
         this.appversion = jsonObject.getString(FormsTable.COLUMN_APPVERSION);
+        this.hhno = jsonObject.getString(FormsTable.COLUMN_HHNO);
+        this.taluka = jsonObject.getString(FormsTable.COLUMN_TALUKA);
+        this.uc = jsonObject.getString(FormsTable.COLUMN_UC);
+        this.village = jsonObject.getString(FormsTable.COLUMN_VILLAGE);
         return this;
     }
 
@@ -112,10 +156,13 @@ public class FormsContract {
         this.synced = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SYNCED));
         this.synced_date = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SYNCED_DATE));
         this.appversion = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_APPVERSION));
-
+        this.hhno = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_HHNO));
+        this.taluka = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_TALUKA));
+        this.uc = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_UC));
+        this.village = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_VILLAGE));
+        this.gpsAltitude = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_GPSALTITUDE));
 
         return this;
-
     }
 
 
@@ -158,11 +205,16 @@ public class FormsContract {
         json.put(FormsTable.COLUMN_GPSLNG, this.gpsLng == null ? JSONObject.NULL : this.gpsLng);
         json.put(FormsTable.COLUMN_GPSDT, this.gpsDT == null ? JSONObject.NULL : this.gpsDT);
         json.put(FormsTable.COLUMN_GPSACC, this.gpsAcc == null ? JSONObject.NULL : this.gpsAcc);
+        json.put(FormsTable.COLUMN_GPSALTITUDE, this.gpsAltitude == null ? JSONObject.NULL : this.gpsAltitude);
         json.put(FormsTable.COLUMN_DEVICEID, this.deviceID == null ? JSONObject.NULL : this.deviceID);
         json.put(FormsTable.COLUMN_DEVICETAGID, this.devicetagID == null ? JSONObject.NULL : this.devicetagID);
         json.put(FormsTable.COLUMN_SYNCED, this.synced == null ? JSONObject.NULL : this.synced);
         json.put(FormsTable.COLUMN_SYNCED_DATE, this.synced_date == null ? JSONObject.NULL : this.synced_date);
         json.put(FormsTable.COLUMN_APPVERSION, this.appversion == null ? JSONObject.NULL : this.appversion);
+        json.put(FormsTable.COLUMN_HHNO, this.hhno == null ? JSONObject.NULL : this.hhno);
+        json.put(FormsTable.COLUMN_TALUKA, this.taluka == null ? JSONObject.NULL : this.taluka);
+        json.put(FormsTable.COLUMN_UC, this.uc == null ? JSONObject.NULL : this.uc);
+        json.put(FormsTable.COLUMN_VILLAGE, this.village == null ? JSONObject.NULL : this.village);
 
         return json;
     }
@@ -174,7 +226,6 @@ public class FormsContract {
     public void setEndingdatetime(String endingdatetime) {
         this.endingdatetime = endingdatetime;
     }
-
 
     public String getProjectName() {
         return projectName;
@@ -224,7 +275,6 @@ public class FormsContract {
         this.istatus = istatus;
     }
 
-
     public String getIstatus88x() {
         return istatus88x;
     }
@@ -232,7 +282,6 @@ public class FormsContract {
     public void setIstatus88x(String istatus88x) {
         this.istatus88x = istatus88x;
     }
-
 
     public String getsInfo() {
         return sInfo;
@@ -330,6 +379,13 @@ public class FormsContract {
         this.gpsAcc = gpsAcc;
     }
 
+    public String getGpsAltitude() {
+        return gpsAltitude;
+    }
+
+    public void setGpsAltitude(String gpsAltitude) {
+        this.gpsAltitude = gpsAltitude;
+    }
 
     public String getDeviceID() {
         return deviceID;
@@ -380,6 +436,7 @@ public class FormsContract {
         public static final String COLUMN__ID = "_id";
         public static final String COLUMN__UID = "_uid";
         public static final String COLUMN_FORMDATE = "formdate";
+        public static final String COLUMN_HHNO = "hhno";
         public static final String COLUMN_USER = "user";
         public static final String COLUMN_ISTATUS = "istatus";
         public static final String COLUMN_ISTATUS88X = "istatus88x";
@@ -396,11 +453,15 @@ public class FormsContract {
         public static final String COLUMN_GPSLNG = "gpslng";
         public static final String COLUMN_GPSDT = "gpsdt";
         public static final String COLUMN_GPSACC = "gpsacc";
+        public static final String COLUMN_GPSALTITUDE = "gpsaltitude";
         public static final String COLUMN_DEVICEID = "deviceid";
         public static final String COLUMN_DEVICETAGID = "devicetagid";
         public static final String COLUMN_SYNCED = "synced";
         public static final String COLUMN_SYNCED_DATE = "synced_date";
         public static final String COLUMN_APPVERSION = "appversion";
+        public static final String COLUMN_TALUKA = "taluka";
+        public static final String COLUMN_UC = "uc";
+        public static final String COLUMN_VILLAGE = "village";
 
         public static String _URL = "forms.php";
     }

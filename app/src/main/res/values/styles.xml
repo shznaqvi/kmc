@@ -276,7 +276,7 @@
     </style>
 
     <style name="spinner" parent="android:Widget.Material.Light.Spinner.Underlined">
-        <item name="android:background">@drawable/spinner_style</item>
+        <item name="android:background">@color/white</item>
         <item name="android:paddingRight">15dp</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>

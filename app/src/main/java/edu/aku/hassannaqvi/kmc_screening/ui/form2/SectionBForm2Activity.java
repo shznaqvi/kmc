@@ -1,5 +1,6 @@
 package edu.aku.hassannaqvi.kmc_screening.ui.form2;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -14,9 +15,10 @@ import edu.aku.hassannaqvi.kmc_screening.R;
 import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc_screening.core.MainApp;
 import edu.aku.hassannaqvi.kmc_screening.databinding.ActivitySectionBForm2Binding;
-import edu.aku.hassannaqvi.kmc_screening.ui.SectionInfoKmcActivity;
 import edu.aku.hassannaqvi.kmc_screening.validation.ClearClass;
 import edu.aku.hassannaqvi.kmc_screening.validation.ValidatorClass;
+
+import static edu.aku.hassannaqvi.kmc_screening.core.MainApp.fc;
 
 public class SectionBForm2Activity extends AppCompatActivity {
 
@@ -33,8 +35,6 @@ public class SectionBForm2Activity extends AppCompatActivity {
     }
 
 
-
-
     private void setContentUI() {
         this.setTitle(R.string.f1_secb);
         deviceID = Settings.Secure.getString(this.getContentResolver(), Settings.Secure.ANDROID_ID);
@@ -47,7 +47,8 @@ public class SectionBForm2Activity extends AppCompatActivity {
 
         SaveDraft();
         if (UpdateDB()) {
-
+            finish();
+            startActivity(new Intent(this, SectionCForm2Activity.class));
 
         } else {
             Toast.makeText(this, "Error in updating db!!", Toast.LENGTH_SHORT).show();
@@ -66,7 +67,7 @@ public class SectionBForm2Activity extends AppCompatActivity {
 
     private void SaveDraft() {
         JSONObject sa1 = GeneratorClass.getContainerJSON(bi.fldGrpSecB02, true);
-        SectionInfoKmcActivity.fc.setsA(String.valueOf(sa1));
+        fc.setsA(String.valueOf(sa1));
     }
 
     private boolean formValidation() {

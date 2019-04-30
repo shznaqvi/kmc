@@ -94,7 +94,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="8dp"
                 android:onClick="@{(v) -> callback.openForm(1)}"
-                android:text="FORM-1 PARTICIPANT ELIGIBILITY SCREENING" />
+                android:text="FORM-0 PW Survelliance" />
 
             <Button
                 android:layout_width="match_parent"
@@ -102,7 +102,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="8dp"
                 android:onClick="@{(v) -> callback.openForm(2)}"
-                android:text="FORM-2 RECRUITMENT FORM" />
+                android:text="FORM-1 PARTICIPANT ELIGIBILITY SCREENING" />
 
             <Button
                 android:layout_width="match_parent"
@@ -110,6 +110,14 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="8dp"
                 android:onClick="@{(v) -> callback.openForm(3)}"
+                android:text="FORM-2 RECRUITMENT FORM" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:onClick="@{(v) -> callback.openForm(4)}"
                 android:text="FORM-3 FOLLOWUP FORM" />
 
             <Button

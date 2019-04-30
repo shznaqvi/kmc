@@ -81,6 +81,7 @@ public class MainActivity extends Activity {
     private ProgressDialog pd;
     private Boolean exit = false;
     private String rSumText = "";
+    String formType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -163,7 +164,6 @@ public class MainActivity extends Activity {
             mainBinding.adminsec.setVisibility(View.VISIBLE);
 
             Collection<FormsContract> todaysForms = db.getTodayForms();
-            Collection<FormsContract> unsyncedForms = db.getUnsyncedForms();
 
             rSumText += "TODAY'S RECORDS SUMMARY\r\n";
 
@@ -216,8 +216,6 @@ public class MainActivity extends Activity {
             rSumText += "Last Data Upload: \t" + syncPref.getString("LastUpSyncServer", "Never Synced");
             rSumText += "\r\n";
             rSumText += "\r\n";
-            rSumText += "Unsynced Forms: \t" + unsyncedForms.size();
-            rSumText += "\r\n";
 
             Log.d(TAG, "onCreate: " + rSumText);
             recordSummary.setText(rSumText);
@@ -258,7 +256,6 @@ public class MainActivity extends Activity {
     public void openForm(int index) {
 
         final Intent oF = new Intent(MainActivity.this, getClass(index));
-
         if (sharedPref.getString("tagName", null) != "" && sharedPref.getString("tagName", null) != null && !MainApp.userName.equals("0000")) {
             startActivity(oF);
         } else {
@@ -303,11 +300,25 @@ public class MainActivity extends Activity {
         Class intentClass = null;
         switch (a) {
             case 0:
+                MainApp.surveyType = "kf0a";
+                MainApp.formType = "kf0";
                 intentClass = SectionAForm0Activity.class;
                 break;
             case 1:
+                MainApp.surveyType = "kf0b";
+                MainApp.formType = "kf0";
+                intentClass = SectionAForm0Activity.class;
+                break;
             case 2:
+                MainApp.formType = "kf1";
+                intentClass = SectionInfoKmcActivity.class;
+                break;
             case 3:
+                MainApp.formType = "kf2";
+                intentClass = SectionInfoKmcActivity.class;
+                break;
+            case 4:
+                MainApp.formType = "kf3";
                 intentClass = SectionInfoKmcActivity.class;
                 break;
             default:
@@ -396,14 +407,24 @@ public class MainActivity extends Activity {
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
 
-            Toast.makeText(getApplicationContext(), "Syncing Forms", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Syncing Forms - PW Registration", Toast.LENGTH_SHORT).show();
             new SyncAllData(
                     this,
-                    "Forms",
+                    "Forms - PW Registration",
                     "updateSyncedForms",
                     FormsContract.class,
-                    MainApp._HOST_URL + FormsContract.FormsTable._URL,
-                    new DatabaseHelper(this).getUnsyncedForms()
+                    FormsContract.FormsTable._URL.replace(".php", "_f0a.php"),
+                    new DatabaseHelper(this).getUnsyncedForms0("kf0", "kf0a")
+            ).execute();
+
+            Toast.makeText(getApplicationContext(), "Syncing Forms - PW Survillence", Toast.LENGTH_SHORT).show();
+            new SyncAllData(
+                    this,
+                    "Forms - PW Survillence",
+                    "updateSyncedForms",
+                    FormsContract.class,
+                    FormsContract.FormsTable._URL.replace(".php", "_f0b.php"),
+                    new DatabaseHelper(this).getUnsyncedForms0("kf0", "kf0b")
             ).execute();
 
             SharedPreferences syncPref = getSharedPreferences("SyncInfo", Context.MODE_PRIVATE);

@@ -42,6 +42,8 @@ import android.widget.Toast;
 import com.github.amlcurran.showcaseview.ShowcaseView;
 import com.github.amlcurran.showcaseview.targets.Target;
 import com.github.amlcurran.showcaseview.targets.ViewTarget;
+import com.nabinbhandari.android.permissions.PermissionHandler;
+import com.nabinbhandari.android.permissions.Permissions;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -64,6 +66,7 @@ import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc_screening.core.MainApp;
 import edu.aku.hassannaqvi.kmc_screening.get.GetAllData;
 
+import static edu.aku.hassannaqvi.kmc_screening.core.MainApp.permissions;
 import static java.lang.Thread.sleep;
 
 
@@ -125,6 +128,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     private UserLoginTask mAuthTask = null;
     private int clicks;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -152,9 +156,13 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             e.printStackTrace();
         }
 
-        // Set up the login form.
-//        mEmailView = findViewById(R.id.email);
-        populateAutoComplete();
+        Permissions.check(LoginActivity.this, permissions, null/*rationale*/, null/*options*/, new PermissionHandler() {
+            @Override
+            public void onGranted() {
+                // do your task.
+                populateAutoComplete();
+            }
+        });
 
         Target viewTarget = new ViewTarget(R.id.syncData, this);
 
@@ -179,15 +187,19 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                attemptLogin();
+                Permissions.check(LoginActivity.this, permissions, null/*rationale*/, null/*options*/, new PermissionHandler() {
+                    @Override
+                    public void onGranted() {
+                        // do your task.
+                        attemptLogin();
+                    }
+                });
             }
         });
 
         db = new DatabaseHelper(this);
 
 //        DB backup
-
         dbBackup();
     }
 
@@ -566,11 +578,9 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                 @Override
                 public void run() {
                     Toast.makeText(LoginActivity.this, "Sync Users", Toast.LENGTH_LONG).show();
-                    new GetAllData(mContext, "User").execute();
-                    Toast.makeText(LoginActivity.this, "Sync Mwra", Toast.LENGTH_LONG).show();
-                    new GetAllData(mContext, "Mwra").execute();
-                    Toast.makeText(LoginActivity.this, "Sync Tehsil", Toast.LENGTH_LONG).show();
-                    new GetAllData(mContext, "Tehsil").execute();
+                    new GetAllData(mContext, "Users").execute();
+                    Toast.makeText(LoginActivity.this, "Sync Talukas", Toast.LENGTH_LONG).show();
+                    new GetAllData(mContext, "Talukas").execute();
                     Toast.makeText(LoginActivity.this, "Sync UCs", Toast.LENGTH_LONG).show();
                     new GetAllData(mContext, "UCs").execute();
                     Toast.makeText(LoginActivity.this, "Sync Villages", Toast.LENGTH_LONG).show();

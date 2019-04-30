@@ -12,8 +12,9 @@ import java.util.Date;
 import edu.aku.hassannaqvi.kmc_screening.R;
 import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc_screening.databinding.ActivityEndingBinding;
-import edu.aku.hassannaqvi.kmc_screening.ui.SectionInfoKmcActivity;
 import edu.aku.hassannaqvi.kmc_screening.validation.ValidatorClass;
+
+import static edu.aku.hassannaqvi.kmc_screening.core.MainApp.fc;
 
 public class EndingActivity extends AppCompatActivity {
 
@@ -34,9 +35,10 @@ public class EndingActivity extends AppCompatActivity {
         if (check) {
             binding.istatusa.setEnabled(true);
             binding.istatusb.setEnabled(false);
+            binding.istatusc.setEnabled(false);
+            binding.istatusd.setEnabled(false);
         } else {
             binding.istatusa.setEnabled(false);
-            binding.istatusb.setEnabled(true);
         }
 
 /*        istatus.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -74,14 +76,14 @@ public class EndingActivity extends AppCompatActivity {
     private void SaveDraft() {
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
-        SectionInfoKmcActivity.fc.setIstatus(binding.istatusa.isChecked() ? "1"
+        fc.setIstatus(binding.istatusa.isChecked() ? "1"
                 : binding.istatusb.isChecked() ? "2"
                 : binding.istatusc.isChecked() ? "3"
                 : binding.istatusd.isChecked() ? "4"
                 : "0");
 
 //        SectionInfoKmcActivity.fc.setIstatus88x(istatus88x.getText().toString());
-        SectionInfoKmcActivity.fc.setEndingdatetime(dtToday);
+        fc.setEndingdatetime(dtToday);
 
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();

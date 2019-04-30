@@ -14,10 +14,11 @@ import edu.aku.hassannaqvi.kmc_screening.JSON.GeneratorClass;
 import edu.aku.hassannaqvi.kmc_screening.R;
 import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc_screening.databinding.ActivitySectionCForm2Binding;
-import edu.aku.hassannaqvi.kmc_screening.ui.SectionInfoKmcActivity;
 import edu.aku.hassannaqvi.kmc_screening.ui.other.EndingActivity;
 import edu.aku.hassannaqvi.kmc_screening.validation.ClearClass;
 import edu.aku.hassannaqvi.kmc_screening.validation.ValidatorClass;
+
+import static edu.aku.hassannaqvi.kmc_screening.core.MainApp.fc;
 
 public class SectionCForm2Activity extends AppCompatActivity {
 
@@ -46,7 +47,7 @@ public class SectionCForm2Activity extends AppCompatActivity {
 
         SaveDraft();
         if (UpdateDB()) {
-
+            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
 
         } else {
             Toast.makeText(this, "Error in updating db!!", Toast.LENGTH_SHORT).show();
@@ -65,7 +66,7 @@ public class SectionCForm2Activity extends AppCompatActivity {
 
     private void SaveDraft() {
         JSONObject sa1 = GeneratorClass.getContainerJSON(bi.fldGrpSecC01, true);
-        SectionInfoKmcActivity.fc.setsA(String.valueOf(sa1));
+        fc.setsA(String.valueOf(sa1));
     }
 
     private boolean formValidation() {

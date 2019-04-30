@@ -18,12 +18,12 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
-import edu.aku.hassannaqvi.kmc_screening.contracts.DistrictsContract;
-import edu.aku.hassannaqvi.kmc_screening.contracts.DistrictsContract.singleDistrict;
 import edu.aku.hassannaqvi.kmc_screening.contracts.FormsContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.FormsContract.FormsTable;
 import edu.aku.hassannaqvi.kmc_screening.contracts.MwraContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.MwraContract.MwraEntry;
+import edu.aku.hassannaqvi.kmc_screening.contracts.TalukasContract;
+import edu.aku.hassannaqvi.kmc_screening.contracts.TalukasContract.singleTaluka;
 import edu.aku.hassannaqvi.kmc_screening.contracts.UCsContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.UCsContract.UCsTable;
 import edu.aku.hassannaqvi.kmc_screening.contracts.UsersContract;
@@ -51,32 +51,36 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + FormsTable.TABLE_NAME + "("
             + FormsTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
             FormsTable.COLUMN_PROJECTNAME + " TEXT," +
+            FormsTable.COLUMN_DEVICEID + " TEXT," +
+            FormsTable.COLUMN_DEVICETAGID + " TEXT," +
+            FormsTable.COLUMN_APPVERSION + " TEXT," +
+            FormsTable.COLUMN_FORMTYPE + " TEXT," +
             FormsTable.COLUMN_SURVEYTYPE + " TEXT," +
-            FormsTable.COLUMN__UID + " TEXT," +
             FormsTable.COLUMN_FORMDATE + " TEXT," +
+            FormsTable.COLUMN__UID + " TEXT," +
             FormsTable.COLUMN_USER + " TEXT," +
-            FormsTable.COLUMN_ISTATUS + " TEXT," +
-            FormsTable.COLUMN_ISTATUS88X + " TEXT," +
+            FormsTable.COLUMN_GPSLAT + " TEXT," +
+            FormsTable.COLUMN_GPSLNG + " TEXT," +
+            FormsTable.COLUMN_GPSDT + " TEXT," +
+            FormsTable.COLUMN_GPSACC + " TEXT," +
+            FormsTable.COLUMN_GPSALTITUDE + " TEXT," +
+            FormsTable.COLUMN_HHNO + " TEXT," +
+            FormsTable.COLUMN_TALUKA + " TEXT," +
+            FormsTable.COLUMN_UC + " TEXT," +
+            FormsTable.COLUMN_VILLAGE + " TEXT," +
             FormsTable.COLUMN_SINFO + " TEXT," +
             FormsTable.COLUMN_SA + " TEXT," +
             FormsTable.COLUMN_SB + " TEXT," +
-            FormsTable.COLUMN_FORMTYPE + " TEXT," +
             FormsTable.COLUMN_SC + " TEXT," +
             FormsTable.COLUMN_SD + " TEXT," +
             FormsTable.COLUMN_SE + " TEXT," +
             FormsTable.COLUMN_SF + " TEXT," +
             FormsTable.COLUMN_ENDINGDATETIME + " TEXT," +
-            FormsTable.COLUMN_GPSLAT + " TEXT," +
-            FormsTable.COLUMN_GPSLNG + " TEXT," +
-            FormsTable.COLUMN_GPSDT + " TEXT," +
-            FormsTable.COLUMN_GPSACC + " TEXT," +
-            FormsTable.COLUMN_DEVICEID + " TEXT," +
-            FormsTable.COLUMN_DEVICETAGID + " TEXT," +
+            FormsTable.COLUMN_ISTATUS + " TEXT," +
+            FormsTable.COLUMN_ISTATUS88X + " TEXT," +
             FormsTable.COLUMN_SYNCED + " TEXT," +
-            FormsTable.COLUMN_SYNCED_DATE + " TEXT," +
-            FormsTable.COLUMN_APPVERSION + " TEXT"
+            FormsTable.COLUMN_SYNCED_DATE + " TEXT"
             + " );";
-
 
     private static final String SQL_CREATE_MWRA = "CREATE TABLE " +
             MwraEntry.TABLE_NAME + "(" +
@@ -93,22 +97,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + " );";
 
 
-    private static final String SQL_DELETE_USERS =
-            "DROP TABLE IF EXISTS " + UsersContract.UsersTable.TABLE_NAME;
-    private static final String SQL_DELETE_FORMS =
-            "DROP TABLE IF EXISTS " + FormsTable.TABLE_NAME;
-
-
-    private static final String SQL_DELETE_TALUKA = "DROP TABLE IF EXISTS " + singleDistrict.TABLE_NAME;
-    private static final String SQL_DELETE_UCS = "DROP TABLE IF EXISTS " + UCsTable.TABLE_NAME;
-    private static final String SQL_DELETE_VILLAGE = "DROP TABLE IF EXISTS " + singleVillage.TABLE_NAME;
-    private static final String SQL_DELETE_MWRA = "DROP TABLE IF EXISTS " + MwraEntry.TABLE_NAME;
-
-
-    final String SQL_CREATE_DISTRICT_TABLE = "CREATE TABLE " + singleDistrict.TABLE_NAME + " (" +
-            singleDistrict._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
-            singleDistrict.COLUMN_DISTRICT_CODE + " TEXT, " +
-            singleDistrict.COLUMN_DISTRICT_NAME + " TEXT " +
+    final String SQL_CREATE_DISTRICT_TABLE = "CREATE TABLE " + singleTaluka.TABLE_NAME + " (" +
+            singleTaluka._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+            singleTaluka.COLUMN_DISTRICT_CODE + " TEXT, " +
+            singleTaluka.COLUMN_DISTRICT_NAME + " TEXT " +
             ");";
 
     final String SQL_CREATE_UC = "CREATE TABLE " + UCsTable.TABLE_NAME + " (" +
@@ -126,12 +118,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             singleVillage.COLUMN_UC_CODE + " TEXT " +
             ");";
 
+    private static final String SQL_DELETE_USERS = "DROP TABLE IF EXISTS " + UsersContract.UsersTable.TABLE_NAME;
+    private static final String SQL_DELETE_FORMS = "DROP TABLE IF EXISTS " + FormsTable.TABLE_NAME;
+    private static final String SQL_DELETE_TALUKA = "DROP TABLE IF EXISTS " + singleTaluka.TABLE_NAME;
+    private static final String SQL_DELETE_UCS = "DROP TABLE IF EXISTS " + UCsTable.TABLE_NAME;
+    private static final String SQL_DELETE_VILLAGE = "DROP TABLE IF EXISTS " + singleVillage.TABLE_NAME;
+    private static final String SQL_DELETE_MWRA = "DROP TABLE IF EXISTS " + MwraEntry.TABLE_NAME;
 
     private final String TAG = "DatabaseHelper";
 
-
     public String spDateT = new SimpleDateFormat("dd-MM-yy").format(new Date().getTime());
-
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -142,7 +138,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         db.execSQL(SQL_CREATE_USERS);
         db.execSQL(SQL_CREATE_FORMS);
-
         db.execSQL(SQL_CREATE_DISTRICT_TABLE);
         db.execSQL(SQL_CREATE_UC);
         db.execSQL(SQL_CREATE_PSU_TABLE);
@@ -153,13 +148,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         db.execSQL(SQL_DELETE_USERS);
         db.execSQL(SQL_DELETE_FORMS);
-
         db.execSQL(SQL_DELETE_TALUKA);
         db.execSQL(SQL_DELETE_UCS);
         db.execSQL(SQL_DELETE_VILLAGE);
         db.execSQL(SQL_DELETE_MWRA);
     }
-
 
     public void syncUCs(JSONArray UCslist) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -187,14 +180,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public Collection<DistrictsContract> getAllDistricts() {
+    public Collection<TalukasContract> getAllDistricts() {
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
-                singleDistrict._ID,
-                singleDistrict.COLUMN_DISTRICT_CODE,
-                singleDistrict.COLUMN_DISTRICT_NAME
+                singleTaluka._ID,
+                singleTaluka.COLUMN_DISTRICT_CODE,
+                singleTaluka.COLUMN_DISTRICT_NAME
         };
 
         String whereClause = null;
@@ -203,12 +196,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String having = null;
 
         String orderBy =
-                singleDistrict.COLUMN_DISTRICT_NAME + " ASC";
+                singleTaluka.COLUMN_DISTRICT_NAME + " ASC";
 
-        Collection<DistrictsContract> allDC = new ArrayList<DistrictsContract>();
+        Collection<TalukasContract> allDC = new ArrayList<TalukasContract>();
         try {
             c = db.query(
-                    singleDistrict.TABLE_NAME,  // The table to query
+                    singleTaluka.TABLE_NAME,  // The table to query
                     columns,                   // The columns to return
                     whereClause,               // The columns for the WHERE clause
                     whereArgs,                 // The values for the WHERE clause
@@ -217,7 +210,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     orderBy                    // The sort order
             );
             while (c.moveToNext()) {
-                DistrictsContract dc = new DistrictsContract();
+                TalukasContract dc = new TalukasContract();
                 allDC.add(dc.hydrate(c));
             }
         } finally {
@@ -463,22 +456,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public void syncDistricts(JSONArray talukalist) {
+    public void syncTalukas(JSONArray talukalist) {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(singleDistrict.TABLE_NAME, null, null);
+        db.delete(singleTaluka.TABLE_NAME, null, null);
         try {
             JSONArray jsonArray = talukalist;
             for (int i = 0; i < jsonArray.length(); i++) {
 
                 JSONObject jsonObjectUser = jsonArray.getJSONObject(i);
 
-                DistrictsContract user = new DistrictsContract();
+                TalukasContract user = new TalukasContract();
                 user.sync(jsonObjectUser);
                 ContentValues values = new ContentValues();
 
-                values.put(singleDistrict.COLUMN_DISTRICT_CODE, user.getDistrictCode());
-                values.put(singleDistrict.COLUMN_DISTRICT_NAME, user.getDistrictName());
-                db.insert(singleDistrict.TABLE_NAME, null, values);
+                values.put(singleTaluka.COLUMN_DISTRICT_CODE, user.getDistrictCode());
+                values.put(singleTaluka.COLUMN_DISTRICT_NAME, user.getDistrictName());
+                db.insert(singleTaluka.TABLE_NAME, null, values);
             }
 
         } catch (Exception e) {
@@ -661,11 +654,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_GPSLNG, fc.getGpsLng());
         values.put(FormsTable.COLUMN_GPSDT, fc.getGpsDT());
         values.put(FormsTable.COLUMN_GPSACC, fc.getGpsAcc());
+        values.put(FormsTable.COLUMN_GPSALTITUDE, fc.getGpsAltitude());
         values.put(FormsTable.COLUMN_DEVICEID, fc.getDeviceID());
         values.put(FormsTable.COLUMN_DEVICETAGID, fc.getDevicetagID());
         values.put(FormsTable.COLUMN_SYNCED, fc.getSynced());
         values.put(FormsTable.COLUMN_SYNCED_DATE, fc.getSynced_date());
         values.put(FormsTable.COLUMN_APPVERSION, fc.getAppversion());
+        values.put(FormsTable.COLUMN_HHNO, fc.getHhno());
+        values.put(FormsTable.COLUMN_UC, fc.getUc());
+        values.put(FormsTable.COLUMN_TALUKA, fc.getTaluka());
+        values.put(FormsTable.COLUMN_VILLAGE, fc.getVillage());
 
 
         // Insert the new row, returning the primary key value of the new row
@@ -706,7 +704,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN__UID, MainApp.fc.getUID());
 
 // Which row to update, based on the ID
-        String selection = FormsTable._ID + " = ?";
+        String selection = FormsTable.COLUMN__ID + " = ?";
         String[] selectionArgs = {String.valueOf(MainApp.fc.get_ID())};
 
         int count = db.update(FormsTable.TABLE_NAME,
@@ -717,7 +715,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public Collection<FormsContract> getUnsyncedForms() {
+    public Collection<FormsContract> getUnsyncedForms(String formType) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
@@ -742,22 +740,110 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_GPSLNG,
                 FormsTable.COLUMN_GPSDT,
                 FormsTable.COLUMN_GPSACC,
+                FormsTable.COLUMN_GPSALTITUDE,
                 FormsTable.COLUMN_DEVICEID,
                 FormsTable.COLUMN_DEVICETAGID,
                 FormsTable.COLUMN_SYNCED,
                 FormsTable.COLUMN_SYNCED_DATE,
-                FormsTable.COLUMN_APPVERSION
+                FormsTable.COLUMN_APPVERSION,
+                FormsTable.COLUMN_HHNO,
+                FormsTable.COLUMN_UC,
+                FormsTable.COLUMN_VILLAGE,
+                FormsTable.COLUMN_TALUKA,
 
         };
-        String whereClause = FormsTable.COLUMN_SYNCED + " is null OR " + FormsTable.COLUMN_SYNCED + " = '' ";
-        String[] whereArgs = null;
+        String whereClause =
+                FormsTable.COLUMN_FORMTYPE +
+                        " =? AND (" +
+                        FormsTable.COLUMN_SYNCED +
+                        " is null OR " +
+                        FormsTable.COLUMN_SYNCED + " = '') ";
+        String[] whereArgs = {formType};
         String groupBy = null;
         String having = null;
 
         String orderBy =
-                FormsTable._ID + " ASC";
+                FormsTable.COLUMN__ID + " ASC";
 
-        Collection<FormsContract> allFC = new ArrayList<FormsContract>();
+        Collection<FormsContract> allFC = new ArrayList<>();
+        try {
+            c = db.query(
+                    FormsTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                FormsContract fc = new FormsContract();
+                allFC.add(fc.Hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allFC;
+    }
+
+    public Collection<FormsContract> getUnsyncedForms0(String formType, String surveyType) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                FormsTable._ID,
+                FormsTable.COLUMN_PROJECTNAME,
+                FormsTable.COLUMN_SURVEYTYPE,
+                FormsTable.COLUMN__UID,
+                FormsTable.COLUMN_FORMDATE,
+                FormsTable.COLUMN_USER,
+                FormsTable.COLUMN_ISTATUS,
+                FormsTable.COLUMN_ISTATUS88X,
+                FormsTable.COLUMN_SINFO,
+                FormsTable.COLUMN_SA,
+                FormsTable.COLUMN_SB,
+                FormsTable.COLUMN_FORMTYPE,
+                FormsTable.COLUMN_SC,
+                FormsTable.COLUMN_SD,
+                FormsTable.COLUMN_SE,
+                FormsTable.COLUMN_SF,
+                FormsTable.COLUMN_ENDINGDATETIME,
+                FormsTable.COLUMN_GPSLAT,
+                FormsTable.COLUMN_GPSLNG,
+                FormsTable.COLUMN_GPSDT,
+                FormsTable.COLUMN_GPSACC,
+                FormsTable.COLUMN_GPSALTITUDE,
+                FormsTable.COLUMN_DEVICEID,
+                FormsTable.COLUMN_DEVICETAGID,
+                FormsTable.COLUMN_SYNCED,
+                FormsTable.COLUMN_SYNCED_DATE,
+                FormsTable.COLUMN_APPVERSION,
+                FormsTable.COLUMN_HHNO,
+                FormsTable.COLUMN_UC,
+                FormsTable.COLUMN_VILLAGE,
+                FormsTable.COLUMN_TALUKA,
+
+        };
+        String whereClause =
+                FormsTable.COLUMN_FORMTYPE +
+                        " =? AND " +
+                        FormsTable.COLUMN_SURVEYTYPE +
+                        " =? AND (" +
+                        FormsTable.COLUMN_SYNCED +
+                        " is null OR " +
+                        FormsTable.COLUMN_SYNCED + " = '') ";
+        String[] whereArgs = {formType, surveyType};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                FormsTable.COLUMN__ID + " ASC";
+
+        Collection<FormsContract> allFC = new ArrayList<>();
         try {
             c = db.query(
                     FormsTable.TABLE_NAME,  // The table to query
