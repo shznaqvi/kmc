@@ -536,6 +536,7 @@ public class SectionInfoKmcActivity extends Activity {
             fc.setGpsLng(lang);
             fc.setGpsAcc(acc);
             fc.setGpsDT(date); // Timestamp is converted to date above
+            fc.setGpsAltitude(elevation);
 
             Toast.makeText(this, "GPS set", Toast.LENGTH_SHORT).show();
 

@@ -300,23 +300,25 @@ public class MainActivity extends Activity {
         Class intentClass = null;
         switch (a) {
             case 0:
-                MainApp.surveyType = "f0a";
-                MainApp.formType = "f0";
+                MainApp.surveyType = "kf0a";
+                MainApp.formType = "kf0";
                 intentClass = SectionAForm0Activity.class;
                 break;
             case 1:
-                MainApp.surveyType = "f0b";
-                MainApp.formType = "f0";
+                MainApp.surveyType = "kf0b";
+                MainApp.formType = "kf0";
                 intentClass = SectionAForm0Activity.class;
                 break;
             case 2:
-                MainApp.formType = "f1";
+                MainApp.formType = "kf1";
                 intentClass = SectionInfoKmcActivity.class;
+                break;
             case 3:
-                MainApp.formType = "f2";
+                MainApp.formType = "kf2";
                 intentClass = SectionInfoKmcActivity.class;
+                break;
             case 4:
-                MainApp.formType = "f3";
+                MainApp.formType = "kf3";
                 intentClass = SectionInfoKmcActivity.class;
                 break;
             default:
@@ -412,7 +414,7 @@ public class MainActivity extends Activity {
                     "updateSyncedForms",
                     FormsContract.class,
                     FormsContract.FormsTable._URL.replace(".php", "_f0a.php"),
-                    new DatabaseHelper(this).getUnsyncedForms0("f0", "f0a")
+                    new DatabaseHelper(this).getUnsyncedForms0("kf0", "kf0a")
             ).execute();
 
             Toast.makeText(getApplicationContext(), "Syncing Forms - PW Survillence", Toast.LENGTH_SHORT).show();
@@ -422,7 +424,7 @@ public class MainActivity extends Activity {
                     "updateSyncedForms",
                     FormsContract.class,
                     FormsContract.FormsTable._URL.replace(".php", "_f0b.php"),
-                    new DatabaseHelper(this).getUnsyncedForms0("f0", "f0b")
+                    new DatabaseHelper(this).getUnsyncedForms0("kf0", "kf0b")
             ).execute();
 
             SharedPreferences syncPref = getSharedPreferences("SyncInfo", Context.MODE_PRIVATE);

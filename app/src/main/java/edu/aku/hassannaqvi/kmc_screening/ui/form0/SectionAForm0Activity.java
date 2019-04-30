@@ -60,7 +60,7 @@ public class SectionAForm0Activity extends AppCompatActivity {
 
         db = new DatabaseHelper(getApplicationContext());
 
-        if (MainApp.surveyType.equals("f0b")) {
+        if (MainApp.surveyType.equals("kf0b")) {
             bi.checkBtnLayout.setVisibility(View.VISIBLE);
             bi.hhLayout.setVisibility(View.GONE);
             bi.recruitmentLayout.setVisibility(View.GONE);
