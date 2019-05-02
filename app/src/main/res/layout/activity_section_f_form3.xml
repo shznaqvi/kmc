@@ -32,27 +32,25 @@
                             style="@style/i_textview"
                             android:text="@string/kf3f01" />
 
-                        <RadioGroup
-                            android:id="@+id/kf3f01"
-                            style="@style/i_radiogroup">
+                        <CheckBox
+                            android:id="@+id/kf3f01a"
+                            style="@style/i_checkbox"
+                            android:text="@string/kf3f01a" />
 
-                            <RadioButton
-                                android:id="@+id/kf3f01a"
-                                style="@style/i_radiobutton"
-                                android:text="@string/kf3f01a" />
+                        <CheckBox
+                            android:id="@+id/kf3f01b"
+                            style="@style/i_checkbox"
+                            android:text="@string/kf3f01b" />
 
-                            <RadioButton
-                                android:id="@+id/kf3f01b"
-                                style="@style/i_radiobutton"
-                                android:text="@string/kf3f01b" />
+                        <CheckBox
+                            android:id="@+id/kf3f01c"
+                            style="@style/i_checkbox"
+                            android:text="@string/kf3f01c" />
 
-                            <RadioButton
-                                android:id="@+id/kf3f01c"
-                                style="@style/i_radiobutton"
-                                android:text="@string/kf3f01c" />
-                        </RadioGroup>
                     </LinearLayout>
+
                 </android.support.v7.widget.CardView>
+
                 <!-- kf3f02-->
                 <android.support.v7.widget.CardView
                     android:id="@+id/fldGrpCVkf3f02"
@@ -64,43 +62,48 @@
                             style="@style/i_textview"
                             android:text="@string/kf3f02" />
 
-                        <RadioGroup
-                            android:id="@+id/kf3f02"
-                            style="@style/i_radiogroup">
+                        <CheckBox
+                            android:id="@+id/kf3f02a"
+                            style="@style/i_checkbox"
+                            android:text="@string/kf3f02a" />
 
-                            <RadioButton
-                                android:id="@+id/kf3f02a"
-                                style="@style/i_radiobutton"
-                                android:text="@string/kf3f02a" />
+                        <CheckBox
+                            android:id="@+id/kf3f02b"
+                            style="@style/i_checkbox"
+                            android:text="@string/kf3f02b" />
 
-                            <RadioButton
-                                android:id="@+id/kf3f02b"
-                                style="@style/i_radiobutton"
-                                android:text="@string/kf3f02b" />
+                        <CheckBox
+                            android:id="@+id/kf3f02c"
+                            style="@style/i_checkbox"
+                            android:text="@string/kf3f02c" />
 
-                            <RadioButton
-                                android:id="@+id/kf3f02c"
-                                style="@style/i_radiobutton"
-                                android:text="@string/kf3f02c" />
+                        <CheckBox
+                            android:id="@+id/kf3f02d"
+                            style="@style/i_checkbox"
+                            android:text="@string/kf3f02d" />
 
-                            <RadioButton
-                                android:id="@+id/kf3f02d"
-                                style="@style/i_radiobutton"
-                                android:text="@string/kf3f02d" />
+                        <CheckBox
+                            android:id="@+id/kf3f02e"
+                            style="@style/i_checkbox"
+                            android:text="@string/kf3f02e" />
 
-                            <RadioButton
-                                android:id="@+id/kf3f02e"
-                                style="@style/i_radiobutton"
-                                android:text="@string/kf3f02e" />
+                        <CheckBox
+                            android:id="@+id/kf3f0296"
+                            style="@style/i_checkbox"
+                            android:text="@string/other" />
 
-                            <EditText
-                                android:id="@+id/kf3f02x"
-                                style="@style/textInput"
-                                android:hint="@string/kf3f02"
-                                android:maxLength="4" />
-                        </RadioGroup>
+                        <EditText
+                            android:id="@+id/kf3f0296x"
+                            style="@style/EditText"
+                            android:hint="@string/other"
+                            android:tag="kf3f0296"
+                            android:text='@{kf3f0296.checked ? kf3f0296x.getText.toString : "" }'
+                            android:visibility='@{kf3f0296.checked ? View.VISIBLE : View.GONE }' />
+
                     </LinearLayout>
+
                 </android.support.v7.widget.CardView>
+
                 <!-- kf3f03-->
                 <android.support.v7.widget.CardView
                     android:id="@+id/fldGrpCVkf3f03"
@@ -125,9 +128,13 @@
                                 android:id="@+id/kf3f03b"
                                 style="@style/i_radiobutton"
                                 android:text="@string/no" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </android.support.v7.widget.CardView>
+
                 <!-- kf3f04-->
                 <android.support.v7.widget.CardView
                     android:id="@+id/fldGrpCVkf3f04"
@@ -140,38 +147,43 @@
                             style="@style/i_textview"
                             android:text="@string/kf3f04" />
 
-                        <RadioGroup
-                            android:id="@+id/kf3f04"
-                            style="@style/i_radiogroup">
+                        <CheckBox
+                            android:id="@+id/kf3f04a"
+                            style="@style/i_checkbox"
+                            android:text="@string/kf3f04a" />
 
-                            <RadioButton
-                                android:id="@+id/kf3f04a"
-                                style="@style/i_radiobutton"
-                                android:text="@string/kf3f04a" />
+                        <CheckBox
+                            android:id="@+id/kf3f04b"
+                            style="@style/i_checkbox"
+                            android:text="@string/kf3f04b" />
 
-                            <RadioButton
-                                android:id="@+id/kf3f04b"
-                                style="@style/i_radiobutton"
-                                android:text="@string/kf3f04b" />
+                        <CheckBox
+                            android:id="@+id/kf3f04c"
+                            style="@style/i_checkbox"
+                            android:text="@string/kf3f04c" />
 
-                            <RadioButton
-                                android:id="@+id/kf3f04c"
-                                style="@style/i_radiobutton"
-                                android:text="@string/kf3f04c" />
+                        <CheckBox
+                            android:id="@+id/kf3f04d"
+                            style="@style/i_checkbox"
+                            android:text="@string/kf3f04d" />
 
-                            <RadioButton
-                                android:id="@+id/kf3f04d"
-                                style="@style/i_radiobutton"
-                                android:text="@string/kf3f04d" />
+                        <CheckBox
+                            android:id="@+id/kf3f0496"
+                            style="@style/i_checkbox"
+                            android:text="@string/other" />
 
-                            <EditText
-                                android:id="@+id/kf3f04x"
-                                style="@style/textInput"
-                                android:hint="@string/kf3f04"
-                                android:maxLength="4" />
-                        </RadioGroup>
+                        <EditText
+                            android:id="@+id/kf3f0496x"
+                            style="@style/EditText"
+                            android:hint="@string/other"
+                            android:tag="kf3f0496"
+                            android:text='@{kf3f0496.checked ? kf3f0496x.getText.toString : "" }'
+                            android:visibility='@{kf3f0496.checked ? View.VISIBLE : View.GONE }' />
+
                     </LinearLayout>
+
                 </android.support.v7.widget.CardView>
+
                 <!-- kf3f05-->
                 <android.support.v7.widget.CardView
                     android:id="@+id/fldGrpCVkf3f05"
@@ -183,33 +195,38 @@
                             style="@style/i_textview"
                             android:text="@string/kf3f05" />
 
-                        <RadioGroup
-                            android:id="@+id/kf3f05"
-                            style="@style/i_radiogroup">
+                        <CheckBox
+                            android:id="@+id/kf3f05a"
+                            style="@style/i_checkbox"
+                            android:text="@string/kf3f05a" />
 
-                            <RadioButton
-                                android:id="@+id/kf3f05a"
-                                style="@style/i_radiobutton"
-                                android:text="@string/kf3f05a" />
+                        <CheckBox
+                            android:id="@+id/kf3f05b"
+                            style="@style/i_checkbox"
+                            android:text="@string/kf3f05b" />
 
-                            <RadioButton
-                                android:id="@+id/kf3f05b"
-                                style="@style/i_radiobutton"
-                                android:text="@string/kf3f05b" />
+                        <CheckBox
+                            android:id="@+id/kf3f05c"
+                            style="@style/i_checkbox"
+                            android:text="@string/kf3f05c" />
 
-                            <RadioButton
-                                android:id="@+id/kf3f05c"
-                                style="@style/i_radiobutton"
-                                android:text="@string/kf3f05c" />
+                        <CheckBox
+                            android:id="@+id/kf3f0596"
+                            style="@style/i_checkbox"
+                            android:text="@string/other" />
 
-                            <EditText
-                                android:id="@+id/kf3f05x"
-                                style="@style/textInput"
-                                android:hint="@string/kf3f05"
-                                android:maxLength="4" />
-                        </RadioGroup>
+                        <EditText
+                            android:id="@+id/kf3f0596x"
+                            style="@style/EditText"
+                            android:hint="@string/other"
+                            android:tag="kf3f0596"
+                            android:text='@{kf3f0596.checked ? kf3f0596x.getText.toString : "" }'
+                            android:visibility='@{kf3f0596.checked ? View.VISIBLE : View.GONE }' />
+
                     </LinearLayout>
+
                 </android.support.v7.widget.CardView>
+
                 <!-- kf3f06-->
                 <android.support.v7.widget.CardView
                     android:id="@+id/fldGrpCVkf3f06"
@@ -234,8 +251,11 @@
                                 android:id="@+id/kf3f06b"
                                 style="@style/i_radiobutton"
                                 android:text="@string/no" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </android.support.v7.widget.CardView>
 
 
@@ -269,5 +289,7 @@
             </LinearLayout>
 
         </LinearLayout>
+
     </ScrollView>
+
 </layout>

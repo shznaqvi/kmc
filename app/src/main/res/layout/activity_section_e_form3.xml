@@ -38,8 +38,11 @@
                             android:hint="@string/kf3e01"
                             android:inputType="number"
                             android:maxLength="4" />
+
                     </LinearLayout>
+
                 </android.support.v7.widget.CardView>
+
                 <!-- kf3e02-->
                 <android.support.v7.widget.CardView
                     android:id="@+id/fldGrpCVkf3e02"
@@ -64,41 +67,14 @@
                                 android:id="@+id/kf3e02b"
                                 style="@style/i_radiobutton"
                                 android:text="@string/no" />
+                            
                         </RadioGroup>
+                        
                     </LinearLayout>
+                    
                 </android.support.v7.widget.CardView>
+
                 <!-- kf3e03-->
-
-
-                <!-- H1-->
-                <android.support.v7.widget.CardView
-
-                    style="@style/cardView">
-
-                    <LinearLayout style="@style/linearlayout_view">
-
-                        <TextView
-                            style="@style/i_textview"
-                            android:text="@string/kf3eh2"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-                </android.support.v7.widget.CardView>
-
-                <!-- H2-->
-                <android.support.v7.widget.CardView
-
-                    style="@style/cardView">
-
-                    <LinearLayout style="@style/linearlayout_view">
-
-                        <TextView
-                            style="@style/i_textview"
-                            android:text="@string/kf3eh2"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-                </android.support.v7.widget.CardView>
-
-
                 <android.support.v7.widget.CardView
                     android:id="@+id/fldGrpCVkf3e03"
                     style="@style/cardView"
@@ -128,11 +104,43 @@
                                 android:id="@+id/kf3e03c"
                                 style="@style/i_radiobutton"
                                 android:text="@string/kf3e03c" />
+
                         </RadioGroup>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+
+                <!-- H1-->
+                <android.support.v7.widget.CardView
+
+                    style="@style/cardView">
+
+                    <LinearLayout style="@style/linearlayout_view">
+
+                        <TextView
+                            style="@style/i_textview"
+                            android:text="@string/kf3eh2"
+                            android:textStyle="bold" />
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
-                <!-- kf3e04-->
 
+                <!-- H2-->
+                <android.support.v7.widget.CardView
+
+                    style="@style/cardView">
+
+                    <LinearLayout style="@style/linearlayout_view">
+
+                        <TextView
+                            style="@style/i_textview"
+                            android:text="@string/kf3eh2"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
 
                 <!-- H3-->
                 <android.support.v7.widget.CardView
@@ -148,6 +156,8 @@
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
 
+
+                <!-- kf3e04-->
                 <android.support.v7.widget.CardView
                     android:id="@+id/fldGrpCVkf3e04"
                     style="@style/cardView">
@@ -171,9 +181,13 @@
                                 android:id="@+id/kf3e04b"
                                 style="@style/i_radiobutton"
                                 android:text="@string/kf3e04b" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </android.support.v7.widget.CardView>
+
                 <!-- kf3e05-->
                 <android.support.v7.widget.CardView
                     android:id="@+id/fldGrpCVkf3e05"
@@ -191,8 +205,11 @@
                             android:hint="@string/kf3e05"
                             android:inputType="number"
                             android:maxLength="4" />
+
                     </LinearLayout>
+
                 </android.support.v7.widget.CardView>
+
                 <!-- kf3e06-->
                 <android.support.v7.widget.CardView
                     android:id="@+id/fldGrpCVkf3e06"
@@ -210,8 +227,11 @@
                             android:hint="@string/kf3e06"
                             android:inputType="number"
                             android:maxLength="4" />
+
                     </LinearLayout>
+
                 </android.support.v7.widget.CardView>
+
                 <!-- kf3e07-->
                 <android.support.v7.widget.CardView
                     android:id="@+id/fldGrpCVkf3e07"
@@ -236,9 +256,13 @@
                                 android:id="@+id/kf3e07b"
                                 style="@style/i_radiobutton"
                                 android:text="@string/no" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </android.support.v7.widget.CardView>
+
                 <!-- kf3e08-->
                 <android.support.v7.widget.CardView
                     android:id="@+id/fldGrpCVkf3e08"
@@ -263,24 +287,27 @@
                                 android:id="@+id/kf3e08b"
                                 style="@style/i_radiobutton"
                                 android:text="@string/no" />
-                        </RadioGroup>
-                    </LinearLayout>
-                </android.support.v7.widget.CardView>
-                <!-- kf3eh4-->
 
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
 
                 <!-- H4-->
                 <android.support.v7.widget.CardView
-
                     style="@style/cardView">
 
-                    <LinearLayout style="@style/linearlayout_view">
+                    <LinearLayout
+                        style="@style/linearlayout_view">
 
                         <TextView
                             style="@style/i_textview"
                             android:text="@string/kf3eh4"
                             android:textStyle="bold" />
+
                     </LinearLayout>
+
                 </android.support.v7.widget.CardView>
 
                 <android.support.v7.widget.CardView
@@ -306,12 +333,15 @@
                                 android:id="@+id/kf3eh4b"
                                 style="@style/i_radiobutton"
                                 android:text="@string/no" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </android.support.v7.widget.CardView>
+
+
                 <!-- kf3e09-->
-
-
                 <android.support.v7.widget.CardView
                     android:id="@+id/fldGrpCVkf3e09"
                     style="@style/cardView">
@@ -335,9 +365,13 @@
                                 android:id="@+id/kf3e09b"
                                 style="@style/i_radiobutton"
                                 android:text="@string/no" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </android.support.v7.widget.CardView>
+
                 <!-- kf3e10-->
                 <android.support.v7.widget.CardView
                     android:id="@+id/fldGrpCVkf3e10"
@@ -362,9 +396,13 @@
                                 android:id="@+id/kf3e10b"
                                 style="@style/i_radiobutton"
                                 android:text="@string/no" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </android.support.v7.widget.CardView>
+
                 <!-- kf3e11-->
                 <android.support.v7.widget.CardView
                     android:id="@+id/fldGrpCVkf3e11"
@@ -389,27 +427,14 @@
                                 android:id="@+id/kf3e11b"
                                 style="@style/i_radiobutton"
                                 android:text="@string/no" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </android.support.v7.widget.CardView>
+
                 <!-- kf3e12-->
-
-
-                <!-- kf3eh5-->
-                <android.support.v7.widget.CardView
-
-                    style="@style/cardView">
-
-                    <LinearLayout style="@style/linearlayout_view">
-
-                        <TextView
-                            style="@style/i_textview"
-                            android:text="@string/kf3eh5"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-                </android.support.v7.widget.CardView>
-
-
                 <android.support.v7.widget.CardView
                     android:id="@+id/fldGrpCVkf3e12"
                     style="@style/cardView">
@@ -451,6 +476,23 @@
                         </RadioGroup>
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
+
+                <!-- kf3eh5-->
+                <android.support.v7.widget.CardView
+
+                    style="@style/cardView">
+
+                    <LinearLayout style="@style/linearlayout_view">
+
+                        <TextView
+                            style="@style/i_textview"
+                            android:text="@string/kf3eh5"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
                 <!-- kf3e13-->
                 <android.support.v7.widget.CardView
                     android:id="@+id/fldGrpCVkf3e13"
@@ -475,9 +517,13 @@
                                 android:id="@+id/kf3e13b"
                                 style="@style/i_radiobutton"
                                 android:text="@string/no" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </android.support.v7.widget.CardView>
+
                 <!-- kf3e14-->
                 <android.support.v7.widget.CardView
                     android:id="@+id/fldGrpCVkf3e14"
@@ -503,9 +549,13 @@
                                 android:id="@+id/kf3e14b"
                                 style="@style/i_radiobutton"
                                 android:text="@string/no" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </android.support.v7.widget.CardView>
+
                 <!-- kf3e15-->
                 <android.support.v7.widget.CardView
                     android:id="@+id/fldGrpCVkf3e15"
@@ -531,9 +581,13 @@
                                 android:id="@+id/kf3e15b"
                                 style="@style/i_radiobutton"
                                 android:text="@string/no" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </android.support.v7.widget.CardView>
+
                 <!-- kf3e16-->
                 <android.support.v7.widget.CardView
                     android:id="@+id/fldGrpCVkf3e16"
@@ -559,27 +613,14 @@
                                 android:id="@+id/kf3e16b"
                                 style="@style/i_radiobutton"
                                 android:text="@string/no" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </android.support.v7.widget.CardView>
+
                 <!-- kf3e17-->
-
-
-                <!-- kf3eh6-->
-                <android.support.v7.widget.CardView
-
-                    style="@style/cardView">
-
-                    <LinearLayout style="@style/linearlayout_view">
-
-                        <TextView
-                            style="@style/i_textview"
-                            android:text="@string/kf3eh6"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-                </android.support.v7.widget.CardView>
-
-
                 <android.support.v7.widget.CardView
                     android:id="@+id/fldGrpCVkf3e17"
                     style="@style/cardView"
@@ -604,9 +645,30 @@
                                 android:id="@+id/kf3e17b"
                                 style="@style/i_radiobutton"
                                 android:text="@string/no" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </android.support.v7.widget.CardView>
+
+
+                <!-- kf3eh6-->
+                <android.support.v7.widget.CardView
+
+                    style="@style/cardView">
+
+                    <LinearLayout style="@style/linearlayout_view">
+
+                        <TextView
+                            style="@style/i_textview"
+                            android:text="@string/kf3eh6"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
                 <!-- kf3e18-->
                 <android.support.v7.widget.CardView
                     android:id="@+id/fldGrpCVkf3e18"
@@ -631,9 +693,13 @@
                                 android:id="@+id/kf3e18b"
                                 style="@style/i_radiobutton"
                                 android:text="@string/no" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </android.support.v7.widget.CardView>
+
                 <!-- kf3e19-->
                 <android.support.v7.widget.CardView
                     android:id="@+id/fldGrpCVkf3e19"
@@ -658,8 +724,11 @@
                                 android:id="@+id/kf3e19b"
                                 style="@style/i_radiobutton"
                                 android:text="@string/no" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </android.support.v7.widget.CardView>
 
                 <LinearLayout
@@ -692,9 +761,13 @@
                                     android:id="@+id/kf3e20b"
                                     style="@style/i_radiobutton"
                                     android:text="@string/no" />
+
                             </RadioGroup>
+
                         </LinearLayout>
+
                     </android.support.v7.widget.CardView>
+
                     <!-- kf3e21-->
                     <android.support.v7.widget.CardView
                         android:id="@+id/fldGrpCVkf3e21"
@@ -723,6 +796,7 @@
                             </RadioGroup>
                         </LinearLayout>
                     </android.support.v7.widget.CardView>
+
                 </LinearLayout>
 
 
@@ -757,5 +831,7 @@
             </LinearLayout>
 
         </LinearLayout>
+
     </ScrollView>
+
 </layout>

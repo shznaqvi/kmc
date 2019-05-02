@@ -7,11 +7,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import edu.aku.hassannaqvi.kmc_screening.R;
 import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc_screening.databinding.ActivitySectionAForm3Binding;
 import edu.aku.hassannaqvi.kmc_screening.ui.other.EndingActivity;
+
+import static edu.aku.hassannaqvi.kmc_screening.core.MainApp.fc;
 
 public class SectionAForm3Activity extends AppCompatActivity {
 
@@ -28,6 +31,24 @@ public class SectionAForm3Activity extends AppCompatActivity {
 
     private void SaveDraft() throws JSONException {
 
+        JSONObject sa1 = new JSONObject();
+
+        sa1.put("kf3a01", bi.kf3a01a.isChecked() ? "1" : bi.kf3a01b.isChecked() ? "2" : "0");
+
+        sa1.put("kf3a02", bi.kf3a02a.isChecked() ? "1" : bi.kf3a02b.isChecked() ? "2" : "0");
+        
+        sa1.put("kf3a03x", bi.kf3a03x.getText().toString());
+
+        sa1.put("kf3a04x", bi.kf3a04x.getText().toString());
+
+        sa1.put("kf3a05x", bi.kf3a05x.getText().toString());
+
+        sa1.put("kf3a06x", bi.kf3a06x.getText().toString());
+
+        sa1.put("kf3a07x", bi.kf3a07x.getText().toString());
+
+        fc.setsA(String.valueOf(sa1));
+        
     }
 
     public void BtnEnd() {

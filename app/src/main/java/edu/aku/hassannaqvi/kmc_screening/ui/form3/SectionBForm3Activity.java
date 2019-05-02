@@ -9,11 +9,14 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import edu.aku.hassannaqvi.kmc_screening.R;
 import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc_screening.core.MainApp;
 import edu.aku.hassannaqvi.kmc_screening.databinding.ActivitySectionBForm3Binding;
+
+import static edu.aku.hassannaqvi.kmc_screening.core.MainApp.fc;
 
 public class SectionBForm3Activity extends AppCompatActivity {
 
@@ -56,6 +59,30 @@ public class SectionBForm3Activity extends AppCompatActivity {
 
     private void SaveDraft() throws JSONException {
 
+        JSONObject sa1 = new JSONObject();
+
+        sa1.put("kf3b01", bi.kf3b01a.isChecked() ? "1" : bi.kf3b01b.isChecked() ? "2" : bi.kf3b01c.isChecked() ? "3" : bi.kf3b01d.isChecked() ? "4" : bi.kf3b01e.isChecked() ? "5" : bi.kf3b01f.isChecked() ? "6" : bi.kf3b01g.isChecked() ? "7" : bi.kf3b01h.isChecked() ? "8" : "0");
+
+        sa1.put("kf3b02", bi.kf3b02a.isChecked() ? "1" : bi.kf3b02b.isChecked() ? "2" : bi.kf3b02c.isChecked() ? "3" : "0");
+
+        sa1.put("kf3b03", bi.kf3b03a.isChecked() ? "1" : bi.kf3b03b.isChecked() ? "2" : bi.kf3b03c.isChecked() ? "3" : "0");
+
+        sa1.put("kf3b04a", bi.kf3b04a.isChecked() ? "1" : "0");
+        sa1.put("kf3b04b", bi.kf3b04b.isChecked() ? "2" : "0");
+        sa1.put("kf3b04c", bi.kf3b04c.isChecked() ? "3" : "0");
+        sa1.put("kf3b04d", bi.kf3b04d.isChecked() ? "4" : "0");
+        sa1.put("kf3b04e", bi.kf3b04e.isChecked() ? "5" : "0");
+        sa1.put("kf3b04f", bi.kf3b04f.isChecked() ? "6" : "0");
+        sa1.put("kf3b04g", bi.kf3b04g.isChecked() ? "7" : "0");
+        sa1.put("kf3b04h", bi.kf3b04h.isChecked() ? "8" : "0");
+        sa1.put("kf3b04i", bi.kf3b04i.isChecked() ? "9" : "0");
+
+        sa1.put("kf3b05", bi.kf3b05a.isChecked() ? "1" : bi.kf3b05b.isChecked() ? "2" : bi.kf3b05c.isChecked() ? "3" : bi.kf3b05d.isChecked() ? "4" : bi.kf3b05e.isChecked() ? "5" : "0");
+
+        sa1.put("kf3b06", bi.kf3b06a.isChecked() ? "1" : bi.kf3b06b.isChecked() ? "2" : "0");
+
+        fc.setsB(String.valueOf(sa1));
+        
     }
 
     public void BtnEnd() {

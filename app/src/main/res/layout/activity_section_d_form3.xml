@@ -60,14 +60,25 @@
                                 style="@style/i_radiobutton"
                                 android:text="@string/kf3d01e" />
 
+                            <RadioButton
+                                android:id="@+id/kf3d0196"
+                                style="@style/i_radiobutton"
+                                android:text="@string/other" />
+
                             <EditText
-                                android:id="@+id/kf3d01x"
+                                android:id="@+id/kf3d0196x"
                                 style="@style/textInput"
-                                android:hint="@string/kf3d01"
-                                android:maxLength="4" />
+                                android:hint="@string/other"
+                                android:tag="kf3d0196"
+                                android:text='@{kf3d0196.checked ? kf3d0196x.getText.toString : "" }'
+                                android:visibility='@{kf3d0196.checked ? View.VISIBLE : View.GONE }' />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </android.support.v7.widget.CardView>
+
                 <!-- kf3d02-->
                 <android.support.v7.widget.CardView
                     android:id="@+id/fldGrpCVkf3d02"
@@ -82,11 +93,16 @@
 
                         <TextView
                             style="@style/i_textview"
-                            android:text="@string/kf3d02" />
+                            android:text="@string/kf3d02h1" />
 
                         <RadioGroup
                             android:id="@+id/kf3d02"
                             style="@style/i_radiogroup">
+
+                            <RadioButton
+                                android:id="@+id/kf3d02a"
+                                style="@style/i_radiobutton"
+                                android:text="@string/kf3d02a" />
 
                             <RadioButton
                                 android:id="@+id/kf3d02b"
@@ -118,14 +134,19 @@
                                 style="@style/i_radiobutton"
                                 android:text="@string/kf3d02g" />
 
+                            <TextView
+                                style="@style/i_textview"
+                                android:text="@string/kf3d02h2" />
+
                             <RadioButton
                                 android:id="@+id/kf3d02h"
                                 style="@style/i_radiobutton"
                                 android:text="@string/kf3d02h" />
 
-                            <TextView
-                                style="@style/i_textview"
-                                android:text="@string/kf3d02" />
+                            <RadioButton
+                                android:id="@+id/kf3d02i"
+                                style="@style/i_radiobutton"
+                                android:text="@string/kf3d02i" />
 
                             <RadioButton
                                 android:id="@+id/kf3d02j"
@@ -133,23 +154,24 @@
                                 android:text="@string/kf3d02j" />
 
                             <RadioButton
-                                android:id="@+id/kf3d02k"
+                                android:id="@+id/kf3d0296"
                                 style="@style/i_radiobutton"
-                                android:text="@string/kf3d02k" />
-
-                            <RadioButton
-                                android:id="@+id/kf3d02l"
-                                style="@style/i_radiobutton"
-                                android:text="@string/kf3d02l" />
+                                android:text="@string/other" />
 
                             <EditText
-                                android:id="@+id/kf3d02x"
+                                android:id="@+id/kf3d0296x"
                                 style="@style/textInput"
-                                android:hint="@string/kf3d02"
-                                android:maxLength="4" />
+                                android:hint="@string/other"
+                                android:tag="kf3d0296"
+                                android:text='@{kf3d0296.checked ? kf3d0296x.getText.toString : "" }'
+                                android:visibility='@{kf3d0296.checked ? View.VISIBLE : View.GONE }' />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </android.support.v7.widget.CardView>
+
                 <!-- kf3d03-->
                 <android.support.v7.widget.CardView
                     android:id="@+id/fldGrpCVkf3d03"
@@ -190,14 +212,25 @@
                                 style="@style/i_radiobutton"
                                 android:text="@string/kf3d03e" />
 
+                            <RadioButton
+                                android:id="@+id/kf3d0396"
+                                style="@style/i_radiobutton"
+                                android:text="@string/other" />
+
                             <EditText
-                                android:id="@+id/kf3d03x"
+                                android:id="@+id/kf3d0396x"
                                 style="@style/textInput"
-                                android:hint="@string/kf3d03"
-                                android:maxLength="4" />
+                                android:hint="@string/other"
+                                android:tag="kf3d0396"
+                                android:text='@{kf3d0396.checked ? kf3d0396x.getText.toString : "" }'
+                                android:visibility='@{kf3d0396.checked ? View.VISIBLE : View.GONE }' />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </android.support.v7.widget.CardView>
+
                 <!-- kf3d04-->
                 <android.support.v7.widget.CardView
                     android:id="@+id/fldGrpCVkf3d04"
@@ -224,12 +257,16 @@
                                 android:text="@string/no" />
 
                             <RadioButton
-                                android:id="@+id/kf3d04c"
+                                android:id="@+id/kf3d0498"
                                 style="@style/i_radiobutton"
                                 android:text="@string/dkn" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </android.support.v7.widget.CardView>
+
                 <!-- kf3d05-->
                 <android.support.v7.widget.CardView
                     android:id="@+id/fldGrpCVkf3d05"
@@ -244,7 +281,7 @@
 
                         <TextView
                             style="@style/i_textview"
-                            android:text="@string/kf3d05" />
+                            android:text="@string/kf3d05h1" />
 
                         <RadioGroup
                             android:id="@+id/kf3d05"
@@ -287,7 +324,7 @@
 
                             <TextView
                                 style="@style/i_textview"
-                                android:text="@string/kf3d05" />
+                                android:text="@string/kf3d05h2" />
 
                             <RadioButton
                                 android:id="@+id/kf3d05h"
@@ -306,7 +343,7 @@
 
                             <TextView
                                 style="@style/i_textview"
-                                android:text="@string/kf3d05" />
+                                android:text="@string/kf3d05h3" />
 
                             <RadioButton
                                 android:id="@+id/kf3d05k"
@@ -328,14 +365,25 @@
                                 style="@style/i_radiobutton"
                                 android:text="@string/kf3d05n" />
 
+                            <RadioButton
+                                android:id="@+id/kf3d0596"
+                                style="@style/i_radiobutton"
+                                android:text="@string/other" />
+
                             <EditText
-                                android:id="@+id/kf3d05x"
+                                android:id="@+id/kf3d0596x"
                                 style="@style/textInput"
-                                android:hint="@string/kf3d05"
-                                android:maxLength="4" />
+                                android:hint="@string/other"
+                                android:tag="kf3d0596"
+                                android:text='@{kf3d0596.checked ? kf3d0596x.getText.toString : "" }'
+                                android:visibility='@{kf3d0596.checked ? View.VISIBLE : View.GONE }' />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </android.support.v7.widget.CardView>
+
                 <!-- kf3d06-->
                 <android.support.v7.widget.CardView
                     android:id="@+id/fldGrpCVkf3d06"
@@ -360,9 +408,13 @@
                                 android:id="@+id/kf3d06b"
                                 style="@style/i_radiobutton"
                                 android:text="@string/no" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </android.support.v7.widget.CardView>
+
                 <!-- kf3d07-->
                 <android.support.v7.widget.CardView
                     android:id="@+id/fldGrpCVkf3d07"
@@ -377,7 +429,7 @@
 
                         <TextView
                             style="@style/i_textview"
-                            android:text="@string/kf3d07" />
+                            android:text="@string/kf3d07h1" />
 
                         <RadioGroup
                             android:id="@+id/kf3d07"
@@ -415,7 +467,7 @@
 
                             <TextView
                                 style="@style/i_textview"
-                                android:text="@string/kf3d07" />
+                                android:text="@string/kf3d07h2" />
 
                             <RadioButton
                                 android:id="@+id/kf3d07g"
@@ -437,14 +489,25 @@
                                 style="@style/i_radiobutton"
                                 android:text="@string/kf3d07j" />
 
+                            <RadioButton
+                                android:id="@+id/kf3d0796"
+                                style="@style/i_radiobutton"
+                                android:text="@string/other" />
+
                             <EditText
-                                android:id="@+id/kf3d07x"
+                                android:id="@+id/kf3d0796x"
                                 style="@style/textInput"
-                                android:hint="@string/kf3d07"
-                                android:maxLength="4" />
+                                android:hint="@string/other"
+                                android:tag="kf3d0796"
+                                android:text='@{kf3d0796.checked ? kf3d0796x.getText.toString : "" }'
+                                android:visibility='@{kf3d0796.checked ? View.VISIBLE : View.GONE }' />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </android.support.v7.widget.CardView>
+
                 <!-- kf3d08-->
                 <android.support.v7.widget.CardView
                     android:id="@+id/fldGrpCVkf3d08"
@@ -466,12 +529,16 @@
                                 android:text="@string/yes" />
 
                             <RadioButton
-                                android:id="@+id/kf3d08c"
+                                android:id="@+id/kf3d08b"
                                 style="@style/i_radiobutton"
                                 android:text="@string/no" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </android.support.v7.widget.CardView>
+
                 <!-- kf3d09-->
                 <android.support.v7.widget.CardView
                     android:id="@+id/fldGrpCVkf3d09"
@@ -494,12 +561,16 @@
                                 android:text="@string/yes" />
 
                             <RadioButton
-                                android:id="@+id/kf3d09c"
+                                android:id="@+id/kf3d09b"
                                 style="@style/i_radiobutton"
                                 android:text="@string/no" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </android.support.v7.widget.CardView>
+
                 <!-- kf3d10-->
                 <android.support.v7.widget.CardView
                     android:id="@+id/fldGrpCVkf3d10"
@@ -531,14 +602,25 @@
                                 style="@style/i_radiobutton"
                                 android:text="@string/kf3d10c" />
 
+                            <RadioButton
+                                android:id="@+id/kf3d1096"
+                                style="@style/i_radiobutton"
+                                android:text="@string/other" />
+
                             <EditText
-                                android:id="@+id/kf3d10x"
+                                android:id="@+id/kf3d1096x"
                                 style="@style/textInput"
-                                android:hint="@string/kf3d10"
-                                android:maxLength="4" />
+                                android:hint="@string/other"
+                                android:tag="kf3d1096"
+                                android:text='@{kf3d1096.checked ? kf3d1096x.getText.toString : "" }'
+                                android:visibility='@{kf3d1096.checked ? View.VISIBLE : View.GONE }' />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </android.support.v7.widget.CardView>
+
                 <!-- kf3d11-->
                 <android.support.v7.widget.CardView
                     android:id="@+id/fldGrpCVkf3d11"
@@ -556,8 +638,11 @@
                             android:hint="@string/kf3d11"
                             android:inputType="number"
                             android:maxLength="4" />
+
                     </LinearLayout>
+
                 </android.support.v7.widget.CardView>
+
                 <!-- kf3d12-->
                 <android.support.v7.widget.CardView
                     android:id="@+id/fldGrpCVkf3d12"
@@ -582,9 +667,13 @@
                                 android:id="@+id/kf3d12b"
                                 style="@style/i_radiobutton"
                                 android:text="@string/no" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </android.support.v7.widget.CardView>
+
                 <!-- kf3d13-->
                 <android.support.v7.widget.CardView
                     android:id="@+id/fldGrpCVkf3d13"
@@ -602,8 +691,11 @@
                             android:hint="@string/kf3d13"
                             android:inputType="number"
                             android:maxLength="4" />
+
                     </LinearLayout>
+
                 </android.support.v7.widget.CardView>
+
                 <!-- kf3d14-->
                 <android.support.v7.widget.CardView
                     android:id="@+id/fldGrpCVkf3d14"
@@ -621,8 +713,11 @@
                             android:hint="@string/kf3d14"
                             android:inputType="number"
                             android:maxLength="4" />
+
                     </LinearLayout>
+
                 </android.support.v7.widget.CardView>
+
                 <!-- kf3d15-->
                 <android.support.v7.widget.CardView
                     android:id="@+id/fldGrpCVkf3d15"
@@ -649,9 +744,10 @@
                                 android:text="@string/no" />
 
                         </RadioGroup>
-                    </LinearLayout>
-                </android.support.v7.widget.CardView>
 
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
 
                 <!-- kf3d16-->
                 <android.support.v7.widget.CardView
@@ -665,12 +761,9 @@
                             style="@style/i_textview"
                             android:text="@string/kf3d16" />
 
-                        <EditText
-                            android:id="@+id/kf3d16a"
-                            style="@style/textInput"
-                            android:hint="@string/kf3d16"
-                            android:inputType="number"
-                            android:maxLength="4" />
+                        <TextView
+                            style="@style/textview"
+                            android:text="@string/kf3d16h1" />
 
                         <RadioGroup
 
@@ -678,23 +771,59 @@
                             style="@style/i_radiogroup">
 
                             <RadioButton
-                                android:id="@+id/kf3d16c"
+                                android:id="@+id/kf3d16h"
                                 style="@style/i_radiobutton"
-                                android:text="@string/kf3d16c" />
+                                android:text="@string/kf3d16h" />
+
+                            <EditText
+                                android:id="@+id/kf3d16hx"
+                                style="@style/EditText_number"
+                                android:maxLength="2"
+                                android:hint="@string/kf3d16h"
+                                android:tag="kf3d16h"
+                                android:text='@{kf3d16h.checked ? kf3d16hx.getText.toString : "" }'
+                                android:visibility='@{kf3d16h.checked ? View.VISIBLE : View.GONE }' />
+
 
                             <RadioButton
                                 android:id="@+id/kf3d16d"
                                 style="@style/i_radiobutton"
                                 android:text="@string/kf3d16d" />
 
-                            <RadioButton
-                                android:id="@+id/kf3d16e"
-                                style="@style/i_radiobutton"
-                                android:text="@string/kf3d16e" />
-                        </RadioGroup>
-                    </LinearLayout>
-                </android.support.v7.widget.CardView>
+                            <EditText
+                                android:id="@+id/kf3d16dx"
+                                style="@style/EditText_number"
+                                android:maxLength="2"
+                                android:hint="@string/kf3d16d"
+                                android:tag="kf3d16d"
+                                android:text='@{kf3d16d.checked ? kf3d16dx.getText.toString : "" }'
+                                android:visibility='@{kf3d16d.checked ? View.VISIBLE : View.GONE }' />
 
+
+                            <RadioButton
+                                android:id="@+id/kf3d16w"
+                                style="@style/i_radiobutton"
+                                android:text="@string/kf3d16w" />
+
+                            <EditText
+                                android:id="@+id/kf3d16wx"
+                                style="@style/EditText_number"
+                                android:maxLength="2"
+                                android:hint="@string/kf3d16w"
+                                android:tag="kf3d16w"
+                                android:text='@{kf3d16w.checked ? kf3d16wx.getText.toString : "" }'
+                                android:visibility='@{kf3d16w.checked ? View.VISIBLE : View.GONE }' />
+
+                            <RadioButton
+                                android:id="@+id/kf3d1698"
+                                style="@style/i_radiobutton"
+                                android:text="@string/dkn" />
+
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
 
                 <!-- kf3d17-->
                 <android.support.v7.widget.CardView
@@ -789,14 +918,27 @@
                                 android:layout_marginBottom="1dp"
                                 android:text="@string/kf3d17k" />
 
+                            <CheckBox
+                                android:id="@+id/kf3d1796"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="1dp"
+                                android:text="@string/other" />
+
                             <EditText
-                                android:id="@+id/kf3d17l"
-                                style="@style/textInput"
-                                android:hint="@string/kf3d17"
-                                android:maxLength="4" />
+                                android:id="@+id/kf3d1796x"
+                                style="@style/EditText"
+                                android:hint="@string/other"
+                                android:tag="kf3d1796"
+                                android:text='@{kf3d1796.checked ? kf3d1796x.getText.toString : "" }'
+                                android:visibility='@{kf3d1796.checked ? View.VISIBLE : View.GONE }' />
+
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </android.support.v7.widget.CardView>
+
                 <!-- kf3d18-->
                 <android.support.v7.widget.CardView
                     android:id="@+id/fldGrpCVkf3d18"
@@ -816,8 +958,8 @@
                             android:inputType="number"
                             android:maxLength="4" />
 
-
                     </LinearLayout>
+
                 </android.support.v7.widget.CardView>
 
                 <LinearLayout
@@ -848,6 +990,9 @@
                 </LinearLayout>
 
             </LinearLayout>
+
         </LinearLayout>
+
     </ScrollView>
+
 </layout>

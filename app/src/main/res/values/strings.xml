@@ -640,18 +640,18 @@
 
 
     <string name="kf3d02"> جيڪڏهن ماءُ 24 ڪلاڪن کان پوءِ کير پياريو ته سبب ڇا هيو. </string>
-    <string name="kf3d02a"> ماءُ جو سبب. </string>
-    <string name="kf3d02b"> مان بيمار آهيان. </string>
-    <string name="kf3d02c"> نپل ڏريل آهن. </string>
-    <string name="kf3d02d"> ڇاتي ۾ گوڙها آهن. </string>
-    <string name="kf3d02e"> نپل اندر موڙيل آهن. </string>
-    <string name="kf3d02f"> ٿڃ ناڪافي هئي. </string>
-    <string name="kf3d02g"> مان مصروف هئس ٿڃ نه پياري سگهيس </string>
-    <string name="kf3d02h"> سسۡ منع ڪيو. </string>
-    <string name="kf3d02i"> ٻار جو سبب </string>
-    <string name="kf3d02j"> ٻار ننڍو آهي. </string>
-    <string name="kf3d02k"> ٻار کير پيڻ جي لائق نه آهي. </string>
-    <string name="kf3d02l"> چپ ڪٽيل / وات جو تالو ڪٽيل آهي. </string>
+    <string name="kf3d02h1"> ماءُ جو سبب. </string>
+    <string name="kf3d02a"> مان بيمار آهيان. </string>
+    <string name="kf3d02b"> نپل ڏريل آهن. </string>
+    <string name="kf3d02c"> ڇاتي ۾ گوڙها آهن. </string>
+    <string name="kf3d02d"> نپل اندر موڙيل آهن. </string>
+    <string name="kf3d02e"> ٿڃ ناڪافي هئي. </string>
+    <string name="kf3d02f"> مان مصروف هئس ٿڃ نه پياري سگهيس </string>
+    <string name="kf3d02g"> سسۡ منع ڪيو. </string>
+    <string name="kf3d02h2"> ٻار جو سبب </string>
+    <string name="kf3d02h"> ٻار ننڍو آهي. </string>
+    <string name="kf3d02i"> ٻار کير پيڻ جي لائق نه آهي. </string>
+    <string name="kf3d02j"> چپ ڪٽيل / وات جو تالو ڪٽيل آهي. </string>
 
 
     <string name="kf3d03"> ٻار جي ڄمڻ کان پوءِ ان کي يڪدم ۾ ڇا ڏنو ويو. </string>
@@ -731,11 +731,10 @@
 
 
     <string name="kf3d16"> ماءُ جي کير کان علاوه توهان پنهنجي ٻار کي ڪيتري عمر ۾پهريون دفعو چانھ، جوس يا ٻيو ڪجھ ڏنو؟ </string>
-    <string name="kf3d16a"> ڪلاڪن جو تعداد_______________ ڄم کان پوءِ </string>
-
-    <string name="kf3d16c"> ڏينهنِ </string>
-    <string name="kf3d16d"> هفتاِ </string>
-    <string name="kf3d16e"> ياد ناهيِ </string>
+    <string name="kf3d16h1">  ڄم کان پوءِ </string>
+    <string name="kf3d16h"> ڪلاڪن جو تعدادِ </string>
+    <string name="kf3d16d"> ڏينهنِ </string>
+    <string name="kf3d16w"> هفتاِ </string>
 
 
     <string name="kf3d17"> ڪهڙيون پيئڻ واريون شيون ڏيندا آهيو؟ </string>

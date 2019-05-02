@@ -117,6 +117,8 @@ public class SectionAForm1Activity extends AppCompatActivity {
         fc.setsA(String.valueOf(sa1));
     }
 
+
+
     private boolean formValidation() {
         return ValidatorClass.EmptyCheckingContainer(this, bi.fldGrpSecB01);
     }
