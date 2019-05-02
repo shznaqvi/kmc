@@ -86,7 +86,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="8dp"
                 android:onClick="@{(v) -> callback.openForm(0)}"
-                android:text="FORM-0 PW REGISTRATION" />
+                android:text="@string/pw_reg" />
 
             <Button
                 android:layout_width="match_parent"
@@ -94,7 +94,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="8dp"
                 android:onClick="@{(v) -> callback.openForm(1)}"
-                android:text="FORM-0 PW Survelliance" />
+                android:text="@string/pw_sur" />
 
             <Button
                 android:layout_width="match_parent"

@@ -65,6 +65,8 @@ public class SectionAForm0Activity extends AppCompatActivity {
             bi.hhLayout.setVisibility(View.GONE);
             bi.recruitmentLayout.setVisibility(View.GONE);
             bi.fldGrpcra04.setVisibility(View.GONE);
+
+            this.setTitle(getString(R.string.pw_sur));
         } else {
             bi.checkBtnLayout.setVisibility(View.GONE);
             bi.hhLayout.setVisibility(View.VISIBLE);
@@ -78,6 +80,8 @@ public class SectionAForm0Activity extends AppCompatActivity {
             bi.kapr12e.setEnabled(false);
             bi.kapr12f.setEnabled(false);
             bi.kapr12g.setEnabled(false);
+
+            this.setTitle(getString(R.string.pw_reg));
         }
 
         populateSpinner(this);

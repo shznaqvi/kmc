@@ -33,10 +33,7 @@ public class SectionAForm1Activity extends AppCompatActivity {
 
         setContentUI();
         setListeners();
-
-
     }
-
 
     private void setContentUI() {
         this.setTitle(R.string.f1_secb);
@@ -87,16 +84,7 @@ public class SectionAForm1Activity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (i != bi.kf1b10a.getId()) {
-
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf1b11);
-
-
-                } else {
-
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf1b11);
-
+                    ClearClass.ClearAllFields(bi.fldGrpCVkf1b11, null);
                 }
             }
         });
@@ -106,14 +94,7 @@ public class SectionAForm1Activity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (i != bi.kf1b04a01a.getId()) {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-                } else {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-
+                    ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, null);
                 }
             }
         });
@@ -123,14 +104,7 @@ public class SectionAForm1Activity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (i != bi.kf1b04a02a.getId()) {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-                } else {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-
+                    ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, null);
                 }
             }
         });
@@ -140,14 +114,7 @@ public class SectionAForm1Activity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (i != bi.kf1b04a03a.getId()) {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-                } else {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-
+                    ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, null);
                 }
             }
         });
@@ -157,31 +124,17 @@ public class SectionAForm1Activity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (i != bi.kf1b04a04a.getId()) {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-                } else {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-
+                    ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, null);
                 }
             }
-        })
-        ;
+        });
+
 
         bi.kf1b04a04.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (i != bi.kf1b04a05a.getId()) {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-                } else {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-
+                    ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, null);
                 }
             }
         });
@@ -191,14 +144,7 @@ public class SectionAForm1Activity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (i != bi.kf1b04b01a.getId()) {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-                } else {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-
+                    ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, null);
                 }
             }
         });
@@ -208,14 +154,7 @@ public class SectionAForm1Activity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (i != bi.kf1b04b01a.getId()) {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-                } else {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-
+                    ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, null);
                 }
             }
         });
@@ -224,14 +163,7 @@ public class SectionAForm1Activity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (i != bi.kf1b04b02a.getId()) {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-                } else {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-
+                    ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, null);
                 }
             }
         });
@@ -241,14 +173,7 @@ public class SectionAForm1Activity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (i != bi.kf1b04b03a.getId()) {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-                } else {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-
+                    ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, null);
                 }
             }
         });
@@ -258,14 +183,7 @@ public class SectionAForm1Activity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (i != bi.kf1b04b04a.getId()) {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-                } else {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-
+                    ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, null);
                 }
             }
         });
@@ -275,14 +193,7 @@ public class SectionAForm1Activity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (i != bi.kf1b04b05a.getId()) {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-                } else {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-
+                    ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, null);
                 }
             }
         });
@@ -292,14 +203,7 @@ public class SectionAForm1Activity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (i != bi.kf1b04b05a.getId()) {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-                } else {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-
+                    ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, null);
                 }
             }
         });
@@ -309,14 +213,7 @@ public class SectionAForm1Activity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (i != bi.kf1ab04b06a.getId()) {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-                } else {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-
+                    ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, null);
                 }
             }
         });
@@ -326,14 +223,7 @@ public class SectionAForm1Activity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (i != bi.kf1b04b07a.getId()) {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-                } else {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-
+                    ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, null);
                 }
             }
         });
@@ -343,14 +233,7 @@ public class SectionAForm1Activity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (i != bi.kf1b04b07a.getId()) {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-                } else {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-
+                    ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, null);
                 }
             }
         });
@@ -360,14 +243,7 @@ public class SectionAForm1Activity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (i != bi.kf1b04b09a.getId()) {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-                } else {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-
+                    ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, null);
                 }
             }
         });
@@ -377,14 +253,7 @@ public class SectionAForm1Activity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (i != bi.kf1b04c01a.getId()) {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-                } else {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkkf1b05maj);
-
-
+                    ClearClass.ClearAllFields(bi.fldGrpCVkkf1b05maj, null);
                 }
             }
         });
@@ -394,14 +263,7 @@ public class SectionAForm1Activity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (i != bi.kf1ab04b06a.getId()) {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf1b04b07);
-
-                } else {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf1b04b07);
-
-
+                    ClearClass.ClearAllFields(bi.fldGrpCVkf1b04b07, null);
                 }
             }
         });
@@ -411,20 +273,10 @@ public class SectionAForm1Activity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (i != bi.kf1b04b07a.getId()) {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf1b04b08);
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf1b04b09);
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf1b010);
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf1b11);
-
-                } else {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf1b04b08);
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf1b04b09);
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf1b010);
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf1b11);
-
-
+                    ClearClass.ClearAllFields(bi.fldGrpCVkf1b04b08, null);
+                    ClearClass.ClearAllFields(bi.fldGrpCVkf1b04b09, null);
+                    ClearClass.ClearAllFields(bi.fldGrpCVkf1b010, null);
+                    ClearClass.ClearAllFields(bi.fldGrpCVkf1b11, null);
                 }
             }
         });
@@ -432,23 +284,9 @@ public class SectionAForm1Activity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (i != bi.kf1b04b08a.getId()) {
-
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf1b04b09);
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf1b010);
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf1b11);
-
-
-                } else {
-
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf1b04b09);
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf1b010);
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf1b11);
-
-
+                    ClearClass.ClearAllFields(bi.fldGrpCVkf1b04b09, null);
+                    ClearClass.ClearAllFields(bi.fldGrpCVkf1b010, null);
+                    ClearClass.ClearAllFields(bi.fldGrpCVkf1b11, null);
                 }
             }
         });
@@ -458,16 +296,7 @@ public class SectionAForm1Activity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (i != bi.kf1b10a.getId()) {
-
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf1b11);
-
-
-                } else {
-
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf1b11);
-
+                    ClearClass.ClearAllFields(bi.fldGrpCVkf1b11, null);
                 }
             }
         });
