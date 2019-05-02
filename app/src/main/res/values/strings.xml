@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name"> Kangroo Mother Care Baseline </string>
+    <string name="app_name"> Kangaroo Mother Care </string>
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
@@ -239,6 +239,9 @@
     <string name="ka12419"> ايئر ڪنڊيشن يا ايئر ڪولر </string>
     <string name="ka12420"> ڪمپيوٽر </string>
 
+    <!--Headings-->
+    <string name="pw_reg">Pregnant Woman Registration</string>
+    <string name="pw_sur">Pregnant Woman Surveillance</string>
 
     <!--Screening Forms-->
     <string name="f1_secb">SECTION B</string>

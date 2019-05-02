@@ -79,7 +79,7 @@ public class SectionCForm2Activity extends AppCompatActivity {
 
         sa1.put("kf2c05", bi.kf2c05a.isChecked() ? "1" : bi.kf2c05b.isChecked() ? "2" : bi.kf2c05c.isChecked() ? "3" : bi.kf2c05d.isChecked() ? "4" : "0");
         sa1.put("kf2c05x", bi.kf2c05x.getText().toString());
-        
+
         sa1.put("kf2c06", bi.kf2c06a.isChecked() ? "1" : bi.kf2c06b.isChecked() ? "2" : bi.kf2c06c.isChecked() ? "3" : "0");
 
         sa1.put("kf2c07", bi.kf2c07a.isChecked() ? "1" : bi.kf2c07b.isChecked() ? "2" : "0");
@@ -97,7 +97,7 @@ public class SectionCForm2Activity extends AppCompatActivity {
         sa1.put("kf2c11d", bi.kf2c11d.isChecked() ? "4" : "0");
         sa1.put("kf2c11e", bi.kf2c11e.isChecked() ? "5" : "0");
         sa1.put("kf2c11f", bi.kf2c11f.isChecked() ? "6" : "0");
-        
+
         fc.setsC(String.valueOf(sa1));
     }
 
@@ -117,14 +117,7 @@ public class SectionCForm2Activity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (i != bi.kf2c04a.getId()) {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf2c05);
-
-                } else {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf2c05);
-
-
+                    ClearClass.ClearAllFields(bi.fldGrpCVkf2c05, null);
                 }
             }
         });
@@ -134,14 +127,7 @@ public class SectionCForm2Activity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (i != bi.kf2c10b.getId()) {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf2c11);
-
-                } else {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf2c11);
-
-
+                    ClearClass.ClearAllFields(bi.fldGrpCVkf2c11, null);
                 }
             }
         });
@@ -151,14 +137,7 @@ public class SectionCForm2Activity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (i != bi.kf2c1098.getId()) {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf2c11);
-
-                } else {
-
-                    ClearClass.ClearAllCardFields(bi.fldGrpCVkf2c11);
-
-
+                    ClearClass.ClearAllFields(bi.fldGrpCVkf2c11, null);
                 }
             }
         });
