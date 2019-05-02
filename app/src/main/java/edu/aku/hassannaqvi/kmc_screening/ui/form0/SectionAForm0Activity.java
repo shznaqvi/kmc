@@ -37,6 +37,7 @@ import edu.aku.hassannaqvi.kmc_screening.contracts.VillagesContract;
 import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc_screening.core.MainApp;
 import edu.aku.hassannaqvi.kmc_screening.databinding.ActivitySectionAForm0Binding;
+import edu.aku.hassannaqvi.kmc_screening.other.DateUtils;
 import edu.aku.hassannaqvi.kmc_screening.ui.other.EndingActivity;
 import edu.aku.hassannaqvi.kmc_screening.validation.ValidatorClass;
 
@@ -57,15 +58,19 @@ public class SectionAForm0Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_a_form0);
         bi.setCallback(this);
-
         db = new DatabaseHelper(getApplicationContext());
+
+        settingComponents();
+    }
+
+    private void settingComponents() {
+        populateSpinner(this);
 
         if (MainApp.surveyType.equals("kf0b")) {
             bi.checkBtnLayout.setVisibility(View.VISIBLE);
             bi.hhLayout.setVisibility(View.GONE);
             bi.recruitmentLayout.setVisibility(View.GONE);
             bi.fldGrpcra04.setVisibility(View.GONE);
-
             this.setTitle(getString(R.string.pw_sur));
         } else {
             bi.checkBtnLayout.setVisibility(View.GONE);
@@ -80,15 +85,15 @@ public class SectionAForm0Activity extends AppCompatActivity {
             bi.kapr12e.setEnabled(false);
             bi.kapr12f.setEnabled(false);
             bi.kapr12g.setEnabled(false);
-
             this.setTitle(getString(R.string.pw_reg));
         }
 
-        populateSpinner(this);
+        //setting date
+        bi.kapr05.setMaxDate(DateUtils.getUpdatedDateByMonths("dd/MM/yyyy", 9));
 
     }
 
-    public void populateSpinner(final Context context) {
+    private void populateSpinner(final Context context) {
         // Spinner Drop down elements
         talukaNames = new ArrayList<>();
         talukaCodes = new ArrayList<>();
@@ -173,11 +178,9 @@ public class SectionAForm0Activity extends AppCompatActivity {
 
     }
 
-
     private boolean formValidation() {
         return ValidatorClass.EmptyCheckingContainer(this, bi.form0Layout);
     }
-
 
     private void SaveDraft() throws JSONException {
         SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
@@ -196,7 +199,7 @@ public class SectionAForm0Activity extends AppCompatActivity {
 
         JSONObject sInfo = new JSONObject();
 
-        if (MainApp.surveyType.equalsIgnoreCase("f0a")) {
+        if (MainApp.surveyType.equals("kf0a")) {
             fc.setHhno(bi.kapr02b.getText().toString());
             sInfo.put("kapr02", bi.womenID.getText().toString());
             sInfo.put("kapr03", bi.kapr03.getText().toString());
@@ -246,7 +249,6 @@ public class SectionAForm0Activity extends AppCompatActivity {
 
         setGPS();
     }
-
 
     public void BtnEnd() {
         if (formValidation()) {
@@ -327,7 +329,6 @@ public class SectionAForm0Activity extends AppCompatActivity {
         return true;
     }
 
-
     public void BtnSearchWoman() {
 
         if (ValidateSpinners()) {
@@ -375,18 +376,6 @@ public class SectionAForm0Activity extends AppCompatActivity {
         }
     }
 
-    //
-    public void clearFields() {
-//        bi.fldGrpcra04.setVisibility(View.GONE);
-//
-//        bi.cravillage.setText(null);
-//        //bi.cra03.setText(null);
-//        //bi.cra05.setText(null);
-//        bi.cra06.setText(null);
-//        bi.cra07.clearCheck();
-    }
-
-
     private boolean UpdateDB() {
 
         DatabaseHelper db = new DatabaseHelper(this);
@@ -406,8 +395,7 @@ public class SectionAForm0Activity extends AppCompatActivity {
         return true;
     }
 
-
-    public void setGPS() {
+    private void setGPS() {
         SharedPreferences GPSPref = getSharedPreferences("GPSCoordinates", Context.MODE_PRIVATE);
         try {
             String lat = GPSPref.getString("Latitude", "0");
