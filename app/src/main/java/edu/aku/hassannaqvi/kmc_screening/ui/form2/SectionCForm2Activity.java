@@ -42,11 +42,15 @@ public class SectionCForm2Activity extends AppCompatActivity {
 
     }
 
-    public void BtnContinue() throws JSONException {
+    public void BtnContinue() {
         if (!formValidation())
             return;
 
-        SaveDraft();
+        try {
+            SaveDraft();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
         if (UpdateDB()) {
             startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
 

@@ -45,11 +45,15 @@ public class SectionAForm1Activity extends AppCompatActivity {
 
     }
 
-    public void BtnContinue() throws JSONException {
+    public void BtnContinue() {
         if (!formValidation())
             return;
 
-        SaveDraft();
+        try {
+            SaveDraft();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
         if (UpdateDB()) {
 
 
