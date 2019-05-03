@@ -8,7 +8,8 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.View;
@@ -30,7 +31,7 @@ import java.util.Map;
 
 import edu.aku.hassannaqvi.kmc_screening.R;
 import edu.aku.hassannaqvi.kmc_screening.contracts.FormsContract;
-import edu.aku.hassannaqvi.kmc_screening.contracts.MwraContract;
+import edu.aku.hassannaqvi.kmc_screening.contracts.PWContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.TalukasContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.UCsContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.VillagesContract;
@@ -39,6 +40,7 @@ import edu.aku.hassannaqvi.kmc_screening.core.MainApp;
 import edu.aku.hassannaqvi.kmc_screening.databinding.ActivitySectionAForm0Binding;
 import edu.aku.hassannaqvi.kmc_screening.other.DateUtils;
 import edu.aku.hassannaqvi.kmc_screening.ui.other.EndingActivity;
+import edu.aku.hassannaqvi.kmc_screening.validation.ClearClass;
 import edu.aku.hassannaqvi.kmc_screening.validation.ValidatorClass;
 
 import static edu.aku.hassannaqvi.kmc_screening.core.MainApp.fc;
@@ -47,11 +49,15 @@ import static edu.aku.hassannaqvi.kmc_screening.core.MainApp.fc;
 public class SectionAForm0Activity extends AppCompatActivity {
 
     private static final String TAG = SectionAForm0Activity.class.getName();
-    public List<String> ucName, talukaNames, villageNames, wName;
-    public List<String> ucCode, talukaCodes, villageCodes, wSno;
-    Map<String, MwraContract> mapWRA;
+    public static Map<Integer, PWContract> mapWRA;
+    public static int ucPos, talukaPos, villagePos;
+    public static String hhno;
+    public static int counter = 1;
+    private static List<String> ucName, talukaNames, villageNames;
     DatabaseHelper db;
     ActivitySectionAForm0Binding bi;
+    private static List<String> ucCode, talukaCodes, villageCodes;
+    private boolean flag = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +66,30 @@ public class SectionAForm0Activity extends AppCompatActivity {
         bi.setCallback(this);
         db = new DatabaseHelper(getApplicationContext());
 
+        flag = getIntent().getBooleanExtra("flagCome", true);
+        if (flag) {
+            settingListeners();
+        } else {
+            bi.btnSearch.setEnabled(false);
+            bi.crataluka.setEnabled(false);
+            bi.crauc.setEnabled(false);
+            bi.crvillage.setEnabled(false);
+            bi.kapr02a.setEnabled(false);
+            bi.womenID.setEnabled(false);
+            bi.kapr03.setEnabled(false);
+            bi.kapr02a.setText(hhno);
+            bi.crataluka.setSelection(talukaPos);
+            bi.crauc.setSelection(ucPos);
+            bi.crvillage.setSelection(villagePos);
+
+            bi.womenID.setText(mapWRA.get(counter).getWserial());
+            bi.kapr03.setText(mapWRA.get(counter).getWname());
+
+            clearFields(View.VISIBLE);
+
+            counter++;
+            updateCounter();
+        }
         settingComponents();
     }
 
@@ -68,12 +98,8 @@ public class SectionAForm0Activity extends AppCompatActivity {
 
         if (MainApp.surveyType.equals("kf0b")) {
             bi.checkBtnLayout.setVisibility(View.VISIBLE);
-            bi.hhLayout.setVisibility(View.GONE);
-            bi.recruitmentLayout.setVisibility(View.GONE);
-            bi.fldGrpcra04.setVisibility(View.GONE);
             this.setTitle(getString(R.string.pw_sur));
         } else {
-            bi.checkBtnLayout.setVisibility(View.GONE);
             bi.hhLayout.setVisibility(View.VISIBLE);
             bi.recruitmentLayout.setVisibility(View.VISIBLE);
             bi.fldGrpcra04.setVisibility(View.VISIBLE);
@@ -90,7 +116,25 @@ public class SectionAForm0Activity extends AppCompatActivity {
 
         //setting date
         bi.kapr05.setMaxDate(DateUtils.getUpdatedDateByMonths("dd/MM/yyyy", 9));
+    }
 
+    private void settingListeners() {
+        bi.kapr02a.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                clearFields(View.GONE);
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
     }
 
     private void populateSpinner(final Context context) {
@@ -184,8 +228,8 @@ public class SectionAForm0Activity extends AppCompatActivity {
 
     private void SaveDraft() throws JSONException {
         SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
+        //Initializing contract
         fc = new FormsContract();
-
         fc.setDevicetagID(sharedPref.getString("tagName", null));
         fc.setFormDate(new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime()));
         fc.setUser(MainApp.userName);
@@ -197,8 +241,11 @@ public class SectionAForm0Activity extends AppCompatActivity {
         fc.setSurveyType(MainApp.surveyType);
         fc.setFormType(MainApp.formType);
 
-        JSONObject sInfo = new JSONObject();
+        talukaPos = bi.crataluka.getSelectedItemPosition();
+        ucPos = bi.crauc.getSelectedItemPosition();
+        villagePos = bi.crvillage.getSelectedItemPosition();
 
+        JSONObject sInfo = new JSONObject();
         if (MainApp.surveyType.equals("kf0a")) {
             fc.setHhno(bi.kapr02b.getText().toString());
             sInfo.put("kapr02", bi.womenID.getText().toString());
@@ -219,6 +266,8 @@ public class SectionAForm0Activity extends AppCompatActivity {
                     : bi.kapr12f.isChecked() ? "6"
                     : bi.kapr12g.isChecked() ? "7"
                     : "0");
+
+            hhno = bi.kapr02b.getText().toString();
         } else {
             fc.setHhno(bi.kapr02a.getText().toString());
             sInfo.put("kapr02", bi.womenID.getText().toString());
@@ -240,11 +289,18 @@ public class SectionAForm0Activity extends AppCompatActivity {
                     : bi.kapr13g.isChecked() ? "7"
                     : "0");
             sInfo.put("kapr14", bi.kapr14.getText().toString());
+
+            sInfo.put("pw_luid", mapWRA.get(counter).getUid());
+            sInfo.put("pw_round", mapWRA.get(counter).getRound());
+            sInfo.put("pw_fupdt", mapWRA.get(counter).getFupdt());
+            sInfo.put("pw_kapr06", mapWRA.get(counter).getHname());
+            sInfo.put("pw_kapr07", mapWRA.get(counter).getKapr07());
+            sInfo.put("pw_kapr08", mapWRA.get(counter).getKapr08());
+            sInfo.put("pw_kapr09", mapWRA.get(counter).getHhname());
+
+            hhno = bi.kapr02a.getText().toString();
         }
 
-//        sInfo.put("sno", MainApp.wSerialNo);
-//        sInfo.put("wname", MainApp.wName);
-//        sInfo.put("muid", mapWRA.get(bi.crwoman.getSelectedItem());
         fc.setsInfo(String.valueOf(sInfo));
 
         setGPS();
@@ -262,7 +318,7 @@ public class SectionAForm0Activity extends AppCompatActivity {
 
                 finish();
 
-                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
@@ -325,55 +381,50 @@ public class SectionAForm0Activity extends AppCompatActivity {
             ((TextView) bi.crvillage.getSelectedView()).setError(null);
         }
 
-
-        return true;
+        return ValidatorClass.EmptyTextBox(this, bi.kapr02a, getString(R.string.kapr02));
     }
 
     public void BtnSearchWoman() {
 
-        if (ValidateSpinners()) {
+        if (!ValidateSpinners()) return;
 
-            if (!TextUtils.isEmpty(bi.kapr02a.getText().toString())) {
+        mapWRA = new HashMap<>();
 
-                db = new DatabaseHelper(this);
-
-                // Spinner Drop down elements
-                wName = new ArrayList<>();
-                wSno = new ArrayList<>();
-
-                wName.add("....");
-                wSno.add("....");
-
-                mapWRA = new HashMap<>();
-
-                Collection<MwraContract> dc = db.getMWRA(bi.kapr02a.getText().toString(), MainApp.villageCode);
-                Log.d(TAG, "onCreate: " + dc.size());
-                for (MwraContract d : dc) {
-                    wName.add(d.getWname() + "_" + d.getSno());
-                    wSno.add(d.getSno());
-
-                    mapWRA.put(d.getWname() + "_" + d.getSno(), d);
-
-                }
-
-                if (dc.size() <= 0) {
-                    bi.fldGrpcra04.setVisibility(View.GONE);
-                    bi.btnNext.setVisibility(View.GONE);
-                    bi.btnEnd.setVisibility(View.GONE);
-                    Toast.makeText(this, "Household does not exist ", Toast.LENGTH_LONG).show();
-                } else {
-                    Toast.makeText(this, "Household number exists", Toast.LENGTH_LONG).show();
-                    bi.fldGrpcra04.setVisibility(View.VISIBLE);
-                    bi.btnNext.setVisibility(View.VISIBLE);
-                    bi.btnEnd.setVisibility(View.VISIBLE);
-                }
-            } else {
-                Toast.makeText(this, "Household number required", Toast.LENGTH_LONG).show();
-                bi.btnNext.setVisibility(View.GONE);
-                bi.btnEnd.setVisibility(View.GONE);
-                bi.kapr02a.requestFocus();
+        Collection<PWContract> dc = db.getPW(villageCodes.get(bi.crvillage.getSelectedItemPosition()), bi.kapr02a.getText().toString());
+        Log.d(TAG, "onCreate: " + dc.size());
+        int i = 1;
+        for (PWContract d : dc) {
+            Long days = DateUtils.getDaysBWDates(new Date(), DateUtils.stringToDate(d.getFupdt()));
+            if (days > -7 && days < 7) {
+                mapWRA.put(i, d);
+                i++;
             }
         }
+
+        if (mapWRA.size() == 0) {
+            clearFields(View.GONE);
+            Toast.makeText(this, "Household does not exist ", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        bi.womenID.setText(mapWRA.get(counter).getWserial());
+        bi.kapr03.setText(mapWRA.get(counter).getWname());
+        updateCounter();
+
+        Toast.makeText(this, "Household number exists", Toast.LENGTH_LONG).show();
+        clearFields(View.VISIBLE);
+
+    }
+
+    private void clearFields(int status) {
+        bi.fldGrpcra04.setVisibility(status);
+        bi.fldGrpbtn.setVisibility(status);
+        bi.btnEnd.setVisibility(status);
+        ClearClass.ClearAllFields(bi.fldGrpcra04, null);
+    }
+
+    private void updateCounter() {
+        bi.pwcounter.setText("PW " + counter + " out of " + mapWRA.size());
     }
 
     private boolean UpdateDB() {
@@ -421,6 +472,15 @@ public class SectionAForm0Activity extends AppCompatActivity {
             Log.e(TAG, "setGPS: " + e.getMessage());
         }
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (flag) {
+            super.onBackPressed();
+            return;
+        }
+        Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
     }
 
 }

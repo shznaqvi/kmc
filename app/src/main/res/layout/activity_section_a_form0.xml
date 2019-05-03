@@ -58,13 +58,15 @@
                 android:layout_height="wrap_content"
                 android:padding="20dp" />
 
+            <!--surveillance-->
             <LinearLayout
                 android:id="@+id/checkBtnLayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
-                android:orientation="horizontal">
-
+                android:orientation="horizontal"
+                android:visibility="gone"
+                tools:visibility="visible">
 
                 <EditText
                     android:id="@+id/kapr02a"
@@ -88,11 +90,14 @@
 
             </LinearLayout>
 
+            <!--recruitment-->
             <LinearLayout
                 android:id="@+id/hhLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
 
                 <TextView
                     style="@style/i_textview"
@@ -120,21 +125,23 @@
                     app:minValue="1"
                     app:type="range" />
 
-
             </LinearLayout>
-
 
             <LinearLayout
                 android:id="@+id/fldGrpcra04"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
 
                 <LinearLayout
                     android:id="@+id/recruitmentLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    tools:visibility="visible">
 
                     <TextView
                         style="@style/i_textview"
@@ -254,6 +261,13 @@
                         app:minValue="2"
                         app:type="range" />
                 </LinearLayout>
+
+                <TextView
+                    android:id="@+id/pwcounter"
+                    style="@style/textview_fm_lst_h"
+                    android:text=""
+                    android:visibility="gone"
+                    tools:visibility="visible" />
 
                 <TextView
                     style="@style/i_textview"
@@ -409,7 +423,6 @@
                         app:dateFormat="dd-MM-yyyy" />
 
                 </LinearLayout>
-
 
                 <LinearLayout
                     android:id="@+id/fldGrpbtn"

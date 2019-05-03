@@ -12,6 +12,7 @@ import java.util.Date;
 import edu.aku.hassannaqvi.kmc_screening.R;
 import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc_screening.databinding.ActivityEndingBinding;
+import edu.aku.hassannaqvi.kmc_screening.ui.form0.SectionAForm0Activity;
 import edu.aku.hassannaqvi.kmc_screening.validation.ValidatorClass;
 
 import static edu.aku.hassannaqvi.kmc_screening.core.MainApp.fc;
@@ -57,15 +58,14 @@ public class EndingActivity extends AppCompatActivity {
     }
 
     public void BtnEnd() {
-
-        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
             SaveDraft();
             if (UpdateDB()) {
 
                 finish();
 
-                Intent endSec = new Intent(this, MainActivity.class);
+                Intent endSec = new Intent(this, SectionAForm0Activity.mapWRA.size() == SectionAForm0Activity.counter ? MainActivity.class : SectionAForm0Activity.class)
+                        .putExtra("flagCome", false);
                 startActivity(endSec);
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
@@ -85,18 +85,14 @@ public class EndingActivity extends AppCompatActivity {
 //        SectionInfoKmcActivity.fc.setIstatus88x(istatus88x.getText().toString());
         fc.setEndingdatetime(dtToday);
 
-
-        Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }
 
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-
         int updcount = db.updateEnding();
 
         if (updcount == 1) {
-            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
@@ -106,8 +102,6 @@ public class EndingActivity extends AppCompatActivity {
     }
 
     private boolean formValidation() {
-        Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
-
         return ValidatorClass.EmptyRadioButton(this, binding.istatus, binding.istatusa, getString(R.string.istatus));
     }
 

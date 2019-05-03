@@ -28,7 +28,7 @@ import java.util.Map;
 
 import edu.aku.hassannaqvi.kmc_screening.R;
 import edu.aku.hassannaqvi.kmc_screening.contracts.FormsContract;
-import edu.aku.hassannaqvi.kmc_screening.contracts.MwraContract;
+import edu.aku.hassannaqvi.kmc_screening.contracts.PWContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.TalukasContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.UCsContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.VillagesContract;
@@ -49,7 +49,7 @@ public class SectionInfoKmcActivity extends Activity {
     public List<String> ucName, talukaNames, villageNames, wName;
     public List<String> ucCode, talukaCodes, villageCodes, wSno;
     DatabaseHelper db;
-    Map<String, MwraContract> mapWRA;
+    Map<String, PWContract> mapWRA;
 
     private static final String TAG = SectionInfoKmcActivity.class.getName();
     String dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
@@ -380,9 +380,9 @@ public class SectionInfoKmcActivity extends Activity {
 //
 //                mapWRA = new HashMap<>();
 //
-//                Collection<MwraContract> dc = db.getMWRA(bi.kapr02a.getText().toString(), MainApp.villageCode);
+//                Collection<PWContract> dc = db.getPW(bi.kapr02a.getText().toString(), MainApp.villageCode);
 //                Log.d(TAG, "onCreate: " + dc.size());
-//                for (MwraContract d : dc) {
+//                for (PWContract d : dc) {
 //                    wName.add(d.getWname() + "_" + d.getSno());
 //                    wSno.add(d.getSno());
 //                    mapWRA.put(d.getWname() + "_" + d.getSno(), d);

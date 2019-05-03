@@ -20,8 +20,8 @@ import java.util.List;
 
 import edu.aku.hassannaqvi.kmc_screening.contracts.FormsContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.FormsContract.FormsTable;
-import edu.aku.hassannaqvi.kmc_screening.contracts.MwraContract;
-import edu.aku.hassannaqvi.kmc_screening.contracts.MwraContract.MwraEntry;
+import edu.aku.hassannaqvi.kmc_screening.contracts.PWContract;
+import edu.aku.hassannaqvi.kmc_screening.contracts.PWContract.PWEntry;
 import edu.aku.hassannaqvi.kmc_screening.contracts.TalukasContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.TalukasContract.singleTaluka;
 import edu.aku.hassannaqvi.kmc_screening.contracts.UCsContract;
@@ -83,17 +83,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + " );";
 
     private static final String SQL_CREATE_MWRA = "CREATE TABLE " +
-            MwraEntry.TABLE_NAME + "(" +
-            MwraEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
-            MwraEntry.MWRA_MUID + " TEXT," +
-            MwraEntry.MWRA_DUID + " TEXT," +
-            MwraEntry.MWRA_HH02 + " TEXT," +
-            MwraEntry.MWRA_HHNO + " TEXT," +
-            MwraEntry.MWRA_SNO + " TEXT," +
-            MwraEntry.MWRA_WNAME + " TEXT," +
-            MwraEntry.MWRA_DLVRDATE + " TEXT," +
-            MwraEntry.MWRA_HH08 + " TEXT," +
-            MwraEntry.MWRA_HH09 + " TEXT"
+            PWEntry.TABLE_NAME + "(" +
+            PWEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+            PWEntry.MWRA_UID + " TEXT," +
+            PWEntry.MWRA_VILLAGE + " TEXT," +
+            PWEntry.MWRA_ROUND + " TEXT," +
+            PWEntry.MWRA_FUPDT + " TEXT," +
+            PWEntry.MWRA_HHNO + " TEXT," +
+            PWEntry.MWRA_WSERIAL + " TEXT," +
+            PWEntry.MWRA_WNAME + " TEXT," +
+            PWEntry.MWRA_HNAME + " TEXT," +
+            PWEntry.MWRA_KAPR07 + " TEXT," +
+            PWEntry.MWRA_KAPR08 + " TEXT," +
+            PWEntry.MWRA_HHNAME + " TEXT"
             + " );";
 
 
@@ -123,7 +125,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String SQL_DELETE_TALUKA = "DROP TABLE IF EXISTS " + singleTaluka.TABLE_NAME;
     private static final String SQL_DELETE_UCS = "DROP TABLE IF EXISTS " + UCsTable.TABLE_NAME;
     private static final String SQL_DELETE_VILLAGE = "DROP TABLE IF EXISTS " + singleVillage.TABLE_NAME;
-    private static final String SQL_DELETE_MWRA = "DROP TABLE IF EXISTS " + MwraEntry.TABLE_NAME;
+    private static final String SQL_DELETE_MWRA = "DROP TABLE IF EXISTS " + PWContract.PWEntry.TABLE_NAME;
 
     private final String TAG = "DatabaseHelper";
 
@@ -317,36 +319,36 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public Collection<MwraContract> getMWRA(String hhno, String villageCode) {
+    public Collection<PWContract> getPW(String villageCode, String hhno) {
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
-                MwraEntry._ID,
-                MwraEntry.MWRA_MUID,
-                MwraEntry.MWRA_DUID,
-                MwraEntry.MWRA_HH02,
-                MwraEntry.MWRA_HHNO,
-                MwraEntry.MWRA_SNO,
-                MwraEntry.MWRA_WNAME,
-                MwraEntry.MWRA_DLVRDATE,
-                MwraEntry.MWRA_HH08,
-                MwraEntry.MWRA_HH09
+                PWEntry.MWRA_UID,
+                PWEntry.MWRA_VILLAGE,
+                PWEntry.MWRA_ROUND,
+                PWEntry.MWRA_FUPDT,
+                PWEntry.MWRA_HHNO,
+                PWEntry.MWRA_WSERIAL,
+                PWEntry.MWRA_HNAME,
+                PWEntry.MWRA_WNAME,
+                PWEntry.MWRA_KAPR07,
+                PWEntry.MWRA_KAPR08,
+                PWEntry.MWRA_HHNAME
         };
 
-        String whereClause = MwraEntry.MWRA_HHNO + " =? AND " + MwraEntry.MWRA_HH02 + " =?";
-        String[] whereArgs = new String[]{hhno, villageCode};
+        String whereClause = PWEntry.MWRA_VILLAGE + " =? AND " + PWEntry.MWRA_HHNO + " =?";
+        String[] whereArgs = {villageCode, hhno};
         String groupBy = null;
         String having = null;
 
-        String orderBy =
-                MwraEntry.MWRA_DLVRDATE + " ASC";
+        String orderBy = PWEntry.MWRA_WSERIAL + " ASC";
 
-        Collection<MwraContract> allEB = new ArrayList<>();
+        Collection<PWContract> allEB = new ArrayList<>();
 
         try {
             c = db.query(
-                    MwraEntry.TABLE_NAME,  // The table to query
+                    PWEntry.TABLE_NAME,  // The table to query
                     columns,                   // The columns to return
                     whereClause,               // The columns for the WHERE clause
                     whereArgs,                 // The values for the WHERE clause
@@ -355,7 +357,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     orderBy                    // The sort order
             );
             while (c.moveToNext()) {
-                MwraContract mwra = new MwraContract();
+                PWContract mwra = new PWContract();
                 allEB.add(mwra.hydrate(c));
             }
         } finally {
@@ -368,65 +370,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return allEB;
     }
-
-
-    public List<String> getMWRA1(String hhno, String villageCode) {
-
-        int index = 0;
-        List<String> lst = new ArrayList<>();
-
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor c = null;
-        String[] columns = {
-                MwraEntry._ID,
-                MwraEntry.MWRA_MUID,
-                MwraEntry.MWRA_DUID,
-                MwraEntry.MWRA_HH02,
-                MwraEntry.MWRA_HHNO,
-                MwraEntry.MWRA_SNO,
-                MwraEntry.MWRA_WNAME,
-                MwraEntry.MWRA_DLVRDATE,
-                MwraEntry.MWRA_HH08,
-                MwraEntry.MWRA_HH09
-        };
-
-        String whereClause = MwraEntry.MWRA_HHNO + " =? AND " + MwraEntry.MWRA_HH02 + " =?";
-        String[] whereArgs = new String[]{hhno, villageCode};
-        String groupBy = null;
-        String having = null;
-
-        String orderBy =
-                MwraEntry.MWRA_DLVRDATE + " ASC";
-
-        MwraContract allEB = null;
-
-        try {
-            c = db.query(
-                    MwraEntry.TABLE_NAME,  // The table to query
-                    columns,                   // The columns to return
-                    whereClause,               // The columns for the WHERE clause
-                    whereArgs,                 // The values for the WHERE clause
-                    groupBy,                   // don't group the rows
-                    having,                    // don't filter by row groups
-                    orderBy                    // The sort order
-            );
-            while (c.moveToNext()) {
-                allEB = new MwraContract().hydrate(c);
-
-                lst.add(Integer.parseInt(c.getColumnName(c.getColumnIndex("sno"))), c.getColumnName(c.getColumnIndex("wname")));
-
-            }
-        } finally {
-            if (c != null) {
-                c.close();
-            }
-            if (db != null) {
-                db.close();
-            }
-        }
-        return lst;
-    }
-
 
     public void syncUser(JSONArray userlist) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -484,25 +427,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     /*public void syncListing(JSONArray listing) {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(MwraEntry.TABLE_NAME, null, null);
+        db.delete(PWEntry.TABLE_NAME, null, null);
         try {
             JSONArray jsonArray = listing;
             for (int i = 0; i < jsonArray.length(); i++) {
 
                 JSONObject jsonObjectUser = jsonArray.getJSONObject(i);
 
-                MwraContract user = new MwraContract();
+                PWContract user = new PWContract();
                 user.sync(jsonObjectUser);
                 ContentValues values = new ContentValues();
 
-                values.put(MwraEntry.MWRA_MW01, user.getMw01());
-                values.put(MwraEntry.MWRA_MW02, user.getMw02());
-                values.put(MwraEntry.MWRA_MW03, user.getMw03());
-                values.put(MwraEntry.MWRA_MW04, user.getMw04());
-                values.put(MwraEntry.MWRA_MW05, user.getMw05());
+                values.put(PWEntry.MWRA_MW01, user.getMw01());
+                values.put(PWEntry.MWRA_MW02, user.getMw02());
+                values.put(PWEntry.MWRA_MW03, user.getMw03());
+                values.put(PWEntry.MWRA_MW04, user.getMw04());
+                values.put(PWEntry.MWRA_MW05, user.getMw05());
 
 
-                db.insert(MwraEntry.TABLE_NAME, null, values);
+                db.insert(PWEntry.TABLE_NAME, null, values);
             }
 
         } catch (Exception e) {
@@ -513,9 +456,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }*/
 
 
-    public void syncMWRA(JSONArray pcList) {
+    public void syncPWS(JSONArray pcList) {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(MwraEntry.TABLE_NAME, null, null);
+        db.delete(PWEntry.TABLE_NAME, null, null);
 
         try {
             JSONArray jsonArray = pcList;
@@ -523,28 +466,30 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject jsonObjectPSU = jsonArray.getJSONObject(i);
 
-                MwraContract vc = new MwraContract();
+                PWContract vc = new PWContract();
                 vc.sync(jsonObjectPSU);
-                Log.i(TAG, "MWRA: " + jsonObjectPSU.toString());
+                Log.i(TAG, "PWs: " + jsonObjectPSU.toString());
 
                 ContentValues values = new ContentValues();
 
-                values.put(MwraEntry.MWRA_MUID, vc.getMuid());
-                values.put(MwraEntry.MWRA_DUID, vc.getDuid());
-                values.put(MwraEntry.MWRA_HH02, vc.getHh02());
-                values.put(MwraEntry.MWRA_HHNO, vc.getHhno());
-                values.put(MwraEntry.MWRA_SNO, vc.getSno());
-                values.put(MwraEntry.MWRA_WNAME, vc.getWname());
-                values.put(MwraEntry.MWRA_DLVRDATE, vc.getDlvr_date());
-                values.put(MwraEntry.MWRA_HH08, vc.getHh08());
-                values.put(MwraEntry.MWRA_HH09, vc.getHh09());
+                values.put(PWEntry.MWRA_UID, vc.getUid());
+                values.put(PWEntry.MWRA_VILLAGE, vc.getVillage());
+                values.put(PWEntry.MWRA_ROUND, vc.getRound());
+                values.put(PWEntry.MWRA_FUPDT, vc.getFupdt());
+                values.put(PWEntry.MWRA_HHNO, vc.getHhno());
+                values.put(PWEntry.MWRA_WSERIAL, vc.getWserial());
+                values.put(PWEntry.MWRA_HNAME, vc.getHname());
+                values.put(PWEntry.MWRA_WNAME, vc.getWname());
+                values.put(PWEntry.MWRA_KAPR07, vc.getKapr07());
+                values.put(PWEntry.MWRA_KAPR08, vc.getKapr08());
+                values.put(PWEntry.MWRA_HHNAME, vc.getHhname());
 
-                db.insert(MwraEntry.TABLE_NAME, null, values);
+                db.insert(PWEntry.TABLE_NAME, null, values);
             }
             db.close();
 
         } catch (Exception e) {
-            Log.d(TAG, "syncMWRA: " + e.getMessage());
+            Log.d(TAG, "syncPWS: " + e.getMessage());
         }
     }
 
