@@ -64,9 +64,14 @@ public class EndingActivity extends AppCompatActivity {
 
                 finish();
 
-                Intent endSec = new Intent(this, SectionAForm0Activity.mapWRA.size() == SectionAForm0Activity.counter ? MainActivity.class : SectionAForm0Activity.class)
-                        .putExtra("flagCome", false);
-                startActivity(endSec);
+                Intent intent;
+                if (SectionAForm0Activity.mapWRA != null)
+                    intent = new Intent(this, SectionAForm0Activity.mapWRA.size() == SectionAForm0Activity.counter ? MainActivity.class : SectionAForm0Activity.class)
+                            .putExtra("flagCome", false);
+                else
+                    intent = new Intent(this, MainActivity.class);
+
+                startActivity(intent);
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }

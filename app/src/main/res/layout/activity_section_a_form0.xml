@@ -76,7 +76,7 @@
                     android:layout_weight="1"
                     android:hint="@string/kapr01"
                     android:inputType="number"
-                    android:maxLength="6" />
+                    android:maxLength="3" />
 
                 <Button
                     android:id="@+id/btnSearch"
@@ -112,6 +112,29 @@
                     app:minValue="1"
                     app:type="range" />
 
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/hhLayout2"
+                style="@style/linearlayout_view_wt_bound"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <!--W-NAME-->
+                <TextView
+                    style="@style/i_textview"
+                    android:text="@string/kapr03" />
+
+                <EditText
+                    android:id="@+id/kapr03"
+                    style="@style/textInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                    android:hint="@string/kapr03"
+                    android:inputType="text" />
+
+                <!--W-ID-->
                 <TextView
                     style="@style/i_textview"
                     android:text="@string/kapr02" />
@@ -142,19 +165,6 @@
                     android:orientation="vertical"
                     android:visibility="gone"
                     tools:visibility="visible">
-
-                    <TextView
-                        style="@style/i_textview"
-                        android:text="@string/kapr03" />
-
-                    <EditText
-                        android:id="@+id/kapr03"
-                        style="@style/textInput"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                        android:hint="@string/kapr03"
-                        android:inputType="text" />
 
                     <TextView
                         style="@style/i_textview"

@@ -84,16 +84,13 @@ public class SectionAForm0Activity extends AppCompatActivity {
             bi.crauc.setEnabled(false);
             bi.crvillage.setEnabled(false);
             bi.kapr02a.setEnabled(false);
+            bi.kapr02a.setText(hhno);
+            clearFields(View.VISIBLE);
             bi.womenID.setEnabled(false);
             bi.kapr03.setEnabled(false);
-            bi.kapr02a.setText(hhno);
-
+            counter++;
             bi.womenID.setText(mapWRA.get(counter).getWserial());
             bi.kapr03.setText(mapWRA.get(counter).getWname());
-
-            clearFields(View.VISIBLE);
-
-            counter++;
             updateCounter();
         }
 
@@ -105,6 +102,7 @@ public class SectionAForm0Activity extends AppCompatActivity {
             this.setTitle(getString(R.string.pw_sur));
         } else {
             bi.hhLayout.setVisibility(View.VISIBLE);
+            bi.hhLayout2.setVisibility(View.VISIBLE);
             bi.recruitmentLayout.setVisibility(View.VISIBLE);
             bi.fldGrpcra04.setVisibility(View.VISIBLE);
             bi.kapr12a.setEnabled(false);
@@ -425,10 +423,14 @@ public class SectionAForm0Activity extends AppCompatActivity {
         Toast.makeText(this, "Household number exists", Toast.LENGTH_LONG).show();
         clearFields(View.VISIBLE);
 
+        bi.womenID.setEnabled(false);
+        bi.kapr03.setEnabled(false);
+
     }
 
     private void clearFields(int status) {
         bi.fldGrpcra04.setVisibility(status);
+        bi.hhLayout2.setVisibility(status);
         bi.fldGrpbtn.setVisibility(status);
         bi.btnEnd.setVisibility(status);
         ClearClass.ClearAllFields(bi.fldGrpcra04, null);
