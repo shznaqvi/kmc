@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -52,7 +53,7 @@ public class SectionAForm0Activity extends AppCompatActivity {
     public static Map<Integer, PWContract> mapWRA;
     public static int ucPos, talukaPos, villagePos;
     public static String hhno;
-    public static int counter = 1;
+    public static int counter;
     private static List<String> ucName, talukaNames, villageNames;
     DatabaseHelper db;
     ActivitySectionAForm0Binding bi;
@@ -66,11 +67,19 @@ public class SectionAForm0Activity extends AppCompatActivity {
         bi.setCallback(this);
         db = new DatabaseHelper(getApplicationContext());
 
+        settingComponents();
+        settingListeners();
+        populateSpinner(this);
+
         flag = getIntent().getBooleanExtra("flagCome", true);
         if (flag) {
-            settingListeners();
+            ucPos = 0;
+            talukaPos = 0;
+            villagePos = 0;
+            counter = 1;
         } else {
             bi.btnSearch.setEnabled(false);
+            bi.btnSearch.setBackgroundColor(getResources().getColor(android.R.color.darker_gray));
             bi.crataluka.setEnabled(false);
             bi.crauc.setEnabled(false);
             bi.crvillage.setEnabled(false);
@@ -78,9 +87,6 @@ public class SectionAForm0Activity extends AppCompatActivity {
             bi.womenID.setEnabled(false);
             bi.kapr03.setEnabled(false);
             bi.kapr02a.setText(hhno);
-            bi.crataluka.setSelection(talukaPos);
-            bi.crauc.setSelection(ucPos);
-            bi.crvillage.setSelection(villagePos);
 
             bi.womenID.setText(mapWRA.get(counter).getWserial());
             bi.kapr03.setText(mapWRA.get(counter).getWname());
@@ -90,12 +96,10 @@ public class SectionAForm0Activity extends AppCompatActivity {
             counter++;
             updateCounter();
         }
-        settingComponents();
+
     }
 
     private void settingComponents() {
-        populateSpinner(this);
-
         if (MainApp.surveyType.equals("kf0b")) {
             bi.checkBtnLayout.setVisibility(View.VISIBLE);
             this.setTitle(getString(R.string.pw_sur));
@@ -135,6 +139,16 @@ public class SectionAForm0Activity extends AppCompatActivity {
 
             }
         });
+
+        bi.kapr12.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i != bi.kapr12b.getId()) {
+                    bi.kapr13.clearCheck();
+                    bi.kapr14.setText(null);
+                }
+            }
+        });
     }
 
     private void populateSpinner(final Context context) {
@@ -161,6 +175,7 @@ public class SectionAForm0Activity extends AppCompatActivity {
 
         // attaching data adapter to spinner
         bi.crataluka.setAdapter(dataAdapter);
+        bi.crataluka.setSelection(talukaPos);
 
         bi.crataluka.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -184,6 +199,7 @@ public class SectionAForm0Activity extends AppCompatActivity {
                 psuAdapter
                         .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 bi.crauc.setAdapter(psuAdapter);
+                bi.crauc.setSelection(ucPos);
 
             }
 
@@ -212,6 +228,7 @@ public class SectionAForm0Activity extends AppCompatActivity {
                 }
 
                 bi.crvillage.setAdapter(new ArrayAdapter<>(context, android.R.layout.simple_spinner_dropdown_item, villageNames));
+                bi.crvillage.setSelection(villagePos);
             }
 
             @Override
@@ -314,10 +331,7 @@ public class SectionAForm0Activity extends AppCompatActivity {
                 e.printStackTrace();
             }
             if (UpdateDB()) {
-                Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
-
                 finish();
-
                 startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
 
             } else {
@@ -334,11 +348,8 @@ public class SectionAForm0Activity extends AppCompatActivity {
                 e.printStackTrace();
             }
             if (UpdateDB()) {
-                Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
-
                 finish();
                 startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
-
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
@@ -424,6 +435,7 @@ public class SectionAForm0Activity extends AppCompatActivity {
     }
 
     private void updateCounter() {
+        bi.pwcounter.setVisibility(View.VISIBLE);
         bi.pwcounter.setText("PW " + counter + " out of " + mapWRA.size());
     }
 

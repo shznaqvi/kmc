@@ -341,7 +341,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:visibility='@{kapr12a.checked? View.GONE : View.VISIBLE}'>
+                    android:visibility='@{kapr12b.checked? View.VISIBLE : View.GONE}'>
 
                     <TextView
                         style="@style/i_textview"
@@ -420,7 +420,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="dd/MM/yyyy"
-                        app:dateFormat="dd-MM-yyyy" />
+                        app:dateFormat="dd-MM-yyyy"
+                        app:maxDate="CR_DATE" />
 
                 </LinearLayout>
 
