@@ -15,7 +15,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import edu.aku.hassannaqvi.kmc_screening.contracts.PWContract;
+import edu.aku.hassannaqvi.kmc_screening.contracts.PWFollowUpContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.TalukasContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.UCsContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.UsersContract;
@@ -66,7 +66,7 @@ public class GetAllData extends AsyncTask<String, String, String> {
                         url = new URL(hostItem + UsersContract.UsersTable._URI);
                         break;
                     case "PWs":
-                        url = new URL(hostItem + PWContract.PWEntry._URI);
+                        url = new URL(hostItem + PWFollowUpContract.PWFUPEntry._URI);
                         break;
                     case "Talukas":
                         url = new URL(hostItem + TalukasContract.singleTaluka._URI);

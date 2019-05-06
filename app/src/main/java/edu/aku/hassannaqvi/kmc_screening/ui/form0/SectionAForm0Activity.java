@@ -22,6 +22,7 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -32,7 +33,7 @@ import java.util.Map;
 
 import edu.aku.hassannaqvi.kmc_screening.R;
 import edu.aku.hassannaqvi.kmc_screening.contracts.FormsContract;
-import edu.aku.hassannaqvi.kmc_screening.contracts.PWContract;
+import edu.aku.hassannaqvi.kmc_screening.contracts.PWFollowUpContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.TalukasContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.UCsContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.VillagesContract;
@@ -50,7 +51,7 @@ import static edu.aku.hassannaqvi.kmc_screening.core.MainApp.fc;
 public class SectionAForm0Activity extends AppCompatActivity {
 
     private static final String TAG = SectionAForm0Activity.class.getName();
-    public static Map<Integer, PWContract> mapWRA;
+    public static Map<Integer, PWFollowUpContract> mapWRA;
     public static int ucPos, talukaPos, villagePos;
     public static String hhno;
     public static int counter;
@@ -91,6 +92,11 @@ public class SectionAForm0Activity extends AppCompatActivity {
             counter++;
             bi.womenID.setText(mapWRA.get(counter).getWserial());
             bi.kapr03.setText(mapWRA.get(counter).getWname());
+            try {
+                bi.kapr14.setMinDate(new SimpleDateFormat("dd/MM/yyyy").format(new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").parse(mapWRA.get(counter).getRegdt())));
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
             updateCounter();
         }
 
@@ -261,10 +267,20 @@ public class SectionAForm0Activity extends AppCompatActivity {
         villagePos = bi.crvillage.getSelectedItemPosition();
 
         JSONObject sInfo = new JSONObject();
+
+        sInfo.put("kapr02", bi.womenID.getText().toString());
+        sInfo.put("kapr03", bi.kapr03.getText().toString());
+        sInfo.put("kapr12", bi.kapr12a.isChecked() ? "1"
+                : bi.kapr12b.isChecked() ? "2"
+                : bi.kapr12c.isChecked() ? "3"
+                : bi.kapr12d.isChecked() ? "4"
+                : bi.kapr12e.isChecked() ? "5"
+                : bi.kapr12f.isChecked() ? "6"
+                : bi.kapr12g.isChecked() ? "7"
+                : "0");
+
         if (MainApp.surveyType.equals("kf0a")) {
             fc.setHhno(bi.kapr02b.getText().toString());
-            sInfo.put("kapr02", bi.womenID.getText().toString());
-            sInfo.put("kapr03", bi.kapr03.getText().toString());
             sInfo.put("kapr04", bi.kapr04.getText().toString());
             sInfo.put("kapr05", bi.kapr05.getText().toString());
             sInfo.put("kapr06", bi.kapr06.getText().toString());
@@ -273,28 +289,11 @@ public class SectionAForm0Activity extends AppCompatActivity {
             sInfo.put("kapr09", bi.kapr09.getText().toString());
             sInfo.put("kapr10", bi.kapr10.getText().toString());
             sInfo.put("kapr11", bi.kapr11.getText().toString());
-            sInfo.put("kapr12", bi.kapr12a.isChecked() ? "1"
-                    : bi.kapr12b.isChecked() ? "2"
-                    : bi.kapr12c.isChecked() ? "3"
-                    : bi.kapr12d.isChecked() ? "4"
-                    : bi.kapr12e.isChecked() ? "5"
-                    : bi.kapr12f.isChecked() ? "6"
-                    : bi.kapr12g.isChecked() ? "7"
-                    : "0");
 
             hhno = bi.kapr02b.getText().toString();
         } else {
             fc.setHhno(bi.kapr02a.getText().toString());
-            sInfo.put("kapr02", bi.womenID.getText().toString());
-            sInfo.put("kapr03", bi.kapr03.getText().toString());
-            sInfo.put("kapr12", bi.kapr12a.isChecked() ? "1"
-                    : bi.kapr12b.isChecked() ? "2"
-                    : bi.kapr12c.isChecked() ? "3"
-                    : bi.kapr12d.isChecked() ? "4"
-                    : bi.kapr12e.isChecked() ? "5"
-                    : bi.kapr12f.isChecked() ? "6"
-                    : bi.kapr12g.isChecked() ? "7"
-                    : "0");
+
             sInfo.put("kapr13", bi.kapr13a.isChecked() ? "1"
                     : bi.kapr13b.isChecked() ? "2"
                     : bi.kapr13c.isChecked() ? "3"
@@ -312,6 +311,7 @@ public class SectionAForm0Activity extends AppCompatActivity {
             sInfo.put("pw_kapr07", mapWRA.get(counter).getKapr07());
             sInfo.put("pw_kapr08", mapWRA.get(counter).getKapr08());
             sInfo.put("pw_kapr09", mapWRA.get(counter).getHhname());
+            sInfo.put("pw_regdt", mapWRA.get(counter).getRegdt());
 
             hhno = bi.kapr02a.getText().toString();
         }
@@ -399,10 +399,10 @@ public class SectionAForm0Activity extends AppCompatActivity {
 
         mapWRA = new HashMap<>();
 
-        Collection<PWContract> dc = db.getPW(villageCodes.get(bi.crvillage.getSelectedItemPosition()), bi.kapr02a.getText().toString());
+        Collection<PWFollowUpContract> dc = db.getPW(villageCodes.get(bi.crvillage.getSelectedItemPosition()), bi.kapr02a.getText().toString());
         Log.d(TAG, "onCreate: " + dc.size());
         int i = 1;
-        for (PWContract d : dc) {
+        for (PWFollowUpContract d : dc) {
             Long days = DateUtils.getDaysBWDates(new Date(), DateUtils.stringToDate(d.getFupdt()));
             if (days > -7 && days < 7) {
                 mapWRA.put(i, d);
@@ -418,6 +418,11 @@ public class SectionAForm0Activity extends AppCompatActivity {
 
         bi.womenID.setText(mapWRA.get(counter).getWserial());
         bi.kapr03.setText(mapWRA.get(counter).getWname());
+        try {
+            bi.kapr14.setMinDate(new SimpleDateFormat("dd/MM/yyyy").format(new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").parse(mapWRA.get(counter).getRegdt())));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
         updateCounter();
 
         Toast.makeText(this, "Household number exists", Toast.LENGTH_LONG).show();

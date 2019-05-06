@@ -42,7 +42,7 @@
 
             <TextView
                 style="@style/i_textview"
-                android:text="@string/crataluka" />
+                android:text="@string/crataluka1" />
 
             <Spinner
                 android:id="@+id/crataluka"
