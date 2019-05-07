@@ -100,7 +100,7 @@ public class PWScreenedContract {
         this.formdate = jsonObject.getString(PWFScrennedEntry.COLUMN_FORMDATE);
         this.pw_name = jsonObject.getString(PWFScrennedEntry.COLUMN_PW_NAME);
         this.h_name = jsonObject.getString(PWFScrennedEntry.COLUMN_H_NAME);
-        this.cast = jsonObject.getString(PWFScrennedEntry.COLUMN_CAST);
+        this.cast = jsonObject.getString(PWFScrennedEntry.COLUMN_PW_CAST);
         this.hh_name = jsonObject.getString(PWFScrennedEntry.COLUMN_HH_NAME);
         this.pw_serial = jsonObject.getString(PWFScrennedEntry.COLUMN_PW_SERIAL);
 
@@ -116,7 +116,7 @@ public class PWScreenedContract {
         this.pw_serial = cursor.getString(cursor.getColumnIndex(PWFScrennedEntry.COLUMN_PW_SERIAL));
         this.pw_name = cursor.getString(cursor.getColumnIndex(PWFScrennedEntry.COLUMN_PW_NAME));
         this.h_name = cursor.getString(cursor.getColumnIndex(PWFScrennedEntry.COLUMN_H_NAME));
-        this.cast = cursor.getString(cursor.getColumnIndex(PWFScrennedEntry.COLUMN_CAST));
+        this.cast = cursor.getString(cursor.getColumnIndex(PWFScrennedEntry.COLUMN_PW_CAST));
         this.hh_name = cursor.getString(cursor.getColumnIndex(PWFScrennedEntry.COLUMN_HH_NAME));
 
         return this;
@@ -131,7 +131,7 @@ public class PWScreenedContract {
         json.put(PWFScrennedEntry.COLUMN_PW_SERIAL, this.pw_serial == null ? JSONObject.NULL : this.pw_serial);
         json.put(PWFScrennedEntry.COLUMN_PW_NAME, this.pw_name == null ? JSONObject.NULL : this.pw_name);
         json.put(PWFScrennedEntry.COLUMN_H_NAME, this.h_name == null ? JSONObject.NULL : this.h_name);
-        json.put(PWFScrennedEntry.COLUMN_CAST, this.cast == null ? JSONObject.NULL : this.cast);
+        json.put(PWFScrennedEntry.COLUMN_PW_CAST, this.cast == null ? JSONObject.NULL : this.cast);
         json.put(PWFScrennedEntry.COLUMN_HH_NAME, this.hh_name == null ? JSONObject.NULL : this.hh_name);
 
         return json;
@@ -148,7 +148,7 @@ public class PWScreenedContract {
         public static final String COLUMN_PW_SERIAL = "pw_serial";
         public static final String COLUMN_PW_NAME = "pw_name";
         public static final String COLUMN_H_NAME = "h_name";
-        public static final String COLUMN_CAST = "cast";
+        public static final String COLUMN_PW_CAST = "pw_cast";
         public static final String COLUMN_HH_NAME = "hh_name";
 
         public static String _URI = "getpw.php";

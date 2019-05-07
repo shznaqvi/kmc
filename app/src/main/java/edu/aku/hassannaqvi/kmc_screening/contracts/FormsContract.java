@@ -42,7 +42,6 @@ public class FormsContract {
     private String appversion;
     private String uc;
     private String village;
-    private String formtype;
     private String hhno;
 
     public void setSurveyType(String surveyType) {
@@ -71,14 +70,6 @@ public class FormsContract {
 
     public void setVillage(String village) {
         this.village = village;
-    }
-
-    public String getFormtype() {
-        return formtype;
-    }
-
-    public void setFormtype(String formtype) {
-        this.formtype = formtype;
     }
 
     public String getHhno() {

@@ -71,27 +71,8 @@ public class MainApp extends Application {
     public static String userName = "0000";
     public static int versionCode;
     public static String versionName;
-
-    public static String talukaCode = "0000";
-    public static String ucCode;
-    public static String villageCode;
-    public static String wSerialNo;
-    public static String wName;
     public static String formType;
     public static String surveyType;
-
-    /*
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- Needed only if your app targets Android 5.0 (API level 21) or higher. -->
-    <uses-feature android:name="android.hardware.location.gps" />
-
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.hardware.location.gps" /> <!-- To auto-complete the email text field in the login form with the user's emails -->
-    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-    <uses-permission android:name="android.permission.READ_PROFILE" />
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-     */
 
     public static String[] permissions = {Manifest.permission.READ_CONTACTS, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE,
             Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.GET_ACCOUNTS};
@@ -124,7 +105,7 @@ public class MainApp extends Application {
                                                 int id) {
                                 activity.finish();
                                 Intent end_intent = new Intent(context, EndingActivity.class);
-                                end_intent.putExtra("check", false);
+                                end_intent.putExtra("complete", false);
                                 context.startActivity(end_intent);
                             }
                         });

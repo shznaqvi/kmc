@@ -85,20 +85,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + " );";
 
     private static final String SQL_CREATE_MWRAFOLLOWUPS = "CREATE TABLE " +
-            PWFollowUpContract.PWFUPEntry.TABLE_NAME + "(" +
-            PWFollowUpContract.PWFUPEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+            PWFUPEntry.TABLE_NAME + "(" +
+            PWFUPEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
             PWFUPEntry.MWRA_UID + " TEXT," +
-            PWFollowUpContract.PWFUPEntry.MWRA_VILLAGE + " TEXT," +
-            PWFollowUpContract.PWFUPEntry.MWRA_REGDT + " TEXT," +
+            PWFUPEntry.MWRA_VILLAGE + " TEXT," +
+            PWFUPEntry.MWRA_REGDT + " TEXT," +
             PWFUPEntry.MWRA_ROUND + " TEXT," +
             PWFUPEntry.MWRA_FUPDT + " TEXT," +
-            PWFollowUpContract.PWFUPEntry.MWRA_HHNO + " TEXT," +
-            PWFollowUpContract.PWFUPEntry.MWRA_WSERIAL + " TEXT," +
-            PWFollowUpContract.PWFUPEntry.MWRA_WNAME + " TEXT," +
-            PWFollowUpContract.PWFUPEntry.MWRA_HNAME + " TEXT," +
+            PWFUPEntry.MWRA_HHNO + " TEXT," +
+            PWFUPEntry.MWRA_WSERIAL + " TEXT," +
+            PWFUPEntry.MWRA_WNAME + " TEXT," +
+            PWFUPEntry.MWRA_HNAME + " TEXT," +
             PWFUPEntry.MWRA_KAPR07 + " TEXT," +
-            PWFollowUpContract.PWFUPEntry.MWRA_KAPR08 + " TEXT," +
-            PWFollowUpContract.PWFUPEntry.MWRA_HHNAME + " TEXT"
+            PWFUPEntry.MWRA_KAPR08 + " TEXT," +
+            PWFUPEntry.MWRA_HHNAME + " TEXT"
             + " );";
 
     private static final String SQL_CREATE_MWRA_SCREENED = "CREATE TABLE " +
@@ -111,9 +111,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             PWFScrennedEntry.COLUMN_PW_SERIAL + " TEXT," +
             PWFScrennedEntry.COLUMN_PW_NAME + " TEXT," +
             PWFScrennedEntry.COLUMN_H_NAME + " TEXT," +
-            PWFScrennedEntry.COLUMN_CAST + " TEXT," +
-            PWFScrennedEntry.COLUMN_HH_NAME + " TEXT"
-            + " );";
+            PWFScrennedEntry.COLUMN_PW_CAST + " TEXT," +
+            PWFScrennedEntry.COLUMN_HH_NAME + " TEXT);";
 
 
     final String SQL_CREATE_DISTRICT_TABLE = "CREATE TABLE " + singleTaluka.TABLE_NAME + " (" +
@@ -142,8 +141,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String SQL_DELETE_TALUKA = "DROP TABLE IF EXISTS " + singleTaluka.TABLE_NAME;
     private static final String SQL_DELETE_UCS = "DROP TABLE IF EXISTS " + UCsTable.TABLE_NAME;
     private static final String SQL_DELETE_VILLAGE = "DROP TABLE IF EXISTS " + singleVillage.TABLE_NAME;
-    private static final String SQL_DELETE_MWRA = "DROP TABLE IF EXISTS " + PWFollowUpContract.PWFUPEntry.TABLE_NAME;
-    private static final String SQL_DELETE_MWRAFOLLOWUPS = "DROP TABLE IF EXISTS " + PWFScrennedEntry.TABLE_NAME;
+    private static final String SQL_DELETE_MWRA = "DROP TABLE IF EXISTS " + PWFUPEntry.TABLE_NAME;
+    private static final String SQL_DELETE_MWRASCREENED = "DROP TABLE IF EXISTS " + PWFScrennedEntry.TABLE_NAME;
 
     private final String TAG = "DatabaseHelper";
 
@@ -173,7 +172,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_DELETE_UCS);
         db.execSQL(SQL_DELETE_VILLAGE);
         db.execSQL(SQL_DELETE_MWRA);
-        db.execSQL(SQL_DELETE_MWRAFOLLOWUPS);
+        db.execSQL(SQL_DELETE_MWRASCREENED);
     }
 
     public void syncUCs(JSONArray UCslist) {
@@ -404,7 +403,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 PWFScrennedEntry.COLUMN_PW_NAME,
                 PWFScrennedEntry.COLUMN_PW_SERIAL,
                 PWFScrennedEntry.COLUMN_H_NAME,
-                PWFScrennedEntry.COLUMN_CAST,
+                PWFScrennedEntry.COLUMN_PW_CAST,
                 PWFScrennedEntry.COLUMN_HH_NAME,
         };
 
@@ -533,7 +532,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    public void syncPWSFollowups(JSONArray pcList) {
+    public void syncPWSScreened(JSONArray pcList) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(PWFScrennedEntry.TABLE_NAME, null, null);
 
@@ -545,7 +544,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
                 PWScreenedContract spw = new PWScreenedContract();
                 spw.sync(jsonObjectPSU);
-                Log.i(TAG, "PWSFOLLOWUPS: " + jsonObjectPSU.toString());
+                Log.i(TAG, "PWScreened: " + jsonObjectPSU.toString());
 
                 ContentValues values = new ContentValues();
 
@@ -556,7 +555,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 values.put(PWFScrennedEntry.COLUMN_PW_SERIAL, spw.getPw_serial());
                 values.put(PWFScrennedEntry.COLUMN_PW_NAME, spw.getPw_name());
                 values.put(PWFScrennedEntry.COLUMN_H_NAME, spw.getH_name());
-                values.put(PWFScrennedEntry.COLUMN_CAST, spw.getCast());
+                values.put(PWFScrennedEntry.COLUMN_PW_CAST, spw.getCast());
                 values.put(PWFScrennedEntry.COLUMN_HH_NAME, spw.getHh_name());
 
                 db.insert(PWFScrennedEntry.TABLE_NAME, null, values);
@@ -564,7 +563,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             db.close();
 
         } catch (Exception e) {
-            Log.d(TAG, "syncPWSFOLLOWUPS: " + e.getMessage());
+            Log.d(TAG, "syncPWScreened: " + e.getMessage());
         }
     }
 
