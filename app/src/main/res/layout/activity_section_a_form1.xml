@@ -807,7 +807,8 @@
 
                             <RadioGroup
                                 android:id="@+id/kf1b0596"
-                                style="@style/i_radiogroup">
+                                style="@style/i_radiogroup"
+                                android:onCheckedChanged="@{callback.onRadioEligibilityChecked}">
 
                                 <RadioButton
                                     android:id="@+id/kf1b0596a"

@@ -46,7 +46,7 @@ public class SectionAForm1Activity extends AppCompatActivity {
 
         rdbEligibilityCheckIDs = new ArrayList<>(Arrays.asList(bi.kf1b0401b, bi.kf1b0402b, bi.kf1b0403b, bi.kf1b0404b, bi.kf1b0405b, bi.kf1b0406b,
                 bi.kf1b0407b, bi.kf1b0408b, bi.kf1b0409b, bi.kf1b0410b, bi.kf1b0411b, bi.kf1b0412b, bi.kf1b0413b, bi.kf1b0414b, bi.kf1b0415b,
-                bi.kf1b0501b, bi.kf1b0502b, bi.kf1b0503b, bi.kf1b0504b, bi.kf1b06b));
+                bi.kf1b0501b, bi.kf1b0502b, bi.kf1b0503b, bi.kf1b0504b, bi.kf1b0596b, bi.kf1b06b));
     }
 
     public void BtnContinue() {
@@ -175,7 +175,10 @@ public class SectionAForm1Activity extends AppCompatActivity {
     public void onRadioEligibilityChecked(RadioGroup radioGroup, int id) {
         boolean flag = true;
         for (RadioButton rdbID : rdbEligibilityCheckIDs) {
-            flag = rdbID.isChecked();
+            if (!rdbID.isChecked()) {
+                flag = false;
+                break;
+            }
         }
 
         bi.kf1b07.check(flag ? bi.kf1b07a.getId() : bi.kf1b07b.getId());
