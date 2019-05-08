@@ -60,7 +60,7 @@ public class SectionAForm1Activity extends AppCompatActivity {
         }
         if (UpdateDB()) {
             finish();
-            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
         } else {
             Toast.makeText(this, "Error in updating db!!", Toast.LENGTH_SHORT).show();
         }
@@ -179,6 +179,11 @@ public class SectionAForm1Activity extends AppCompatActivity {
         }
 
         bi.kf1b07.check(flag ? bi.kf1b07a.getId() : bi.kf1b07b.getId());
+    }
+
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(this, "You can't go back", Toast.LENGTH_SHORT).show();
     }
 
 }

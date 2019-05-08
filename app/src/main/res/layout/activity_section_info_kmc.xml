@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layoutDirection="rtl"
     tools:context=".ui.SectionInfoKmcActivity">
@@ -131,12 +132,12 @@
                             <RadioButton
                                 android:id="@+id/kfa1a"
                                 style="@style/i_radiobutton"
-                                android:text="@string/yes" />
+                                android:text="@string/kfa1a" />
 
                             <RadioButton
                                 android:id="@+id/kfa1b"
                                 style="@style/i_radiobutton"
-                                android:text="@string/no" />
+                                android:text="@string/kfa1b" />
 
                         </RadioGroup>
 
@@ -187,11 +188,14 @@
                         style="@style/i_textview"
                         android:text="@string/kf1a4" />
 
-                    <EditText
+                    <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/kf1a4"
                         style="@style/EditText_number"
                         android:hint="@string/kf1a4"
-                        android:maxLength="4" />
+                        android:maxLength="4"
+                        app:maxValue="9999"
+                        app:minValue="1"
+                        app:type="range" />
 
                 </LinearLayout>
 

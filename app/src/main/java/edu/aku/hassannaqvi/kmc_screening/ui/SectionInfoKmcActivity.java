@@ -203,6 +203,8 @@ public class SectionInfoKmcActivity extends Activity {
         fc.setUc(ucCode.get(bi.crauc.getSelectedItemPosition()));
         fc.setVillage(villageCodes.get(bi.crvillage.getSelectedItemPosition()));
         fc.setFormType(MainApp.formType);
+        fc.setSurveyType(MainApp.surveyType);
+        fc.setHhno(bi.kapr02a.getText().toString());
 
         JSONObject sInfo = new JSONObject();
         String fType = MainApp.formType;
