@@ -110,7 +110,8 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="8dp"
                 android:onClick="@{(v) -> callback.openForm(3)}"
-                android:text="FORM-2 RECRUITMENT FORM" />
+                android:text="FORM-2 RECRUITMENT FORM"
+                android:visibility="gone" />
 
             <Button
                 android:layout_width="match_parent"
@@ -118,7 +119,8 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="8dp"
                 android:onClick="@{(v) -> callback.openForm(4)}"
-                android:text="FORM-3 FOLLOWUP FORM" />
+                android:text="FORM-3 FOLLOWUP FORM"
+                android:visibility="gone" />
 
             <Button
                 android:id="@+id/syncServer"
