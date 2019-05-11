@@ -18,6 +18,8 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
+import edu.aku.hassannaqvi.kmc_screening.contracts.EligibleContract;
+import edu.aku.hassannaqvi.kmc_screening.contracts.EligibleContract.EligibleEntry;
 import edu.aku.hassannaqvi.kmc_screening.contracts.FormsContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.FormsContract.FormsTable;
 import edu.aku.hassannaqvi.kmc_screening.contracts.PWFollowUpContract;
@@ -48,7 +50,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "kmc_screening.db";
     public static final String DB_NAME = DATABASE_NAME.replace(".", "_copy.");
     public static final String PROJECT_NAME = "KMC-SCREENING";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
     private static final String SQL_CREATE_FORMS = "CREATE TABLE "
             + FormsTable.TABLE_NAME + "("
             + FormsTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -114,6 +116,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             PWFScrennedEntry.COLUMN_PW_CAST + " TEXT," +
             PWFScrennedEntry.COLUMN_HH_NAME + " TEXT);";
 
+    private static final String SQL_CREATE_ELIGIBILES = "CREATE TABLE " +
+            EligibleEntry.TABLE_NAME + "(" +
+            EligibleEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+            EligibleEntry.COLUMN_PUID + " TEXT," +
+            EligibleEntry.COLUMN_VILLAGE + " TEXT," +
+            EligibleEntry.COLUMN_HHNO + " TEXT," +
+            EligibleEntry.COLUMN_FORMDATE + " TEXT," +
+            EligibleEntry.COLUMN_M_NAME + " TEXT," +
+            EligibleEntry.COLUMN_M_SERIAL + " TEXT," +
+            EligibleEntry.COLUMN_PART_ID + " TEXT" +
+            ");";
 
     final String SQL_CREATE_DISTRICT_TABLE = "CREATE TABLE " + singleTaluka.TABLE_NAME + " (" +
             singleTaluka._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -143,6 +156,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String SQL_DELETE_VILLAGE = "DROP TABLE IF EXISTS " + singleVillage.TABLE_NAME;
     private static final String SQL_DELETE_MWRA = "DROP TABLE IF EXISTS " + PWFUPEntry.TABLE_NAME;
     private static final String SQL_DELETE_MWRASCREENED = "DROP TABLE IF EXISTS " + PWFScrennedEntry.TABLE_NAME;
+    private static final String SQL_DELETE_ELIGIBILE = "DROP TABLE IF EXISTS " + EligibleEntry.TABLE_NAME;
 
     private final String TAG = "DatabaseHelper";
 
@@ -162,17 +176,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_PSU_TABLE);
         db.execSQL(SQL_CREATE_MWRAFOLLOWUPS);
         db.execSQL(SQL_CREATE_MWRA_SCREENED);
+        db.execSQL(SQL_CREATE_ELIGIBILES);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
-        db.execSQL(SQL_DELETE_USERS);
+        /*db.execSQL(SQL_DELETE_USERS);
         db.execSQL(SQL_DELETE_FORMS);
         db.execSQL(SQL_DELETE_TALUKA);
         db.execSQL(SQL_DELETE_UCS);
         db.execSQL(SQL_DELETE_VILLAGE);
         db.execSQL(SQL_DELETE_MWRA);
-        db.execSQL(SQL_DELETE_MWRASCREENED);
+        db.execSQL(SQL_DELETE_MWRASCREENED);*/
+
+        switch (i) {
+            case 1:
+                db.execSQL(SQL_CREATE_ELIGIBILES);
+        }
+
     }
 
     public void syncUCs(JSONArray UCslist) {
@@ -441,6 +462,54 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allEB;
     }
 
+    public Collection<EligibleContract> getEligibileParticipant(String villageCode, String hhno) {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                EligibleEntry.COLUMN_PUID,
+                EligibleEntry.COLUMN_VILLAGE,
+                EligibleEntry.COLUMN_HHNO,
+                EligibleEntry.COLUMN_M_NAME,
+                EligibleEntry.COLUMN_FORMDATE,
+                EligibleEntry.COLUMN_M_SERIAL,
+                EligibleEntry.COLUMN_PART_ID
+        };
+
+        String whereClause = EligibleEntry.COLUMN_VILLAGE + " =? AND " + EligibleEntry.COLUMN_HHNO + " =?";
+        String[] whereArgs = {villageCode, hhno};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = EligibleEntry.COLUMN_M_SERIAL + " ASC";
+
+        Collection<EligibleContract> allEB = new ArrayList<>();
+
+        try {
+            c = db.query(
+                    EligibleEntry.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                EligibleContract eligibile = new EligibleContract();
+                allEB.add(eligibile.hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allEB;
+    }
+
     public void syncUser(JSONArray userlist) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(UsersTable.TABLE_NAME, null, null);
@@ -564,6 +633,39 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         } catch (Exception e) {
             Log.d(TAG, "syncPWScreened: " + e.getMessage());
+        }
+    }
+
+    public void syncEligibiles(JSONArray eliList) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(EligibleEntry.TABLE_NAME, null, null);
+
+        try {
+            JSONArray jsonArray = eliList;
+
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObjectPSU = jsonArray.getJSONObject(i);
+
+                EligibleContract epw = new EligibleContract();
+                epw.sync(jsonObjectPSU);
+                Log.i(TAG, "Eligibiles: " + jsonObjectPSU.toString());
+
+                ContentValues values = new ContentValues();
+
+                values.put(EligibleEntry.COLUMN_PUID, epw.getPuid());
+                values.put(EligibleEntry.COLUMN_VILLAGE, epw.getVillage());
+                values.put(EligibleEntry.COLUMN_HHNO, epw.getHhno());
+                values.put(EligibleEntry.COLUMN_FORMDATE, epw.getFormdate());
+                values.put(EligibleEntry.COLUMN_M_NAME, epw.getM_name());
+                values.put(EligibleEntry.COLUMN_M_SERIAL, epw.getM_serial());
+                values.put(EligibleEntry.COLUMN_PART_ID, epw.getPart_id());
+
+                db.insert(EligibleEntry.TABLE_NAME, null, values);
+            }
+            db.close();
+
+        } catch (Exception e) {
+            Log.d(TAG, "syncEligibiles: " + e.getMessage());
         }
     }
 

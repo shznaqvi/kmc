@@ -589,6 +589,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                     new GetAllData(mContext, "PWs").execute();
                     Toast.makeText(LoginActivity.this, "Sync PWScreened", Toast.LENGTH_LONG).show();
                     new GetAllData(mContext, "PWScreened").execute();
+                    Toast.makeText(LoginActivity.this, "Sync Eligibiles", Toast.LENGTH_LONG).show();
+                    new GetAllData(mContext, "Eligibiles").execute();
                 }
             });
 

@@ -199,6 +199,47 @@
 
                 </LinearLayout>
 
+                <!--F-2-3-->
+                <LinearLayout
+                    android:id="@+id/form0203"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    tools:visibility="visible">
+
+                    <TextView
+                        style="@style/i_textview"
+                        android:text="@string/kf2a6" />
+
+                    <Spinner
+                        android:id="@+id/kf2a6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="20dp" />
+
+                    <TextView
+                        style="@style/i_textview"
+                        android:text="@string/kf2a7" />
+
+                    <EditText
+                        android:id="@+id/kf2a7"
+                        style="@style/textInput"
+                        android:enabled="false"
+                        android:hint="@string/kf2a7" />
+
+                    <TextView
+                        style="@style/i_textview"
+                        android:text="@string/kf2a8" />
+
+                    <EditText
+                        android:id="@+id/kf2a8"
+                        style="@style/textInput"
+                        android:enabled="false"
+                        android:hint="@string/kf2a8" />
+
+                </LinearLayout>
+
                 <!--F-2-->
                 <LinearLayout
                     android:id="@+id/form02"
@@ -244,13 +285,8 @@
 
                     <EditText
                         android:id="@+id/kf2a3"
-                        style="@style/textInput"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:digits="0123456789"
+                        style="@style/EditText_number"
                         android:hint="@string/kf2a3"
-                        android:inputType="number"
                         android:maxLength="11" />
 
 
@@ -258,17 +294,14 @@
                         style="@style/i_textview"
                         android:text="@string/kf2a4" />
 
-                    <EditText
+                    <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/kf2a4"
-                        style="@style/textInput"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:digits="0123456789"
+                        style="@style/EditText_number"
                         android:hint="@string/kf2a4"
-                        android:inputType="number"
-                        android:maxLength="2" />
-
+                        android:maxLength="2"
+                        app:maxValue="50"
+                        app:minValue="2"
+                        app:type="range" />
 
                     <TextView
                         style="@style/i_textview"
@@ -276,70 +309,9 @@
 
                     <EditText
                         android:id="@+id/kf2a5"
-                        style="@style/textInput"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:digits="0123456789"
+                        style="@style/EditText_number"
                         android:hint="@string/kf2a5"
-                        android:inputType="number"
                         android:maxLength="2" />
-
-                </LinearLayout>
-
-                <!--F-2-3-->
-                <LinearLayout
-                    android:id="@+id/form0203"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:visibility="gone"
-                    tools:visibility="visible">
-
-                    <TextView
-                        style="@style/i_textview"
-                        android:text="@string/kf2a6" />
-
-                    <EditText
-                        android:id="@+id/kf2a6"
-                        style="@style/textInput"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                        android:hint="@string/kf2a6"
-                        android:inputType="text" />
-
-                    <TextView
-                        style="@style/i_textview"
-                        android:text="@string/kf2a7" />
-
-                    <EditText
-                        android:id="@+id/kf2a7"
-                        style="@style/textInput"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:digits="0123456789"
-                        android:hint="@string/kf2a7"
-                        android:inputType="number"
-                        android:maxLength="2" />
-
-                    <TextView
-                        style="@style/i_textview"
-                        android:text="@string/kf2a8" />
-
-
-                    <EditText
-                        android:id="@+id/kf2a8"
-                        style="@style/textInput"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                        android:hint="@string/kf2a8"
-                        android:inputType="text" />
-
 
                 </LinearLayout>
 
@@ -383,6 +355,7 @@
 
                 </LinearLayout>
 
+                <!--Buttons-->
                 <LinearLayout
                     android:id="@+id/fldGrpbtn"
                     android:layout_width="match_parent"

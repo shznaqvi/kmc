@@ -21,30 +21,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".ui.form3.SectionFForm3Activity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme1" />
-        <activity
-            android:name=".ui.form3.SectionEForm3Activity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme1" />
-        <activity
-            android:name=".ui.form3.SectionDForm3Activity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme1" />
-        <activity
-            android:name=".ui.form3.SectionCForm3Activity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme1" />
-        <activity
-            android:name=".ui.form3.SectionBForm3Activity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme1" />
-        <activity
-            android:name=".ui.form3.SectionAForm3Activity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme1" />
-        <activity
             android:name=".ui.other.SplashscreenActivity"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -85,6 +61,34 @@
             android:theme="@style/AppTheme1" />
         <activity
             android:name=".ui.form1.SectionAForm1Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".ui.form2.SectionBForm2Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".ui.form2.SectionCForm2Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".ui.form3.SectionBForm3Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".ui.form3.SectionCForm3Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".ui.form3.SectionDForm3Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".ui.form3.SectionEForm3Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".ui.form3.SectionFForm3Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1" />
     </application>

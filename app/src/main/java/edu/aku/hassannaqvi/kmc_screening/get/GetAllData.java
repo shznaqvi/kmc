@@ -15,6 +15,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import edu.aku.hassannaqvi.kmc_screening.contracts.EligibleContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.PWFollowUpContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.PWScreenedContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.TalukasContract;
@@ -71,6 +72,9 @@ public class GetAllData extends AsyncTask<String, String, String> {
                         break;
                     case "PWScreened":
                         url = new URL(hostItem + PWScreenedContract.PWFScrennedEntry._URI);
+                        break;
+                    case "Eligibiles":
+                        url = new URL(hostItem + EligibleContract.EligibleEntry._URI);
                         break;
                     case "Talukas":
                         url = new URL(hostItem + TalukasContract.singleTaluka._URI);
@@ -133,6 +137,9 @@ public class GetAllData extends AsyncTask<String, String, String> {
                             break;
                         case "PWScreened":
                             db.syncPWSScreened(jsonArray);
+                            break;
+                        case "Eligibiles":
+                            db.syncEligibiles(jsonArray);
                             break;
                         case "Users":
                             db.syncUser(jsonArray);
