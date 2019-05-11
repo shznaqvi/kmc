@@ -223,6 +223,7 @@ public class SectionInfoKmcActivity extends Activity {
         JSONObject sInfo = new JSONObject();
         String fType = MainApp.formType;
 
+        //
         sInfo.put(fType + "a1", bi.kfa1a.isChecked() ? "1" : bi.kfa1b.isChecked() ? "2" : "0");
         if (fType.equals("kf1")) {
             sInfo.put("kf1a2", bi.kf1a2.getSelectedItem());
