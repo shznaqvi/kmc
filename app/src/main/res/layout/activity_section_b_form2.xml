@@ -296,25 +296,25 @@
                                 style="@style/i_radiobutton"
                                 android:text="@string/kf2b10b" />
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/kf2b10d"
-                                style="@style/EditText_number"
-                                android:hint="@string/kf2b10"
-                                android:maxLength="2"
-                                app:maxValue="39"
-                                app:minValue="1"
-                                app:type="range" />
-
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/kf2b10m"
-                                style="@style/EditText_number"
-                                android:hint="@string/kf2b10"
-                                android:maxLength="2"
-                                app:maxValue="11"
-                                app:minValue="0"
-                                app:type="range" />
-
                         </RadioGroup>
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/kf2b10d"
+                            style="@style/EditText_number"
+                            android:hint="@string/weeks"
+                            android:maxLength="2"
+                            app:maxValue="39"
+                            app:minValue="1"
+                            app:type="range" />
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/kf2b10m"
+                            style="@style/EditText_number"
+                            android:hint="@string/years"
+                            android:maxLength="2"
+                            app:maxValue="11"
+                            app:minValue="0"
+                            app:type="range" />
 
                     </LinearLayout>
 

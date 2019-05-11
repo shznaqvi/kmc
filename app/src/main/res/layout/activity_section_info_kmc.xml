@@ -163,8 +163,9 @@
                                 style="@style/i_textview"
                                 android:text="@string/kf1a2" />
 
-                            <Spinner
+                            <TextView
                                 android:id="@+id/kf1a2"
+                                android:enabled="false"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:padding="20dp" />
@@ -176,22 +177,10 @@
                         style="@style/i_textview"
                         android:text="@string/kf1a3" />
 
-                    <EditText
-                        android:id="@+id/kf1a3"
-                        style="@style/textInput"
-                        android:layout_weight="1"
-                        android:enabled="false"
-                        android:hint="@string/kf1a3"
-                        android:inputType="text" />
-
-                    <TextView
-                        style="@style/i_textview"
-                        android:text="@string/kf1a4" />
-
                     <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/kf1a4"
+                        android:id="@+id/kf1a3"
                         style="@style/EditText_number"
-                        android:hint="@string/kf1a4"
+                        android:hint="@string/kf1a3"
                         android:maxLength="4"
                         app:maxValue="9999"
                         app:minValue="1"

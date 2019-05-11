@@ -440,6 +440,16 @@ public class MainActivity extends Activity {
                     new DatabaseHelper(this).getUnsyncedForms("kf1")
             ).execute();
 
+            Toast.makeText(getApplicationContext(), "Syncing Forms - PW Recruitment", Toast.LENGTH_SHORT).show();
+            new SyncAllData(
+                    this,
+                    "Forms - PW Recruitment",
+                    "updateSyncedForms",
+                    FormsContract.class,
+                    FormsContract.FormsTable._URL.replace(".php", "_f2.php"),
+                    new DatabaseHelper(this).getUnsyncedForms("kf2")
+            ).execute();
+
             SharedPreferences syncPref = getSharedPreferences("SyncInfo", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = syncPref.edit();
 

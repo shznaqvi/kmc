@@ -12,7 +12,6 @@ import java.util.Date;
 import edu.aku.hassannaqvi.kmc_screening.R;
 import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc_screening.databinding.ActivityEndingBinding;
-import edu.aku.hassannaqvi.kmc_screening.ui.form0.SectionAForm0Activity;
 import edu.aku.hassannaqvi.kmc_screening.validation.ValidatorClass;
 
 import static edu.aku.hassannaqvi.kmc_screening.core.MainApp.fc;
@@ -61,17 +60,8 @@ public class EndingActivity extends AppCompatActivity {
         if (formValidation()) {
             SaveDraft();
             if (UpdateDB()) {
-
                 finish();
-
-                Intent intent;
-                if (SectionAForm0Activity.mapWRA != null)
-                    intent = new Intent(this, SectionAForm0Activity.mapWRA.size() == SectionAForm0Activity.counter ? MainActivity.class : SectionAForm0Activity.class)
-                            .putExtra("flagCome", false);
-                else
-                    intent = new Intent(this, MainActivity.class);
-
-                startActivity(intent);
+                startActivity(new Intent(this, MainActivity.class));
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }

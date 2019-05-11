@@ -870,8 +870,8 @@
     <string name="kf3f06"> ڇا تربيت / سکيا توهان لاءِ مدد گار ثابت ٿئي. </string>
 
     <!--Form 0-->
-    <string name="kapr01"> گھر جو نمبر </string>
-    <string name="kapr02"> حاملا عورت جو سڃاڻپ نمبر </string>
+    <!--<string name="kapr01"> گھر جو نمبر </string>-->
+    <string name="kapr01"> حاملا عورت جو سڃاڻپ نمبر </string>
     <string name="kapr03"> حاملا عورت جو نالو </string>
     <string name="kapr04"> حاملا عورت جي عمر </string>
     <string name="kapr05"> موجوده حمل جي متوقع ويم جي تاريخ </string>
@@ -904,8 +904,7 @@
     <string name="kfa1b"> گهر </string>
 
     <string name="kf1a2"> ماءُ جو نالو </string>
-    <string name="kf1a3"> ماءُ جو سڃاڻپ نمبر </string>
-    <string name="kf1a4"> جانچ نمبر </string>
+    <string name="kf1a3"> جانچ نمبر </string>
 
     <string name="kf2a1"> مڪمل رهائشي پتو. </string>
     <string name="kf2a2"> گهر جي سربراه جو نالو </string>

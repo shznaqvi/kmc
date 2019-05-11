@@ -50,10 +50,10 @@ import static edu.aku.hassannaqvi.kmc_screening.core.MainApp.fc;
 
 public class SectionInfoKmcActivity extends Activity {
 
-    private List<String> ucName, talukaNames, villageNames, wName, partNam;
-    private List<String> ucCode, talukaCodes, villageCodes, wSno;
+    private List<String> ucName, talukaNames, villageNames, partNam;
+    private List<String> ucCode, talukaCodes, villageCodes;
     private DatabaseHelper db;
-    private Map<String, PWScreenedContract> mapWRA;
+    private PWScreenedContract mapWRA;
     private Map<String, EligibleContract> mapPartElig;
     private static final String TAG = SectionInfoKmcActivity.class.getName();
     ActivitySectionInfoKmcBinding bi;
@@ -87,24 +87,12 @@ public class SectionInfoKmcActivity extends Activity {
 
             }
         });
-        bi.kf1a2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                if (i == 0) return;
-                bi.kf1a3.setText(mapWRA.get(bi.kf1a2.getSelectedItem()).getPw_serial());
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
         bi.kf2a6.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 if (i == 0) return;
                 bi.kf2a7.setText(mapPartElig.get(bi.kf2a6.getSelectedItem()).getM_name());
-                bi.kf2a8.setText(mapPartElig.get(bi.kf2a6.getSelectedItem()).getM_serial());
+                bi.kf2a8.setText(mapPartElig.get(bi.kf2a6.getSelectedItem()).getM_id());
             }
 
             @Override
@@ -218,37 +206,36 @@ public class SectionInfoKmcActivity extends Activity {
         fc.setVillage(villageCodes.get(bi.crvillage.getSelectedItemPosition()));
         fc.setFormType(MainApp.formType);
         fc.setSurveyType(MainApp.surveyType);
-        fc.setHhno(bi.kapr02a.getText().toString());
+        fc.setPwid(bi.kapr02a.getText().toString());
 
         JSONObject sInfo = new JSONObject();
         String fType = MainApp.formType;
 
-        sInfo.put(fType + "a1", bi.kfa1a.isChecked() ? "1" : bi.kfa1b.isChecked() ? "2" : "0");
+        sInfo.put(fType + "a01", bi.kfa1a.isChecked() ? "1" : bi.kfa1b.isChecked() ? "2" : "0");
         if (fType.equals("kf1")) {
-            sInfo.put("kf1a2", bi.kf1a2.getSelectedItem());
-            sInfo.put("kf1a3", bi.kf1a3.getText().toString());
-            sInfo.put("kf1a4", bi.kf1a4.getText().toString());
+            sInfo.put("kf1a02", bi.kf1a2.getText().toString());
+            sInfo.put("kf1a03", bi.kf1a3.getText().toString());
 
-            sInfo.put("pw_puid", mapWRA.get(bi.kf1a2.getSelectedItem()).getPuid());
-            sInfo.put("pw_formdate", mapWRA.get(bi.kf1a2.getSelectedItem()).getFormdate());
-            sInfo.put("pw_h_name", mapWRA.get(bi.kf1a2.getSelectedItem()).getH_name());
-            sInfo.put("pw_cast", mapWRA.get(bi.kf1a2.getSelectedItem()).getCast());
-            sInfo.put("pw_hh_name", mapWRA.get(bi.kf1a2.getSelectedItem()).getHh_name());
+            sInfo.put("pw_puid", mapWRA.getPuid());
+            sInfo.put("pw_formdate", mapWRA.getFormdate());
+            sInfo.put("pw_h_name", mapWRA.getH_name());
+            sInfo.put("pw_cast", mapWRA.getCast());
+            sInfo.put("pw_hh_name", mapWRA.getHh_name());
 
         } else if (fType.equals("kf2")) {
-            sInfo.put("kf2a5", bi.kf2a1.getText().toString());
-            sInfo.put("kf2a6", bi.kf2a2.getText().toString());
-            sInfo.put("kf2a7", bi.kf2a3.getText().toString());
-            sInfo.put("kf2a8", bi.kf2a4.getText().toString());
+            sInfo.put("kf2a05", bi.kf2a1.getText().toString());
+            sInfo.put("kf2a06", bi.kf2a2.getText().toString());
+            sInfo.put("kf2a07", bi.kf2a3.getText().toString());
+            sInfo.put("kf2a08", bi.kf2a4.getText().toString());
         } else if (fType.equals("kf3")) {
-            sInfo.put("kf3a5", bi.kf3a3.getText().toString());
-            sInfo.put("kf3a6", bi.kf3a4.getText().toString());
+            sInfo.put("kf3a05", bi.kf3a3.getText().toString());
+            sInfo.put("kf3a06", bi.kf3a4.getText().toString());
         }
 
         if (fType.equals("kf2") || fType.equals("kf3")) {
-            sInfo.put(fType + "a2", bi.kf2a6.getSelectedItem().toString());
-            sInfo.put(fType + "a3", bi.kf2a7.getText().toString());
-            sInfo.put(fType + "a4", bi.kf2a8.getText().toString());
+            sInfo.put(fType + "a02", bi.kf2a6.getSelectedItem().toString());
+            sInfo.put(fType + "a03", bi.kf2a7.getText().toString());
+            sInfo.put(fType + "a04", bi.kf2a8.getText().toString());
 
             sInfo.put("part_puid", mapPartElig.get(bi.kf2a6.getSelectedItem()).getPuid());
             sInfo.put("part_formdate", mapPartElig.get(bi.kf2a6.getSelectedItem()).getFormdate());
@@ -331,7 +318,7 @@ public class SectionInfoKmcActivity extends Activity {
         }
 
 
-        return ValidatorClass.EmptyTextBox(this, bi.kapr02a, getString(R.string.kapr02));
+        return ValidatorClass.EmptyTextBox(this, bi.kapr02a, getString(R.string.kapr01));
     }
 
     public void BtnSearchWoman() {
@@ -339,24 +326,16 @@ public class SectionInfoKmcActivity extends Activity {
         if (!ValidateSpinners()) return;
 
         if (MainApp.formType.equals("kf1")) {
-            mapWRA = new HashMap<>();
-            wName = new ArrayList<>();
-            wName.add("....");
 
-            Collection<PWScreenedContract> dc = db.getPWScreened(villageCodes.get(bi.crvillage.getSelectedItemPosition()), bi.kapr02a.getText().toString());
-            Log.d(TAG, "onCreate: " + dc.size());
-            for (PWScreenedContract d : dc) {
-                wName.add(d.getPw_name());
-                mapWRA.put(d.getPw_name(), d);
-            }
+            mapWRA = db.getPWScreened(villageCodes.get(bi.crvillage.getSelectedItemPosition()), bi.kapr02a.getText().toString());
 
-            if (mapWRA.size() == 0) {
+            if (mapWRA == null) {
                 setupFields(View.GONE);
                 Toast.makeText(this, "Household does not exist ", Toast.LENGTH_LONG).show();
                 return;
             }
 
-            bi.kf1a2.setAdapter(new ArrayAdapter<>(SectionInfoKmcActivity.this, android.R.layout.simple_spinner_dropdown_item, wName));
+            bi.kf1a2.setText(mapWRA.getPw_name());
 
         } else {
             mapPartElig = new HashMap<>();

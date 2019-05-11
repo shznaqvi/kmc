@@ -1,5 +1,6 @@
 package edu.aku.hassannaqvi.kmc_screening.other;
 
+import java.nio.charset.StandardCharsets;
 import java.security.NoSuchAlgorithmException;
 
 import javax.crypto.Cipher;
@@ -24,7 +25,8 @@ public class MCrypt {
         keyspec = new SecretKeySpec(SecretKey.getBytes(), "AES");
 
         try {
-            cipher = Cipher.getInstance("AES/CBC/NoPadding");
+//            cipher = Cipher.getInstance("AES/CBC/NoPadding");
+            cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
         } catch (NoSuchAlgorithmException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -80,7 +82,8 @@ public class MCrypt {
         try {
             cipher.init(Cipher.ENCRYPT_MODE, keyspec, ivspec);
 
-            encrypted = cipher.doFinal(padString(text).getBytes());
+//            encrypted = cipher.doFinal(padString(text).getBytes());
+            encrypted = cipher.doFinal(text.getBytes(StandardCharsets.UTF_8));
         } catch (Exception e) {
             throw new Exception("[encrypt] " + e.getMessage());
         }
