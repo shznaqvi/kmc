@@ -118,14 +118,14 @@ public class SyncAllData extends AsyncTask<Void, Void, String> {
                                     }
                                 }
 
-                                String encrypted = MCrypt.bytesToHex(
+                                /*String encrypted = MCrypt.bytesToHex(
                                         mCrypt.encrypt(
                                                 jsonSync.toString())
                                 );
 
                                 Log.d(TAG, new String(mCrypt.decrypt(encrypted), StandardCharsets.UTF_8));
                                 wr.writeBytes(encrypted);
-                                wr.flush();
+                                wr.flush();*/
 
                                 break;
                             }
@@ -140,8 +140,8 @@ public class SyncAllData extends AsyncTask<Void, Void, String> {
                             e.printStackTrace();
                         }
 
-                        /*wr.writeBytes(jsonSync.toString().replace("\uFEFF", "") + "\n");
-                        wr.flush();*/
+                        wr.writeBytes(jsonSync.toString().replace("\uFEFF", "") + "\n");
+                        wr.flush();
 
 
                         BufferedReader br = new BufferedReader(new InputStreamReader(
