@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name"> Kangaroo Mother Care </string>
+    <string name="app_name"> Kangaroo Mother Care 2 </string>
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
