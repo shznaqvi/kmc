@@ -185,6 +185,19 @@ public class SectionInfoKmcActivity extends Activity {
             }
         });
 
+        bi.crvillage.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if (i == 0) return;
+                bi.villageLabel.setText("Village Code: " + villageCodes.get(bi.crvillage.getSelectedItemPosition()));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
     }
 
     private boolean formValidation() {

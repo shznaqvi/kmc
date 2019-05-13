@@ -212,6 +212,19 @@ public class SectionAForm0Activity extends AppCompatActivity {
             }
         });
 
+        bi.crvillage.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if (i == 0) return;
+                bi.villageLabel.setText("Village Code: " + villageCodes.get(bi.crvillage.getSelectedItemPosition()));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
     }
 
     private boolean formValidation() {
@@ -219,7 +232,7 @@ public class SectionAForm0Activity extends AppCompatActivity {
             return false;
 
         if (MainApp.surveyType.equals("kf0a")) {
-            if (checkingWomenExist()) {
+            if (!checkingWomenExist()) {
                 Toast.makeText(this, "PWID already exist!!", Toast.LENGTH_SHORT).show();
                 return false;
             }
