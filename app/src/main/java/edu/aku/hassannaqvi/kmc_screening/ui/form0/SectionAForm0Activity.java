@@ -233,7 +233,7 @@ public class SectionAForm0Activity extends AppCompatActivity {
 
         if (MainApp.surveyType.equals("kf0a")) {
             if (!checkingWomenExist()) {
-                Toast.makeText(this, "PWID already exist!!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Pregnant woman Id is already allotted!!", Toast.LENGTH_SHORT).show();
                 return false;
             }
         }
