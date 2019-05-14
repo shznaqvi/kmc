@@ -26,7 +26,8 @@ public class MCrypt {
 
         try {
 //            cipher = Cipher.getInstance("AES/CBC/NoPadding");
-            cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
+//            cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
+            cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");
         } catch (NoSuchAlgorithmException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
