@@ -65,9 +65,14 @@ public class SectionInfoKmcActivity extends Activity {
         bi.setCallback(this);
         db = new DatabaseHelper(getApplicationContext());
 
+        settingComponent();
         settingListeners();
         populateSpinner(this);
 
+    }
+
+    private void settingComponent() {
+        this.setTitle(MainApp.formType.equals("kf1") ? getString(R.string.f1_hA) : getString(R.string.f2_3_hA));
     }
 
     private void settingListeners() {
@@ -97,6 +102,26 @@ public class SectionInfoKmcActivity extends Activity {
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        bi.kf2a4.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if (bi.kf2a4.getText().toString().isEmpty()) return;
+                if (Integer.valueOf(bi.kf2a4.getText().toString()) < 2) return;
+
+                bi.kf2a5.setMax(Float.valueOf(bi.kf2a4.getText().toString()) - 1);
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
 
             }
         });
@@ -287,7 +312,7 @@ public class SectionInfoKmcActivity extends Activity {
                 finish();
                 startActivity(new Intent(this, MainApp.formType.equals("kf1") ? SectionAForm1Activity.class
                         : MainApp.formType.equals("kf2") ? SectionBForm2Activity.class
-                        : MainApp.formType.equals("kf3") ? SectionBForm2Activity.class : null));
+                        : MainApp.formType.equals("kf3") ? SectionBForm2Activity.class : null).putExtra("pwid", bi.kapr02a.getText().toString()));
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }

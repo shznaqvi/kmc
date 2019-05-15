@@ -920,4 +920,10 @@
     <string name="kf3a4"> نئي ڄاول ٻارجواسٽيڊي نمبر </string>
 
 
+    <!--Headings-->
+    <string name="f1_hA">Administrative information</string>
+    <string name="f2_3_hA">Identification and Enrollment Information</string>
+    <string name="f2_hB">Mother’s Reproductive History</string>
+    <string name="f2_hC">BIRTH DETAILS OF BABY (CARE OF SMALL BABY)</string>
+
 </resources>

@@ -80,7 +80,7 @@ public class SectionAForm1Activity extends AppCompatActivity {
 
         JSONObject sa1 = new JSONObject();
 
-        sa1.put("kf1b01a", bi.kf1b01a.getText().toString());
+        sa1.put("kf1b01", bi.kf1b01.getText().toString());
         sa1.put("kf1b02", bi.kf1b02a.isChecked() ? "1" : bi.kf1b02b.isChecked() ? "2" : "0");
         sa1.put("kf1b03", bi.kf1b03a.isChecked() ? "1" : bi.kf1b03b.isChecked() ? "2" : "0");
         sa1.put("kf1b0401", bi.kf1b0401a.isChecked() ? "1" : bi.kf1b0401b.isChecked() ? "2" : "0");
@@ -110,7 +110,7 @@ public class SectionAForm1Activity extends AppCompatActivity {
         sa1.put("kf1b09", bi.kf1b09a.isChecked() ? "1" : bi.kf1b09b.isChecked() ? "2" : bi.kf1b0996.isChecked() ? "96" : "0");
         sa1.put("kf1b0996x", bi.kf1b0996x.getText().toString());
         sa1.put("kf1b10", bi.kf1b10a.isChecked() ? "1" : bi.kf1b10b.isChecked() ? "2" : "0");
-        sa1.put("kf1b11a", bi.kf1b11a.getText().toString());
+        sa1.put("kf1b11", bi.kf1b11.getText().toString());
 
         fc.setsA(String.valueOf(sa1));
     }
@@ -125,7 +125,7 @@ public class SectionAForm1Activity extends AppCompatActivity {
 
     private void setListeners() {
 
-        bi.kf1b010.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        bi.kf1b10.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
@@ -141,7 +141,7 @@ public class SectionAForm1Activity extends AppCompatActivity {
                 if (i == bi.kf1b08a.getId())
                     bi.kf1b09.clearCheck();
                 else
-                    bi.kf1b010.clearCheck();
+                    bi.kf1b10.clearCheck();
             }
         });
 
@@ -154,12 +154,20 @@ public class SectionAForm1Activity extends AppCompatActivity {
         });
 
 
+        bi.kf1b10.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i == bi.kf1b10a.getId())
+                    bi.kf1b11.setText(getIntent().getStringExtra("pwid"));
+            }
+        });
+
     }
 
     public void weightChanged(CharSequence s, int start, int before, int count) {
-        if (bi.kf1b01a.getText().toString().isEmpty()) return;
+        if (bi.kf1b01.getText().toString().isEmpty()) return;
 
-        if (Integer.valueOf(bi.kf1b01a.getText().toString()) > 1200 && Integer.valueOf(bi.kf1b01a.getText().toString()) <= 2500)
+        if (Integer.valueOf(bi.kf1b01.getText().toString()) > 1200 && Integer.valueOf(bi.kf1b01.getText().toString()) <= 2500)
             bi.kf1b02a.setChecked(true);
         else
             bi.kf1b02b.setChecked(true);

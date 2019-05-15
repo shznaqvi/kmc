@@ -16,6 +16,7 @@ import edu.aku.hassannaqvi.kmc_screening.R;
 import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc_screening.core.MainApp;
 import edu.aku.hassannaqvi.kmc_screening.databinding.ActivitySectionBForm2Binding;
+import edu.aku.hassannaqvi.kmc_screening.other.DateUtils;
 import edu.aku.hassannaqvi.kmc_screening.validation.ClearClass;
 import edu.aku.hassannaqvi.kmc_screening.validation.ValidatorClass;
 
@@ -37,7 +38,8 @@ public class SectionBForm2Activity extends AppCompatActivity {
     }
 
     private void setContentUI() {
-        this.setTitle(R.string.f1_secb);
+        this.setTitle(R.string.f2_hB);
+        bi.kf2b03.setMinDate(DateUtils.getUpdatedDate("dd-MM-yy HH:mm", -7));
     }
 
     public void BtnContinue() {
@@ -148,6 +150,19 @@ public class SectionBForm2Activity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (i == bi.kf2b15b.getId())
                     ClearClass.ClearAllFields(bi.fldGrpCVkf2b16, null);
+            }
+        });
+
+        bi.kf2b10.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i == bi.kf2b10a.getId()) {
+                    bi.kf2b10d.setMax(1);
+                    bi.kf2b10m.setMax(1);
+                } else {
+                    bi.kf2b10d.setMax(0);
+                    bi.kf2b10m.setMax(0);
+                }
             }
         });
     }

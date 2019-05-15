@@ -195,8 +195,8 @@
                         android:id="@+id/kf1a3"
                         style="@style/EditText_number"
                         android:hint="@string/kf1a3"
-                        android:maxLength="4"
-                        app:maxValue="9999"
+                        android:maxLength="1"
+                        app:maxValue="3"
                         app:minValue="1"
                         app:type="range" />
 
@@ -310,11 +310,14 @@
                         style="@style/i_textview"
                         android:text="@string/kf2a5" />
 
-                    <EditText
+                    <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/kf2a5"
                         style="@style/EditText_number"
                         android:hint="@string/kf2a5"
-                        android:maxLength="2" />
+                        android:maxLength="2"
+                        app:maxValue="20"
+                        app:minValue="0"
+                        app:type="range" />
 
                 </LinearLayout>
 

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.CompoundButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -36,7 +37,7 @@ public class SectionCForm2Activity extends AppCompatActivity {
 
 
     private void setContentUI() {
-        this.setTitle(R.string.f1_secb);
+        this.setTitle(R.string.f2_hC);
     }
 
     public void BtnContinue() {
@@ -76,7 +77,7 @@ public class SectionCForm2Activity extends AppCompatActivity {
         sa1.put("kf2c04", bi.kf2c04a.isChecked() ? "1" : bi.kf2c04b.isChecked() ? "2" : "0");
         sa1.put("kf2c05", bi.kf2c05a.isChecked() ? "1" : bi.kf2c05b.isChecked() ? "2" : bi.kf2c05c.isChecked() ? "3" : bi.kf2c05d.isChecked() ? "4" : bi.kf2c0596.isChecked() ? "96" : "0");
         sa1.put("kf2c0596x", bi.kf2c0596x.getText().toString());
-        sa1.put("kf2c06", bi.kf2c06a.isChecked() ? "1" : bi.kf2c06b.isChecked() ? "2" : bi.kf2c06c.isChecked() ? "3" : "0");
+        sa1.put("kf2c06", bi.kf2c06a.isChecked() ? "1" : bi.kf2c06b.isChecked() ? "2" : bi.kf2c06c.isChecked() ? "3" : bi.kf2c0698.isChecked() ? "98" : "0");
         sa1.put("kf2c07", bi.kf2c07a.isChecked() ? "1" : bi.kf2c07b.isChecked() ? "2" : "0");
         sa1.put("kf2c08", bi.kf2c08a.isChecked() ? "1" : bi.kf2c08b.isChecked() ? "2" : bi.kf2c0898.isChecked() ? "98" : "0");
         sa1.put("kf2c09", bi.kf2c09a.isChecked() ? "1" : bi.kf2c09b.isChecked() ? "2" : bi.kf2c09c.isChecked() ? "3" : bi.kf2c09d.isChecked() ? "4" : bi.kf2c0996.isChecked() ? "96" : "0");
@@ -131,6 +132,16 @@ public class SectionCForm2Activity extends AppCompatActivity {
                 if (i != bi.kf2c1098.getId()) {
                     ClearClass.ClearAllFields(bi.fldGrpCVkf2c11, null);
                 }
+            }
+        });
+
+        bi.kf2c1198.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b)
+                    ClearClass.ClearAllFields(bi.fldGrpLLkf2c11, false);
+                else
+                    ClearClass.ClearAllFields(bi.fldGrpLLkf2c11, true);
             }
         });
 
