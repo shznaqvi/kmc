@@ -230,6 +230,13 @@ public abstract class ValidatorClass {
             if (v instanceof CheckBox) {
                 CheckBox cb = (CheckBox) v;
                 cb.setError(null);
+
+                if (!cb.isEnabled()) {
+                    flag = true;
+                    continue;
+                } else
+                    flag = false;
+
                 if (cb.isChecked()) {
                     flag = true;
 
@@ -248,15 +255,14 @@ public abstract class ValidatorClass {
                 }
             }
         }
-        if (flag) {
-            return true;
-        } else {
+        if (!flag) {
             FancyToast.makeText(context, "ERROR(empty): " + msg, FancyToast.LENGTH_LONG, FancyToast.ERROR, false).show();
             cbx.setError("This data is Required!");    // Set Error on last radio button
 
             Log.i(context.getClass().getName(), context.getResources().getResourceEntryName(cbx.getId()) + ": This data is Required!");
             return false;
         }
+        return true;
     }
 
     public static boolean EmptyCheckBox(Context context, LinearLayout container, CheckBox cbx, EditText txt, String msg) {

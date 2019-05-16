@@ -56,9 +56,8 @@
 
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/kf2b02"
-                            style="@style/textInput"
+                            style="@style/EditText_number"
                             android:hint="@string/kf2b02"
-                            android:inputType="number"
                             android:maxLength="2"
                             app:maxValue="16"
                             app:minValue="0"
@@ -337,7 +336,7 @@
 
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/kf2b11"
-                            style="@style/EditText_number_de"
+                            style="@style/EditText_number"
                             android:hint="@string/kf2b11a"
                             android:maxLength="4"
                             app:maxValue="2500"

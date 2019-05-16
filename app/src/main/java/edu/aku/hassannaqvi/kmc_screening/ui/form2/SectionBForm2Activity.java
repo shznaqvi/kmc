@@ -39,7 +39,7 @@ public class SectionBForm2Activity extends AppCompatActivity {
 
     private void setContentUI() {
         this.setTitle(R.string.f2_hB);
-        bi.kf2b03.setMinDate(DateUtils.getUpdatedDate("dd-MM-yy HH:mm", -7));
+        bi.kf2b03.setMinDate(DateUtils.getUpdatedDate("dd/MM/yyyy", -7));
     }
 
     public void BtnContinue() {
@@ -157,11 +157,11 @@ public class SectionBForm2Activity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (i == bi.kf2b10a.getId()) {
-                    bi.kf2b10d.setMax(1);
-                    bi.kf2b10m.setMax(1);
+                    bi.kf2b10d.setMin(1);
+                    bi.kf2b10m.setMin(1);
                 } else {
-                    bi.kf2b10d.setMax(0);
-                    bi.kf2b10m.setMax(0);
+                    bi.kf2b10d.setMin(0);
+                    bi.kf2b10m.setMin(0);
                 }
             }
         });
