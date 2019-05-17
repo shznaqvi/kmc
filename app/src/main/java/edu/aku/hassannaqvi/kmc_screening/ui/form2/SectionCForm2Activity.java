@@ -116,7 +116,6 @@ public class SectionCForm2Activity extends AppCompatActivity {
 
     private void setListeners() {
 
-
         bi.kf2c04.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
