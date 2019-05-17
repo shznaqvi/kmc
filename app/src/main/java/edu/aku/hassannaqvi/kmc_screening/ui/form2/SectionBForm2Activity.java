@@ -153,18 +153,56 @@ public class SectionBForm2Activity extends AppCompatActivity {
             }
         });
 
-        bi.kf2b10.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        /*bi.kf2b10d.addTextChangedListener(new TextWatcher() {
             @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (i == bi.kf2b10a.getId()) {
-                    bi.kf2b10d.setMin(1);
-                    bi.kf2b10m.setMin(1);
-                } else {
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if (!bi.kf2b10m.getText().toString().isEmpty()) {
                     bi.kf2b10d.setMin(0);
+                } else {
+                    bi.kf2b10d.setMin(1);
+                }
+                if (!bi.kf2b10d.getText().toString().isEmpty()) {
                     bi.kf2b10m.setMin(0);
                 }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
             }
         });
+
+        bi.kf2b10m.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if (!bi.kf2b10d.getText().toString().isEmpty()) {
+                    bi.kf2b10m.setMin(0);
+                } else {
+                    bi.kf2b10m.setMin(1);
+                }
+                if (!bi.kf2b10m.getText().toString().isEmpty()) {
+                    bi.kf2b10d.setMin(0);
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });*/
+
     }
 
     @Override

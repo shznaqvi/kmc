@@ -37,7 +37,7 @@
                             style="@style/EditText_number"
                             android:hint="@string/kf2c01a"
                             android:maxLength="2"
-                            app:maxValue="36"
+                            app:maxValue="40"
                             app:minValue="32"
                             app:type="range" />
                     </LinearLayout>
@@ -59,8 +59,8 @@
                             style="@style/EditText_number"
                             android:hint="@string/kf2c02a"
                             android:maxLength="3"
-                            app:maxValue="120"
-                            app:minValue="40"
+                            app:maxValue="160"
+                            app:minValue="140"
                             app:type="range" />
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
@@ -80,8 +80,8 @@
                             android:id="@+id/kf2c03"
                             style="@style/EditText_number"
                             android:hint="@string/kf2c03a"
-                            android:maxLength="3"
-                            app:maxValue="120"
+                            android:maxLength="2"
+                            app:maxValue="80"
                             app:minValue="40"
                             app:type="range" />
                     </LinearLayout>

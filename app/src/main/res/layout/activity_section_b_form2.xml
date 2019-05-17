@@ -306,6 +306,8 @@
                             style="@style/EditText_number"
                             android:hint="@string/weeks"
                             android:maxLength="2"
+                            android:text='@{kf2b10a.checked ? kf2b10d.getText.toString : ""}'
+                            android:visibility='@{kf2b10a.checked ? View.VISIBLE : View.GONE}'
                             app:maxValue="42"
                             app:minValue="0"
                             app:type="range" />
@@ -315,6 +317,8 @@
                             style="@style/EditText_number"
                             android:hint="@string/months"
                             android:maxLength="1"
+                            android:text='@{kf2b10a.checked ? kf2b10m.getText.toString : ""}'
+                            android:visibility='@{kf2b10a.checked ? View.VISIBLE : View.GONE}'
                             app:maxValue="9"
                             app:minValue="0"
                             app:type="range" />
@@ -383,8 +387,8 @@
                             style="@style/EditText_number"
                             android:hint="@string/kf2b13"
                             android:inputType="number"
-                            android:maxLength="1"
-                            app:maxValue="9"
+                            android:maxLength="2"
+                            app:maxValue="15"
                             app:minValue="1"
                             app:type="range" />
 
