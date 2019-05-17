@@ -36,8 +36,8 @@ public class MainApp extends Application {
     public static final Integer _PORT = 8080; // Port - with colon (:)
     public static final String _HOST_URL_1 = "http://" + MainApp._IP + ":" + MainApp._PORT + "/kmc/api/";
     public static final String _HOST_URL_2 = "http://" + MainApp._ALTERNATE_IP + ":" + MainApp._PORT + "/kmc/api/";
-    public static final String _TEST_URL = "http://f49461:" + MainApp._PORT + "/kmc/api/";
-    public static final String[] HOST = new String[]{_HOST_URL_1, _HOST_URL_2};
+    public static final String _TEST_URL = "http://10.1.42.30/kmc/api/";
+    public static final String[] HOST = new String[]{_HOST_URL_1, _HOST_URL_2/*,_TEST_URL*/};
     public static final String _UPDATE_URL = "http://" + MainApp._IP + ":" + MainApp._PORT + "/kmc/app/app-debug.apk";
 
     public static final Integer MONTHS_LIMIT = 11;

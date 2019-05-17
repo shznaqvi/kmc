@@ -18,6 +18,8 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
+import edu.aku.hassannaqvi.kmc_screening.contracts.EligibleContract;
+import edu.aku.hassannaqvi.kmc_screening.contracts.EligibleContract.EligibleEntry;
 import edu.aku.hassannaqvi.kmc_screening.contracts.FormsContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.FormsContract.FormsTable;
 import edu.aku.hassannaqvi.kmc_screening.contracts.PWFollowUpContract;
@@ -48,7 +50,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "kmc_screening.db";
     public static final String DB_NAME = DATABASE_NAME.replace(".", "_copy.");
     public static final String PROJECT_NAME = "KMC-SCREENING";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
     private static final String SQL_CREATE_FORMS = "CREATE TABLE "
             + FormsTable.TABLE_NAME + "("
             + FormsTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -66,7 +68,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             FormsTable.COLUMN_GPSDT + " TEXT," +
             FormsTable.COLUMN_GPSACC + " TEXT," +
             FormsTable.COLUMN_GPSALTITUDE + " TEXT," +
-            FormsTable.COLUMN_HHNO + " TEXT," +
+            FormsTable.COLUMN_PWID + " TEXT," +
             FormsTable.COLUMN_TALUKA + " TEXT," +
             FormsTable.COLUMN_UC + " TEXT," +
             FormsTable.COLUMN_VILLAGE + " TEXT," +
@@ -92,8 +94,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             PWFUPEntry.MWRA_REGDT + " TEXT," +
             PWFUPEntry.MWRA_ROUND + " TEXT," +
             PWFUPEntry.MWRA_FUPDT + " TEXT," +
-            PWFUPEntry.MWRA_HHNO + " TEXT," +
-            PWFUPEntry.MWRA_WSERIAL + " TEXT," +
+            PWFUPEntry.MWRA_PWID + " TEXT," +
             PWFUPEntry.MWRA_WNAME + " TEXT," +
             PWFUPEntry.MWRA_HNAME + " TEXT," +
             PWFUPEntry.MWRA_KAPR07 + " TEXT," +
@@ -106,14 +107,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             PWFScrennedEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
             PWFScrennedEntry.COLUMN_PUID + " TEXT," +
             PWFScrennedEntry.COLUMN_VILLAGE + " TEXT," +
-            PWFScrennedEntry.COLUMN_HHNO + " TEXT," +
+            PWFScrennedEntry.COLUMN_PWID + " TEXT," +
             PWFScrennedEntry.COLUMN_FORMDATE + " TEXT," +
-            PWFScrennedEntry.COLUMN_PW_SERIAL + " TEXT," +
             PWFScrennedEntry.COLUMN_PW_NAME + " TEXT," +
             PWFScrennedEntry.COLUMN_H_NAME + " TEXT," +
             PWFScrennedEntry.COLUMN_PW_CAST + " TEXT," +
             PWFScrennedEntry.COLUMN_HH_NAME + " TEXT);";
 
+    private static final String SQL_CREATE_ELIGIBILES = "CREATE TABLE " +
+            EligibleEntry.TABLE_NAME + "(" +
+            EligibleEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+            EligibleEntry.COLUMN_PUID + " TEXT," +
+            EligibleEntry.COLUMN_VILLAGE + " TEXT," +
+            EligibleEntry.COLUMN_FORMDATE + " TEXT," +
+            EligibleEntry.COLUMN_M_NAME + " TEXT," +
+            EligibleEntry.COLUMN_M_ID + " TEXT," +
+            EligibleEntry.COLUMN_PART_ID + " TEXT" +
+            ");";
 
     final String SQL_CREATE_DISTRICT_TABLE = "CREATE TABLE " + singleTaluka.TABLE_NAME + " (" +
             singleTaluka._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -143,6 +153,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String SQL_DELETE_VILLAGE = "DROP TABLE IF EXISTS " + singleVillage.TABLE_NAME;
     private static final String SQL_DELETE_MWRA = "DROP TABLE IF EXISTS " + PWFUPEntry.TABLE_NAME;
     private static final String SQL_DELETE_MWRASCREENED = "DROP TABLE IF EXISTS " + PWFScrennedEntry.TABLE_NAME;
+    private static final String SQL_DELETE_ELIGIBILE = "DROP TABLE IF EXISTS " + EligibleEntry.TABLE_NAME;
 
     private final String TAG = "DatabaseHelper";
 
@@ -162,17 +173,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_PSU_TABLE);
         db.execSQL(SQL_CREATE_MWRAFOLLOWUPS);
         db.execSQL(SQL_CREATE_MWRA_SCREENED);
+        db.execSQL(SQL_CREATE_ELIGIBILES);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
-        db.execSQL(SQL_DELETE_USERS);
+        /*db.execSQL(SQL_DELETE_USERS);
         db.execSQL(SQL_DELETE_FORMS);
         db.execSQL(SQL_DELETE_TALUKA);
         db.execSQL(SQL_DELETE_UCS);
         db.execSQL(SQL_DELETE_VILLAGE);
         db.execSQL(SQL_DELETE_MWRA);
-        db.execSQL(SQL_DELETE_MWRASCREENED);
+        db.execSQL(SQL_DELETE_MWRASCREENED);*/
+
+        switch (i) {
+            case 1:
+                db.execSQL(SQL_CREATE_ELIGIBILES);
+        }
+
     }
 
     public void syncUCs(JSONArray UCslist) {
@@ -337,7 +355,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allPC;
     }
 
-
     public Collection<PWFollowUpContract> getPW(String villageCode, String hhno) {
 
         SQLiteDatabase db = this.getReadableDatabase();
@@ -347,8 +364,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 PWFUPEntry.MWRA_VILLAGE,
                 PWFUPEntry.MWRA_ROUND,
                 PWFUPEntry.MWRA_FUPDT,
-                PWFUPEntry.MWRA_HHNO,
-                PWFUPEntry.MWRA_WSERIAL,
+                PWFUPEntry.MWRA_PWID,
                 PWFUPEntry.MWRA_HNAME,
                 PWFUPEntry.MWRA_WNAME,
                 PWFUPEntry.MWRA_KAPR07,
@@ -357,12 +373,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 PWFUPEntry.MWRA_HHNAME
         };
 
-        String whereClause = PWFUPEntry.MWRA_VILLAGE + " =? AND " + PWFUPEntry.MWRA_HHNO + " =?";
+        String whereClause = PWFUPEntry.MWRA_VILLAGE + " =? AND " + PWFUPEntry.MWRA_PWID + " =?";
         String[] whereArgs = {villageCode, hhno};
         String groupBy = null;
         String having = null;
 
-        String orderBy = PWFUPEntry.MWRA_WSERIAL + " ASC";
+        String orderBy = PWFUPEntry.MWRA_PWID + " ASC";
 
         Collection<PWFollowUpContract> allEB = new ArrayList<>();
 
@@ -391,30 +407,79 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allEB;
     }
 
-    public Collection<PWScreenedContract> getPWScreened(String villageCode, String hhno) {
+    public PWFollowUpContract checkPWExist(String villageCode, String hhno) {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                PWFUPEntry.MWRA_UID,
+                PWFUPEntry.MWRA_VILLAGE,
+                PWFUPEntry.MWRA_ROUND,
+                PWFUPEntry.MWRA_FUPDT,
+                PWFUPEntry.MWRA_PWID,
+                PWFUPEntry.MWRA_HNAME,
+                PWFUPEntry.MWRA_WNAME,
+                PWFUPEntry.MWRA_KAPR07,
+                PWFUPEntry.MWRA_KAPR08,
+                PWFUPEntry.MWRA_REGDT,
+                PWFUPEntry.MWRA_HHNAME
+        };
+
+        String whereClause = PWFUPEntry.MWRA_VILLAGE + " =? AND " + PWFUPEntry.MWRA_PWID + " =?";
+        String[] whereArgs = {villageCode, hhno};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = PWFUPEntry.MWRA_PWID + " ASC";
+
+        PWFollowUpContract allEB = null;
+        try {
+            c = db.query(
+                    PWFUPEntry.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                allEB = new PWFollowUpContract().hydrate(c);
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allEB;
+    }
+
+    public PWScreenedContract getPWScreened(String villageCode, String hhno) {
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
                 PWFScrennedEntry.COLUMN_PUID,
                 PWFScrennedEntry.COLUMN_VILLAGE,
-                PWFScrennedEntry.COLUMN_HHNO,
+                PWFScrennedEntry.COLUMN_PWID,
                 PWFScrennedEntry.COLUMN_FORMDATE,
                 PWFScrennedEntry.COLUMN_PW_NAME,
-                PWFScrennedEntry.COLUMN_PW_SERIAL,
                 PWFScrennedEntry.COLUMN_H_NAME,
                 PWFScrennedEntry.COLUMN_PW_CAST,
                 PWFScrennedEntry.COLUMN_HH_NAME,
         };
 
-        String whereClause = PWFScrennedEntry.COLUMN_VILLAGE + " =? AND " + PWFScrennedEntry.COLUMN_HHNO + " =?";
+        String whereClause = PWFScrennedEntry.COLUMN_VILLAGE + " =? AND " + PWFScrennedEntry.COLUMN_PWID + " =?";
         String[] whereArgs = {villageCode, hhno};
         String groupBy = null;
         String having = null;
 
-        String orderBy = PWFScrennedEntry.COLUMN_PW_SERIAL + " ASC";
+        String orderBy = PWFScrennedEntry.COLUMN_PWID + " ASC";
 
-        Collection<PWScreenedContract> allEB = new ArrayList<>();
+        PWScreenedContract allEB = null;
 
         try {
             c = db.query(
@@ -427,8 +492,54 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     orderBy                    // The sort order
             );
             while (c.moveToNext()) {
-                PWScreenedContract mwra = new PWScreenedContract();
-                allEB.add(mwra.hydrate(c));
+                allEB = new PWScreenedContract().hydrate(c);
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allEB;
+    }
+
+    public Collection<EligibleContract> getEligibileParticipant(String villageCode, String hhno) {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                EligibleEntry.COLUMN_PUID,
+                EligibleEntry.COLUMN_VILLAGE,
+                EligibleEntry.COLUMN_M_NAME,
+                EligibleEntry.COLUMN_FORMDATE,
+                EligibleEntry.COLUMN_M_ID,
+                EligibleEntry.COLUMN_PART_ID
+        };
+
+        String whereClause = EligibleEntry.COLUMN_VILLAGE + " =? AND " + EligibleEntry.COLUMN_M_ID + " =?";
+        String[] whereArgs = {villageCode, hhno};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = EligibleEntry.COLUMN_M_ID + " ASC";
+
+        Collection<EligibleContract> allEB = new ArrayList<>();
+
+        try {
+            c = db.query(
+                    EligibleEntry.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                EligibleContract eligibile = new EligibleContract();
+                allEB.add(eligibile.hydrate(c));
             }
         } finally {
             if (c != null) {
@@ -515,8 +626,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 values.put(PWFUPEntry.MWRA_REGDT, vc.getRegdt());
                 values.put(PWFUPEntry.MWRA_ROUND, vc.getRound());
                 values.put(PWFUPEntry.MWRA_FUPDT, vc.getFupdt());
-                values.put(PWFUPEntry.MWRA_HHNO, vc.getHhno());
-                values.put(PWFUPEntry.MWRA_WSERIAL, vc.getWserial());
+                values.put(PWFUPEntry.MWRA_PWID, vc.getPwid());
                 values.put(PWFUPEntry.MWRA_HNAME, vc.getHname());
                 values.put(PWFUPEntry.MWRA_WNAME, vc.getWname());
                 values.put(PWFUPEntry.MWRA_KAPR07, vc.getKapr07());
@@ -550,9 +660,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
                 values.put(PWFScrennedEntry.COLUMN_PUID, spw.getPuid());
                 values.put(PWFScrennedEntry.COLUMN_VILLAGE, spw.getVillage());
-                values.put(PWFScrennedEntry.COLUMN_HHNO, spw.getHhno());
+                values.put(PWFScrennedEntry.COLUMN_PWID, spw.getPwid());
                 values.put(PWFScrennedEntry.COLUMN_FORMDATE, spw.getFormdate());
-                values.put(PWFScrennedEntry.COLUMN_PW_SERIAL, spw.getPw_serial());
                 values.put(PWFScrennedEntry.COLUMN_PW_NAME, spw.getPw_name());
                 values.put(PWFScrennedEntry.COLUMN_H_NAME, spw.getH_name());
                 values.put(PWFScrennedEntry.COLUMN_PW_CAST, spw.getCast());
@@ -564,6 +673,38 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         } catch (Exception e) {
             Log.d(TAG, "syncPWScreened: " + e.getMessage());
+        }
+    }
+
+    public void syncEligibiles(JSONArray eliList) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(EligibleEntry.TABLE_NAME, null, null);
+
+        try {
+            JSONArray jsonArray = eliList;
+
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObjectPSU = jsonArray.getJSONObject(i);
+
+                EligibleContract epw = new EligibleContract();
+                epw.sync(jsonObjectPSU);
+                Log.i(TAG, "Eligibiles: " + jsonObjectPSU.toString());
+
+                ContentValues values = new ContentValues();
+
+                values.put(EligibleEntry.COLUMN_PUID, epw.getPuid());
+                values.put(EligibleEntry.COLUMN_VILLAGE, epw.getVillage());
+                values.put(EligibleEntry.COLUMN_FORMDATE, epw.getFormdate());
+                values.put(EligibleEntry.COLUMN_M_NAME, epw.getM_name());
+                values.put(EligibleEntry.COLUMN_M_ID, epw.getM_id());
+                values.put(EligibleEntry.COLUMN_PART_ID, epw.getPart_id());
+
+                db.insert(EligibleEntry.TABLE_NAME, null, values);
+            }
+            db.close();
+
+        } catch (Exception e) {
+            Log.d(TAG, "syncEligibiles: " + e.getMessage());
         }
     }
 
@@ -679,7 +820,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_SYNCED, fc.getSynced());
         values.put(FormsTable.COLUMN_SYNCED_DATE, fc.getSynced_date());
         values.put(FormsTable.COLUMN_APPVERSION, fc.getAppversion());
-        values.put(FormsTable.COLUMN_HHNO, fc.getHhno());
+        values.put(FormsTable.COLUMN_PWID, fc.getPwid());
         values.put(FormsTable.COLUMN_UC, fc.getUc());
         values.put(FormsTable.COLUMN_TALUKA, fc.getTaluka());
         values.put(FormsTable.COLUMN_VILLAGE, fc.getVillage());
@@ -765,7 +906,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_SYNCED,
                 FormsTable.COLUMN_SYNCED_DATE,
                 FormsTable.COLUMN_APPVERSION,
-                FormsTable.COLUMN_HHNO,
+                FormsTable.COLUMN_PWID,
                 FormsTable.COLUMN_UC,
                 FormsTable.COLUMN_VILLAGE,
                 FormsTable.COLUMN_TALUKA,
@@ -841,7 +982,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_SYNCED,
                 FormsTable.COLUMN_SYNCED_DATE,
                 FormsTable.COLUMN_APPVERSION,
-                FormsTable.COLUMN_HHNO,
+                FormsTable.COLUMN_PWID,
                 FormsTable.COLUMN_UC,
                 FormsTable.COLUMN_VILLAGE,
                 FormsTable.COLUMN_TALUKA,

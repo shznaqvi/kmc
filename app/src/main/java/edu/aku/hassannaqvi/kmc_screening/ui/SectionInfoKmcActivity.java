@@ -30,6 +30,7 @@ import java.util.List;
 import java.util.Map;
 
 import edu.aku.hassannaqvi.kmc_screening.R;
+import edu.aku.hassannaqvi.kmc_screening.contracts.EligibleContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.FormsContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.PWScreenedContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.TalukasContract;
@@ -40,7 +41,6 @@ import edu.aku.hassannaqvi.kmc_screening.core.MainApp;
 import edu.aku.hassannaqvi.kmc_screening.databinding.ActivitySectionInfoKmcBinding;
 import edu.aku.hassannaqvi.kmc_screening.ui.form1.SectionAForm1Activity;
 import edu.aku.hassannaqvi.kmc_screening.ui.form2.SectionBForm2Activity;
-import edu.aku.hassannaqvi.kmc_screening.ui.form3.SectionAForm3Activity;
 import edu.aku.hassannaqvi.kmc_screening.ui.other.EndingActivity;
 import edu.aku.hassannaqvi.kmc_screening.validation.ClearClass;
 import edu.aku.hassannaqvi.kmc_screening.validation.ValidatorClass;
@@ -50,10 +50,11 @@ import static edu.aku.hassannaqvi.kmc_screening.core.MainApp.fc;
 
 public class SectionInfoKmcActivity extends Activity {
 
-    private List<String> ucName, talukaNames, villageNames, wName;
-    private List<String> ucCode, talukaCodes, villageCodes, wSno;
+    private List<String> ucName, talukaNames, villageNames, partNam;
+    private List<String> ucCode, talukaCodes, villageCodes;
     private DatabaseHelper db;
-    private Map<String, PWScreenedContract> mapWRA;
+    private PWScreenedContract mapWRA;
+    private Map<String, EligibleContract> mapPartElig;
     private static final String TAG = SectionInfoKmcActivity.class.getName();
     ActivitySectionInfoKmcBinding bi;
 
@@ -64,9 +65,14 @@ public class SectionInfoKmcActivity extends Activity {
         bi.setCallback(this);
         db = new DatabaseHelper(getApplicationContext());
 
+        settingComponent();
         settingListeners();
         populateSpinner(this);
 
+    }
+
+    private void settingComponent() {
+        this.setTitle(MainApp.formType.equals("kf1") ? getString(R.string.f1_hA) : getString(R.string.f2_3_hA));
     }
 
     private void settingListeners() {
@@ -86,15 +92,36 @@ public class SectionInfoKmcActivity extends Activity {
 
             }
         });
-        bi.kf1a2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        bi.kf2a6.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 if (i == 0) return;
-                bi.kf1a3.setText(mapWRA.get(bi.kf1a2.getSelectedItem()).getPw_serial());
+                bi.kf2a7.setText(mapPartElig.get(bi.kf2a6.getSelectedItem()).getM_name());
+                bi.kf2a8.setText(mapPartElig.get(bi.kf2a6.getSelectedItem()).getM_id());
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        bi.kf2a4.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if (bi.kf2a4.getText().toString().isEmpty()) return;
+                if (Integer.valueOf(bi.kf2a4.getText().toString()) < 2) return;
+
+                bi.kf2a5.setMax(Float.valueOf(bi.kf2a4.getText().toString()) - 1);
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
 
             }
         });
@@ -183,6 +210,19 @@ public class SectionInfoKmcActivity extends Activity {
             }
         });
 
+        bi.crvillage.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if (i == 0) return;
+                bi.villageLabel.setText("Village Code: " + villageCodes.get(bi.crvillage.getSelectedItemPosition()));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
     }
 
     private boolean formValidation() {
@@ -203,37 +243,40 @@ public class SectionInfoKmcActivity extends Activity {
         fc.setUc(ucCode.get(bi.crauc.getSelectedItemPosition()));
         fc.setVillage(villageCodes.get(bi.crvillage.getSelectedItemPosition()));
         fc.setFormType(MainApp.formType);
+        fc.setSurveyType(MainApp.surveyType);
+        fc.setPwid(bi.kapr02a.getText().toString());
 
         JSONObject sInfo = new JSONObject();
         String fType = MainApp.formType;
 
-        sInfo.put(fType + "a1", bi.kfa1a.isChecked() ? "1" : bi.kfa1b.isChecked() ? "2" : "0");
+        sInfo.put(fType + "a01", bi.kfa1a.isChecked() ? "1" : bi.kfa1b.isChecked() ? "2" : "0");
         if (fType.equals("kf1")) {
-            sInfo.put("kf1a2", bi.kf1a2.getSelectedItem());
-            sInfo.put("kf1a3", bi.kf1a3.getText().toString());
-            sInfo.put("kf1a4", bi.kf1a4.getText().toString());
+            sInfo.put("kf1a02", bi.kf1a2.getText().toString());
+            sInfo.put("kf1a03", bi.kf1a3.getText().toString());
 
-            sInfo.put("pw_puid", mapWRA.get(bi.kf1a2.getSelectedItem()).getPuid());
-            sInfo.put("pw_formdate", mapWRA.get(bi.kf1a2.getSelectedItem()).getFormdate());
-            sInfo.put("pw_h_name", mapWRA.get(bi.kf1a2.getSelectedItem()).getH_name());
-            sInfo.put("pw_cast", mapWRA.get(bi.kf1a2.getSelectedItem()).getCast());
-            sInfo.put("pw_hh_name", mapWRA.get(bi.kf1a2.getSelectedItem()).getHh_name());
+            sInfo.put("pw_puid", mapWRA.getPuid());
+            sInfo.put("pw_formdate", mapWRA.getFormdate());
+            sInfo.put("pw_h_name", mapWRA.getH_name());
+            sInfo.put("pw_cast", mapWRA.getCast());
+            sInfo.put("pw_hh_name", mapWRA.getHh_name());
 
         } else if (fType.equals("kf2")) {
-            sInfo.put("kf2a2", bi.kf2a6.getText().toString());
-            sInfo.put("kf2a3", bi.kf2a7.getText().toString());
-            sInfo.put("kf2a4", bi.kf2a8.getText().toString());
-            sInfo.put("kf2a5", bi.kf2a1.getText().toString());
-            sInfo.put("kf2a6", bi.kf2a2.getText().toString());
-            sInfo.put("kf2a7", bi.kf2a3.getText().toString());
-            sInfo.put("kf2a8", bi.kf2a4.getText().toString());
-            sInfo.put("kf2a9", bi.kf2a5.getText().toString());
+            sInfo.put("kf2a05", bi.kf2a1.getText().toString());
+            sInfo.put("kf2a06", bi.kf2a2.getText().toString());
+            sInfo.put("kf2a07", bi.kf2a3.getText().toString());
+            sInfo.put("kf2a08", bi.kf2a4.getText().toString());
         } else if (fType.equals("kf3")) {
-            sInfo.put("kf3a2", bi.kf2a6.getText().toString());
-            sInfo.put("kf3a3", bi.kf2a7.getText().toString());
-            sInfo.put("kf3a4", bi.kf2a8.getText().toString());
-            sInfo.put("kf3a5", bi.kf3a3.getText().toString());
-            sInfo.put("kf3a6", bi.kf3a4.getText().toString());
+            sInfo.put("kf3a05", bi.kf3a3.getText().toString());
+            sInfo.put("kf3a06", bi.kf3a4.getText().toString());
+        }
+
+        if (fType.equals("kf2") || fType.equals("kf3")) {
+            sInfo.put(fType + "a02", bi.kf2a6.getSelectedItem().toString());
+            sInfo.put(fType + "a03", bi.kf2a7.getText().toString());
+            sInfo.put(fType + "a04", bi.kf2a8.getText().toString());
+
+            sInfo.put("part_puid", mapPartElig.get(bi.kf2a6.getSelectedItem()).getPuid());
+            sInfo.put("part_formdate", mapPartElig.get(bi.kf2a6.getSelectedItem()).getFormdate());
         }
 
         fc.setsInfo(String.valueOf(sInfo));
@@ -269,7 +312,7 @@ public class SectionInfoKmcActivity extends Activity {
                 finish();
                 startActivity(new Intent(this, MainApp.formType.equals("kf1") ? SectionAForm1Activity.class
                         : MainApp.formType.equals("kf2") ? SectionBForm2Activity.class
-                        : MainApp.formType.equals("kf3") ? SectionAForm3Activity.class : null));
+                        : MainApp.formType.equals("kf3") ? SectionBForm2Activity.class : null).putExtra("pwid", bi.kapr02a.getText().toString()));
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
@@ -313,31 +356,46 @@ public class SectionInfoKmcActivity extends Activity {
         }
 
 
-        return ValidatorClass.EmptyTextBox(this, bi.kapr02a, getString(R.string.kapr02));
+        return ValidatorClass.EmptyTextBox(this, bi.kapr02a, getString(R.string.kapr01));
     }
 
     public void BtnSearchWoman() {
 
         if (!ValidateSpinners()) return;
 
-        mapWRA = new HashMap<>();
-        wName = new ArrayList<>();
-        wName.add("....");
+        if (MainApp.formType.equals("kf1")) {
 
-        Collection<PWScreenedContract> dc = db.getPWScreened(villageCodes.get(bi.crvillage.getSelectedItemPosition()), bi.kapr02a.getText().toString());
-        Log.d(TAG, "onCreate: " + dc.size());
-        for (PWScreenedContract d : dc) {
-            wName.add(d.getPw_name());
-            mapWRA.put(d.getPw_name(), d);
+            mapWRA = db.getPWScreened(villageCodes.get(bi.crvillage.getSelectedItemPosition()), bi.kapr02a.getText().toString());
+
+            if (mapWRA == null) {
+                setupFields(View.GONE);
+                Toast.makeText(this, "Household does not exist ", Toast.LENGTH_LONG).show();
+                return;
+            }
+
+            bi.kf1a2.setText(mapWRA.getPw_name());
+
+        } else {
+            mapPartElig = new HashMap<>();
+            partNam = new ArrayList<>();
+            partNam.add("....");
+
+            Collection<EligibleContract> dc = db.getEligibileParticipant(villageCodes.get(bi.crvillage.getSelectedItemPosition()), bi.kapr02a.getText().toString());
+            Log.d(TAG, "onCreate: " + dc.size());
+            for (EligibleContract d : dc) {
+                partNam.add(d.getPart_id());
+                mapPartElig.put(d.getPart_id(), d);
+            }
+
+            if (mapPartElig.size() == 0) {
+                setupFields(View.GONE);
+                Toast.makeText(this, "Household does not exist ", Toast.LENGTH_LONG).show();
+                return;
+            }
+
+            bi.kf2a6.setAdapter(new ArrayAdapter<>(SectionInfoKmcActivity.this, android.R.layout.simple_spinner_dropdown_item, partNam));
+
         }
-
-        if (mapWRA.size() == 0) {
-            setupFields(View.GONE);
-            Toast.makeText(this, "Household does not exist ", Toast.LENGTH_LONG).show();
-            return;
-        }
-
-        bi.kf1a2.setAdapter(new ArrayAdapter<>(SectionInfoKmcActivity.this, android.R.layout.simple_spinner_dropdown_item, wName));
 
         Toast.makeText(this, "Household number exists", Toast.LENGTH_LONG).show();
         setupFields(View.VISIBLE);

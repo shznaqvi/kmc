@@ -12,7 +12,7 @@ import org.json.JSONObject;
 
 public class FormsContract {
 
-    private String projectName = "KMC";
+    private String projectName = "KMC 2 Screening";
     private String surveyType = "";
     private String _ID = "";
     private String _UID = "";
@@ -42,7 +42,7 @@ public class FormsContract {
     private String appversion;
     private String uc;
     private String village;
-    private String hhno;
+    private String pwid;
 
     public void setSurveyType(String surveyType) {
         this.surveyType = surveyType;
@@ -72,12 +72,12 @@ public class FormsContract {
         this.village = village;
     }
 
-    public String getHhno() {
-        return hhno;
+    public String getPwid() {
+        return pwid;
     }
 
-    public void setHhno(String hhno) {
-        this.hhno = hhno;
+    public void setPwid(String pwid) {
+        this.pwid = pwid;
     }
 
     public FormsContract() {
@@ -113,7 +113,7 @@ public class FormsContract {
         this.synced = jsonObject.getString(FormsTable.COLUMN_SYNCED);
         this.synced_date = jsonObject.getString(FormsTable.COLUMN_SYNCED_DATE);
         this.appversion = jsonObject.getString(FormsTable.COLUMN_APPVERSION);
-        this.hhno = jsonObject.getString(FormsTable.COLUMN_HHNO);
+        this.pwid = jsonObject.getString(FormsTable.COLUMN_PWID);
         this.taluka = jsonObject.getString(FormsTable.COLUMN_TALUKA);
         this.uc = jsonObject.getString(FormsTable.COLUMN_UC);
         this.village = jsonObject.getString(FormsTable.COLUMN_VILLAGE);
@@ -147,7 +147,7 @@ public class FormsContract {
         this.synced = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SYNCED));
         this.synced_date = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SYNCED_DATE));
         this.appversion = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_APPVERSION));
-        this.hhno = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_HHNO));
+        this.pwid = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_PWID));
         this.taluka = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_TALUKA));
         this.uc = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_UC));
         this.village = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_VILLAGE));
@@ -202,7 +202,7 @@ public class FormsContract {
         json.put(FormsTable.COLUMN_SYNCED, this.synced == null ? JSONObject.NULL : this.synced);
         json.put(FormsTable.COLUMN_SYNCED_DATE, this.synced_date == null ? JSONObject.NULL : this.synced_date);
         json.put(FormsTable.COLUMN_APPVERSION, this.appversion == null ? JSONObject.NULL : this.appversion);
-        json.put(FormsTable.COLUMN_HHNO, this.hhno == null ? JSONObject.NULL : this.hhno);
+        json.put(FormsTable.COLUMN_PWID, this.pwid == null ? JSONObject.NULL : this.pwid);
         json.put(FormsTable.COLUMN_TALUKA, this.taluka == null ? JSONObject.NULL : this.taluka);
         json.put(FormsTable.COLUMN_UC, this.uc == null ? JSONObject.NULL : this.uc);
         json.put(FormsTable.COLUMN_VILLAGE, this.village == null ? JSONObject.NULL : this.village);
@@ -427,7 +427,7 @@ public class FormsContract {
         public static final String COLUMN__ID = "_id";
         public static final String COLUMN__UID = "_uid";
         public static final String COLUMN_FORMDATE = "formdate";
-        public static final String COLUMN_HHNO = "hhno";
+        public static final String COLUMN_PWID = "pwid";
         public static final String COLUMN_USER = "user";
         public static final String COLUMN_ISTATUS = "istatus";
         public static final String COLUMN_ISTATUS88X = "istatus88x";

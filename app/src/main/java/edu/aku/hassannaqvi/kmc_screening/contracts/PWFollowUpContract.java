@@ -12,8 +12,7 @@ public class PWFollowUpContract {
     public String village;
     public String round;
     public String fupdt;
-    public String hhno;
-    public String wserial;
+    public String pwid;
     public String hname;
     public String wname;
     public String kapr07;
@@ -31,13 +30,12 @@ public class PWFollowUpContract {
         this.village = jsonObject.getString(PWFUPEntry.MWRA_VILLAGE);
         this.round = jsonObject.getString(PWFUPEntry.MWRA_ROUND);
         this.fupdt = jsonObject.getString(PWFUPEntry.MWRA_FUPDT);
-        this.hhno = jsonObject.getString(PWFUPEntry.MWRA_HHNO);
+        this.pwid = jsonObject.getString(PWFUPEntry.MWRA_PWID);
         this.hname = jsonObject.getString(PWFUPEntry.MWRA_HNAME);
         this.wname = jsonObject.getString(PWFUPEntry.MWRA_WNAME);
         this.kapr07 = jsonObject.getString(PWFUPEntry.MWRA_KAPR07);
         this.kapr08 = jsonObject.getString(PWFUPEntry.MWRA_KAPR08);
         this.hhname = jsonObject.getString(PWFUPEntry.MWRA_HHNAME);
-        this.wserial = jsonObject.getString(PWFUPEntry.MWRA_WSERIAL);
         this.regdt = jsonObject.getString(PWFUPEntry.MWRA_REGDT);
 
         return this;
@@ -49,13 +47,12 @@ public class PWFollowUpContract {
         this.village = cursor.getString(cursor.getColumnIndex(PWFUPEntry.MWRA_VILLAGE));
         this.round = cursor.getString(cursor.getColumnIndex(PWFUPEntry.MWRA_ROUND));
         this.fupdt = cursor.getString(cursor.getColumnIndex(PWFUPEntry.MWRA_FUPDT));
-        this.hhno = cursor.getString(cursor.getColumnIndex(PWFUPEntry.MWRA_HHNO));
+        this.pwid = cursor.getString(cursor.getColumnIndex(PWFUPEntry.MWRA_PWID));
         this.hname = cursor.getString(cursor.getColumnIndex(PWFUPEntry.MWRA_HNAME));
         this.wname = cursor.getString(cursor.getColumnIndex(PWFUPEntry.MWRA_WNAME));
         this.kapr07 = cursor.getString(cursor.getColumnIndex(PWFUPEntry.MWRA_KAPR07));
         this.kapr08 = cursor.getString(cursor.getColumnIndex(PWFUPEntry.MWRA_KAPR08));
         this.hhname = cursor.getString(cursor.getColumnIndex(PWFUPEntry.MWRA_HHNAME));
-        this.wserial = cursor.getString(cursor.getColumnIndex(PWFUPEntry.MWRA_WSERIAL));
         this.regdt = cursor.getString(cursor.getColumnIndex(PWFUPEntry.MWRA_REGDT));
 
         return this;
@@ -94,12 +91,12 @@ public class PWFollowUpContract {
         this.fupdt = fupdt;
     }
 
-    public String getHhno() {
-        return hhno;
+    public String getPwid() {
+        return pwid;
     }
 
-    public void setHhno(String hhno) {
-        this.hhno = hhno;
+    public void setPwid(String pwid) {
+        this.pwid = pwid;
     }
 
     public String getHname() {
@@ -142,14 +139,6 @@ public class PWFollowUpContract {
         this.hhname = hhname;
     }
 
-    public String getWserial() {
-        return wserial;
-    }
-
-    public void setWserial(String wserial) {
-        this.wserial = wserial;
-    }
-
     public String getRegdt() {
         return regdt;
     }
@@ -165,13 +154,12 @@ public class PWFollowUpContract {
         json.put(PWFUPEntry.MWRA_VILLAGE, this.village == null ? JSONObject.NULL : this.village);
         json.put(PWFUPEntry.MWRA_ROUND, this.round == null ? JSONObject.NULL : this.round);
         json.put(PWFUPEntry.MWRA_FUPDT, this.fupdt == null ? JSONObject.NULL : this.fupdt);
-        json.put(PWFUPEntry.MWRA_HHNO, this.hhno == null ? JSONObject.NULL : this.hhno);
+        json.put(PWFUPEntry.MWRA_PWID, this.pwid == null ? JSONObject.NULL : this.pwid);
         json.put(PWFUPEntry.MWRA_HNAME, this.hname == null ? JSONObject.NULL : this.hname);
         json.put(PWFUPEntry.MWRA_WNAME, this.wname == null ? JSONObject.NULL : this.wname);
         json.put(PWFUPEntry.MWRA_KAPR07, this.kapr07 == null ? JSONObject.NULL : this.kapr07);
         json.put(PWFUPEntry.MWRA_KAPR08, this.kapr08 == null ? JSONObject.NULL : this.kapr08);
         json.put(PWFUPEntry.MWRA_HHNAME, this.hhname == null ? JSONObject.NULL : this.hhname);
-        json.put(PWFUPEntry.MWRA_WSERIAL, this.wserial == null ? JSONObject.NULL : this.wserial);
         json.put(PWFUPEntry.MWRA_REGDT, this.regdt == null ? JSONObject.NULL : this.regdt);
 
         return json;
@@ -186,8 +174,7 @@ public class PWFollowUpContract {
         public static final String MWRA_VILLAGE = "village";
         public static final String MWRA_ROUND = "round";
         public static final String MWRA_FUPDT = "fupdt";
-        public static final String MWRA_HHNO = "hhno";
-        public static final String MWRA_WSERIAL = "kapr02";
+        public static final String MWRA_PWID = "pwid";
         public static final String MWRA_WNAME = "kapr03";
         public static final String MWRA_HNAME = "kapr06";
         public static final String MWRA_KAPR07 = "kapr07";

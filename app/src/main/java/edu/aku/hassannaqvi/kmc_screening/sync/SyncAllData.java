@@ -4,7 +4,6 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -25,6 +24,7 @@ import java.util.Collection;
 
 import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc_screening.core.MainApp;
+import edu.aku.hassannaqvi.kmc_screening.other.MCrypt;
 
 
 /**
@@ -40,7 +40,7 @@ public class SyncAllData extends AsyncTask<Void, Void, String> {
     private String syncClass, url, updateSyncClass;
     private Class contractClass;
     private Collection dbData;
-    private TextView syncStatus;
+    private MCrypt mCrypt;
 
 
     public SyncAllData(Context context, String syncClass, String updateSyncClass, Class contractClass, String url, Collection dbData) {
@@ -52,6 +52,8 @@ public class SyncAllData extends AsyncTask<Void, Void, String> {
         this.dbData = dbData;
         //this.syncStatus = (TextView) syncStatus;
         TAG = "Get" + syncClass;
+
+        mCrypt = new MCrypt();
     }
 
     @Override
@@ -115,6 +117,16 @@ public class SyncAllData extends AsyncTask<Void, Void, String> {
                                         break;
                                     }
                                 }
+
+                                /*String encrypted = MCrypt.bytesToHex(
+                                        mCrypt.encrypt(
+                                                jsonSync.toString())
+                                );
+
+                                Log.d(TAG, new String(mCrypt.decrypt(encrypted), StandardCharsets.UTF_8));
+                                wr.writeBytes(encrypted);
+                                wr.flush();*/
+
                                 break;
                             }
 
@@ -123,6 +135,8 @@ public class SyncAllData extends AsyncTask<Void, Void, String> {
                         } catch (IllegalAccessException e) {
                             e.printStackTrace();
                         } catch (InvocationTargetException e) {
+                            e.printStackTrace();
+                        } catch (Exception e) {
                             e.printStackTrace();
                         }
 

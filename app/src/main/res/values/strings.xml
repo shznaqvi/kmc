@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name"> Kangaroo Mother Care </string>
+    <string name="app_name"> Kangaroo Mother Care 2 </string>
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
@@ -250,7 +250,7 @@
     <string name="kf1b01"> ڄمڻ وقت جو وزن لکو </string>
     <string name="kf1b01a"> گرامن ۾ </string>
     <string name="kf1b02"> ڇا ٻار 1200 گرام کان وڌيڪ يا 2500 گرام يا ان کان گھٽ وزن وارو هو؟ </string>
-    <string name="kf1b03"> ۾ ڇا شرڪت ڪندڙ چونڊيل يونين ڪائونسل </string>
+    <string name="kf1b03"> ڇا شرڪت ڪندڙ چونڊيل يونين ڪائونسل ۾ رھي ٿو؟ </string>
     <string name="kfh2"> Exclusion Criteria </string>
     <string name="kf1b04"> ڇا ٻار کي سامهون ڏنل ڪا نشاني يا علامت آهي؟ آپشن جي سامهون ها يا نه لکو </string>
     <string name="kf1b04_h1"> شديد طبعي انفيڪشن </string>
@@ -870,8 +870,8 @@
     <string name="kf3f06"> ڇا تربيت / سکيا توهان لاءِ مدد گار ثابت ٿئي. </string>
 
     <!--Form 0-->
-    <string name="kapr01"> گھر جو نمبر </string>
-    <string name="kapr02"> حاملا عورت جو سڃاڻپ نمبر </string>
+    <!--<string name="kapr01"> گھر جو نمبر </string>-->
+    <string name="kapr01"> حاملا عورت جو سڃاڻپ نمبر </string>
     <string name="kapr03"> حاملا عورت جو نالو </string>
     <string name="kapr04"> حاملا عورت جي عمر </string>
     <string name="kapr05"> موجوده حمل جي متوقع ويم جي تاريخ </string>
@@ -900,23 +900,30 @@
     <string name="kapr14"> تاريخ </string>
 
     <string name="kfa1"> جانچ جي جڳهه </string>
+    <string name="kfa1a"> صحت مرڪز </string>
+    <string name="kfa1b"> گهر </string>
 
     <string name="kf1a2"> ماءُ جو نالو </string>
-    <string name="kf1a3"> ماءُ جو سڃاڻپ نمبر </string>
-    <string name="kf1a4"> جانچ نمبر </string>
+    <string name="kf1a3"> جانچ نمبر </string>
 
     <string name="kf2a1"> مڪمل رهائشي پتو. </string>
     <string name="kf2a2"> گهر جي سربراه جو نالو </string>
     <string name="kf2a3"> رابطي جو نمبر </string>
     <string name="kf2a4"> گهر جي فردن جو تعداد </string>
-    <string name="kf2a5"> داخل ٿيل ماءُ جو نالو </string>
-    <string name="kf2a6"> تحقيقي علائقو. </string>
-    <string name="kf2a7"> داخل ٿيل ماءُ جو سڃاڻپ نمبر </string>
-    <string name="kf2a8"> داخل ٿيل ماءُ جو نالو </string>
+    <string name="kf2a5"> 5 سالن کان گهٽ عمر وارن ٻارن جو ڪل تعداد </string>
+    <string name="kf2a6"> حصي وٺڻ واري جو شناخت نمبر لکو </string>
+    <string name="kf2a7"> داخل ٿيل ماءُ جو نالو </string>
+    <string name="kf2a8"> داخل ٿيل ماءُ جو سڃاڻپ نمبر </string>
 
 
     <string name="kf3a3"> داخل ٿيل ماءُ جو نالو </string>
     <string name="kf3a4"> نئي ڄاول ٻارجواسٽيڊي نمبر </string>
 
+
+    <!--Headings-->
+    <string name="f1_hA">Administrative information</string>
+    <string name="f2_3_hA">Identification and Enrollment Information</string>
+    <string name="f2_hB">Mother’s Reproductive History</string>
+    <string name="f2_hC">BIRTH DETAILS OF BABY (CARE OF SMALL BABY)</string>
 
 </resources>

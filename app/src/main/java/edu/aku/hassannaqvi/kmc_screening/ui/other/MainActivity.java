@@ -311,14 +311,17 @@ public class MainActivity extends Activity {
                 break;
             case 2:
                 MainApp.formType = "kf1";
+                MainApp.surveyType = "kf1";
                 intentClass = SectionInfoKmcActivity.class;
                 break;
             case 3:
                 MainApp.formType = "kf2";
+                MainApp.surveyType = "kf2";
                 intentClass = SectionInfoKmcActivity.class;
                 break;
             case 4:
                 MainApp.formType = "kf3";
+                MainApp.surveyType = "kf3";
                 intentClass = SectionInfoKmcActivity.class;
                 break;
             default:
@@ -425,6 +428,26 @@ public class MainActivity extends Activity {
                     FormsContract.class,
                     FormsContract.FormsTable._URL.replace(".php", "_f0b.php"),
                     new DatabaseHelper(this).getUnsyncedForms0("kf0", "kf0b")
+            ).execute();
+
+            Toast.makeText(getApplicationContext(), "Syncing Forms - PW Screening", Toast.LENGTH_SHORT).show();
+            new SyncAllData(
+                    this,
+                    "Forms - PW Screening",
+                    "updateSyncedForms",
+                    FormsContract.class,
+                    FormsContract.FormsTable._URL.replace(".php", "_f1.php"),
+                    new DatabaseHelper(this).getUnsyncedForms("kf1")
+            ).execute();
+
+            Toast.makeText(getApplicationContext(), "Syncing Forms - PW Recruitment", Toast.LENGTH_SHORT).show();
+            new SyncAllData(
+                    this,
+                    "Forms - PW Recruitment",
+                    "updateSyncedForms",
+                    FormsContract.class,
+                    FormsContract.FormsTable._URL.replace(".php", "_f2.php"),
+                    new DatabaseHelper(this).getUnsyncedForms("kf2")
             ).execute();
 
             SharedPreferences syncPref = getSharedPreferences("SyncInfo", Context.MODE_PRIVATE);
