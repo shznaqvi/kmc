@@ -36,7 +36,6 @@ public class SectionDForm3Activity extends AppCompatActivity {
     private void SaveDraft() throws JSONException {
 
         JSONObject sa1 = new JSONObject();
-/*
         sa1.put("kf3d01", bi.kf3d01a.isChecked() ? "1"
                 : bi.kf3d01b.isChecked() ? "2"
                 : bi.kf3d01c.isChecked() ? "3"
@@ -44,7 +43,7 @@ public class SectionDForm3Activity extends AppCompatActivity {
                 : bi.kf3d01e.isChecked() ? "5"
                 : bi.kf3d0196.isChecked() ? "96"
                 : "0");
-        sa1.put("kf3d0196x", bi.kf3d0196x.getText().toString());*/
+        sa1.put("kf3d0196x", bi.kf3d0196x.getText().toString());
 
         sa1.put("kf3d02", bi.kf3d02a.isChecked() ? "1"
                 : bi.kf3d02b.isChecked() ? "2"
