@@ -38,7 +38,7 @@
                             android:hint="@string/kf2c01a"
                             android:maxLength="2"
                             app:maxValue="40"
-                            app:minValue="32"
+                            app:minValue="34"
                             app:type="range" />
                     </LinearLayout>
                 </android.support.v7.widget.CardView>

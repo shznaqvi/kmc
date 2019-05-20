@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -38,6 +39,10 @@ public class SectionCForm2Activity extends AppCompatActivity {
 
     private void setContentUI() {
         this.setTitle(R.string.f2_hC);
+
+        if (getIntent().getBooleanExtra("hfScreen", false))
+            bi.fldGrpCVkf2c08.setVisibility(View.GONE);
+
     }
 
     public void BtnContinue() {
@@ -60,7 +65,7 @@ public class SectionCForm2Activity extends AppCompatActivity {
     private boolean UpdateDB() {
 
         DatabaseHelper db = new DatabaseHelper(this);
-        long count = db.updateSB();
+        long count = db.updateSC();
         if (count != -1) return true;
 
         Toast.makeText(this, "Error in updating DB", Toast.LENGTH_SHORT).show();

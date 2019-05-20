@@ -121,10 +121,11 @@
                 <com.edittextpicker.aliazaz.EditTextPicker
                     android:id="@+id/kapr02b"
                     style="@style/EditText_number"
-                    android:hint="@string/kapr01"
+                    android:hint="XXX"
                     android:maxLength="3"
                     app:maxValue="999"
                     app:minValue="1"
+                    app:pattern="[0-9]{3,3}"
                     app:type="range" />
 
             </LinearLayout>

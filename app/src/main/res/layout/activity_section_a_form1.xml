@@ -1052,10 +1052,11 @@
                                     <com.edittextpicker.aliazaz.EditTextPicker
                                         android:id="@+id/kf1b11"
                                         style="@style/EditText_number"
+                                        android:enabled="false"
                                         android:hint="@string/kf1b11"
                                         android:maxLength="3"
                                         android:text='@{kf1b10a.checked ? kf1b11.getText.toString : ""}'
-                                        app:maxValue="9999"
+                                        app:maxValue="999"
                                         app:minValue="1"
                                         app:type="range" />
 

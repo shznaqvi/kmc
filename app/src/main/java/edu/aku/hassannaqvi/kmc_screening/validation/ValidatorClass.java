@@ -234,8 +234,10 @@ public abstract class ValidatorClass {
                 if (!cb.isEnabled()) {
                     flag = true;
                     continue;
-                } else
-                    flag = false;
+                } else {
+                    if (!flag)
+                        flag = false;
+                }
 
                 if (cb.isChecked()) {
                     flag = true;

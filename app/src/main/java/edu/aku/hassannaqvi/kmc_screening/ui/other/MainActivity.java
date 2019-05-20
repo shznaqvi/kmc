@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.StrictMode;
+import android.support.v7.app.AppCompatActivity;
 import android.text.InputType;
 import android.util.Log;
 import android.view.View;
@@ -53,7 +54,7 @@ import edu.aku.hassannaqvi.kmc_screening.ui.SectionA1Activity;
 import edu.aku.hassannaqvi.kmc_screening.ui.SectionInfoKmcActivity;
 import edu.aku.hassannaqvi.kmc_screening.ui.form0.SectionAForm0Activity;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 
     private final String TAG = "MainActivity";
 

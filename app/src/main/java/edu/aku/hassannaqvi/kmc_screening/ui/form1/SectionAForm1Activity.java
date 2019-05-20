@@ -159,6 +159,8 @@ public class SectionAForm1Activity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (i == bi.kf1b10a.getId())
                     bi.kf1b11.setText(getIntent().getStringExtra("pwid"));
+                else
+                    bi.kf1b11.setText(null);
             }
         });
 

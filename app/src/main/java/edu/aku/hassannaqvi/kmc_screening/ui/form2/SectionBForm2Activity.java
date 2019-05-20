@@ -53,7 +53,7 @@ public class SectionBForm2Activity extends AppCompatActivity {
         }
         if (UpdateDB()) {
             finish();
-            startActivity(new Intent(this, SectionCForm2Activity.class));
+            startActivity(new Intent(this, SectionCForm2Activity.class).putExtra("hfScreen", getIntent().getBooleanExtra("hfScreen", false)));
         } else {
             Toast.makeText(this, "Error in updating db!!", Toast.LENGTH_SHORT).show();
         }
@@ -107,7 +107,17 @@ public class SectionBForm2Activity extends AppCompatActivity {
 
 
     private boolean formValidation() {
-        return ValidatorClass.EmptyCheckingContainer(this, bi.fldGrpSecB02);
+        if (!ValidatorClass.EmptyCheckingContainer(this, bi.fldGrpSecB02))
+            return false;
+
+        if (bi.kf2b10a.isChecked()) {
+            if (Integer.valueOf(bi.kf2b10d.getText().toString()) == 0 && Integer.valueOf(bi.kf2b10m.getText().toString()) == 0) {
+                bi.kf2b10d.setError("Both values can't be zero!!");
+                return false;
+            }
+        }
+
+        return true;
     }
 
     public void BtnEnd() {
@@ -116,6 +126,14 @@ public class SectionBForm2Activity extends AppCompatActivity {
 
 
     private void setListeners() {
+
+        bi.kf2b09.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i != bi.kf2b09a.getId())
+                    bi.kf2b10.clearCheck();
+            }
+        });
 
         bi.kf2b12.addTextChangedListener(new TextWatcher() {
             @Override
@@ -126,9 +144,9 @@ public class SectionBForm2Activity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 if (bi.kf2b12.getText().toString().isEmpty())
-                    bi.kf2b13.setMax(9);
+                    bi.kf2b13.setMaxvalue(9);
                 else
-                    bi.kf2b13.setMax(Float.valueOf(bi.kf2b12.getText().toString()));
+                    bi.kf2b13.setMaxvalue(Float.valueOf(bi.kf2b12.getText().toString()));
             }
 
             @Override
@@ -152,56 +170,6 @@ public class SectionBForm2Activity extends AppCompatActivity {
                     ClearClass.ClearAllFields(bi.fldGrpCVkf2b16, null);
             }
         });
-
-        /*bi.kf2b10d.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                if (!bi.kf2b10m.getText().toString().isEmpty()) {
-                    bi.kf2b10d.setMin(0);
-                } else {
-                    bi.kf2b10d.setMin(1);
-                }
-                if (!bi.kf2b10d.getText().toString().isEmpty()) {
-                    bi.kf2b10m.setMin(0);
-                }
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
-        });
-
-        bi.kf2b10m.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                if (!bi.kf2b10d.getText().toString().isEmpty()) {
-                    bi.kf2b10m.setMin(0);
-                } else {
-                    bi.kf2b10m.setMin(1);
-                }
-                if (!bi.kf2b10m.getText().toString().isEmpty()) {
-                    bi.kf2b10d.setMin(0);
-                }
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
-        });*/
 
     }
 

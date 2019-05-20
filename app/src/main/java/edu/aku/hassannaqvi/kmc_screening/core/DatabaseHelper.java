@@ -50,7 +50,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "kmc_screening.db";
     public static final String DB_NAME = DATABASE_NAME.replace(".", "_copy.");
     public static final String PROJECT_NAME = "KMC-SCREENING";
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 3;
     private static final String SQL_CREATE_FORMS = "CREATE TABLE "
             + FormsTable.TABLE_NAME + "("
             + FormsTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -122,8 +122,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             EligibleEntry.COLUMN_FORMDATE + " TEXT," +
             EligibleEntry.COLUMN_M_NAME + " TEXT," +
             EligibleEntry.COLUMN_M_ID + " TEXT," +
-            EligibleEntry.COLUMN_PART_ID + " TEXT" +
+            EligibleEntry.COLUMN_PART_ID + " TEXT," +
+            EligibleEntry.COLUMN_SCREEN_ID + " TEXT" +
             ");";
+
+    private static final String SQL_ALTER_ELIGIBILES = "ALTER TABLE " +
+            EligibleEntry.TABLE_NAME + " ADD COLUMN " +
+            EligibleEntry.COLUMN_SCREEN_ID + " TEXT;";
 
     final String SQL_CREATE_DISTRICT_TABLE = "CREATE TABLE " + singleTaluka.TABLE_NAME + " (" +
             singleTaluka._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -189,6 +194,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         switch (i) {
             case 1:
                 db.execSQL(SQL_CREATE_ELIGIBILES);
+            case 2:
+                db.execSQL(SQL_ALTER_ELIGIBILES);
         }
 
     }
@@ -515,7 +522,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 EligibleEntry.COLUMN_M_NAME,
                 EligibleEntry.COLUMN_FORMDATE,
                 EligibleEntry.COLUMN_M_ID,
-                EligibleEntry.COLUMN_PART_ID
+                EligibleEntry.COLUMN_PART_ID,
+                EligibleEntry.COLUMN_SCREEN_ID,
         };
 
         String whereClause = EligibleEntry.COLUMN_VILLAGE + " =? AND " + EligibleEntry.COLUMN_M_ID + " =?";
@@ -540,6 +548,54 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             while (c.moveToNext()) {
                 EligibleContract eligibile = new EligibleContract();
                 allEB.add(eligibile.hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allEB;
+    }
+
+    public Collection<EligibleContract> getEligibileParticipantFromPDADB(String villageCode, String hhno) {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                FormsTable.COLUMN__UID,
+                FormsTable.COLUMN_VILLAGE,
+                FormsTable.COLUMN_FORMDATE,
+                FormsTable.COLUMN_PWID,
+                FormsTable.COLUMN_SINFO,
+                FormsTable.COLUMN_SA,
+        };
+
+        String whereClause = FormsTable.COLUMN_VILLAGE + " =? AND " + FormsTable.COLUMN_PWID + " =? AND " + FormsTable.COLUMN_ISTATUS + " =?";
+        String[] whereArgs = {villageCode, hhno, "1"};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = FormsTable.COLUMN_PWID + " ASC";
+
+        Collection<EligibleContract> allEB = new ArrayList<>();
+
+        try {
+            c = db.query(
+                    FormsTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                if (!EligibleContract.checkingEligibility(c)) continue;
+
+                allEB.add(new EligibleContract().hydrate2(c));
             }
         } finally {
             if (c != null) {
@@ -698,6 +754,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 values.put(EligibleEntry.COLUMN_M_NAME, epw.getM_name());
                 values.put(EligibleEntry.COLUMN_M_ID, epw.getM_id());
                 values.put(EligibleEntry.COLUMN_PART_ID, epw.getPart_id());
+                values.put(EligibleEntry.COLUMN_SCREEN_ID, epw.getScreen_id());
 
                 db.insert(EligibleEntry.TABLE_NAME, null, values);
             }

@@ -3,6 +3,8 @@ package edu.aku.hassannaqvi.kmc_screening.contracts;
 import android.database.Cursor;
 import android.provider.BaseColumns;
 
+import com.google.gson.Gson;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -14,6 +16,7 @@ public class EligibleContract {
     private String m_name;
     private String m_id;
     private String part_id;
+    private String screen_id;
 
     public EligibleContract() {
     }
@@ -66,6 +69,19 @@ public class EligibleContract {
         this.m_name = m_name;
     }
 
+    public static boolean checkingEligibility(Cursor cursor) {
+        SimpleEligibleSA forms = new Gson().fromJson(cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_SA)), SimpleEligibleSA.class);
+        return !forms.getKf1b11().equals("");
+    }
+
+    public String getScreen_id() {
+        return screen_id;
+    }
+
+    public void setScreen_id(String screen_id) {
+        this.screen_id = screen_id;
+    }
+
     public EligibleContract sync(JSONObject jsonObject) throws JSONException {
 
         this.puid = jsonObject.getString(EligibleEntry.COLUMN_PUID);
@@ -74,6 +90,7 @@ public class EligibleContract {
         this.m_name = jsonObject.getString(EligibleEntry.COLUMN_M_NAME);
         this.m_id = jsonObject.getString(EligibleEntry.COLUMN_M_ID);
         this.part_id = jsonObject.getString(EligibleEntry.COLUMN_PART_ID);
+        this.screen_id = jsonObject.getString(EligibleEntry.COLUMN_SCREEN_ID);
 
         return this;
     }
@@ -86,6 +103,23 @@ public class EligibleContract {
         this.m_name = cursor.getString(cursor.getColumnIndex(EligibleEntry.COLUMN_M_NAME));
         this.m_id = cursor.getString(cursor.getColumnIndex(EligibleEntry.COLUMN_M_ID));
         this.part_id = cursor.getString(cursor.getColumnIndex(EligibleEntry.COLUMN_PART_ID));
+        this.screen_id = cursor.getString(cursor.getColumnIndex(EligibleEntry.COLUMN_SCREEN_ID));
+
+        return this;
+    }
+
+    public EligibleContract hydrate2(Cursor cursor) {
+
+        this.puid = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN__UID));
+        this.village = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_VILLAGE));
+        this.formdate = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_FORMDATE));
+        this.m_id = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_PWID));
+
+        SimpleEligibleSA formsSA = new Gson().fromJson(cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_SA)), SimpleEligibleSA.class);
+        SimpleEligibleSINFO formsSINFO = new Gson().fromJson(cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_SINFO)), SimpleEligibleSINFO.class);
+        this.m_name = formsSINFO.getKf1a02();
+        this.screen_id = formsSINFO.getKf1a03();
+        this.part_id = formsSA.getKf1b11();
 
         return this;
     }
@@ -99,6 +133,7 @@ public class EligibleContract {
         json.put(EligibleEntry.COLUMN_M_NAME, this.m_name == null ? JSONObject.NULL : this.m_name);
         json.put(EligibleEntry.COLUMN_M_ID, this.m_id == null ? JSONObject.NULL : this.m_id);
         json.put(EligibleEntry.COLUMN_PART_ID, this.part_id == null ? JSONObject.NULL : this.part_id);
+        json.put(EligibleEntry.COLUMN_SCREEN_ID, this.screen_id == null ? JSONObject.NULL : this.screen_id);
 
         return json;
     }
@@ -113,7 +148,30 @@ public class EligibleContract {
         public static final String COLUMN_M_NAME = "m_name";
         public static final String COLUMN_M_ID = "pwid";
         public static final String COLUMN_PART_ID = "part_id";
+        public static final String COLUMN_SCREEN_ID = "screen_id";
 
         public static String _URI = "eligible_participant.php";
+    }
+
+    private class SimpleEligibleSINFO {
+
+        String kf1a02, kf1a03;
+
+        public String getKf1a03() {
+            return kf1a03;
+        }
+
+        public String getKf1a02() {
+            return kf1a02;
+        }
+    }
+
+    private class SimpleEligibleSA {
+
+        String kf1b11;
+
+        public String getKf1b11() {
+            return kf1b11;
+        }
     }
 }

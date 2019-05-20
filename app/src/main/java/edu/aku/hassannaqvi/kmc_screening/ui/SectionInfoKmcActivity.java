@@ -1,6 +1,5 @@
 package edu.aku.hassannaqvi.kmc_screening.ui;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -8,6 +7,7 @@ import android.databinding.DataBindingUtil;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.text.format.DateFormat;
@@ -48,7 +48,7 @@ import edu.aku.hassannaqvi.kmc_screening.validation.ValidatorClass;
 import static edu.aku.hassannaqvi.kmc_screening.core.MainApp.fc;
 
 
-public class SectionInfoKmcActivity extends Activity {
+public class SectionInfoKmcActivity extends AppCompatActivity {
 
     private List<String> ucName, talukaNames, villageNames, partNam;
     private List<String> ucCode, talukaCodes, villageCodes;
@@ -117,7 +117,7 @@ public class SectionInfoKmcActivity extends Activity {
                 if (bi.kf2a4.getText().toString().isEmpty()) return;
                 if (Integer.valueOf(bi.kf2a4.getText().toString()) < 2) return;
 
-                bi.kf2a5.setMax(Float.valueOf(bi.kf2a4.getText().toString()) - 1);
+                bi.kf2a5.setMaxvalue(Float.valueOf(bi.kf2a4.getText().toString()) - 1);
             }
 
             @Override
@@ -156,6 +156,8 @@ public class SectionInfoKmcActivity extends Activity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
+                setupFields(View.GONE);
+
                 if (position == 0) return;
 
                 ucCode = new ArrayList<>();
@@ -187,6 +189,8 @@ public class SectionInfoKmcActivity extends Activity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
+                setupFields(View.GONE);
+
                 if (position == 0) return;
 
                 villageCodes = new ArrayList<>();
@@ -213,6 +217,10 @@ public class SectionInfoKmcActivity extends Activity {
         bi.crvillage.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                setupFields(View.GONE);
+                bi.kapr02a.setText(null);
+
                 if (i == 0) return;
                 bi.villageLabel.setText("Village Code: " + villageCodes.get(bi.crvillage.getSelectedItemPosition()));
             }
@@ -312,7 +320,7 @@ public class SectionInfoKmcActivity extends Activity {
                 finish();
                 startActivity(new Intent(this, MainApp.formType.equals("kf1") ? SectionAForm1Activity.class
                         : MainApp.formType.equals("kf2") ? SectionBForm2Activity.class
-                        : MainApp.formType.equals("kf3") ? SectionBForm2Activity.class : null).putExtra("pwid", bi.kapr02a.getText().toString()));
+                        : MainApp.formType.equals("kf3") ? SectionBForm2Activity.class : null).putExtra("pwid", bi.kapr02a.getText().toString()).putExtra("hfScreen", bi.kfa1a.isChecked()));
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
@@ -381,16 +389,23 @@ public class SectionInfoKmcActivity extends Activity {
             partNam.add("....");
 
             Collection<EligibleContract> dc = db.getEligibileParticipant(villageCodes.get(bi.crvillage.getSelectedItemPosition()), bi.kapr02a.getText().toString());
-            Log.d(TAG, "onCreate: " + dc.size());
             for (EligibleContract d : dc) {
-                partNam.add(d.getPart_id());
-                mapPartElig.put(d.getPart_id(), d);
+                partNam.add(d.getScreen_id());
+                mapPartElig.put(d.getScreen_id(), d);
             }
 
             if (mapPartElig.size() == 0) {
-                setupFields(View.GONE);
-                Toast.makeText(this, "Household does not exist ", Toast.LENGTH_LONG).show();
-                return;
+                dc = db.getEligibileParticipantFromPDADB(villageCodes.get(bi.crvillage.getSelectedItemPosition()), bi.kapr02a.getText().toString());
+                for (EligibleContract d : dc) {
+                    partNam.add(d.getScreen_id());
+                    mapPartElig.put(d.getScreen_id(), d);
+                }
+
+                if (mapPartElig.size() == 0) {
+                    setupFields(View.GONE);
+                    Toast.makeText(this, "Household does not exist ", Toast.LENGTH_LONG).show();
+                    return;
+                }
             }
 
             bi.kf2a6.setAdapter(new ArrayAdapter<>(SectionInfoKmcActivity.this, android.R.layout.simple_spinner_dropdown_item, partNam));
