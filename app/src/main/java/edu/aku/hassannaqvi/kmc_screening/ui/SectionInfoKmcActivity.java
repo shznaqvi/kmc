@@ -41,6 +41,7 @@ import edu.aku.hassannaqvi.kmc_screening.core.MainApp;
 import edu.aku.hassannaqvi.kmc_screening.databinding.ActivitySectionInfoKmcBinding;
 import edu.aku.hassannaqvi.kmc_screening.ui.form1.SectionAForm1Activity;
 import edu.aku.hassannaqvi.kmc_screening.ui.form2.SectionBForm2Activity;
+import edu.aku.hassannaqvi.kmc_screening.ui.form3.SectionBForm3Activity;
 import edu.aku.hassannaqvi.kmc_screening.ui.other.EndingActivity;
 import edu.aku.hassannaqvi.kmc_screening.validation.ClearClass;
 import edu.aku.hassannaqvi.kmc_screening.validation.ValidatorClass;
@@ -320,7 +321,7 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
                 finish();
                 startActivity(new Intent(this, MainApp.formType.equals("kf1") ? SectionAForm1Activity.class
                         : MainApp.formType.equals("kf2") ? SectionBForm2Activity.class
-                        : MainApp.formType.equals("kf3") ? SectionBForm2Activity.class : null).putExtra("pwid", bi.kapr02a.getText().toString()).putExtra("hfScreen", bi.kfa1a.isChecked()));
+                        : MainApp.formType.equals("kf3") ? SectionBForm3Activity.class : null).putExtra("pwid", bi.kapr02a.getText().toString()).putExtra("hfScreen", bi.kfa1a.isChecked()));
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }

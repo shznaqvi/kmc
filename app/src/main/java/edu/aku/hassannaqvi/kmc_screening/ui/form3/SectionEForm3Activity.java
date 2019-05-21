@@ -13,6 +13,7 @@ import edu.aku.hassannaqvi.kmc_screening.R;
 import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc_screening.core.MainApp;
 import edu.aku.hassannaqvi.kmc_screening.databinding.ActivitySectionEForm3Binding;
+import edu.aku.hassannaqvi.kmc_screening.validation.ValidatorClass;
 
 import static edu.aku.hassannaqvi.kmc_screening.core.MainApp.fc;
 
@@ -85,7 +86,6 @@ public class SectionEForm3Activity extends AppCompatActivity {
 
     public void BtnContinue() {
 
-        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
             try {
                 SaveDraft();
@@ -93,7 +93,6 @@ public class SectionEForm3Activity extends AppCompatActivity {
                 e.printStackTrace();
             }
             if (UpdateDB()) {
-                Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
                 finish();
                 startActivity(new Intent(this, SectionFForm3Activity.class));
 
@@ -105,8 +104,7 @@ public class SectionEForm3Activity extends AppCompatActivity {
     }
 
     private boolean formValidation() {
-
-        return true;
+        return ValidatorClass.EmptyCheckingContainer(this, bi.fldGrpSecE02);
     }
 
     private boolean UpdateDB() {

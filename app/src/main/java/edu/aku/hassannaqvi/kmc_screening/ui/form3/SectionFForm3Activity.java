@@ -14,6 +14,7 @@ import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc_screening.core.MainApp;
 import edu.aku.hassannaqvi.kmc_screening.databinding.ActivitySectionFForm3Binding;
 import edu.aku.hassannaqvi.kmc_screening.ui.other.EndingActivity;
+import edu.aku.hassannaqvi.kmc_screening.validation.ValidatorClass;
 
 import static edu.aku.hassannaqvi.kmc_screening.core.MainApp.fc;
 
@@ -48,7 +49,7 @@ public class SectionFForm3Activity extends AppCompatActivity {
         sa1.put("kf3f02e", bi.kf3f02e.isChecked() ? "5" : "0");
         sa1.put("kf3f0296", bi.kf3f0296.isChecked() ? "96" : "0");
         sa1.put("kf3f0296x", bi.kf3f0296x.getText().toString());
-        
+
         sa1.put("kf3f03", bi.kf3f03a.isChecked() ? "1" : bi.kf3f03b.isChecked() ? "2" : "0");
 
         sa1.put("kf3f04a", bi.kf3f04a.isChecked() ? "1" : "0");
@@ -72,7 +73,6 @@ public class SectionFForm3Activity extends AppCompatActivity {
 
     public void BtnContinue() {
 
-        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
             try {
                 SaveDraft();
@@ -80,7 +80,6 @@ public class SectionFForm3Activity extends AppCompatActivity {
                 e.printStackTrace();
             }
             if (UpdateDB()) {
-                Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
                 finish();
                 startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
 
@@ -92,7 +91,7 @@ public class SectionFForm3Activity extends AppCompatActivity {
     }
 
     private boolean formValidation() {
-        return true;
+        return ValidatorClass.EmptyCheckingContainer(this, bi.fldGrpSecF02);
     }
 
     private boolean UpdateDB() {

@@ -62,7 +62,7 @@ public class SectionBForm2Activity extends AppCompatActivity {
     private boolean UpdateDB() {
 
         DatabaseHelper db = new DatabaseHelper(this);
-        long count = db.updateSA();
+        long count = db.updateSB();
         if (count != -1) return true;
 
         Toast.makeText(this, "Error in updating DB", Toast.LENGTH_SHORT).show();
@@ -113,6 +113,8 @@ public class SectionBForm2Activity extends AppCompatActivity {
         if (bi.kf2b10a.isChecked()) {
             if (Integer.valueOf(bi.kf2b10d.getText().toString()) == 0 && Integer.valueOf(bi.kf2b10m.getText().toString()) == 0) {
                 bi.kf2b10d.setError("Both values can't be zero!!");
+                bi.kf2b10d.setFocusable(true);
+                Toast.makeText(this, getString(R.string.kf2b10d) + ": Both values can't be zero!!", Toast.LENGTH_SHORT).show();
                 return false;
             }
         }

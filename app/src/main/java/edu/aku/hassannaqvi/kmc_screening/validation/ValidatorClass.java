@@ -366,22 +366,6 @@ public abstract class ValidatorClass {
                 }
             } else if (view instanceof LinearLayout) {
 
-                /*int length = ((LinearLayout) view).getChildCount();
-
-                if (length > 0) {
-                    if (((LinearLayout) view).getChildAt(0) instanceof CheckBox) {
-                        if (!EmptyCheckBox(context, ((LinearLayout) view),
-                                (CheckBox) ((LinearLayout) view).getChildAt(0),
-                                getString(context, getIDComponent(((LinearLayout) view).getChildAt(0))))) {
-                            return false;
-                        }
-                    } else if (!EmptyCheckingContainer(context, (LinearLayout) view)) {
-                        return false;
-                    }
-                } else if (!EmptyCheckingContainer(context, (LinearLayout) view)) {
-                    return false;
-                }*/
-
                 if (view.getTag() != null && view.getTag().equals("0")) {
                     if (!EmptyCheckBox(context, ((LinearLayout) view),
                             (CheckBox) ((LinearLayout) view).getChildAt(0),
@@ -398,37 +382,6 @@ public abstract class ValidatorClass {
         }
         return true;
     }
-
-    public static boolean EmptyCheckingContainerForButtons(Context context, LinearLayout lv) {
-
-
-        for (int i = 0; i < lv.getChildCount(); i++) {
-            View view = lv.getChildAt(i);
-
-          /*  if (view.getVisibility() == View.GONE || !view.isEnabled())
-                continue;*/
-            if (view.getVisibility() == View.GONE)
-                continue;
-
-            if (view instanceof CardView) {
-                for (int j = 0; j < ((CardView) view).getChildCount(); j++) {
-                    View view1 = ((CardView) view).getChildAt(j);
-                    if (view1 instanceof LinearLayout) {
-                        if (!EmptyCheckingContainerForButtons(context, (LinearLayout) view1)) {
-                            return false;
-                        }
-                    }
-                }
-            } else if (view instanceof EditText) {
-                if (!EmptyTextBox(context, (EditText) view, getString(context, getIDComponent(view)))) {
-                    return false;
-                }
-            }
-
-        }
-        return true;
-    }
-
 
     public static String getIDComponent(View view) {
         String[] idName = (view).getResources().getResourceName((view).getId()).split("id/");

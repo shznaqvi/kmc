@@ -15,6 +15,7 @@ import edu.aku.hassannaqvi.kmc_screening.R;
 import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc_screening.core.MainApp;
 import edu.aku.hassannaqvi.kmc_screening.databinding.ActivitySectionBForm3Binding;
+import edu.aku.hassannaqvi.kmc_screening.validation.ValidatorClass;
 
 import static edu.aku.hassannaqvi.kmc_screening.core.MainApp.fc;
 
@@ -43,8 +44,7 @@ public class SectionBForm3Activity extends AppCompatActivity {
                     bi.fldGrpCVkf3b04.setVisibility(View.GONE);
                     bi.fldGrpCVkf3b05.setVisibility(View.GONE);
                     bi.fldGrpCVkf3b06.setVisibility(View.GONE);
-                }
-                else {
+                } else {
                     bi.fldGrpCVkf3b04.setVisibility(View.VISIBLE);
                     bi.fldGrpCVkf3b05.setVisibility(View.VISIBLE);
                     bi.fldGrpCVkf3b06.setVisibility(View.VISIBLE);
@@ -103,7 +103,7 @@ public class SectionBForm3Activity extends AppCompatActivity {
                 : "0");
 
         fc.setsB(String.valueOf(sa1));
-        
+
     }
 
     public void BtnEnd() {
@@ -131,8 +131,7 @@ public class SectionBForm3Activity extends AppCompatActivity {
     }
 
     private boolean formValidation() {
-
-        return true;
+        return ValidatorClass.EmptyCheckingContainer(this, bi.fldGrpSecB02);
     }
 
     private boolean UpdateDB() {
