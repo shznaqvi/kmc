@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -13,6 +14,7 @@ import edu.aku.hassannaqvi.kmc_screening.R;
 import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc_screening.core.MainApp;
 import edu.aku.hassannaqvi.kmc_screening.databinding.ActivitySectionEForm3Binding;
+import edu.aku.hassannaqvi.kmc_screening.validation.ClearClass;
 import edu.aku.hassannaqvi.kmc_screening.validation.ValidatorClass;
 
 import static edu.aku.hassannaqvi.kmc_screening.core.MainApp.fc;
@@ -27,18 +29,55 @@ public class SectionEForm3Activity extends AppCompatActivity {
 
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_e_form3);
         bi.setCallback(this);
+
+        setupListeners();
+    }
+
+    private void setupListeners() {
+        bi.kf3e02.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i == bi.kf3e02b.getId())
+                    bi.kf3e03.clearCheck();
+            }
+        });
+
+        bi.kf3e13.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i == bi.kf3e13a.getId())
+                    ClearClass.ClearAllFields(bi.fldGrpSecE02b, null);
+            }
+        });
+
+        bi.kf3e19.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i == bi.kf3e19a.getId())
+                    ClearClass.ClearAllFields(bi.fldGrpSecE02c, null);
+            }
+        });
+
+        bi.kf3e20.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i == bi.kf3e20a.getId())
+                    bi.kf3e21.clearCheck();
+            }
+        });
+
+
     }
 
     public void BtnEnd() {
         MainApp.endActivity(this, this);
     }
 
-
     private void SaveDraft() throws JSONException {
 
         JSONObject sa1 = new JSONObject();
 
-        sa1.put("kf3e01a", bi.kf3e01a.getText().toString());
+        sa1.put("kf3e01", bi.kf3e01.getText().toString());
 
         sa1.put("kf3e02", bi.kf3e02a.isChecked() ? "1" : bi.kf3e02b.isChecked() ? "2" : "0");
 
@@ -46,9 +85,9 @@ public class SectionEForm3Activity extends AppCompatActivity {
 
         sa1.put("kf3e07", bi.kf3e07a.isChecked() ? "1" : bi.kf3e07b.isChecked() ? "2" : "0");
 
-        sa1.put("kf3e05a", bi.kf3e05a.getText().toString());
+        sa1.put("kf3e05", bi.kf3e05.getText().toString());
 
-        sa1.put("kf3e06a", bi.kf3e06a.getText().toString());
+        sa1.put("kf3e06", bi.kf3e06.getText().toString());
 
         sa1.put("kf3e07", bi.kf3e07a.isChecked() ? "1" : bi.kf3e07b.isChecked() ? "2" : "0");
 
@@ -60,7 +99,11 @@ public class SectionEForm3Activity extends AppCompatActivity {
 
         sa1.put("kf3e11", bi.kf3e11a.isChecked() ? "1" : bi.kf3e11b.isChecked() ? "2" : "0");
 
-        sa1.put("kf3e12", bi.kf3e12a.isChecked() ? "1" : bi.kf3e12b.isChecked() ? "2" : "0");
+        sa1.put("kf3e12a", bi.kf3e12a.isChecked() ? "1" : "0");
+        sa1.put("kf3e12b", bi.kf3e12b.isChecked() ? "2" : "0");
+        sa1.put("kf3e12c", bi.kf3e12c.isChecked() ? "3" : "0");
+        sa1.put("kf3e12d", bi.kf3e12d.isChecked() ? "4" : "0");
+        sa1.put("kf3e12e", bi.kf3e12e.isChecked() ? "5" : "0");
 
         sa1.put("kf3e13", bi.kf3e13a.isChecked() ? "1" : bi.kf3e13b.isChecked() ? "2" : "0");
 

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -14,6 +15,7 @@ import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc_screening.core.MainApp;
 import edu.aku.hassannaqvi.kmc_screening.databinding.ActivitySectionFForm3Binding;
 import edu.aku.hassannaqvi.kmc_screening.ui.other.EndingActivity;
+import edu.aku.hassannaqvi.kmc_screening.validation.ClearClass;
 import edu.aku.hassannaqvi.kmc_screening.validation.ValidatorClass;
 
 import static edu.aku.hassannaqvi.kmc_screening.core.MainApp.fc;
@@ -27,12 +29,25 @@ public class SectionFForm3Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_f_form3);
         bi.setCallback(this);
+
+        setupListener();
+    }
+
+    private void setupListener() {
+
+        bi.kf3f03.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i == bi.kf3f03b.getId())
+                    ClearClass.ClearAllFields(bi.fldGrpLLkf3f04, null);
+            }
+        });
+
     }
 
     public void BtnEnd() {
         MainApp.endActivity(this, this);
     }
-
 
     private void SaveDraft() throws JSONException {
 

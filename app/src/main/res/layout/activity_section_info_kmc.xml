@@ -213,7 +213,7 @@
 
                     <TextView
                         style="@style/i_textview"
-                        android:text="@string/kf2a6" />
+                        android:text="@string/kf3a4" />
 
                     <Spinner
                         android:id="@+id/kf2a6"
@@ -322,44 +322,30 @@
                 </LinearLayout>
 
                 <!--F-3-->
-                <LinearLayout
-                    android:id="@+id/form03"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:visibility="gone"
-                    tools:visibility="visible">
+                <!--                <LinearLayout
+                                    android:id="@+id/form03"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:visibility="gone"
+                                    tools:visibility="visible">
 
-                    <TextView
-                        style="@style/i_textview"
-                        android:text="@string/kf3a3" />
+                                    <TextView
+                                        style="@style/i_textview"
+                                        android:text="@string/kf3a4" />
 
-                    <EditText
-                        android:id="@+id/kf3a3"
-                        style="@style/textInput"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                        android:hint="@string/kf3a3"
-                        android:inputType="text" />
+                                    <EditText
+                                        android:id="@+id/kf3a4"
+                                        style="@style/textInput"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:digits="0123456789"
+                                        android:hint="@string/kf3a4"
+                                        android:inputType="number"
+                                        android:maxLength="2" />
 
-                    <TextView
-                        style="@style/i_textview"
-                        android:text="@string/kf3a4" />
-
-                    <EditText
-                        android:id="@+id/kf3a4"
-                        style="@style/textInput"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:digits="0123456789"
-                        android:hint="@string/kf3a4"
-                        android:inputType="number"
-                        android:maxLength="2" />
-
-                </LinearLayout>
+                                </LinearLayout>-->
 
                 <!--Buttons-->
                 <LinearLayout

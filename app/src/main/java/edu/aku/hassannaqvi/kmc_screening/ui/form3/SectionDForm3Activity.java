@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -13,6 +14,7 @@ import edu.aku.hassannaqvi.kmc_screening.R;
 import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc_screening.core.MainApp;
 import edu.aku.hassannaqvi.kmc_screening.databinding.ActivitySectionDForm3Binding;
+import edu.aku.hassannaqvi.kmc_screening.validation.ClearClass;
 import edu.aku.hassannaqvi.kmc_screening.validation.ValidatorClass;
 
 import static edu.aku.hassannaqvi.kmc_screening.core.MainApp.fc;
@@ -27,12 +29,58 @@ public class SectionDForm3Activity extends AppCompatActivity {
 
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_d_form3);
         bi.setCallback(this);
+
+        setupListeners();
+
+    }
+
+    private void setupListeners() {
+
+        bi.kf3d01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i != bi.kf3d01e.getId())
+                    bi.kf3d02.clearCheck();
+            }
+        });
+
+        bi.kf3d04.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i == bi.kf3d04a.getId())
+                    bi.kf3d05.clearCheck();
+            }
+        });
+
+        bi.kf3d06.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i == bi.kf3d06a.getId())
+                    bi.kf3d07.clearCheck();
+            }
+        });
+
+        bi.kf3d08.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i == bi.kf3d08a.getId())
+                    ClearClass.ClearAllFields(bi.fldGrpSecD02b, null);
+            }
+        });
+
+        bi.kf3d15.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i == bi.kf3d15b.getId())
+                    ClearClass.ClearAllFields(bi.fldGrpSecD02c, null);
+            }
+        });
+
     }
 
     public void BtnEnd() {
         MainApp.endActivity(this, this);
     }
-
 
     private void SaveDraft() throws JSONException {
 
@@ -115,16 +163,16 @@ public class SectionDForm3Activity extends AppCompatActivity {
                 : "0");
         sa1.put("kf3d1096x", bi.kf3d1096x.getText().toString());
 
-        sa1.put("kf3d11a", bi.kf3d11a.getText().toString());
+        sa1.put("kf3d11", bi.kf3d11.getText().toString());
 
         sa1.put("kf3d12", bi.kf3d12a.isChecked() ? "1" : bi.kf3d12b.isChecked() ? "2" : "0");
-        
-        sa1.put("kf3d13a", bi.kf3d13a.getText().toString());
 
-        sa1.put("kf3d14a", bi.kf3d14a.getText().toString());
+        sa1.put("kf3d13", bi.kf3d13.getText().toString());
+
+        sa1.put("kf3d14", bi.kf3d14.getText().toString());
 
         sa1.put("kf3d15", bi.kf3d15a.isChecked() ? "1" : bi.kf3d15b.isChecked() ? "2" : "0");
-        
+
         sa1.put("kf3d16", bi.kf3d16h.isChecked() ? "1" : bi.kf3d16d.isChecked() ? "2" : bi.kf3d16w.isChecked() ? "3" : bi.kf3d1698.isChecked() ? "98" : "0");
         sa1.put("kf3d16hx", bi.kf3d16hx.getText().toString());
         sa1.put("kf3d16dx", bi.kf3d16dx.getText().toString());
@@ -144,7 +192,7 @@ public class SectionDForm3Activity extends AppCompatActivity {
         sa1.put("kf3d1796", bi.kf3d1796.isChecked() ? "96" : "0");
         sa1.put("kf3d1796x", bi.kf3d1796x.getText().toString());
 
-        sa1.put("kf3d18a", bi.kf3d18a.getText().toString());
+        sa1.put("kf3d18", bi.kf3d18.getText().toString());
 
         fc.setsD(String.valueOf(sa1));
 
@@ -171,7 +219,6 @@ public class SectionDForm3Activity extends AppCompatActivity {
     }
 
     private boolean formValidation() {
-
         return ValidatorClass.EmptyCheckingContainer(this, bi.fldGrpSecD02);
     }
 

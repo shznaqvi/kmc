@@ -274,9 +274,10 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
             sInfo.put("kf2a06", bi.kf2a2.getText().toString());
             sInfo.put("kf2a07", bi.kf2a3.getText().toString());
             sInfo.put("kf2a08", bi.kf2a4.getText().toString());
+            sInfo.put("kf2a09", bi.kf2a5.getText().toString());
         } else if (fType.equals("kf3")) {
-            sInfo.put("kf3a05", bi.kf3a3.getText().toString());
-            sInfo.put("kf3a06", bi.kf3a4.getText().toString());
+            /*sInfo.put("kf3a05", bi.kf3a3.getText().toString());
+            sInfo.put("kf3a06", bi.kf3a4.getText().toString());*/
         }
 
         if (fType.equals("kf2") || fType.equals("kf3")) {
@@ -483,9 +484,9 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
             ClearClass.ClearAllFields(bi.form0203, null);
         } else if (MainApp.formType.equals("kf3")) {
             bi.form0203.setVisibility(status);
-            bi.form03.setVisibility(status);
+//            bi.form03.setVisibility(status);
             ClearClass.ClearAllFields(bi.form0203, null);
-            ClearClass.ClearAllFields(bi.form03, null);
+//            ClearClass.ClearAllFields(bi.form03, null);
         }
         bi.kfa1.clearCheck();
     }

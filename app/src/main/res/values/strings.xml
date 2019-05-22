@@ -492,11 +492,11 @@
     <string name="kf3b01a"> پهريون ڏينهن </string>
     <string name="kf3b01b"> ٻيون ڏينهن </string>
     <string name="kf3b01c"> ٽيون ڏينهن </string>
-    <string name="kf3b01d"> چوٿون ڏينهن </string>
-    <string name="kf3b01e"> پنجون ڏينهن </string>
-    <string name="kf3b01f"> ڇهون ڏينهن </string>
-    <string name="kf3b01g"> ستون ڏينهن </string>
-    <string name="kf3b01h"> اٺون ڏينهن </string>
+    <string name="kf3b01d"> پنجون ڏينهن </string>
+    <string name="kf3b01e"> ستون ڏينهن </string>
+    <string name="kf3b01f"> چوڏهون ڏينهن </string>
+    <string name="kf3b01g"> ايڪيهون ڏينهن </string>
+    <string name="kf3b01h"> اٺاويهون ڏينهن </string>
 
     <string name="kf3b02"> ماءُ جي موجوده صورت حال </string>
     <string name="kf3b02a"> ماءُ موجود آهي </string>

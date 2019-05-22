@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -13,6 +14,7 @@ import edu.aku.hassannaqvi.kmc_screening.R;
 import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc_screening.core.MainApp;
 import edu.aku.hassannaqvi.kmc_screening.databinding.ActivitySectionCForm3Binding;
+import edu.aku.hassannaqvi.kmc_screening.validation.ClearClass;
 import edu.aku.hassannaqvi.kmc_screening.validation.ValidatorClass;
 
 import static edu.aku.hassannaqvi.kmc_screening.core.MainApp.fc;
@@ -34,15 +36,27 @@ public class SectionCForm3Activity extends AppCompatActivity {
 
     private void setupViews() {
 
+        bi.kf3c07.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i == bi.kf3c07b.getId())
+                    ClearClass.ClearAllFields(bi.fldGrpSecC02b, null);
+            }
+        });
+
+        bi.kf3c17.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i == bi.kf3c17a.getId())
+                    ClearClass.ClearAllFields(bi.fldGrpCVkf3c18, null);
+            }
+        });
 
     }
 
     public void BtnEnd() {
-
         MainApp.endActivity(this, this);
-
     }
-
 
     private void SaveDraft() throws JSONException {
 
@@ -50,17 +64,17 @@ public class SectionCForm3Activity extends AppCompatActivity {
 
         sa1.put("kf3c01", bi.kf3c01a.isChecked() ? "1" : bi.kf3c01b.isChecked() ? "2" : "0");
 
-        sa1.put("kf3c02a", bi.kf3c02a.getText().toString());
+        sa1.put("kf3c02", bi.kf3c02.getText().toString());
 
-        sa1.put("kf3c03a", bi.kf3c03a.getText().toString());
+        sa1.put("kf3c03", bi.kf3c03.getText().toString());
 
-        sa1.put("kf3c04", bi.kf3c04a.isChecked() ? "1" : bi.kf3c04b.isChecked() ? "2" : "0");
-        sa1.put("kf3c04c", bi.kf3c04c.getText().toString());
+        sa1.put("kf3c04", bi.kf3c04a.isChecked() ? "1" : bi.kf3c04b.isChecked() ? "2" : bi.kf3c0496.isChecked() ? "96" : "0");
+        sa1.put("kf3c0496x", bi.kf3c0496x.getText().toString());
 
-        sa1.put("kf3c05a", bi.kf3c05a.getText().toString());
+        sa1.put("kf3c05", bi.kf3c05.getText().toString());
 
-        sa1.put("kf3c06", bi.kf3c06a.isChecked() ? "1" : bi.kf3c06b.isChecked() ? "2" : bi.kf3c06c.isChecked() ? "3" : bi.kf3c06d.isChecked() ? "4" : bi.kf3c06e.isChecked() ? "5" : "0");
-        sa1.put("kf3c06f", bi.kf3c06f.getText().toString());
+        sa1.put("kf3c06", bi.kf3c06a.isChecked() ? "1" : bi.kf3c06b.isChecked() ? "2" : bi.kf3c06c.isChecked() ? "3" : bi.kf3c06d.isChecked() ? "4" : bi.kf3c06e.isChecked() ? "5" : bi.kf3c0696.isChecked() ? "96" : "0");
+        sa1.put("kf3c0696x", bi.kf3c0696x.getText().toString());
 
         sa1.put("kf3c07", bi.kf3c07a.isChecked() ? "1" : bi.kf3c07b.isChecked() ? "2" : "0");
 
@@ -68,19 +82,18 @@ public class SectionCForm3Activity extends AppCompatActivity {
         sa1.put("kf3c08b", bi.kf3c08b.isChecked() ? "2" : "0");
         sa1.put("kf3c08c", bi.kf3c08c.isChecked() ? "3" : "0");
         sa1.put("kf3c08d", bi.kf3c08d.isChecked() ? "4" : "0");
-        sa1.put("kf3c08e", bi.kf3c08e.getText().toString());
+        sa1.put("kf3c08e", bi.kf3c08e.isChecked() ? "5" : "0");
+        sa1.put("kf3c0896", bi.kf3c0896.isChecked() ? "96" : "0");
+        sa1.put("kf3c0896x", bi.kf3c0896x.getText().toString());
 
-        sa1.put("kf3c09", bi.kf3c09a.isChecked() ? "1" : bi.kf3c09b.isChecked() ? "2" : "0");
-        sa1.put("kf3c09c", bi.kf3c09c.getText().toString());
+        sa1.put("kf3c09", bi.kf3c09a.isChecked() ? "1" : bi.kf3c09b.isChecked() ? "2" : bi.kf3c0996.isChecked() ? "96" : "0");
+        sa1.put("kf3c0996x", bi.kf3c0996x.getText().toString());
 
         sa1.put("kf3c10", bi.kf3c10a.isChecked() ? "1" : bi.kf3c10b.isChecked() ? "2" : "0");
 
-        sa1.put("kf3c11a", bi.kf3c11a.getText().toString());
-
-        sa1.put("kf3c12a", bi.kf3c12a.getText().toString());
-
-        sa1.put("kf3c13a", bi.kf3c13a.getText().toString());
-
+        sa1.put("kf3c11", bi.kf3c11.getText().toString());
+        sa1.put("kf3c12", bi.kf3c12.getText().toString());
+        sa1.put("kf3c13", bi.kf3c13.getText().toString());
         sa1.put("kf3c14", bi.kf3c14.getText().toString());
 
         sa1.put("kf3c15", bi.kf3c15a.isChecked() ? "1" : bi.kf3c15b.isChecked() ? "2" : bi.kf3c1598.isChecked() ? "98" : "0");
@@ -105,14 +118,15 @@ public class SectionCForm3Activity extends AppCompatActivity {
         sa1.put("kf3c18d", bi.kf3c18d.isChecked() ? "4" : "0");
         sa1.put("kf3c18e", bi.kf3c18e.isChecked() ? "5" : "0");
         sa1.put("kf3c18f", bi.kf3c18f.isChecked() ? "6" : "0");
-        sa1.put("kf3c18x", bi.kf3c18x.getText().toString());
+        sa1.put("kf3c1896", bi.kf3c1896.isChecked() ? "96" : "0");
+        sa1.put("kf3c1896x", bi.kf3c1896x.getText().toString());
 
         sa1.put("kf3c19", bi.kf3c19a.isChecked() ? "1" : bi.kf3c19b.isChecked() ? "2" : bi.kf3c1998.isChecked() ? "98" : "0");
 
         sa1.put("kf3c20", bi.kf3c20a.isChecked() ? "1" : bi.kf3c20b.isChecked() ? "2" : bi.kf3c2098.isChecked() ? "98" : "0");
 
-        sa1.put("kf3c21", bi.kf3c21a.isChecked() ? "1" : bi.kf3c21b.isChecked() ? "2" : bi.kf3c21c.isChecked() ? "3" : bi.kf3c21d.isChecked() ? "4" : "0");
-        
+        sa1.put("kf3c21", bi.kf3c21a.isChecked() ? "1" : bi.kf3c21b.isChecked() ? "2" : bi.kf3c21c.isChecked() ? "3" : bi.kf3c21d.isChecked() ? "4" : bi.kf3c2198.isChecked() ? "98" : "0");
+
         fc.setsC(String.valueOf(sa1));
 
     }
