@@ -1,6 +1,8 @@
 package edu.aku.hassannaqvi.kmc_screening.ui;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.databinding.DataBindingUtil;
@@ -295,18 +297,41 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
     }
 
     public void BtnEnd() {
+
         if (formValidation()) {
-            try {
-                SaveDraft();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            if (UpdateDB()) {
-                finish();
-                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
-            } else {
-                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
-            }
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                    SectionInfoKmcActivity.this);
+            alertDialogBuilder
+                    .setMessage("Do you want to Exit??")
+                    .setCancelable(false)
+                    .setPositiveButton("Yes",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog,
+                                                    int id) {
+
+                                    try {
+                                        SaveDraft();
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                    }
+                                    if (UpdateDB()) {
+                                        finish();
+                                        startActivity(new Intent(SectionInfoKmcActivity.this, EndingActivity.class).putExtra("complete", false));
+                                    } else {
+                                        Toast.makeText(SectionInfoKmcActivity.this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+
+
+                            });
+            alertDialogBuilder.setNegativeButton("No",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.cancel();
+                        }
+                    });
+            AlertDialog alert = alertDialogBuilder.create();
+            alert.show();
         }
     }
 
