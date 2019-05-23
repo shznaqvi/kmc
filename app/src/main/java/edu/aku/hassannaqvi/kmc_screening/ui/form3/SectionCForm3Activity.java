@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -22,6 +23,7 @@ import static edu.aku.hassannaqvi.kmc_screening.core.MainApp.fc;
 public class SectionCForm3Activity extends AppCompatActivity {
 
     ActivitySectionCForm3Binding bi;
+    Boolean day1Flag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,11 +32,26 @@ public class SectionCForm3Activity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_c_form3);
         bi.setCallback(this);
 
-
+        this.setTitle(R.string.f3_hC);
         setupViews();
     }
 
     private void setupViews() {
+
+        day1Flag = getIntent().getBooleanExtra("day1", false);
+        if (day1Flag) {
+            bi.fldGrpCVkf3c05.setVisibility(View.GONE);
+            bi.fldGrpCVkf3c13.setVisibility(View.GONE);
+            bi.fldGrpSecC02d.setVisibility(View.GONE);
+        }
+
+        bi.kf3c01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i == bi.kf3c01a.getId())
+                    bi.kf3c04.clearCheck();
+            }
+        });
 
         bi.kf3c07.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -66,14 +83,15 @@ public class SectionCForm3Activity extends AppCompatActivity {
 
         sa1.put("kf3c02", bi.kf3c02.getText().toString());
 
-        sa1.put("kf3c03", bi.kf3c03.getText().toString());
+        sa1.put("kf3c03h", bi.kf3c03h.getText().toString());
+        sa1.put("kf3c03m", bi.kf3c03m.getText().toString());
 
         sa1.put("kf3c04", bi.kf3c04a.isChecked() ? "1" : bi.kf3c04b.isChecked() ? "2" : bi.kf3c0496.isChecked() ? "96" : "0");
         sa1.put("kf3c0496x", bi.kf3c0496x.getText().toString());
 
         sa1.put("kf3c05", bi.kf3c05.getText().toString());
 
-        sa1.put("kf3c06", bi.kf3c06a.isChecked() ? "1" : bi.kf3c06b.isChecked() ? "2" : bi.kf3c06c.isChecked() ? "3" : bi.kf3c06d.isChecked() ? "4" : bi.kf3c06e.isChecked() ? "5" : bi.kf3c0696.isChecked() ? "96" : "0");
+        sa1.put("kf3c06", bi.kf3c06a.isChecked() ? "1" : bi.kf3c06b.isChecked() ? "2" : bi.kf3c06c.isChecked() ? "3" : bi.kf3c06d.isChecked() ? "4" : bi.kf3c06e.isChecked() ? "5" : bi.kf3c0697.isChecked() ? "97" : bi.kf3c0696.isChecked() ? "96" : "0");
         sa1.put("kf3c0696x", bi.kf3c0696x.getText().toString());
 
         sa1.put("kf3c07", bi.kf3c07a.isChecked() ? "1" : bi.kf3c07b.isChecked() ? "2" : "0");
@@ -92,7 +110,8 @@ public class SectionCForm3Activity extends AppCompatActivity {
         sa1.put("kf3c10", bi.kf3c10a.isChecked() ? "1" : bi.kf3c10b.isChecked() ? "2" : "0");
 
         sa1.put("kf3c11", bi.kf3c11.getText().toString());
-        sa1.put("kf3c12", bi.kf3c12.getText().toString());
+        sa1.put("kf3c12h", bi.kf3c12h.getText().toString());
+        sa1.put("kf3c12m", bi.kf3c12m.getText().toString());
         sa1.put("kf3c13", bi.kf3c13.getText().toString());
         sa1.put("kf3c14", bi.kf3c14.getText().toString());
 
@@ -108,7 +127,9 @@ public class SectionCForm3Activity extends AppCompatActivity {
         sa1.put("kf3c16h", bi.kf3c16h.isChecked() ? "8" : "0");
         sa1.put("kf3c16i", bi.kf3c16i.isChecked() ? "9" : "0");
         sa1.put("kf3c16j", bi.kf3c16j.isChecked() ? "10" : "0");
-        sa1.put("kf3c16x", bi.kf3c16x.getText().toString());
+        sa1.put("kf3c1698", bi.kf3c1698.isChecked() ? "98" : "0");
+        sa1.put("kf3c1696", bi.kf3c1696.isChecked() ? "96" : "0");
+        sa1.put("kf3c1696x", bi.kf3c1696x.getText().toString());
 
         sa1.put("kf3c17", bi.kf3c17a.isChecked() ? "1" : bi.kf3c17b.isChecked() ? "2" : "0");
 
@@ -126,6 +147,8 @@ public class SectionCForm3Activity extends AppCompatActivity {
         sa1.put("kf3c20", bi.kf3c20a.isChecked() ? "1" : bi.kf3c20b.isChecked() ? "2" : bi.kf3c2098.isChecked() ? "98" : "0");
 
         sa1.put("kf3c21", bi.kf3c21a.isChecked() ? "1" : bi.kf3c21b.isChecked() ? "2" : bi.kf3c21c.isChecked() ? "3" : bi.kf3c21d.isChecked() ? "4" : bi.kf3c2198.isChecked() ? "98" : "0");
+        sa1.put("kf3c21bh", bi.kf3c21bh.getText().toString());
+        sa1.put("kf3c21cd", bi.kf3c21cd.getText().toString());
 
         fc.setsC(String.valueOf(sa1));
 
@@ -140,7 +163,7 @@ public class SectionCForm3Activity extends AppCompatActivity {
             }
             if (UpdateDB()) {
                 finish();
-                startActivity(new Intent(this, SectionDForm3Activity.class));
+                startActivity(new Intent(this, SectionDForm3Activity.class).putExtra("day1", day1Flag));
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
@@ -151,7 +174,29 @@ public class SectionCForm3Activity extends AppCompatActivity {
     }
 
     private boolean formValidation() {
-        return ValidatorClass.EmptyCheckingContainer(this, bi.fldGrpSecC02);
+        if (!ValidatorClass.EmptyCheckingContainer(this, bi.fldGrpSecC02))
+            return false;
+
+
+        if (bi.kf3c01a.isChecked()) {
+            if (Integer.valueOf(bi.kf3c03h.getText().toString()) == 0 && Integer.valueOf(bi.kf3c03m.getText().toString()) == 0) {
+                bi.kf3c03h.setError("Both values can't be zero!!");
+                bi.kf3c03h.setFocusable(true);
+                Toast.makeText(this, getString(R.string.kf3c03a) + ": Both values can't be zero!!", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        }
+
+        if (bi.kf3c10a.isChecked()) {
+            if (Integer.valueOf(bi.kf3c12h.getText().toString()) == 0 && Integer.valueOf(bi.kf3c12m.getText().toString()) == 0) {
+                bi.kf3c12h.setError("Both values can't be zero!!");
+                bi.kf3c12h.setFocusable(true);
+                Toast.makeText(this, getString(R.string.kf3c12a) + ": Both values can't be zero!!", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        }
+
+        return true;
     }
 
     private boolean UpdateDB() {

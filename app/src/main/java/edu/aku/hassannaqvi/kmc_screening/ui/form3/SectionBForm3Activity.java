@@ -32,6 +32,8 @@ public class SectionBForm3Activity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_b_form3);
         bi.setCallback(this);
 
+        this.setTitle(R.string.f3_hB);
+
         setupViews();
 
     }
@@ -107,12 +109,10 @@ public class SectionBForm3Activity extends AppCompatActivity {
                 : bi.kf3b05b.isChecked() ? "2"
                 : bi.kf3b05c.isChecked() ? "3"
                 : bi.kf3b05d.isChecked() ? "4"
-                : bi.kf3b05e.isChecked() ? "5"
+                : bi.kf3b0596.isChecked() ? "96"
                 : "0");
+        sa1.put("kf3b0596x", bi.kf3b0596x.getText().toString());
 
-        sa1.put("kf3b06", bi.kf3b06a.isChecked() ? "1"
-                : bi.kf3b06b.isChecked() ? "2"
-                : "0");
         sa1.put("kf3b06h", bi.kf3b06h.getText().toString());
         sa1.put("kf3b06d", bi.kf3b06d.getText().toString());
 
@@ -135,7 +135,7 @@ public class SectionBForm3Activity extends AppCompatActivity {
             if (UpdateDB()) {
                 finish();
                 startActivity(new Intent(this, !bi.kf3b02a.isChecked() || bi.kf3b03b.isChecked() ? EndingActivity.class : SectionCForm3Activity.class)
-                        .putExtra("complete", true));
+                        .putExtra("complete", true).putExtra("day1", bi.kf3b01a.isChecked()));
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();

@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -30,11 +32,18 @@ public class SectionDForm3Activity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_d_form3);
         bi.setCallback(this);
 
+        this.setTitle(R.string.f3_hD);
         setupListeners();
 
     }
 
     private void setupListeners() {
+
+        Boolean day1Flag = getIntent().getBooleanExtra("day1", false);
+        if (!day1Flag) {
+            bi.fldGrpSecD02a.setVisibility(View.GONE);
+
+        }
 
         bi.kf3d01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -73,6 +82,26 @@ public class SectionDForm3Activity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (i == bi.kf3d15b.getId())
                     ClearClass.ClearAllFields(bi.fldGrpSecD02c, null);
+            }
+        });
+
+        bi.kf3d1797.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b)
+                    ClearClass.ClearAllFields(bi.fldGrpLLkf3d17, false);
+                else
+                    ClearClass.ClearAllFields(bi.fldGrpLLkf3d17, true);
+            }
+        });
+
+        bi.kf3d1698.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b)
+                    ClearClass.ClearAllFields(bi.fldGrpSecD02d, false);
+                else
+                    ClearClass.ClearAllFields(bi.fldGrpSecD02d, true);
             }
         });
 
@@ -173,10 +202,9 @@ public class SectionDForm3Activity extends AppCompatActivity {
 
         sa1.put("kf3d15", bi.kf3d15a.isChecked() ? "1" : bi.kf3d15b.isChecked() ? "2" : "0");
 
-        sa1.put("kf3d16", bi.kf3d16h.isChecked() ? "1" : bi.kf3d16d.isChecked() ? "2" : bi.kf3d16w.isChecked() ? "3" : bi.kf3d1698.isChecked() ? "98" : "0");
-        sa1.put("kf3d16hx", bi.kf3d16hx.getText().toString());
-        sa1.put("kf3d16dx", bi.kf3d16dx.getText().toString());
-        sa1.put("kf3d16wx", bi.kf3d16wx.getText().toString());
+        sa1.put("kf3d16h", bi.kf3d16h.getText().toString());
+        sa1.put("kf3d16d", bi.kf3d16d.getText().toString());
+        sa1.put("kf3d16w", bi.kf3d16w.getText().toString());
 
         sa1.put("kf3d17a", bi.kf3d17a.isChecked() ? "1" : "0");
         sa1.put("kf3d17b", bi.kf3d17b.isChecked() ? "2" : "0");
@@ -188,7 +216,7 @@ public class SectionDForm3Activity extends AppCompatActivity {
         sa1.put("kf3d17h", bi.kf3d17h.isChecked() ? "8" : "0");
         sa1.put("kf3d17i", bi.kf3d17i.isChecked() ? "9" : "0");
         sa1.put("kf3d17j", bi.kf3d17j.isChecked() ? "10" : "0");
-        sa1.put("kf3d17k", bi.kf3d17k.isChecked() ? "11" : "0");
+        sa1.put("kf3d1797", bi.kf3d1797.isChecked() ? "97" : "0");
         sa1.put("kf3d1796", bi.kf3d1796.isChecked() ? "96" : "0");
         sa1.put("kf3d1796x", bi.kf3d1796x.getText().toString());
 

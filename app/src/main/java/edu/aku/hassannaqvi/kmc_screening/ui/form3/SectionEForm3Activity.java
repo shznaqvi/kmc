@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.View;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -30,6 +33,7 @@ public class SectionEForm3Activity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_e_form3);
         bi.setCallback(this);
 
+        this.setTitle(R.string.f3_hE);
         setupListeners();
     }
 
@@ -66,6 +70,59 @@ public class SectionEForm3Activity extends AppCompatActivity {
             }
         });
 
+        bi.kf3e04a.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                int no = bi.kf3e04a.getText().toString().isEmpty() ? 0 : Integer.valueOf(bi.kf3e04a.getText().toString());
+
+                if (no >= 38 || no <= 35.5) {
+                    bi.kf3e04b.setVisibility(View.VISIBLE);
+                    return;
+                }
+
+                bi.kf3e04b.setVisibility(View.GONE);
+                bi.kf3e04b.setText(null);
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+        bi.kf3e05.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                int no = bi.kf3e05.getText().toString().isEmpty() ? 0 : Integer.valueOf(bi.kf3e05.getText().toString());
+
+                if (no >= 60) {
+                    bi.fldGrpCVkf3e06.setVisibility(View.VISIBLE);
+                    return;
+                }
+
+                bi.fldGrpCVkf3e06.setVisibility(View.GONE);
+                bi.kf3e06.setText(null);
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
 
     }
 

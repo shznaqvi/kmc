@@ -294,9 +294,17 @@
                                         android:text="@string/kf3b05d" />
 
                                     <RadioButton
-                                        android:id="@+id/kf3b05e"
+                                        android:id="@+id/kf3b0596"
                                         style="@style/i_radiobutton"
                                         android:text="@string/kf3b05e" />
+
+                                    <EditText
+                                        android:id="@+id/kf3b0596x"
+                                        style="@style/EditText"
+                                        android:hint="@string/other"
+                                        android:tag="kf3b0596"
+                                        android:text='@{kf3b0596.checked ? kf3b0596x.getText.toString : "" }'
+                                        android:visibility='@{kf3b0596.checked ? View.VISIBLE : View.GONE }' />
 
                                 </RadioGroup>
 
@@ -315,39 +323,17 @@
                                     style="@style/i_textview"
                                     android:text="@string/kf3b06" />
 
-                                <RadioGroup
-                                    android:id="@+id/kf3b06"
-                                    style="@style/i_radiogroup">
+                                <EditText
+                                    android:id="@+id/kf3b06h"
+                                    style="@style/EditText_number"
+                                    android:hint="@string/hours"
+                                    android:maxLength="2" />
 
-                                    <RadioButton
-                                        android:id="@+id/kf3b06a"
-                                        style="@style/i_radiobutton"
-                                        android:text="@string/kf3b06a" />
-
-                                    <EditText
-                                        android:id="@+id/kf3b06h"
-                                        style="@style/EditText_number"
-                                        android:hint="@string/hours"
-                                        android:maxLength="2"
-                                        android:tag="kf3b06a"
-                                        android:text='@{kf3b06a.checked ? kf3b06h.getText.toString : "" }'
-                                        android:visibility='@{kf3b06a.checked ? View.VISIBLE : View.GONE }' />
-
-                                    <RadioButton
-                                        android:id="@+id/kf3b06b"
-                                        style="@style/i_radiobutton"
-                                        android:text="@string/kf3b06b" />
-
-                                    <EditText
-                                        android:id="@+id/kf3b06d"
-                                        style="@style/EditText_number"
-                                        android:hint="@string/days"
-                                        android:maxLength="2"
-                                        android:tag="kf3b06b"
-                                        android:text='@{kf3b06b.checked ? kf3b06d.getText.toString : "" }'
-                                        android:visibility='@{kf3b06b.checked ? View.VISIBLE : View.GONE }' />
-
-                                </RadioGroup>
+                                <EditText
+                                    android:id="@+id/kf3b06d"
+                                    style="@style/EditText_number"
+                                    android:hint="@string/days"
+                                    android:maxLength="2" />
 
                             </LinearLayout>
 

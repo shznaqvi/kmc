@@ -30,6 +30,7 @@ public class SectionFForm3Activity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_f_form3);
         bi.setCallback(this);
 
+        this.setTitle(R.string.f3_hF);
         setupListener();
     }
 

@@ -541,7 +541,8 @@
     <string name="kf3c02a"> وقتن جو تعداد </string>
 
     <string name="kf3c03"> گذريل 24 ڪلاڪن ۾ توهان ڪل ڪيترا ڪلاڪ ڪي ايم سي ڏني؟ </string>
-    <string name="kf3c03a"> ڪل ڪلاڪن ۽ منٽن جو تعداد </string>
+    <string name="kf3c03a"> ڪل ڪلاڪن جو تعداد </string>
+    <string name="kf3c03b"> منٽن جو تعداد </string>
 
     <string name="kf3c04"> جيڪڏهن نه، ته ان جي وجهه ڇا هئي؟ </string>
     <string name="kf3c04a"> ماءُ بيمار آهي. </string>
@@ -581,8 +582,8 @@
     <string name="kf3c11"> توهان جي مڙس گذريل 24 ڪلاڪن ۾ ڪيترا دفعا ٻار کي ڪي ايم سي ڏني؟ </string>
     <string name="kf3c11a"> وقتن جو تعداد </string>
 
-    <string name="kf3c12a"> توهان جي مڙس گذريل 24 ڪلاڪن ۾ ڪل ڪيترا ڪلاڪ ۽ منٽ ڪي ايم سي ڏني؟ </string>
-    <string name="kf3c12"> ڪل ڪلاڪن ۽ منٽن جو تعداد </string>
+    <string name="kf3c12"> توهان جي مڙس گذريل 24 ڪلاڪن ۾ ڪل ڪيترا ڪلاڪ ۽ منٽ ڪي ايم سي ڏني؟ </string>
+    <string name="kf3c12a"> ڪل ڪلاڪن ۽ منٽن جو تعداد </string>
 
     <string name="kf3c13"> ڪيترن ڏينهن کان وٺي توهان پنهنجي ٻار کي چمڙيءَ جوچمڙيءَ سان لڳائي رکيو. </string>
     <string name="kf3c13a"> ڏينهن جو تعداد </string>
@@ -618,7 +619,7 @@
     <string name="kf3c18f"> مون وٽ وقت نه آهي </string>
 
 
-    <string name="kf3ch2"> ڄمڻ کان پوءِ چمڙي جو چمڙي سان ميلاپ جي وضاحت (صرف پهرين فالواپ ) </string>
+    <string name="kf3ch2"> ڄمڻ کان پوءِ چمڙي جو چمڙي سان ميلاپ جي وضاحت (صرف پهرين  فالواپ ) </string>
 
     <string name="kf3c19"> ڇا ٻار جي ڄمڻ کان پوءِ توهان کي ڪنهن چيو ته پنهنجي ٻار کي پنهنجي ڪپڙن کان بغير (اگهاڙي) ڇاتي تي رکڻ جو چيو/ مشورو ڏنو. </string>
 
@@ -775,11 +776,8 @@
     <string name="kf3e03b"> ٿوري وڌيڪ سوڄ جيڪا دن جي چوڌاري چمڙي جي 2cm اندر آهي. </string>
     <string name="kf3e03c"> تمام گھڻي سوڄ جيڪا دن جي چوڌاري 2 cm کان وڌيڪ آهي. </string>
 
-
-    <string name="kf3eh2"> (بيڪٽيريا يا زخم) </string>
-
-
-    <string name="kf3eh3"> جسم جو درجه حرارت ڏسو </string>
+    <string name="kf3eh2"> جسم جو درجه حرارت ڏسو </string>
+    <string name="kf3eh3"> ساهه جي رفتار ڏسو </string>=
 
     <string name="kf3e04"> درجه حرارت (ٻيهر ريڊنگ وٺو جيڪڏهن 38 کان وڌيڪ يا 35.5 کان گهٽ آ </string>
     <string name="kf3e04a"> پهرين لکت. </string>
@@ -796,19 +794,16 @@
 
     <string name="kf3e08"> ڇا ٻار جي ساهه جي رفتار تڪڙي آهي (هڪ منٽ ۾ 60 کان وڌيڪ) </string>
 
-
     <string name="kf3eh4"> ڇاتيءَ ۾ ڳهٻ/کڏا پوڻ </string>
 
     <string name="kf3e09"> ڇا ٻار کي ڇاتي ۾ شديد ڳهٻ/کڏا پون ٿا (ٻار جي ڇاتي جو ڪپڙو مٿي کڻي ڏسو. </string>
 
-
     <string name="kf3e10"> ڇا ٻار کي سائي آهي (بار جون اکيون ۽ چمڙي پيلي/ڦڪي آهي). </string>
-
 
     <string name="kf3e11"> ننڍي ٻار جي هٿن ۽ پيرن جي ترين کي ڏسو ڇا اهي پيلا يا ڦڪا آهن </string>
 
-
-    <string name="kf3e12_"> مٿي کان پيرن تائين سائي جي شدت جي درجه بندي ڪيو </string>
+    <string name="kf3e12"> مٿي کان پيرن تائين سائي جي شدت جي درجه بندي ڪيو۔ نوٽ. ميڊيڪل آفيسر کي چئو ته معائنو ڪري. </string>
+    <string name="kf3e12h1"> ڪرامرجي اۡصول مطابق </string>
 
     <string name="kf3e12a"> مٿو ۽ ڳچي.</string>
     <string name="kf3e12b"> ڇاتي / سينو</string>
@@ -816,21 +811,24 @@
     <string name="kf3e12d"> ٻانهو ۽ گوڏن کان هيٺ جون ٽنگون.</string>
     <string name="kf3e12e"> هٿ ۽ پير.</string>
 
-    <string name="kf3eh5"> کير پيڻ جي سست رفتار جي چڪاس</string>
+    <string name="kf3eh5">سائي جي چڪاس (هي معاعنو ميڊيڪل آفيسر يا ڊيٽا ڪليڪٽر جي ذريعي ڪيو ويندو)</string>
 
-    <string name="kf3eh6"> جھٽڪن جي چڪاس</string>
+    <string name="kf3eh6"> کير پيڻ جي سست رفتار جي چڪاس</string>
+
+    <string name="kf3eh7"> جھٽڪن جي چڪاس</string>
+    <string name="kf3eh8">چر پر جي چڪاس</string>
 
 
     <string name="kf3e13"> ڇا ٻار پيدائش کان وٺي کير/ٿڃ پيئڻ جي قابل آهي </string>
 
 
-    <string name="kf3e14"> ڇا ٻار هاڻي چڳي طرح کير پيئڻ ڇڏي ڏنو آهي؟ </string>
+    <string name="kf3e14"> ڇا ٻار هاڻي چڳي طرح کير پيئڻ ڇڏي ڏنو آهي؟  (مهرباني ڪري ماءُ کي چئو ته ٻار کي کير پياريڻ لاءِ ڇاتي سان لڳائي). </string>
 
 
-    <string name="kf3e15"> مشاهدي دوران بلڪل کير نه پيئو/ پئي يا چوسي. </string>
+    <string name="kf3e15"> مشاهدي دوران بلڪل کير نه پيئو/ پئي يا چوسي. صرف ماءُ کان پڇو.  </string>
 
 
-    <string name="kf3e16"> ٻارجي کير پيئڻ جي صلاحيت ڪمزور آهي. </string>
+    <string name="kf3e16"> ٻارجي کير پيئڻ جي صلاحيت ڪمزور آهي. صرف ماءُ کان پڇو.  </string>
 
 
     <string name="kf3e17"> ٻارصفا کير پيئڻ جي لائق نه آهي؟ </string>
@@ -925,5 +923,11 @@
     <string name="f2_3_hA">Identification and Enrollment Information</string>
     <string name="f2_hB">Mother’s Reproductive History</string>
     <string name="f2_hC">BIRTH DETAILS OF BABY (CARE OF SMALL BABY)</string>
+
+    <string name="f3_hB">BASIC INFORMATION OF FOLLOW-UP VISIT</string>
+    <string name="f3_hC">KMC PRACTICE</string>
+    <string name="f3_hD">BREAST FEEDING</string>
+    <string name="f3_hE">NEWBORN’S ASSESSMENT</string>
+    <string name="f3_hF">KMC TEACHING (FOR INTERVENTION ARMS ONLY)</string>
 
 </resources>
