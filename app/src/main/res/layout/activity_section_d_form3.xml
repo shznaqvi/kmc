@@ -794,7 +794,7 @@
                                     android:hint="@string/kf3d16h"
                                     android:maxLength="2"
                                     app:maxValue="23"
-                                    app:minValue="1"
+                                    app:minValue="0"
                                     app:type="range" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
@@ -803,15 +803,15 @@
                                     android:hint="@string/kf3d16d"
                                     android:maxLength="1"
                                     app:maxValue="6"
-                                    app:minValue="1"
+                                    app:minValue="0"
                                     app:type="range" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/kf3d16w"
                                     style="@style/EditText_number"
                                     android:hint="@string/kf3d16w"
-                                    android:maxLength="2"
-                                    app:maxValue="40"
+                                    android:maxLength="1"
+                                    app:maxValue="6"
                                     app:minValue="0"
                                     app:type="range" />
 

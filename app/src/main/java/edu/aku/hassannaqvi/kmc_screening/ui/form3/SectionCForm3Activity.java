@@ -5,6 +5,7 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -42,8 +43,8 @@ public class SectionCForm3Activity extends AppCompatActivity {
         if (day1Flag) {
             bi.fldGrpCVkf3c05.setVisibility(View.GONE);
             bi.fldGrpCVkf3c13.setVisibility(View.GONE);
+        } else
             bi.fldGrpSecC02d.setVisibility(View.GONE);
-        }
 
         bi.kf3c01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -69,6 +70,15 @@ public class SectionCForm3Activity extends AppCompatActivity {
             }
         });
 
+        bi.kf3c1698.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b)
+                    ClearClass.ClearAllFields(bi.fldGrpLLkf3c16, false);
+                else
+                    ClearClass.ClearAllFields(bi.fldGrpLLkf3c16, true);
+            }
+        });
     }
 
     public void BtnEnd() {

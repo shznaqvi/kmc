@@ -247,7 +247,20 @@ public class SectionDForm3Activity extends AppCompatActivity {
     }
 
     private boolean formValidation() {
-        return ValidatorClass.EmptyCheckingContainer(this, bi.fldGrpSecD02);
+        if (!ValidatorClass.EmptyCheckingContainer(this, bi.fldGrpSecD02))
+            return false;
+
+
+        if (bi.kf3d15a.isChecked()) {
+            if (Integer.valueOf(bi.kf3d16h.getText().toString()) == 0 && Integer.valueOf(bi.kf3d16d.getText().toString()) == 00 && Integer.valueOf(bi.kf3d16w.getText().toString()) == 0) {
+                bi.kf3d16w.setError("All values can't be zero!!");
+                bi.kf3d16w.setFocusable(true);
+                Toast.makeText(this, getString(R.string.kf3d16) + ": All values can't be zero!!", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        }
+
+        return true;
     }
 
     private boolean UpdateDB() {

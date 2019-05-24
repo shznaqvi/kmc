@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ui.form1.SectionAForm1Activity">
 
@@ -323,17 +324,23 @@
                                     style="@style/i_textview"
                                     android:text="@string/kf3b06" />
 
-                                <EditText
+                                <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/kf3b06h"
                                     style="@style/EditText_number"
                                     android:hint="@string/hours"
-                                    android:maxLength="2" />
+                                    android:maxLength="2"
+                                    app:maxValue="23"
+                                    app:minValue="0"
+                                    app:type="range" />
 
-                                <EditText
+                                <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/kf3b06d"
                                     style="@style/EditText_number"
                                     android:hint="@string/days"
-                                    android:maxLength="2" />
+                                    android:maxLength="2"
+                                    app:maxValue="28"
+                                    app:minValue="0"
+                                    app:type="range" />
 
                             </LinearLayout>
 
