@@ -134,7 +134,7 @@ public class SectionBForm3Activity extends AppCompatActivity {
             }
             if (UpdateDB()) {
                 finish();
-                startActivity(new Intent(this, !bi.kf3b02a.isChecked() || bi.kf3b03b.isChecked() ? EndingActivity.class : SectionCForm3Activity.class)
+                startActivity(new Intent(this, !bi.kf3b02a.isChecked() || !bi.kf3b03a.isChecked() ? EndingActivity.class : SectionCForm3Activity.class)
                         .putExtra("complete", true).putExtra("day1", bi.kf3b01a.isChecked()));
 
             } else {
