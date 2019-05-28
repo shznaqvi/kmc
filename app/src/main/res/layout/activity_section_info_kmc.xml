@@ -200,6 +200,38 @@
                         app:minValue="1"
                         app:type="range" />
 
+                    <!--04-->
+                    <TextView
+                        style="@style/i_textview"
+                        android:text="@string/kf1a4" />
+
+                    <EditText
+                        android:id="@+id/kf1a4"
+                        style="@style/EditText"
+                        android:hint="@string/kf1a4" />
+
+                    <!--05-->
+                    <TextView
+                        style="@style/i_textview"
+                        android:text="@string/kf1a5" />
+
+                    <RadioGroup
+                        android:id="@+id/kf1a5"
+                        style="@style/i_radiogroup">
+
+                        <RadioButton
+                            android:id="@+id/kf1a5a"
+                            style="@style/i_radiobutton"
+                            android:text="@string/male" />
+
+                        <RadioButton
+                            android:id="@+id/kf1a5b"
+                            style="@style/i_radiobutton"
+                            android:text="@string/female" />
+
+                    </RadioGroup>
+
+
                 </LinearLayout>
 
                 <!--F-2-3-->

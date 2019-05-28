@@ -35,8 +35,9 @@
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/kf2c01"
                             style="@style/EditText_number"
-                            android:hint="@string/kf2c01a"
-                            android:maxLength="2"
+                            android:hint="##.#"
+                            android:layoutDirection="ltr"
+                            app:mask="##.#"
                             app:maxValue="40"
                             app:minValue="34"
                             app:type="range" />

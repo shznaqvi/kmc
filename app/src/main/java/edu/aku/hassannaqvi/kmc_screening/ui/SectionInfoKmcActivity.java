@@ -264,6 +264,8 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
         if (fType.equals("kf1")) {
             sInfo.put("kf1a02", bi.kf1a2.getText().toString());
             sInfo.put("kf1a03", bi.kf1a3.getText().toString());
+            sInfo.put("kf1a04", bi.kf1a4.getText().toString());
+            sInfo.put("kf1a05", bi.kf1a5a.isChecked() ? "1" : bi.kf1a5b.isChecked() ? "2" : "0");
 
             sInfo.put("pw_puid", mapWRA.getPuid());
             sInfo.put("pw_formdate", mapWRA.getFormdate());

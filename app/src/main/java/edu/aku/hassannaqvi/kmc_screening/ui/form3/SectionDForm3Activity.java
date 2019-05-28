@@ -77,6 +77,14 @@ public class SectionDForm3Activity extends AppCompatActivity {
             }
         });
 
+        bi.kf3d09.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i == bi.kf3d09b.getId())
+                    bi.kf3d10.clearCheck();
+            }
+        });
+
         bi.kf3d15.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {

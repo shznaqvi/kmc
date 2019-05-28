@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -67,6 +68,16 @@ public class SectionEForm3Activity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (i == bi.kf3e20a.getId())
                     bi.kf3e21.clearCheck();
+            }
+        });
+
+        bi.kf3e12f.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b)
+                    ClearClass.ClearAllFields(bi.fldGrpLLkf3e12, false);
+                else
+                    ClearClass.ClearAllFields(bi.fldGrpLLkf3e12, true);
             }
         });
 
@@ -161,6 +172,7 @@ public class SectionEForm3Activity extends AppCompatActivity {
         sa1.put("kf3e12c", bi.kf3e12c.isChecked() ? "3" : "0");
         sa1.put("kf3e12d", bi.kf3e12d.isChecked() ? "4" : "0");
         sa1.put("kf3e12e", bi.kf3e12e.isChecked() ? "5" : "0");
+        sa1.put("kf3e12f", bi.kf3e12f.isChecked() ? "6" : "0");
 
         sa1.put("kf3e13", bi.kf3e13a.isChecked() ? "1" : bi.kf3e13b.isChecked() ? "2" : "0");
 

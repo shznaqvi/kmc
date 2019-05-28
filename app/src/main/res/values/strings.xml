@@ -255,7 +255,7 @@
     <string name="kf1b04"> ڇا ٻار کي سامهون ڏنل ڪا نشاني يا علامت آهي؟ آپشن جي سامهون ها يا نه لکو </string>
     <string name="kf1b04_h1"> شديد طبعي انفيڪشن </string>
     <string name="kf1b0401"> صرف هٿ لڳائڻ سان ئي چر پر ڪري ٿو </string>
-    <string name="kf1b0402"> ماءُ جو کير صحيحِ نه ٿو پئي </string>
+    <string name="kf1b0402"> ماءُ جو کير صحيحِ ٿو پئي </string>
     <string name="kf1b0403"> بخار 38 سينٽي گريڊ يا ان کان وڌيڪ </string>
     <string name="kf1b0404"> تمام گھڻو ٿڌو (32 سينٽي گريڊ کان گھٽ) </string>
     <string name="kf1b0405"> شديد پاسراٽيون/ کڏا پوڻ </string>
@@ -730,7 +730,7 @@
     <string name="kf3d13"> توهان ڪيترن ڪلاڪن کان پنهنجي ٻآر کي صرف ۽ صرف پنهنجي ٿڃ تي رکيو آهي / صرف پنهنجي ٿڃ پياري آهي؟ </string>
 
 
-    <string name="kf3d14"> ڪيتري عرصي تائين توهان پنهنجي ٻار کي صرف ۽ صرف پنهنجو کير/ٿڃ پياريو. </string>
+    <string name="kf3d14"> ڪيتري ڏينهن تائين توهان پنهنجي ٻار کي صرف ۽ صرف پنهنجو کير/ٿڃ پياريو. </string>
 
 
     <string name="kf3d15"> ڇا توهان پنهنجي کير کان سواءِ ٻار کي ٻيو ڪجھ ڏنو؟ ماءُ جي کير کان علاوه پاڻي، جوس ۽ ٻي ڪا شيءِ ڏني وئي </string>
@@ -810,6 +810,7 @@
     <string name="kf3e12c"> هيٺيون ڌڙ / جسمۡ ۽ پٺا.</string>
     <string name="kf3e12d"> ٻانهو ۽ گوڏن کان هيٺ جون ٽنگون.</string>
     <string name="kf3e12e"> هٿ ۽ پير.</string>
+    <string name="kf3e12f"> سائي نه آهي.</string>
 
     <string name="kf3eh5">سائي جي چڪاس (هي معاعنو ميڊيڪل آفيسر يا ڊيٽا ڪليڪٽر جي ذريعي ڪيو ويندو)</string>
 
@@ -903,6 +904,8 @@
 
     <string name="kf1a2"> ماءُ جو نالو </string>
     <string name="kf1a3"> جانچ نمبر </string>
+    <string name="kf1a4"> ٻارجو نالو </string>
+    <string name="kf1a5"> ٻار جي جنس </string>
 
     <string name="kf2a1"> مڪمل رهائشي پتو. </string>
     <string name="kf2a2"> گهر جي سربراه جو نالو </string>
