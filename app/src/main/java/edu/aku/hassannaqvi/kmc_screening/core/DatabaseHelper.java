@@ -16,7 +16,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
-import java.util.List;
 
 import edu.aku.hassannaqvi.kmc_screening.contracts.EligibleContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.EligibleContract.EligibleEntry;
@@ -50,7 +49,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "kmc_screening.db";
     public static final String DB_NAME = DATABASE_NAME.replace(".", "_copy.");
     public static final String PROJECT_NAME = "KMC-SCREENING";
-    private static final int DATABASE_VERSION = 3;
+    private static final int DATABASE_VERSION = 4;
     private static final String SQL_CREATE_FORMS = "CREATE TABLE "
             + FormsTable.TABLE_NAME + "("
             + FormsTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -69,6 +68,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             FormsTable.COLUMN_GPSACC + " TEXT," +
             FormsTable.COLUMN_GPSALTITUDE + " TEXT," +
             FormsTable.COLUMN_PWID + " TEXT," +
+            FormsTable.COLUMN_SCREENID + " TEXT," +
             FormsTable.COLUMN_TALUKA + " TEXT," +
             FormsTable.COLUMN_UC + " TEXT," +
             FormsTable.COLUMN_VILLAGE + " TEXT," +
@@ -85,6 +85,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             FormsTable.COLUMN_SYNCED + " TEXT," +
             FormsTable.COLUMN_SYNCED_DATE + " TEXT"
             + " );";
+
+    private static final String SQL_ALTER_FORMS = "ALTER TABLE " +
+            FormsTable.TABLE_NAME + " ADD COLUMN " +
+            FormsTable.COLUMN_SCREENID + " TEXT;";
 
     private static final String SQL_CREATE_MWRAFOLLOWUPS = "CREATE TABLE " +
             PWFUPEntry.TABLE_NAME + "(" +
@@ -196,6 +200,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 db.execSQL(SQL_CREATE_ELIGIBILES);
             case 2:
                 db.execSQL(SQL_ALTER_ELIGIBILES);
+            case 3:
+                db.execSQL(SQL_ALTER_FORMS);
         }
 
     }
@@ -824,26 +830,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return cursorCount > 0;
     }
 
-    public List<FormsContract> getFormsByDSS(String dssID) {
-        List<FormsContract> formList = new ArrayList<>();
-        // Select All Query
-        String selectQuery = "SELECT  * FROM " + FormsTable.TABLE_NAME;
-
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor c = db.rawQuery(selectQuery, null);
-
-        // looping through all rows and adding to list
-        if (c.moveToFirst()) {
-            do {
-                FormsContract fc = new FormsContract();
-                formList.add(fc.Hydrate(c));
-            } while (c.moveToNext());
-        }
-
-        // return contact list
-        return formList;
-    }
-
     public Long addForm(FormsContract fc) {
 
         // Gets the data repository in write mode
@@ -878,6 +864,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_SYNCED_DATE, fc.getSynced_date());
         values.put(FormsTable.COLUMN_APPVERSION, fc.getAppversion());
         values.put(FormsTable.COLUMN_PWID, fc.getPwid());
+        values.put(FormsTable.COLUMN_SCREENID, fc.getScreenid());
         values.put(FormsTable.COLUMN_UC, fc.getUc());
         values.put(FormsTable.COLUMN_TALUKA, fc.getTaluka());
         values.put(FormsTable.COLUMN_VILLAGE, fc.getVillage());
@@ -932,6 +919,76 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
+    public FormsContract getFormExistance(String formType, String pwid, String screenid) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                FormsTable._ID,
+                FormsTable.COLUMN_PROJECTNAME,
+                FormsTable.COLUMN_SURVEYTYPE,
+                FormsTable.COLUMN__UID,
+                FormsTable.COLUMN_FORMDATE,
+                FormsTable.COLUMN_USER,
+                FormsTable.COLUMN_SCREENID,
+                FormsTable.COLUMN_ISTATUS,
+                FormsTable.COLUMN_ISTATUS88X,
+                FormsTable.COLUMN_SINFO,
+                FormsTable.COLUMN_SA,
+                FormsTable.COLUMN_SB,
+                FormsTable.COLUMN_FORMTYPE,
+                FormsTable.COLUMN_SC,
+                FormsTable.COLUMN_SD,
+                FormsTable.COLUMN_SE,
+                FormsTable.COLUMN_SF,
+                FormsTable.COLUMN_ENDINGDATETIME,
+                FormsTable.COLUMN_GPSLAT,
+                FormsTable.COLUMN_GPSLNG,
+                FormsTable.COLUMN_GPSDT,
+                FormsTable.COLUMN_GPSACC,
+                FormsTable.COLUMN_GPSALTITUDE,
+                FormsTable.COLUMN_DEVICEID,
+                FormsTable.COLUMN_DEVICETAGID,
+                FormsTable.COLUMN_SYNCED,
+                FormsTable.COLUMN_SYNCED_DATE,
+                FormsTable.COLUMN_APPVERSION,
+                FormsTable.COLUMN_PWID,
+                FormsTable.COLUMN_UC,
+                FormsTable.COLUMN_VILLAGE,
+                FormsTable.COLUMN_TALUKA,
+
+        };
+        String whereClause = FormsTable.COLUMN_FORMTYPE + " =? AND " + FormsTable.COLUMN_PWID + " =? AND " + FormsTable.COLUMN_SCREENID + " =?";
+        String[] whereArgs = {formType, pwid, screenid};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = FormsTable.COLUMN__ID + " ASC";
+
+        FormsContract allFC = null;
+        try {
+            c = db.query(
+                    FormsTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                allFC = new FormsContract().Hydrate(c);
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allFC;
+    }
+
     public Collection<FormsContract> getUnsyncedForms(String formType) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
@@ -942,6 +999,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN__UID,
                 FormsTable.COLUMN_FORMDATE,
                 FormsTable.COLUMN_USER,
+                FormsTable.COLUMN_SCREENID,
                 FormsTable.COLUMN_ISTATUS,
                 FormsTable.COLUMN_ISTATUS88X,
                 FormsTable.COLUMN_SINFO,
@@ -1018,6 +1076,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN__UID,
                 FormsTable.COLUMN_FORMDATE,
                 FormsTable.COLUMN_USER,
+                FormsTable.COLUMN_SCREENID,
                 FormsTable.COLUMN_ISTATUS,
                 FormsTable.COLUMN_ISTATUS88X,
                 FormsTable.COLUMN_SINFO,

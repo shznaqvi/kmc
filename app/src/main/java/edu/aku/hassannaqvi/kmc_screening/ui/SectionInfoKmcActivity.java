@@ -237,7 +237,21 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
     }
 
     private boolean formValidation() {
-        return ValidatorClass.EmptyCheckingContainer(this, bi.infoMainLayout);
+        if (!ValidatorClass.EmptyCheckingContainer(this, bi.infoMainLayout))
+            return false;
+
+        if (!checkFormExist(MainApp.formType, bi.kapr02a.getText().toString(), MainApp.formType.equals("kf1") ? bi.kf1a3.getText().toString() : bi.kf2a6.getSelectedItem().toString())) {
+            Toast.makeText(this, "Form is already exist!!", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        return true;
+
+    }
+
+    private boolean checkFormExist(String formType, String pwid, String screendid) {
+        FormsContract dc = db.getFormExistance(formType, pwid, screendid);
+        return dc == null;
     }
 
     private void SaveDraft() throws JSONException {
@@ -263,7 +277,10 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
         sInfo.put(fType + "a01", bi.kfa1a.isChecked() ? "1" : bi.kfa1b.isChecked() ? "2" : "0");
         if (fType.equals("kf1")) {
             sInfo.put("kf1a02", bi.kf1a2.getText().toString());
+
             sInfo.put("kf1a03", bi.kf1a3.getText().toString());
+            fc.setScreenid(bi.kf1a3.getText().toString());
+
             sInfo.put("kf1a04", bi.kf1a4.getText().toString());
             sInfo.put("kf1a05", bi.kf1a5a.isChecked() ? "1" : bi.kf1a5b.isChecked() ? "2" : "0");
 
@@ -285,7 +302,10 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
         }
 
         if (fType.equals("kf2") || fType.equals("kf3")) {
+
             sInfo.put(fType + "a02", bi.kf2a6.getSelectedItem().toString());
+            fc.setScreenid(bi.kf2a6.getSelectedItem().toString());
+
             sInfo.put(fType + "a03", bi.kf2a7.getText().toString());
             sInfo.put(fType + "a04", bi.kf2a8.getText().toString());
 
