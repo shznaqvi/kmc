@@ -250,15 +250,14 @@
                         style="@style/i_textview"
                         android:text="@string/kapr10" />
 
-                    <EditText
+                    <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/kapr10"
-                        style="@style/textInput"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:digits="0123456789"
-                        android:hint="@string/kapr10"
-                        android:inputType="number"
-                        android:maxLength="11" />
+                        style="@style/EditText_number"
+                        android:hint="###########"
+                        android:maxLength="11"
+                        app:defaultValue=""
+                        app:pattern="[0-9]{11,11}"
+                        app:type="equal" />
 
                     <TextView
                         style="@style/i_textview"

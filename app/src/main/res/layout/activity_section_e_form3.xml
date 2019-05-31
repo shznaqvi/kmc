@@ -163,6 +163,7 @@
                             app:mask="##.#"
                             app:maxValue="40"
                             app:minValue="34"
+                            app:pattern="^(\\d{2,2}\\.\\d{1,1})$"
                             app:type="range" />
 
                         <com.edittextpicker.aliazaz.EditTextPicker
@@ -172,6 +173,7 @@
                             app:mask="##.#"
                             app:maxValue="40"
                             app:minValue="34"
+                            app:pattern="^(\\d{2,2}\\.\\d{1,1})$"
                             app:type="range" />
 
                     </LinearLayout>

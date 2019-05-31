@@ -90,7 +90,7 @@ public class SectionEForm3Activity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
-                int no = bi.kf3e04a.getText().toString().isEmpty() ? 0 : Integer.valueOf(bi.kf3e04a.getText().toString());
+                float no = bi.kf3e04a.getText().toString().isEmpty() ? 0f : Float.valueOf(bi.kf3e04a.getText().toString());
 
                 if (no >= 38 || no <= 35.5) {
                     bi.kf3e04b.setVisibility(View.VISIBLE);

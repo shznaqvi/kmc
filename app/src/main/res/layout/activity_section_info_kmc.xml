@@ -318,11 +318,14 @@
                         style="@style/i_textview"
                         android:text="@string/kf2a3" />
 
-                    <EditText
+                    <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/kf2a3"
                         style="@style/EditText_number"
-                        android:hint="@string/kf2a3"
-                        android:maxLength="11" />
+                        android:hint="###########"
+                        android:maxLength="11"
+                        app:defaultValue=""
+                        app:pattern="[0-9]{11,11}"
+                        app:type="equal" />
 
 
                     <TextView
