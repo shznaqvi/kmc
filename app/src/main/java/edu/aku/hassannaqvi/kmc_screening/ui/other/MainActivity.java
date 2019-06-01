@@ -451,6 +451,16 @@ public class MainActivity extends AppCompatActivity {
                     new DatabaseHelper(this).getUnsyncedForms("kf2")
             ).execute();
 
+            Toast.makeText(getApplicationContext(), "Syncing Forms - PW FOLLOWUPS", Toast.LENGTH_SHORT).show();
+            new SyncAllData(
+                    this,
+                    "Forms - PW FOLLOWUPS",
+                    "updateSyncedForms",
+                    FormsContract.class,
+                    FormsContract.FormsTable._URL.replace(".php", "_f3.php"),
+                    new DatabaseHelper(this).getUnsyncedForms("kf3")
+            ).execute();
+
             SharedPreferences syncPref = getSharedPreferences("SyncInfo", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = syncPref.edit();
 
