@@ -259,7 +259,7 @@ public class SectionDForm3Activity extends AppCompatActivity {
             return false;
 
 
-        if (bi.kf3d15a.isChecked()) {
+        if (bi.kf3d15a.isChecked() && !bi.kf3d1698.isChecked()) {
             if (Integer.valueOf(bi.kf3d16h.getText().toString()) == 0 && Integer.valueOf(bi.kf3d16d.getText().toString()) == 00 && Integer.valueOf(bi.kf3d16w.getText().toString()) == 0) {
                 bi.kf3d16w.setError("All values can't be zero!!");
                 bi.kf3d16w.setFocusable(true);

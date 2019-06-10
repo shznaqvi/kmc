@@ -151,7 +151,8 @@ public class SectionEForm3Activity extends AppCompatActivity {
 
         sa1.put("kf3e03", bi.kf3e03a.isChecked() ? "1" : bi.kf3e03b.isChecked() ? "2" : bi.kf3e03c.isChecked() ? "3" : "0");
 
-        sa1.put("kf3e07", bi.kf3e07a.isChecked() ? "1" : bi.kf3e07b.isChecked() ? "2" : "0");
+        sa1.put("kf3e04a", bi.kf3e04a.getText().toString());
+        sa1.put("kf3e04b", bi.kf3e04b.getText().toString());
 
         sa1.put("kf3e05", bi.kf3e05.getText().toString());
 
