@@ -25,6 +25,8 @@ import edu.aku.hassannaqvi.kmc_screening.contracts.PWFollowUpContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.PWFollowUpContract.PWFUPEntry;
 import edu.aku.hassannaqvi.kmc_screening.contracts.PWScreenedContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.PWScreenedContract.PWFScrennedEntry;
+import edu.aku.hassannaqvi.kmc_screening.contracts.RecruitmentContract;
+import edu.aku.hassannaqvi.kmc_screening.contracts.RecruitmentContract.RecruitmentEntry;
 import edu.aku.hassannaqvi.kmc_screening.contracts.TalukasContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.TalukasContract.singleTaluka;
 import edu.aku.hassannaqvi.kmc_screening.contracts.UCsContract;
@@ -49,7 +51,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "kmc_screening.db";
     public static final String DB_NAME = DATABASE_NAME.replace(".", "_copy.");
     public static final String PROJECT_NAME = "KMC-SCREENING";
-    private static final int DATABASE_VERSION = 4;
+    private static final int DATABASE_VERSION = 5;
     private static final String SQL_CREATE_FORMS = "CREATE TABLE "
             + FormsTable.TABLE_NAME + "("
             + FormsTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -118,6 +120,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             PWFScrennedEntry.COLUMN_PW_CAST + " TEXT," +
             PWFScrennedEntry.COLUMN_HH_NAME + " TEXT);";
 
+    private static final String SQL_CREATE_RECRUITMENT = "CREATE TABLE " +
+            RecruitmentEntry.TABLE_NAME + "(" +
+            RecruitmentEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+            RecruitmentEntry.COLUMN_PUID + " TEXT," +
+            RecruitmentEntry.COLUMN_VILLAGE + " TEXT," +
+            RecruitmentEntry.COLUMN_FORMDATE + " TEXT," +
+            RecruitmentEntry.COLUMN_M_NAME + " TEXT," +
+            RecruitmentEntry.COLUMN_M_ID + " TEXT," +
+            RecruitmentEntry.COLUMN_SCREEN_ID + " TEXT" +
+            ");";
+
     private static final String SQL_CREATE_ELIGIBILES = "CREATE TABLE " +
             EligibleEntry.TABLE_NAME + "(" +
             EligibleEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -139,12 +152,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             singleTaluka.COLUMN_DISTRICT_CODE + " TEXT, " +
             singleTaluka.COLUMN_DISTRICT_NAME + " TEXT " +
             ");";
-
+    private static final String SQL_ALTER_UCS = "ALTER TABLE " +
+            UCsTable.TABLE_NAME + " ADD COLUMN " +
+            UCsTable.COLUMN_STUDY_ARM + " TEXT;";
     final String SQL_CREATE_UC = "CREATE TABLE " + UCsTable.TABLE_NAME + " (" +
             UCsTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
             UCsTable.COLUMN_UCCODE + " TEXT, " +
             UCsTable.COLUMN_UCS_NAME + " TEXT, " +
-            UCsTable.COLUMN_TALUKA_CODE + " TEXT " +
+            UCsTable.COLUMN_TALUKA_CODE + " TEXT, " +
+            UCsTable.COLUMN_STUDY_ARM + " TEXT " +
             ");";
 
     final String SQL_CREATE_PSU_TABLE = "CREATE TABLE " + singleVillage.TABLE_NAME + " (" +
@@ -165,7 +181,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String SQL_DELETE_ELIGIBILE = "DROP TABLE IF EXISTS " + EligibleEntry.TABLE_NAME;
 
     private final String TAG = "DatabaseHelper";
-
     public String spDateT = new SimpleDateFormat("dd-MM-yy").format(new Date().getTime());
 
     public DatabaseHelper(Context context) {
@@ -183,6 +198,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_MWRAFOLLOWUPS);
         db.execSQL(SQL_CREATE_MWRA_SCREENED);
         db.execSQL(SQL_CREATE_ELIGIBILES);
+        db.execSQL(SQL_CREATE_RECRUITMENT);
     }
 
     @Override
@@ -202,6 +218,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 db.execSQL(SQL_ALTER_ELIGIBILES);
             case 3:
                 db.execSQL(SQL_ALTER_FORMS);
+            case 4:
+                db.execSQL(SQL_ALTER_UCS);
+                db.execSQL(SQL_CREATE_RECRUITMENT);
         }
 
     }
@@ -222,6 +241,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 values.put(UCsTable.COLUMN_UCCODE, Vc.getUccode());
                 values.put(UCsTable.COLUMN_UCS_NAME, Vc.getUcsName());
                 values.put(UCsTable.COLUMN_TALUKA_CODE, Vc.getTaluka_code());
+                values.put(UCsTable.COLUMN_STUDY_ARM, Vc.getStudy_arm());
 
                 db.insert(UCsTable.TABLE_NAME, null, values);
             }
@@ -230,7 +250,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             db.close();
         }
     }
-
 
     public Collection<TalukasContract> getAllDistricts() {
 
@@ -276,7 +295,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allDC;
     }
 
-
     public Collection<UCsContract> getAllUCsByTalukas(String taluka_code) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
@@ -284,7 +302,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 UCsTable._ID,
                 UCsTable.COLUMN_UCCODE,
                 UCsTable.COLUMN_UCS_NAME,
-                UCsTable.COLUMN_TALUKA_CODE
+                UCsTable.COLUMN_TALUKA_CODE,
+                UCsTable.COLUMN_STUDY_ARM,
         };
 
         String whereClause = UCsTable.COLUMN_TALUKA_CODE + " = ?";
@@ -320,7 +339,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return allPC;
     }
-
 
     public Collection<VillagesContract> getAllPSUsByDistrict(String district_code, String uc_code) {
         SQLiteDatabase db = this.getReadableDatabase();
@@ -552,8 +570,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     orderBy                    // The sort order
             );
             while (c.moveToNext()) {
-                EligibleContract eligibile = new EligibleContract();
-                allEB.add(eligibile.hydrate(c));
+                allEB.add(new EligibleContract().hydrate(c));
             }
         } finally {
             if (c != null) {
@@ -566,7 +583,53 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allEB;
     }
 
-    public Collection<EligibleContract> getEligibileParticipantFromPDADB(String villageCode, String hhno) {
+    public Collection<RecruitmentContract> getRecruitmentParticipant(String villageCode, String hhno) {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                RecruitmentEntry.COLUMN_PUID,
+                RecruitmentEntry.COLUMN_VILLAGE,
+                RecruitmentEntry.COLUMN_M_NAME,
+                RecruitmentEntry.COLUMN_FORMDATE,
+                RecruitmentEntry.COLUMN_M_ID,
+                RecruitmentEntry.COLUMN_SCREEN_ID,
+        };
+
+        String whereClause = RecruitmentEntry.COLUMN_VILLAGE + " =? AND " + RecruitmentEntry.COLUMN_M_ID + " =?";
+        String[] whereArgs = {villageCode, hhno};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = RecruitmentEntry.COLUMN_M_ID + " ASC";
+
+        Collection<RecruitmentContract> allEB = new ArrayList<>();
+
+        try {
+            c = db.query(
+                    RecruitmentEntry.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                allEB.add(new RecruitmentContract().hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allEB;
+    }
+
+    public Collection<EligibleContract> getEligibleParticipantFromPDADB(String villageCode, String hhno, String fType) {
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
@@ -577,10 +640,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_PWID,
                 FormsTable.COLUMN_SINFO,
                 FormsTable.COLUMN_SA,
+                FormsTable.COLUMN_FORMTYPE,
         };
 
-        String whereClause = FormsTable.COLUMN_VILLAGE + " =? AND " + FormsTable.COLUMN_PWID + " =? AND " + FormsTable.COLUMN_ISTATUS + " =?";
-        String[] whereArgs = {villageCode, hhno, "1"};
+        String whereClause = FormsTable.COLUMN_FORMTYPE + " =? AND " + FormsTable.COLUMN_VILLAGE + " =? AND " + FormsTable.COLUMN_PWID + " =? AND " + FormsTable.COLUMN_ISTATUS + " =?";
+        String[] whereArgs = {fType, villageCode, hhno, "1"};
         String groupBy = null;
         String having = null;
 
@@ -599,8 +663,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     orderBy                    // The sort order
             );
             while (c.moveToNext()) {
-                if (!EligibleContract.checkingEligibility(c)) continue;
-
+                if (fType.equals("kf2"))
+                    if (!EligibleContract.checkingEligibility(c)) continue;
                 allEB.add(new EligibleContract().hydrate2(c));
             }
         } finally {
@@ -640,7 +704,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             db.close();
         }
     }
-
 
     public void syncTalukas(JSONArray talukalist) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -771,6 +834,37 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
+    public void syncRecruitments(JSONArray eliList) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(RecruitmentEntry.TABLE_NAME, null, null);
+
+        try {
+            JSONArray jsonArray = eliList;
+
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObjectPSU = jsonArray.getJSONObject(i);
+
+                RecruitmentContract epw = new RecruitmentContract();
+                epw.sync(jsonObjectPSU);
+                Log.i(TAG, "Rrecruitment" + jsonObjectPSU.toString());
+
+                ContentValues values = new ContentValues();
+
+                values.put(RecruitmentEntry.COLUMN_PUID, epw.getPuid());
+                values.put(RecruitmentEntry.COLUMN_VILLAGE, epw.getVillage());
+                values.put(RecruitmentEntry.COLUMN_FORMDATE, epw.getFormdate());
+                values.put(RecruitmentEntry.COLUMN_M_NAME, epw.getM_name());
+                values.put(RecruitmentEntry.COLUMN_M_ID, epw.getM_id());
+                values.put(RecruitmentEntry.COLUMN_SCREEN_ID, epw.getScreen_id());
+
+                db.insert(RecruitmentEntry.TABLE_NAME, null, values);
+            }
+            db.close();
+
+        } catch (Exception e) {
+            Log.d(TAG, "syncRrecruitment" + e.getMessage());
+        }
+    }
 
     public void syncVillages(JSONArray pcList) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -801,7 +895,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         }
     }
-
 
     public boolean Login(String username, String password) throws SQLException {
 
@@ -879,7 +972,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return newRowId;
     }
 
-
     public void updateSyncedForms(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -899,7 +991,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 whereArgs);
     }
 
-
     public int updateFormID() {
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -917,7 +1008,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selectionArgs);
         return count;
     }
-
 
     public FormsContract getFormExistance(String formType, String pwid, String screenid) {
         SQLiteDatabase db = this.getReadableDatabase();
@@ -1144,7 +1234,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return allFC;
     }
-
 
     public Collection<FormsContract> getTodayForms() {
         SQLiteDatabase db = this.getReadableDatabase();

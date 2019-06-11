@@ -54,7 +54,8 @@ import static edu.aku.hassannaqvi.kmc_screening.core.MainApp.fc;
 public class SectionInfoKmcActivity extends AppCompatActivity {
 
     private List<String> ucName, talukaNames, villageNames, partNam;
-    private List<String> ucCode, talukaCodes, villageCodes;
+    private List<String> talukaCodes, villageCodes;
+    private Map<String, UCsContract> uc;
     private DatabaseHelper db;
     private PWScreenedContract mapWRA;
     private Map<String, EligibleContract> mapPartElig;
@@ -163,15 +164,14 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
 
                 if (position == 0) return;
 
-                ucCode = new ArrayList<>();
+                uc = new HashMap<>();
                 ucName = new ArrayList<>();
-                ucCode.add("....");
                 ucName.add("....");
 
                 Collection<UCsContract> pc = db.getAllUCsByTalukas(talukaCodes.get(position));
                 for (UCsContract p : pc) {
-                    ucCode.add(p.getUccode());
                     ucName.add(p.getUcsName());
+                    uc.put(p.getUcsName(), p);
                 }
                 ArrayAdapter<String> psuAdapter = new ArrayAdapter<>(context,
                         android.R.layout.simple_spinner_dropdown_item, ucName);
@@ -202,7 +202,9 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
                 villageCodes.add("....");
                 villageNames.add("....");
 
-                Collection<VillagesContract> pc = db.getAllPSUsByDistrict(talukaCodes.get(bi.crataluka.getSelectedItemPosition()), ucCode.get(position));
+                MainApp.armType = uc.get(bi.crauc.getSelectedItem()).getStudy_arm();
+
+                Collection<VillagesContract> pc = db.getAllPSUsByDistrict(talukaCodes.get(bi.crataluka.getSelectedItemPosition()), uc.get(bi.crauc.getSelectedItem()).getUccode());
                 for (VillagesContract p : pc) {
                     villageCodes.add(p.getVillageCode());
                     villageNames.add(p.getVillageName().split("\\|")[2]);
@@ -265,7 +267,7 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
         fc.setDeviceID(Settings.Secure.getString(getApplicationContext().getContentResolver(), Settings.Secure.ANDROID_ID));
         fc.setAppversion(MainApp.versionName + "." + MainApp.versionCode);
         fc.setTaluka(talukaCodes.get(bi.crataluka.getSelectedItemPosition()));
-        fc.setUc(ucCode.get(bi.crauc.getSelectedItemPosition()));
+        fc.setUc(uc.get(bi.crauc.getSelectedItem()).getUccode());
         fc.setVillage(villageCodes.get(bi.crvillage.getSelectedItemPosition()));
         fc.setFormType(MainApp.formType);
         fc.setSurveyType(MainApp.surveyType);
@@ -437,17 +439,24 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
             partNam = new ArrayList<>();
             partNam.add("....");
 
-            Collection<EligibleContract> dc = db.getEligibileParticipant(villageCodes.get(bi.crvillage.getSelectedItemPosition()), bi.kapr02a.getText().toString());
-            for (EligibleContract d : dc) {
-                partNam.add(d.getScreen_id());
-                mapPartElig.put(d.getScreen_id(), d);
+            Collection<?> dc;
+
+            String fType = MainApp.formType;
+            if (fType.equals("kf2"))
+                dc = db.getEligibileParticipant(villageCodes.get(bi.crvillage.getSelectedItemPosition()), bi.kapr02a.getText().toString());
+            else
+                dc = db.getRecruitmentParticipant(villageCodes.get(bi.crvillage.getSelectedItemPosition()), bi.kapr02a.getText().toString());
+
+            for (Object d : dc) {
+                partNam.add(((EligibleContract) d).getScreen_id());
+                mapPartElig.put(((EligibleContract) d).getScreen_id(), ((EligibleContract) d));
             }
 
             if (mapPartElig.size() == 0) {
-                dc = db.getEligibileParticipantFromPDADB(villageCodes.get(bi.crvillage.getSelectedItemPosition()), bi.kapr02a.getText().toString());
-                for (EligibleContract d : dc) {
-                    partNam.add(d.getScreen_id());
-                    mapPartElig.put(d.getScreen_id(), d);
+                dc = db.getEligibleParticipantFromPDADB(villageCodes.get(bi.crvillage.getSelectedItemPosition()), bi.kapr02a.getText().toString(), MainApp.formType);
+                for (Object d : dc) {
+                    partNam.add(((EligibleContract) d).getScreen_id());
+                    mapPartElig.put(((EligibleContract) d).getScreen_id(), ((EligibleContract) d));
                 }
 
                 if (mapPartElig.size() == 0) {
@@ -458,7 +467,6 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
             }
 
             bi.kf2a6.setAdapter(new ArrayAdapter<>(SectionInfoKmcActivity.this, android.R.layout.simple_spinner_dropdown_item, partNam));
-
         }
 
         Toast.makeText(this, "Household number exists", Toast.LENGTH_LONG).show();
