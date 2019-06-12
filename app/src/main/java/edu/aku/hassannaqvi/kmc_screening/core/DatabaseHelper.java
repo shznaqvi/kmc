@@ -583,7 +583,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allEB;
     }
 
-    public Collection<RecruitmentContract> getRecruitmentParticipant(String villageCode, String hhno) {
+    public Collection<?> getRecruitmentParticipant(String villageCode, String hhno) {
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;

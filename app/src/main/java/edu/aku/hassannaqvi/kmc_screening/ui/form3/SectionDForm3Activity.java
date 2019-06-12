@@ -197,6 +197,7 @@ public class SectionDForm3Activity extends AppCompatActivity {
         sa1.put("kf3d10", bi.kf3d10a.isChecked() ? "1"
                 : bi.kf3d10b.isChecked() ? "2"
                 : bi.kf3d10c.isChecked() ? "3"
+                : bi.kf3d1096.isChecked() ? "96"
                 : "0");
         sa1.put("kf3d1096x", bi.kf3d1096x.getText().toString());
 
@@ -213,6 +214,7 @@ public class SectionDForm3Activity extends AppCompatActivity {
         sa1.put("kf3d16h", bi.kf3d16h.getText().toString());
         sa1.put("kf3d16d", bi.kf3d16d.getText().toString());
         sa1.put("kf3d16w", bi.kf3d16w.getText().toString());
+        sa1.put("kf3d1698", bi.kf3d1698.isChecked() ? "98" : "0");
 
         sa1.put("kf3d17a", bi.kf3d17a.isChecked() ? "1" : "0");
         sa1.put("kf3d17b", bi.kf3d17b.isChecked() ? "2" : "0");

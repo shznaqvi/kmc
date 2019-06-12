@@ -6,7 +6,7 @@ import android.provider.BaseColumns;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class RecruitmentContract {
+public class RecruitmentContract extends EligibleContract {
 
     private String puid;
     private String village;

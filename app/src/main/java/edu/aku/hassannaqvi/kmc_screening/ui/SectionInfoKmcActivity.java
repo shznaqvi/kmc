@@ -242,6 +242,8 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
         if (!ValidatorClass.EmptyCheckingContainer(this, bi.infoMainLayout))
             return false;
 
+        if (MainApp.formType.equals("kf3")) return true;
+
         if (!checkFormExist(MainApp.formType, bi.kapr02a.getText().toString(), MainApp.formType.equals("kf1") ? bi.kf1a3.getText().toString() : bi.kf2a6.getSelectedItem().toString())) {
             Toast.makeText(this, "Form is already exist!!", Toast.LENGTH_SHORT).show();
             return false;
@@ -439,13 +441,13 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
             partNam = new ArrayList<>();
             partNam.add("....");
 
-            Collection<?> dc;
+            Collection<EligibleContract> dc;
 
             String fType = MainApp.formType;
             if (fType.equals("kf2"))
                 dc = db.getEligibileParticipant(villageCodes.get(bi.crvillage.getSelectedItemPosition()), bi.kapr02a.getText().toString());
             else
-                dc = db.getRecruitmentParticipant(villageCodes.get(bi.crvillage.getSelectedItemPosition()), bi.kapr02a.getText().toString());
+                dc = (Collection<EligibleContract>) db.getRecruitmentParticipant(villageCodes.get(bi.crvillage.getSelectedItemPosition()), bi.kapr02a.getText().toString());
 
             for (Object d : dc) {
                 partNam.add(((EligibleContract) d).getScreen_id());
@@ -453,7 +455,7 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
             }
 
             if (mapPartElig.size() == 0) {
-                dc = db.getEligibleParticipantFromPDADB(villageCodes.get(bi.crvillage.getSelectedItemPosition()), bi.kapr02a.getText().toString(), MainApp.formType);
+                dc = db.getEligibleParticipantFromPDADB(villageCodes.get(bi.crvillage.getSelectedItemPosition()), bi.kapr02a.getText().toString(), fType.equals("kf2") ? "kf1" : "kf2");
                 for (Object d : dc) {
                     partNam.add(((EligibleContract) d).getScreen_id());
                     mapPartElig.put(((EligibleContract) d).getScreen_id(), ((EligibleContract) d));
