@@ -108,18 +108,24 @@ public class EligibleContract {
         return this;
     }
 
-    public EligibleContract hydrate2(Cursor cursor) {
+    public EligibleContract hydrate2(Cursor cursor, boolean flag) {
 
         this.puid = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN__UID));
         this.village = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_VILLAGE));
         this.formdate = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_FORMDATE));
         this.m_id = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_PWID));
 
-        SimpleEligibleSA formsSA = new Gson().fromJson(cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_SA)), SimpleEligibleSA.class);
-        SimpleEligibleSINFO formsSINFO = new Gson().fromJson(cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_SINFO)), SimpleEligibleSINFO.class);
-        this.m_name = formsSINFO.getKf1a02();
-        this.screen_id = formsSINFO.getKf1a03();
-        this.part_id = formsSA.getKf1b11();
+        if (flag) {
+            SimpleEligibleSA formsSA = new Gson().fromJson(cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_SA)), SimpleEligibleSA.class);
+            SimpleEligibleSINFO formsSINFO = new Gson().fromJson(cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_SINFO)), SimpleEligibleSINFO.class);
+            this.m_name = formsSINFO.getKf1a02();
+            this.screen_id = formsSINFO.getKf1a03();
+            this.part_id = formsSA.getKf1b11();
+        } else {
+            SimpleEligibleSINFO_F2 formsSINFO = new Gson().fromJson(cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_SINFO)), SimpleEligibleSINFO_F2.class);
+            this.m_name = formsSINFO.getKf2a03();
+            this.screen_id = formsSINFO.getKf2a02();
+        }
 
         return this;
     }
@@ -163,6 +169,19 @@ public class EligibleContract {
 
         public String getKf1a02() {
             return kf1a02;
+        }
+    }
+
+    private class SimpleEligibleSINFO_F2 {
+
+        String kf2a03, kf2a02;
+
+        public String getKf2a03() {
+            return kf2a03;
+        }
+
+        public String getKf2a02() {
+            return kf2a02;
         }
     }
 

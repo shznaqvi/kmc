@@ -663,9 +663,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     orderBy                    // The sort order
             );
             while (c.moveToNext()) {
-                if (fType.equals("kf2"))
+                if (fType.equals("kf1"))
                     if (!EligibleContract.checkingEligibility(c)) continue;
-                allEB.add(new EligibleContract().hydrate2(c));
+                allEB.add(new EligibleContract().hydrate2(c, fType.equals("kf1")));
             }
         } finally {
             if (c != null) {
