@@ -57,20 +57,11 @@
     <!--      CBT Vars       !-->
     <string name="endForm">اختتام</string>
     <string name="section_A">  Module A: SOCIO DEMOGRAPHIC INFORMATION (KMC-2018-2020) </string>
-    <string name="cra01">ڇا جواب ڏيندڙ تحقيق ۾ حصو وٺڻ لاءِ تيار آهي</string>
     <string name="crataluka">تعلقه جو نالو</string>
     <string name="crataluka1">جانچ جو علائقو</string>
     <string name="cruc">يونين ڪائونسل جو نالو</string>
     <string name="crvillage">ڳوٺ/ ايريا جو نالو</string>
     <string name="crwoman">عورت جو نالو</string>
-    <string name="cra02">تعلقه جو ڪوڊ</string>
-    <string name="cra03"> توليدي عمر واري عورت جو نمبر </string>
-    <string name="cra0301"> Arm </string>
-    <string name="cra0302"> Child </string>
-    <string name="cra04"> گهر جو نمبر</string>
-    <string name="cra05">توليدي عمر واري عورت جو نالو</string>
-    <string name="cra06">توليدي عمر واري عورت جي عمر( 15-49 سالن تائين)</string>
-    <string name="cra07"> ڇا جواب ڏيندڙ تحقيق ۾ حصو وٺڻ لاءِ تيار آهي </string>    <!--      CBT Vars       !-->
     <string name="ka1heading"> Section A1: SOCIAL ECONOMIC STATUS (KMC-2018-2020) </string>
     <string name="ka101"> گهر ۾ ڪهڙي ٻولي استعمال ڪندا آهيو. </string>
     <string name="ka101a"> اردو </string>
