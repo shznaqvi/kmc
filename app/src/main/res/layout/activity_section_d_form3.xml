@@ -650,7 +650,7 @@
                             style="@style/EditText_number"
                             android:hint="@string/kf3d11a"
                             android:maxLength="2"
-                            app:maxValue="15"
+                            app:maxValue="20"
                             app:minValue="0"
                             app:type="range" />
 

@@ -180,7 +180,7 @@
                             style="@style/EditText_number"
                             android:hint="@string/kf3c05a"
                             android:maxLength="2"
-                            app:maxValue="28"
+                            app:maxValue="30"
                             app:minValue="0"
                             app:type="range" />
 

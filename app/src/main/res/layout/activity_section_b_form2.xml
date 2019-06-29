@@ -239,7 +239,7 @@
                             android:text='@{kf2b07b.checked ? kf2b08.getText.toString : "" }'
                             android:visibility='@{kf2b07b.checked ? View.VISIBLE : View.GONE }'
                             app:maxValue="3"
-                            app:minValue="2"
+                            app:minValue="1"
                             app:type="range" />
 
                     </LinearLayout>
