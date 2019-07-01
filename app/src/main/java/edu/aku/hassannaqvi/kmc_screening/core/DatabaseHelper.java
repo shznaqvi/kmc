@@ -1009,7 +1009,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return count;
     }
 
-    public FormsContract getFormExistance(String formType, String pwid, String screenid) {
+    public FormsContract getFormExistance(String villageCode, String formType, String pwid, String screenid) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
@@ -1047,8 +1047,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_TALUKA,
 
         };
-        String whereClause = FormsTable.COLUMN_FORMTYPE + " =? AND " + FormsTable.COLUMN_PWID + " =? AND " + FormsTable.COLUMN_SCREENID + " =?";
-        String[] whereArgs = {formType, pwid, screenid};
+        String whereClause = FormsTable.COLUMN_VILLAGE + " =? AND " + FormsTable.COLUMN_FORMTYPE + " =? AND " + FormsTable.COLUMN_PWID + " =? AND " + FormsTable.COLUMN_SCREENID + " =?";
+        String[] whereArgs = {villageCode, formType, pwid, screenid};
         String groupBy = null;
         String having = null;
 

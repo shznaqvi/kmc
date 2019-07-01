@@ -244,7 +244,7 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
 
         if (MainApp.formType.equals("kf3")) return true;
 
-        if (!checkFormExist(MainApp.formType, bi.kapr02a.getText().toString(), MainApp.formType.equals("kf1") ? bi.kf1a3.getText().toString() : bi.kf2a6.getSelectedItem().toString())) {
+        if (!checkFormExist(villageCodes.get(bi.crvillage.getSelectedItemPosition()), MainApp.formType, bi.kapr02a.getText().toString(), MainApp.formType.equals("kf1") ? bi.kf1a3.getText().toString() : bi.kf2a6.getSelectedItem().toString())) {
             Toast.makeText(this, "Form is already exist!!", Toast.LENGTH_SHORT).show();
             return false;
         }
@@ -253,8 +253,8 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
 
     }
 
-    private boolean checkFormExist(String formType, String pwid, String screendid) {
-        FormsContract dc = db.getFormExistance(formType, pwid, screendid);
+    private boolean checkFormExist(String villageCode, String formType, String pwid, String screendid) {
+        FormsContract dc = db.getFormExistance(villageCode, formType, pwid, screendid);
         return dc == null;
     }
 
