@@ -29,6 +29,9 @@ public class SectionAForm1Activity extends AppCompatActivity {
 
     ActivitySectionAForm1Binding bi;
     List<RadioButton> rdbEligibilityCheckIDs;
+    List<RadioButton> q04rdbCheckID;
+    boolean question04Flag;
+    boolean flag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,9 +47,11 @@ public class SectionAForm1Activity extends AppCompatActivity {
     private void setContentUI() {
         this.setTitle(R.string.f1_secb);
 
-        rdbEligibilityCheckIDs = new ArrayList<>(Arrays.asList(bi.kf1b0401b, bi.kf1b0402b, bi.kf1b0403b, bi.kf1b0404b, bi.kf1b0405b, bi.kf1b0406b,
-                bi.kf1b0407b, bi.kf1b0408b, bi.kf1b0409b, bi.kf1b0410b, bi.kf1b0411b, bi.kf1b0412b, bi.kf1b0413b, bi.kf1b0414b, bi.kf1b0415b,
+        rdbEligibilityCheckIDs = new ArrayList<>(Arrays.asList(
                 bi.kf1b0501b, bi.kf1b0502b, bi.kf1b0503b, bi.kf1b0504b, bi.kf1b0596b, bi.kf1b06b));
+
+        q04rdbCheckID = new ArrayList<>(Arrays.asList(bi.kf1b0401b, bi.kf1b0402b, bi.kf1b0403b, bi.kf1b0404b, bi.kf1b0405b, bi.kf1b0406b,
+                bi.kf1b0407b, bi.kf1b0408b, bi.kf1b0409b, bi.kf1b0410b, bi.kf1b0411b, bi.kf1b0412b, bi.kf1b0413b, bi.kf1b0414b, bi.kf1b0415b));
     }
 
     public void BtnContinue() {
@@ -183,7 +188,7 @@ public class SectionAForm1Activity extends AppCompatActivity {
     }
 
     public void onRadioEligibilityChecked(RadioGroup radioGroup, int id) {
-        boolean flag = true;
+        flag = true;
         for (RadioButton rdbID : rdbEligibilityCheckIDs) {
             if (!rdbID.isChecked()) {
                 flag = false;
@@ -191,7 +196,26 @@ public class SectionAForm1Activity extends AppCompatActivity {
             }
         }
 
-        bi.kf1b07.check(flag ? bi.kf1b07a.getId() : bi.kf1b07b.getId());
+        bi.kf1b07.check(flag && question04Flag ? bi.kf1b07a.getId() : bi.kf1b07b.getId());
+    }
+
+    public void onRadioQuestion04CheckID(RadioGroup radioGroup, int id) {
+        question04Flag = false;
+        int count = 0;
+        for (RadioButton rdbID : q04rdbCheckID) {
+            if (!rdbID.isChecked()) {
+                count++;
+                if (count < 3 || count > 3) {
+                    question04Flag = true;
+                    break;
+                }
+            }
+
+        }
+
+        bi.kf1b07.check(flag && question04Flag ? bi.kf1b07a.getId() : bi.kf1b07b.getId());
+
+
     }
 
     @Override

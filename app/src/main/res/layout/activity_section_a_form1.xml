@@ -185,7 +185,7 @@
                             <RadioGroup
                                 android:id="@+id/kf1b0401"
                                 style="@style/i_radiogroup"
-                                android:onCheckedChanged="@{callback.onRadioEligibilityChecked}">
+                                android:onCheckedChanged="@{callback.onRadioQuestion04CheckID}">
 
                                 <RadioButton
                                     android:id="@+id/kf1b0401a"
@@ -217,7 +217,7 @@
                             <RadioGroup
                                 android:id="@+id/kf1b0402"
                                 style="@style/i_radiogroup"
-                                android:onCheckedChanged="@{callback.onRadioEligibilityChecked}">
+                                android:onCheckedChanged="@{callback.onRadioQuestion04CheckID}">
 
                                 <RadioButton
                                     android:id="@+id/kf1b0402a"
@@ -249,7 +249,7 @@
                             <RadioGroup
                                 android:id="@+id/kf1b0403"
                                 style="@style/i_radiogroup"
-                                android:onCheckedChanged="@{callback.onRadioEligibilityChecked}">
+                                android:onCheckedChanged="@{callback.onRadioQuestion04CheckID}">
 
                                 <RadioButton
                                     android:id="@+id/kf1b0403a"
@@ -278,7 +278,7 @@
                             <RadioGroup
                                 android:id="@+id/kf1b0404"
                                 style="@style/i_radiogroup"
-                                android:onCheckedChanged="@{callback.onRadioEligibilityChecked}">
+                                android:onCheckedChanged="@{callback.onRadioQuestion04CheckID}">
 
                                 <RadioButton
                                     android:id="@+id/kf1b0404a"
@@ -307,7 +307,7 @@
                             <RadioGroup
                                 android:id="@+id/kf1b0405"
                                 style="@style/i_radiogroup"
-                                android:onCheckedChanged="@{callback.onRadioEligibilityChecked}">
+                                android:onCheckedChanged="@{callback.onRadioQuestion04CheckID}">
 
                                 <RadioButton
                                     android:id="@+id/kf1b0405a"
@@ -350,7 +350,7 @@
                             <RadioGroup
                                 android:id="@+id/kf1b0406"
                                 style="@style/i_radiogroup"
-                                android:onCheckedChanged="@{callback.onRadioEligibilityChecked}">
+                                android:onCheckedChanged="@{callback.onRadioQuestion04CheckID}">
 
                                 <RadioButton
                                     android:id="@+id/kf1b0406a"
@@ -379,7 +379,7 @@
                             <RadioGroup
                                 android:id="@+id/kf1b0407"
                                 style="@style/i_radiogroup"
-                                android:onCheckedChanged="@{callback.onRadioEligibilityChecked}">
+                                android:onCheckedChanged="@{callback.onRadioQuestion04CheckID}">
 
                                 <RadioButton
                                     android:id="@+id/kf1b0407a"
@@ -408,7 +408,7 @@
                             <RadioGroup
                                 android:id="@+id/kf1b0408"
                                 style="@style/i_radiogroup"
-                                android:onCheckedChanged="@{callback.onRadioEligibilityChecked}">
+                                android:onCheckedChanged="@{callback.onRadioQuestion04CheckID}">
 
                                 <RadioButton
                                     android:id="@+id/kf1b0408a"
@@ -437,7 +437,7 @@
                             <RadioGroup
                                 android:id="@+id/kf1b0409"
                                 style="@style/i_radiogroup"
-                                android:onCheckedChanged="@{callback.onRadioEligibilityChecked}">
+                                android:onCheckedChanged="@{callback.onRadioQuestion04CheckID}">
 
                                 <RadioButton
                                     android:id="@+id/kf1b0409a"
@@ -466,7 +466,7 @@
                             <RadioGroup
                                 android:id="@+id/kf1b0410"
                                 style="@style/i_radiogroup"
-                                android:onCheckedChanged="@{callback.onRadioEligibilityChecked}">
+                                android:onCheckedChanged="@{callback.onRadioQuestion04CheckID}">
 
                                 <RadioButton
                                     android:id="@+id/kf1b0410a"
@@ -495,7 +495,7 @@
                             <RadioGroup
                                 android:id="@+id/kf1b0411"
                                 style="@style/i_radiogroup"
-                                android:onCheckedChanged="@{callback.onRadioEligibilityChecked}">
+                                android:onCheckedChanged="@{callback.onRadioQuestion04CheckID}">
 
                                 <RadioButton
                                     android:id="@+id/kf1b0411a"
@@ -524,7 +524,7 @@
                             <RadioGroup
                                 android:id="@+id/kf1b0412"
                                 style="@style/i_radiogroup"
-                                android:onCheckedChanged="@{callback.onRadioEligibilityChecked}">
+                                android:onCheckedChanged="@{callback.onRadioQuestion04CheckID}">
 
                                 <RadioButton
                                     android:id="@+id/kf1b0412a"
@@ -553,7 +553,7 @@
                             <RadioGroup
                                 android:id="@+id/kf1b0413"
                                 style="@style/i_radiogroup"
-                                android:onCheckedChanged="@{callback.onRadioEligibilityChecked}">
+                                android:onCheckedChanged="@{callback.onRadioQuestion04CheckID}">
 
                                 <RadioButton
                                     android:id="@+id/kf1b0413a"
@@ -582,7 +582,7 @@
                             <RadioGroup
                                 android:id="@+id/kf1b0414"
                                 style="@style/i_radiogroup"
-                                android:onCheckedChanged="@{callback.onRadioEligibilityChecked}">
+                                android:onCheckedChanged="@{callback.onRadioQuestion04CheckID}">
 
                                 <RadioButton
                                     android:id="@+id/kf1b0414a"
