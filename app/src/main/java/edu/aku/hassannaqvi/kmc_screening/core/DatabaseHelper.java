@@ -1047,8 +1047,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_TALUKA,
 
         };
-        String whereClause = FormsTable.COLUMN_VILLAGE + " =? AND " + FormsTable.COLUMN_FORMTYPE + " =? AND " + FormsTable.COLUMN_PWID + " =? AND " + FormsTable.COLUMN_SCREENID + " =?";
-        String[] whereArgs = {villageCode, formType, pwid, screenid};
+        String whereClause = FormsTable.COLUMN_VILLAGE + " =? AND " + FormsTable.COLUMN_FORMTYPE + " =? AND " + FormsTable.COLUMN_PWID + " =? AND " + FormsTable.COLUMN_SCREENID + " =? AND " + FormsTable.COLUMN_ISTATUS + " =?";
+        String[] whereArgs = {villageCode, formType, pwid, screenid, "1"};
         String groupBy = null;
         String having = null;
 
