@@ -438,35 +438,28 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allEB;
     }
 
-    public PWFollowUpContract checkPWExist(String villageCode, String hhno) {
+    public FormsContract checkPWExist(String villageCode, String hhno) {
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
-                PWFUPEntry.MWRA_UID,
-                PWFUPEntry.MWRA_VILLAGE,
-                PWFUPEntry.MWRA_ROUND,
-                PWFUPEntry.MWRA_FUPDT,
-                PWFUPEntry.MWRA_PWID,
-                PWFUPEntry.MWRA_HNAME,
-                PWFUPEntry.MWRA_WNAME,
-                PWFUPEntry.MWRA_KAPR07,
-                PWFUPEntry.MWRA_KAPR08,
-                PWFUPEntry.MWRA_REGDT,
-                PWFUPEntry.MWRA_HHNAME
+                FormsTable.COLUMN__ID,
+                FormsTable.COLUMN_PWID,
+                FormsTable.COLUMN_VILLAGE,
+                FormsTable.COLUMN_SINFO
         };
 
-        String whereClause = PWFUPEntry.MWRA_VILLAGE + " =? AND " + PWFUPEntry.MWRA_PWID + " =?";
+        String whereClause = FormsTable.COLUMN_VILLAGE + " =? AND " + FormsTable.COLUMN_PWID + " =?";
         String[] whereArgs = {villageCode, hhno};
         String groupBy = null;
         String having = null;
 
-        String orderBy = PWFUPEntry.MWRA_PWID + " ASC";
+        String orderBy = FormsTable.COLUMN__ID + " ASC";
 
-        PWFollowUpContract allEB = null;
+        FormsContract allEB = null;
         try {
             c = db.query(
-                    PWFUPEntry.TABLE_NAME,  // The table to query
+                    FormsTable.TABLE_NAME,  // The table to query
                     columns,                   // The columns to return
                     whereClause,               // The columns for the WHERE clause
                     whereArgs,                 // The values for the WHERE clause
@@ -475,7 +468,52 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     orderBy                    // The sort order
             );
             while (c.moveToNext()) {
-                allEB = new PWFollowUpContract().hydrate(c);
+                allEB = new FormsContract().Hydrate(c, 1);
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allEB;
+    }
+
+    public FormsContract checkPWExist(String villageCode, String hhno, String round) {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                FormsTable.COLUMN__ID,
+                FormsTable.COLUMN_PWID,
+                FormsTable.COLUMN_VILLAGE,
+                FormsTable.COLUMN_SINFO
+        };
+
+        String whereClause = FormsTable.COLUMN_VILLAGE + " =? AND " + FormsTable.COLUMN_PWID + " =?";
+        String[] whereArgs = {villageCode, hhno};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = FormsTable.COLUMN__ID + " ASC";
+
+        FormsContract allEB = null;
+        try {
+            c = db.query(
+                    FormsTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                FormsContract formItem = new FormsContract().Hydrate(c, 1);
+                if (FormsContract.checkingEligibility(formItem.getsInfo(), round))
+                    allEB = formItem;
             }
         } finally {
             if (c != null) {
@@ -1066,7 +1104,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     orderBy                    // The sort order
             );
             while (c.moveToNext()) {
-                allFC = new FormsContract().Hydrate(c);
+                allFC = new FormsContract().Hydrate(c, 0);
             }
         } finally {
             if (c != null) {
@@ -1143,7 +1181,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             );
             while (c.moveToNext()) {
                 FormsContract fc = new FormsContract();
-                allFC.add(fc.Hydrate(c));
+                allFC.add(fc.Hydrate(c, 0));
             }
         } finally {
             if (c != null) {
@@ -1222,7 +1260,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             );
             while (c.moveToNext()) {
                 FormsContract fc = new FormsContract();
-                allFC.add(fc.Hydrate(c));
+                allFC.add(fc.Hydrate(c, 0));
             }
         } finally {
             if (c != null) {
