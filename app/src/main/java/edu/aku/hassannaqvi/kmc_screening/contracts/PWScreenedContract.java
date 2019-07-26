@@ -3,6 +3,8 @@ package edu.aku.hassannaqvi.kmc_screening.contracts;
 import android.database.Cursor;
 import android.provider.BaseColumns;
 
+import com.google.gson.Gson;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -110,6 +112,23 @@ public class PWScreenedContract {
         return this;
     }
 
+    public PWScreenedContract hydrateForm(Cursor cursor) {
+
+        this.puid = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN__UID));
+        this.village = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_VILLAGE));
+        this.formdate = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_FORMDATE));
+        this.pwid = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_PWID));
+
+        RegisteredEligiblePW formsSINFO = new Gson().fromJson(cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_SINFO)), RegisteredEligiblePW.class);
+
+        this.h_name = formsSINFO.getKapr06();
+        this.pw_name = formsSINFO.getKapr03();
+        this.cast = formsSINFO.getKapr07();
+        this.hh_name = formsSINFO.getKapr09();
+
+        return this;
+    }
+
     public JSONObject toJSONObject() throws JSONException {
         JSONObject json = new JSONObject();
         json.put(PWFScrennedEntry.COLUMN_PUID, this.puid == null ? JSONObject.NULL : this.puid);
@@ -122,6 +141,50 @@ public class PWScreenedContract {
         json.put(PWFScrennedEntry.COLUMN_HH_NAME, this.hh_name == null ? JSONObject.NULL : this.hh_name);
 
         return json;
+    }
+
+    private class RegisteredEligiblePW {
+        String kapr03, kapr06, kapr07, kapr08, kapr09;
+
+        public String getKapr03() {
+            return kapr03;
+        }
+
+        public void setKapr03(String kapr03) {
+            this.kapr03 = kapr03;
+        }
+
+        public String getKapr06() {
+            return kapr06;
+        }
+
+        public void setKapr06(String kapr06) {
+            this.kapr06 = kapr06;
+        }
+
+        public String getKapr07() {
+            return kapr07;
+        }
+
+        public void setKapr07(String kapr07) {
+            this.kapr07 = kapr07;
+        }
+
+        public String getKapr08() {
+            return kapr08;
+        }
+
+        public void setKapr08(String kapr08) {
+            this.kapr08 = kapr08;
+        }
+
+        public String getKapr09() {
+            return kapr09;
+        }
+
+        public void setKapr09(String kapr09) {
+            this.kapr09 = kapr09;
+        }
     }
 
     public static abstract class PWFScrennedEntry implements BaseColumns {

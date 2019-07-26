@@ -428,6 +428,9 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
 
             mapWRA = db.getPWScreened(villageCodes.get(bi.crvillage.getSelectedItemPosition()), bi.kapr02a.getText().toString());
 
+            if (mapWRA == null)
+                mapWRA = db.getPWScreened("kf0a", villageCodes.get(bi.crvillage.getSelectedItemPosition()), bi.kapr02a.getText().toString());
+
             if (mapWRA == null) {
                 setupFields(View.GONE);
                 Toast.makeText(this, "Household does not exist ", Toast.LENGTH_LONG).show();

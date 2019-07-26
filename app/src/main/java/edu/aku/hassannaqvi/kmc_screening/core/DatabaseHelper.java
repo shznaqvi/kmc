@@ -512,8 +512,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             );
             while (c.moveToNext()) {
                 FormsContract formItem = new FormsContract().Hydrate(c, 1);
-                if (FormsContract.checkingEligibility(formItem.getsInfo(), round))
+                if (FormsContract.checkingEligibility(formItem.getsInfo(), round)) {
                     allEB = formItem;
+                    break;
+                }
             }
         } finally {
             if (c != null) {
@@ -562,6 +564,51 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             );
             while (c.moveToNext()) {
                 allEB = new PWScreenedContract().hydrate(c);
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allEB;
+    }
+
+    public PWScreenedContract getPWScreened(String sType, String villageCode, String pwid) {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                FormsTable.COLUMN__UID,
+                FormsTable.COLUMN_VILLAGE,
+                FormsTable.COLUMN_FORMDATE,
+                FormsTable.COLUMN_PWID,
+                FormsTable.COLUMN_SINFO
+        };
+
+        String whereClause = FormsTable.COLUMN_VILLAGE + " =? AND " + FormsTable.COLUMN_PWID + " =? AND " + FormsTable.COLUMN_SURVEYTYPE + "=? AND " + FormsTable.COLUMN_ISTATUS + "=?";
+        String[] whereArgs = {villageCode, pwid, sType, "1"};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = FormsTable.COLUMN_PWID + " ASC";
+
+        PWScreenedContract allEB = null;
+
+        try {
+            c = db.query(
+                    FormsTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                allEB = new PWScreenedContract().hydrateForm(c);
             }
         } finally {
             if (c != null) {
