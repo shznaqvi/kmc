@@ -438,7 +438,57 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allEB;
     }
 
-    public FormsContract checkPWExist(String villageCode, String hhno) {
+    public PWFollowUpContract checkPWExist(String villageCode, String hhno) {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                PWFUPEntry.MWRA_UID,
+                PWFUPEntry.MWRA_VILLAGE,
+                PWFUPEntry.MWRA_ROUND,
+                PWFUPEntry.MWRA_FUPDT,
+                PWFUPEntry.MWRA_PWID,
+                PWFUPEntry.MWRA_HNAME,
+                PWFUPEntry.MWRA_WNAME,
+                PWFUPEntry.MWRA_KAPR07,
+                PWFUPEntry.MWRA_KAPR08,
+                PWFUPEntry.MWRA_REGDT,
+                PWFUPEntry.MWRA_HHNAME
+        };
+
+        String whereClause = PWFUPEntry.MWRA_VILLAGE + " =? AND " + PWFUPEntry.MWRA_PWID + " =?";
+        String[] whereArgs = {villageCode, hhno};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = PWFUPEntry.MWRA_PWID + " ASC";
+
+        PWFollowUpContract allEB = null;
+        try {
+            c = db.query(
+                    PWFUPEntry.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                allEB = new PWFollowUpContract().hydrate(c);
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allEB;
+    }
+
+    public FormsContract checkPWExistDB(String villageCode, String hhno) {
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;

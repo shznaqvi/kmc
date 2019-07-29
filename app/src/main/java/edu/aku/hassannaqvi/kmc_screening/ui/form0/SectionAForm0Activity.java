@@ -421,12 +421,17 @@ public class SectionAForm0Activity extends AppCompatActivity {
     }
 
     private boolean checkingWomenExistF0a() {
-        FormsContract dc = db.checkPWExist(villageCodes.get(bi.crvillage.getSelectedItemPosition()), bi.kapr02b.getText().toString());
-        return dc == null;
+
+        PWFollowUpContract dc = db.checkPWExist(villageCodes.get(bi.crvillage.getSelectedItemPosition()), bi.kapr02b.getText().toString());
+        if (dc == null) {
+            FormsContract fm = db.checkPWExistDB(villageCodes.get(bi.crvillage.getSelectedItemPosition()), bi.kapr02b.getText().toString());
+            return fm == null;
+        }
+        return false;
     }
 
     private boolean checkingWomenExistF0b() {
-        FormsContract dc = db.checkPWExist(villageCodes.get(bi.crvillage.getSelectedItemPosition()), bi.kapr02b.getText().toString(), mapWRA.getRound());
+        FormsContract dc = db.checkPWExist(villageCodes.get(bi.crvillage.getSelectedItemPosition()), bi.kapr02a.getText().toString(), mapWRA.getRound());
         return dc == null;
     }
 

@@ -4,6 +4,7 @@ import android.database.Cursor;
 import android.provider.BaseColumns;
 
 import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -442,6 +443,7 @@ public class FormsContract {
 
     private class FormPWScreenRound {
 
+        @SerializedName("pw_round")
         String pw_round;
 
         public String getPw_round() {
