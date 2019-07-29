@@ -242,7 +242,7 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
         if (!ValidatorClass.EmptyCheckingContainer(this, bi.infoMainLayout))
             return false;
 
-        if (MainApp.formType.equals("kf3")) return true;
+//        if (MainApp.formType.equals("kf3")) return true;
 
         if (!checkFormExist(villageCodes.get(bi.crvillage.getSelectedItemPosition()), MainApp.formType, bi.kapr02a.getText().toString(), MainApp.formType.equals("kf1") ? bi.kf1a3.getText().toString() : bi.kf2a6.getSelectedItem().toString())) {
             Toast.makeText(this, "Form is already exist!!", Toast.LENGTH_SHORT).show();
