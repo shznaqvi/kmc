@@ -19,6 +19,7 @@ import edu.aku.hassannaqvi.kmc_screening.contracts.EligibleContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.PWFollowUpContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.PWScreenedContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.RecruitmentContract;
+import edu.aku.hassannaqvi.kmc_screening.contracts.RegisteredPWContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.TalukasContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.UCsContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.UsersContract;
@@ -88,6 +89,9 @@ public class GetAllData extends AsyncTask<String, String, String> {
                         break;
                     case "Villages":
                         url = new URL(hostItem + VillagesContract.singleVillage._URI);
+                        break;
+                    case "RegisteredPW":
+                        url = new URL(hostItem + RegisteredPWContract.RegisteredPW._URI);
                         break;
                 }
 
@@ -159,6 +163,9 @@ public class GetAllData extends AsyncTask<String, String, String> {
                             break;
                         case "Villages":
                             db.syncVillages(jsonArray);
+                            break;
+                        case "RegisteredPW":
+                            db.syncRegisteredPW(jsonArray);
                             break;
                     }
 

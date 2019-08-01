@@ -32,6 +32,7 @@ import java.util.List;
 import edu.aku.hassannaqvi.kmc_screening.R;
 import edu.aku.hassannaqvi.kmc_screening.contracts.FormsContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.PWFollowUpContract;
+import edu.aku.hassannaqvi.kmc_screening.contracts.RegisteredPWContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.TalukasContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.UCsContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.VillagesContract;
@@ -422,7 +423,7 @@ public class SectionAForm0Activity extends AppCompatActivity {
 
     private boolean checkingWomenExistF0a() {
 
-        PWFollowUpContract dc = db.checkPWExist(villageCodes.get(bi.crvillage.getSelectedItemPosition()), bi.kapr02b.getText().toString());
+        RegisteredPWContract dc = db.checkPWExist(villageCodes.get(bi.crvillage.getSelectedItemPosition()), bi.kapr02b.getText().toString());
         if (dc == null) {
             FormsContract fm = db.checkPWExistDB(villageCodes.get(bi.crvillage.getSelectedItemPosition()), bi.kapr02b.getText().toString());
             return fm == null;
