@@ -74,16 +74,6 @@ public class SectionBForm3Activity extends AppCompatActivity {
 
         JSONObject sa1 = new JSONObject();
 
-        sa1.put("kf3b01", bi.kf3b01a.isChecked() ? "1"
-                : bi.kf3b01b.isChecked() ? "2"
-                : bi.kf3b01c.isChecked() ? "3"
-                : bi.kf3b01d.isChecked() ? "4"
-                : bi.kf3b01e.isChecked() ? "5"
-                : bi.kf3b01f.isChecked() ? "6"
-                : bi.kf3b01g.isChecked() ? "7"
-                : bi.kf3b01h.isChecked() ? "8"
-                : "0");
-
         sa1.put("kf3b02", bi.kf3b02a.isChecked() ? "1"
                 : bi.kf3b02b.isChecked() ? "2"
                 : bi.kf3b02c.isChecked() ? "3"
@@ -135,7 +125,7 @@ public class SectionBForm3Activity extends AppCompatActivity {
             if (UpdateDB()) {
                 finish();
                 startActivity(new Intent(this, !bi.kf3b02a.isChecked() || !bi.kf3b03a.isChecked() ? EndingActivity.class : SectionCForm3Activity.class)
-                        .putExtra("complete", true).putExtra("day1", bi.kf3b01a.isChecked()));
+                        .putExtra("complete", true).putExtra("day1", getIntent().getBooleanExtra("dayFlag", false)));
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();

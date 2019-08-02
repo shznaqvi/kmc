@@ -138,6 +138,15 @@ public class FormsContract {
         return forms.getPw_round().equals(round);
     }
 
+    public static boolean checkingEligibility(String sInfo, String sB, String followupNo) {
+        FormPWFollowup forms = new Gson().fromJson(sB, FormPWFollowup.class);
+        if (forms.getKf3b01() == null) {
+            forms = new Gson().fromJson(sInfo, FormPWFollowup.class);
+        }
+
+        return forms.getKf3b01().equals(followupNo);
+    }
+
     public FormsContract Hydrate(Cursor cursor, int type) {
         if (type == 0) {
             this.projectName = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_PROJECTNAME));
@@ -168,7 +177,8 @@ public class FormsContract {
             this.taluka = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_TALUKA));
             this.uc = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_UC));
             this.gpsAltitude = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_GPSALTITUDE));
-        } else if (type == 0 || type == 1) {
+        }
+        if (type == 0 || type == 1) {
             this._ID = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN__ID));
             this.pwid = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_PWID));
             this.village = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_VILLAGE));
@@ -448,6 +458,14 @@ public class FormsContract {
 
         public String getPw_round() {
             return pw_round;
+        }
+    }
+
+    public class FormPWFollowup {
+        String kf3b01;
+
+        public String getKf3b01() {
+            return kf3b01;
         }
     }
 

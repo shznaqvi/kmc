@@ -1171,7 +1171,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return count;
     }
 
-    public FormsContract getFormExistance(String villageCode, String formType, String pwid, String screenid) {
+    public FormsContract getFormExistance(String villageCode, String formType, String pwid, String screenid, String followUpNo) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
@@ -1227,8 +1227,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     having,                    // don't filter by row groups
                     orderBy                    // The sort order
             );
+
             while (c.moveToNext()) {
                 allFC = new FormsContract().Hydrate(c, 0);
+
+                if (formType.equals("kf3")) {
+                    if (FormsContract.checkingEligibility(allFC.getsInfo(), allFC.getsB(), followUpNo)) {
+                        break;
+                    } else
+                        allFC = null;
+                }
+
             }
         } finally {
             if (c != null) {

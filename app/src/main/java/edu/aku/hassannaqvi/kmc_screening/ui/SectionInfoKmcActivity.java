@@ -242,9 +242,22 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
         if (!ValidatorClass.EmptyCheckingContainer(this, bi.infoMainLayout))
             return false;
 
-//        if (MainApp.formType.equals("kf3")) return true;
+        if (!checkFormExist(villageCodes.get(bi.crvillage.getSelectedItemPosition()),
+                MainApp.formType,
+                bi.kapr02a.getText().toString(),
+                MainApp.formType.equals("kf1") ? bi.kf1a3.getText().toString() : bi.kf2a6.getSelectedItem().toString(),
 
-        if (!checkFormExist(villageCodes.get(bi.crvillage.getSelectedItemPosition()), MainApp.formType, bi.kapr02a.getText().toString(), MainApp.formType.equals("kf1") ? bi.kf1a3.getText().toString() : bi.kf2a6.getSelectedItem().toString())) {
+                (bi.kf3b01a.isChecked() ? "1"
+                        : bi.kf3b01b.isChecked() ? "2"
+                        : bi.kf3b01c.isChecked() ? "3"
+                        : bi.kf3b01d.isChecked() ? "4"
+                        : bi.kf3b01e.isChecked() ? "5"
+                        : bi.kf3b01f.isChecked() ? "6"
+                        : bi.kf3b01g.isChecked() ? "7"
+                        : bi.kf3b01h.isChecked() ? "8"
+                        : "")
+
+        )) {
             Toast.makeText(this, "Form is already exist!!", Toast.LENGTH_SHORT).show();
             return false;
         }
@@ -253,8 +266,8 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
 
     }
 
-    private boolean checkFormExist(String villageCode, String formType, String pwid, String screendid) {
-        FormsContract dc = db.getFormExistance(villageCode, formType, pwid, screendid);
+    private boolean checkFormExist(String villageCode, String formType, String pwid, String screendid, String followUpNo) {
+        FormsContract dc = db.getFormExistance(villageCode, formType, pwid, screendid, followUpNo);
         return dc == null;
     }
 
@@ -303,6 +316,15 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
         } else if (fType.equals("kf3")) {
             /*sInfo.put("kf3a05", bi.kf3a3.getText().toString());
             sInfo.put("kf3a06", bi.kf3a4.getText().toString());*/
+            sInfo.put("kf3b01", bi.kf3b01a.isChecked() ? "1"
+                    : bi.kf3b01b.isChecked() ? "2"
+                    : bi.kf3b01c.isChecked() ? "3"
+                    : bi.kf3b01d.isChecked() ? "4"
+                    : bi.kf3b01e.isChecked() ? "5"
+                    : bi.kf3b01f.isChecked() ? "6"
+                    : bi.kf3b01g.isChecked() ? "7"
+                    : bi.kf3b01h.isChecked() ? "8"
+                    : "0");
         }
 
         if (fType.equals("kf2") || fType.equals("kf3")) {
@@ -373,7 +395,10 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
                 finish();
                 startActivity(new Intent(this, MainApp.formType.equals("kf1") ? SectionAForm1Activity.class
                         : MainApp.formType.equals("kf2") ? SectionBForm2Activity.class
-                        : MainApp.formType.equals("kf3") ? SectionBForm3Activity.class : null).putExtra("pwid", bi.kapr02a.getText().toString()).putExtra("hfScreen", bi.kfa1a.isChecked()));
+                        : MainApp.formType.equals("kf3") ? SectionBForm3Activity.class : null)
+                        .putExtra("pwid", bi.kapr02a.getText().toString())
+                        .putExtra("hfScreen", bi.kfa1a.isChecked())
+                        .putExtra("dayFlag", bi.kf3b01a.isChecked()));
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
@@ -544,9 +569,9 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
             ClearClass.ClearAllFields(bi.form0203, null);
         } else if (MainApp.formType.equals("kf3")) {
             bi.form0203.setVisibility(status);
-//            bi.form03.setVisibility(status);
+            bi.form03.setVisibility(status);
             ClearClass.ClearAllFields(bi.form0203, null);
-//            ClearClass.ClearAllFields(bi.form03, null);
+            ClearClass.ClearAllFields(bi.form03, null);
         }
         bi.kfa1.clearCheck();
     }
