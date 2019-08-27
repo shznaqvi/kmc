@@ -277,7 +277,7 @@
                                     style="@style/EditText_number"
                                     android:hint="@string/days"
                                     android:maxLength="2"
-                                    app:maxValue="28"
+                                    app:maxValue="31"
                                     app:minValue="0"
                                     app:type="range" />
 

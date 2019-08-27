@@ -93,6 +93,15 @@ public class GetAllData extends AsyncTask<String, String, String> {
                     case "RegisteredPW":
                         url = new URL(hostItem + RegisteredPWContract.RegisteredPW._URI);
                         break;
+                    case "RegisteredPWF1":
+                        url = new URL(hostItem + RegisteredPWContract.RegisteredPW._URI1);
+                        break;
+                    case "RegisteredPWF2":
+                        url = new URL(hostItem + RegisteredPWContract.RegisteredPW._URI2);
+                        break;
+                    case "RegisteredPWF3":
+                        url = new URL(hostItem + RegisteredPWContract.RegisteredPW._URI3);
+                        break;
                 }
 
                 urlConnection = (HttpURLConnection) url.openConnection();
@@ -165,7 +174,16 @@ public class GetAllData extends AsyncTask<String, String, String> {
                             db.syncVillages(jsonArray);
                             break;
                         case "RegisteredPW":
-                            db.syncRegisteredPW(jsonArray);
+                            db.syncRegisteredPW(MainApp.FORMTYPE0, jsonArray);
+                            break;
+                        case "RegisteredPWF1":
+                            db.syncRegisteredPW(MainApp.FORMTYPE1, jsonArray);
+                            break;
+                        case "RegisteredPWF2":
+                            db.syncRegisteredPW(MainApp.FORMTYPE2, jsonArray);
+                            break;
+                        case "RegisteredPWF3":
+                            db.syncRegisteredPW(MainApp.FORMTYPE3, jsonArray);
                             break;
                     }
 

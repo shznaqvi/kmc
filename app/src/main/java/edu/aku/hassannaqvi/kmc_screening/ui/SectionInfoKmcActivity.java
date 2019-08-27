@@ -35,6 +35,7 @@ import edu.aku.hassannaqvi.kmc_screening.R;
 import edu.aku.hassannaqvi.kmc_screening.contracts.EligibleContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.FormsContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.PWScreenedContract;
+import edu.aku.hassannaqvi.kmc_screening.contracts.RegisteredPWContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.TalukasContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.UCsContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.VillagesContract;
@@ -242,22 +243,46 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
         if (!ValidatorClass.EmptyCheckingContainer(this, bi.infoMainLayout))
             return false;
 
-        if (!checkFormExist(villageCodes.get(bi.crvillage.getSelectedItemPosition()),
-                MainApp.formType,
-                bi.kapr02a.getText().toString(),
-                MainApp.formType.equals("kf1") ? bi.kf1a3.getText().toString() : bi.kf2a6.getSelectedItem().toString(),
+        String type = "", pwid = "", followupNo = "";
+        switch (MainApp.formType) {
+            case "kf1":
+                type = MainApp.FORMTYPE1;
+                pwid = bi.kapr02a.getText().toString() + "-" + bi.kf1a3.getText().toString();
+                break;
+            case "kf2":
+                type = MainApp.FORMTYPE2;
+                pwid = bi.kapr02a.getText().toString() + "-" + bi.kf2a6.getSelectedItem().toString();
+                break;
+            case "kf3":
+                type = MainApp.FORMTYPE3;
+                pwid = bi.kapr02a.getText().toString() + "-" + bi.kf2a6.getSelectedItem().toString();
+                break;
+        }
 
-                (bi.kf3b01a.isChecked() ? "1"
-                        : bi.kf3b01b.isChecked() ? "2"
-                        : bi.kf3b01c.isChecked() ? "3"
-                        : bi.kf3b01d.isChecked() ? "4"
-                        : bi.kf3b01e.isChecked() ? "5"
-                        : bi.kf3b01f.isChecked() ? "6"
-                        : bi.kf3b01g.isChecked() ? "7"
-                        : bi.kf3b01h.isChecked() ? "8"
-                        : "")
+        followupNo = bi.kf3b01a.isChecked() ? "1"
+                : bi.kf3b01b.isChecked() ? "2"
+                : bi.kf3b01c.isChecked() ? "3"
+                : bi.kf3b01d.isChecked() ? "4"
+                : bi.kf3b01e.isChecked() ? "5"
+                : bi.kf3b01f.isChecked() ? "6"
+                : bi.kf3b01g.isChecked() ? "7"
+                : bi.kf3b01h.isChecked() ? "8"
+                : "";
 
-        )) {
+        RegisteredPWContract dc = db.checkPWExist(type, villageCodes.get(bi.crvillage.getSelectedItemPosition()) + (MainApp.formType.equals("kf3") ? "-" + followupNo : ""), pwid);
+        if (dc == null) {
+
+            if (!checkFormExist(villageCodes.get(bi.crvillage.getSelectedItemPosition()),
+                    MainApp.formType,
+                    bi.kapr02a.getText().toString(),
+                    MainApp.formType.equals("kf1") ? bi.kf1a3.getText().toString() : bi.kf2a6.getSelectedItem().toString(),
+                    followupNo
+            )) {
+                Toast.makeText(this, "Form is already exist!!", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+
+        } else {
             Toast.makeText(this, "Form is already exist!!", Toast.LENGTH_SHORT).show();
             return false;
         }

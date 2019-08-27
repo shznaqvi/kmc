@@ -729,7 +729,7 @@
                             style="@style/EditText_number"
                             android:hint="@string/kf3d14"
                             android:maxLength="2"
-                            app:maxValue="30"
+                            app:maxValue="31"
                             app:minValue="0"
                             app:type="range" />
 

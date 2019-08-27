@@ -275,6 +275,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
 
+            db.deleteRegisteredPW();
+
             new syncData(this).execute();
 
         } else {
@@ -595,6 +597,12 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                     new GetAllData(mContext, "Recruitments").execute();
                     Toast.makeText(LoginActivity.this, "Sync RegisteredPW", Toast.LENGTH_LONG).show();
                     new GetAllData(mContext, "RegisteredPW").execute();
+                    Toast.makeText(LoginActivity.this, "Sync RegisteredPWF1", Toast.LENGTH_LONG).show();
+                    new GetAllData(mContext, "RegisteredPWF1").execute();
+                    Toast.makeText(LoginActivity.this, "Sync RegisteredPWF2", Toast.LENGTH_LONG).show();
+                    new GetAllData(mContext, "RegisteredPWF2").execute();
+                    Toast.makeText(LoginActivity.this, "Sync RegisteredPWF3", Toast.LENGTH_LONG).show();
+                    new GetAllData(mContext, "RegisteredPWF3").execute();
                 }
             });
 

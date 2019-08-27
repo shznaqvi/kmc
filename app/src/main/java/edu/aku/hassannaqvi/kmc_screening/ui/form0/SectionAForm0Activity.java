@@ -423,7 +423,7 @@ public class SectionAForm0Activity extends AppCompatActivity {
 
     private boolean checkingWomenExistF0a() {
 
-        RegisteredPWContract dc = db.checkPWExist(villageCodes.get(bi.crvillage.getSelectedItemPosition()), bi.kapr02b.getText().toString());
+        RegisteredPWContract dc = db.checkPWExist(MainApp.FORMTYPE0, villageCodes.get(bi.crvillage.getSelectedItemPosition()), bi.kapr02b.getText().toString());
         if (dc == null) {
             FormsContract fm = db.checkPWExistDB(villageCodes.get(bi.crvillage.getSelectedItemPosition()), bi.kapr02b.getText().toString());
             return fm == null;
@@ -432,7 +432,7 @@ public class SectionAForm0Activity extends AppCompatActivity {
     }
 
     private boolean checkingWomenExistF0b() {
-        FormsContract dc = db.checkPWExist(villageCodes.get(bi.crvillage.getSelectedItemPosition()), bi.kapr02a.getText().toString(), mapWRA.getRound());
+        FormsContract dc = db.checkPWExistDB(villageCodes.get(bi.crvillage.getSelectedItemPosition()), bi.kapr02a.getText().toString(), mapWRA.getRound());
         return dc == null;
     }
 
