@@ -388,6 +388,7 @@
                                 <RadioButton
                                     android:id="@+id/kf3b01b"
                                     style="@style/i_radiobutton"
+                                    android:enabled="false"
                                     android:text="@string/kf3b01b" />
 
                                 <RadioButton
@@ -398,6 +399,7 @@
                                 <RadioButton
                                     android:id="@+id/kf3b01d"
                                     style="@style/i_radiobutton"
+                                    android:enabled="false"
                                     android:text="@string/kf3b01d" />
 
                                 <RadioButton
