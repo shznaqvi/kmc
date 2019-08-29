@@ -61,6 +61,7 @@ public class RegisteredPWContract {
 
         public static final String TABLE_NAME = "registeredpw";
         public static final String COLUMN_NAME_NULLABLE = "nullColumnHack";
+        public static final String _ID = "_id";
         public static final String COLUMN_VILLAGE_CODE = "village";
         public static final String COLUMN_PWIDS = "pwids";
         public static final String COLUMN_FORMTYPE = "formtype";

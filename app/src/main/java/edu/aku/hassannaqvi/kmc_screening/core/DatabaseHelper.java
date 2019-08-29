@@ -465,7 +465,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 RegisteredPW.COLUMN_FORMTYPE,
         };
 
-        String whereClause = RegisteredPW.COLUMN_VILLAGE_CODE + "=? AND " + RegisteredPW.COLUMN_VILLAGE_CODE + " =? AND " + RegisteredPW.COLUMN_PWIDS + " LIKE ?";
+        String whereClause = RegisteredPW.COLUMN_FORMTYPE + "=? AND " + RegisteredPW.COLUMN_VILLAGE_CODE + " =? AND " + RegisteredPW.COLUMN_PWIDS + " LIKE ?";
         String[] whereArgs = {formType, villageCode, "%" + pwid + ",%"};
         String groupBy = null;
         String having = null;
