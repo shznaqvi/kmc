@@ -96,6 +96,9 @@ public class GetAllData extends AsyncTask<String, String, String> {
                     case "RegisteredPWF1":
                         url = new URL(hostItem + RegisteredPWContract.RegisteredPW._URI1);
                         break;
+                    case "RegisteredPWF0b":
+                        url = new URL(hostItem + RegisteredPWContract.RegisteredPW._URI0b);
+                        break;
                     case "RegisteredPWF2":
                         url = new URL(hostItem + RegisteredPWContract.RegisteredPW._URI2);
                         break;
@@ -175,6 +178,9 @@ public class GetAllData extends AsyncTask<String, String, String> {
                             break;
                         case "RegisteredPW":
                             db.syncRegisteredPW(MainApp.FORMTYPE0, jsonArray);
+                            break;
+                        case "RegisteredPWF0b":
+                            db.syncRegisteredPW(MainApp.FORMTYPE0b, jsonArray);
                             break;
                         case "RegisteredPWF1":
                             db.syncRegisteredPW(MainApp.FORMTYPE1, jsonArray);

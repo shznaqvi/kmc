@@ -200,15 +200,17 @@ public class SectionAForm1Activity extends AppCompatActivity {
     }
 
     public void onRadioQuestion04CheckID(RadioGroup radioGroup, int id) {
-        question04Flag = false;
+        question04Flag = true;
         int count = 0;
         for (RadioButton rdbID : q04rdbCheckID) {
             if (!rdbID.isChecked()) {
-                count++;
+                /*count++;
                 if (count < 3 || count > 3) {
                     question04Flag = true;
                     break;
-                }
+                }*/
+                question04Flag = false;
+                break;
             }
 
         }

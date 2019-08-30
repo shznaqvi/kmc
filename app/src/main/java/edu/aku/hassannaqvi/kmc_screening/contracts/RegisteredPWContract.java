@@ -67,6 +67,7 @@ public class RegisteredPWContract {
         public static final String COLUMN_FORMTYPE = "formtype";
 
         public static final String _URI = "registered.php";
+        public static final String _URI0b = "reg_f0b.php";
         public static final String _URI1 = "reg_f1.php";
         public static final String _URI2 = "reg_f2.php";
         public static final String _URI3 = "reg_f3.php";
