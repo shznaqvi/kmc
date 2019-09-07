@@ -237,7 +237,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             case 5:
                 db.execSQL(SQL_CREATE_REGISTERED_PW_TABLE);
             case 6:
-                db.execSQL(SQL_ALTER_PW_REGISTERED);
+//                db.execSQL(SQL_ALTER_PW_REGISTERED);
         }
 
     }
