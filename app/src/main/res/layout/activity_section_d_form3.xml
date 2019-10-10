@@ -700,11 +700,14 @@
                             style="@style/i_textview"
                             android:text="@string/kf3d13" />
 
-                        <EditText
+                        <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/kf3d13"
                             style="@style/EditText_number"
                             android:hint="@string/kf3d13"
-                            android:maxLength="2" />
+                            android:maxLength="2"
+                            app:maxValue="23"
+                            app:minValue="0"
+                            app:type="range" />
 
                     </LinearLayout>
 
@@ -726,7 +729,7 @@
                             style="@style/EditText_number"
                             android:hint="@string/kf3d14"
                             android:maxLength="2"
-                            app:maxValue="28"
+                            app:maxValue="31"
                             app:minValue="0"
                             app:type="range" />
 
@@ -812,7 +815,7 @@
                                     style="@style/EditText_number"
                                     android:hint="@string/kf3d16w"
                                     android:maxLength="1"
-                                    app:maxValue="6"
+                                    app:maxValue="4"
                                     app:minValue="0"
                                     app:type="range" />
 

@@ -58,7 +58,6 @@ public class PWFollowUpContract {
         return this;
     }
 
-
     public String getUid() {
         return uid;
     }

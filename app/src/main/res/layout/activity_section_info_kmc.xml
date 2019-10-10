@@ -357,30 +357,78 @@
                 </LinearLayout>
 
                 <!--F-3-->
-                <!--                <LinearLayout
-                                    android:id="@+id/form03"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="vertical"
-                                    android:visibility="gone"
-                                    tools:visibility="visible">
+                <LinearLayout
+                    android:id="@+id/form03"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    tools:visibility="visible">
 
-                                    <TextView
-                                        style="@style/i_textview"
-                                        android:text="@string/kf3a4" />
+                    <!-- kf3b01-->
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/fldGrpCVkf3b01"
+                        style="@style/cardView">
 
-                                    <EditText
-                                        android:id="@+id/kf3a4"
-                                        style="@style/textInput"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:digits="0123456789"
-                                        android:hint="@string/kf3a4"
-                                        android:inputType="number"
-                                        android:maxLength="2" />
+                        <LinearLayout style="@style/linearlayout_view">
 
-                                </LinearLayout>-->
+                            <TextView
+                                style="@style/i_textview"
+                                android:text="@string/kf3b01" />
+
+                            <RadioGroup
+                                android:id="@+id/kf3b01"
+                                style="@style/i_radiogroup">
+
+                                <RadioButton
+                                    android:id="@+id/kf3b01a"
+                                    style="@style/i_radiobutton"
+                                    android:text="@string/kf3b01a" />
+
+                                <RadioButton
+                                    android:id="@+id/kf3b01b"
+                                    style="@style/i_radiobutton"
+                                    android:enabled="false"
+                                    android:text="@string/kf3b01b" />
+
+                                <RadioButton
+                                    android:id="@+id/kf3b01c"
+                                    style="@style/i_radiobutton"
+                                    android:text="@string/kf3b01c" />
+
+                                <RadioButton
+                                    android:id="@+id/kf3b01d"
+                                    style="@style/i_radiobutton"
+                                    android:enabled="false"
+                                    android:text="@string/kf3b01d" />
+
+                                <RadioButton
+                                    android:id="@+id/kf3b01e"
+                                    style="@style/i_radiobutton"
+                                    android:text="@string/kf3b01e" />
+
+                                <RadioButton
+                                    android:id="@+id/kf3b01f"
+                                    style="@style/i_radiobutton"
+                                    android:text="@string/kf3b01f" />
+
+                                <RadioButton
+                                    android:id="@+id/kf3b01g"
+                                    style="@style/i_radiobutton"
+                                    android:text="@string/kf3b01g" />
+
+                                <RadioButton
+                                    android:id="@+id/kf3b01h"
+                                    style="@style/i_radiobutton"
+                                    android:text="@string/kf3b01h" />
+
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                </LinearLayout>
 
                 <!--Buttons-->
                 <LinearLayout

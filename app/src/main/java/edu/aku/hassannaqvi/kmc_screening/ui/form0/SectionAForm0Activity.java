@@ -232,7 +232,12 @@ public class SectionAForm0Activity extends AppCompatActivity {
             return false;
 
         if (MainApp.surveyType.equals("kf0a")) {
-            if (!checkingWomenExist()) {
+            if (!checkingWomenExistF0a()) {
+                Toast.makeText(this, "Pregnant woman Id is already allotted!!", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        } else {
+            if (!checkingWomenExistF0b()) {
                 Toast.makeText(this, "Pregnant woman Id is already allotted!!", Toast.LENGTH_SHORT).show();
                 return false;
             }
@@ -415,9 +420,23 @@ public class SectionAForm0Activity extends AppCompatActivity {
 
     }
 
-    private boolean checkingWomenExist() {
-        PWFollowUpContract dc = db.checkPWExist(villageCodes.get(bi.crvillage.getSelectedItemPosition()), bi.kapr02b.getText().toString());
-        return dc == null;
+    private boolean checkingWomenExistF0a() {
+
+        RegisteredPWContract dc = db.checkPWExist(MainApp.FORMTYPE0, villageCodes.get(bi.crvillage.getSelectedItemPosition()), bi.kapr02b.getText().toString());
+        if (dc == null) {
+            FormsContract fm = db.checkPWExistDB(villageCodes.get(bi.crvillage.getSelectedItemPosition()), bi.kapr02b.getText().toString());
+            return fm == null;
+        }
+        return false;
+    }
+
+    private boolean checkingWomenExistF0b() {
+        RegisteredPWContract dc = db.checkPWExist(MainApp.FORMTYPE0b, villageCodes.get(bi.crvillage.getSelectedItemPosition()), bi.kapr02a.getText().toString() + "-" + mapWRA.getRound());
+        if (dc == null) {
+            FormsContract fm = db.checkPWExistDB(villageCodes.get(bi.crvillage.getSelectedItemPosition()), bi.kapr02a.getText().toString(), mapWRA.getRound());
+            return fm == null;
+        }
+        return false;
     }
 
     private void clearFields(int status) {

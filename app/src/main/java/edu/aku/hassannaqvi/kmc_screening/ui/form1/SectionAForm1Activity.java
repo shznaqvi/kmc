@@ -30,6 +30,7 @@ public class SectionAForm1Activity extends AppCompatActivity {
     ActivitySectionAForm1Binding bi;
     List<RadioButton> rdbEligibilityCheckIDs;
     List<RadioButton> q04rdbCheckID;
+    List<RadioButton> q04rdaCheckID;
     boolean question04Flag;
     boolean flag;
 
@@ -52,6 +53,9 @@ public class SectionAForm1Activity extends AppCompatActivity {
 
         q04rdbCheckID = new ArrayList<>(Arrays.asList(bi.kf1b0401b, bi.kf1b0402b, bi.kf1b0403b, bi.kf1b0404b, bi.kf1b0405b, bi.kf1b0406b,
                 bi.kf1b0407b, bi.kf1b0408b, bi.kf1b0409b, bi.kf1b0410b, bi.kf1b0411b, bi.kf1b0412b, bi.kf1b0413b, bi.kf1b0414b, bi.kf1b0415b));
+
+        q04rdaCheckID = new ArrayList<>(Arrays.asList(bi.kf1b0401a, bi.kf1b0402a, bi.kf1b0403a, bi.kf1b0404a, bi.kf1b0405a, bi.kf1b0406a,
+                bi.kf1b0407a, bi.kf1b0408a, bi.kf1b0409a, bi.kf1b0410a, bi.kf1b0411a, bi.kf1b0412a, bi.kf1b0413a, bi.kf1b0414a, bi.kf1b0415a));
     }
 
     public void BtnContinue() {
@@ -200,18 +204,30 @@ public class SectionAForm1Activity extends AppCompatActivity {
     }
 
     public void onRadioQuestion04CheckID(RadioGroup radioGroup, int id) {
-        question04Flag = false;
+        question04Flag = true;
         int count = 0;
         for (RadioButton rdbID : q04rdbCheckID) {
             if (!rdbID.isChecked()) {
-                count++;
+                /*count++;
                 if (count < 3 || count > 3) {
                     question04Flag = true;
                     break;
-                }
+                }*/
+                question04Flag = false;
+                break;
             }
 
         }
+
+        for (RadioButton rdbID : q04rdaCheckID) {
+
+            if (rdbID.isChecked())
+                count++;
+
+        }
+
+        question04Flag = count <= 1;
+
 
         bi.kf1b07.check(flag && question04Flag ? bi.kf1b07a.getId() : bi.kf1b07b.getId());
 

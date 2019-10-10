@@ -27,6 +27,8 @@ import edu.aku.hassannaqvi.kmc_screening.contracts.PWScreenedContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.PWScreenedContract.PWFScrennedEntry;
 import edu.aku.hassannaqvi.kmc_screening.contracts.RecruitmentContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.RecruitmentContract.RecruitmentEntry;
+import edu.aku.hassannaqvi.kmc_screening.contracts.RegisteredPWContract;
+import edu.aku.hassannaqvi.kmc_screening.contracts.RegisteredPWContract.RegisteredPW;
 import edu.aku.hassannaqvi.kmc_screening.contracts.TalukasContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.TalukasContract.singleTaluka;
 import edu.aku.hassannaqvi.kmc_screening.contracts.UCsContract;
@@ -51,7 +53,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "kmc_screening.db";
     public static final String DB_NAME = DATABASE_NAME.replace(".", "_copy.");
     public static final String PROJECT_NAME = "KMC-SCREENING";
-    private static final int DATABASE_VERSION = 5;
+    private static final int DATABASE_VERSION = 7;
     private static final String SQL_CREATE_FORMS = "CREATE TABLE "
             + FormsTable.TABLE_NAME + "("
             + FormsTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -152,15 +154,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             singleTaluka.COLUMN_DISTRICT_CODE + " TEXT, " +
             singleTaluka.COLUMN_DISTRICT_NAME + " TEXT " +
             ");";
+    private static final String SQL_ALTER_PW_REGISTERED = "ALTER TABLE " +
+            RegisteredPW.TABLE_NAME + " ADD COLUMN " +
+            RegisteredPW.COLUMN_FORMTYPE + " TEXT;";
     private static final String SQL_ALTER_UCS = "ALTER TABLE " +
             UCsTable.TABLE_NAME + " ADD COLUMN " +
             UCsTable.COLUMN_STUDY_ARM + " TEXT;";
+
     final String SQL_CREATE_UC = "CREATE TABLE " + UCsTable.TABLE_NAME + " (" +
             UCsTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
             UCsTable.COLUMN_UCCODE + " TEXT, " +
             UCsTable.COLUMN_UCS_NAME + " TEXT, " +
             UCsTable.COLUMN_TALUKA_CODE + " TEXT, " +
             UCsTable.COLUMN_STUDY_ARM + " TEXT " +
+            ");";
+    final String SQL_CREATE_REGISTERED_PW_TABLE = "CREATE TABLE " + RegisteredPW.TABLE_NAME + " (" +
+            RegisteredPW._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+            RegisteredPW.COLUMN_FORMTYPE + " TEXT, " +
+            RegisteredPW.COLUMN_VILLAGE_CODE + " TEXT, " +
+            RegisteredPW.COLUMN_PWIDS + " TEXT " +
             ");";
 
     final String SQL_CREATE_PSU_TABLE = "CREATE TABLE " + singleVillage.TABLE_NAME + " (" +
@@ -199,6 +211,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_MWRA_SCREENED);
         db.execSQL(SQL_CREATE_ELIGIBILES);
         db.execSQL(SQL_CREATE_RECRUITMENT);
+        db.execSQL(SQL_CREATE_REGISTERED_PW_TABLE);
     }
 
     @Override
@@ -221,6 +234,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             case 4:
                 db.execSQL(SQL_ALTER_UCS);
                 db.execSQL(SQL_CREATE_RECRUITMENT);
+            case 5:
+                db.execSQL(SQL_CREATE_REGISTERED_PW_TABLE);
+            case 6:
+//                db.execSQL(SQL_ALTER_PW_REGISTERED);
         }
 
     }
@@ -438,35 +455,27 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allEB;
     }
 
-    public PWFollowUpContract checkPWExist(String villageCode, String hhno) {
+    public RegisteredPWContract checkPWExist(String formType, String villageCode, String pwid) {
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
-                PWFUPEntry.MWRA_UID,
-                PWFUPEntry.MWRA_VILLAGE,
-                PWFUPEntry.MWRA_ROUND,
-                PWFUPEntry.MWRA_FUPDT,
-                PWFUPEntry.MWRA_PWID,
-                PWFUPEntry.MWRA_HNAME,
-                PWFUPEntry.MWRA_WNAME,
-                PWFUPEntry.MWRA_KAPR07,
-                PWFUPEntry.MWRA_KAPR08,
-                PWFUPEntry.MWRA_REGDT,
-                PWFUPEntry.MWRA_HHNAME
+                RegisteredPW.COLUMN_PWIDS,
+                RegisteredPW.COLUMN_VILLAGE_CODE,
+                RegisteredPW.COLUMN_FORMTYPE,
         };
 
-        String whereClause = PWFUPEntry.MWRA_VILLAGE + " =? AND " + PWFUPEntry.MWRA_PWID + " =?";
-        String[] whereArgs = {villageCode, hhno};
+        String whereClause = RegisteredPW.COLUMN_FORMTYPE + "=? AND " + RegisteredPW.COLUMN_VILLAGE_CODE + " =? AND " + RegisteredPW.COLUMN_PWIDS + " LIKE ?";
+        String[] whereArgs = {formType, villageCode, "%" + pwid + ",%"};
         String groupBy = null;
         String having = null;
 
-        String orderBy = PWFUPEntry.MWRA_PWID + " ASC";
+        String orderBy = RegisteredPW._ID + " ASC";
 
-        PWFollowUpContract allEB = null;
+        RegisteredPWContract allEB = null;
         try {
             c = db.query(
-                    PWFUPEntry.TABLE_NAME,  // The table to query
+                    RegisteredPW.TABLE_NAME,  // The table to query
                     columns,                   // The columns to return
                     whereClause,               // The columns for the WHERE clause
                     whereArgs,                 // The values for the WHERE clause
@@ -475,7 +484,97 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     orderBy                    // The sort order
             );
             while (c.moveToNext()) {
-                allEB = new PWFollowUpContract().hydrate(c);
+                allEB = new RegisteredPWContract().hydrate(c);
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allEB;
+    }
+
+    public FormsContract checkPWExistDB(String villageCode, String hhno) {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                FormsTable.COLUMN__ID,
+                FormsTable.COLUMN_PWID,
+                FormsTable.COLUMN_VILLAGE,
+                FormsTable.COLUMN_SINFO
+        };
+
+        String whereClause = FormsTable.COLUMN_VILLAGE + " =? AND " + FormsTable.COLUMN_PWID + " =?";
+        String[] whereArgs = {villageCode, hhno};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = FormsTable.COLUMN__ID + " ASC";
+
+        FormsContract allEB = null;
+        try {
+            c = db.query(
+                    FormsTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                allEB = new FormsContract().Hydrate(c, 1);
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allEB;
+    }
+
+    public FormsContract checkPWExistDB(String villageCode, String hhno, String round) {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                FormsTable.COLUMN__ID,
+                FormsTable.COLUMN_PWID,
+                FormsTable.COLUMN_VILLAGE,
+                FormsTable.COLUMN_SINFO
+        };
+
+        String whereClause = FormsTable.COLUMN_VILLAGE + " =? AND " + FormsTable.COLUMN_PWID + " =?";
+        String[] whereArgs = {villageCode, hhno};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = FormsTable.COLUMN__ID + " ASC";
+
+        FormsContract allEB = null;
+        try {
+            c = db.query(
+                    FormsTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                FormsContract formItem = new FormsContract().Hydrate(c, 1);
+                if (FormsContract.checkingEligibility(formItem.getsInfo(), round)) {
+                    allEB = formItem;
+                    break;
+                }
             }
         } finally {
             if (c != null) {
@@ -524,6 +623,51 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             );
             while (c.moveToNext()) {
                 allEB = new PWScreenedContract().hydrate(c);
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allEB;
+    }
+
+    public PWScreenedContract getPWScreened(String sType, String villageCode, String pwid) {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                FormsTable.COLUMN__UID,
+                FormsTable.COLUMN_VILLAGE,
+                FormsTable.COLUMN_FORMDATE,
+                FormsTable.COLUMN_PWID,
+                FormsTable.COLUMN_SINFO
+        };
+
+        String whereClause = FormsTable.COLUMN_VILLAGE + " =? AND " + FormsTable.COLUMN_PWID + " =? AND " + FormsTable.COLUMN_SURVEYTYPE + "=? AND " + FormsTable.COLUMN_ISTATUS + "=?";
+        String[] whereArgs = {villageCode, pwid, sType, "1"};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = FormsTable.COLUMN_PWID + " ASC";
+
+        PWScreenedContract allEB = null;
+
+        try {
+            c = db.query(
+                    FormsTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                allEB = new PWScreenedContract().hydrateForm(c);
             }
         } finally {
             if (c != null) {
@@ -725,6 +869,37 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         } catch (Exception e) {
             Log.d(TAG, "syncTalukas(e): " + e);
+        } finally {
+            db.close();
+        }
+    }
+
+    public void deleteRegisteredPW() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(RegisteredPW.TABLE_NAME, null, null);
+    }
+
+    public void syncRegisteredPW(String formType, JSONArray registeredPWlist) {
+        SQLiteDatabase db = this.getWritableDatabase();
+//        db.delete(RegisteredPW.TABLE_NAME, null, null);
+        try {
+            JSONArray jsonArray = registeredPWlist;
+            for (int i = 0; i < jsonArray.length(); i++) {
+
+                JSONObject jsonObjectUser = jsonArray.getJSONObject(i);
+
+                RegisteredPWContract user = new RegisteredPWContract();
+                user.sync(jsonObjectUser);
+                ContentValues values = new ContentValues();
+
+                values.put(RegisteredPW.COLUMN_VILLAGE_CODE, user.getVillageCode());
+                values.put(RegisteredPW.COLUMN_PWIDS, user.getPwids());
+                values.put(RegisteredPW.COLUMN_FORMTYPE, formType);
+                db.insert(RegisteredPW.TABLE_NAME, null, values);
+            }
+
+        } catch (Exception e) {
+            Log.d(TAG, "syncRegisteredPW(e): " + e);
         } finally {
             db.close();
         }
@@ -1009,7 +1184,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return count;
     }
 
-    public FormsContract getFormExistance(String villageCode, String formType, String pwid, String screenid) {
+    public FormsContract getFormExistance(String villageCode, String formType, String pwid, String screenid, String followUpNo) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
@@ -1047,8 +1222,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_TALUKA,
 
         };
-        String whereClause = FormsTable.COLUMN_VILLAGE + " =? AND " + FormsTable.COLUMN_FORMTYPE + " =? AND " + FormsTable.COLUMN_PWID + " =? AND " + FormsTable.COLUMN_SCREENID + " =?";
-        String[] whereArgs = {villageCode, formType, pwid, screenid};
+        String whereClause = FormsTable.COLUMN_VILLAGE + " =? AND " + FormsTable.COLUMN_FORMTYPE + " =? AND " + FormsTable.COLUMN_PWID + " =? AND " + FormsTable.COLUMN_SCREENID + " =? AND " + FormsTable.COLUMN_ISTATUS + " =?";
+        String[] whereArgs = {villageCode, formType, pwid, screenid, "1"};
         String groupBy = null;
         String having = null;
 
@@ -1065,8 +1240,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     having,                    // don't filter by row groups
                     orderBy                    // The sort order
             );
+
             while (c.moveToNext()) {
-                allFC = new FormsContract().Hydrate(c);
+                allFC = new FormsContract().Hydrate(c, 0);
+
+                if (formType.equals("kf3")) {
+                    if (FormsContract.checkingEligibility(allFC.getsInfo(), allFC.getsB(), followUpNo)) {
+                        break;
+                    } else
+                        allFC = null;
+                }
+
             }
         } finally {
             if (c != null) {
@@ -1143,7 +1327,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             );
             while (c.moveToNext()) {
                 FormsContract fc = new FormsContract();
-                allFC.add(fc.Hydrate(c));
+                allFC.add(fc.Hydrate(c, 0));
             }
         } finally {
             if (c != null) {
@@ -1222,7 +1406,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             );
             while (c.moveToNext()) {
                 FormsContract fc = new FormsContract();
-                allFC.add(fc.Hydrate(c));
+                allFC.add(fc.Hydrate(c, 0));
             }
         } finally {
             if (c != null) {

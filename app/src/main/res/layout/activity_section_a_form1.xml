@@ -625,7 +625,7 @@
                             <RadioGroup
                                 android:id="@+id/kf1b0415"
                                 style="@style/i_radiogroup"
-                                android:onCheckedChanged="@{callback.onRadioEligibilityChecked}">
+                                android:onCheckedChanged="@{callback.onRadioQuestion04CheckID}">
 
                                 <RadioButton
                                     android:id="@+id/kf1b0415a"

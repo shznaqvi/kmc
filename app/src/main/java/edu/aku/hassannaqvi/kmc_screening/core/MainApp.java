@@ -75,6 +75,12 @@ public class MainApp extends Application {
     public static String surveyType;
     public static String armType;
 
+    public static final String FORMTYPE0 = "f0";
+    public static final String FORMTYPE0b = "f0b";
+    public static final String FORMTYPE1 = "f1";
+    public static final String FORMTYPE2 = "f2";
+    public static final String FORMTYPE3 = "f3";
+
     public static String[] permissions = {Manifest.permission.READ_CONTACTS, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE,
             Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.GET_ACCOUNTS};
 
