@@ -389,7 +389,7 @@ public class SectionAForm0Activity extends AppCompatActivity {
         Log.d(TAG, "onCreate: " + dc.size());
         for (PWFollowUpContract d : dc) {
             Long days = DateUtils.getDaysBWDates(new Date(), DateUtils.stringToDate(d.getFupdt()));
-            if (days > -7 && days < 7) {
+            if (days > -14 && days < 14) {
                 mapWRA = d;
                 break;
             }
