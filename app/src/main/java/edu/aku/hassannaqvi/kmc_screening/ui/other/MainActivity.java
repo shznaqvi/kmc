@@ -299,7 +299,7 @@ public class MainActivity extends AppCompatActivity {
             }
         } else {
 
-            Toast.makeText(this, "Please restart the app again!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please restart the app", Toast.LENGTH_SHORT).show();
         }
 
     }
