@@ -96,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
         }
         lblheader.setText("Welcome! You're assigned to block ' " + MainApp.userName);
 
+
         /*TagID Start*/
         sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
         editor = sharedPref.edit();
@@ -256,45 +257,51 @@ public class MainActivity extends AppCompatActivity {
 
     public void openForm(int index) {
 
-        final Intent oF = new Intent(MainActivity.this, getClass(index));
-        if (sharedPref.getString("tagName", null) != "" && sharedPref.getString("tagName", null) != null && !MainApp.userName.equals("0000")) {
-            startActivity(oF);
-        } else {
+        if (!MainApp.userName.equals("0000")) {
+            final Intent oF = new Intent(MainActivity.this, getClass(index));
+            if (sharedPref.getString("tagName", null) != "" && sharedPref.getString("tagName", null) != null && !MainApp.userName.equals("0000")) {
+                startActivity(oF);
+            } else {
 
-            builder = new AlertDialog.Builder(MainActivity.this);
-            ImageView img = new ImageView(getApplicationContext());
-            img.setImageResource(R.drawable.tagimg);
-            img.setPadding(0, 15, 0, 15);
-            builder.setCustomTitle(img);
+                builder = new AlertDialog.Builder(MainActivity.this);
+                ImageView img = new ImageView(getApplicationContext());
+                img.setImageResource(R.drawable.tagimg);
+                img.setPadding(0, 15, 0, 15);
+                builder.setCustomTitle(img);
 
-            final EditText input = new EditText(MainActivity.this);
-            input.setInputType(InputType.TYPE_CLASS_TEXT);
-            builder.setView(input);
+                final EditText input = new EditText(MainActivity.this);
+                input.setInputType(InputType.TYPE_CLASS_TEXT);
+                builder.setView(input);
 
 
-            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    m_Text = input.getText().toString();
-                    if (!m_Text.equals("")) {
-                        editor.putString("tagName", m_Text);
-                        editor.commit();
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        m_Text = input.getText().toString();
+                        if (!m_Text.equals("")) {
+                            editor.putString("tagName", m_Text);
+                            editor.commit();
 
-                        if (!MainApp.userName.equals("0000")) {
-                            startActivity(oF);
+                            if (!MainApp.userName.equals("0000")) {
+                                startActivity(oF);
+                            }
                         }
                     }
-                }
-            });
-            builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    dialog.cancel();
-                }
-            });
+                });
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
 
-            builder.show();
+                builder.show();
+            }
+        } else {
+
+            Toast.makeText(this, "Please restart the app", Toast.LENGTH_SHORT).show();
         }
+
     }
 
     private Class getClass(int a) {
