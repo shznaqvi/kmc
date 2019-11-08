@@ -32,6 +32,7 @@ import java.util.List;
 import edu.aku.hassannaqvi.kmc_screening.R;
 import edu.aku.hassannaqvi.kmc_screening.contracts.FormsContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.PWFollowUpContract;
+import edu.aku.hassannaqvi.kmc_screening.contracts.RegisteredPWContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.TalukasContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.UCsContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.VillagesContract;

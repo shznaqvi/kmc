@@ -39,7 +39,7 @@ public class SectionBForm2Activity extends AppCompatActivity {
 
     private void setContentUI() {
         this.setTitle(R.string.f2_hB);
-        bi.kf2b03.setMinDate(DateUtils.getUpdatedDate("dd/MM/yyyy", -72));
+        bi.kf2b03.setMinDate(DateUtils.getUpdatedDate("dd/MM/yyyy", -48));
     }
 
     public void BtnContinue() {
