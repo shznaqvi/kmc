@@ -42,6 +42,7 @@ import edu.aku.hassannaqvi.kmc_screening.contracts.VillagesContract;
 import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc_screening.core.MainApp;
 import edu.aku.hassannaqvi.kmc_screening.databinding.ActivitySectionInfoKmcBinding;
+import edu.aku.hassannaqvi.kmc_screening.other.DateUtils;
 import edu.aku.hassannaqvi.kmc_screening.ui.form1.SectionAForm1Activity;
 import edu.aku.hassannaqvi.kmc_screening.ui.form2.SectionBForm2Activity;
 import edu.aku.hassannaqvi.kmc_screening.ui.form3.SectionBForm3Activity;
@@ -326,6 +327,16 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
             sInfo.put("kf1a04", bi.kf1a4.getText().toString());
             sInfo.put("kf1a05", bi.kf1a5a.isChecked() ? "1" : bi.kf1a5b.isChecked() ? "2" : "0");
 
+            sInfo.put("kf1a06", bi.kf1a6.getText().toString());
+            sInfo.put("kf1a07", bi.kf1a7.getText().toString());
+            sInfo.put("kf1a08", bi.kf1a8a.isChecked() ? "1"
+                    : bi.kf1a8b.isChecked() ? "2"
+                    : bi.kf1a8c.isChecked() ? "3"
+                    : bi.kf1a896.isChecked() ? "96"
+                    : "0");
+            sInfo.put("kf1a8cx", bi.kf1a8cx.getText().toString());
+            sInfo.put("kf1a896x", bi.kf1a896x.getText().toString());
+
             sInfo.put("pw_puid", mapWRA.getPuid());
             sInfo.put("pw_formdate", mapWRA.getFormdate());
             sInfo.put("pw_h_name", mapWRA.getH_name());
@@ -587,6 +598,7 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
         if (MainApp.formType.equals("kf1")) {
             bi.form01.setVisibility(status);
             ClearClass.ClearAllFields(bi.form01, null);
+            bi.kf1a6.setMinDate(DateUtils.getDaysBack("dd/MM/yyyy", -2));
         } else if (MainApp.formType.equals("kf2")) {
             bi.form02.setVisibility(status);
             bi.form0203.setVisibility(status);

@@ -231,6 +231,80 @@
 
                     </RadioGroup>
 
+                    <!--06-->
+                    <TextView
+                        style="@style/i_textview"
+                        android:text="@string/kf1a6" />
+
+                    <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                        android:id="@+id/kf1a6"
+                        style="@style/textInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:dateFormat="dd/MM/yyyy"
+                        app:maxDate="CR_DATE" />
+
+                    <!--07-->
+                    <TextView
+                        style="@style/i_textview"
+                        android:text="@string/kf1a7" />
+
+                    <io.blackbox_vision.datetimepickeredittext.view.TimePickerInputEditText
+                        android:id="@+id/kf1a7"
+                        style="@style/textInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <!--08-->
+                    <TextView
+                        style="@style/i_textview"
+                        android:text="@string/kf1a8" />
+
+
+                    <RadioGroup
+                        android:id="@+id/kf1a8"
+                        style="@style/i_radiogroup">
+
+                        <RadioButton
+                            android:id="@+id/kf1a8a"
+                            style="@style/i_radiobutton"
+                            android:text="@string/kf1a8a" />
+
+                        <RadioButton
+                            android:id="@+id/kf1a8b"
+                            style="@style/i_radiobutton"
+                            android:text="@string/kf1a8b" />
+
+                        <RadioButton
+                            android:id="@+id/kf1a8c"
+                            style="@style/i_radiobutton"
+                            android:text="@string/kf1a8c" />
+
+                        <EditText
+                            android:id="@+id/kf1a8cx"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/kf1a8cx"
+                            android:tag="kf1a8c"
+                            android:text='@{kf1a8c.checked? kf1a8cx.getText().toString() : ""}'
+                            android:visibility='@{kf1a8c.checked? View.VISIBLE : View.GONE}' />
+
+                        <RadioButton
+                            android:id="@+id/kf1a896"
+                            style="@style/i_radiobutton"
+                            android:text="@string/other" />
+
+                        <EditText
+                            android:id="@+id/kf1a896x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/kf1a8cx"
+                            android:tag="kf1a896"
+                            android:text='@{kf1a896.checked? kf1a896x.getText().toString() : ""}'
+                            android:visibility='@{kf1a896.checked? View.VISIBLE : View.GONE}' />
+
+                    </RadioGroup>
+
 
                 </LinearLayout>
 

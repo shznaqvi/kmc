@@ -25,6 +25,14 @@ public class DateUtils {
         return new SimpleDateFormat(format).format(cal.getTime()); //"dd-MM-yyyy HH:mm"
     }
 
+    public static String getDaysBack(String format, int day) {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(cal.getTime());
+        cal.add(Calendar.DAY_OF_YEAR, day);
+        return new SimpleDateFormat(format).format(cal.getTime()); //"dd-MM-yyyy HH:mm"
+    }
+
+
     public static long getDaysBWDates(Date startDate, Date endDate) {
         long diff = endDate.getTime() - startDate.getTime();
         return TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);

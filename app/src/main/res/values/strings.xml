@@ -489,6 +489,8 @@
     <string name="kf3b01g"> ايڪيهون ڏينهن </string>
     <string name="kf3b01h"> اٺاويهون ڏينهن </string>
 
+
+
     <string name="kf3b02"> ماءُ جي موجوده صورت حال </string>
     <string name="kf3b02a"> ماءُ موجود آهي </string>
     <string name="kf3b02b"> ماءُ موجود نه آهي </string>
@@ -896,7 +898,15 @@
     <string name="kf1a2"> ماءُ جو نالو </string>
     <string name="kf1a3"> جانچ نمبر </string>
     <string name="kf1a4"> ٻارجو نالو </string>
-    <string name="kf1a5"> ٻار جي جنس </string>
+    <string name="kf1a5">   ٻار جي جنس </string>
+
+    <string name="kf1a6">  موجوده حمل جي ويم جي تاريخ</string>
+    <string name="kf1a7">  ڄمڻ جو ٽائيم ڇا آهي</string>
+    <string name="kf1a8">اهو ويم ڪٿي ٿيو؟</string>
+    <string name="kf1a8a">تحقيقي مرڪز (ٽي ايڇ ڪيو)</string>
+    <string name="kf1a8b">گھر</string>
+    <string name="kf1a8c">غير تحقيقي مرڪز صحت</string>
+    <string name="kf1a8cx">جيڪڏهن جواب 3 آهي ته صحت مرڪز جو نالو لکو</string>
 
     <string name="kf2a1"> مڪمل رهائشي پتو. </string>
     <string name="kf2a2"> گهر جي سربراه جو نالو </string>
