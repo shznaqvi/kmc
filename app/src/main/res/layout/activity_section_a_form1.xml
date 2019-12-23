@@ -863,6 +863,35 @@
                         </LinearLayout>
                     </android.support.v7.widget.CardView>
 
+                    <!-- kf1b0602-->
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/fldGrpCVkf1b0602"
+                        style="@style/cardView">
+
+                        <LinearLayout style="@style/linearlayout_view">
+
+                            <TextView
+                                style="@style/i_textview"
+                                android:text="@string/kf1b0602" />
+
+                            <RadioGroup
+                                android:id="@+id/kf1b0602"
+                                style="@style/i_radiogroup"
+                                android:onCheckedChanged="@{callback.onRadioEligibilityChecked}">
+
+                                <RadioButton
+                                    android:id="@+id/kf1b0602a"
+                                    style="@style/i_radiobutton"
+                                    android:text="@string/yes" />
+
+                                <RadioButton
+                                    android:id="@+id/kf1b0602b"
+                                    style="@style/i_radiobutton"
+                                    android:text="@string/no" />
+                            </RadioGroup>
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
                     <!--Eligibility-->
                     <!-- kf1b07 Header-->
                     <android.support.v7.widget.CardView

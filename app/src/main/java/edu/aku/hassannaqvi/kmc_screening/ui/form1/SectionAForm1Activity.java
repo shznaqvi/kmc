@@ -49,7 +49,7 @@ public class SectionAForm1Activity extends AppCompatActivity {
         this.setTitle(R.string.f1_secb);
 
         rdbEligibilityCheckIDs = new ArrayList<>(Arrays.asList(
-                bi.kf1b0501b, bi.kf1b0502b, bi.kf1b0503b, bi.kf1b0504b, bi.kf1b0596b, bi.kf1b06b));
+                bi.kf1b0501b, bi.kf1b0502b, bi.kf1b0503b, bi.kf1b0504b, bi.kf1b0596b, bi.kf1b06b, bi.kf1b0602a));
 
         q04rdbCheckID = new ArrayList<>(Arrays.asList(bi.kf1b0401b, bi.kf1b0402b, bi.kf1b0403b, bi.kf1b0404b, bi.kf1b0405b, bi.kf1b0406b,
                 bi.kf1b0407b, bi.kf1b0408b, bi.kf1b0409b, bi.kf1b0410b, bi.kf1b0411b, bi.kf1b0412b, bi.kf1b0413b, bi.kf1b0414b, bi.kf1b0415b));
@@ -114,6 +114,7 @@ public class SectionAForm1Activity extends AppCompatActivity {
         sa1.put("kf1b0596", bi.kf1b0596a.isChecked() ? "1" : bi.kf1b0596b.isChecked() ? "2" : "0");
         sa1.put("kf1b0596x", bi.kf1b0596x.getText().toString());
         sa1.put("kf1b06", bi.kf1b06a.isChecked() ? "1" : bi.kf1b06b.isChecked() ? "2" : "0");
+        sa1.put("kf1b0602", bi.kf1b0602a.isChecked() ? "1" : bi.kf1b0602b.isChecked() ? "2" : "0");
         sa1.put("kf1b07", bi.kf1b07a.isChecked() ? "1" : bi.kf1b07b.isChecked() ? "2" : "0");
         sa1.put("kf1b08", bi.kf1b08a.isChecked() ? "1" : bi.kf1b08b.isChecked() ? "2" : "0");
         sa1.put("kf1b09", bi.kf1b09a.isChecked() ? "1" : bi.kf1b09b.isChecked() ? "2" : bi.kf1b0996.isChecked() ? "96" : "0");
