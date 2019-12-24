@@ -15,11 +15,12 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:scrollbars="horizontal">
 
         <LinearLayout
+            android:id="@+id/fldGrpEnd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layoutDirection="rtl"
@@ -72,14 +73,15 @@
                     android:layout_marginBottom="1dp"
                     android:text="@string/istatusd" />
 
-                <!-- <RadioButton
-                     android:id="@+id/istatuse"
+                <RadioButton
+                    android:id="@+id/istatuse"
+                    style="@style/radiobutton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/istatuse" />
 
-                     style="@style/radiobutton"
-                     android:layout_width="match_parent"
-                     android:layout_height="wrap_content"
-                     android:layout_marginBottom="1dp"
-                     android:text="@string/istatuse" />
+                <!--
 
                  <RadioButton
                      android:id="@+id/istatusf"
@@ -107,31 +109,33 @@
                      android:layout_height="wrap_content"
                      android:layout_marginBottom="1dp"
                      android:text="@string/istatush" />
-
-                 <RadioButton
-                     android:id="@+id/istatus88"
-
-                     style="@style/radiobutton"
-                     android:layout_width="match_parent"
-                     android:layout_height="wrap_content"
-                     android:layout_marginBottom="1dp"
-                     android:text="@string/other" />&ndash;&gt;
 -->
-            </RadioGroup>
+                <RadioButton
+                    android:id="@+id/istatus88"
+                    style="@style/radiobutton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/other" />
 
-            <!--<EditText
-                android:id="@+id/istatus88x"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                android:maxLength="40"
-                android:text="@string/other" />-->
+                <EditText
+                    android:id="@+id/istatus88x"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                    android:hint="@string/other"
+                    android:maxLength="40"
+                    android:tag="istatus88"
+                    android:text='@{istatus88.checked ? istatus88x.getText.toString : "" }'
+                    android:visibility='@{istatus88.checked ? View.VISIBLE : View.GONE }' />
+
+            </RadioGroup>
 
             <Button
                 android:id="@+id/btn_End"
                 style="@style/buttons"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:layout_marginTop="40dp"
                 android:layout_weight="1"
                 android:onClick="@{() -> callback.BtnEnd()}"

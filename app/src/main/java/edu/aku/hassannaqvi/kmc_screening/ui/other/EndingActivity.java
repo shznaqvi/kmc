@@ -37,6 +37,8 @@ public class EndingActivity extends AppCompatActivity {
             binding.istatusb.setEnabled(false);
             binding.istatusc.setEnabled(false);
             binding.istatusd.setEnabled(false);
+            binding.istatuse.setEnabled(false);
+            binding.istatus88.setEnabled(false);
         } else {
             binding.istatusa.setEnabled(false);
         }
@@ -73,11 +75,12 @@ public class EndingActivity extends AppCompatActivity {
                 : binding.istatusb.isChecked() ? "2"
                 : binding.istatusc.isChecked() ? "3"
                 : binding.istatusd.isChecked() ? "4"
+                : binding.istatuse.isChecked() ? "5"
+                : binding.istatus88.isChecked() ? "88"
                 : "0");
+        fc.setIstatus88x(binding.istatus88x.getText().toString());
 
-//        SectionInfoKmcActivity.fc.setIstatus88x(istatus88x.getText().toString());
         fc.setEndingdatetime(dtToday);
-
     }
 
     private boolean UpdateDB() {
@@ -95,7 +98,7 @@ public class EndingActivity extends AppCompatActivity {
     }
 
     private boolean formValidation() {
-        return ValidatorClass.EmptyRadioButton(this, binding.istatus, binding.istatusa, getString(R.string.istatus));
+        return ValidatorClass.EmptyCheckingContainer(this, binding.fldGrpEnd);
     }
 
 

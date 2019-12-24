@@ -18,10 +18,11 @@
     <string name="searchwoman"> Search Woman </string>
     <string name="addMember"> افراد کا اندراج </string>
     <string name="istatus">انٹروہو کا نتیجہ</string>
-    <string name="istatusa"> مکمل</string>
-    <string name="istatusb">نا مکمل</string>
-    <string name="istatusc">انکار کردیا</string>
-    <string name="istatusd">گھر بند ہے</string>
+    <string name="istatusa">مڪمل</string>
+    <string name="istatusb">نا مڪمل</string>
+    <string name="istatusc">انڪار ڪري ڇڏيو</string>
+    <string name="istatusd">گھر بند هيو</string>
+    <string name="istatuse">لڏي ويا</string>
     <!-- String related to section headings -->
     <!-- Strings that are fixed for all apps -->
     <string name="title_activity_splashscreen">SplashscreenActivity</string>
