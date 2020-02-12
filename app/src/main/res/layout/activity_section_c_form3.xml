@@ -815,11 +815,11 @@
 
                 </android.support.v7.widget.CardView>
 
-                <LinearLayout
+                <!--<LinearLayout
                     android:id="@+id/fldGrpSecC02d"
                     style="@style/linearlayout_view_wt_bound">
 
-                    <!-- TextView-->
+                    &lt;!&ndash; TextView&ndash;&gt;
                     <android.support.v7.widget.CardView
 
                         style="@style/cardView">
@@ -835,7 +835,7 @@
 
                     </android.support.v7.widget.CardView>
 
-                    <!-- kf3c19-->
+                    &lt;!&ndash; kf3c19&ndash;&gt;
                     <android.support.v7.widget.CardView
                         android:id="@+id/fldGrpCVkf3c19"
                         style="@style/cardView">
@@ -871,7 +871,7 @@
 
                     </android.support.v7.widget.CardView>
 
-                    <!-- kf3c20-->
+                    &lt;!&ndash; kf3c20&ndash;&gt;
                     <android.support.v7.widget.CardView
                         android:id="@+id/fldGrpCVkf3c20"
                         style="@style/cardView">
@@ -907,7 +907,7 @@
 
                     </android.support.v7.widget.CardView>
 
-                    <!-- kf3c21-->
+                    &lt;!&ndash; kf3c21&ndash;&gt;
                     <android.support.v7.widget.CardView
                         android:id="@+id/fldGrpCVkf3c21"
                         style="@style/cardView">
@@ -976,7 +976,7 @@
 
                     </android.support.v7.widget.CardView>
 
-                </LinearLayout>
+                </LinearLayout>-->
 
             </LinearLayout>
 

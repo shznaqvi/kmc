@@ -25,6 +25,42 @@
                     android:id="@+id/fldGrpSecD02a"
                     style="@style/linearlayout_view_wt_bound">
 
+                    <!-- kf3d19-->
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/fldGrpCVkf3d19"
+                        style="@style/cardView">
+
+                        <LinearLayout style="@style/linearlayout_view">
+
+                            <TextView
+                                style="@style/i_textview"
+                                android:text="@string/kf3d19" />
+
+                            <RadioGroup
+                                android:id="@+id/kf3d19"
+                                style="@style/i_radiogroup">
+
+                                <RadioButton
+                                    android:id="@+id/kf3d19a"
+                                    style="@style/i_radiobutton"
+                                    android:text="@string/yes" />
+
+                                <RadioButton
+                                    android:id="@+id/kf3d19b"
+                                    style="@style/i_radiobutton"
+                                    android:text="@string/no" />
+
+                                <RadioButton
+                                    android:id="@+id/kf3d1998"
+                                    style="@style/i_radiobutton"
+                                    android:text="@string/dkn" />
+
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
                     <!-- kf3d01-->
                     <android.support.v7.widget.CardView
                         android:id="@+id/fldGrpCVkf3d01"

@@ -631,6 +631,7 @@
 
     <string name="kf3dh1"> ٿڃ پيارڻ جو عمل  </string>
 
+    <string name="kf3d19"> ڇا توهان ڪڏهن پنهنجي کير پياريو آهي؟  </string>
 
     <string name="kf3d01"> توهان ٻار کي ڄمڻ جي ڪيتري وقت کانپوءِ پنهنجو کير پياريو. </string>
     <string name="kf3d01a"> پيدائش کان پوء فوري طور تي </string>
@@ -725,7 +726,7 @@
     <string name="kf3d13"> توهان ڪيترن ڪلاڪن کان پنهنجي ٻآر کي صرف ۽ صرف پنهنجي ٿڃ تي رکيو آهي / صرف پنهنجي ٿڃ پياري آهي؟ </string>
 
 
-    <string name="kf3d14"> ڪيتري ڏينهن تائين توهان پنهنجي ٻار کي صرف ۽ صرف پنهنجو کير/ٿڃ پياريو. </string>
+    <string name="kf3d14"> ڪيتري  ڏينهن  تائين توهان پنهنجي ٻار کي صرف ۽ صرف پنهنجو کير/ٿڃ پياريو. </string>
 
 
     <string name="kf3d15"> ڇا توهان پنهنجي کير کان سواءِ ٻار کي ٻيو ڪجھ ڏنو؟ ماءُ جي کير کان علاوه پاڻي، جوس ۽ ٻي ڪا شيءِ ڏني وئي </string>
@@ -761,6 +762,11 @@
 
     <string name="kf3e01"> ٻار جو وزن ڪيو </string>
     <string name="kf3e01a"> گرام </string>
+
+    <string name="kf3e22"> ٻار جو وزن ڪيو (cm) </string>
+    <string name="kf3e22a"> ڊيگهه </string>
+
+    <string name="kf3eh9"> ASSESSMENT OF UMBILICAL CORD (DAY 14, 28)</string>
 
 
     <string name="kf3e02"> ڇا ٻار کي هن وقت دن جي چوڌاري ڳاڙهاڻ/ سوڄ ، پس يا زخم وغيره آهي. </string>
@@ -932,8 +938,8 @@
 
     <string name="f3_hB">BASIC INFORMATION OF FOLLOW-UP VISIT</string>
     <string name="f3_hC">KMC PRACTICE</string>
-    <string name="f3_hD">BREAST FEEDING</string>
-    <string name="f3_hE">NEWBORN’S ASSESSMENT</string>
-    <string name="f3_hF">KMC TEACHING (FOR INTERVENTION ARMS ONLY)</string>
+    <string name="f3_hD">INITIATION OF BREASTFEEDING INFORMATION (DAY 14)  ٿڃ پيارڻ جو عمل</string>
+    <string name="f3_hE">NEWBORN’S GROWTH ASSESSMENT (DAY 14, 28, 59, 120, 180, 365)</string>
+    <string name="f3_hF">KMC TEACHING (FOR INTERVENTION AND CONTROL ARMS ONLY) (DAY 28)</string>
 
 </resources>

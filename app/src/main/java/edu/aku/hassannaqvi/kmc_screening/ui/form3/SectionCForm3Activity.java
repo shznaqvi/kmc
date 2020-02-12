@@ -16,6 +16,7 @@ import edu.aku.hassannaqvi.kmc_screening.R;
 import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc_screening.core.MainApp;
 import edu.aku.hassannaqvi.kmc_screening.databinding.ActivitySectionCForm3Binding;
+import edu.aku.hassannaqvi.kmc_screening.ui.other.EndingActivity;
 import edu.aku.hassannaqvi.kmc_screening.validation.ClearClass;
 import edu.aku.hassannaqvi.kmc_screening.validation.ValidatorClass;
 
@@ -44,7 +45,7 @@ public class SectionCForm3Activity extends AppCompatActivity {
             bi.fldGrpCVkf3c05.setVisibility(View.GONE);
             bi.fldGrpCVkf3c13.setVisibility(View.GONE);
         } else
-            bi.fldGrpSecC02d.setVisibility(View.GONE);
+            //bi.fldGrpSecC02d.setVisibility(View.GONE);
 
         bi.kf3c01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -152,13 +153,13 @@ public class SectionCForm3Activity extends AppCompatActivity {
         sa1.put("kf3c1896", bi.kf3c1896.isChecked() ? "96" : "0");
         sa1.put("kf3c1896x", bi.kf3c1896x.getText().toString());
 
-        sa1.put("kf3c19", bi.kf3c19a.isChecked() ? "1" : bi.kf3c19b.isChecked() ? "2" : bi.kf3c1998.isChecked() ? "98" : "0");
+        //sa1.put("kf3c19", bi.kf3c19a.isChecked() ? "1" : bi.kf3c19b.isChecked() ? "2" : bi.kf3c1998.isChecked() ? "98" : "0");
 
-        sa1.put("kf3c20", bi.kf3c20a.isChecked() ? "1" : bi.kf3c20b.isChecked() ? "2" : bi.kf3c2098.isChecked() ? "98" : "0");
+        //sa1.put("kf3c20", bi.kf3c20a.isChecked() ? "1" : bi.kf3c20b.isChecked() ? "2" : bi.kf3c2098.isChecked() ? "98" : "0");
 
-        sa1.put("kf3c21", bi.kf3c21a.isChecked() ? "1" : bi.kf3c21b.isChecked() ? "2" : bi.kf3c21c.isChecked() ? "3" : bi.kf3c21d.isChecked() ? "4" : bi.kf3c2198.isChecked() ? "98" : "0");
-        sa1.put("kf3c21bh", bi.kf3c21bh.getText().toString());
-        sa1.put("kf3c21cd", bi.kf3c21cd.getText().toString());
+        //sa1.put("kf3c21", bi.kf3c21a.isChecked() ? "1" : bi.kf3c21b.isChecked() ? "2" : bi.kf3c21c.isChecked() ? "3" : bi.kf3c21d.isChecked() ? "4" : bi.kf3c2198.isChecked() ? "98" : "0");
+        //sa1.put("kf3c21bh", bi.kf3c21bh.getText().toString());
+        //sa1.put("kf3c21cd", bi.kf3c21cd.getText().toString());
 
         fc.setsC(String.valueOf(sa1));
 
@@ -173,7 +174,8 @@ public class SectionCForm3Activity extends AppCompatActivity {
             }
             if (UpdateDB()) {
                 finish();
-                startActivity(new Intent(this, SectionDForm3Activity.class).putExtra("day1", day1Flag));
+                startActivity(new Intent(this, bi.kf3c17a.isChecked() ? EndingActivity.class : SectionDForm3Activity.class)
+                        .putExtra("complete", true).putExtra("day1", day1Flag));
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
