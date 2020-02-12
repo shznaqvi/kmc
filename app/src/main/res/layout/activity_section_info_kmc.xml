@@ -489,12 +489,14 @@
                                 <RadioButton
                                     android:id="@+id/kf3b01g"
                                     style="@style/i_radiobutton"
-                                    android:text="@string/kf3b01g" />
+                                    android:text="@string/kf3b01g"
+                                    android:visibility="gone" />
 
                                 <RadioButton
                                     android:id="@+id/kf3b01h"
                                     style="@style/i_radiobutton"
-                                    android:text="@string/kf3b01h" />
+                                    android:text="@string/kf3b01h"
+                                    android:visibility="gone" />
 
                             </RadioGroup>
 
