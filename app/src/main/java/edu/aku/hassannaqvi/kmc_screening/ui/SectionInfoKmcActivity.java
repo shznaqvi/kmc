@@ -82,10 +82,13 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
 
         switch (MainApp.formType) {
             case "kf1":
+                setTitle(R.string.f1_hA);
                 break;
             case "kf2":
+                setTitle(R.string.f2_3_hA);
                 break;
             case "kf3":
+                setTitle(R.string.f3_hB);
                 bi.fldGrpkfal.setVisibility(View.GONE);
                 break;
         }
