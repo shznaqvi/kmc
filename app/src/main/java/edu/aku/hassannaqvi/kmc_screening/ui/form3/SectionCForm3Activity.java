@@ -42,7 +42,7 @@ public class SectionCForm3Activity extends AppCompatActivity {
 
         day1Flag = getIntent().getBooleanExtra("day1", false);
         if (day1Flag) {
-            bi.fldGrpCVkf3c05.setVisibility(View.GONE);
+            bi.fldGrpCVkf3c05.setVisibility(View.VISIBLE);
             bi.fldGrpCVkf3c13.setVisibility(View.GONE);
         } else
             //bi.fldGrpSecC02d.setVisibility(View.GONE);
