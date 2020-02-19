@@ -268,6 +268,10 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
                 : bi.kf3b01f.isChecked() ? "6"
                 : bi.kf3b01g.isChecked() ? "7"
                 : bi.kf3b01h.isChecked() ? "8"
+                : bi.kf3b01i.isChecked() ? "9"
+                : bi.kf3b01j.isChecked() ? "10"
+                : bi.kf3b01k.isChecked() ? "11"
+                : bi.kf3b01l.isChecked() ? "12"
                 : "";
 
         RegisteredPWContract dc = db.checkPWExist(type, villageCodes.get(bi.crvillage.getSelectedItemPosition()) + (MainApp.formType.equals("kf3") ? "-" + followupNo : ""), pwid);
@@ -360,6 +364,10 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
                     : bi.kf3b01f.isChecked() ? "6"
                     : bi.kf3b01g.isChecked() ? "7"
                     : bi.kf3b01h.isChecked() ? "8"
+                    : bi.kf3b01i.isChecked() ? "9"
+                    : bi.kf3b01j.isChecked() ? "10"
+                    : bi.kf3b01k.isChecked() ? "11"
+                    : bi.kf3b01l.isChecked() ? "12"
                     : "0");
         }
 

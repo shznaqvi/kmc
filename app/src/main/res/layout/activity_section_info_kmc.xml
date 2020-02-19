@@ -467,6 +467,7 @@
 
                                 <RadioButton
                                     android:id="@+id/kf3b01c"
+                                    android:enabled="false"
                                     style="@style/i_radiobutton"
                                     android:text="@string/kf3b01c" />
 
@@ -478,6 +479,7 @@
 
                                 <RadioButton
                                     android:id="@+id/kf3b01e"
+                                    android:enabled="false"
                                     style="@style/i_radiobutton"
                                     android:text="@string/kf3b01e" />
 
@@ -488,6 +490,7 @@
 
                                 <RadioButton
                                     android:id="@+id/kf3b01g"
+                                    android:enabled="false"
                                     style="@style/i_radiobutton"
                                     android:text="@string/kf3b01g"
                                     android:visibility="gone" />
@@ -495,8 +498,27 @@
                                 <RadioButton
                                     android:id="@+id/kf3b01h"
                                     style="@style/i_radiobutton"
-                                    android:text="@string/kf3b01h"
-                                    android:visibility="gone" />
+                                    android:text="@string/kf3b01h" />
+
+                                <RadioButton
+                                    android:id="@+id/kf3b01i"
+                                    style="@style/i_radiobutton"
+                                    android:text="@string/kf3b01i" />
+
+                                <RadioButton
+                                    android:id="@+id/kf3b01j"
+                                    style="@style/i_radiobutton"
+                                    android:text="@string/kf3b01j" />
+
+                                <RadioButton
+                                    android:id="@+id/kf3b01k"
+                                    style="@style/i_radiobutton"
+                                    android:text="@string/kf3b01k" />
+
+                                <RadioButton
+                                    android:id="@+id/kf3b01l"
+                                    style="@style/i_radiobutton"
+                                    android:text="@string/kf3b01l" />
 
                             </RadioGroup>
 
