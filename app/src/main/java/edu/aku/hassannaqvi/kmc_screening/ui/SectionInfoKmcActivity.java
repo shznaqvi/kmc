@@ -79,6 +79,17 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
 
     private void settingComponent() {
         this.setTitle(MainApp.formType.equals("kf1") ? getString(R.string.f1_hA) : getString(R.string.f2_3_hA));
+
+        switch (MainApp.formType) {
+            case "kf1":
+                break;
+            case "kf2":
+                break;
+            case "kf3":
+                bi.fldGrpkfal.setVisibility(View.GONE);
+                break;
+        }
+
     }
 
     private void settingListeners() {

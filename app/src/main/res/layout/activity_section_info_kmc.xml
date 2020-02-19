@@ -131,7 +131,9 @@
                 tools:visibility="visible">
 
                 <!--kfa1-->
-                <android.support.v7.widget.CardView style="@style/cardView">
+                <android.support.v7.widget.CardView
+                    android:id="@+id/fldGrpkfal"
+                    style="@style/cardView">
 
                     <LinearLayout style="@style/linearlayout_view">
 
