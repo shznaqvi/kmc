@@ -78,7 +78,7 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
     }
 
     private void settingComponent() {
-        this.setTitle(MainApp.formType.equals("kf1") ? getString(R.string.f1_hA) : getString(R.string.f2_3_hA));
+        //this.setTitle(MainApp.formType.equals("kf1") ? getString(R.string.f1_hA) : getString(R.string.f2_3_hA));
 
         switch (MainApp.formType) {
             case "kf1":
