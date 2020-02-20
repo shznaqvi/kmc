@@ -180,7 +180,7 @@
                             style="@style/EditText_number"
                             android:hint="@string/kf3c05a"
                             android:maxLength="2"
-                            app:maxValue="31"
+                            app:maxValue="65"
                             app:minValue="0"
                             app:type="range" />
 
@@ -521,8 +521,8 @@
                                 android:hint="@string/kf3c13a"
                                 android:maxLength="2"
                                 android:text='@{kf3c10a.checked ? kf3c13.getText.toString : "" }'
-                                app:maxValue="31"
-                                app:minValue="1"
+                                app:maxValue="65"
+                                app:minValue="0"
                                 app:type="range" />
 
                         </LinearLayout>
