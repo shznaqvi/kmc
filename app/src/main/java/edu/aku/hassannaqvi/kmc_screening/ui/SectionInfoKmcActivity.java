@@ -63,6 +63,7 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
     private Map<String, EligibleContract> mapPartElig;
     private static final String TAG = SectionInfoKmcActivity.class.getName();
     ActivitySectionInfoKmcBinding bi;
+    public static int followupNo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -258,7 +259,7 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
         if (!ValidatorClass.EmptyCheckingContainer(this, bi.infoMainLayout))
             return false;
 
-        String type = "", pwid = "", followupNo = "";
+        String type = "", pwid = "";
         switch (MainApp.formType) {
             case "kf1":
                 type = MainApp.FORMTYPE1;
@@ -274,19 +275,19 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
                 break;
         }
 
-        followupNo = bi.kf3b01a.isChecked() ? "1"
-                : bi.kf3b01b.isChecked() ? "2"
-                : bi.kf3b01c.isChecked() ? "3"
-                : bi.kf3b01d.isChecked() ? "4"
-                : bi.kf3b01e.isChecked() ? "5"
-                : bi.kf3b01f.isChecked() ? "6"
-                : bi.kf3b01g.isChecked() ? "7"
-                : bi.kf3b01h.isChecked() ? "8"
-                : bi.kf3b01i.isChecked() ? "9"
-                : bi.kf3b01j.isChecked() ? "10"
-                : bi.kf3b01k.isChecked() ? "11"
-                : bi.kf3b01l.isChecked() ? "12"
-                : "";
+        followupNo = bi.kf3b01a.isChecked() ? 1
+                : bi.kf3b01b.isChecked() ? 2
+                : bi.kf3b01c.isChecked() ? 3
+                : bi.kf3b01d.isChecked() ? 4
+                : bi.kf3b01e.isChecked() ? 5
+                : bi.kf3b01f.isChecked() ? 6
+                : bi.kf3b01g.isChecked() ? 7
+                : bi.kf3b01h.isChecked() ? 8
+                : bi.kf3b01i.isChecked() ? 9
+                : bi.kf3b01j.isChecked() ? 10
+                : bi.kf3b01k.isChecked() ? 11
+                : bi.kf3b01l.isChecked() ? 12
+                : 0;
 
         RegisteredPWContract dc = db.checkPWExist(type, villageCodes.get(bi.crvillage.getSelectedItemPosition()) + (MainApp.formType.equals("kf3") ? "-" + followupNo : ""), pwid);
         if (dc == null) {
@@ -295,7 +296,7 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
                     MainApp.formType,
                     bi.kapr02a.getText().toString(),
                     MainApp.formType.equals("kf1") ? bi.kf1a3.getText().toString() : bi.kf2a6.getSelectedItem().toString(),
-                    followupNo
+                    String.valueOf(followupNo)
             )) {
                 Toast.makeText(this, "Form is already exist!!", Toast.LENGTH_SHORT).show();
                 return false;
