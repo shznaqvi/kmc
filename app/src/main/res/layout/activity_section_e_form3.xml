@@ -59,10 +59,9 @@
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/kf3e22"
                             style="@style/EditText_number"
-                            android:hint="@string/kf3e22a"
-                            android:maxLength="2"
-                            app:maxValue="10"
-                            app:minValue="0"
+                            android:hint="00.0"
+                            app:mask="##.#"
+                            app:pattern="^(\\d{2,2}\\.\\d{1,1})$"
                             app:type="range" />
 
                     </LinearLayout>

@@ -764,8 +764,8 @@
                             android:id="@+id/kf3d14"
                             style="@style/EditText_number"
                             android:hint="@string/kf3d14"
-                            android:maxLength="2"
-                            app:maxValue="31"
+                            android:maxLength="3"
+                            app:maxValue="368"
                             app:minValue="0"
                             app:type="range" />
 
@@ -850,8 +850,8 @@
                                     android:id="@+id/kf3d16w"
                                     style="@style/EditText_number"
                                     android:hint="@string/kf3d16w"
-                                    android:maxLength="1"
-                                    app:maxValue="4"
+                                    android:maxLength="2"
+                                    app:maxValue="18"
                                     app:minValue="0"
                                     app:type="range" />
 
