@@ -21,6 +21,7 @@ import edu.aku.hassannaqvi.kmc_screening.validation.ClearClass;
 import edu.aku.hassannaqvi.kmc_screening.validation.ValidatorClass;
 
 import static edu.aku.hassannaqvi.kmc_screening.core.MainApp.fc;
+import static edu.aku.hassannaqvi.kmc_screening.ui.SectionInfoKmcActivity.followupNo;
 
 public class SectionCForm3Activity extends AppCompatActivity {
 
@@ -47,13 +48,13 @@ public class SectionCForm3Activity extends AppCompatActivity {
         } else
             //bi.fldGrpSecC02d.setVisibility(View.GONE);
 
-        bi.kf3c01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (i == bi.kf3c01a.getId())
-                    bi.kf3c04.clearCheck();
-            }
-        });
+            bi.kf3c01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                    if (i == bi.kf3c01a.getId())
+                        bi.kf3c04.clearCheck();
+                }
+            });
 
         bi.kf3c07.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override

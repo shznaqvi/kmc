@@ -469,8 +469,8 @@
 
                                 <RadioButton
                                     android:id="@+id/kf3b01c"
-                                    android:enabled="false"
                                     style="@style/i_radiobutton"
+                                    android:enabled="false"
                                     android:text="@string/kf3b01c" />
 
                                 <RadioButton
@@ -481,8 +481,8 @@
 
                                 <RadioButton
                                     android:id="@+id/kf3b01e"
-                                    android:enabled="false"
                                     style="@style/i_radiobutton"
+                                    android:enabled="false"
                                     android:text="@string/kf3b01e" />
 
                                 <RadioButton
@@ -492,8 +492,8 @@
 
                                 <RadioButton
                                     android:id="@+id/kf3b01g"
-                                    android:enabled="false"
                                     style="@style/i_radiobutton"
+                                    android:enabled="false"
                                     android:text="@string/kf3b01g"
                                     android:visibility="gone" />
 

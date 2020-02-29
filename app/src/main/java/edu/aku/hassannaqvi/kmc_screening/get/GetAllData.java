@@ -42,7 +42,7 @@ public class GetAllData extends AsyncTask<String, String, String> {
     private String syncClass;
 
 
-    public GetAllData(Context context, String syncClass) {
+    public  GetAllData(Context context, String syncClass) {
         mContext = context;
         this.syncClass = syncClass;
         TAG = "Get" + syncClass;

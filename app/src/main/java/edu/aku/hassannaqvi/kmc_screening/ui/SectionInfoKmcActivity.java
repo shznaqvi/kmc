@@ -17,6 +17,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -46,6 +47,8 @@ import edu.aku.hassannaqvi.kmc_screening.other.DateUtils;
 import edu.aku.hassannaqvi.kmc_screening.ui.form1.SectionAForm1Activity;
 import edu.aku.hassannaqvi.kmc_screening.ui.form2.SectionBForm2Activity;
 import edu.aku.hassannaqvi.kmc_screening.ui.form3.SectionBForm3Activity;
+import edu.aku.hassannaqvi.kmc_screening.ui.form3.SectionCForm3Activity;
+import edu.aku.hassannaqvi.kmc_screening.ui.form3.SectionDForm3Activity;
 import edu.aku.hassannaqvi.kmc_screening.ui.other.EndingActivity;
 import edu.aku.hassannaqvi.kmc_screening.validation.ClearClass;
 import edu.aku.hassannaqvi.kmc_screening.validation.ValidatorClass;
@@ -93,6 +96,14 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
                 bi.fldGrpkfal.setVisibility(View.GONE);
                 break;
         }
+
+        bi.kf3b01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+
+            }
+        });
 
     }
 
@@ -309,6 +320,19 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
 
         return true;
 
+    }
+
+    public Class<?> getIntentClass() {
+        Class<?> cls;
+        switch (followupNo) {
+            case 6:
+            case 8:
+                return SectionBForm3Activity.class;
+            case 9:
+                return SectionCForm3Activity.class;
+            default:
+                return SectionDForm3Activity.class;
+        }
     }
 
     private boolean checkFormExist(String villageCode, String formType, String pwid, String screendid, String followUpNo) {

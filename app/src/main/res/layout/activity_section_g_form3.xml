@@ -954,7 +954,6 @@
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/kf3g09"
                             style="@style/EditText_number"
-                            android:checked="@{kf3g09a.checked ? false : false}"
                             android:enabled="@{kf3g09a.checked ? false : true}"
                             android:hint="@string/kf3g09"
                             android:maxLength="2"

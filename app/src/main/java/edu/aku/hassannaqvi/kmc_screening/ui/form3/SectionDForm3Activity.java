@@ -1,4 +1,4 @@
-package edu.aku.hassannaqvi.kmc_screening.ui.form3;
+    package edu.aku.hassannaqvi.kmc_screening.ui.form3;
 
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
@@ -20,6 +20,7 @@ import edu.aku.hassannaqvi.kmc_screening.validation.ClearClass;
 import edu.aku.hassannaqvi.kmc_screening.validation.ValidatorClass;
 
 import static edu.aku.hassannaqvi.kmc_screening.core.MainApp.fc;
+import static edu.aku.hassannaqvi.kmc_screening.ui.SectionInfoKmcActivity.followupNo;
 
 public class SectionDForm3Activity extends AppCompatActivity {
 
@@ -39,10 +40,17 @@ public class SectionDForm3Activity extends AppCompatActivity {
 
     private void setupListeners() {
 
-        Boolean day1Flag = getIntent().getBooleanExtra("day1", false);
+       /* Boolean day1Flag = getIntent().getBooleanExtra("day1", false);
         if (!day1Flag) {
             bi.fldGrpSecD02a.setVisibility(View.GONE);
 
+        }*/
+
+        if (followupNo != 6) {
+            bi.fldGrpSecD02a.setVisibility(View.GONE);
+        }
+        if (followupNo == 11 || followupNo == 12) {
+            bi.only14120.setVisibility(View.GONE);
         }
 
         bi.kf3d01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
