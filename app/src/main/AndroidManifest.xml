@@ -24,11 +24,11 @@
         <activity
             android:name=".ui.other.SplashscreenActivity"
             android:screenOrientation="portrait">
-            <!--<intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+            </intent-filter>
         </activity>
         <activity
             android:name=".ui.other.LoginActivity"
@@ -95,13 +95,7 @@
         <activity
             android:name=".ui.form3.SectionGForm3Activity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme1">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/AppTheme1" />
     </application>
 
 </manifest>
