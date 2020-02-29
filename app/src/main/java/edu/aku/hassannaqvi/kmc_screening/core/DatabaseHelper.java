@@ -151,8 +151,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     final String SQL_CREATE_DISTRICT_TABLE = "CREATE TABLE " + singleTaluka.TABLE_NAME + " (" +
             singleTaluka._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
-            singleTaluka.COLUMN_TALUKA_CODE + " TEXT, " +
-            singleTaluka.COLUMN_TALUKA_NAME + " TEXT " +
+            singleTaluka.COLUMN_DISTRICT_CODE + " TEXT, " +
+            singleTaluka.COLUMN_DISTRICT_NAME + " TEXT " +
             ");";
     private static final String SQL_ALTER_PW_REGISTERED = "ALTER TABLE " +
             RegisteredPW.TABLE_NAME + " ADD COLUMN " +
@@ -274,8 +274,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor c = null;
         String[] columns = {
                 singleTaluka._ID,
-                singleTaluka.COLUMN_TALUKA_CODE,
-                singleTaluka.COLUMN_TALUKA_NAME
+                singleTaluka.COLUMN_DISTRICT_CODE,
+                singleTaluka.COLUMN_DISTRICT_NAME
         };
 
         String whereClause = null;
@@ -284,7 +284,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String having = null;
 
         String orderBy =
-                singleTaluka.COLUMN_TALUKA_NAME + " ASC";
+                singleTaluka.COLUMN_DISTRICT_NAME + " ASC";
 
         Collection<TalukasContract> allDC = new ArrayList<TalukasContract>();
         try {
@@ -862,8 +862,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 user.sync(jsonObjectUser);
                 ContentValues values = new ContentValues();
 
-                values.put(singleTaluka.COLUMN_TALUKA_CODE, user.getDistrictCode());
-                values.put(singleTaluka.COLUMN_TALUKA_NAME, user.getDistrictName());
+                values.put(singleTaluka.COLUMN_DISTRICT_CODE, user.getDistrictCode());
+                values.put(singleTaluka.COLUMN_DISTRICT_NAME, user.getDistrictName());
                 db.insert(singleTaluka.TABLE_NAME, null, values);
             }
 
