@@ -496,7 +496,6 @@
     <string name="kf3b01l"> 365 ڏينهن </string>
 
 
-
     <string name="kf3b02"> ماءُ جي موجوده صورت حال </string>
     <string name="kf3b02a"> ماءُ موجود آهي </string>
     <string name="kf3b02b"> ماءُ موجود نه آهي </string>
@@ -872,6 +871,73 @@
     <string name="kf3f05b"> فلپ چارٽ </string>
     <string name="kf3f05c"> وڊيو </string>
     <string name="kf3f06"> ڇا تربيت / سکيا توهان لاءِ مدد گار ثابت ٿئي. </string>
+
+
+    <string name="kf3gh0"> INFANT AND YOUNG CHILD FEEDING PRACTICES (IYCF) (DAY 180, 365) </string>
+    <string name="kf3g01"> ڇا توهان جي ٻار ڪالھ ڏينهن جي دوران يا رات جي وقت ماءُ جي ٿڃ پياري؟ </string>
+
+    <string name="kf3g02"> هاڻي آءُ اوهان کان دوائون ۽ وٽامن جي باري ۾ پڇندس جيڪي نئي ٻار کي ڏنا ويندا آهن. ڇا توهان ڪالھ ڏينهن يا رات جي وقت وٽامن جا ڦڙا يا ٻيون ڪي دوائون ٻار کي پياريون ويون؟ </string>
+
+    <string name="kf3g03"> ڇا توهان ڪالھ ڏينهن جي دوران يا رات جي وقت ٻار کي نمڪول پياريو هو؟ </string>
+
+    <string name="kf3gh1"> هيٺيان سوال پڙهو. پاڻياٺ جي لسٽ پڙهو هڪ هڪ ڪري ۽ ها يا نه ته نشان لڳايو. لسٽ مڪمل ڪرڻ کان پوءِ سوال نمبر 6.6 جاري رکو ( ساڄي پاسي ڪالم کي ڏسو) انهن شين جي لاِ ) 6.5، بي ، سي ۽ ايف) جتي جواب ها ۾ اچي ٿو.  </string>
+
+    <string name="kf3g05"> هاڻي آءُ اوهان کان پڻياٺ جي باري ۾ پڇڻ چاهيندس جيڪي اوهان جي ٻار ڪالھ ڏينهن يا رات جي وقت ورتا. </string>
+    <string name="kf3g05h1"> ڇا ( نالو) وٺي هيٺين مان ڪجھ ورتو؟ </string>
+    <string name="kf3g05h2"> هيٺين لسٽ پڙهي ٻڌايو ، صاف پاڻي کان وٺي. </string>
+
+    <string name="kf3g06"> ڪيترا دفعا ڏينهن يا رات جي وقت ڏنل لسٽ کاڌا کاڌا. </string>
+    <string name="kf3g06h1"> سامان استعمال ڪيو </string>
+    <string name="kf3g06a"> سادو پاڻي؟ </string>
+    <string name="kf3g06b"> ٻارن جو فارمولا؟ </string>
+    <string name="kf3g06c"> سڪو/ پائوڊر يا مال جو تازو کير؟ </string>
+    <string name="kf3g06d"> جوس يا جوس پيئڻ؟ </string>
+    <string name="kf3g06e"> صاف شوروو؟ </string>
+    <string name="kf3g06f"> ڏهي؟ </string>
+    <string name="kf3g06g"> هلڪي رٻ؟ </string>
+    <string name="kf3g06h"> ٻئي ڪا پاڻياٺ ( نونهال، گرائپ واٽر،ماکي ) </string>
+    <string name="kf3g06i"> ڪو ٻيو پاڻياٺ؟  </string>
+
+    <string name="kf3g07"> مهرباني ڪري ٻڌايو جيڪو به اوهان جي ٻار ڪالھ ڏينهن يا رات جي وقت کاڌو آهي، گهر يا گهر کان ٻاهر. </string>
+    <string name="kf3g07h1"> سوال ۽ فلٽر </string>
+    <string name="kf3g07a"> چانور، رٻ ،ما ني، ڊبل روٽي، Noodles  سويون ٻيا اناج مان ٺھيل کاڌا؟  </string>
+    <string name="kf3g07b"> قدو، گجرون، ڪَدو يا مٺا پٽاٽا جيڪي اندران پيلا يا نارنگي هجن؟  </string>
+    <string name="kf3g07c"> اڇا پٽاٽا ، اڇيون/لاهوري گجرون، يا ٻيا ڪي کاڌا جيڪي پاڙن مان ٺھندا ھجن؟  </string>
+    <string name="kf3g07d"> ڪي به گهريون سايون پنن واريون ڀاڄيون </string>
+    <string name="kf3g07e">  پڪل انب، پڪل پَپِيتو </string>
+    <string name="kf3g07f"> ڪو ٻيوفروٽ يا سبزيون ؟ </string>
+    <string name="kf3g07g"> جيرا،بڪيون،دل يا ٻيو ڪو گوشت مثلاً منڍي، مغز وغيره؟ </string>
+    <string name="kf3g07h"> ڪو به گوشت جيــئن ته ڍڳي جو (وڏو)، رڍ جو ، ٻڪري مرغي جو ،بدڪ جو </string>
+    <string name="kf3g07i"> بيضا/اندا؟ </string>
+    <string name="kf3g07j"> تازي يا دٻي واري مڇي، ڇلرن واري مڇي يا سمونڊري غذا </string>
+    <string name="kf3g07k"> ڪي کاڌا جيڪي مٽرن ۾ ٺهيل، مٽرن جي دال، بهموڱن، ٻجن جا </string>
+    <string name="kf3g07l"> کير مان ٺهندڙ، (cheese) ڏهي (Yogurt)يا ٻيون ڪي کير مان ٺهيل شيون؟ </string>
+    <string name="kf3g07m"> ڪوتيل،چرٻي، يا مکڻ، يا انهن مان ڪنهن سان ٺهيل کاڌا </string>
+    <string name="kf3g07n"> ڪي به مٺيون شيون جئين ته چاڪليٽس، مٺيون ڪينڊيز، پيسٽري، ڪيڪ ۽ بسڪوٽ  </string>
+    <string name="kf3g07o"> چٽڻيون، مثاطور، مرچ، مصالحه، جڙي ٻوٽيون، يا فش پائوڊر </string>
+    <string name="kf3g07p"> جيت، ڪيڙا ماڪوڙا </string>
+    <string name="kf3g07q"> کاڌا سرخ تيل مان ٺهيل، کوجور مان ٺهيل يا خسڪ ميوون مان ٺهيل </string>
+
+    <string name="kf3g08"> ڇا ( نالو) وٺي پڇو ته ڇا ٻار ڪالھ ڏينهن يا رات جي وقت ڪا به نرم يا ٺوس غذا کاڌي؟ </string>
+    <string name="kf3g08h1"> جيڪڏهن ها ته وڌيڪ پڇو  ڪهڙي قسم جا نرم يا ٺوس غذا کاڌي؟ </string>
+
+    <string name="kf3g09"> نالو وٺي پڇو ته ڪيترا دفعا ٻار ڪالھ ڏينهن يا رات جي وقت نرم، ٺوس غذا کاڌي پاڻياٺ کانسواءِ؟ </string>
+
+    <string name="kf3g10"> نالو وٺي پڇو ته ڇا ٻار ڪالھ ڏينهن يا رات جي وقت فيڊر يا ٻنڊ جي ذريعي ڪجھ پيتو؟ </string>
+
+    <string name="kf3g11"> نالو وٺي پڇو ته ٻار فيڊر يا نپل جي ذريعي ڇا پيتو؟ </string>
+    <string name="kf3g11a"> سڪو دٻي وارو کير </string>
+    <string name="kf3g11b"> جانور جو کير </string>
+    <string name="kf3g11c"> ما جي ڇاتي جو نڪتل کير </string>
+    <string name="kf3g11dk"> ڪو ٻيو </string>
+
+    <string name="kf3g12"> دٻي واري سڪي کير جو ڪنهن صلاح ڏني؟ </string>
+    <string name="kf3g12a"> پريڪٽيشنر </string>
+    <string name="kf3g12b"> ماهر دوا ساز </string>
+    <string name="kf3g12c"> مائٽن </string>
+    <string name="kf3g12dk"> ٻيو ڪو </string>
+
+    <string name="kf3g13"> نالو وٺي پڇو ته ڇا ٻار ڪالھ ڏينهن يا رات جي وقت وٽامن يا اضافي خوراڪ يا دوائون کاڌيون. </string>
 
     <!--Form 0-->
     <!--<string name="kapr01"> گھر جو نمبر </string>-->

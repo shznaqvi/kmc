@@ -40,6 +40,7 @@ public class SectionEForm3Activity extends AppCompatActivity {
     }
 
     private void setupListeners() {
+
         bi.kf3e02.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
