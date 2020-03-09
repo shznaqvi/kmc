@@ -181,7 +181,7 @@
                                         style="@style/EditText"
                                         android:hint="@string/other"
                                         android:tag="kf3b0496"
-                                        android:text='@{kf3b0496.checked ? kf3b0496x.getText.toString : "" }'
+                                        android:text='@{kf3b0496.checked ? kf3b0496x.getText().toString : "" }'
                                         android:visibility='@{kf3b0496.checked ? View.VISIBLE : View.GONE }' />
 
                                 </LinearLayout>
@@ -243,7 +243,7 @@
                                         style="@style/EditText"
                                         android:hint="@string/other"
                                         android:tag="kf3b0596"
-                                        android:text='@{kf3b0596.checked ? kf3b0596x.getText.toString : "" }'
+                                        android:text='@{kf3b0596.checked ? kf3b0596x.getText().toString : "" }'
                                         android:visibility='@{kf3b0596.checked ? View.VISIBLE : View.GONE }' />
 
                                 </RadioGroup>
