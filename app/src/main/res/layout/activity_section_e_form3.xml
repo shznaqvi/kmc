@@ -61,8 +61,7 @@
                             style="@style/EditText_number"
                             android:hint="00.0"
                             app:mask="##.#"
-                            app:pattern="^(\\d{2,2}\\.\\d{1,1})$"
-                            app:type="range" />
+                            app:pattern="^(\\d{2,2}\\.\\d{1,1})$" />
 
                     </LinearLayout>
 

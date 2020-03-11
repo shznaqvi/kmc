@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -19,6 +20,7 @@ import edu.aku.hassannaqvi.kmc_screening.validation.ClearClass;
 import edu.aku.hassannaqvi.kmc_screening.validation.ValidatorClass;
 
 import static edu.aku.hassannaqvi.kmc_screening.core.MainApp.fc;
+import static edu.aku.hassannaqvi.kmc_screening.ui.SectionInfoKmcActivity.followupNo;
 
 public class SectionFForm3Activity extends AppCompatActivity {
 
@@ -35,6 +37,10 @@ public class SectionFForm3Activity extends AppCompatActivity {
     }
 
     private void setupListener() {
+
+        if (followupNo == 8) {
+            bi.fldGrpSecF02.setVisibility(View.VISIBLE);
+        }
 
         bi.kf3f03.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override

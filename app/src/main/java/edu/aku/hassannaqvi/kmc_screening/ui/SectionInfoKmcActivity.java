@@ -49,6 +49,8 @@ import edu.aku.hassannaqvi.kmc_screening.ui.form2.SectionBForm2Activity;
 import edu.aku.hassannaqvi.kmc_screening.ui.form3.SectionBForm3Activity;
 import edu.aku.hassannaqvi.kmc_screening.ui.form3.SectionCForm3Activity;
 import edu.aku.hassannaqvi.kmc_screening.ui.form3.SectionDForm3Activity;
+import edu.aku.hassannaqvi.kmc_screening.ui.form3.SectionEForm3Activity;
+import edu.aku.hassannaqvi.kmc_screening.ui.form3.SectionGForm3Activity;
 import edu.aku.hassannaqvi.kmc_screening.ui.other.EndingActivity;
 import edu.aku.hassannaqvi.kmc_screening.validation.ClearClass;
 import edu.aku.hassannaqvi.kmc_screening.validation.ValidatorClass;
@@ -330,6 +332,12 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
                 return SectionBForm3Activity.class;
             case 9:
                 return SectionCForm3Activity.class;
+            case 10:
+                return SectionEForm3Activity.class;
+            case 11:
+                return SectionGForm3Activity.class;
+            case 12:
+                return SectionGForm3Activity.class;
             default:
                 return SectionDForm3Activity.class;
         }
@@ -478,7 +486,7 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
                 finish();
                 startActivity(new Intent(this, MainApp.formType.equals("kf1") ? SectionAForm1Activity.class
                         : MainApp.formType.equals("kf2") ? SectionBForm2Activity.class
-                        : MainApp.formType.equals("kf3") ? SectionBForm3Activity.class : null)
+                        : MainApp.formType.equals("kf3") ? getIntentClass() : null)
                         .putExtra("pwid", bi.kapr02a.getText().toString())
                         .putExtra("hfScreen", bi.kfa1a.isChecked())
                         .putExtra("dayFlag", bi.kf3b01a.isChecked()));

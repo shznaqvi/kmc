@@ -41,6 +41,10 @@ public class SectionEForm3Activity extends AppCompatActivity {
 
     private void setupListeners() {
 
+       /* if (followupNo == 6 || followupNo == 8 || followupNo == 9 || followupNo == 10 || followupNo == 12) {
+            bi.fldGrpSecE02.setVisibility(View.VISIBLE);
+        }*/
+
         bi.kf3e02.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {

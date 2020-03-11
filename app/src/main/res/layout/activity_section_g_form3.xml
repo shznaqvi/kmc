@@ -962,12 +962,12 @@
                             app:minValue="0"
                             app:type="range" />
 
-                    </LinearLayout>
+                        <CheckBox
+                            android:id="@+id/kf3g09a"
+                            style="@style/checkbox"
+                            android:text="@string/dkn" />
 
-                    <CheckBox
-                        android:id="@+id/kf3g09a"
-                        style="@style/checkbox"
-                        android:text="@string/dkn" />
+                    </LinearLayout>
 
                 </android.support.v7.widget.CardView>
 

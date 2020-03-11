@@ -19,6 +19,7 @@ import edu.aku.hassannaqvi.kmc_screening.validation.ClearClass;
 import edu.aku.hassannaqvi.kmc_screening.validation.ValidatorClass;
 
 import static edu.aku.hassannaqvi.kmc_screening.core.MainApp.fc;
+import static edu.aku.hassannaqvi.kmc_screening.ui.SectionInfoKmcActivity.followupNo;
 
 public class SectionGForm3Activity extends AppCompatActivity {
 
@@ -40,6 +41,10 @@ public class SectionGForm3Activity extends AppCompatActivity {
         Boolean day1Flag = getIntent().getBooleanExtra("day1", false);
         if (!day1Flag) {
             bi.fldGrpSecG01.setVisibility(View.GONE);
+
+            if (followupNo == 11 || followupNo == 12) {
+                bi.fldGrpSecG01.setVisibility(View.VISIBLE);
+            }
 
         }
 

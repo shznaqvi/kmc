@@ -48,6 +48,10 @@ public class SectionCForm3Activity extends AppCompatActivity {
         } else
             //bi.fldGrpSecC02d.setVisibility(View.GONE);
 
+            if (followupNo == 9) {
+                bi.fldGrpSecC02.setVisibility(View.VISIBLE);
+            }
+
             bi.kf3c01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(RadioGroup radioGroup, int i) {
