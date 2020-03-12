@@ -459,6 +459,7 @@
                                 <RadioButton
                                     android:id="@+id/kf3b01a"
                                     style="@style/i_radiobutton"
+                                    android:enabled="false"
                                     android:text="@string/kf3b01a" />
 
                                 <RadioButton
@@ -494,8 +495,7 @@
                                     android:id="@+id/kf3b01g"
                                     style="@style/i_radiobutton"
                                     android:enabled="false"
-                                    android:text="@string/kf3b01g"
-                                    android:visibility="gone" />
+                                    android:text="@string/kf3b01g" />
 
                                 <RadioButton
                                     android:id="@+id/kf3b01h"
@@ -568,5 +568,7 @@
             </LinearLayout>
 
         </LinearLayout>
+
     </ScrollView>
+
 </layout>

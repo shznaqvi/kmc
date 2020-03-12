@@ -140,7 +140,7 @@ public class FormsContract {
 
     public static boolean checkingEligibility(String sInfo, String sB, String followupNo) {
         FormPWFollowup forms = new Gson().fromJson(sB, FormPWFollowup.class);
-        if (forms.getKf3b01() == null) {
+        if (forms == null || forms.getKf3b01() == null) {
             forms = new Gson().fromJson(sInfo, FormPWFollowup.class);
         }
 

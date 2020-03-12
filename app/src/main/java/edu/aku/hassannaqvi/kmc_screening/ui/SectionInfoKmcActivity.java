@@ -333,13 +333,12 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
             case 9:
                 return SectionCForm3Activity.class;
             case 10:
-                return SectionEForm3Activity.class;
+                return SectionDForm3Activity.class;
             case 11:
-                return SectionGForm3Activity.class;
             case 12:
                 return SectionGForm3Activity.class;
             default:
-                return SectionDForm3Activity.class;
+                return SectionEForm3Activity.class;
         }
     }
 

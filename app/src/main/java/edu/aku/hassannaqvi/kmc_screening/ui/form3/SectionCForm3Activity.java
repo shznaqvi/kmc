@@ -16,7 +16,6 @@ import edu.aku.hassannaqvi.kmc_screening.R;
 import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc_screening.core.MainApp;
 import edu.aku.hassannaqvi.kmc_screening.databinding.ActivitySectionCForm3Binding;
-import edu.aku.hassannaqvi.kmc_screening.ui.other.EndingActivity;
 import edu.aku.hassannaqvi.kmc_screening.validation.ClearClass;
 import edu.aku.hassannaqvi.kmc_screening.validation.ValidatorClass;
 
@@ -179,7 +178,7 @@ public class SectionCForm3Activity extends AppCompatActivity {
             }
             if (UpdateDB()) {
                 finish();
-                startActivity(new Intent(this, bi.kf3c17a.isChecked() ? EndingActivity.class : SectionDForm3Activity.class)
+                startActivity(new Intent(this, SectionDForm3Activity.class)
                         .putExtra("complete", true).putExtra("day1", day1Flag));
 
             } else {
