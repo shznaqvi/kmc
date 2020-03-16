@@ -52,7 +52,8 @@
     <string name="times"> تعداد </string>
     <string name="timesd"> ويمن جو تعداد </string>
     <string name="others"> ٻيو ڪجھ وضاحت ڪريو </string>
-    <string name="other"> ٻيو ڪجھ وضاحت ڪريو </string>
+    <string name="specify"> وضاحت ڪريو </string>
+    <string name="other"> ٻيو ڪجھ </string>
     <string name="noone"> ڪو به نه </string>
     <string name="neverb"> نه ونهجاريو </string>
     <!--      CBT Vars       !-->
