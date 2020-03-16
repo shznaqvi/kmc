@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Projects-kmc.iml" filepath="$PROJECT_DIR$/Projects-kmc.iml" group="kmc" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/kmc.iml" filepath="$PROJECT_DIR$/kmc.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/kmc-app.iml" filepath="$PROJECT_DIR$/app/kmc-app.iml" group="kmc/app" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="kmc/app" />
+      <module fileurl="file://$PROJECT_DIR$/kmc.iml" filepath="$PROJECT_DIR$/kmc.iml" group="kmc" />
     </modules>
   </component>
 </project>

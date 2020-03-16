@@ -93,8 +93,11 @@
                                     android:id="@+id/kf3b03c"
                                     style="@style/i_radiobutton"
                                     android:text="@string/kf3b03c" />
+
                             </RadioGroup>
+
                         </LinearLayout>
+
                     </android.support.v7.widget.CardView>
 
                     <LinearLayout
@@ -122,64 +125,48 @@
 
                                     <CheckBox
                                         android:id="@+id/kf3b04a"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginBottom="1dp"
+                                        style="@style/checkbox"
                                         android:text="@string/kf3b04a" />
 
                                     <CheckBox
                                         android:id="@+id/kf3b04b"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginBottom="1dp"
+                                        style="@style/checkbox"
                                         android:text="@string/kf3b04b" />
 
                                     <CheckBox
                                         android:id="@+id/kf3b04c"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginBottom="1dp"
+                                        style="@style/checkbox"
                                         android:text="@string/kf3b04c" />
 
                                     <CheckBox
                                         android:id="@+id/kf3b04d"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginBottom="1dp"
+                                        style="@style/checkbox"
                                         android:text="@string/kf3b04d" />
 
                                     <CheckBox
                                         android:id="@+id/kf3b04e"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginBottom="1dp"
+                                        style="@style/checkbox"
                                         android:text="@string/kf3b04e" />
 
                                     <CheckBox
                                         android:id="@+id/kf3b04f"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginBottom="1dp"
+                                        style="@style/checkbox"
                                         android:text="@string/kf3b04f" />
 
                                     <CheckBox
                                         android:id="@+id/kf3b04g"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginBottom="1dp"
+                                        style="@style/checkbox"
                                         android:text="@string/kf3b04g" />
 
                                     <CheckBox
                                         android:id="@+id/kf3b0496"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginBottom="1dp"
+                                        style="@style/checkbox"
                                         android:text="@string/other" />
 
                                     <EditText
                                         android:id="@+id/kf3b0496x"
                                         style="@style/EditText"
-                                        android:hint="@string/other"
+                                        android:hint="@string/specify"
                                         android:tag="kf3b0496"
                                         android:text='@{kf3b0496.checked ? kf3b0496x.getText().toString : "" }'
                                         android:visibility='@{kf3b0496.checked ? View.VISIBLE : View.GONE }' />
@@ -188,9 +175,7 @@
 
                                 <CheckBox
                                     android:id="@+id/kf3b0498"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
+                                    style="@style/checkbox"
                                     android:tag="-1"
                                     android:text="@string/dkn" />
 
@@ -236,12 +221,12 @@
                                     <RadioButton
                                         android:id="@+id/kf3b0596"
                                         style="@style/i_radiobutton"
-                                        android:text="@string/kf3b05e" />
+                                        android:text="@string/other" />
 
                                     <EditText
                                         android:id="@+id/kf3b0596x"
                                         style="@style/EditText"
-                                        android:hint="@string/other"
+                                        android:hint="@string/specify"
                                         android:tag="kf3b0596"
                                         android:text='@{kf3b0596.checked ? kf3b0596x.getText().toString : "" }'
                                         android:visibility='@{kf3b0596.checked ? View.VISIBLE : View.GONE }' />
@@ -263,23 +248,45 @@
                                     style="@style/i_textview"
                                     android:text="@string/kf3b06" />
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/kf3b06h"
-                                    style="@style/EditText_number"
-                                    android:hint="@string/hours"
-                                    android:maxLength="2"
-                                    app:maxValue="23"
-                                    app:minValue="0"
-                                    app:type="range" />
+                                <LinearLayout
+                                    style="@style/hlinearlayout"
+                                    android:orientation="horizontal">
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/kf3b06d"
-                                    style="@style/EditText_number"
-                                    android:hint="@string/days"
-                                    android:maxLength="2"
-                                    app:maxValue="31"
-                                    app:minValue="0"
-                                    app:type="range" />
+                                    <TextView
+                                        style="@style/textviews"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:text="@string/hours" />
+
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/kf3b06h"
+                                        style="@style/EditTextNum"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:hint="@string/hours"
+                                        android:maxLength="2"
+                                        app:maxValue="23"
+                                        app:minValue="0"
+                                        app:type="range" />
+
+                                    <TextView
+                                        style="@style/textviews"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:text="@string/days" />
+
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/kf3b06d"
+                                        style="@style/EditTextNum"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:hint="@string/days"
+                                        android:maxLength="2"
+                                        app:maxValue="31"
+                                        app:minValue="0"
+                                        app:type="range" />
+
+                                </LinearLayout>
 
                             </LinearLayout>
 
