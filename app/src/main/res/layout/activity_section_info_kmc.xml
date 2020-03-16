@@ -307,6 +307,75 @@
 
                     </RadioGroup>
 
+                    <!--09-->
+                    <TextView
+                        style="@style/i_textview"
+                        android:text="@string/kf1a9" />
+
+
+                    <RadioGroup
+                        android:id="@+id/kf1a9"
+                        style="@style/i_radiogroup">
+
+                        <RadioButton
+                            android:id="@+id/kf1a9a"
+                            style="@style/i_radiobutton"
+                            android:text="@string/kf1a9a" />
+
+                        <RadioButton
+                            android:id="@+id/kf1a9b"
+                            style="@style/i_radiobutton"
+                            android:text="@string/kf1a9b" />
+
+                        <RadioButton
+                            android:id="@+id/kf1a9c"
+                            style="@style/i_radiobutton"
+                            android:text="@string/kf1a9c" />
+
+                        <RadioButton
+                            android:id="@+id/kf1a9d"
+                            style="@style/i_radiobutton"
+                            android:text="@string/kf1a9d" />
+
+                        <RadioButton
+                            android:id="@+id/kf1a9e"
+                            style="@style/i_radiobutton"
+                            android:text="@string/kf1a9e" />
+
+                        <RadioButton
+                            android:id="@+id/kf1a9f"
+                            style="@style/i_radiobutton"
+                            android:text="@string/kf1a9f" />
+
+                        <RadioButton
+                            android:id="@+id/kf1a9g"
+                            style="@style/i_radiobutton"
+                            android:text="@string/kf1a9g" />
+
+                    </RadioGroup>
+
+                    <!--10-->
+                    <TextView
+                        style="@style/i_textview"
+                        android:text="@string/kf1a10" />
+
+
+                    <RadioGroup
+                        android:id="@+id/kf1a10"
+                        style="@style/i_radiogroup">
+
+                        <RadioButton
+                            android:id="@+id/kf1a10a"
+                            style="@style/i_radiobutton"
+                            android:text="@string/kf1a10a" />
+
+                        <RadioButton
+                            android:id="@+id/kf1a10b"
+                            style="@style/i_radiobutton"
+                            android:text="@string/kf1a10b" />
+
+                    </RadioGroup>
+
 
                 </LinearLayout>
 
