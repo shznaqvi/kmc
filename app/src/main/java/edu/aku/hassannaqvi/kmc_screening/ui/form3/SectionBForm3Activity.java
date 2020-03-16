@@ -54,10 +54,13 @@ public class SectionBForm3Activity extends AppCompatActivity {
         bi.kf3b0498.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (b)
+                if (b){
                     ClearClass.ClearAllFields(bi.fldGrpLLkf3b04, false);
-                else
+                    bi.fldGrpLLkf3b04.setTag("-1");
+                } else {
                     ClearClass.ClearAllFields(bi.fldGrpLLkf3b04, true);
+                    bi.fldGrpLLkf3b04.setTag("0");
+                }
             }
         });
 
