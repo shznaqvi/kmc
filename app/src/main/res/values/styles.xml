@@ -414,12 +414,17 @@
     </style>
 
     <style name="spinner" parent="android:Widget.Material.Light.Spinner.Underlined">
-        <item name="android:background">@color/white</item>
+        <item name="android:background">@drawable/spinner_style</item>
         <item name="android:paddingRight">15dp</item>
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:textAlignment">center</item>
         <item name="android:padding">10dp</item>
         <item name="android:layout_margin">10dp</item>
+    </style>
+
+    <style name="SpinnerTextViewItem" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">17sp</item>
     </style>
     ​
 
@@ -431,8 +436,27 @@
         <item name="android:layout_margin">10dp</item>
     </style>
 
-    <style name="SpinnerTextViewItem" parent="@android:style/Widget.TextView">
-        <item name="android:textSize">17sp</item>
+    <style name="spinnerItemStyle">
+        <item name="android:padding">10dp</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:typeface">serif</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="spinnerDropDownItemStyle">
+        <item name="android:padding">20dp</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:typeface">serif</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="SpinnerItem">
+        <item name="android:textAppearance">@style/SpinnerItemText</item>
+    </style>
+
+    <style name="SpinnerItemText">
+        <item name="android:textSize">24sp</item>
+        <item name="android:typeface">sans</item>
     </style>
 
     <style name="ActionBar">
