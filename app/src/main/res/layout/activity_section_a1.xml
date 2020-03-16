@@ -954,81 +954,71 @@
 
             </android.support.v7.widget.CardView>
 
-
-            <LinearLayout
+            <!-- ka115  -->
+            <android.support.v7.widget.CardView
                 android:id="@+id/fldGrpka114"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
+                style="@style/cardView"
                 android:visibility="gone"
                 tools:visibility="visible">
 
-                <!-- ka115  -->
-                <android.support.v7.widget.CardView
-                    android:id="@+id/cvka115"
-                    style="@style/cardView">
+                <LinearLayout style="@style/linearlayout_view">
 
-                    <LinearLayout style="@style/linearlayout_view">
+                    <TextView
+                        style="@style/i_textview"
+                        android:text="@string/ka115" />
 
-                        <TextView
-                            style="@style/i_textview"
-                            android:text="@string/ka115" />
+                    <LinearLayout
+                        android:id="@+id/fldGrpka115"
+                        style="@style/linearlayout_view"
+                        android:orientation="vertical">
 
-                        <LinearLayout
-                            android:id="@+id/fldGrpka115"
-                            style="@style/linearlayout_view"
-                            android:orientation="vertical">
+                        <CheckBox
+                            android:id="@+id/ka115a"
+                            style="@style/checkbox"
+                            android:text="@string/ka115a" />
 
-                            <CheckBox
-                                android:id="@+id/ka115a"
-                                style="@style/checkbox"
-                                android:text="@string/ka115a" />
+                        <CheckBox
+                            android:id="@+id/ka115b"
+                            style="@style/checkbox"
+                            android:text="@string/ka115b" />
 
-                            <CheckBox
-                                android:id="@+id/ka115b"
-                                style="@style/checkbox"
-                                android:text="@string/ka115b" />
+                        <CheckBox
+                            android:id="@+id/ka115c"
+                            style="@style/checkbox"
+                            android:text="@string/ka115c" />
 
-                            <CheckBox
-                                android:id="@+id/ka115c"
-                                style="@style/checkbox"
-                                android:text="@string/ka115c" />
+                        <CheckBox
+                            android:id="@+id/ka115d"
+                            style="@style/checkbox"
+                            android:text="@string/ka115d" />
 
-                            <CheckBox
-                                android:id="@+id/ka115d"
-                                style="@style/checkbox"
-                                android:text="@string/ka115d" />
+                        <CheckBox
+                            android:id="@+id/ka115e"
+                            style="@style/checkbox"
+                            android:text="@string/ka115e" />
 
-                            <CheckBox
-                                android:id="@+id/ka115e"
-                                style="@style/checkbox"
-                                android:text="@string/ka115e" />
+                        <CheckBox
+                            android:id="@+id/ka115f"
+                            style="@style/checkbox"
+                            android:text="@string/ka115f" />
 
-                            <CheckBox
-                                android:id="@+id/ka115f"
-                                style="@style/checkbox"
-                                android:text="@string/ka115f" />
+                        <CheckBox
+                            android:id="@+id/ka11596"
+                            style="@style/checkbox"
+                            android:text="@string/other" />
 
-                            <CheckBox
-                                android:id="@+id/ka11596"
-                                style="@style/checkbox"
-                                android:text="@string/other" />
-
-                            <EditText
-                                android:id="@+id/ka11596x"
-                                style="@style/EditTextAlpha"
-                                android:hint="@string/specify"
-                                android:text='@{ka11596.checked ? ka11596x.getText().toString : ""}'
-                                android:visibility='@{ka11596.checked ? View.VISIBLE : View.GONE}' />
-
-                        </LinearLayout>
+                        <EditText
+                            android:id="@+id/ka11596x"
+                            style="@style/EditTextAlpha"
+                            android:hint="@string/specify"
+                            android:text='@{ka11596.checked ? ka11596x.getText().toString : ""}'
+                            android:visibility='@{ka11596.checked ? View.VISIBLE : View.GONE}' />
 
                     </LinearLayout>
 
-                </android.support.v7.widget.CardView>
+                </LinearLayout>
 
-            </LinearLayout>
-
+            </android.support.v7.widget.CardView>
 
             <!-- ka116  -->
             <android.support.v7.widget.CardView
@@ -1162,685 +1152,762 @@
 
             </android.support.v7.widget.CardView>
 
-
-            <LinearLayout
+            <!-- ka118  -->
+            <android.support.v7.widget.CardView
                 android:id="@+id/fldGrpka117"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
+                style="@style/cardView"
                 android:visibility="gone"
                 tools:visibility="visible">
 
-                <!--ka118-->
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@color/colorPrimary"
-                    android:text="@string/ka118"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/white" />
+                <LinearLayout style="@style/linearlayout_view">
 
-                <EditText
-                    android:id="@+id/ka118"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:digits="0123456789"
-                    android:hint="@string/ka118a"
-                    android:inputType="number"
-                    android:maxLength="2" />
+                    <TextView
+                        style="@style/i_textview"
+                        android:text="@string/ka118" />
 
-            </LinearLayout>
+                    <EditText
+                        android:id="@+id/ka118"
+                        style="@style/EditTextNum"
+                        android:hint="@string/ka118a"
+                        android:maxLength="2" />
 
+                </LinearLayout>
 
-            <!--ka119-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_weight="1"
-                android:background="@color/pink_100"
-                android:text="@string/ka119"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/colorPrimaryDark" />
+            </android.support.v7.widget.CardView>
 
-            <RadioGroup
-                android:id="@+id/ka119"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_weight="1.5"
-                android:orientation="horizontal">
+            <!-- ka119  -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/cvka119"
+                style="@style/cardView">
 
-                <RadioButton
-                    android:id="@+id/ka119a"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:layout_weight="1"
-                    android:text="@string/yes" />
+                <LinearLayout style="@style/linearlayout_view">
 
-                <RadioButton
-                    android:id="@+id/ka119b"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:layout_weight="1"
-                    android:text="@string/no" />
+                    <TextView
+                        style="@style/i_textview"
+                        android:text="@string/ka119" />
 
-            </RadioGroup>
+                    <RadioGroup
+                        android:id="@+id/ka119"
+                        style="@style/radiogroups"
+                        android:orientation="horizontal">
 
+                        <RadioButton
+                            android:id="@+id/ka119a"
+                            style="@style/radiobuttons"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:text="@string/yes" />
 
-            <!--ka120-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_weight="1"
-                android:background="@color/pink_100"
-                android:text="@string/ka120"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/colorPrimaryDark" />
+                        <RadioButton
+                            android:id="@+id/ka119b"
+                            style="@style/radiobuttons"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:text="@string/no" />
 
-            <RadioGroup
-                android:id="@+id/ka120"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_weight="1.5"
-                android:orientation="horizontal">
+                    </RadioGroup>
 
-                <RadioButton
-                    android:id="@+id/ka120a"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:layout_weight="1"
-                    android:text="@string/yes" />
+                </LinearLayout>
 
-                <RadioButton
-                    android:id="@+id/ka120b"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:layout_weight="1"
-                    android:text="@string/no" />
+            </android.support.v7.widget.CardView>
 
-            </RadioGroup>
+            <!-- ka120  -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/cvka120"
+                style="@style/cardView">
 
+                <LinearLayout style="@style/linearlayout_view">
 
-            <!--ka121-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_weight="1"
-                android:background="@color/pink_100"
-                android:text="@string/ka121"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/colorPrimaryDark" />
+                    <TextView
+                        style="@style/i_textview"
+                        android:text="@string/ka120" />
 
-            <RadioGroup
-                android:id="@+id/ka121"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_weight="1.5"
-                android:orientation="horizontal">
+                    <RadioGroup
+                        android:id="@+id/ka120"
+                        style="@style/radiogroups"
+                        android:orientation="horizontal">
 
-                <RadioButton
-                    android:id="@+id/ka121a"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:layout_weight="1"
-                    android:text="@string/yes" />
+                        <RadioButton
+                            android:id="@+id/ka120a"
+                            style="@style/radiobuttons"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:text="@string/yes" />
 
-                <RadioButton
-                    android:id="@+id/ka121b"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:layout_weight="1"
-                    android:text="@string/no" />
+                        <RadioButton
+                            android:id="@+id/ka120b"
+                            style="@style/radiobuttons"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:text="@string/no" />
 
-            </RadioGroup>
+                    </RadioGroup>
 
+                </LinearLayout>
 
-            <!--ka122-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_weight="1"
-                android:background="@color/pink_100"
-                android:text="@string/ka122"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/colorPrimaryDark" />
+            </android.support.v7.widget.CardView>
 
-            <RadioGroup
-                android:id="@+id/ka122"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_weight="1.5"
-                android:orientation="horizontal">
+            <!-- ka121  -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/cvka121"
+                style="@style/cardView">
 
-                <RadioButton
-                    android:id="@+id/ka122a"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:layout_weight="1"
-                    android:text="@string/yes" />
+                <LinearLayout style="@style/linearlayout_view">
 
-                <RadioButton
-                    android:id="@+id/ka122b"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:layout_weight="1"
-                    android:text="@string/no" />
+                    <TextView
+                        style="@style/i_textview"
+                        android:text="@string/ka121" />
 
-            </RadioGroup>
+                    <RadioGroup
+                        android:id="@+id/ka121"
+                        style="@style/radiogroups"
+                        android:orientation="horizontal">
 
+                        <RadioButton
+                            android:id="@+id/ka121a"
+                            style="@style/radiobuttons"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:text="@string/yes" />
 
-            <LinearLayout
+                        <RadioButton
+                            android:id="@+id/ka121b"
+                            style="@style/radiobuttons"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:text="@string/no" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <!-- ka122  -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/cvka122"
+                style="@style/cardView">
+
+                <LinearLayout style="@style/linearlayout_view">
+
+                    <TextView
+                        style="@style/i_textview"
+                        android:text="@string/ka122" />
+
+                    <RadioGroup
+                        android:id="@+id/ka122"
+                        style="@style/radiogroups"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/ka122a"
+                            style="@style/radiobuttons"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:text="@string/yes" />
+
+                        <RadioButton
+                            android:id="@+id/ka122b"
+                            style="@style/radiobuttons"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:text="@string/no" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <!-- ka123  -->
+            <android.support.v7.widget.CardView
                 android:id="@+id/fldGrpka122"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
+                style="@style/cardView"
                 android:visibility="gone"
                 tools:visibility="visible">
 
-                <!--ka123-->
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@color/colorPrimary"
-                    android:text="@string/ka123"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/white" />
-
-                <EditText
-                    android:id="@+id/ka123a"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:hint="@string/ka123acr"
-                    android:inputType="numberDecimal"
-                    android:maxLength="4" />
-
-                <EditText
-                    android:id="@+id/ka123k"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:hint="@string/ka123can"
-                    android:inputType="numberDecimal"
-                    android:maxLength="4" />
-
-                <CheckBox
-                    android:id="@+id/ka12398"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/dkn" />
-
-            </LinearLayout>
-
-
-            <!--ka12401-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/ka124"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
-
-            <!--ka12401-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/ka12401"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
-
-            <EditText
-                android:id="@+id/ka12401"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:digits="0123456789"
-                android:hint="@string/ka12401"
-                android:inputType="number"
-                android:maxLength="2" />
-
-
-            <!--ka12402-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/ka12402"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
-
-            <EditText
-                android:id="@+id/ka12402"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:digits="0123456789"
-                android:hint="@string/ka12402"
-                android:inputType="number"
-                android:maxLength="2" />
-
-
-            <!--ka12403-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/ka12403"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
-
-            <EditText
-                android:id="@+id/ka12403"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:digits="0123456789"
-                android:hint="@string/ka12403"
-                android:inputType="number"
-                android:maxLength="2" />
-
-
-            <!--ka12404-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/ka12404"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
-
-            <EditText
-                android:id="@+id/ka12404"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:digits="0123456789"
-                android:hint="@string/ka12404"
-                android:inputType="number"
-                android:maxLength="2" />
-
-
-            <!--ka12405-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/ka12405"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
-
-            <EditText
-                android:id="@+id/ka12405"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:digits="0123456789"
-                android:hint="@string/ka12405"
-                android:inputType="number"
-                android:maxLength="2" />
-
-
-            <!--ka12406-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/ka12406"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
-
-            <EditText
-                android:id="@+id/ka12406"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:digits="0123456789"
-                android:hint="@string/ka12406"
-                android:inputType="number"
-                android:maxLength="2" />
-
-
-            <!--ka12407-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/ka12407"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
-
-            <EditText
-                android:id="@+id/ka12407"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:digits="0123456789"
-                android:hint="@string/ka12407"
-                android:inputType="number"
-                android:maxLength="2" />
-
-
-            <!--ka12408-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/ka12408"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
-
-            <EditText
-                android:id="@+id/ka12408"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:digits="0123456789"
-                android:hint="@string/ka12408"
-                android:inputType="number"
-                android:maxLength="2" />
-
-
-            <!--ka12409-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/ka12409"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
-
-            <EditText
-                android:id="@+id/ka12409"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:digits="0123456789"
-                android:hint="@string/ka12409"
-                android:inputType="number"
-                android:maxLength="2" />
-
-
-            <!--ka12410-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/ka12410"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
-
-            <EditText
-                android:id="@+id/ka12410"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:digits="0123456789"
-                android:hint="@string/ka12410"
-                android:inputType="number"
-                android:maxLength="2" />
-
-
-            <!--ka12411-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/ka12411"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
-
-            <EditText
-                android:id="@+id/ka12411"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:digits="0123456789"
-                android:hint="@string/ka12411"
-                android:inputType="number"
-                android:maxLength="2" />
-
-
-            <!--ka12412-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/ka12412"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
-
-            <EditText
-                android:id="@+id/ka12412"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:digits="0123456789"
-                android:hint="@string/ka12412"
-                android:inputType="number"
-                android:maxLength="2" />
-
-
-            <!--ka12413-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/ka12413"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
-
-            <EditText
-                android:id="@+id/ka12413"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:digits="0123456789"
-                android:hint="@string/ka12413"
-                android:inputType="number"
-                android:maxLength="2" />
-
-
-            <!--ka12414-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/ka12414"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
-
-            <EditText
-                android:id="@+id/ka12414"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:digits="0123456789"
-                android:hint="@string/ka12414"
-                android:inputType="number"
-                android:maxLength="2" />
-
-
-            <!--ka12415-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/ka12415"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
-
-            <EditText
-                android:id="@+id/ka12415"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:digits="0123456789"
-                android:hint="@string/ka12415"
-                android:inputType="number"
-                android:maxLength="2" />
-
-
-            <!--ka12416-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/ka12416"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
-
-            <EditText
-                android:id="@+id/ka12416"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:digits="0123456789"
-                android:hint="@string/ka12416"
-                android:inputType="number"
-                android:maxLength="2" />
-
-
-            <!--ka12417-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/ka12417"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
-
-            <EditText
-                android:id="@+id/ka12417"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:digits="0123456789"
-                android:hint="@string/ka12417"
-                android:inputType="number"
-                android:maxLength="2" />
-
-
-            <!--ka12418-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/ka12418"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
-
-            <EditText
-                android:id="@+id/ka12418"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:digits="0123456789"
-                android:hint="@string/ka12418"
-                android:inputType="number"
-                android:maxLength="2" />
-
-
-            <!--ka12419-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/ka12419"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
-
-            <EditText
-                android:id="@+id/ka12419"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:digits="0123456789"
-                android:hint="@string/ka12419"
-                android:inputType="number"
-                android:maxLength="2" />
-
-
-            <!--ka12420-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/ka12420"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
-
-            <EditText
-                android:id="@+id/ka12420"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:digits="0123456789"
-                android:hint="@string/ka12420"
-                android:inputType="number"
-                android:maxLength="2" />
-
-
-            <!--ka12496-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/other"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
-
-            <EditText
-                android:id="@+id/ka12496"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                android:hint="@string/other"
-                android:inputType="textCapWords"
-                android:maxLength="80" />
+                <LinearLayout style="@style/linearlayout_view">
+
+                    <!--ka123-->
+                    <TextView
+                        style="@style/i_textview"
+                        android:text="@string/ka123" />
+
+                    <LinearLayout style="@style/hlinearlayout">
+
+                        <EditText
+                            android:id="@+id/ka123a"
+                            style="@style/EditTextdeci"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:enabled='@{ka12398.checked ? false : true }'
+                            android:hint="@string/ka123acr"
+                            android:maxLength="4"
+                            android:text='@{ka12398.checked ? "" : ka123a.getText().toString }' />
+
+                        <EditText
+                            android:id="@+id/ka123k"
+                            style="@style/EditTextdeci"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:enabled='@{ka12398.checked ? false : true }'
+                            android:hint="@string/ka123can"
+                            android:maxLength="4"
+                            android:text='@{ka12398.checked ? "" : ka123k.getText().toString }' />
+
+                        <CheckBox
+                            android:id="@+id/ka12398"
+                            style="@style/checkbox"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:tag="-1"
+                            android:text="@string/dkn" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <!-- ka124  -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/cvka124"
+                style="@style/cardView">
+
+                <LinearLayout style="@style/linearlayout_view">
+
+                    <TextView
+                        style="@style/i_textview"
+                        android:text="@string/ka124" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <!-- ka12401  -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/cvka12401"
+                style="@style/cardView">
+
+                <LinearLayout style="@style/hlinearlayout">
+
+                    <TextView
+                        style="@style/textview"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/ka12401" />
+
+                    <EditText
+                        android:id="@+id/ka12401"
+                        style="@style/EditTextNum"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:hint="@string/times"
+                        android:maxLength="2" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <!-- ka12402  -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/cvka12402"
+                style="@style/cardView">
+
+                <LinearLayout style="@style/hlinearlayout">
+
+                    <TextView
+                        style="@style/textview"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/ka12402" />
+
+                    <EditText
+                        android:id="@+id/ka12402"
+                        style="@style/EditTextNum"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:hint="@string/times"
+                        android:maxLength="2" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <!-- ka12403  -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/cvka12403"
+                style="@style/cardView">
+
+                <LinearLayout style="@style/hlinearlayout">
+
+                    <TextView
+                        style="@style/textview"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/ka12403" />
+
+                    <EditText
+                        android:id="@+id/ka12403"
+                        style="@style/EditTextNum"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:hint="@string/times"
+                        android:maxLength="2" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <!-- ka12404  -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/cvka12404"
+                style="@style/cardView">
+
+                <LinearLayout style="@style/hlinearlayout">
+
+                    <TextView
+                        style="@style/textview"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/ka12404" />
+
+                    <EditText
+                        android:id="@+id/ka12404"
+                        style="@style/EditTextNum"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:hint="@string/times"
+                        android:maxLength="2" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <!-- ka12405  -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/cvka12405"
+                style="@style/cardView">
+
+                <LinearLayout style="@style/hlinearlayout">
+
+                    <TextView
+                        style="@style/textview"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/ka12405" />
+
+                    <EditText
+                        android:id="@+id/ka12405"
+                        style="@style/EditTextNum"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:hint="@string/times"
+                        android:maxLength="2" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <!-- ka12406  -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/cvka12406"
+                style="@style/cardView">
+
+                <LinearLayout style="@style/hlinearlayout">
+
+                    <TextView
+                        style="@style/textview"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/ka12406" />
+
+                    <EditText
+                        android:id="@+id/ka12406"
+                        style="@style/EditTextNum"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:hint="@string/times"
+                        android:maxLength="2" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <!-- ka12407  -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/cvka12407"
+                style="@style/cardView">
+
+                <LinearLayout style="@style/hlinearlayout">
+
+                    <TextView
+                        style="@style/textview"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/ka12407" />
+
+                    <EditText
+                        android:id="@+id/ka12407"
+                        style="@style/EditTextNum"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:hint="@string/times"
+                        android:maxLength="2" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <!-- ka12408  -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/cvka12408"
+                style="@style/cardView">
+
+                <LinearLayout style="@style/hlinearlayout">
+
+                    <TextView
+                        style="@style/textview"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/ka12408" />
+
+                    <EditText
+                        android:id="@+id/ka12408"
+                        style="@style/EditTextNum"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:hint="@string/times"
+                        android:maxLength="2" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <!-- ka12409  -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/cvka12409"
+                style="@style/cardView">
+
+                <LinearLayout style="@style/hlinearlayout">
+
+                    <TextView
+                        style="@style/textview"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/ka12409" />
+
+                    <EditText
+                        android:id="@+id/ka12409"
+                        style="@style/EditTextNum"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:hint="@string/times"
+                        android:maxLength="2" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <!-- ka12410  -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/cvka12410"
+                style="@style/cardView">
+
+                <LinearLayout style="@style/hlinearlayout">
+
+                    <TextView
+                        style="@style/textview"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/ka12410" />
+
+                    <EditText
+                        android:id="@+id/ka12410"
+                        style="@style/EditTextNum"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:hint="@string/times"
+                        android:maxLength="2" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <!-- ka12411  -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/cvka12411"
+                style="@style/cardView">
+
+                <LinearLayout style="@style/hlinearlayout">
+
+                    <TextView
+                        style="@style/textview"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/ka12411" />
+
+                    <EditText
+                        android:id="@+id/ka12411"
+                        style="@style/EditTextNum"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:hint="@string/times"
+                        android:maxLength="2" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <!-- ka12412  -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/cvka12412"
+                style="@style/cardView">
+
+                <LinearLayout style="@style/hlinearlayout">
+
+                    <TextView
+                        style="@style/textview"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/ka12412" />
+
+                    <EditText
+                        android:id="@+id/ka12412"
+                        style="@style/EditTextNum"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:hint="@string/times"
+                        android:maxLength="2" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <!-- ka12413  -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/cvka12413"
+                style="@style/cardView">
+
+                <LinearLayout style="@style/hlinearlayout">
+
+                    <TextView
+                        style="@style/textview"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/ka12413" />
+
+                    <EditText
+                        android:id="@+id/ka12413"
+                        style="@style/EditTextNum"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:hint="@string/times"
+                        android:maxLength="2" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <!-- ka12414  -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/cvka12414"
+                style="@style/cardView">
+
+                <LinearLayout style="@style/hlinearlayout">
+
+                    <TextView
+                        style="@style/textview"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/ka12414" />
+
+                    <EditText
+                        android:id="@+id/ka12414"
+                        style="@style/EditTextNum"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:hint="@string/times"
+                        android:maxLength="2" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <!-- ka12415  -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/cvka12415"
+                style="@style/cardView">
+
+                <LinearLayout style="@style/hlinearlayout">
+
+                    <TextView
+                        style="@style/textview"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/ka12415" />
+
+                    <EditText
+                        android:id="@+id/ka12415"
+                        style="@style/EditTextNum"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:hint="@string/times"
+                        android:maxLength="2" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <!-- ka12416  -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/cvka12416"
+                style="@style/cardView">
+
+                <LinearLayout style="@style/hlinearlayout">
+
+                    <TextView
+                        style="@style/textview"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/ka12416" />
+
+                    <EditText
+                        android:id="@+id/ka12416"
+                        style="@style/EditTextNum"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:hint="@string/times"
+                        android:maxLength="2" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <!-- ka12417  -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/cvka12417"
+                style="@style/cardView">
+
+                <LinearLayout style="@style/hlinearlayout">
+
+                    <TextView
+                        style="@style/textview"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/ka12417" />
+
+                    <EditText
+                        android:id="@+id/ka12417"
+                        style="@style/EditTextNum"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:hint="@string/times"
+                        android:maxLength="2" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <!-- ka12418  -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/cvka12418"
+                style="@style/cardView">
+
+                <LinearLayout style="@style/hlinearlayout">
+
+                    <TextView
+                        style="@style/textview"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/ka12418" />
+
+                    <EditText
+                        android:id="@+id/ka12418"
+                        style="@style/EditTextNum"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:hint="@string/times"
+                        android:maxLength="2" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <!-- ka12419  -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/cvka12419"
+                style="@style/cardView">
+
+                <LinearLayout style="@style/hlinearlayout">
+
+                    <TextView
+                        style="@style/textview"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/ka12419" />
+
+                    <EditText
+                        android:id="@+id/ka12419"
+                        style="@style/EditTextNum"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:hint="@string/times"
+                        android:maxLength="2" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <!-- ka12420  -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/cvka12420"
+                style="@style/cardView">
+
+                <LinearLayout style="@style/hlinearlayout">
+
+                    <TextView
+                        style="@style/textview"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/ka12420" />
+
+                    <EditText
+                        android:id="@+id/ka12420"
+                        style="@style/EditTextNum"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:hint="@string/times"
+                        android:maxLength="2" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <!-- ka12496  -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/cvka12496"
+                style="@style/cardView">
+
+                <LinearLayout style="@style/hlinearlayout">
+
+                    <TextView
+                        style="@style/textview"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/other" />
+
+                    <EditText
+                        android:id="@+id/ka12496"
+                        style="@style/EditTextAlpha"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:hint="@string/specify"
+                        android:maxLength="80" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
 
 
             <!--  = = = = =  END OF FORM FIELDS  = = = = = -->
@@ -1848,7 +1915,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
-                android:layout_marginTop="80dp"
+                android:layout_marginTop="40dp"
                 android:orientation="horizontal">
 
                 <Button
