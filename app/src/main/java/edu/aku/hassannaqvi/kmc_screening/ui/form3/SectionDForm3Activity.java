@@ -37,29 +37,30 @@ public class SectionDForm3Activity extends AppCompatActivity {
         setupListeners();
 
 
-        /*if (followupNo == 10) {
-            bi.fldGrpSecD03a.setVisibility(View.VISIBLE);
+        if (followupNo == 6) {
+            bi.fldGrpSecD02a.setVisibility(View.VISIBLE);
         } else {
-            ClearClass.ClearAllFields(bi.fldGrpSecD03a, null);
-            bi.fldGrpSecD03a.setVisibility(View.GONE);
-        }*/
+            ClearClass.ClearAllFields(bi.fldGrpSecD02a, null);
+            bi.fldGrpSecD02a.setVisibility(View.GONE);
+        }
 
     }
 
     private void setupListeners() {
 
-        Boolean day1Flag = getIntent().getBooleanExtra("day1", false);
+        /*Boolean day1Flag = getIntent().getBooleanExtra("day1", false);
         if (!day1Flag) {
             bi.fldGrpSecD02a.setVisibility(View.GONE);
 
-        }
+        }*/
 
-        if (followupNo != 6) {
+        /*if (followupNo != 6) {
             bi.fldGrpSecD02a.setVisibility(View.GONE);
-        }
-        if (followupNo == 11 || followupNo == 12) {
+        }*/
+
+        /*if (followupNo == 11 || followupNo == 12) {
             bi.only14120.setVisibility(View.GONE);
-        }
+        }*/
 
         bi.kf3d01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override

@@ -22,6 +22,7 @@ import edu.aku.hassannaqvi.kmc_screening.validation.ClearClass;
 import edu.aku.hassannaqvi.kmc_screening.validation.ValidatorClass;
 
 import static edu.aku.hassannaqvi.kmc_screening.core.MainApp.fc;
+import static edu.aku.hassannaqvi.kmc_screening.ui.SectionInfoKmcActivity.followupNo;
 
 public class SectionEForm3Activity extends AppCompatActivity {
 
@@ -36,6 +37,21 @@ public class SectionEForm3Activity extends AppCompatActivity {
 
         this.setTitle(R.string.f3_hE);
         setupListeners();
+
+        if (followupNo == 6 || followupNo == 8) {
+            bi.fldGrpSecE02e.setVisibility(View.VISIBLE);
+        } else {
+            ClearClass.ClearAllFields(bi.fldGrpSecE02e, null);
+            bi.fldGrpSecE02e.setVisibility(View.GONE);
+        }
+
+        if (followupNo == 10 || followupNo == 11 || followupNo == 12) {
+            bi.fldGrpSecE02d.setVisibility(View.GONE);
+            ClearClass.ClearAllFields(bi.fldGrpSecE02d, null);
+        } else {
+            bi.fldGrpSecE02d.setVisibility(View.VISIBLE);
+        }
+
     }
 
     private void setupListeners() {

@@ -151,7 +151,7 @@
                     <LinearLayout style="@style/linearlayout_view">
 
                         <TextView
-                            style="@style/textview_heading"
+                            style="@style/i_textview"
                             android:text="@string/kf3g05" />
 
                         <TextView
@@ -159,7 +159,7 @@
                             android:text="@string/kf3g05h1" />
 
                         <TextView
-                            style="@style/i_textview"
+                            style="@style/textview_heading"
                             android:text="@string/kf3g05h2" />
 
                         <RadioGroup
@@ -250,11 +250,15 @@
                                 style="@style/i_radiobutton"
                                 android:text="@string/dkn" />
 
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/kf3g062x"
-                                style="@style/EditText"
-                                android:hint="@string/other"
+                                style="@style/EditText_number"
+                                android:hint="@string/time"
                                 android:tag="kf3g062a"
+                                android:maxLength="2"
+                                app:maxValue="20"
+                                app:minValue="1"
+                                app:type="range"
                                 android:text='@{kf3g062a.checked ? kf3g062x.getText.toString : "" }'
                                 android:visibility='@{kf3g062a.checked ? View.VISIBLE : View.GONE }' />
 
@@ -283,11 +287,15 @@
                                 style="@style/i_radiobutton"
                                 android:text="@string/dkn" />
 
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/kf3g063x"
                                 style="@style/EditText"
-                                android:hint="@string/other"
+                                android:hint="@string/time"
                                 android:tag="kf3g063a"
+                                android:maxLength="2"
+                                app:maxValue="20"
+                                app:minValue="1"
+                                app:type="range"
                                 android:text='@{kf3g063a.checked ? kf3g063x.getText.toString : "" }'
                                 android:visibility='@{kf3g063a.checked ? View.VISIBLE : View.GONE }' />
 
@@ -366,11 +374,15 @@
                                 style="@style/i_radiobutton"
                                 android:text="@string/dkn" />
 
-                            <EditText
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/kf3g066x"
                                 style="@style/EditText"
-                                android:hint="@string/other"
+                                android:hint="@string/time"
                                 android:tag="kf3g066a"
+                                android:maxLength="2"
+                                app:maxValue="20"
+                                app:minValue="1"
+                                app:type="range"
                                 android:text='@{kf3g066a.checked ? kf3g066x.getText.toString : "" }'
                                 android:visibility='@{kf3g066a.checked ? View.VISIBLE : View.GONE }' />
 
