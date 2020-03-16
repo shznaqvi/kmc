@@ -12,7 +12,6 @@
             type="edu.aku.hassannaqvi.kmc_screening.ui.SectionA1Activity" />
     </data>
 
-
     <ScrollView
         style="@style/i_scrollview"
         android:layoutDirection="rtl"
