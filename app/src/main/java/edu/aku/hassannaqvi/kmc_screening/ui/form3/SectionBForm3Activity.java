@@ -15,13 +15,11 @@ import edu.aku.hassannaqvi.kmc_screening.R;
 import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc_screening.core.MainApp;
 import edu.aku.hassannaqvi.kmc_screening.databinding.ActivitySectionBForm3Binding;
-import edu.aku.hassannaqvi.kmc_screening.ui.SectionInfoKmcActivity;
 import edu.aku.hassannaqvi.kmc_screening.ui.other.EndingActivity;
 import edu.aku.hassannaqvi.kmc_screening.validation.ClearClass;
 import edu.aku.hassannaqvi.kmc_screening.validation.ValidatorClass;
 
 import static edu.aku.hassannaqvi.kmc_screening.core.MainApp.fc;
-import static edu.aku.hassannaqvi.kmc_screening.ui.SectionInfoKmcActivity.followupNo;
 
 public class SectionBForm3Activity extends AppCompatActivity {
 
@@ -73,7 +71,6 @@ public class SectionBForm3Activity extends AppCompatActivity {
         });
 
     }
-
 
     private void SaveDraft() throws JSONException {
 
@@ -140,11 +137,9 @@ public class SectionBForm3Activity extends AppCompatActivity {
 
     }
 
-
     private boolean formValidation() {
         return ValidatorClass.EmptyCheckingContainer(this, bi.fldGrpSecB02);
     }
-
 
     private boolean UpdateDB() {
 
