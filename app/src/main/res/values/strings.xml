@@ -988,6 +988,19 @@
     <string name="kf1a8c">غير تحقيقي مرڪز صحت</string>
     <string name="kf1a8cx">جيڪڏهن جواب 3 آهي ته صحت مرڪز جو نالو لکو</string>
 
+    <string name="kf1a9">ويم جو نتيجو؟</string>
+    <string name="kf1a9a">زنده پيدائش</string>
+    <string name="kf1a9b">ٻار ضايع ٿي ويو</string>
+    <string name="kf1a9c">ٻار ڪِري پيو</string>
+    <string name="kf1a9d">مئل ٻار ڄائو</string>
+    <string name="kf1a9e">جڙوه ٻارن جي زنده پيدائش</string>
+    <string name="kf1a9f">جڙوه ٻارن جي مرده پيدائش</string>
+    <string name="kf1a9g">.هڪ ٻار جي مرده پيدائش ۽ هڪ ٻار جي زنده پيدائش</string>
+
+    <string name="kf1a10">ٻار جي موجوده حيثيت؟</string>
+    <string name="kf1a10a">زنده</string>
+    <string name="kf1a10b">مرده</string>
+
     <string name="kf2a1"> مڪمل رهائشي پتو. </string>
     <string name="kf2a2"> گهر جي سربراه جو نالو </string>
     <string name="kf2a3"> رابطي جو نمبر </string>

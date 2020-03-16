@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -259,7 +258,7 @@
                                 app:maxValue="20"
                                 app:minValue="1"
                                 app:type="range"
-                                android:text='@{kf3g062a.checked ? kf3g062x.getText().toString() : "" }'
+                                android:text='@{kf3g062a.checked ? kf3g062x.getText().toString : "" }'
                                 android:visibility='@{kf3g062a.checked ? View.VISIBLE : View.GONE }' />
 
                         </RadioGroup>
@@ -296,7 +295,7 @@
                                 app:maxValue="20"
                                 app:minValue="1"
                                 app:type="range"
-                                android:text='@{kf3g063a.checked ? kf3g063x.getText().toString() : "" }'
+                                android:text='@{kf3g063a.checked ? kf3g063x.getText().toString : "" }'
                                 android:visibility='@{kf3g063a.checked ? View.VISIBLE : View.GONE }' />
 
                         </RadioGroup>
@@ -383,7 +382,7 @@
                                 app:maxValue="20"
                                 app:minValue="1"
                                 app:type="range"
-                                android:text='@{kf3g066a.checked ? kf3g066x.getText().toString() : "" }'
+                                android:text='@{kf3g066a.checked ? kf3g066x.getText().toString : "" }'
                                 android:visibility='@{kf3g066a.checked ? View.VISIBLE : View.GONE }' />
 
                         </RadioGroup>
@@ -967,7 +966,7 @@
                             android:id="@+id/kf3g09"
                             style="@style/EditText_number"
                             android:enabled="@{kf3g09a.checked ? false : true}"
-                            android:text='@{kf3g09a.checked ? "" : kf3g09.getText().toString()}'
+                            android:text='@{kf3g09a.checked ? "" : kf3g09.getText().toString}'
                             android:hint="@string/kf3g09"
                             android:maxLength="2"
                             app:maxValue="23"
@@ -1065,7 +1064,7 @@
                                     style="@style/EditText"
                                     android:hint="@string/other"
                                     android:tag="kf3g1196"
-                                    android:text='@{kf3g1196.checked ? kf3g1196x.getText().toString() : "" }'
+                                    android:text='@{kf3g1196.checked ? kf3g1196x.getText().toString : "" }'
                                     android:visibility='@{kf3g1196.checked ? View.VISIBLE : View.GONE }' />
 
                             </RadioGroup>
@@ -1092,17 +1091,17 @@
                                 <RadioButton
                                     android:id="@+id/kf3g12a"
                                     style="@style/i_radiobutton"
-                                    android:text="@string/kf3g11a" />
+                                    android:text="@string/kf3g12a" />
 
                                 <RadioButton
                                     android:id="@+id/kf3g12b"
                                     style="@style/i_radiobutton"
-                                    android:text="@string/kf3g11b" />
+                                    android:text="@string/kf3g12b" />
 
                                 <RadioButton
                                     android:id="@+id/kf3g12c"
                                     style="@style/i_radiobutton"
-                                    android:text="@string/kf3g11c" />
+                                    android:text="@string/kf3g12c" />
 
                                 <RadioButton
                                     android:id="@+id/kf3g1296"
@@ -1114,7 +1113,7 @@
                                     style="@style/EditText"
                                     android:hint="@string/other"
                                     android:tag="kf3g1296"
-                                    android:text='@{kf3g1296.checked ? kf3g1296x.getText().toString() : "" }'
+                                    android:text='@{kf3g1296.checked ? kf3g1296x.getText().toString : "" }'
                                     android:visibility='@{kf3g1296.checked ? View.VISIBLE : View.GONE }' />
 
                             </RadioGroup>
