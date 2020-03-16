@@ -78,11 +78,11 @@
     <style name="textviews">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_gravity">center</item>
         <item name="android:background">@color/colorPrimary</item>
         <item name="android:textAppearance">?android:attr/textAppearanceSmall</item>
         <item name="android:textColor">@android:color/white</item>
-        <item name="android:textSize">16sp</item>
+        <item name="android:textSize">20sp</item>
     </style>
 
     <style name="textview_heading">
@@ -375,6 +375,20 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="button" parent="android:Widget.Material.Light.Button">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:radius">2dp</item>
+        <item name="android:elevation">1dp</item>
+        <item name="android:background">@color/colorPrimaryDark</item>
+    </style>
+
     <style name="BackgroundStyle" parent="android:Widget.Material.Light.ScrollView">
         <item name="android:background">@color/white</item>
         <item name="android:padding">10dp</item>
@@ -398,8 +412,17 @@
         <item name="android:background">@color/white</item>
         <item name="android:paddingRight">15dp</item>
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
         <item name="android:padding">10dp</item>
+        <item name="android:layout_margin">10dp</item>
+    </style>
+    ​
+
+    <style name="spinners" parent="Widget.AppCompat.Spinner">
+        <item name="android:background">@drawable/spinner_style</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">15dp</item>
         <item name="android:layout_margin">10dp</item>
     </style>
 

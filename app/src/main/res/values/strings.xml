@@ -57,6 +57,7 @@
     <string name="other"> ٻيو ڪجھ </string>
     <string name="noone"> ڪو به نه </string>
     <string name="neverb"> نه ونهجاريو </string>
+    <string name="name"> نالو </string>
     <!--      CBT Vars       !-->
     <string name="endForm">اختتام</string>
     <string name="section_A">  Module A: SOCIO DEMOGRAPHIC INFORMATION (KMC-2018-2020) </string>
