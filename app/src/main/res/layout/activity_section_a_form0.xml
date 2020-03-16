@@ -30,7 +30,7 @@
             <!--  Taluka Spinner -->
             <android.support.v7.widget.CardView
                 android:id="@+id/cvcrataluka"
-                style="@style/cardView">
+                style="@style/cardViews">
 
                 <LinearLayout style="@style/hlinearlayout">
 
@@ -53,12 +53,12 @@
             <!--  Union Council UC Spinner -->
             <android.support.v7.widget.CardView
                 android:id="@+id/cvcrauc"
-                style="@style/cardView">
+                style="@style/cardViews">
 
                 <LinearLayout style="@style/hlinearlayout">
 
                     <TextView
-                        style="@style/i_textview"
+                        style="@style/textviews"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:text="@string/cruc" />
@@ -81,7 +81,7 @@
                 <LinearLayout style="@style/hlinearlayout">
 
                     <TextView
-                        style="@style/i_textview"
+                        style="@style/textviews"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:text="@string/crvillage" />
@@ -156,7 +156,7 @@
                 <LinearLayout style="@style/hlinearlayout">
 
                     <TextView
-                        style="@style/i_textview"
+                        style="@style/textviews"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:text="@string/kapr01" />
@@ -188,7 +188,7 @@
                 <LinearLayout style="@style/hlinearlayout">
 
                     <TextView
-                        style="@style/i_textview"
+                        style="@style/textviews"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:text="@string/kapr03" />
@@ -203,6 +203,7 @@
                 </LinearLayout>
 
             </android.support.v7.widget.CardView>
+
 
             <LinearLayout
                 android:id="@+id/fldGrpcra04"
@@ -220,179 +221,266 @@
                     android:visibility="gone"
                     tools:visibility="visible">
 
-                    <TextView
-                        style="@style/i_textview"
-                        android:text="@string/kapr04" />
 
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/kapr04"
-                        style="@style/EditText_number"
-                        android:hint="@string/kapr04"
-                        android:maxLength="2"
-                        app:maxValue="49"
-                        app:minValue="15"
-                        app:type="range" />
+                    <!--kapr04-->
+                    <android.support.v7.widget.CardView style="@style/cardView">
 
-                    <TextView
-                        style="@style/i_textview"
-                        android:text="@string/kapr05" />
+                        <LinearLayout style="@style/hlinearlayout">
 
-                    <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                        android:id="@+id/kapr05"
-                        style="@style/textInput"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="dd/MM/yyyy"
-                        app:dateFormat="dd-MM-yyyy"
-                        app:minDate="CR_DATE" />
+                            <TextView
+                                style="@style/textviews"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:text="@string/kapr04" />
 
-                    <TextView
-                        style="@style/i_textview"
-                        android:text="@string/kapr06" />
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/kapr04"
+                                style="@style/EditTextNum"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:hint="@string/age"
+                                android:maxLength="2"
+                                app:maxValue="49"
+                                app:minValue="15"
+                                app:type="range" />
 
-                    <EditText
-                        android:id="@+id/kapr06"
-                        style="@style/textInput"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                        android:hint="@string/kapr06"
-                        android:inputType="text" />
+                        </LinearLayout>
 
-                    <TextView
-                        style="@style/i_textview"
-                        android:text="@string/kapr07" />
+                    </android.support.v7.widget.CardView>
 
-                    <EditText
-                        android:id="@+id/kapr07"
-                        style="@style/textInput"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                        android:hint="@string/kapr07"
-                        android:inputType="text" />
 
-                    <TextView
-                        style="@style/i_textview"
-                        android:text="@string/kapr08" />
+                    <!--kapr05-->
+                    <android.support.v7.widget.CardView style="@style/cardView">
 
-                    <EditText
-                        android:id="@+id/kapr08"
-                        style="@style/textInput"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                        android:hint="@string/kapr08"
-                        android:inputType="text" />
+                        <LinearLayout style="@style/hlinearlayout">
 
-                    <TextView
-                        style="@style/i_textview"
-                        android:text="@string/kapr09" />
+                            <TextView
+                                style="@style/textviews"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:text="@string/kapr05" />
 
-                    <EditText
-                        android:id="@+id/kapr09"
-                        style="@style/textInput"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                        android:hint="@string/kapr09"
-                        android:inputType="text" />
+                            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                                android:id="@+id/kapr05"
+                                style="@style/EditTextNum"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:hint="dd/MM/yyyy"
+                                app:dateFormat="dd-MM-yyyy"
+                                app:minDate="CR_DATE" />
 
-                    <TextView
-                        style="@style/i_textview"
-                        android:text="@string/kapr10" />
+                        </LinearLayout>
 
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/kapr10"
-                        style="@style/EditText_number"
-                        android:hint="###########"
-                        android:maxLength="11"
-                        app:defaultValue=""
-                        app:pattern="[0-9]{11,11}"
-                        app:type="equal" />
+                    </android.support.v7.widget.CardView>
 
-                    <TextView
-                        style="@style/i_textview"
-                        android:text="@string/kapr11" />
 
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/kapr11"
-                        style="@style/EditText_number"
-                        android:hint="@string/kapr11"
-                        android:maxLength="2"
-                        app:maxValue="50"
-                        app:minValue="2"
-                        app:type="range" />
+                    <!--kapr06-->
+                    <android.support.v7.widget.CardView style="@style/cardView">
+
+                        <LinearLayout style="@style/hlinearlayout">
+
+                            <TextView
+                                style="@style/textviews"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:text="@string/kapr06" />
+
+                            <EditText
+                                android:id="@+id/kapr06"
+                                style="@style/EditTextAlpha"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:hint="@string/name" />
+
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+
+                    <!--kapr07-->
+                    <android.support.v7.widget.CardView style="@style/cardView">
+
+                        <LinearLayout style="@style/hlinearlayout">
+
+                            <TextView
+                                style="@style/textviews"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:text="@string/kapr07" />
+
+                            <EditText
+                                android:id="@+id/kapr07"
+                                style="@style/EditTextAlpha"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:hint="@string/kapr07" />
+
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+
+                    <!--kapr08-->
+                    <android.support.v7.widget.CardView style="@style/cardView">
+
+                        <LinearLayout style="@style/hlinearlayout">
+
+                            <TextView
+                                style="@style/textviews"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:text="@string/kapr08" />
+
+                            <EditText
+                                android:id="@+id/kapr08"
+                                style="@style/EditTextAlpha"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:hint="@string/kapr08" />
+
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+
+                    <!--kapr09-->
+                    <android.support.v7.widget.CardView style="@style/cardView">
+
+                        <LinearLayout style="@style/hlinearlayout">
+
+                            <TextView
+                                style="@style/textviews"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:text="@string/kapr09" />
+
+                            <EditText
+                                android:id="@+id/kapr09"
+                                style="@style/EditTextAlpha"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:hint="@string/name" />
+
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+
+                    <!--kapr10-->
+                    <android.support.v7.widget.CardView style="@style/cardView">
+
+                        <LinearLayout style="@style/hlinearlayout">
+
+                            <TextView
+                                style="@style/textviews"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:text="@string/kapr10" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/kapr10"
+                                style="@style/EditTextNum"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:hint="###########"
+                                android:maxLength="11"
+                                app:defaultValue=""
+                                app:pattern="[0-9]{11,11}"
+                                app:type="equal" />
+
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+
+                    <!--kapr11-->
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cvkapr11"
+                        style="@style/cardView">
+
+                        <LinearLayout style="@style/hlinearlayout">
+
+                            <TextView
+                                style="@style/textviews"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:text="@string/kapr11" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/kapr11"
+                                style="@style/EditTextNum"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:hint="@string/times"
+                                android:maxLength="2"
+                                app:maxValue="50"
+                                app:minValue="2"
+                                app:type="range" />
+
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
 
                 </LinearLayout>
 
-                <TextView
-                    style="@style/i_textview"
-                    android:text="@string/kapr12" />
 
-                <RadioGroup
-                    android:id="@+id/kapr12"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                <!--kapr12-->
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cvkapr12"
+                    style="@style/cardView">
 
-                    <RadioButton
-                        android:id="@+id/kapr12a"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:layout_weight="1"
-                        android:text="@string/kapr12a" />
+                    <LinearLayout style="@style/linearlayout_view">
 
-                    <RadioButton
-                        android:id="@+id/kapr12b"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:layout_weight="1"
-                        android:text="@string/kapr12b" />
+                        <TextView
+                            style="@style/textviews"
+                            android:text="@string/kapr12" />
 
-                    <RadioButton
-                        android:id="@+id/kapr12c"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:layout_weight="1"
-                        android:text="@string/kapr12c" />
+                        <RadioGroup
+                            android:id="@+id/kapr12"
+                            style="@style/radiogroups">
 
-                    <RadioButton
-                        android:id="@+id/kapr12d"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:layout_weight="1"
-                        android:text="@string/kapr12d" />
+                            <RadioButton
+                                android:id="@+id/kapr12a"
+                                style="@style/radiobuttons"
+                                android:text="@string/kapr12a" />
 
-                    <RadioButton
-                        android:id="@+id/kapr12e"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:layout_weight="1"
-                        android:text="@string/kapr12e" />
+                            <RadioButton
+                                android:id="@+id/kapr12b"
+                                style="@style/radiobuttons"
+                                android:text="@string/kapr12b" />
 
-                    <RadioButton
-                        android:id="@+id/kapr12f"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:layout_weight="1"
-                        android:text="@string/kapr12f" />
+                            <RadioButton
+                                android:id="@+id/kapr12c"
+                                style="@style/radiobuttons"
+                                android:text="@string/kapr12c" />
 
-                    <RadioButton
-                        android:id="@+id/kapr12g"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:layout_weight="1"
-                        android:text="@string/kapr12g" />
+                            <RadioButton
+                                android:id="@+id/kapr12d"
+                                style="@style/radiobuttons"
+                                android:text="@string/kapr12d" />
 
-                </RadioGroup>
+                            <RadioButton
+                                android:id="@+id/kapr12e"
+                                style="@style/radiobuttons"
+                                android:text="@string/kapr12e" />
+
+                            <RadioButton
+                                android:id="@+id/kapr12f"
+                                style="@style/radiobuttons"
+                                android:text="@string/kapr12f" />
+
+                            <RadioButton
+                                android:id="@+id/kapr12g"
+                                style="@style/radiobuttons"
+                                android:text="@string/kapr12g" />
+
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -400,87 +488,92 @@
                     android:orientation="vertical"
                     android:visibility='@{kapr12b.checked? View.VISIBLE : View.GONE}'>
 
-                    <TextView
-                        style="@style/i_textview"
-                        android:text="@string/kapr13" />
 
-                    <RadioGroup
-                        android:id="@+id/kapr13"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                    <!--kapr13-->
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cvkapr13"
+                        style="@style/cardView">
 
-                        <RadioButton
-                            android:id="@+id/kapr13a"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="1dp"
-                            android:layout_weight="1"
-                            android:text="@string/kapr13a" />
+                        <LinearLayout style="@style/linearlayout_view">
 
-                        <RadioButton
-                            android:id="@+id/kapr13b"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="1dp"
-                            android:layout_weight="1"
-                            android:text="@string/kapr13b" />
+                            <TextView
+                                style="@style/textviews"
+                                android:text="@string/kapr13" />
 
-                        <RadioButton
-                            android:id="@+id/kapr13c"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="1dp"
-                            android:layout_weight="1"
-                            android:text="@string/kapr13c" />
+                            <RadioGroup
+                                android:id="@+id/kapr13"
+                                style="@style/radiogroups">
 
-                        <RadioButton
-                            android:id="@+id/kapr13d"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="1dp"
-                            android:layout_weight="1"
-                            android:text="@string/kapr13d" />
+                                <RadioButton
+                                    android:id="@+id/kapr13a"
+                                    style="@style/radiobuttons"
+                                    android:text="@string/kapr13a" />
 
-                        <RadioButton
-                            android:id="@+id/kapr13e"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="1dp"
-                            android:layout_weight="1"
-                            android:text="@string/kapr13e" />
+                                <RadioButton
+                                    android:id="@+id/kapr13b"
+                                    style="@style/radiobuttons"
+                                    android:text="@string/kapr13b" />
 
-                        <RadioButton
-                            android:id="@+id/kapr13f"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="1dp"
-                            android:layout_weight="1"
-                            android:text="@string/kapr13f" />
+                                <RadioButton
+                                    android:id="@+id/kapr13c"
+                                    style="@style/radiobuttons"
+                                    android:text="@string/kapr13c" />
 
-                        <RadioButton
-                            android:id="@+id/kapr13g"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="1dp"
-                            android:layout_weight="1"
-                            android:text="@string/kapr13g" />
+                                <RadioButton
+                                    android:id="@+id/kapr13d"
+                                    style="@style/radiobuttons"
+                                    android:text="@string/kapr13d" />
 
-                    </RadioGroup>
+                                <RadioButton
+                                    android:id="@+id/kapr13e"
+                                    style="@style/radiobuttons"
+                                    android:text="@string/kapr13e" />
 
-                    <TextView
-                        style="@style/i_textview"
-                        android:text="@string/kapr14" />
+                                <RadioButton
+                                    android:id="@+id/kapr13f"
+                                    style="@style/radiobuttons"
+                                    android:text="@string/kapr13f" />
 
-                    <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                        android:id="@+id/kapr14"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="dd-MM-yyyy"
-                        app:dateFormat="dd-MM-yyyy"
-                        app:maxDate="CR_DATE" />
+                                <RadioButton
+                                    android:id="@+id/kapr13g"
+                                    style="@style/radiobuttons"
+                                    android:text="@string/kapr13g" />
+
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+
+                    <!--kapr14-->
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cvkapr14"
+                        style="@style/cardView">
+
+                        <LinearLayout style="@style/hlinearlayout">
+
+                            <TextView
+                                style="@style/textviews"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:text="@string/kapr14" />
+
+                            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                                android:id="@+id/kapr14"
+                                style="@style/EditTextNum"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:hint="dd-MM-yyyy"
+                                app:dateFormat="dd-MM-yyyy"
+                                app:maxDate="CR_DATE" />
+
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
 
                 </LinearLayout>
+
 
                 <LinearLayout
                     android:id="@+id/fldGrpbtn"
@@ -517,8 +610,11 @@
 
                 </LinearLayout>
 
+
             </LinearLayout>
 
         </LinearLayout>
+
     </ScrollView>
+
 </layout>
