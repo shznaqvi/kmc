@@ -34,13 +34,17 @@ public class SectionFForm3Activity extends AppCompatActivity {
 
         this.setTitle(R.string.f3_hF);
         setupListener();
-    }
-
-    private void setupListener() {
 
         if (followupNo == 8) {
             bi.fldGrpSecF02.setVisibility(View.VISIBLE);
+        } else {
+            ClearClass.ClearAllFields(bi.fldGrpSecF02, null);
+            bi.fldGrpSecF02.setVisibility(View.GONE);
         }
+
+    }
+
+    private void setupListener() {
 
         bi.kf3f03.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
