@@ -44,6 +44,13 @@ public class SectionDForm3Activity extends AppCompatActivity {
             bi.fldGrpSecD02a.setVisibility(View.GONE);
         }
 
+        if (followupNo == 11 || followupNo == 12) {
+            bi.only14120.setVisibility(View.GONE);
+            ClearClass.ClearAllFields(bi.only14120, null);
+        } else {
+            bi.only14120.setVisibility(View.VISIBLE);
+        }
+
     }
 
     private void setupListeners() {
@@ -266,7 +273,7 @@ public class SectionDForm3Activity extends AppCompatActivity {
             }
             if (UpdateDB()) {
                 finish();
-                startActivity(new Intent(this, SectionEForm3Activity.class));
+                startActivity(new Intent(this, followupNo == 11 || followupNo == 12 ? SectionGForm3Activity.class : SectionEForm3Activity.class));
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();

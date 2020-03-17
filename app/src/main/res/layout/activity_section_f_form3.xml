@@ -106,7 +106,7 @@
                                 style="@style/EditText"
                                 android:hint="@string/other"
                                 android:tag="kf3f0296"
-                                android:text='@{kf3f0296.checked ? kf3f0296x.getText.toString : "" }'
+                                android:text='@{kf3f0296.checked ? kf3f0296x.getText().toString : "" }'
                                 android:visibility='@{kf3f0296.checked ? View.VISIBLE : View.GONE }' />
 
                         </LinearLayout>
@@ -193,7 +193,7 @@
                                 style="@style/EditText"
                                 android:hint="@string/other"
                                 android:tag="kf3f0496"
-                                android:text='@{kf3f0496.checked ? kf3f0496x.getText.toString : "" }'
+                                android:text='@{kf3f0496.checked ? kf3f0496x.getText().toString : "" }'
                                 android:visibility='@{kf3f0496.checked ? View.VISIBLE : View.GONE }' />
 
                         </LinearLayout>
@@ -242,7 +242,7 @@
                                 style="@style/EditText"
                                 android:hint="@string/other"
                                 android:tag="kf3f0596"
-                                android:text='@{kf3f0596.checked ? kf3f0596x.getText.toString : "" }'
+                                android:text='@{kf3f0596.checked ? kf3f0596x.getText().toString : "" }'
                                 android:visibility='@{kf3f0596.checked ? View.VISIBLE : View.GONE }' />
 
                         </LinearLayout>
