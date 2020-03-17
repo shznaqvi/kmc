@@ -28,7 +28,7 @@
                     <LinearLayout style="@style/linearlayout_view">
 
                         <TextView
-                            style="@style/i_textview"
+                            style="@style/textviews"
                             android:text="@string/kf3g01" />
 
                         <RadioGroup
@@ -64,7 +64,7 @@
                     <LinearLayout style="@style/linearlayout_view">
 
                         <TextView
-                            style="@style/i_textview"
+                            style="@style/textviews"
                             android:text="@string/kf3g02" />
 
                         <RadioGroup
@@ -100,7 +100,7 @@
                     <LinearLayout style="@style/linearlayout_view">
 
                         <TextView
-                            style="@style/i_textview"
+                            style="@style/textviews"
                             android:text="@string/kf3g03" />
 
                         <RadioGroup
@@ -154,7 +154,7 @@
                             android:text="@string/kf3g05" />
 
                         <TextView
-                            style="@style/i_textview"
+                            style="@style/textviews"
                             android:text="@string/kf3g05h1" />
 
                         <TextView
@@ -194,7 +194,7 @@
                     <LinearLayout style="@style/linearlayout_view">
 
                         <TextView
-                            style="@style/i_textview"
+                            style="@style/textviews"
                             android:text="@string/kf3g06" />
 
                         <TextView
@@ -474,7 +474,7 @@
                     <LinearLayout style="@style/linearlayout_view">
 
                         <TextView
-                            style="@style/i_textview"
+                            style="@style/textviews"
                             android:text="@string/kf3g07" />
 
                         <TextView
@@ -918,7 +918,7 @@
                     <LinearLayout style="@style/linearlayout_view">
 
                         <TextView
-                            style="@style/i_textview"
+                            style="@style/textviews"
                             android:text="@string/kf3g08" />
 
                         <TextView
@@ -959,7 +959,7 @@
                     <LinearLayout style="@style/linearlayout_view">
 
                         <TextView
-                            style="@style/i_textview"
+                            style="@style/textviews"
                             android:text="@string/kf3g09" />
 
                         <com.edittextpicker.aliazaz.EditTextPicker
@@ -990,7 +990,7 @@
                     <LinearLayout style="@style/linearlayout_view">
 
                         <TextView
-                            style="@style/i_textview"
+                            style="@style/textviews"
                             android:text="@string/kf3g10" />
 
                         <RadioGroup
@@ -1032,7 +1032,7 @@
                         <LinearLayout style="@style/linearlayout_view">
 
                             <TextView
-                                style="@style/i_textview"
+                                style="@style/textviews"
                                 android:text="@string/kf3g11" />
 
                             <RadioGroup
@@ -1081,7 +1081,7 @@
                         <LinearLayout style="@style/linearlayout_view">
 
                             <TextView
-                                style="@style/i_textview"
+                                style="@style/textviews"
                                 android:text="@string/kf3g12" />
 
                             <RadioGroup
@@ -1130,7 +1130,7 @@
                         <LinearLayout style="@style/linearlayout_view">
 
                             <TextView
-                                style="@style/i_textview"
+                                style="@style/textviews"
                                 android:text="@string/kf3g13" />
 
                             <RadioGroup

@@ -29,7 +29,7 @@
                     <LinearLayout style="@style/linearlayout_view">
 
                         <TextView
-                            style="@style/i_textview"
+                            style="@style/textviews"
                             android:text="@string/kf3e01" />
 
                         <com.edittextpicker.aliazaz.EditTextPicker
@@ -53,7 +53,7 @@
                     <LinearLayout style="@style/linearlayout_view">
 
                         <TextView
-                            style="@style/i_textview"
+                            style="@style/textviews"
                             android:text="@string/kf3e22" />
 
                         <com.edittextpicker.aliazaz.EditTextPicker
@@ -94,7 +94,7 @@
                         <LinearLayout style="@style/linearlayout_view">
 
                             <TextView
-                                style="@style/i_textview"
+                                style="@style/textviews"
                                 android:text="@string/kf3e02" />
 
                             <RadioGroup
@@ -126,7 +126,7 @@
                         <LinearLayout style="@style/linearlayout_view">
 
                             <TextView
-                                style="@style/i_textview"
+                                style="@style/textviews"
                                 android:text="@string/kf3e03" />
 
                             <RadioGroup
@@ -200,7 +200,7 @@
                             android:layoutDirection="ltr">
 
                             <TextView
-                                style="@style/i_textview"
+                                style="@style/textviews"
                                 android:text="@string/kf3e04" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -249,7 +249,7 @@
                         <LinearLayout style="@style/linearlayout_view">
 
                             <TextView
-                                style="@style/i_textview"
+                                style="@style/textviews"
                                 android:text="@string/kf3e05" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -273,7 +273,7 @@
                         <LinearLayout style="@style/linearlayout_view">
 
                             <TextView
-                                style="@style/i_textview"
+                                style="@style/textviews"
                                 android:text="@string/kf3e06" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -297,7 +297,7 @@
                         <LinearLayout style="@style/linearlayout_view">
 
                             <TextView
-                                style="@style/i_textview"
+                                style="@style/textviews"
                                 android:text="@string/kf3e07" />
 
                             <RadioGroup
@@ -328,7 +328,7 @@
                         <LinearLayout style="@style/linearlayout_view">
 
                             <TextView
-                                style="@style/i_textview"
+                                style="@style/textviews"
                                 android:text="@string/kf3e08" />
 
                             <RadioGroup
@@ -373,7 +373,7 @@
                         <LinearLayout style="@style/linearlayout_view">
 
                             <TextView
-                                style="@style/i_textview"
+                                style="@style/textviews"
                                 android:text="@string/kf3e09" />
 
                             <RadioGroup
@@ -418,7 +418,7 @@
                         <LinearLayout style="@style/linearlayout_view">
 
                             <TextView
-                                style="@style/i_textview"
+                                style="@style/textviews"
                                 android:text="@string/kf3e10" />
 
                             <RadioGroup
@@ -449,7 +449,7 @@
                         <LinearLayout style="@style/linearlayout_view">
 
                             <TextView
-                                style="@style/i_textview"
+                                style="@style/textviews"
                                 android:text="@string/kf3e11" />
 
                             <RadioGroup
@@ -480,11 +480,11 @@
                         <LinearLayout style="@style/linearlayout_view">
 
                             <TextView
-                                style="@style/i_textview"
+                                style="@style/textviews"
                                 android:text="@string/kf3e12" />
 
                             <TextView
-                                style="@style/i_textview"
+                                style="@style/textviews"
                                 android:text="@string/kf3e12h1" />
 
                             <LinearLayout
@@ -550,7 +550,7 @@
                         <LinearLayout style="@style/linearlayout_view">
 
                             <TextView
-                                style="@style/i_textview"
+                                style="@style/textviews"
                                 android:text="@string/kf3e13" />
 
                             <RadioGroup
@@ -587,7 +587,7 @@
                             <LinearLayout style="@style/linearlayout_view">
 
                                 <TextView
-                                    style="@style/i_textview"
+                                    style="@style/textviews"
                                     android:text="@string/kf3e14" />
 
                                 <RadioGroup
@@ -618,7 +618,7 @@
                             <LinearLayout style="@style/linearlayout_view">
 
                                 <TextView
-                                    style="@style/i_textview"
+                                    style="@style/textviews"
                                     android:text="@string/kf3e15" />
 
                                 <RadioGroup
@@ -649,7 +649,7 @@
                             <LinearLayout style="@style/linearlayout_view">
 
                                 <TextView
-                                    style="@style/i_textview"
+                                    style="@style/textviews"
                                     android:text="@string/kf3e16" />
 
                                 <RadioGroup
@@ -680,7 +680,7 @@
                             <LinearLayout style="@style/linearlayout_view">
 
                                 <TextView
-                                    style="@style/i_textview"
+                                    style="@style/textviews"
                                     android:text="@string/kf3e17" />
 
                                 <RadioGroup
@@ -728,7 +728,7 @@
                         <LinearLayout style="@style/linearlayout_view">
 
                             <TextView
-                                style="@style/i_textview"
+                                style="@style/textviews"
                                 android:text="@string/kf3e18" />
 
                             <RadioGroup
@@ -773,7 +773,7 @@
                         <LinearLayout style="@style/linearlayout_view">
 
                             <TextView
-                                style="@style/i_textview"
+                                style="@style/textviews"
                                 android:text="@string/kf3e19" />
 
                             <RadioGroup
@@ -810,7 +810,7 @@
                             <LinearLayout style="@style/linearlayout_view">
 
                                 <TextView
-                                    style="@style/i_textview"
+                                    style="@style/textviews"
                                     android:text="@string/kf3e20" />
 
                                 <RadioGroup
@@ -842,7 +842,7 @@
                             <LinearLayout style="@style/linearlayout_view">
 
                                 <TextView
-                                    style="@style/i_textview"
+                                    style="@style/textviews"
                                     android:text="@string/kf3e21" />
 
                                 <RadioGroup

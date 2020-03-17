@@ -512,10 +512,8 @@
             <!--  = = = = =  END OF FORM FIELDS  = = = = = -->
             <LinearLayout
                 android:id="@+id/fldGrpbtn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingTop="32dp">
+                style="@style/hlinearlayout"
+                android:paddingTop="16dp">
 
                 <Button
                     android:id="@+id/btnNext"
