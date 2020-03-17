@@ -171,9 +171,14 @@ public class SectionEForm3Activity extends AppCompatActivity {
 
         sa1.put("kf3e22", bi.kf3e22.getText().toString());
 
-        sa1.put("kf3e02", bi.kf3e02a.isChecked() ? "1" : bi.kf3e02b.isChecked() ? "2" : "0");
+        sa1.put("kf3e02", bi.kf3e02a.isChecked() ? "1"
+                : bi.kf3e02b.isChecked() ? "2"
+                : "0");
 
-        sa1.put("kf3e03", bi.kf3e03a.isChecked() ? "1" : bi.kf3e03b.isChecked() ? "2" : bi.kf3e03c.isChecked() ? "3" : "0");
+        sa1.put("kf3e03", bi.kf3e03a.isChecked() ? "1"
+                : bi.kf3e03b.isChecked() ? "2"
+                : bi.kf3e03c.isChecked() ? "3"
+                : "0");
 
         sa1.put("kf3e04a", bi.kf3e04a.getText().toString());
         sa1.put("kf3e04b", bi.kf3e04b.getText().toString());
@@ -182,15 +187,25 @@ public class SectionEForm3Activity extends AppCompatActivity {
 
         sa1.put("kf3e06", bi.kf3e06.getText().toString());
 
-        sa1.put("kf3e07", bi.kf3e07a.isChecked() ? "1" : bi.kf3e07b.isChecked() ? "2" : "0");
+        sa1.put("kf3e07", bi.kf3e07a.isChecked() ? "1"
+                : bi.kf3e07b.isChecked() ? "2"
+                : "0");
 
-        sa1.put("kf3e08", bi.kf3e08a.isChecked() ? "1" : bi.kf3e08b.isChecked() ? "2" : "0");
+        sa1.put("kf3e08", bi.kf3e08a.isChecked() ? "1"
+                : bi.kf3e08b.isChecked() ? "2"
+                : "0");
 
-        sa1.put("kf3e09", bi.kf3e09a.isChecked() ? "1" : bi.kf3e09b.isChecked() ? "2" : "0");
+        sa1.put("kf3e09", bi.kf3e09a.isChecked() ? "1"
+                : bi.kf3e09b.isChecked() ? "2"
+                : "0");
 
-        sa1.put("kf3e10", bi.kf3e10a.isChecked() ? "1" : bi.kf3e10b.isChecked() ? "2" : "0");
+        sa1.put("kf3e10", bi.kf3e10a.isChecked() ? "1"
+                : bi.kf3e10b.isChecked() ? "2"
+                : "0");
 
-        sa1.put("kf3e11", bi.kf3e11a.isChecked() ? "1" : bi.kf3e11b.isChecked() ? "2" : "0");
+        sa1.put("kf3e11", bi.kf3e11a.isChecked() ? "1"
+                : bi.kf3e11b.isChecked() ? "2"
+                : "0");
 
         sa1.put("kf3e12a", bi.kf3e12a.isChecked() ? "1" : "0");
         sa1.put("kf3e12b", bi.kf3e12b.isChecked() ? "2" : "0");
@@ -199,23 +214,41 @@ public class SectionEForm3Activity extends AppCompatActivity {
         sa1.put("kf3e12e", bi.kf3e12e.isChecked() ? "5" : "0");
         sa1.put("kf3e12f", bi.kf3e12f.isChecked() ? "6" : "0");
 
-        sa1.put("kf3e13", bi.kf3e13a.isChecked() ? "1" : bi.kf3e13b.isChecked() ? "2" : "0");
+        sa1.put("kf3e13", bi.kf3e13a.isChecked() ? "1"
+                : bi.kf3e13b.isChecked() ? "2"
+                : "0");
 
-        sa1.put("kf3e14", bi.kf3e14a.isChecked() ? "1" : bi.kf3e14b.isChecked() ? "2" : "0");
+        sa1.put("kf3e14", bi.kf3e14a.isChecked() ? "1"
+                : bi.kf3e14b.isChecked() ? "2"
+                : "0");
 
-        sa1.put("kf3e15", bi.kf3e15a.isChecked() ? "1" : bi.kf3e15b.isChecked() ? "2" : "0");
+        sa1.put("kf3e15", bi.kf3e15a.isChecked() ? "1"
+                : bi.kf3e15b.isChecked() ? "2"
+                : "0");
 
-        sa1.put("kf3e16", bi.kf3e16a.isChecked() ? "1" : bi.kf3e16b.isChecked() ? "2" : "0");
+        sa1.put("kf3e16", bi.kf3e16a.isChecked() ? "1"
+                : bi.kf3e16b.isChecked() ? "2"
+                : "0");
 
-        sa1.put("kf3e17", bi.kf3e17a.isChecked() ? "1" : bi.kf3e17b.isChecked() ? "2" : "0");
+        sa1.put("kf3e17", bi.kf3e17a.isChecked() ? "1"
+                : bi.kf3e17b.isChecked() ? "2"
+                : "0");
 
-        sa1.put("kf3e18", bi.kf3e18a.isChecked() ? "1" : bi.kf3e18b.isChecked() ? "2" : "0");
+        sa1.put("kf3e18", bi.kf3e18a.isChecked() ? "1"
+                : bi.kf3e18b.isChecked() ? "2"
+                : "0");
 
-        sa1.put("kf3e19", bi.kf3e19a.isChecked() ? "1" : bi.kf3e19b.isChecked() ? "2" : "0");
+        sa1.put("kf3e19", bi.kf3e19a.isChecked() ? "1"
+                : bi.kf3e19b.isChecked() ? "2"
+                : "0");
 
-        sa1.put("kf3e20", bi.kf3e20a.isChecked() ? "1" : bi.kf3e20b.isChecked() ? "2" : "0");
+        sa1.put("kf3e20", bi.kf3e20a.isChecked() ? "1"
+                : bi.kf3e20b.isChecked() ? "2"
+                : "0");
 
-        sa1.put("kf3e21", bi.kf3e21a.isChecked() ? "1" : bi.kf3e21b.isChecked() ? "2" : "0");
+        sa1.put("kf3e21", bi.kf3e21a.isChecked() ? "1"
+                : bi.kf3e21b.isChecked() ? "2"
+                : "0");
 
         fc.setsE(String.valueOf(sa1));
 

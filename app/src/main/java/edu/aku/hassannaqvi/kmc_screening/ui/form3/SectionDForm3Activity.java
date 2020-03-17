@@ -1,4 +1,4 @@
-    package edu.aku.hassannaqvi.kmc_screening.ui.form3;
+package edu.aku.hassannaqvi.kmc_screening.ui.form3;
 
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
@@ -147,7 +147,10 @@ public class SectionDForm3Activity extends AppCompatActivity {
 
         JSONObject sa1 = new JSONObject();
 
-        sa1.put("kf3d19", bi.kf3d19a.isChecked() ? "1" : bi.kf3d19b.isChecked() ? "2" : bi.kf3d1998.isChecked() ? "98" : "0");
+        sa1.put("kf3d19", bi.kf3d19a.isChecked() ? "1"
+                : bi.kf3d19b.isChecked() ? "2"
+                : bi.kf3d1998.isChecked() ? "98"
+                : "0");
 
         sa1.put("kf3d01", bi.kf3d01a.isChecked() ? "1"
                 : bi.kf3d01b.isChecked() ? "2"
@@ -181,7 +184,10 @@ public class SectionDForm3Activity extends AppCompatActivity {
                 : "0");
         sa1.put("kf3d0396x", bi.kf3d0396x.getText().toString());
 
-        sa1.put("kf3d04", bi.kf3d04a.isChecked() ? "1" : bi.kf3d04b.isChecked() ? "2" : bi.kf3d0498.isChecked() ? "98" : "0");
+        sa1.put("kf3d04", bi.kf3d04a.isChecked() ? "1"
+                : bi.kf3d04b.isChecked() ? "2"
+                : bi.kf3d0498.isChecked() ? "98"
+                : "0");
 
         sa1.put("kf3d05", bi.kf3d05a.isChecked() ? "1"
                 : bi.kf3d05b.isChecked() ? "2"
@@ -201,7 +207,9 @@ public class SectionDForm3Activity extends AppCompatActivity {
                 : "0");
         sa1.put("kf3d0596x", bi.kf3d0596x.getText().toString());
 
-        sa1.put("kf3d06", bi.kf3d06a.isChecked() ? "1" : bi.kf3d06b.isChecked() ? "2" : "0");
+        sa1.put("kf3d06", bi.kf3d06a.isChecked() ? "1"
+                : bi.kf3d06b.isChecked() ? "2"
+                : "0");
 
         sa1.put("kf3d07", bi.kf3d07a.isChecked() ? "1"
                 : bi.kf3d07b.isChecked() ? "2"
@@ -217,9 +225,13 @@ public class SectionDForm3Activity extends AppCompatActivity {
                 : "0");
         sa1.put("kf3d0796x", bi.kf3d0796x.getText().toString());
 
-        sa1.put("kf3d08", bi.kf3d08a.isChecked() ? "1" : bi.kf3d08b.isChecked() ? "2" : "0");
+        sa1.put("kf3d08", bi.kf3d08a.isChecked() ? "1"
+                : bi.kf3d08b.isChecked() ? "2"
+                : "0");
 
-        sa1.put("kf3d09", bi.kf3d09a.isChecked() ? "1" : bi.kf3d09b.isChecked() ? "2" : "0");
+        sa1.put("kf3d09", bi.kf3d09a.isChecked() ? "1"
+                : bi.kf3d09b.isChecked() ? "2"
+                : "0");
 
         sa1.put("kf3d10", bi.kf3d10a.isChecked() ? "1"
                 : bi.kf3d10b.isChecked() ? "2"
@@ -230,13 +242,17 @@ public class SectionDForm3Activity extends AppCompatActivity {
 
         sa1.put("kf3d11", bi.kf3d11.getText().toString());
 
-        sa1.put("kf3d12", bi.kf3d12a.isChecked() ? "1" : bi.kf3d12b.isChecked() ? "2" : "0");
+        sa1.put("kf3d12", bi.kf3d12a.isChecked() ? "1"
+                : bi.kf3d12b.isChecked() ? "2"
+                : "0");
 
         sa1.put("kf3d13", bi.kf3d13.getText().toString());
 
         sa1.put("kf3d14", bi.kf3d14.getText().toString());
 
-        sa1.put("kf3d15", bi.kf3d15a.isChecked() ? "1" : bi.kf3d15b.isChecked() ? "2" : "0");
+        sa1.put("kf3d15", bi.kf3d15a.isChecked() ? "1"
+                : bi.kf3d15b.isChecked() ? "2"
+                : "0");
 
         sa1.put("kf3d16h", bi.kf3d16h.getText().toString());
         sa1.put("kf3d16d", bi.kf3d16d.getText().toString());
