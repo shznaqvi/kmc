@@ -50,7 +50,6 @@ import edu.aku.hassannaqvi.kmc_screening.ui.form3.SectionBForm3Activity;
 import edu.aku.hassannaqvi.kmc_screening.ui.form3.SectionCForm3Activity;
 import edu.aku.hassannaqvi.kmc_screening.ui.form3.SectionDForm3Activity;
 import edu.aku.hassannaqvi.kmc_screening.ui.form3.SectionEForm3Activity;
-import edu.aku.hassannaqvi.kmc_screening.ui.form3.SectionGForm3Activity;
 import edu.aku.hassannaqvi.kmc_screening.ui.other.EndingActivity;
 import edu.aku.hassannaqvi.kmc_screening.validation.ClearClass;
 import edu.aku.hassannaqvi.kmc_screening.validation.ValidatorClass;
@@ -333,10 +332,9 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
             case 9:
                 return SectionCForm3Activity.class;
             case 10:
-                return SectionDForm3Activity.class;
             case 11:
             case 12:
-                return SectionGForm3Activity.class;
+                return SectionDForm3Activity.class;
             default:
                 return SectionEForm3Activity.class;
         }

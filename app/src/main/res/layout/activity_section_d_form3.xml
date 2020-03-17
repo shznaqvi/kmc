@@ -111,7 +111,7 @@
                                     style="@style/EditText"
                                     android:hint="@string/other"
                                     android:tag="kf3d0196"
-                                    android:text='@{kf3d0196.checked ? kf3d0196x.getText.toString : "" }'
+                                    android:text='@{kf3d0196.checked ? kf3d0196x.getText().toString : "" }'
                                     android:visibility='@{kf3d0196.checked ? View.VISIBLE : View.GONE }' />
 
                             </RadioGroup>
@@ -204,7 +204,7 @@
                                     style="@style/EditText"
                                     android:hint="@string/other"
                                     android:tag="kf3d0296"
-                                    android:text='@{kf3d0296.checked ? kf3d0296x.getText.toString : "" }'
+                                    android:text='@{kf3d0296.checked ? kf3d0296x.getText().toString : "" }'
                                     android:visibility='@{kf3d0296.checked ? View.VISIBLE : View.GONE }' />
 
                             </RadioGroup>
@@ -263,7 +263,7 @@
                                     style="@style/EditText"
                                     android:hint="@string/other"
                                     android:tag="kf3d0396"
-                                    android:text='@{kf3d0396.checked ? kf3d0396x.getText.toString : "" }'
+                                    android:text='@{kf3d0396.checked ? kf3d0396x.getText().toString : "" }'
                                     android:visibility='@{kf3d0396.checked ? View.VISIBLE : View.GONE }' />
 
                             </RadioGroup>
@@ -416,7 +416,7 @@
                                     style="@style/EditText"
                                     android:hint="@string/other"
                                     android:tag="kf3d0596"
-                                    android:text='@{kf3d0596.checked ? kf3d0596x.getText.toString : "" }'
+                                    android:text='@{kf3d0596.checked ? kf3d0596x.getText().toString : "" }'
                                     android:visibility='@{kf3d0596.checked ? View.VISIBLE : View.GONE }' />
 
                             </RadioGroup>
@@ -543,7 +543,7 @@
                                 style="@style/EditText"
                                 android:hint="@string/other"
                                 android:tag="kf3d0796"
-                                android:text='@{kf3d0796.checked ? kf3d0796x.getText.toString : "" }'
+                                android:text='@{kf3d0796.checked ? kf3d0796x.getText().toString : "" }'
                                 android:visibility='@{kf3d0796.checked ? View.VISIBLE : View.GONE }' />
 
                         </RadioGroup>
@@ -660,7 +660,7 @@
                                     style="@style/EditText"
                                     android:hint="@string/other"
                                     android:tag="kf3d1096"
-                                    android:text='@{kf3d1096.checked ? kf3d1096x.getText.toString : "" }'
+                                    android:text='@{kf3d1096.checked ? kf3d1096x.getText().toString : "" }'
                                     android:visibility='@{kf3d1096.checked ? View.VISIBLE : View.GONE }' />
 
                             </RadioGroup>
@@ -972,7 +972,7 @@
                                         style="@style/EditText"
                                         android:hint="@string/other"
                                         android:tag="kf3d1796"
-                                        android:text='@{kf3d1796.checked ? kf3d1796x.getText.toString : "" }'
+                                        android:text='@{kf3d1796.checked ? kf3d1796x.getText().toString : "" }'
                                         android:visibility='@{kf3d1796.checked ? View.VISIBLE : View.GONE }' />
 
                                 </LinearLayout>

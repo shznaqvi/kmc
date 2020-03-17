@@ -150,7 +150,7 @@
                     <LinearLayout style="@style/linearlayout_view">
 
                         <TextView
-                            style="@style/i_textview"
+                            style="@style/textview_heading"
                             android:text="@string/kf3g05" />
 
                         <TextView
@@ -288,7 +288,7 @@
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/kf3g063x"
-                                style="@style/EditText"
+                                style="@style/EditText_number"
                                 android:hint="@string/time"
                                 android:tag="kf3g063a"
                                 android:maxLength="2"
@@ -375,7 +375,7 @@
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/kf3g066x"
-                                style="@style/EditText"
+                                style="@style/EditText_number"
                                 android:hint="@string/time"
                                 android:tag="kf3g066a"
                                 android:maxLength="2"

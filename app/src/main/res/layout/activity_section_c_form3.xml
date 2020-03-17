@@ -72,7 +72,7 @@
                                 style="@style/EditText_number"
                                 android:hint="@string/kf3c02a"
                                 android:maxLength="2"
-                                android:text='@{kf3c01a.checked ? kf3c02.getText.toString : "" }'
+                                android:text='@{kf3c01a.checked ? kf3c02.getText().toString : "" }'
                                 app:maxValue="15"
                                 app:minValue="1"
                                 app:type="range" />
@@ -98,7 +98,7 @@
                                 android:hint="@string/kf3c03a"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:text='@{kf3c01a.checked ? kf3c03h.getText.toString : "" }'
+                                android:text='@{kf3c01a.checked ? kf3c03h.getText().toString : "" }'
                                 app:maxValue="23"
                                 app:minValue="0"
                                 app:type="range" />
@@ -109,7 +109,7 @@
                                 android:hint="@string/kf3c03b"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:text='@{kf3c01a.checked ? kf3c03m.getText.toString : "" }'
+                                android:text='@{kf3c01a.checked ? kf3c03m.getText().toString : "" }'
                                 app:maxValue="59"
                                 app:minValue="0"
                                 app:type="range" />
@@ -117,6 +117,7 @@
                         </LinearLayout>
 
                     </android.support.v7.widget.CardView>
+
                 </LinearLayout>
 
                 <!-- kf3c04-->
@@ -155,7 +156,7 @@
                                 style="@style/EditText"
                                 android:hint="@string/other"
                                 android:tag="kf3c0496"
-                                android:text='@{kf3c0496.checked ? kf3c0496x.getText.toString : "" }'
+                                android:text='@{kf3c0496.checked ? kf3c0496x.getText().toString : "" }'
                                 android:visibility='@{kf3c0496.checked ? View.VISIBLE : View.GONE }' />
 
                         </RadioGroup>
@@ -243,7 +244,7 @@
                                 style="@style/EditText"
                                 android:hint="@string/other"
                                 android:tag="kf3c0696"
-                                android:text='@{kf3c0696.checked ? kf3c0696x.getText.toString : "" }'
+                                android:text='@{kf3c0696.checked ? kf3c0696x.getText().toString : "" }'
                                 android:visibility='@{kf3c0696.checked ? View.VISIBLE : View.GONE }' />
 
                         </RadioGroup>
@@ -351,7 +352,7 @@
                                     style="@style/EditText"
                                     android:hint="@string/other"
                                     android:tag="kf3c0896"
-                                    android:text='@{kf3c0896.checked ? kf3c0896x.getText.toString : "" }'
+                                    android:text='@{kf3c0896.checked ? kf3c0896x.getText().toString : "" }'
                                     android:visibility='@{kf3c0896.checked ? View.VISIBLE : View.GONE }' />
 
                             </LinearLayout>
@@ -395,7 +396,7 @@
                                     style="@style/EditText"
                                     android:hint="@string/other"
                                     android:tag="kf3c0996"
-                                    android:text='@{kf3c0996.checked ? kf3c0996x.getText.toString : "" }'
+                                    android:text='@{kf3c0996.checked ? kf3c0996x.getText().toString : "" }'
                                     android:visibility='@{kf3c0996.checked ? View.VISIBLE : View.GONE }' />
 
                             </RadioGroup>
@@ -458,7 +459,7 @@
                                 style="@style/EditText_number"
                                 android:hint="@string/kf3c11a"
                                 android:maxLength="2"
-                                android:text='@{kf3c10a.checked ? kf3c11.getText.toString : "" }'
+                                android:text='@{kf3c10a.checked ? kf3c11.getText().toString : "" }'
                                 app:maxValue="15"
                                 app:minValue="1"
                                 app:type="range" />
@@ -484,7 +485,7 @@
                                 android:hint="@string/hours"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:text='@{kf3c10a.checked ? kf3c12h.getText.toString : "" }'
+                                android:text='@{kf3c10a.checked ? kf3c12h.getText().toString : "" }'
                                 app:maxValue="23"
                                 app:minValue="0"
                                 app:type="range" />
@@ -495,7 +496,7 @@
                                 android:hint="@string/min"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:text='@{kf3c10a.checked ? kf3c12m.getText.toString : "" }'
+                                android:text='@{kf3c10a.checked ? kf3c12m.getText().toString : "" }'
                                 app:maxValue="59"
                                 app:minValue="0"
                                 app:type="range" />
@@ -520,7 +521,7 @@
                                 style="@style/EditText_number"
                                 android:hint="@string/kf3c13a"
                                 android:maxLength="2"
-                                android:text='@{kf3c10a.checked ? kf3c13.getText.toString : "" }'
+                                android:text='@{kf3c10a.checked ? kf3c13.getText().toString : "" }'
                                 app:maxValue="65"
                                 app:minValue="0"
                                 app:type="range" />
@@ -547,7 +548,7 @@
                             android:id="@+id/kf3c14"
                             style="@style/EditText"
                             android:hint="@string/kf3c14"
-                            android:text='@{kf3c10b.checked ? kf3c14.getText.toString : "" }' />
+                            android:text='@{kf3c10b.checked ? kf3c14.getText().toString : "" }' />
 
                     </LinearLayout>
 
@@ -687,7 +688,7 @@
                                 style="@style/EditText"
                                 android:hint="@string/other"
                                 android:tag="kf3c1696"
-                                android:text='@{kf3c1696.checked ? kf3c1696x.getText.toString : "" }'
+                                android:text='@{kf3c1696.checked ? kf3c1696x.getText().toString : "" }'
                                 android:visibility='@{kf3c1696.checked ? View.VISIBLE : View.GONE }' />
 
                         </LinearLayout>
@@ -806,7 +807,7 @@
                                 style="@style/EditText"
                                 android:hint="@string/other"
                                 android:tag="kf3c1896"
-                                android:text='@{kf3c1896.checked ? kf3c1896x.getText.toString : "" }'
+                                android:text='@{kf3c1896.checked ? kf3c1896x.getText().toString : "" }'
                                 android:visibility='@{kf3c1896.checked ? View.VISIBLE : View.GONE }' />
 
                         </LinearLayout>
