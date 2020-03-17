@@ -14,7 +14,7 @@
     </data>
 
     <ScrollView
-        style="@style/i_scrollview"
+        style="@style/i_scrollviews"
         android:layoutDirection="rtl"
         android:textDirection="rtl">
 
