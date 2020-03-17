@@ -34,7 +34,7 @@
             android:layoutDirection="rtl"
             android:orientation="vertical">
 
-            <TextView
+            <!--<TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:elevation="2dp"
@@ -46,19 +46,19 @@
                 android:text="Aga Khan University"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/_18sdp"
-                android:textStyle="bold" />
+                android:textStyle="bold" />-->
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/textviewsh"
                 android:elevation="2dp"
                 android:fontFamily="serif"
+                android:layout_marginTop="30dp"
                 android:paddingTop="8dp"
                 android:gravity="center_horizontal"
                 android:keepScreenOn="true"
                 android:text="Center of excellence in\nWomen and Child Health"
                 android:textColor="@android:color/black"
-                android:textSize="@dimen/_14sdp" />
+                android:textSize="@dimen/_10sdp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -71,7 +71,7 @@
                 android:padding="@dimen/_9sdp"
                 android:text="@string/app_name"
                 android:textColor="@color/selectedBlue"
-                android:textSize="@dimen/_22sdp"
+                android:textSize="@dimen/_15sdp"
                 android:textStyle="bold" />
 
             <LinearLayout
@@ -82,7 +82,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/_30sdp"
+                    android:layout_height="@dimen/_25sdp"
                     android:layoutDirection="ltr">
 
                     <RelativeLayout
@@ -117,7 +117,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/_30sdp"
+                    android:layout_height="@dimen/_25sdp"
                     android:layout_marginTop="@dimen/_5sdp"
                     android:layoutDirection="ltr">
 
@@ -195,7 +195,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_20sdp">
+                android:layout_marginTop="@dimen/_15sdp">
 
                 <Button
                     android:id="@+id/syncData"

@@ -15,7 +15,7 @@
 
     <ScrollView style="@style/i_scrollview">
 
-        <LinearLayout style="@style/linearlayout_view">
+        <LinearLayout style="@style/vlinearlayout">
 
             <LinearLayout
                 android:id="@+id/fldGrpSecD02"
@@ -30,7 +30,7 @@
                         android:id="@+id/fldGrpCVkf3d19"
                         style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -66,7 +66,7 @@
                         android:id="@+id/fldGrpCVkf3d01"
                         style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -126,7 +126,7 @@
                         style="@style/cardView"
                         android:visibility='@{!kf3d01e.checked ? View.GONE : View.VISIBLE}'>
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -218,7 +218,7 @@
                         android:id="@+id/fldGrpCVkf3d03"
                         style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -277,7 +277,7 @@
                         android:id="@+id/fldGrpCVkf3d04"
                         style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -314,7 +314,7 @@
                         style="@style/cardView"
                         android:visibility='@{kf3d04a.checked? View.GONE : View.VISIBLE}'>
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -433,7 +433,7 @@
                     android:id="@+id/fldGrpCVkf3d06"
                     style="@style/cardView">
 
-                    <LinearLayout style="@style/linearlayout_view">
+                    <LinearLayout style="@style/vlinearlayout">
 
                         <TextView
                             style="@style/textviews"
@@ -465,7 +465,7 @@
                     style="@style/cardView"
                     android:visibility='@{kf3d06a.checked? View.GONE : View.VISIBLE}'>
 
-                    <LinearLayout style="@style/linearlayout_view">
+                    <LinearLayout style="@style/vlinearlayout">
 
                         <TextView
                             style="@style/textviews"
@@ -557,7 +557,7 @@
                     android:id="@+id/fldGrpCVkf3d08"
                     style="@style/cardView">
 
-                    <LinearLayout style="@style/linearlayout_view">
+                    <LinearLayout style="@style/vlinearlayout">
 
                         <TextView
                             style="@style/textviews"
@@ -593,7 +593,7 @@
                         android:id="@+id/fldGrpCVkf3d09"
                         style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -625,7 +625,7 @@
                         style="@style/cardView"
                         android:visibility="@{kf3d09a.checked ? View.VISIBLE : View.GONE}">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -676,7 +676,7 @@
                     android:id="@+id/fldGrpCVkf3d11"
                     style="@style/cardView">
 
-                    <LinearLayout style="@style/linearlayout_view">
+                    <LinearLayout style="@style/vlinearlayout">
 
                         <TextView
                             style="@style/textviews"
@@ -700,7 +700,7 @@
                     android:id="@+id/fldGrpCVkf3d12"
                     style="@style/cardView">
 
-                    <LinearLayout style="@style/linearlayout_view">
+                    <LinearLayout style="@style/vlinearlayout">
 
                         <TextView
                             style="@style/textviews"
@@ -731,7 +731,7 @@
                     android:id="@+id/fldGrpCVkf3d13"
                     style="@style/cardView">
 
-                    <LinearLayout style="@style/linearlayout_view">
+                    <LinearLayout style="@style/vlinearlayout">
 
                         <TextView
                             style="@style/textviews"
@@ -755,7 +755,7 @@
                     android:id="@+id/fldGrpCVkf3d14"
                     style="@style/cardView">
 
-                    <LinearLayout style="@style/linearlayout_view">
+                    <LinearLayout style="@style/vlinearlayout">
 
                         <TextView
                             style="@style/textviews"
@@ -785,7 +785,7 @@
                         android:id="@+id/fldGrpCVkf3d15"
                         style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -821,7 +821,7 @@
                             android:id="@+id/fldGrpCVkf3d16"
                             style="@style/cardView">
 
-                            <LinearLayout style="@style/linearlayout_view">
+                            <LinearLayout style="@style/vlinearlayout">
 
                                 <TextView
                                     style="@style/textviews"
@@ -879,7 +879,7 @@
                             android:id="@+id/fldGrpCVkf3d17"
                             style="@style/cardView">
 
-                            <LinearLayout style="@style/linearlayout_view">
+                            <LinearLayout style="@style/vlinearlayout">
 
                                 <TextView
                                     style="@style/textviews"
@@ -994,7 +994,7 @@
                             android:id="@+id/fldGrpCVkf3d18"
                             style="@style/cardView">
 
-                            <LinearLayout style="@style/linearlayout_view">
+                            <LinearLayout style="@style/vlinearlayout">
 
                                 <TextView
                                     style="@style/textviews"

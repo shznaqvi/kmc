@@ -20,7 +20,7 @@
 
         <LinearLayout
             android:id="@+id/infoMainLayout"
-            style="@style/linearlayout_view"
+            style="@style/vlinearlayout"
             android:animateLayoutChanges="true"
             android:orientation="vertical">
 
@@ -99,7 +99,7 @@
             <!--Village code label-->
             <android.support.v7.widget.CardView style="@style/cardView">
 
-                <LinearLayout style="@style/linearlayout_view">
+                <LinearLayout style="@style/vlinearlayout">
 
                     <TextView
                         android:id="@+id/villageLabel"
@@ -143,7 +143,7 @@
 
             <LinearLayout
                 android:id="@+id/fldGrpcra02"
-                style="@style/linearlayout_view"
+                style="@style/vlinearlayout"
                 android:visibility="gone"
                 tools:visibility="visible">
 
@@ -152,7 +152,7 @@
                     android:id="@+id/fldGrpkfal"
                     style="@style/cardView">
 
-                    <LinearLayout style="@style/linearlayout_view">
+                    <LinearLayout style="@style/vlinearlayout">
 
                         <TextView
                             style="@style/textviews"
@@ -277,7 +277,7 @@
                         android:id="@+id/cvkf1a5"
                         style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -366,7 +366,7 @@
                         android:id="@+id/cvkf1a8"
                         style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -422,7 +422,7 @@
                         android:id="@+id/cvkf1a9"
                         style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -480,7 +480,7 @@
                         android:id="@+id/cvkf1a10"
                         style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -518,7 +518,7 @@
                 <!--F-2-3-->
                 <LinearLayout
                     android:id="@+id/form0203"
-                    style="@style/linearlayout_view"
+                    style="@style/vlinearlayout"
                     android:visibility="gone"
                     tools:visibility="visible">
 
@@ -605,7 +605,7 @@
                 <!--F-2-->
                 <LinearLayout
                     android:id="@+id/form02"
-                    style="@style/linearlayout_view"
+                    style="@style/vlinearlayout"
                     android:visibility="gone"
                     tools:visibility="visible">
 
@@ -764,7 +764,7 @@
                         android:id="@+id/fldGrpCVkf3b01"
                         style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
