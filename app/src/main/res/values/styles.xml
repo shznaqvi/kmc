@@ -305,7 +305,7 @@
         <item name="android:gravity">left</item>
         <item name="android:orientation">vertical</item>
         <item name="android:background">#d6d6d6</item>
-        <item name="android:textSize">24sp</item>
+        <item name="android:textSize">20sp</item>
         <item name="android:typeface">serif</item>
     </style>
 
@@ -317,7 +317,7 @@
         <!--        <item name="android:button">@color/colorPrimary</item>-->
         <item name="android:elevation">1dp</item>
         <item name="android:layout_margin">1dp</item>
-        <item name="android:padding">12dp</item>
+        <item name="android:padding">6dp</item>
     </style>
 
     <style name="radiobutton" parent="Widget.AppCompat.CompoundButton.RadioButton">
