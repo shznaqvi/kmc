@@ -53,7 +53,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "kmc_screening.db";
     public static final String DB_NAME = DATABASE_NAME.replace(".", "_copy.");
     public static final String PROJECT_NAME = "KMC-SCREENING";
-    private static final int DATABASE_VERSION = 7;
+    private static final int DATABASE_VERSION = 8;
     private static final String SQL_CREATE_FORMS = "CREATE TABLE "
             + FormsTable.TABLE_NAME + "("
             + FormsTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -94,6 +94,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String SQL_ALTER_FORMS = "ALTER TABLE " +
             FormsTable.TABLE_NAME + " ADD COLUMN " +
             FormsTable.COLUMN_SCREENID + " TEXT;";
+
+    private static final String SQL_ALTER_FORMS_02 = "ALTER TABLE " +
+            FormsTable.TABLE_NAME + " ADD COLUMN " +
+            FormsTable.COLUMN_SG + " TEXT;";
 
     private static final String SQL_CREATE_MWRAFOLLOWUPS = "CREATE TABLE " +
             PWFUPEntry.TABLE_NAME + "(" +
@@ -155,6 +159,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             singleTaluka.COLUMN_DISTRICT_CODE + " TEXT, " +
             singleTaluka.COLUMN_DISTRICT_NAME + " TEXT " +
             ");";
+
     private static final String SQL_ALTER_PW_REGISTERED = "ALTER TABLE " +
             RegisteredPW.TABLE_NAME + " ADD COLUMN " +
             RegisteredPW.COLUMN_FORMTYPE + " TEXT;";
@@ -169,6 +174,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             UCsTable.COLUMN_TALUKA_CODE + " TEXT, " +
             UCsTable.COLUMN_STUDY_ARM + " TEXT " +
             ");";
+
     final String SQL_CREATE_REGISTERED_PW_TABLE = "CREATE TABLE " + RegisteredPW.TABLE_NAME + " (" +
             RegisteredPW._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
             RegisteredPW.COLUMN_FORMTYPE + " TEXT, " +
@@ -239,6 +245,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 db.execSQL(SQL_CREATE_REGISTERED_PW_TABLE);
             case 6:
 //                db.execSQL(SQL_ALTER_PW_REGISTERED);
+            case 7:
+                db.execSQL(SQL_ALTER_FORMS_02);
         }
 
     }

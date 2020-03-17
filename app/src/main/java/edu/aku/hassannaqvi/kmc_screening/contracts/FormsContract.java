@@ -504,7 +504,7 @@ public class FormsContract {
         public static final String COLUMN_SD = "sd";
         public static final String COLUMN_SE = "se";
         public static final String COLUMN_SF = "sf";
-        public static final String COLUMN_SG = "sG";
+        public static final String COLUMN_SG = "sg";
         public static final String COLUMN_FORMTYPE = "form_type";
         public static final String COLUMN_ENDINGDATETIME = "endingdatetime";
         public static final String COLUMN_GPSLAT = "gpslat";
