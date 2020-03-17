@@ -42,7 +42,7 @@
                 <LinearLayout style="@style/linearlayout_view">
 
                     <TextView
-                        style="@style/i_textview"
+                        style="@style/textviews"
                         android:text="@string/ka101" />
 
                     <RadioGroup
@@ -85,18 +85,19 @@
                             style="@style/radiobuttons"
                             android:text="@string/other" />
 
-                    </RadioGroup>
+                        <EditText
+                            android:id="@+id/ka10196x"
+                            style="@style/EditTextAlpha"
+                            android:hint="@string/specify"
+                            android:text='@{ka10196.checked ? ka10196x.getText().toString : ""}'
+                            android:visibility='@{ka10196.checked ? View.VISIBLE : View.GONE}' />
 
-                    <EditText
-                        android:id="@+id/ka10196x"
-                        style="@style/EditTextAlpha"
-                        android:hint="@string/specify"
-                        android:text='@{ka10196.checked ? ka10196x.getText().toString : ""}'
-                        android:visibility='@{ka10196.checked ? View.VISIBLE : View.GONE}' />
+                    </RadioGroup>
 
                 </LinearLayout>
 
             </android.support.v7.widget.CardView>
+
 
             <!-- ka102   -->
             <android.support.v7.widget.CardView
@@ -106,7 +107,7 @@
                 <LinearLayout style="@style/linearlayout_view">
 
                     <TextView
-                        style="@style/i_textview"
+                        style="@style/textviews"
                         android:text="@string/ka102" />
 
                     <TextView
@@ -162,18 +163,19 @@
                             style="@style/radiobuttons"
                             android:text="@string/other" />
 
-                    </RadioGroup>
+                        <EditText
+                            android:id="@+id/ka10296x"
+                            style="@style/EditTextAlpha"
+                            android:hint="@string/specify"
+                            android:text='@{ka10296.checked ? ka10296x.getText().toString : ""}'
+                            android:visibility='@{ka10296.checked ? View.VISIBLE : View.GONE}' />
 
-                    <EditText
-                        android:id="@+id/ka10296x"
-                        style="@style/EditTextAlpha"
-                        android:hint="@string/specify"
-                        android:text='@{ka10296.checked ? ka10296x.getText().toString : ""}'
-                        android:visibility='@{ka10296.checked ? View.VISIBLE : View.GONE}' />
+                    </RadioGroup>
 
                 </LinearLayout>
 
             </android.support.v7.widget.CardView>
+
 
             <!-- ka103   -->
             <android.support.v7.widget.CardView
@@ -183,7 +185,7 @@
                 <LinearLayout style="@style/linearlayout_view">
 
                     <TextView
-                        style="@style/i_textview"
+                        style="@style/textviews"
                         android:text="@string/ka103sub" />
 
                     <RadioGroup
@@ -250,18 +252,19 @@
                             style="@style/radiobuttons"
                             android:text="@string/other" />
 
-                    </RadioGroup>
+                        <EditText
+                            android:id="@+id/ka10396x"
+                            style="@style/EditTextAlpha"
+                            android:hint="@string/specify"
+                            android:text='@{ka10396.checked ? ka10396x.getText().toString : ""}'
+                            android:visibility='@{ka10396.checked ? View.VISIBLE : View.GONE}' />
 
-                    <EditText
-                        android:id="@+id/ka10396x"
-                        style="@style/EditTextAlpha"
-                        android:hint="@string/specify"
-                        android:text='@{ka10396.checked ? ka10396x.getText().toString : ""}'
-                        android:visibility='@{ka10396.checked ? View.VISIBLE : View.GONE}' />
+                    </RadioGroup>
 
                 </LinearLayout>
 
             </android.support.v7.widget.CardView>
+
 
             <!-- ka104   -->
             <android.support.v7.widget.CardView
@@ -270,16 +273,9 @@
 
                 <LinearLayout style="@style/linearlayout_view">
 
-
-                    <!--ka104-->
                     <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:background="@color/colorPrimary"
-                        android:text="@string/ka104sub"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:textColor="@android:color/white" />
+                        style="@style/textviews"
+                        android:text="@string/ka104sub" />
 
                     <RadioGroup
                         android:id="@+id/ka104"
@@ -335,18 +331,19 @@
                             style="@style/radiobuttons"
                             android:text="@string/other" />
 
-                    </RadioGroup>
+                        <EditText
+                            android:id="@+id/ka10496x"
+                            style="@style/EditTextAlpha"
+                            android:hint="@string/specify"
+                            android:text='@{ka10496.checked ? ka10496x.getText().toString : ""}'
+                            android:visibility='@{ka10496.checked ? View.VISIBLE : View.GONE}' />
 
-                    <EditText
-                        android:id="@+id/ka10496x"
-                        style="@style/EditTextAlpha"
-                        android:hint="@string/specify"
-                        android:text='@{ka10496.checked ? ka10496x.getText().toString : ""}'
-                        android:visibility='@{ka10496.checked ? View.VISIBLE : View.GONE}' />
+                    </RadioGroup>
 
                 </LinearLayout>
 
             </android.support.v7.widget.CardView>
+
 
             <!-- ka105   -->
             <android.support.v7.widget.CardView
@@ -356,26 +353,33 @@
                 <LinearLayout style="@style/linearlayout_view">
 
                     <TextView
-                        style="@style/i_textview"
+                        style="@style/textviews"
                         android:text="@string/ka105" />
 
                     <RadioGroup
                         android:id="@+id/ka105"
-                        style="@style/radiogroups">
+                        style="@style/radiogroups"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/ka105a"
                             style="@style/radiobuttons"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:text="@string/ka105a" />
 
                         <RadioButton
                             android:id="@+id/ka105b"
                             style="@style/radiobuttons"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:text="@string/ka105b" />
 
                         <RadioButton
                             android:id="@+id/ka105c"
                             style="@style/radiobuttons"
+                            android:layout_width="0dp"
+                            android:layout_weight="1.2"
                             android:text="@string/ka105c" />
 
                     </RadioGroup>
@@ -383,6 +387,7 @@
                 </LinearLayout>
 
             </android.support.v7.widget.CardView>
+
 
             <!-- ka106   -->
             <android.support.v7.widget.CardView
@@ -392,7 +397,7 @@
                 <LinearLayout style="@style/linearlayout_view">
 
                     <TextView
-                        style="@style/i_textview"
+                        style="@style/textviews"
                         android:text="@string/ka106" />
 
                     <EditText
@@ -405,6 +410,7 @@
 
             </android.support.v7.widget.CardView>
 
+
             <!-- ka107   -->
             <android.support.v7.widget.CardView
                 android:id="@+id/cvka107"
@@ -413,12 +419,12 @@
                 <LinearLayout style="@style/linearlayout_view">
 
                     <TextView
-                        style="@style/i_textview"
+                        style="@style/textviews"
                         android:text="@string/ka107" />
 
                     <RadioGroup
                         android:id="@+id/ka107"
-                        style="@style/radiobuttons"
+                        style="@style/radiogroups"
                         android:orientation="horizontal">
 
                         <RadioButton
@@ -441,6 +447,7 @@
 
             </android.support.v7.widget.CardView>
 
+
             <!-- ka108   -->
             <android.support.v7.widget.CardView
                 android:id="@+id/cvka108"
@@ -449,7 +456,7 @@
                 <LinearLayout style="@style/linearlayout_view">
 
                     <TextView
-                        style="@style/i_textview"
+                        style="@style/textviews"
                         android:text="@string/ka108" />
 
                     <RadioGroup
@@ -516,18 +523,19 @@
                             style="@style/radiobuttons"
                             android:text="@string/other" />
 
-                    </RadioGroup>
+                        <EditText
+                            android:id="@+id/ka10896x"
+                            style="@style/EditTextAlpha"
+                            android:hint="@string/specify"
+                            android:text='@{ka10896.checked ? ka10896x.getText().toString : ""}'
+                            android:visibility='@{ka10896.checked ? View.VISIBLE : View.GONE}' />
 
-                    <EditText
-                        android:id="@+id/ka10896x"
-                        style="@style/EditTextAlpha"
-                        android:hint="@string/specify"
-                        android:text='@{ka10896.checked ? ka10896x.getText().toString : ""}'
-                        android:visibility='@{ka10896.checked ? View.VISIBLE : View.GONE}' />
+                    </RadioGroup>
 
                 </LinearLayout>
 
             </android.support.v7.widget.CardView>
+
 
             <!-- ka109   -->
             <android.support.v7.widget.CardView
@@ -537,7 +545,7 @@
                 <LinearLayout style="@style/linearlayout_view">
 
                     <TextView
-                        style="@style/i_textview"
+                        style="@style/textviews"
                         android:text="@string/ka109" />
 
                     <RadioGroup
@@ -545,7 +553,7 @@
                         style="@style/radiogroups">
 
                         <TextView
-                            style="@style/i_textviewh"
+                            style="@style/textviewsh"
                             android:text="@string/ka109sub" />
 
                         <RadioButton
@@ -574,7 +582,7 @@
                             android:text="@string/ka109e" />
 
                         <TextView
-                            style="@style/i_textviewh"
+                            style="@style/textviewsh"
                             android:text="@string/ka109sub01" />
 
                         <RadioButton
@@ -588,7 +596,7 @@
                             android:text="@string/ka109g" />
 
                         <TextView
-                            style="@style/i_textviewh"
+                            style="@style/textviewsh"
                             android:text="@string/ka109sub02" />
 
                         <RadioButton
@@ -602,7 +610,7 @@
                             android:text="@string/ka109i" />
 
                         <TextView
-                            style="@style/i_textviewh"
+                            style="@style/textviewsh"
                             android:text="@string/ka109sub03" />
 
                         <RadioButton
@@ -650,18 +658,19 @@
                             style="@style/radiobuttons"
                             android:text="@string/other" />
 
-                    </RadioGroup>
+                        <EditText
+                            android:id="@+id/ka10996x"
+                            style="@style/EditTextAlpha"
+                            android:hint="@string/specify"
+                            android:text='@{ka10996.checked ? ka10996x.getText().toString : ""}'
+                            android:visibility='@{ka10996.checked ? View.VISIBLE : View.GONE}' />
 
-                    <EditText
-                        android:id="@+id/ka10996x"
-                        style="@style/EditTextAlpha"
-                        android:hint="@string/specify"
-                        android:text='@{ka10996.checked ? ka10996x.getText().toString : ""}'
-                        android:visibility='@{ka10996.checked ? View.VISIBLE : View.GONE}' />
+                    </RadioGroup>
 
                 </LinearLayout>
 
             </android.support.v7.widget.CardView>
+
 
             <!-- ka110   -->
             <android.support.v7.widget.CardView
@@ -671,7 +680,7 @@
                 <LinearLayout style="@style/linearlayout_view">
 
                     <TextView
-                        style="@style/i_textview"
+                        style="@style/textviews"
                         android:text="@string/ka110" />
 
                     <RadioGroup
@@ -679,13 +688,8 @@
                         style="@style/radiogroups">
 
                         <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
-                            android:background="@color/colorPrimary"
-                            android:text="@string/ka110sub"
-                            android:textAppearance="?android:attr/textAppearanceLarge"
-                            android:textColor="@android:color/white" />
+                            style="@style/textviewsh"
+                            android:text="@string/ka110sub" />
 
                         <RadioButton
                             android:id="@+id/ka110a"
@@ -713,13 +717,8 @@
                             android:text="@string/ka110e" />
 
                         <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
-                            android:background="@color/colorPrimary"
-                            android:text="@string/ka110sub01"
-                            android:textAppearance="?android:attr/textAppearanceLarge"
-                            android:textColor="@android:color/white" />
+                            style="@style/textviewsh"
+                            android:text="@string/ka110sub01" />
 
                         <RadioButton
                             android:id="@+id/ka110f"
@@ -732,13 +731,8 @@
                             android:text="@string/ka110g" />
 
                         <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
-                            android:background="@color/colorPrimary"
-                            android:text="@string/ka110sub02"
-                            android:textAppearance="?android:attr/textAppearanceLarge"
-                            android:textColor="@android:color/white" />
+                            style="@style/textviewsh"
+                            android:text="@string/ka110sub02" />
 
                         <RadioButton
                             android:id="@+id/ka110h"
@@ -751,13 +745,8 @@
                             android:text="@string/ka110i" />
 
                         <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
-                            android:background="@color/colorPrimary"
-                            android:text="@string/ka110sub03"
-                            android:textAppearance="?android:attr/textAppearanceLarge"
-                            android:textColor="@android:color/white" />
+                            style="@style/textviewsh"
+                            android:text="@string/ka110sub03" />
 
                         <RadioButton
                             android:id="@+id/ka110j"
@@ -794,18 +783,19 @@
                             style="@style/radiobuttons"
                             android:text="@string/other" />
 
-                    </RadioGroup>
+                        <EditText
+                            android:id="@+id/ka11096x"
+                            style="@style/EditTextAlpha"
+                            android:hint="@string/specify"
+                            android:text='@{ka11096.checked ? ka11096x.getText().toString : ""}'
+                            android:visibility='@{ka11096.checked ? View.VISIBLE : View.GONE}' />
 
-                    <EditText
-                        android:id="@+id/ka11096x"
-                        style="@style/EditTextAlpha"
-                        android:hint="@string/specify"
-                        android:text='@{ka11096.checked ? ka11096x.getText().toString : ""}'
-                        android:visibility='@{ka11096.checked ? View.VISIBLE : View.GONE}' />
+                    </RadioGroup>
 
                 </LinearLayout>
 
             </android.support.v7.widget.CardView>
+
 
             <!-- ka111   -->
             <android.support.v7.widget.CardView
@@ -815,7 +805,7 @@
                 <LinearLayout style="@style/linearlayout_view">
 
                     <TextView
-                        style="@style/i_textview"
+                        style="@style/textviews"
                         android:text="@string/ka111" />
 
                     <RadioGroup
@@ -860,7 +850,7 @@
                     <LinearLayout style="@style/linearlayout_view">
 
                         <TextView
-                            style="@style/i_textview"
+                            style="@style/textviews"
                             android:text="@string/ka112" />
 
                         <EditText
@@ -873,6 +863,7 @@
 
                 </android.support.v7.widget.CardView>
 
+
                 <!-- ka113   -->
                 <android.support.v7.widget.CardView
                     android:id="@+id/cvka113"
@@ -881,7 +872,7 @@
                     <LinearLayout style="@style/linearlayout_view">
 
                         <TextView
-                            style="@style/i_textview"
+                            style="@style/textviews"
                             android:text="@string/ka113" />
 
                         <RadioGroup
@@ -925,7 +916,7 @@
                 <LinearLayout style="@style/linearlayout_view">
 
                     <TextView
-                        style="@style/i_textview"
+                        style="@style/textviews"
                         android:text="@string/ka114" />
 
                     <RadioGroup
@@ -953,6 +944,7 @@
 
             </android.support.v7.widget.CardView>
 
+
             <!-- ka115  -->
             <android.support.v7.widget.CardView
                 android:id="@+id/fldGrpka114"
@@ -963,13 +955,13 @@
                 <LinearLayout style="@style/linearlayout_view">
 
                     <TextView
-                        style="@style/i_textview"
+                        style="@style/textviews"
                         android:text="@string/ka115" />
 
                     <LinearLayout
                         android:id="@+id/fldGrpka115"
                         style="@style/linearlayout_view"
-                        android:orientation="vertical">
+                        android:tag="0">
 
                         <CheckBox
                             android:id="@+id/ka115a"
@@ -1009,6 +1001,7 @@
                         <EditText
                             android:id="@+id/ka11596x"
                             style="@style/EditTextAlpha"
+                            android:tag="ka11596"
                             android:hint="@string/specify"
                             android:text='@{ka11596.checked ? ka11596x.getText().toString : ""}'
                             android:visibility='@{ka11596.checked ? View.VISIBLE : View.GONE}' />
@@ -1019,6 +1012,7 @@
 
             </android.support.v7.widget.CardView>
 
+
             <!-- ka116  -->
             <android.support.v7.widget.CardView
                 android:id="@+id/cvka116"
@@ -1027,7 +1021,7 @@
                 <LinearLayout style="@style/linearlayout_view">
 
                     <TextView
-                        style="@style/i_textview"
+                        style="@style/textviews"
                         android:text="@string/ka116" />
 
                     <RadioGroup
@@ -1035,7 +1029,7 @@
                         style="@style/radiogroups">
 
                         <TextView
-                            style="@style/i_textviewh"
+                            style="@style/textviewsh"
                             android:text="@string/ka116sub" />
 
                         <RadioButton
@@ -1064,7 +1058,7 @@
                             android:text="@string/ka116e" />
 
                         <TextView
-                            style="@style/i_textviewh"
+                            style="@style/textviewsh"
                             android:text="@string/ka116sub01" />
 
                         <RadioButton
@@ -1093,7 +1087,7 @@
                             android:text="@string/ka116j" />
 
                         <TextView
-                            style="@style/i_textviewh"
+                            style="@style/textviewsh"
                             android:text="@string/ka110sub03" />
 
                         <RadioButton
@@ -1109,7 +1103,7 @@
                         <EditText
                             android:id="@+id/ka11696x"
                             style="@style/EditTextAlpha"
-                            android:hint="@string/other"
+                            android:hint="@string/specify"
                             android:text='@{ka11696.checked ? ka11696x.getText().toString : ""}'
                             android:visibility='@{ka11696.checked ? View.VISIBLE : View.GONE}' />
 
@@ -1119,6 +1113,7 @@
 
             </android.support.v7.widget.CardView>
 
+
             <!-- ka117  -->
             <android.support.v7.widget.CardView
                 android:id="@+id/cvka117"
@@ -1127,7 +1122,7 @@
                 <LinearLayout style="@style/linearlayout_view">
 
                     <TextView
-                        style="@style/i_textview"
+                        style="@style/textviews"
                         android:text="@string/ka117" />
 
                     <RadioGroup
@@ -1138,11 +1133,15 @@
                         <RadioButton
                             android:id="@+id/ka117a"
                             style="@style/radiobuttons"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:text="@string/yes" />
 
                         <RadioButton
                             android:id="@+id/ka117b"
                             style="@style/radiobuttons"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:text="@string/no" />
 
                     </RadioGroup>
@@ -1150,6 +1149,7 @@
                 </LinearLayout>
 
             </android.support.v7.widget.CardView>
+
 
             <!-- ka118  -->
             <android.support.v7.widget.CardView
@@ -1161,7 +1161,7 @@
                 <LinearLayout style="@style/linearlayout_view">
 
                     <TextView
-                        style="@style/i_textview"
+                        style="@style/textviews"
                         android:text="@string/ka118" />
 
                     <EditText
@@ -1174,6 +1174,7 @@
 
             </android.support.v7.widget.CardView>
 
+
             <!-- ka119  -->
             <android.support.v7.widget.CardView
                 android:id="@+id/cvka119"
@@ -1182,7 +1183,7 @@
                 <LinearLayout style="@style/linearlayout_view">
 
                     <TextView
-                        style="@style/i_textview"
+                        style="@style/textviews"
                         android:text="@string/ka119" />
 
                     <RadioGroup
@@ -1210,6 +1211,7 @@
 
             </android.support.v7.widget.CardView>
 
+
             <!-- ka120  -->
             <android.support.v7.widget.CardView
                 android:id="@+id/cvka120"
@@ -1218,7 +1220,7 @@
                 <LinearLayout style="@style/linearlayout_view">
 
                     <TextView
-                        style="@style/i_textview"
+                        style="@style/textviews"
                         android:text="@string/ka120" />
 
                     <RadioGroup
@@ -1246,6 +1248,7 @@
 
             </android.support.v7.widget.CardView>
 
+
             <!-- ka121  -->
             <android.support.v7.widget.CardView
                 android:id="@+id/cvka121"
@@ -1254,7 +1257,7 @@
                 <LinearLayout style="@style/linearlayout_view">
 
                     <TextView
-                        style="@style/i_textview"
+                        style="@style/textviews"
                         android:text="@string/ka121" />
 
                     <RadioGroup
@@ -1282,6 +1285,7 @@
 
             </android.support.v7.widget.CardView>
 
+
             <!-- ka122  -->
             <android.support.v7.widget.CardView
                 android:id="@+id/cvka122"
@@ -1290,7 +1294,7 @@
                 <LinearLayout style="@style/linearlayout_view">
 
                     <TextView
-                        style="@style/i_textview"
+                        style="@style/textviews"
                         android:text="@string/ka122" />
 
                     <RadioGroup
@@ -1318,6 +1322,7 @@
 
             </android.support.v7.widget.CardView>
 
+
             <!-- ka123  -->
             <android.support.v7.widget.CardView
                 android:id="@+id/fldGrpka122"
@@ -1329,7 +1334,7 @@
 
                     <!--ka123-->
                     <TextView
-                        style="@style/i_textview"
+                        style="@style/textviews"
                         android:text="@string/ka123" />
 
                     <LinearLayout style="@style/hlinearlayout">
@@ -1368,6 +1373,7 @@
 
             </android.support.v7.widget.CardView>
 
+
             <!-- ka124  -->
             <android.support.v7.widget.CardView
                 android:id="@+id/cvka124"
@@ -1376,12 +1382,13 @@
                 <LinearLayout style="@style/linearlayout_view">
 
                     <TextView
-                        style="@style/i_textview"
+                        style="@style/textviews"
                         android:text="@string/ka124" />
 
                 </LinearLayout>
 
             </android.support.v7.widget.CardView>
+
 
             <!-- ka12401  -->
             <android.support.v7.widget.CardView
@@ -1391,7 +1398,7 @@
                 <LinearLayout style="@style/hlinearlayout">
 
                     <TextView
-                        style="@style/textview"
+                        style="@style/textviews"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:text="@string/ka12401" />
@@ -1408,6 +1415,7 @@
 
             </android.support.v7.widget.CardView>
 
+
             <!-- ka12402  -->
             <android.support.v7.widget.CardView
                 android:id="@+id/cvka12402"
@@ -1416,7 +1424,7 @@
                 <LinearLayout style="@style/hlinearlayout">
 
                     <TextView
-                        style="@style/textview"
+                        style="@style/textviews"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:text="@string/ka12402" />
@@ -1433,6 +1441,7 @@
 
             </android.support.v7.widget.CardView>
 
+
             <!-- ka12403  -->
             <android.support.v7.widget.CardView
                 android:id="@+id/cvka12403"
@@ -1441,7 +1450,7 @@
                 <LinearLayout style="@style/hlinearlayout">
 
                     <TextView
-                        style="@style/textview"
+                        style="@style/textviews"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:text="@string/ka12403" />
@@ -1458,6 +1467,7 @@
 
             </android.support.v7.widget.CardView>
 
+
             <!-- ka12404  -->
             <android.support.v7.widget.CardView
                 android:id="@+id/cvka12404"
@@ -1466,7 +1476,7 @@
                 <LinearLayout style="@style/hlinearlayout">
 
                     <TextView
-                        style="@style/textview"
+                        style="@style/textviews"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:text="@string/ka12404" />
@@ -1483,6 +1493,7 @@
 
             </android.support.v7.widget.CardView>
 
+
             <!-- ka12405  -->
             <android.support.v7.widget.CardView
                 android:id="@+id/cvka12405"
@@ -1491,7 +1502,7 @@
                 <LinearLayout style="@style/hlinearlayout">
 
                     <TextView
-                        style="@style/textview"
+                        style="@style/textviews"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:text="@string/ka12405" />
@@ -1508,6 +1519,7 @@
 
             </android.support.v7.widget.CardView>
 
+
             <!-- ka12406  -->
             <android.support.v7.widget.CardView
                 android:id="@+id/cvka12406"
@@ -1516,7 +1528,7 @@
                 <LinearLayout style="@style/hlinearlayout">
 
                     <TextView
-                        style="@style/textview"
+                        style="@style/textviews"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:text="@string/ka12406" />
@@ -1533,6 +1545,7 @@
 
             </android.support.v7.widget.CardView>
 
+
             <!-- ka12407  -->
             <android.support.v7.widget.CardView
                 android:id="@+id/cvka12407"
@@ -1541,7 +1554,7 @@
                 <LinearLayout style="@style/hlinearlayout">
 
                     <TextView
-                        style="@style/textview"
+                        style="@style/textviews"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:text="@string/ka12407" />
@@ -1558,6 +1571,7 @@
 
             </android.support.v7.widget.CardView>
 
+
             <!-- ka12408  -->
             <android.support.v7.widget.CardView
                 android:id="@+id/cvka12408"
@@ -1566,7 +1580,7 @@
                 <LinearLayout style="@style/hlinearlayout">
 
                     <TextView
-                        style="@style/textview"
+                        style="@style/textviews"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:text="@string/ka12408" />
@@ -1583,6 +1597,7 @@
 
             </android.support.v7.widget.CardView>
 
+
             <!-- ka12409  -->
             <android.support.v7.widget.CardView
                 android:id="@+id/cvka12409"
@@ -1591,7 +1606,7 @@
                 <LinearLayout style="@style/hlinearlayout">
 
                     <TextView
-                        style="@style/textview"
+                        style="@style/textviews"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:text="@string/ka12409" />
@@ -1608,6 +1623,7 @@
 
             </android.support.v7.widget.CardView>
 
+
             <!-- ka12410  -->
             <android.support.v7.widget.CardView
                 android:id="@+id/cvka12410"
@@ -1616,7 +1632,7 @@
                 <LinearLayout style="@style/hlinearlayout">
 
                     <TextView
-                        style="@style/textview"
+                        style="@style/textviews"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:text="@string/ka12410" />
@@ -1633,6 +1649,7 @@
 
             </android.support.v7.widget.CardView>
 
+
             <!-- ka12411  -->
             <android.support.v7.widget.CardView
                 android:id="@+id/cvka12411"
@@ -1641,7 +1658,7 @@
                 <LinearLayout style="@style/hlinearlayout">
 
                     <TextView
-                        style="@style/textview"
+                        style="@style/textviews"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:text="@string/ka12411" />
@@ -1658,6 +1675,7 @@
 
             </android.support.v7.widget.CardView>
 
+
             <!-- ka12412  -->
             <android.support.v7.widget.CardView
                 android:id="@+id/cvka12412"
@@ -1666,7 +1684,7 @@
                 <LinearLayout style="@style/hlinearlayout">
 
                     <TextView
-                        style="@style/textview"
+                        style="@style/textviews"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:text="@string/ka12412" />
@@ -1683,6 +1701,7 @@
 
             </android.support.v7.widget.CardView>
 
+
             <!-- ka12413  -->
             <android.support.v7.widget.CardView
                 android:id="@+id/cvka12413"
@@ -1691,7 +1710,7 @@
                 <LinearLayout style="@style/hlinearlayout">
 
                     <TextView
-                        style="@style/textview"
+                        style="@style/textviews"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:text="@string/ka12413" />
@@ -1708,6 +1727,7 @@
 
             </android.support.v7.widget.CardView>
 
+
             <!-- ka12414  -->
             <android.support.v7.widget.CardView
                 android:id="@+id/cvka12414"
@@ -1716,7 +1736,7 @@
                 <LinearLayout style="@style/hlinearlayout">
 
                     <TextView
-                        style="@style/textview"
+                        style="@style/textviews"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:text="@string/ka12414" />
@@ -1733,6 +1753,7 @@
 
             </android.support.v7.widget.CardView>
 
+
             <!-- ka12415  -->
             <android.support.v7.widget.CardView
                 android:id="@+id/cvka12415"
@@ -1741,7 +1762,7 @@
                 <LinearLayout style="@style/hlinearlayout">
 
                     <TextView
-                        style="@style/textview"
+                        style="@style/textviews"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:text="@string/ka12415" />
@@ -1758,6 +1779,7 @@
 
             </android.support.v7.widget.CardView>
 
+
             <!-- ka12416  -->
             <android.support.v7.widget.CardView
                 android:id="@+id/cvka12416"
@@ -1766,7 +1788,7 @@
                 <LinearLayout style="@style/hlinearlayout">
 
                     <TextView
-                        style="@style/textview"
+                        style="@style/textviews"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:text="@string/ka12416" />
@@ -1783,6 +1805,7 @@
 
             </android.support.v7.widget.CardView>
 
+
             <!-- ka12417  -->
             <android.support.v7.widget.CardView
                 android:id="@+id/cvka12417"
@@ -1791,7 +1814,7 @@
                 <LinearLayout style="@style/hlinearlayout">
 
                     <TextView
-                        style="@style/textview"
+                        style="@style/textviews"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:text="@string/ka12417" />
@@ -1808,6 +1831,7 @@
 
             </android.support.v7.widget.CardView>
 
+
             <!-- ka12418  -->
             <android.support.v7.widget.CardView
                 android:id="@+id/cvka12418"
@@ -1816,7 +1840,7 @@
                 <LinearLayout style="@style/hlinearlayout">
 
                     <TextView
-                        style="@style/textview"
+                        style="@style/textviews"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:text="@string/ka12418" />
@@ -1833,6 +1857,7 @@
 
             </android.support.v7.widget.CardView>
 
+
             <!-- ka12419  -->
             <android.support.v7.widget.CardView
                 android:id="@+id/cvka12419"
@@ -1841,7 +1866,7 @@
                 <LinearLayout style="@style/hlinearlayout">
 
                     <TextView
-                        style="@style/textview"
+                        style="@style/textviews"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:text="@string/ka12419" />
@@ -1858,6 +1883,7 @@
 
             </android.support.v7.widget.CardView>
 
+
             <!-- ka12420  -->
             <android.support.v7.widget.CardView
                 android:id="@+id/cvka12420"
@@ -1866,7 +1892,7 @@
                 <LinearLayout style="@style/hlinearlayout">
 
                     <TextView
-                        style="@style/textview"
+                        style="@style/textviews"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:text="@string/ka12420" />
@@ -1883,6 +1909,7 @@
 
             </android.support.v7.widget.CardView>
 
+
             <!-- ka12496  -->
             <android.support.v7.widget.CardView
                 android:id="@+id/cvka12496"
@@ -1891,7 +1918,7 @@
                 <LinearLayout style="@style/hlinearlayout">
 
                     <TextView
-                        style="@style/textview"
+                        style="@style/textviews"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:text="@string/other" />
@@ -1911,33 +1938,26 @@
 
             <!--  = = = = =  END OF FORM FIELDS  = = = = = -->
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:layout_marginTop="40dp"
-                android:orientation="horizontal">
+                style="@style/hlinearlayout"
+                android:layout_marginTop="30dp">
 
                 <Button
                     android:id="@+id/btn_Continue"
                     style="@style/buttons"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#1ed61e"
                     android:onClick="@{() -> callback.BtnContinue()}"
-                    android:text="@string/nextSection"
-                    android:textColor="@color/white" />
+                    android:text="@string/nextSection" />
 
                 <Button
                     android:id="@+id/btn_End"
                     style="@style/buttons"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@color/red"
                     android:onClick="@{() -> callback.BtnEnd()}"
-                    android:text="@string/end_interview"
-                    android:textColor="@color/white" />
+                    android:text="@string/end_interview" />
 
             </LinearLayout>
 
