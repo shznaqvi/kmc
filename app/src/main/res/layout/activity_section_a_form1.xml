@@ -15,7 +15,7 @@
 
     <ScrollView style="@style/i_scrollview">
 
-        <LinearLayout style="@style/linearlayout_view">
+        <LinearLayout style="@style/vlinearlayout">
 
             <LinearLayout
                 android:id="@+id/fldGrpSecB01"
@@ -26,7 +26,7 @@
                     android:id="@+id/cvkfh1"
                     style="@style/cardView">
 
-                    <LinearLayout style="@style/linearlayout_view">
+                    <LinearLayout style="@style/vlinearlayout">
 
                         <TextView
                             style="@style/textviews"
@@ -75,7 +75,7 @@
                     android:id="@+id/fldGrpCVkf1b02"
                     style="@style/cardView">
 
-                    <LinearLayout style="@style/linearlayout_view">
+                    <LinearLayout style="@style/vlinearlayout">
 
                         <TextView
                             style="@style/textviews"
@@ -83,7 +83,7 @@
 
                         <RadioGroup
                             android:id="@+id/kf1b02"
-                            style="@style/i_radiogroup"
+                            style="@style/radiogroups"
                             android:orientation="horizontal"
                             android:onCheckedChanged="@{callback.onRadioClickChanged}">
 
@@ -115,7 +115,7 @@
                     android:id="@+id/fldGrpCVkf1b03"
                     style="@style/cardView">
 
-                    <LinearLayout style="@style/linearlayout_view">
+                    <LinearLayout style="@style/vlinearlayout">
 
                         <TextView
                             style="@style/textviews"
@@ -123,20 +123,20 @@
 
                         <RadioGroup
                             android:id="@+id/kf1b03"
-                            style="@style/i_radiogroup"
+                            style="@style/radiogroups"
                             android:orientation="horizontal"
                             android:onCheckedChanged="@{callback.onRadioClickChanged}">
 
                             <RadioButton
                                 android:id="@+id/kf1b03a"
-                                style="@style/i_radiobutton"
+                                style="@style/radiobuttons"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:text="@string/yes" />
 
                             <RadioButton
                                 android:id="@+id/kf1b03b"
-                                style="@style/i_radiobutton"
+                                style="@style/radiobuttons"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:text="@string/no" />
@@ -156,7 +156,7 @@
 
                     <android.support.v7.widget.CardView style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -175,7 +175,7 @@
                         android:id="@+id/fldGrpCVkf1b0"
                         style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -191,7 +191,7 @@
                     <!-- kf1b04 Header-->
                     <android.support.v7.widget.CardView style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -210,7 +210,7 @@
                         android:id="@+id/fldGrpCVkf1b0401"
                         style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -218,7 +218,7 @@
 
                             <RadioGroup
                                 android:id="@+id/kf1b0401"
-                                style="@style/i_radiogroup"
+                                style="@style/radiogroups"
                                 android:orientation="horizontal"
                                 android:onCheckedChanged="@{callback.onRadioQuestion04CheckID}">
 
@@ -231,7 +231,7 @@
 
                                 <RadioButton
                                     android:id="@+id/kf1b0401b"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:text="@string/no" />
@@ -248,7 +248,7 @@
                         android:id="@+id/fldGrpCVkf1b0402"
                         style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -256,20 +256,20 @@
 
                             <RadioGroup
                                 android:id="@+id/kf1b0402"
-                                style="@style/i_radiogroup"
+                                style="@style/radiogroups"
                                 android:orientation="horizontal"
                                 android:onCheckedChanged="@{callback.onRadioQuestion04CheckID}">
 
                                 <RadioButton
                                     android:id="@+id/kf1b0402a"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:text="@string/yes" />
 
                                 <RadioButton
                                     android:id="@+id/kf1b0402b"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:text="@string/no" />
@@ -286,7 +286,7 @@
                         android:id="@+id/fldGrpCVkf1b0403"
                         style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -294,20 +294,20 @@
 
                             <RadioGroup
                                 android:id="@+id/kf1b0403"
-                                style="@style/i_radiogroup"
+                                style="@style/radiogroups"
                                 android:orientation="horizontal"
                                 android:onCheckedChanged="@{callback.onRadioQuestion04CheckID}">
 
                                 <RadioButton
                                     android:id="@+id/kf1b0403a"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:text="@string/yes" />
 
                                 <RadioButton
                                     android:id="@+id/kf1b0403b"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:text="@string/no" />
@@ -324,7 +324,7 @@
                         android:id="@+id/fldGrpCVkf1b0404"
                         style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -332,20 +332,20 @@
 
                             <RadioGroup
                                 android:id="@+id/kf1b0404"
-                                style="@style/i_radiogroup"
+                                style="@style/radiogroups"
                                 android:orientation="horizontal"
                                 android:onCheckedChanged="@{callback.onRadioQuestion04CheckID}">
 
                                 <RadioButton
                                     android:id="@+id/kf1b0404a"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:text="@string/yes" />
 
                                 <RadioButton
                                     android:id="@+id/kf1b0404b"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:text="@string/no" />
@@ -362,7 +362,7 @@
                         android:id="@+id/fldGrpCVkf1b0405"
                         style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -370,20 +370,20 @@
 
                             <RadioGroup
                                 android:id="@+id/kf1b0405"
-                                style="@style/i_radiogroup"
+                                style="@style/radiogroups"
                                 android:orientation="horizontal"
                                 android:onCheckedChanged="@{callback.onRadioQuestion04CheckID}">
 
                                 <RadioButton
                                     android:id="@+id/kf1b0405a"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:text="@string/yes" />
 
                                 <RadioButton
                                     android:id="@+id/kf1b0405b"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:text="@string/no" />
@@ -398,7 +398,7 @@
                     <!-- kf1b04 Header-->
                     <android.support.v7.widget.CardView style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -417,7 +417,7 @@
                         android:id="@+id/fldGrpCVkf1b0406"
                         style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -425,20 +425,20 @@
 
                             <RadioGroup
                                 android:id="@+id/kf1b0406"
-                                style="@style/i_radiogroup"
+                                style="@style/radiogroups"
                                 android:orientation="horizontal"
                                 android:onCheckedChanged="@{callback.onRadioQuestion04CheckID}">
 
                                 <RadioButton
                                     android:id="@+id/kf1b0406a"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:text="@string/yes" />
 
                                 <RadioButton
                                     android:id="@+id/kf1b0406b"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:text="@string/no" />
@@ -455,7 +455,7 @@
                         android:id="@+id/fldGrpCVkf1b0407"
                         style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -463,20 +463,20 @@
 
                             <RadioGroup
                                 android:id="@+id/kf1b0407"
-                                style="@style/i_radiogroup"
+                                style="@style/radiogroups"
                                 android:orientation="horizontal"
                                 android:onCheckedChanged="@{callback.onRadioQuestion04CheckID}">
 
                                 <RadioButton
                                     android:id="@+id/kf1b0407a"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:text="@string/yes" />
 
                                 <RadioButton
                                     android:id="@+id/kf1b0407b"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:text="@string/no" />
@@ -493,7 +493,7 @@
                         android:id="@+id/fldGrpCVkf1b0408"
                         style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -501,20 +501,20 @@
 
                             <RadioGroup
                                 android:id="@+id/kf1b0408"
-                                style="@style/i_radiogroup"
+                                style="@style/radiogroups"
                                 android:orientation="horizontal"
                                 android:onCheckedChanged="@{callback.onRadioQuestion04CheckID}">
 
                                 <RadioButton
                                     android:id="@+id/kf1b0408a"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:text="@string/yes" />
 
                                 <RadioButton
                                     android:id="@+id/kf1b0408b"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:text="@string/no" />
@@ -531,7 +531,7 @@
                         android:id="@+id/fldGrpCVkf1b0409"
                         style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -539,20 +539,20 @@
 
                             <RadioGroup
                                 android:id="@+id/kf1b0409"
-                                style="@style/i_radiogroup"
+                                style="@style/radiogroups"
                                 android:orientation="horizontal"
                                 android:onCheckedChanged="@{callback.onRadioQuestion04CheckID}">
 
                                 <RadioButton
                                     android:id="@+id/kf1b0409a"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:text="@string/yes" />
 
                                 <RadioButton
                                     android:id="@+id/kf1b0409b"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:text="@string/no" />
@@ -569,7 +569,7 @@
                         android:id="@+id/fldGrpCVkf1b0410"
                         style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -577,20 +577,20 @@
 
                             <RadioGroup
                                 android:id="@+id/kf1b0410"
-                                style="@style/i_radiogroup"
+                                style="@style/radiogroups"
                                 android:orientation="horizontal"
                                 android:onCheckedChanged="@{callback.onRadioQuestion04CheckID}">
 
                                 <RadioButton
                                     android:id="@+id/kf1b0410a"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:text="@string/yes" />
 
                                 <RadioButton
                                     android:id="@+id/kf1b0410b"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:text="@string/no" />
@@ -607,7 +607,7 @@
                         android:id="@+id/fldGrpCVkf1b0411"
                         style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -615,20 +615,20 @@
 
                             <RadioGroup
                                 android:id="@+id/kf1b0411"
-                                style="@style/i_radiogroup"
+                                style="@style/radiogroups"
                                 android:orientation="horizontal"
                                 android:onCheckedChanged="@{callback.onRadioQuestion04CheckID}">
 
                                 <RadioButton
                                     android:id="@+id/kf1b0411a"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:text="@string/yes" />
 
                                 <RadioButton
                                     android:id="@+id/kf1b0411b"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:text="@string/no" />
@@ -645,7 +645,7 @@
                         android:id="@+id/fldGrpCVkf1b0412"
                         style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -653,20 +653,20 @@
 
                             <RadioGroup
                                 android:id="@+id/kf1b0412"
-                                style="@style/i_radiogroup"
+                                style="@style/radiogroups"
                                 android:orientation="horizontal"
                                 android:onCheckedChanged="@{callback.onRadioQuestion04CheckID}">
 
                                 <RadioButton
                                     android:id="@+id/kf1b0412a"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:text="@string/yes" />
 
                                 <RadioButton
                                     android:id="@+id/kf1b0412b"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:text="@string/no" />
@@ -683,7 +683,7 @@
                         android:id="@+id/fldGrpCVkf1b0413"
                         style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -691,20 +691,20 @@
 
                             <RadioGroup
                                 android:id="@+id/kf1b0413"
-                                style="@style/i_radiogroup"
+                                style="@style/radiogroups"
                                 android:orientation="horizontal"
                                 android:onCheckedChanged="@{callback.onRadioQuestion04CheckID}">
 
                                 <RadioButton
                                     android:id="@+id/kf1b0413a"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:text="@string/yes" />
 
                                 <RadioButton
                                     android:id="@+id/kf1b0413b"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:text="@string/no" />
@@ -721,7 +721,7 @@
                         android:id="@+id/fldGrpCVkf1b0414"
                         style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -729,20 +729,20 @@
 
                             <RadioGroup
                                 android:id="@+id/kf1b0414"
-                                style="@style/i_radiogroup"
+                                style="@style/radiogroups"
                                 android:orientation="horizontal"
                                 android:onCheckedChanged="@{callback.onRadioQuestion04CheckID}">
 
                                 <RadioButton
                                     android:id="@+id/kf1b0414a"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:text="@string/yes" />
 
                                 <RadioButton
                                     android:id="@+id/kf1b0414b"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:text="@string/no" />
@@ -757,7 +757,7 @@
                     <!-- kf1b04 Header-->
                     <android.support.v7.widget.CardView style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -776,7 +776,7 @@
                         android:id="@+id/fldGrpCVkf1b04c01"
                         style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -784,20 +784,20 @@
 
                             <RadioGroup
                                 android:id="@+id/kf1b0415"
-                                style="@style/i_radiogroup"
+                                style="@style/radiogroups"
                                 android:orientation="horizontal"
                                 android:onCheckedChanged="@{callback.onRadioQuestion04CheckID}">
 
                                 <RadioButton
                                     android:id="@+id/kf1b0415a"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:text="@string/yes" />
 
                                 <RadioButton
                                     android:id="@+id/kf1b0415b"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:text="@string/no" />
@@ -818,7 +818,7 @@
                             android:id="@+id/fldGrpCVkkf1b05"
                             style="@style/cardView">
 
-                            <LinearLayout style="@style/linearlayout_view">
+                            <LinearLayout style="@style/vlinearlayout">
 
                                 <TextView
                                     style="@style/textviews"
@@ -837,7 +837,7 @@
                     <android.support.v7.widget.CardView
                         style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -856,7 +856,7 @@
                         android:id="@+id/fldGrpCVkf1b0501"
                         style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -864,20 +864,20 @@
 
                             <RadioGroup
                                 android:id="@+id/kf1b0501"
-                                style="@style/i_radiogroup"
+                                style="@style/radiogroups"
                                 android:orientation="horizontal"
                                 android:onCheckedChanged="@{callback.onRadioEligibilityChecked}">
 
                                 <RadioButton
                                     android:id="@+id/kf1b0501a"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:text="@string/yes" />
 
                                 <RadioButton
                                     android:id="@+id/kf1b0501b"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:text="@string/no" />
@@ -894,7 +894,7 @@
                         android:id="@+id/fldGrpCVkf1b0502"
                         style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -902,20 +902,20 @@
 
                             <RadioGroup
                                 android:id="@+id/kf1b0502"
-                                style="@style/i_radiogroup"
+                                style="@style/radiogroups"
                                 android:orientation="horizontal"
                                 android:onCheckedChanged="@{callback.onRadioEligibilityChecked}">
 
                                 <RadioButton
                                     android:id="@+id/kf1b0502a"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:text="@string/yes" />
 
                                 <RadioButton
                                     android:id="@+id/kf1b0502b"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:text="@string/no" />
@@ -932,7 +932,7 @@
                         android:id="@+id/fldGrpCVkf1b0503"
                         style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -940,20 +940,20 @@
 
                             <RadioGroup
                                 android:id="@+id/kf1b0503"
-                                style="@style/i_radiogroup"
+                                style="@style/radiogroups"
                                 android:orientation="horizontal"
                                 android:onCheckedChanged="@{callback.onRadioEligibilityChecked}">
 
                                 <RadioButton
                                     android:id="@+id/kf1b0503a"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:text="@string/yes" />
 
                                 <RadioButton
                                     android:id="@+id/kf1b0503b"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:text="@string/no" />
@@ -970,7 +970,7 @@
                         android:id="@+id/fldGrpCVkf1b0504"
                         style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -978,20 +978,20 @@
 
                             <RadioGroup
                                 android:id="@+id/kf1b0504"
-                                style="@style/i_radiogroup"
+                                style="@style/radiogroups"
                                 android:orientation="horizontal"
                                 android:onCheckedChanged="@{callback.onRadioEligibilityChecked}">
 
                                 <RadioButton
                                     android:id="@+id/kf1b0504a"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:text="@string/yes" />
 
                                 <RadioButton
                                     android:id="@+id/kf1b0504b"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:text="@string/no" />
@@ -1008,7 +1008,7 @@
                         android:id="@+id/fldGrpCVkf1b0596"
                         style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -1016,20 +1016,20 @@
 
                             <RadioGroup
                                 android:id="@+id/kf1b0596"
-                                style="@style/i_radiogroup"
+                                style="@style/radiogroups"
                                 android:orientation="horizontal"
                                 android:onCheckedChanged="@{callback.onRadioEligibilityChecked}">
 
                                 <RadioButton
                                     android:id="@+id/kf1b0596a"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:text="@string/yes" />
 
                                 <RadioButton
                                     android:id="@+id/kf1b0596b"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:text="@string/no" />
@@ -1053,7 +1053,7 @@
                         android:id="@+id/fldGrpCVkf1b06"
                         style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -1061,20 +1061,20 @@
 
                             <RadioGroup
                                 android:id="@+id/kf1b06"
-                                style="@style/i_radiogroup"
+                                style="@style/radiogroups"
                                 android:orientation="horizontal"
                                 android:onCheckedChanged="@{callback.onRadioEligibilityChecked}">
 
                                 <RadioButton
                                     android:id="@+id/kf1b06a"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:text="@string/yes" />
 
                                 <RadioButton
                                     android:id="@+id/kf1b06b"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:text="@string/no" />
@@ -1091,7 +1091,7 @@
                         android:id="@+id/fldGrpCVkf1b0602"
                         style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -1099,20 +1099,20 @@
 
                             <RadioGroup
                                 android:id="@+id/kf1b0602"
-                                style="@style/i_radiogroup"
+                                style="@style/radiogroups"
                                 android:orientation="horizontal"
                                 android:onCheckedChanged="@{callback.onRadioEligibilityChecked}">
 
                                 <RadioButton
                                     android:id="@+id/kf1b0602a"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:text="@string/yes" />
 
                                 <RadioButton
                                     android:id="@+id/kf1b0602b"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:text="@string/no" />
@@ -1130,7 +1130,7 @@
                         android:id="@+id/fldGrpCVkkf1b07"
                         style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -1149,7 +1149,7 @@
                         android:id="@+id/fldGrpCVkf1b07"
                         style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviewsh"
@@ -1157,12 +1157,12 @@
 
                             <RadioGroup
                                 android:id="@+id/kf1b07"
-                                style="@style/i_radiogroup"
+                                style="@style/radiogroups"
                                 android:orientation="horizontal">
 
                                 <RadioButton
                                     android:id="@+id/kf1b07a"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:enabled="false"
@@ -1170,7 +1170,7 @@
 
                                 <RadioButton
                                     android:id="@+id/kf1b07b"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:enabled="false"
@@ -1185,13 +1185,13 @@
 
                     <LinearLayout
                         android:id="@+id/fldGrpF1Sec07"
-                        style="@style/linearlayout_view"
+                        style="@style/vlinearlayout"
                         android:visibility="@{kf1b07a.checked ? View.VISIBLE : View.GONE}">
 
                         <!--Consent-->
                         <android.support.v7.widget.CardView style="@style/cardView">
 
-                            <LinearLayout style="@style/linearlayout_view">
+                            <LinearLayout style="@style/vlinearlayout">
 
                                 <TextView
                                     style="@style/textviews"
@@ -1210,7 +1210,7 @@
                             android:id="@+id/fldGrpCVkf1b08"
                             style="@style/cardView">
 
-                            <LinearLayout style="@style/linearlayout_view">
+                            <LinearLayout style="@style/vlinearlayout">
 
                                 <TextView
                                     style="@style/textviews"
@@ -1218,19 +1218,19 @@
 
                                 <RadioGroup
                                     android:id="@+id/kf1b08"
-                                    style="@style/i_radiogroup"
+                                    style="@style/radiogroups"
                                     android:orientation="horizontal">
 
                                     <RadioButton
                                         android:id="@+id/kf1b08a"
-                                        style="@style/i_radiobutton"
+                                        style="@style/radiobuttons"
                                         android:layout_width="0dp"
                                         android:layout_weight="1"
                                         android:text="@string/yes" />
 
                                     <RadioButton
                                         android:id="@+id/kf1b08b"
-                                        style="@style/i_radiobutton"
+                                        style="@style/radiobuttons"
                                         android:layout_width="0dp"
                                         android:layout_weight="1"
                                         android:text="@string/no" />
@@ -1248,7 +1248,7 @@
                             style="@style/cardView"
                             android:visibility="@{kf1b08b.checked ? View.VISIBLE : View.GONE}">
 
-                            <LinearLayout style="@style/linearlayout_view">
+                            <LinearLayout style="@style/vlinearlayout">
 
                                 <TextView
                                     style="@style/textviews"
@@ -1256,26 +1256,26 @@
 
                                 <RadioGroup
                                     android:id="@+id/kf1b09"
-                                    style="@style/i_radiogroup"
+                                    style="@style/radiogroups"
                                     android:orientation="horizontal">
 
                                     <RadioButton
                                         android:id="@+id/kf1b09a"
-                                        style="@style/i_radiobutton"
+                                        style="@style/radiobuttons"
                                         android:layout_width="0dp"
                                         android:layout_weight="1"
                                         android:text="@string/kf1b09a" />
 
                                     <RadioButton
                                         android:id="@+id/kf1b09b"
-                                        style="@style/i_radiobutton"
+                                        style="@style/radiobuttons"
                                         android:layout_width="0dp"
                                         android:layout_weight="1"
                                         android:text="@string/kf1b09b" />
 
                                     <RadioButton
                                         android:id="@+id/kf1b0996"
-                                        style="@style/i_radiobutton"
+                                        style="@style/radiobuttons"
                                         android:layout_width="0dp"
                                         android:layout_weight="1"
                                         android:text="@string/other" />
@@ -1303,7 +1303,7 @@
                                 android:id="@+id/fldGrpCVkf1b010"
                                 style="@style/cardView">
 
-                                <LinearLayout style="@style/linearlayout_view">
+                                <LinearLayout style="@style/vlinearlayout">
 
                                     <TextView
                                         style="@style/textviews"
@@ -1311,19 +1311,19 @@
 
                                     <RadioGroup
                                         android:id="@+id/kf1b10"
-                                        style="@style/i_radiogroup"
+                                        style="@style/radiogroups"
                                         android:orientation="horizontal">
 
                                         <RadioButton
                                             android:id="@+id/kf1b10a"
-                                            style="@style/i_radiobutton"
+                                            style="@style/radiobuttons"
                                             android:layout_width="0dp"
                                             android:layout_weight="1"
                                             android:text="@string/yes" />
 
                                         <RadioButton
                                             android:id="@+id/kf1b10b"
-                                            style="@style/i_radiobutton"
+                                            style="@style/radiobuttons"
                                             android:layout_width="0dp"
                                             android:layout_weight="1"
                                             android:text="@string/no" />
@@ -1341,7 +1341,7 @@
                                 style="@style/cardView"
                                 android:visibility="@{kf1b10a.checked ? View.VISIBLE : View.GONE}">
 
-                                <LinearLayout style="@style/linearlayout_view">
+                                <LinearLayout style="@style/vlinearlayout">
 
                                     <TextView
                                         style="@style/textviews"

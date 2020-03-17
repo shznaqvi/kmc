@@ -15,7 +15,7 @@
 
     <ScrollView style="@style/i_scrollview">
 
-        <LinearLayout style="@style/linearlayout_view">
+        <LinearLayout style="@style/vlinearlayout">
 
             <LinearLayout
                 android:id="@+id/fldGrpSecD02"
@@ -30,7 +30,7 @@
                         android:id="@+id/fldGrpCVkf3d19"
                         style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -38,21 +38,21 @@
 
                             <RadioGroup
                                 android:id="@+id/kf3d19"
-                                style="@style/i_radiogroup">
+                                style="@style/radiogroups">
 
                                 <RadioButton
                                     android:id="@+id/kf3d19a"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/yes" />
 
                                 <RadioButton
                                     android:id="@+id/kf3d19b"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/no" />
 
                                 <RadioButton
                                     android:id="@+id/kf3d1998"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/dkn" />
 
                             </RadioGroup>
@@ -66,7 +66,7 @@
                         android:id="@+id/fldGrpCVkf3d01"
                         style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -74,36 +74,36 @@
 
                             <RadioGroup
                                 android:id="@+id/kf3d01"
-                                style="@style/i_radiogroup">
+                                style="@style/radiogroups">
 
                                 <RadioButton
                                     android:id="@+id/kf3d01a"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/kf3d01a" />
 
                                 <RadioButton
                                     android:id="@+id/kf3d01b"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/kf3d01b" />
 
                                 <RadioButton
                                     android:id="@+id/kf3d01c"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/kf3d01c" />
 
                                 <RadioButton
                                     android:id="@+id/kf3d01d"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/kf3d01d" />
 
                                 <RadioButton
                                     android:id="@+id/kf3d01e"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/kf3d01e" />
 
                                 <RadioButton
                                     android:id="@+id/kf3d0196"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/other" />
 
                                 <EditText
@@ -126,7 +126,7 @@
                         style="@style/cardView"
                         android:visibility='@{!kf3d01e.checked ? View.GONE : View.VISIBLE}'>
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -138,41 +138,41 @@
 
                             <RadioGroup
                                 android:id="@+id/kf3d02"
-                                style="@style/i_radiogroup">
+                                style="@style/radiogroups">
 
                                 <RadioButton
                                     android:id="@+id/kf3d02a"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/kf3d02a" />
 
                                 <RadioButton
                                     android:id="@+id/kf3d02b"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/kf3d02b" />
 
                                 <RadioButton
                                     android:id="@+id/kf3d02c"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/kf3d02c" />
 
                                 <RadioButton
                                     android:id="@+id/kf3d02d"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/kf3d02d" />
 
                                 <RadioButton
                                     android:id="@+id/kf3d02e"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/kf3d02e" />
 
                                 <RadioButton
                                     android:id="@+id/kf3d02f"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/kf3d02f" />
 
                                 <RadioButton
                                     android:id="@+id/kf3d02g"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/kf3d02g" />
 
                                 <TextView
@@ -181,22 +181,22 @@
 
                                 <RadioButton
                                     android:id="@+id/kf3d02h"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/kf3d02h" />
 
                                 <RadioButton
                                     android:id="@+id/kf3d02i"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/kf3d02i" />
 
                                 <RadioButton
                                     android:id="@+id/kf3d02j"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/kf3d02j" />
 
                                 <RadioButton
                                     android:id="@+id/kf3d0296"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/other" />
 
                                 <EditText
@@ -218,7 +218,7 @@
                         android:id="@+id/fldGrpCVkf3d03"
                         style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -226,36 +226,36 @@
 
                             <RadioGroup
                                 android:id="@+id/kf3d03"
-                                style="@style/i_radiogroup">
+                                style="@style/radiogroups">
 
                                 <RadioButton
                                     android:id="@+id/kf3d03a"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/kf3d03a" />
 
                                 <RadioButton
                                     android:id="@+id/kf3d03b"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/kf3d03b" />
 
                                 <RadioButton
                                     android:id="@+id/kf3d03c"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/kf3d03c" />
 
                                 <RadioButton
                                     android:id="@+id/kf3d03d"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/kf3d03d" />
 
                                 <RadioButton
                                     android:id="@+id/kf3d03e"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/kf3d03e" />
 
                                 <RadioButton
                                     android:id="@+id/kf3d0396"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/other" />
 
                                 <EditText
@@ -277,7 +277,7 @@
                         android:id="@+id/fldGrpCVkf3d04"
                         style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -285,21 +285,21 @@
 
                             <RadioGroup
                                 android:id="@+id/kf3d04"
-                                style="@style/i_radiogroup">
+                                style="@style/radiogroups">
 
                                 <RadioButton
                                     android:id="@+id/kf3d04a"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/yes" />
 
                                 <RadioButton
                                     android:id="@+id/kf3d04b"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/no" />
 
                                 <RadioButton
                                     android:id="@+id/kf3d0498"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/dkn" />
 
                             </RadioGroup>
@@ -314,7 +314,7 @@
                         style="@style/cardView"
                         android:visibility='@{kf3d04a.checked? View.GONE : View.VISIBLE}'>
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -326,41 +326,41 @@
 
                             <RadioGroup
                                 android:id="@+id/kf3d05"
-                                style="@style/i_radiogroup">
+                                style="@style/radiogroups">
 
                                 <RadioButton
                                     android:id="@+id/kf3d05a"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/kf3d05a" />
 
                                 <RadioButton
                                     android:id="@+id/kf3d05b"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/kf3d05b" />
 
                                 <RadioButton
                                     android:id="@+id/kf3d05c"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/kf3d05c" />
 
                                 <RadioButton
                                     android:id="@+id/kf3d05d"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/kf3d05d" />
 
                                 <RadioButton
                                     android:id="@+id/kf3d05e"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/kf3d05e" />
 
                                 <RadioButton
                                     android:id="@+id/kf3d05f"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/kf3d05f" />
 
                                 <RadioButton
                                     android:id="@+id/kf3d05g"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/kf3d05g" />
 
                                 <TextView
@@ -369,17 +369,17 @@
 
                                 <RadioButton
                                     android:id="@+id/kf3d05h"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/kf3d05h" />
 
                                 <RadioButton
                                     android:id="@+id/kf3d05i"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/kf3d05i" />
 
                                 <RadioButton
                                     android:id="@+id/kf3d05j"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/kf3d05j" />
 
                                 <TextView
@@ -388,27 +388,27 @@
 
                                 <RadioButton
                                     android:id="@+id/kf3d05k"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/kf3d05k" />
 
                                 <RadioButton
                                     android:id="@+id/kf3d05l"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/kf3d05l" />
 
                                 <RadioButton
                                     android:id="@+id/kf3d05m"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/kf3d05m" />
 
                                 <RadioButton
                                     android:id="@+id/kf3d05n"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/kf3d05n" />
 
                                 <RadioButton
                                     android:id="@+id/kf3d0596"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/other" />
 
                                 <EditText
@@ -433,7 +433,7 @@
                     android:id="@+id/fldGrpCVkf3d06"
                     style="@style/cardView">
 
-                    <LinearLayout style="@style/linearlayout_view">
+                    <LinearLayout style="@style/vlinearlayout">
 
                         <TextView
                             style="@style/textviews"
@@ -441,16 +441,16 @@
 
                         <RadioGroup
                             android:id="@+id/kf3d06"
-                            style="@style/i_radiogroup">
+                            style="@style/radiogroups">
 
                             <RadioButton
                                 android:id="@+id/kf3d06a"
-                                style="@style/i_radiobutton"
+                                style="@style/radiobuttons"
                                 android:text="@string/yes" />
 
                             <RadioButton
                                 android:id="@+id/kf3d06b"
-                                style="@style/i_radiobutton"
+                                style="@style/radiobuttons"
                                 android:text="@string/no" />
 
                         </RadioGroup>
@@ -465,7 +465,7 @@
                     style="@style/cardView"
                     android:visibility='@{kf3d06a.checked? View.GONE : View.VISIBLE}'>
 
-                    <LinearLayout style="@style/linearlayout_view">
+                    <LinearLayout style="@style/vlinearlayout">
 
                         <TextView
                             style="@style/textviews"
@@ -477,36 +477,36 @@
 
                         <RadioGroup
                             android:id="@+id/kf3d07"
-                            style="@style/i_radiogroup">
+                            style="@style/radiogroups">
 
                             <RadioButton
                                 android:id="@+id/kf3d07a"
-                                style="@style/i_radiobutton"
+                                style="@style/radiobuttons"
                                 android:text="@string/kf3d07a" />
 
                             <RadioButton
                                 android:id="@+id/kf3d07b"
-                                style="@style/i_radiobutton"
+                                style="@style/radiobuttons"
                                 android:text="@string/kf3d07b" />
 
                             <RadioButton
                                 android:id="@+id/kf3d07c"
-                                style="@style/i_radiobutton"
+                                style="@style/radiobuttons"
                                 android:text="@string/kf3d07c" />
 
                             <RadioButton
                                 android:id="@+id/kf3d07d"
-                                style="@style/i_radiobutton"
+                                style="@style/radiobuttons"
                                 android:text="@string/kf3d07d" />
 
                             <RadioButton
                                 android:id="@+id/kf3d07e"
-                                style="@style/i_radiobutton"
+                                style="@style/radiobuttons"
                                 android:text="@string/kf3d07e" />
 
                             <RadioButton
                                 android:id="@+id/kf3d07f"
-                                style="@style/i_radiobutton"
+                                style="@style/radiobuttons"
                                 android:text="@string/kf3d07f" />
 
                             <TextView
@@ -515,27 +515,27 @@
 
                             <RadioButton
                                 android:id="@+id/kf3d07g"
-                                style="@style/i_radiobutton"
+                                style="@style/radiobuttons"
                                 android:text="@string/kf3d07g" />
 
                             <RadioButton
                                 android:id="@+id/kf3d07h"
-                                style="@style/i_radiobutton"
+                                style="@style/radiobuttons"
                                 android:text="@string/kf3d07h" />
 
                             <RadioButton
                                 android:id="@+id/kf3d07i"
-                                style="@style/i_radiobutton"
+                                style="@style/radiobuttons"
                                 android:text="@string/kf3d07i" />
 
                             <RadioButton
                                 android:id="@+id/kf3d07j"
-                                style="@style/i_radiobutton"
+                                style="@style/radiobuttons"
                                 android:text="@string/kf3d07j" />
 
                             <RadioButton
                                 android:id="@+id/kf3d0796"
-                                style="@style/i_radiobutton"
+                                style="@style/radiobuttons"
                                 android:text="@string/other" />
 
                             <EditText
@@ -557,7 +557,7 @@
                     android:id="@+id/fldGrpCVkf3d08"
                     style="@style/cardView">
 
-                    <LinearLayout style="@style/linearlayout_view">
+                    <LinearLayout style="@style/vlinearlayout">
 
                         <TextView
                             style="@style/textviews"
@@ -565,16 +565,16 @@
 
                         <RadioGroup
                             android:id="@+id/kf3d08"
-                            style="@style/i_radiogroup">
+                            style="@style/radiogroups">
 
                             <RadioButton
                                 android:id="@+id/kf3d08a"
-                                style="@style/i_radiobutton"
+                                style="@style/radiobuttons"
                                 android:text="@string/yes" />
 
                             <RadioButton
                                 android:id="@+id/kf3d08b"
-                                style="@style/i_radiobutton"
+                                style="@style/radiobuttons"
                                 android:text="@string/no" />
 
                         </RadioGroup>
@@ -593,7 +593,7 @@
                         android:id="@+id/fldGrpCVkf3d09"
                         style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -601,16 +601,16 @@
 
                             <RadioGroup
                                 android:id="@+id/kf3d09"
-                                style="@style/i_radiogroup">
+                                style="@style/radiogroups">
 
                                 <RadioButton
                                     android:id="@+id/kf3d09a"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/yes" />
 
                                 <RadioButton
                                     android:id="@+id/kf3d09b"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/no" />
 
                             </RadioGroup>
@@ -625,7 +625,7 @@
                         style="@style/cardView"
                         android:visibility="@{kf3d09a.checked ? View.VISIBLE : View.GONE}">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -633,26 +633,26 @@
 
                             <RadioGroup
                                 android:id="@+id/kf3d10"
-                                style="@style/i_radiogroup">
+                                style="@style/radiogroups">
 
                                 <RadioButton
                                     android:id="@+id/kf3d10a"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/kf3d10a" />
 
                                 <RadioButton
                                     android:id="@+id/kf3d10b"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/kf3d10b" />
 
                                 <RadioButton
                                     android:id="@+id/kf3d10c"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/kf3d10c" />
 
                                 <RadioButton
                                     android:id="@+id/kf3d1096"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/other" />
 
                                 <EditText
@@ -676,7 +676,7 @@
                     android:id="@+id/fldGrpCVkf3d11"
                     style="@style/cardView">
 
-                    <LinearLayout style="@style/linearlayout_view">
+                    <LinearLayout style="@style/vlinearlayout">
 
                         <TextView
                             style="@style/textviews"
@@ -700,7 +700,7 @@
                     android:id="@+id/fldGrpCVkf3d12"
                     style="@style/cardView">
 
-                    <LinearLayout style="@style/linearlayout_view">
+                    <LinearLayout style="@style/vlinearlayout">
 
                         <TextView
                             style="@style/textviews"
@@ -708,16 +708,16 @@
 
                         <RadioGroup
                             android:id="@+id/kf3d12"
-                            style="@style/i_radiogroup">
+                            style="@style/radiogroups">
 
                             <RadioButton
                                 android:id="@+id/kf3d12a"
-                                style="@style/i_radiobutton"
+                                style="@style/radiobuttons"
                                 android:text="@string/yes" />
 
                             <RadioButton
                                 android:id="@+id/kf3d12b"
-                                style="@style/i_radiobutton"
+                                style="@style/radiobuttons"
                                 android:text="@string/no" />
 
                         </RadioGroup>
@@ -731,7 +731,7 @@
                     android:id="@+id/fldGrpCVkf3d13"
                     style="@style/cardView">
 
-                    <LinearLayout style="@style/linearlayout_view">
+                    <LinearLayout style="@style/vlinearlayout">
 
                         <TextView
                             style="@style/textviews"
@@ -755,7 +755,7 @@
                     android:id="@+id/fldGrpCVkf3d14"
                     style="@style/cardView">
 
-                    <LinearLayout style="@style/linearlayout_view">
+                    <LinearLayout style="@style/vlinearlayout">
 
                         <TextView
                             style="@style/textviews"
@@ -785,7 +785,7 @@
                         android:id="@+id/fldGrpCVkf3d15"
                         style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
@@ -793,16 +793,16 @@
 
                             <RadioGroup
                                 android:id="@+id/kf3d15"
-                                style="@style/i_radiogroup">
+                                style="@style/radiogroups">
 
                                 <RadioButton
                                     android:id="@+id/kf3d15a"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/yes" />
 
                                 <RadioButton
                                     android:id="@+id/kf3d15b"
-                                    style="@style/i_radiobutton"
+                                    style="@style/radiobuttons"
                                     android:text="@string/no" />
 
                             </RadioGroup>
@@ -821,7 +821,7 @@
                             android:id="@+id/fldGrpCVkf3d16"
                             style="@style/cardView">
 
-                            <LinearLayout style="@style/linearlayout_view">
+                            <LinearLayout style="@style/vlinearlayout">
 
                                 <TextView
                                     style="@style/textviews"
@@ -879,7 +879,7 @@
                             android:id="@+id/fldGrpCVkf3d17"
                             style="@style/cardView">
 
-                            <LinearLayout style="@style/linearlayout_view">
+                            <LinearLayout style="@style/vlinearlayout">
 
                                 <TextView
                                     style="@style/textviews"
@@ -994,7 +994,7 @@
                             android:id="@+id/fldGrpCVkf3d18"
                             style="@style/cardView">
 
-                            <LinearLayout style="@style/linearlayout_view">
+                            <LinearLayout style="@style/vlinearlayout">
 
                                 <TextView
                                     style="@style/textviews"

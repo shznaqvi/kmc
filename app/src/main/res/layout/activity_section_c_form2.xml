@@ -15,7 +15,7 @@
 
     <ScrollView style="@style/i_scrollview">
 
-        <LinearLayout style="@style/linearlayout_view">
+        <LinearLayout style="@style/vlinearlayout">
 
             <LinearLayout
                 android:id="@+id/fldGrpSecC01"
@@ -116,7 +116,7 @@
                     android:id="@+id/fldGrpCVkf2c04"
                     style="@style/cardView">
 
-                    <LinearLayout style="@style/linearlayout_view">
+                    <LinearLayout style="@style/vlinearlayout">
 
                         <TextView
                             style="@style/textviews"
@@ -124,19 +124,19 @@
 
                         <RadioGroup
                             android:id="@+id/kf2c04"
-                            style="@style/i_radiogroup"
+                            style="@style/radiogroups"
                             android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/kf2c04a"
-                                style="@style/i_radiobutton"
+                                style="@style/radiobuttons"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:text="@string/yes" />
 
                             <RadioButton
                                 android:id="@+id/kf2c04b"
-                                style="@style/i_radiobutton"
+                                style="@style/radiobuttons"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:text="@string/no" />
@@ -154,7 +154,7 @@
                     style="@style/cardView"
                     android:visibility="@{kf2c04b.checked ? View.VISIBLE : View.GONE}">
 
-                    <LinearLayout style="@style/linearlayout_view">
+                    <LinearLayout style="@style/vlinearlayout">
 
                         <TextView
                             style="@style/textviews"
@@ -208,7 +208,7 @@
                     android:id="@+id/fldGrpCVkf2c06"
                     style="@style/cardView">
 
-                    <LinearLayout style="@style/linearlayout_view">
+                    <LinearLayout style="@style/vlinearlayout">
 
                         <TextView
                             style="@style/textviews"
@@ -259,7 +259,7 @@
                     android:id="@+id/fldGrpCVkf2c07"
                     style="@style/cardView">
 
-                    <LinearLayout style="@style/linearlayout_view">
+                    <LinearLayout style="@style/vlinearlayout">
 
                         <TextView
                             style="@style/textviews"
@@ -296,7 +296,7 @@
                     android:id="@+id/fldGrpCVkf2c08"
                     style="@style/cardView">
 
-                    <LinearLayout style="@style/linearlayout_view">
+                    <LinearLayout style="@style/vlinearlayout">
 
                         <TextView
                             style="@style/textviews"
@@ -340,7 +340,7 @@
                     android:id="@+id/fldGrpCVkf2c09"
                     style="@style/cardView">
 
-                    <LinearLayout style="@style/linearlayout_view">
+                    <LinearLayout style="@style/vlinearlayout">
 
                         <TextView
                             style="@style/textviews"
@@ -394,7 +394,7 @@
                     android:id="@+id/fldGrpCVkf2c10"
                     style="@style/cardView">
 
-                    <LinearLayout style="@style/linearlayout_view">
+                    <LinearLayout style="@style/vlinearlayout">
 
                         <TextView
                             style="@style/textviews"
@@ -439,7 +439,7 @@
                     style="@style/cardView"
                     android:visibility="@{kf2c10a.checked ? View.VISIBLE : View.GONE}">
 
-                    <LinearLayout style="@style/linearlayout_view">
+                    <LinearLayout style="@style/vlinearlayout">
 
                         <TextView
                             style="@style/textviews"
@@ -447,7 +447,7 @@
 
                         <LinearLayout
                             android:id="@+id/fldGrpLLkf2c11"
-                            style="@style/linearlayout_view"
+                            style="@style/vlinearlayout"
                             android:tag="0">
 
                             <CheckBox

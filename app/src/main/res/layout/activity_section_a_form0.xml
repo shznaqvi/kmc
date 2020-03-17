@@ -102,7 +102,7 @@
                 android:id="@+id/cvvillageLabel"
                 style="@style/cardView">
 
-                <LinearLayout style="@style/linearlayout_view">
+                <LinearLayout style="@style/vlinearlayout">
 
                     <TextView
                         android:id="@+id/villageLabel"
@@ -430,7 +430,7 @@
                     android:id="@+id/cvkapr12"
                     style="@style/cardView">
 
-                    <LinearLayout style="@style/linearlayout_view">
+                    <LinearLayout style="@style/vlinearlayout">
 
                         <TextView
                             style="@style/textviews"
@@ -494,7 +494,7 @@
                         android:id="@+id/cvkapr13"
                         style="@style/cardView">
 
-                        <LinearLayout style="@style/linearlayout_view">
+                        <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
                                 style="@style/textviews"
