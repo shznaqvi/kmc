@@ -34,8 +34,8 @@
 
                     <TextView
                         style="@style/textviews"
-                        android:layout_width="0dp"
                         android:layout_height="match_parent"
+                        android:layout_width="0dp"
                         android:layout_weight="1"
                         android:text="@string/crataluka1" />
 
@@ -59,6 +59,7 @@
 
                     <TextView
                         style="@style/textviews"
+                        android:layout_height="match_parent"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:text="@string/cruc" />
@@ -83,6 +84,7 @@
 
                     <TextView
                         style="@style/textviews"
+                        android:layout_height="match_parent"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:text="@string/crvillage" />
@@ -94,6 +96,7 @@
                         android:layout_weight="1" />
 
                 </LinearLayout>
+
             </android.support.v7.widget.CardView>
 
 
@@ -203,6 +206,7 @@
 
                             <TextView
                                 style="@style/textviews"
+                                android:layout_height="match_parent"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:text="@string/kf1a2" />
@@ -210,6 +214,8 @@
                             <TextView
                                 android:id="@+id/kf1a2"
                                 style="@style/textviewsh"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorPrimaryBeta"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:enabled="false" />
@@ -228,6 +234,7 @@
 
                             <TextView
                                 style="@style/textviews"
+                                android:layout_height="match_parent"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:text="@string/kf1a3" />
@@ -257,6 +264,7 @@
 
                             <TextView
                                 style="@style/textviews"
+                                android:layout_height="match_parent"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:text="@string/kf1a4" />
@@ -319,6 +327,7 @@
 
                             <TextView
                                 style="@style/textviews"
+                                android:layout_height="match_parent"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:text="@string/kf1a6" />
@@ -346,6 +355,7 @@
 
                             <TextView
                                 style="@style/textviews"
+                                android:layout_height="match_parent"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:text="@string/kf1a7" />
@@ -533,6 +543,7 @@
 
                             <TextView
                                 style="@style/textviews"
+                                android:layout_height="match_parent"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:text="@string/kf3a4" />
@@ -557,6 +568,7 @@
 
                             <TextView
                                 style="@style/textviews"
+                                android:layout_height="match_parent"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:text="@string/kf2a7" />
@@ -583,6 +595,7 @@
 
                             <TextView
                                 style="@style/textviews"
+                                android:layout_height="match_parent"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:text="@string/kf2a8" />
@@ -620,6 +633,7 @@
 
                             <TextView
                                 style="@style/textviews"
+                                android:layout_height="match_parent"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:text="@string/kf2a1" />
@@ -645,6 +659,7 @@
 
                             <TextView
                                 style="@style/textviews"
+                                android:layout_height="match_parent"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:text="@string/kf2a2" />
@@ -670,6 +685,7 @@
 
                             <TextView
                                 style="@style/textviews"
+                                android:layout_height="match_parent"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:text="@string/kf2a3" />
@@ -699,6 +715,7 @@
 
                             <TextView
                                 style="@style/textviews"
+                                android:layout_height="match_parent"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:text="@string/kf2a4" />
@@ -728,6 +745,7 @@
 
                             <TextView
                                 style="@style/textviews"
+                                android:layout_height="match_parent"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:text="@string/kf2a5" />
@@ -855,7 +873,7 @@
                 <LinearLayout
                     android:id="@+id/fldGrpbtn"
                     style="@style/hlinearlayout"
-                    android:paddingTop="30dp">
+                    android:paddingTop="20dp">
 
                     <Button
                         android:id="@+id/btnNext"
