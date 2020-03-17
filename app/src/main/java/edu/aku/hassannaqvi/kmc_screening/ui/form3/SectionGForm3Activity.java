@@ -89,11 +89,6 @@ public class SectionGForm3Activity extends AppCompatActivity {
                 : bi.kf3g0398.isChecked() ? "98"
                 : "0");
 
-        sa1.put("kf3g05", bi.kf3g05a.isChecked() ? "1"
-                : bi.kf3g05b.isChecked() ? "2"
-                : bi.kf3g0598.isChecked() ? "98"
-                : "0");
-
         sa1.put("kf3g06a", bi.kf3g061a.isChecked() ? "1"
                 : bi.kf3g061b.isChecked() ? "2"
                 : bi.kf3g06198.isChecked() ? "98"
@@ -259,7 +254,7 @@ public class SectionGForm3Activity extends AppCompatActivity {
                 : bi.kf3g1398.isChecked() ? "98"
                 : "0");
 
-        fc.setsD(String.valueOf(sa1));
+        fc.setsG(String.valueOf(sa1));
 
     }
 
@@ -284,8 +279,7 @@ public class SectionGForm3Activity extends AppCompatActivity {
     }
 
     private boolean formValidation() {
-        if (!ValidatorClass.EmptyCheckingContainer(this, bi.fldGrpSecG01))
-            return false;
+        return ValidatorClass.EmptyCheckingContainer(this, bi.fldGrpSecG01);
 
 
         /*if (bi.kf3d15a.isChecked() && !bi.kf3d1698.isChecked()) {
@@ -296,15 +290,13 @@ public class SectionGForm3Activity extends AppCompatActivity {
                 return false;
             }
         }*/
-
-        return true;
     }
 
     private boolean UpdateDB() {
 
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateSD();
+        int updcount = db.updateSG();
 
         if (updcount > 0) {
             //Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
