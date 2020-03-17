@@ -76,7 +76,7 @@
             <!--  Village Spinner  -->
             <android.support.v7.widget.CardView
                 android:id="@+id/cvcrvillage"
-                style="@style/cardView">
+                style="@style/cardViews">
 
                 <LinearLayout style="@style/hlinearlayout">
 
@@ -100,7 +100,7 @@
             <!--Village code label-->
             <android.support.v7.widget.CardView
                 android:id="@+id/cvvillageLabel"
-                style="@style/cardView">
+                style="@style/cardViews">
 
                 <LinearLayout style="@style/vlinearlayout">
 
@@ -117,7 +117,7 @@
             <!--surveillance-->
             <android.support.v7.widget.CardView
                 android:id="@+id/checkBtnLayout"
-                style="@style/cardView"
+                style="@style/cardViews"
                 android:visibility="gone"
                 tools:visibility="visible">
 
@@ -149,7 +149,7 @@
             <!--recruitment-->
             <android.support.v7.widget.CardView
                 android:id="@+id/hhLayout"
-                style="@style/cardView"
+                style="@style/cardViews"
                 android:visibility="gone"
                 tools:visibility="visible">
 
@@ -181,7 +181,7 @@
             <!--W-NAME-->
             <android.support.v7.widget.CardView
                 android:id="@+id/hhLayout2"
-                style="@style/cardView"
+                style="@style/cardViews"
                 android:visibility="gone"
                 tools:visibility="visible">
 
@@ -396,7 +396,7 @@
                     <!--kapr11-->
                     <android.support.v7.widget.CardView
                         android:id="@+id/cvkapr11"
-                        style="@style/cardView">
+                        style="@style/cardViews">
 
                         <LinearLayout style="@style/hlinearlayout">
 
@@ -428,7 +428,7 @@
                 <!--kapr12-->
                 <android.support.v7.widget.CardView
                     android:id="@+id/cvkapr12"
-                    style="@style/cardView">
+                    style="@style/cardViews">
 
                     <LinearLayout style="@style/vlinearlayout">
 
@@ -492,7 +492,7 @@
                     <!--kapr13-->
                     <android.support.v7.widget.CardView
                         android:id="@+id/cvkapr13"
-                        style="@style/cardView">
+                        style="@style/cardViews">
 
                         <LinearLayout style="@style/vlinearlayout">
 
@@ -549,7 +549,7 @@
                     <!--kapr14-->
                     <android.support.v7.widget.CardView
                         android:id="@+id/cvkapr14"
-                        style="@style/cardView">
+                        style="@style/cardViews">
 
                         <LinearLayout style="@style/hlinearlayout">
 
