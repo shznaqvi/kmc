@@ -74,7 +74,9 @@ public class SectionFForm3Activity extends AppCompatActivity {
         sa1.put("kf3f0296", bi.kf3f0296.isChecked() ? "96" : "0");
         sa1.put("kf3f0296x", bi.kf3f0296x.getText().toString());
 
-        sa1.put("kf3f03", bi.kf3f03a.isChecked() ? "1" : bi.kf3f03b.isChecked() ? "2" : "0");
+        sa1.put("kf3f03", bi.kf3f03a.isChecked() ? "1"
+                : bi.kf3f03b.isChecked() ? "2"
+                : "0");
 
         sa1.put("kf3f04a", bi.kf3f04a.isChecked() ? "1" : "0");
         sa1.put("kf3f04b", bi.kf3f04b.isChecked() ? "2" : "0");
@@ -89,7 +91,9 @@ public class SectionFForm3Activity extends AppCompatActivity {
         sa1.put("kf3f0596", bi.kf3f0596.isChecked() ? "96" : "0");
         sa1.put("kf3f0596x", bi.kf3f0596x.getText().toString());
 
-        sa1.put("kf3f06", bi.kf3f06a.isChecked() ? "1" : bi.kf3f06b.isChecked() ? "2" : "0");
+        sa1.put("kf3f06", bi.kf3f06a.isChecked() ? "1"
+                : bi.kf3f06b.isChecked() ? "2"
+                : "0");
 
         fc.setsF(String.valueOf(sa1));
 

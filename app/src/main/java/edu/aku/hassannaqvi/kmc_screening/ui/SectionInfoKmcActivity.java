@@ -365,7 +365,10 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
         JSONObject sInfo = new JSONObject();
         String fType = MainApp.formType;
 
-        sInfo.put(fType + "a01", bi.kfa1a.isChecked() ? "1" : bi.kfa1b.isChecked() ? "2" : "0");
+        sInfo.put(fType + "a01", bi.kfa1a.isChecked() ? "1"
+                : bi.kfa1b.isChecked() ? "2"
+                : "0");
+
         if (fType.equals("kf1")) {
             sInfo.put("kf1a02", bi.kf1a2.getText().toString());
 
@@ -373,10 +376,15 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
             fc.setScreenid(bi.kf1a3.getText().toString());
 
             sInfo.put("kf1a04", bi.kf1a4.getText().toString());
-            sInfo.put("kf1a05", bi.kf1a5a.isChecked() ? "1" : bi.kf1a5b.isChecked() ? "2" : "0");
+
+            sInfo.put("kf1a05", bi.kf1a5a.isChecked() ? "1"
+                    : bi.kf1a5b.isChecked() ? "2"
+                    : "0");
 
             sInfo.put("kf1a06", bi.kf1a6.getText().toString());
+
             sInfo.put("kf1a07", bi.kf1a7.getText().toString());
+
             sInfo.put("kf1a08", bi.kf1a8a.isChecked() ? "1"
                     : bi.kf1a8b.isChecked() ? "2"
                     : bi.kf1a8c.isChecked() ? "3"
