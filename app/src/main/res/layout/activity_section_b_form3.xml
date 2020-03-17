@@ -34,26 +34,26 @@
 
                         <RadioGroup
                             android:id="@+id/kf3b02"
-                            style="@style/i_radiogroup"
+                            style="@style/radiogroups"
                             android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/kf3b02a"
-                                style="@style/i_radiobutton"
+                                style="@style/radiobuttons"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:text="@string/kf3b02a" />
 
                             <RadioButton
                                 android:id="@+id/kf3b02b"
-                                style="@style/i_radiobutton"
+                                style="@style/radiobuttons"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:text="@string/kf3b02b" />
 
                             <RadioButton
                                 android:id="@+id/kf3b02c"
-                                style="@style/i_radiobutton"
+                                style="@style/radiobuttons"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:text="@string/kf3b02c" />
