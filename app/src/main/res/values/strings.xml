@@ -35,9 +35,10 @@
     <string name="alive">جيئرو </string>
     <string name="died">مري ويو </string>
     <string name="na"> لاڳو نه آهي </string>
+    <string name="num"> نمبر </string>
     <string name="dkn"> خبر ناهي </string>
-    <string name="drem">ياد ناهي </string>
-    <string name="dkndrem">خبر ناهي/ياد ناهي</string>
+    <string name="drem"> ياد ناهي </string>
+    <string name="dkndrem"> خبر ناهي / ياد ناهي </string>
     <string name="kg"> ڪلوگرام </string>
     <string name="kc307rec"> وزن بابت يادگيري ڪرايو </string>
     <string name="weeks"> هفتا </string>
@@ -284,7 +285,7 @@
     <string name="kf1b09b"> خاندان انڪار ڪيو </string>
     <string name="kf1b09c"> ٻي وضاحت ڪيو </string>
     <string name="kf1b10"> جيڪڏهن حصي وٺڻ واري راضپو ڏيکاريو آهي ته ڇا راضي نامي تي ان جي صحيح تاريخ ۽ شاهدي ورتي وئي ؟ </string>
-    <string name="kf1b11"> حصي وٺڻ واري جو شناخت نمبر لکو( حصي وٺندڙن جي ڪتاب ۾ مڪمل درج ٿيل تفصيل) </string>
+    <string name="kf1b11"> حصي وٺڻ واري جو شناخت نمبر لکو ( حصي وٺندڙن جي ڪتاب ۾ مڪمل درج ٿيل تفصيل) </string>
 
 
     <!--KMC  Forms 2 section B-->
