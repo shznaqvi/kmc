@@ -1960,7 +1960,7 @@
             <!--  = = = = =  END OF FORM FIELDS  = = = = = -->
             <LinearLayout
                 style="@style/hlinearlayout"
-                android:layout_marginTop="30dp">
+                android:layout_marginTop="20dp">
 
                 <Button
                     android:id="@+id/btn_Continue"
