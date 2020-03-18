@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+
 <resources>
     <string name="app_name"> Kangaroo Mother Care 2 </string>
     <!-- Strings related to login -->
@@ -542,8 +544,8 @@
     <string name="kf3c02"> گذريل 24 ڪلاڪن ۾ توهان ڪيترا دفعا ڪي ايم سي ڪئي/ ڏني؟ </string>
     <string name="kf3c02a"> وقتن جو تعداد </string>
 
-    <string name="kf3c03"> گذريل 24 ڪلاڪن ۾ توهان ڪل ڪيترا ڪلاڪ ڪي ايم سي ڏني؟ </string>
-    <string name="kf3c03a"> ڪل ڪلاڪن جو تعداد </string>
+    <string name="kf3c03"> گذريل 24 ڪلاڪن ۾ توهان ڪل ڪيترا ڪلاڪ ڪي ايم سي ڏني ؟ </string>
+    <string name="kf3c03a"> ڪل ڪلاڪ </string>
     <string name="kf3c03b"> منٽن جو تعداد </string>
 
     <string name="kf3c04"> جيڪڏهن نه، ته ان جي وجهه ڇا هئي؟ </string>
