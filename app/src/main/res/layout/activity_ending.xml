@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="edu.aku.hassannaqvi.kmc_screening.ui.other.EndingActivity">
 
+
     <data>
 
         <import type="android.view.View" />
@@ -12,136 +13,95 @@
             type="edu.aku.hassannaqvi.kmc_screening.ui.other.EndingActivity" />
     </data>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:scrollbars="horizontal">
+
+    <ScrollView style="@style/i_scrollview">
+
 
         <LinearLayout
             android:id="@+id/fldGrpEnd"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/vlinearlayout"
             android:layoutDirection="rtl"
-            android:orientation="vertical">
+            android:textDirection="rtl">
 
-            <!--Status-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/istatus"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
 
-            <RadioGroup
-                android:id="@+id/istatus"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+            <!-- istatus  -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/cvistatus"
+                style="@style/cardViews">
 
-                <RadioButton
-                    android:id="@+id/istatusa"
-                    style="@style/radiobutton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/istatusa" />
+                <LinearLayout style="@style/vlinearlayout">
 
-                <RadioButton
-                    android:id="@+id/istatusb"
-                    style="@style/radiobutton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/istatusb" />
+                    <TextView
+                        style="@style/textviews"
+                        android:text="@string/istatus" />
 
-                <RadioButton
-                    android:id="@+id/istatusc"
-                    style="@style/radiobutton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/istatusc" />
+                    <RadioGroup
+                        android:id="@+id/istatus"
+                        style="@style/radiogroups">
 
-                <RadioButton
-                    android:id="@+id/istatusd"
-                    style="@style/radiobutton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/istatusd" />
+                        <RadioButton
+                            android:id="@+id/istatusa"
+                            style="@style/radiobuttons"
+                            android:text="@string/istatusa" />
 
-                <RadioButton
-                    android:id="@+id/istatuse"
-                    style="@style/radiobutton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/istatuse" />
+                        <RadioButton
+                            android:id="@+id/istatusb"
+                            style="@style/radiobuttons"
+                            android:text="@string/istatusb" />
 
-                <!--
+                        <RadioButton
+                            android:id="@+id/istatusc"
+                            style="@style/radiobuttons"
+                            android:text="@string/istatusc" />
 
-                 <RadioButton
-                     android:id="@+id/istatusf"
+                        <RadioButton
+                            android:id="@+id/istatusd"
+                            style="@style/radiobuttons"
+                            android:text="@string/istatusd" />
 
-                     style="@style/radiobutton"
-                     android:layout_width="match_parent"
-                     android:layout_height="wrap_content"
-                     android:layout_marginBottom="1dp"
-                     android:text="@string/istatusf" />
+                        <RadioButton
+                            android:id="@+id/istatuse"
+                            style="@style/radiobuttons"
+                            android:text="@string/istatuse" />
 
-                 <RadioButton
-                     android:id="@+id/istatusg"
+                        <RadioButton
+                            android:id="@+id/istatus88"
+                            style="@style/radiobuttons"
+                            android:text="@string/other" />
 
-                     style="@style/radiobutton"
-                     android:layout_width="match_parent"
-                     android:layout_height="wrap_content"
-                     android:layout_marginBottom="1dp"
-                     android:text="@string/istatusg" />
+                        <EditText
+                            android:id="@+id/istatus88x"
+                            style="@style/EditTextAlpha"
+                            android:hint="@string/specify"
+                            android:maxLength="40"
+                            android:text='@{istatus88.checked ? istatus88x.getText().toString : "" }'
+                            android:visibility='@{istatus88.checked ? View.VISIBLE : View.GONE }' />
 
-                 <RadioButton
-                     android:id="@+id/istatush"
+                    </RadioGroup>
 
-                     style="@style/radiobutton"
-                     android:layout_width="match_parent"
-                     android:layout_height="wrap_content"
-                     android:layout_marginBottom="1dp"
-                     android:text="@string/istatush" />
--->
-                <RadioButton
-                    android:id="@+id/istatus88"
-                    style="@style/radiobutton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/other" />
+                </LinearLayout>
 
-                <EditText
-                    android:id="@+id/istatus88x"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                    android:hint="@string/other"
-                    android:maxLength="40"
-                    android:tag="istatus88"
-                    android:text='@{istatus88.checked ? istatus88x.getText.toString : "" }'
-                    android:visibility='@{istatus88.checked ? View.VISIBLE : View.GONE }' />
+            </android.support.v7.widget.CardView>
 
-            </RadioGroup>
+
+            <!--  = = = = =  END OF FORM FIELDS  = = = = = -->
+            <LinearLayout style="@style/hlinearlayout">
 
             <Button
                 android:id="@+id/btn_End"
                 style="@style/buttons"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginTop="40dp"
+                android:layout_width="0dp"
                 android:layout_weight="1"
-                android:onClick="@{() -> callback.BtnEnd()}"
+                android:background="#1ed61e"
                 android:text="@string/end_interview"
-                android:textColor="#ff1e1e" />
+                android:onClick="@{() -> callback.BtnEnd()}"
+                android:textColor="@color/red" />
+
+            </LinearLayout>
+
 
         </LinearLayout>
+
     </ScrollView>
+
 </layout>
