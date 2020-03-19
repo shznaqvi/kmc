@@ -127,7 +127,7 @@ public class SectionDForm3Activity extends AppCompatActivity {
             }
         });
 
-        bi.kf3d1698.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        /*bi.kf3d1698.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b)
@@ -135,7 +135,7 @@ public class SectionDForm3Activity extends AppCompatActivity {
                 else
                     ClearClass.ClearAllFields(bi.fldGrpSecD02d, true);
             }
-        });
+        });*/
 
     }
 
