@@ -791,14 +791,14 @@
     <string name="kf3eh2"> جسم جو درجه حرارت ڏسو </string>
     <string name="kf3eh3"> ساهه جي رفتار ڏسو </string>=
 
-    <string name="kf3e04"> درجه حرارت (ٻيهر ريڊنگ وٺو جيڪڏهن 38 کان وڌيڪ يا 35.5 کان گهٽ آ </string>
-    <string name="kf3e04a"> پهرين لکت. </string>
-    <string name="kf3e04b"> ٻين لکت. </string>
+    <string name="kf3e04"> درجه حرارت (ٻيهر ريڊنگ وٺو جيڪڏهن 38 کان وڌيڪ يا 35.5 کان گهٽ آهي </string>
+    <string name="kf3e04a"> پهرين لکت </string>
+    <string name="kf3e04b"> ٻين لکت </string>
 
     <string name="kf3e05"> هڪ منٽ ۾ ساهه جي رفتار ڳڻيو </string>
 
 
-    <string name="kf3e06"> دهرايو جيڪڏهن 60 کان وڌيڪ آهي </string>
+    <string name="kf3e06"> دهرايو 60 کان وڌيڪ آهي </string>
 
 
     <string name="kf3e07"> ڇا ٻار کي ساهه کڻڻ ۾ تڪليف هئي. </string>
