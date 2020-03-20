@@ -213,9 +213,8 @@
 
                             <TextView
                                 android:id="@+id/kf1a2"
-                                style="@style/textviewsh"
+                                style="@style/textviewshh"
                                 android:layout_height="match_parent"
-                                android:background="@color/colorPrimaryBeta"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:enabled="false" />
@@ -573,13 +572,22 @@
                                 android:layout_weight="1"
                                 android:text="@string/kf2a7" />
 
-                            <EditText
+                            <!--<EditText
                                 android:id="@+id/kf2a7"
                                 style="@style/EditTextAlpha"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:enabled="false"
-                                android:hint="@string/name" />
+                                android:hint="@string/name" />-->
+
+                            <TextView
+                                android:id="@+id/kf2a7"
+                                style="@style/textviewshh"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:enabled="false"
+                                android:text=""
+                                android:textAllCaps="true" />
 
                         </LinearLayout>
 
@@ -600,13 +608,22 @@
                                 android:layout_weight="1"
                                 android:text="@string/kf2a8" />
 
-                            <EditText
+                            <!--<EditText
                                 android:id="@+id/kf2a8"
                                 style="@style/EditTextNum"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:enabled="false"
-                                android:hint="@string/num" />
+                                android:hint="@string/num" />-->
+
+                            <TextView
+                                android:id="@+id/kf2a8"
+                                style="@style/textviewshh"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:enabled="false"
+                                android:text=""
+                                android:textAllCaps="true" />
 
                         </LinearLayout>
 
@@ -745,7 +762,6 @@
 
                             <TextView
                                 style="@style/textviews"
-                                android:layout_height="match_parent"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:text="@string/kf2a5" />
