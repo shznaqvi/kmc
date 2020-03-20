@@ -79,7 +79,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_gravity">center_vertical</item>
         <item name="android:background">@color/colorPrimary</item>
-        <item name="android:textAppearance">?android:attr/textAppearanceSmall</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceMediumInverse</item>
         <item name="android:textColor">@android:color/white</item>
         <item name="android:textSize">20sp</item>
         <item name="android:drawable">@drawable/textview_background_grad1</item>
@@ -291,9 +291,9 @@
 
     <!--Card View Start-->
     <style name="cardView">
-        <item name="android:background">@color/dullWhileOverlay</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/dullWhileOverlay</item>
         <item name="android:layout_marginTop">5dp</item>
         <item name="android:layout_marginBottom">5dp</item>
         <!--<item name="android:layout_marginRight">10dp</item>-->
@@ -304,9 +304,9 @@
 
     <!--Card View Start-->
     <style name="cardViews">
-        <item name="android:background">@color/white</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/white</item>
         <item name="android:layout_margin">8dp</item>
         <item name="cardCornerRadius">7dp</item>
         <item name="cardElevation">1dp</item>

@@ -224,7 +224,9 @@
 
 
                     <!--kapr04-->
-                    <android.support.v7.widget.CardView style="@style/cardView">
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cvkapr04"
+                        style="@style/cardViews">
 
                         <LinearLayout style="@style/hlinearlayout">
 
@@ -252,7 +254,9 @@
 
 
                     <!--kapr05-->
-                    <android.support.v7.widget.CardView style="@style/cardView">
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cvkapr05"
+                        style="@style/cardViews">
 
                         <LinearLayout style="@style/hlinearlayout">
 
@@ -277,7 +281,9 @@
 
 
                     <!--kapr06-->
-                    <android.support.v7.widget.CardView style="@style/cardView">
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cvkapr06"
+                        style="@style/cardViews">
 
                         <LinearLayout style="@style/hlinearlayout">
 
@@ -301,7 +307,9 @@
 
 
                     <!--kapr07-->
-                    <android.support.v7.widget.CardView style="@style/cardView">
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cvkapr07"
+                        style="@style/cardViews">
 
                         <LinearLayout style="@style/hlinearlayout">
 
@@ -325,7 +333,9 @@
 
 
                     <!--kapr08-->
-                    <android.support.v7.widget.CardView style="@style/cardView">
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cvkapr08"
+                        style="@style/cardViews">
 
                         <LinearLayout style="@style/hlinearlayout">
 
@@ -349,7 +359,9 @@
 
 
                     <!--kapr09-->
-                    <android.support.v7.widget.CardView style="@style/cardView">
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cvkapr09"
+                        style="@style/cardViews">
 
                         <LinearLayout style="@style/hlinearlayout">
 
@@ -373,7 +385,9 @@
 
 
                     <!--kapr10-->
-                    <android.support.v7.widget.CardView style="@style/cardView">
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cvkapr10"
+                        style="@style/cardViews">
 
                         <LinearLayout style="@style/hlinearlayout">
 
