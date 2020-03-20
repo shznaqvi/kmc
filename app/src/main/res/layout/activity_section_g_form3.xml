@@ -176,7 +176,7 @@
                     <LinearLayout style="@style/vlinearlayout">
 
                         <TextView
-                            style="@style/textview_heading"
+                            style="@style/textviews"
                             android:text="@string/kf3g05" />
 
                         <TextView
@@ -207,7 +207,7 @@
                                 android:text="@string/kf3g06" />
 
                             <TextView
-                                style="@style/textviewsh"
+                                style="@style/textviews"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:text="@string/kf3g07h1" />
@@ -225,7 +225,7 @@
                         <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
-                                style="@style/textviews"
+                                style="@style/textviewshh"
                                 android:text="@string/kf3g06a" />
 
                             <RadioGroup
@@ -269,7 +269,7 @@
                         <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
-                                style="@style/textviews"
+                                style="@style/textviewshh"
                                 android:text="@string/kf3g06b" />
 
                             <RadioGroup
@@ -324,7 +324,7 @@
                         <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
-                                style="@style/textviews"
+                                style="@style/textviewshh"
                                 android:text="@string/kf3g06c" />
 
                             <RadioGroup
@@ -379,7 +379,7 @@
                         <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
-                                style="@style/textviews"
+                                style="@style/textviewshh"
                                 android:text="@string/kf3g06d" />
 
                             <RadioGroup
@@ -423,7 +423,7 @@
                         <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
-                                style="@style/textviews"
+                                style="@style/textviewshh"
                                 android:text="@string/kf3g06e" />
 
                             <RadioGroup
@@ -467,7 +467,7 @@
                         <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
-                                style="@style/textviews"
+                                style="@style/textviewshh"
                                 android:text="@string/kf3g06f" />
 
                             <RadioGroup
@@ -522,7 +522,7 @@
                         <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
-                                style="@style/textviews"
+                                style="@style/textviewshh"
                                 android:text="@string/kf3g06g" />
 
                             <RadioGroup
@@ -566,7 +566,7 @@
                         <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
-                                style="@style/textviews"
+                                style="@style/textviewshh"
                                 android:text="@string/kf3g06h" />
 
                             <RadioGroup
@@ -610,7 +610,7 @@
                         <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
-                                style="@style/textviews"
+                                style="@style/textviewshh"
                                 android:text="@string/kf3g06i" />
 
                             <RadioGroup
@@ -665,11 +665,11 @@
                                 android:text="@string/kf3g07" />
 
                             <TextView
-                                style="@style/textview_heading"
+                                style="@style/textviews"
                                 android:text="@string/kf3g07h1" />
 
                             <TextView
-                                style="@style/textview_heading"
+                                style="@style/textviewshh"
                                 android:text="@string/kf3g07a" />
 
                             <RadioGroup
@@ -713,7 +713,7 @@
                         <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
-                                style="@style/textview_heading"
+                                style="@style/textviewshh"
                                 android:text="@string/kf3g07b" />
 
                             <RadioGroup
@@ -757,7 +757,7 @@
                         <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
-                                style="@style/textview_heading"
+                                style="@style/textviewshh"
                                 android:text="@string/kf3g07c" />
 
                             <RadioGroup
@@ -801,7 +801,7 @@
                         <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
-                                style="@style/textview_heading"
+                                style="@style/textviewshh"
                                 android:text="@string/kf3g07d" />
 
                             <RadioGroup
@@ -845,7 +845,7 @@
                         <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
-                                style="@style/textview_heading"
+                                style="@style/textviewshh"
                                 android:text="@string/kf3g07e" />
 
                             <RadioGroup
@@ -889,7 +889,7 @@
                         <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
-                                style="@style/textview_heading"
+                                style="@style/textviewshh"
                                 android:text="@string/kf3g07f" />
 
                             <RadioGroup
@@ -933,7 +933,7 @@
                         <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
-                                style="@style/textview_heading"
+                                style="@style/textviewshh"
                                 android:text="@string/kf3g07g" />
 
                             <RadioGroup
@@ -977,7 +977,7 @@
                         <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
-                                style="@style/textview_heading"
+                                style="@style/textviewshh"
                                 android:text="@string/kf3g07h" />
 
                             <RadioGroup
@@ -1021,7 +1021,7 @@
                         <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
-                                style="@style/textview_heading"
+                                style="@style/textviewshh"
                                 android:text="@string/kf3g07i" />
 
                             <RadioGroup
@@ -1065,7 +1065,7 @@
                         <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
-                                style="@style/textview_heading"
+                                style="@style/textviewshh"
                                 android:text="@string/kf3g07j" />
 
                             <RadioGroup
@@ -1109,7 +1109,7 @@
                         <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
-                                style="@style/textview_heading"
+                                style="@style/textviewshh"
                                 android:text="@string/kf3g07k" />
 
                             <RadioGroup
@@ -1153,7 +1153,7 @@
                         <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
-                                style="@style/textview_heading"
+                                style="@style/textviewshh"
                                 android:text="@string/kf3g07l" />
 
                             <RadioGroup
@@ -1197,7 +1197,7 @@
                         <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
-                                style="@style/textview_heading"
+                                style="@style/textviewshh"
                                 android:text="@string/kf3g07m" />
 
                             <RadioGroup
@@ -1241,7 +1241,7 @@
                         <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
-                                style="@style/textview_heading"
+                                style="@style/textviewshh"
                                 android:text="@string/kf3g07n" />
 
                             <RadioGroup
@@ -1285,7 +1285,7 @@
                         <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
-                                style="@style/textview_heading"
+                                style="@style/textviewshh"
                                 android:text="@string/kf3g07o" />
 
                             <RadioGroup
@@ -1329,7 +1329,7 @@
                         <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
-                                style="@style/textview_heading"
+                                style="@style/textviewshh"
                                 android:text="@string/kf3g07p" />
 
                             <RadioGroup
@@ -1373,7 +1373,7 @@
                         <LinearLayout style="@style/vlinearlayout">
 
                             <TextView
-                                style="@style/textview_heading"
+                                style="@style/textviewshh"
                                 android:text="@string/kf3g07q" />
 
                             <RadioGroup
@@ -1423,7 +1423,7 @@
                             android:text="@string/kf3g08" />
 
                         <TextView
-                            style="@style/textviewsh"
+                            style="@style/textviewshh"
                             android:text="@string/kf3g08h1" />
 
                         <RadioGroup
