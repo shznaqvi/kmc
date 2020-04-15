@@ -33,7 +33,6 @@
                 android:textColor="@color/colorPrimary"
                 android:textStyle="bold" />
 
-
             <TextView
                 android:id="@+id/recordSummary"
                 android:layout_width="match_parent"
@@ -181,9 +180,11 @@
                     android:layout_marginBottom="8dp"
                     android:onClick="testGPS"
                     android:text="Test GPS Coordinates" />
+
             </LinearLayout>
 
-
         </LinearLayout>
+
     </ScrollView>
+
 </layout>

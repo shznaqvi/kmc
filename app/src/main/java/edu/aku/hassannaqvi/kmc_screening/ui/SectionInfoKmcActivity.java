@@ -503,6 +503,7 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
             if (UpdateDB()) {
                 finish();
                 startActivity(new Intent(this, MainApp.formType.equals("kf1") ? SectionAForm1Activity.class
+                        : bi.kf1a10b.isChecked() ? EndingActivity.class
                         : MainApp.formType.equals("kf2") ? SectionBForm2Activity.class
                         : MainApp.formType.equals("kf3") ? getIntentClass() : null)
                         .putExtra("pwid", bi.kapr02a.getText().toString())
