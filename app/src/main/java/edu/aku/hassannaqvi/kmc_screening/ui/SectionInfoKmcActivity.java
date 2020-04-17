@@ -106,6 +106,14 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
             }
         });
 
+        bi.kf1a9.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i == bi.kf1a9b.getId() || i == bi.kf1a9c.getId() || i == bi.kf1a9d.getId() || i == bi.kf1a9f.getId())
+                    ClearClass.ClearAllFields(bi.cvkf1a10, null);
+            }
+        });
+
     }
 
     private void settingListeners() {
@@ -502,8 +510,8 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
             }
             if (UpdateDB()) {
                 finish();
-                startActivity(new Intent(this, MainApp.formType.equals("kf1") ? SectionAForm1Activity.class
-                        : bi.kf1a10b.isChecked() ? EndingActivity.class
+                startActivity(new Intent(this, MainApp.formType.equals("kf1") ? (bi.kf1a10b.isChecked() || bi.kf1a9b.isChecked() ||
+                        bi.kf1a9c.isChecked() || bi.kf1a9d.isChecked() || bi.kf1a9f.isChecked() ? EndingActivity.class : SectionAForm1Activity.class)
                         : MainApp.formType.equals("kf2") ? SectionBForm2Activity.class
                         : MainApp.formType.equals("kf3") ? getIntentClass() : null)
                         .putExtra("pwid", bi.kapr02a.getText().toString())
@@ -672,7 +680,7 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
         if (MainApp.formType.equals("kf1")) {
             bi.form01.setVisibility(status);
             ClearClass.ClearAllFields(bi.form01, null);
-            bi.kf1a6.setMinDate(DateUtils.getDaysBack("dd/MM/yyyy", -2));
+            bi.kf1a6.setMinDate(DateUtils.getDaysBack("dd/MM/yyyy", -29));
         } else if (MainApp.formType.equals("kf2")) {
             bi.form02.setVisibility(status);
             bi.form0203.setVisibility(status);

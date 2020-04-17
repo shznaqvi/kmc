@@ -1587,7 +1587,7 @@
 
                                 <EditText
                                     android:id="@+id/kf3g1196x"
-                                    style="@style/EditTextNum"
+                                    style="@style/EditTextAlpha"
                                     android:hint="@string/specify"
                                     android:text='@{kf3g1196.checked ? kf3g1196x.getText().toString : "" }'
                                     android:visibility='@{kf3g1196.checked ? View.VISIBLE : View.GONE }' />
@@ -1636,7 +1636,7 @@
 
                                 <EditText
                                     android:id="@+id/kf3g1296x"
-                                    style="@style/EditTextNum"
+                                    style="@style/EditTextAlpha"
                                     android:hint="@string/specify"
                                     android:text='@{kf3g1296.checked ? kf3g1296x.getText().toString : "" }'
                                     android:visibility='@{kf3g1296.checked ? View.VISIBLE : View.GONE }' />

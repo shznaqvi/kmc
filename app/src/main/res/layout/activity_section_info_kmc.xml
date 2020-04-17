@@ -488,7 +488,8 @@
                     <!--kf1a10-->
                     <android.support.v7.widget.CardView
                         android:id="@+id/cvkf1a10"
-                        style="@style/cardViews">
+                        style="@style/cardViews"
+                        android:visibility='@{kf1a9b.checked || kf1a9c.checked || kf1a9d.checked || kf1a9f.checked ? View.GONE : View.VISIBLE}'>
 
                         <LinearLayout style="@style/vlinearlayout">
 
