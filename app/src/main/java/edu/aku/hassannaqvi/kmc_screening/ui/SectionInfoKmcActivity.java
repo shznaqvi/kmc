@@ -377,71 +377,75 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
                 : bi.kfa1b.isChecked() ? "2"
                 : "0");
 
-        if (fType.equals("kf1")) {
-            sInfo.put("kf1a02", bi.kf1a2.getText().toString());
+        switch (fType) {
+            case "kf1":
+                sInfo.put("kf1a02", bi.kf1a2.getText().toString());
 
-            sInfo.put("kf1a03", bi.kf1a3.getText().toString());
-            fc.setScreenid(bi.kf1a3.getText().toString());
+                sInfo.put("kf1a03", bi.kf1a3.getText().toString());
+                fc.setScreenid(bi.kf1a3.getText().toString());
 
-            sInfo.put("kf1a04", bi.kf1a4.getText().toString());
+                sInfo.put("kf1a04", bi.kf1a4.getText().toString());
 
-            sInfo.put("kf1a05", bi.kf1a5a.isChecked() ? "1"
-                    : bi.kf1a5b.isChecked() ? "2"
-                    : "0");
+                sInfo.put("kf1a05", bi.kf1a5a.isChecked() ? "1"
+                        : bi.kf1a5b.isChecked() ? "2"
+                        : "0");
 
-            sInfo.put("kf1a06", bi.kf1a6.getText().toString());
+                sInfo.put("kf1a06", bi.kf1a6.getText().toString());
 
-            sInfo.put("kf1a07", bi.kf1a7.getText().toString());
+                sInfo.put("kf1a07", bi.kf1a7.getText().toString());
 
-            sInfo.put("kf1a08", bi.kf1a8a.isChecked() ? "1"
-                    : bi.kf1a8b.isChecked() ? "2"
-                    : bi.kf1a8c.isChecked() ? "3"
-                    : bi.kf1a896.isChecked() ? "96"
-                    : "0");
-            sInfo.put("kf1a8cx", bi.kf1a8cx.getText().toString());
-            sInfo.put("kf1a896x", bi.kf1a896x.getText().toString());
+                sInfo.put("kf1a08", bi.kf1a8a.isChecked() ? "1"
+                        : bi.kf1a8b.isChecked() ? "2"
+                        : bi.kf1a8c.isChecked() ? "3"
+                        : bi.kf1a896.isChecked() ? "96"
+                        : "0");
+                sInfo.put("kf1a8cx", bi.kf1a8cx.getText().toString());
+                sInfo.put("kf1a896x", bi.kf1a896x.getText().toString());
 
-            sInfo.put("kf1a9", bi.kf1a9a.isChecked() ? "1"
-                    : bi.kf1a9b.isChecked() ? "2"
-                    : bi.kf1a9c.isChecked() ? "3"
-                    : bi.kf1a9d.isChecked() ? "4"
-                    : bi.kf1a9e.isChecked() ? "5"
-                    : bi.kf1a9f.isChecked() ? "6"
-                    : bi.kf1a9g.isChecked() ? "7"
-                    : "0");
+                sInfo.put("kf1a9", bi.kf1a9a.isChecked() ? "1"
+                        : bi.kf1a9b.isChecked() ? "2"
+                        : bi.kf1a9c.isChecked() ? "3"
+                        : bi.kf1a9d.isChecked() ? "4"
+                        : bi.kf1a9e.isChecked() ? "5"
+                        : bi.kf1a9f.isChecked() ? "6"
+                        : bi.kf1a9g.isChecked() ? "7"
+                        : "0");
 
-            sInfo.put("kf1a10", bi.kf1a10a.isChecked() ? "1"
-                    : bi.kf1a10b.isChecked() ? "2"
-                    : "0");
+                sInfo.put("kf1a10", bi.kf1a10a.isChecked() ? "1"
+                        : bi.kf1a10b.isChecked() ? "2"
+                        : "0");
 
-            sInfo.put("pw_puid", mapWRA.getPuid());
-            sInfo.put("pw_formdate", mapWRA.getFormdate());
-            sInfo.put("pw_h_name", mapWRA.getH_name());
-            sInfo.put("pw_cast", mapWRA.getCast());
-            sInfo.put("pw_hh_name", mapWRA.getHh_name());
+                sInfo.put("pw_puid", mapWRA.getPuid());
+                sInfo.put("pw_formdate", mapWRA.getFormdate());
+                sInfo.put("pw_h_name", mapWRA.getH_name());
+                sInfo.put("pw_cast", mapWRA.getCast());
+                sInfo.put("pw_hh_name", mapWRA.getHh_name());
 
-        } else if (fType.equals("kf2")) {
-            sInfo.put("kf2a05", bi.kf2a1.getText().toString());
-            sInfo.put("kf2a06", bi.kf2a2.getText().toString());
-            sInfo.put("kf2a07", bi.kf2a3.getText().toString());
-            sInfo.put("kf2a08", bi.kf2a4.getText().toString());
-            sInfo.put("kf2a09", bi.kf2a5.getText().toString());
-        } else if (fType.equals("kf3")) {
+                break;
+            case "kf2":
+                sInfo.put("kf2a05", bi.kf2a1.getText().toString());
+                sInfo.put("kf2a06", bi.kf2a2.getText().toString());
+                sInfo.put("kf2a07", bi.kf2a3.getText().toString());
+                sInfo.put("kf2a08", bi.kf2a4.getText().toString());
+                sInfo.put("kf2a09", bi.kf2a5.getText().toString());
+                break;
+            case "kf3":
             /*sInfo.put("kf3a05", bi.kf3a3.getText().toString());
             sInfo.put("kf3a06", bi.kf3a4.getText().toString());*/
-            sInfo.put("kf3b01", bi.kf3b01a.isChecked() ? "1"
-                    : bi.kf3b01b.isChecked() ? "2"
-                    : bi.kf3b01c.isChecked() ? "3"
-                    : bi.kf3b01d.isChecked() ? "4"
-                    : bi.kf3b01e.isChecked() ? "5"
-                    : bi.kf3b01f.isChecked() ? "6"
-                    : bi.kf3b01g.isChecked() ? "7"
-                    : bi.kf3b01h.isChecked() ? "8"
-                    : bi.kf3b01i.isChecked() ? "9"
-                    : bi.kf3b01j.isChecked() ? "10"
-                    : bi.kf3b01k.isChecked() ? "11"
-                    : bi.kf3b01l.isChecked() ? "12"
-                    : "0");
+                sInfo.put("kf3b01", bi.kf3b01a.isChecked() ? "1"
+                        : bi.kf3b01b.isChecked() ? "2"
+                        : bi.kf3b01c.isChecked() ? "3"
+                        : bi.kf3b01d.isChecked() ? "4"
+                        : bi.kf3b01e.isChecked() ? "5"
+                        : bi.kf3b01f.isChecked() ? "6"
+                        : bi.kf3b01g.isChecked() ? "7"
+                        : bi.kf3b01h.isChecked() ? "8"
+                        : bi.kf3b01i.isChecked() ? "9"
+                        : bi.kf3b01j.isChecked() ? "10"
+                        : bi.kf3b01k.isChecked() ? "11"
+                        : bi.kf3b01l.isChecked() ? "12"
+                        : "0");
+                break;
         }
 
         if (fType.equals("kf2") || fType.equals("kf3")) {
@@ -516,7 +520,8 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
                         : MainApp.formType.equals("kf3") ? getIntentClass() : null)
                         .putExtra("pwid", bi.kapr02a.getText().toString())
                         .putExtra("hfScreen", bi.kfa1a.isChecked())
-                        .putExtra("dayFlag", bi.kf3b01a.isChecked()));
+                        .putExtra("dayFlag", bi.kf3b01a.isChecked())
+                        .putExtra("complete", true));
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
