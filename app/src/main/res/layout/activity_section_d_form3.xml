@@ -138,13 +138,13 @@
                                 style="@style/textviews"
                                 android:text="@string/kf3d02" />
 
+                            <TextView
+                                style="@style/textviewsh"
+                                android:text="@string/kf3d02h1" />
+
                             <RadioGroup
                                 android:id="@+id/kf3d02"
                                 style="@style/radiogroups">
-
-                                <TextView
-                                    style="@style/textviewsh"
-                                    android:text="@string/kf3d02h1" />
 
                                 <RadioButton
                                     android:id="@+id/kf3d02a"
@@ -331,13 +331,13 @@
                                 style="@style/textviews"
                                 android:text="@string/kf3d05" />
 
+                            <TextView
+                                style="@style/textviewsh"
+                                android:text="@string/kf3d05h1" />
+
                             <RadioGroup
                                 android:id="@+id/kf3d05"
                                 style="@style/radiogroups">
-
-                                <TextView
-                                    style="@style/textviewsh"
-                                    android:text="@string/kf3d05h1" />
 
                                 <RadioButton
                                     android:id="@+id/kf3d05a"
@@ -486,13 +486,13 @@
                             style="@style/textviews"
                             android:text="@string/kf3d07" />
 
+                        <TextView
+                            style="@style/textviewsh"
+                            android:text="@string/kf3d07h1" />
+
                         <RadioGroup
                             android:id="@+id/kf3d07"
                             style="@style/radiogroups">
-
-                            <TextView
-                                style="@style/textviewsh"
-                                android:text="@string/kf3d07h1" />
 
                             <RadioButton
                                 android:id="@+id/kf3d07a"
