@@ -21,7 +21,7 @@
                 style="@style/vlinearlayout">
 
                 <!-- kf3f01-->
-                <android.support.v7.widget.CardView
+                <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVkf3f01"
                     style="@style/cardViews">
 
@@ -54,10 +54,10 @@
 
                     </LinearLayout>
 
-                </android.support.v7.widget.CardView>
+                </androidx.cardview.widget.CardView>
 
                 <!-- kf3f02-->
-                <android.support.v7.widget.CardView
+                <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVkf3f02"
                     style="@style/cardViews">
 
@@ -113,10 +113,10 @@
 
                     </LinearLayout>
 
-                </android.support.v7.widget.CardView>
+                </androidx.cardview.widget.CardView>
 
                 <!-- kf3f03-->
-                <android.support.v7.widget.CardView
+                <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVkf3f03"
                     style="@style/cardViews">
 
@@ -149,10 +149,10 @@
 
                     </LinearLayout>
 
-                </android.support.v7.widget.CardView>
+                </androidx.cardview.widget.CardView>
 
                 <!-- kf3f04-->
-                <android.support.v7.widget.CardView
+                <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVkf3f04"
                     style="@style/cardViews"
                     android:visibility='@{kf3f03b.checked? View.GONE : View.VISIBLE}'>
@@ -205,10 +205,10 @@
 
                     </LinearLayout>
 
-                </android.support.v7.widget.CardView>
+                </androidx.cardview.widget.CardView>
 
                 <!-- kf3f05-->
-                <android.support.v7.widget.CardView
+                <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVkf3f05"
                     style="@style/cardViews">
 
@@ -254,10 +254,10 @@
 
                     </LinearLayout>
 
-                </android.support.v7.widget.CardView>
+                </androidx.cardview.widget.CardView>
 
                 <!-- kf3f06-->
-                <android.support.v7.widget.CardView
+                <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVkf3f06"
                     style="@style/cardViews">
 
@@ -290,7 +290,7 @@
 
                     </LinearLayout>
 
-                </android.support.v7.widget.CardView>
+                </androidx.cardview.widget.CardView>
 
             </LinearLayout>
 

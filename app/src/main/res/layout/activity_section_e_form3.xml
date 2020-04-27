@@ -22,7 +22,7 @@
                 style="@style/vlinearlayout">
 
                 <!-- kf3e01-->
-                <android.support.v7.widget.CardView
+                <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVkf3e01"
                     style="@style/cardViews">
 
@@ -47,10 +47,10 @@
 
                     </LinearLayout>
 
-                </android.support.v7.widget.CardView>
+                </androidx.cardview.widget.CardView>
 
                 <!-- kf3e22-->
-                <android.support.v7.widget.CardView
+                <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVkf3e22"
                     style="@style/cardViews">
 
@@ -73,7 +73,7 @@
 
                     </LinearLayout>
 
-                </android.support.v7.widget.CardView>
+                </androidx.cardview.widget.CardView>
 
 
                 <LinearLayout
@@ -81,7 +81,7 @@
                     style="@style/linearlayout_view_wt_bound">
 
                     <!-- H9-->
-                    <android.support.v7.widget.CardView style="@style/cardView">
+                    <androidx.cardview.widget.CardView style="@style/cardView">
 
                         <LinearLayout style="@style/vlinearlayout">
 
@@ -92,10 +92,10 @@
 
                         </LinearLayout>
 
-                    </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
                     <!-- kf3e02-->
-                    <android.support.v7.widget.CardView
+                    <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVkf3e02"
                         style="@style/cardViews">
 
@@ -128,10 +128,10 @@
 
                         </LinearLayout>
 
-                    </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
                     <!-- kf3e03-->
-                    <android.support.v7.widget.CardView
+                    <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVkf3e03"
                         style="@style/cardViews"
                         android:visibility='@{kf3e02b.checked? View.GONE : View.VISIBLE}'>
@@ -165,7 +165,7 @@
 
                         </LinearLayout>
 
-                    </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
                 </LinearLayout>
 
@@ -175,7 +175,7 @@
                     style="@style/linearlayout_view_wt_bound">
 
                     <!-- H1-->
-                    <android.support.v7.widget.CardView style="@style/cardViews">
+                    <androidx.cardview.widget.CardView style="@style/cardViews">
 
                         <LinearLayout style="@style/vlinearlayout">
 
@@ -185,10 +185,10 @@
                                 android:textStyle="bold" />
 
                         </LinearLayout>
-                    </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
                     <!-- H2-->
-                    <android.support.v7.widget.CardView style="@style/cardViews">
+                    <androidx.cardview.widget.CardView style="@style/cardViews">
 
                         <LinearLayout style="@style/vlinearlayout">
 
@@ -199,10 +199,10 @@
 
                         </LinearLayout>
 
-                    </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
                     <!-- kf3e04-->
-                    <android.support.v7.widget.CardView
+                    <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVkf3e04"
                         style="@style/cardViews">
 
@@ -256,10 +256,10 @@
 
                         </LinearLayout>
 
-                    </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
                     <!-- H3-->
-                    <android.support.v7.widget.CardView style="@style/cardViews">
+                    <androidx.cardview.widget.CardView style="@style/cardViews">
 
                         <LinearLayout style="@style/vlinearlayout">
 
@@ -270,10 +270,10 @@
 
                         </LinearLayout>
 
-                    </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
                     <!-- kf3e05-->
-                    <android.support.v7.widget.CardView
+                    <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVkf3e05"
                         style="@style/cardViews">
 
@@ -298,10 +298,10 @@
 
                         </LinearLayout>
 
-                    </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
                     <!-- kf3e06-->
-                    <android.support.v7.widget.CardView
+                    <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVkf3e06"
                         style="@style/cardViews">
 
@@ -326,10 +326,10 @@
 
                         </LinearLayout>
 
-                    </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
                     <!-- kf3e07-->
-                    <android.support.v7.widget.CardView
+                    <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVkf3e07"
                         style="@style/cardViews">
 
@@ -362,10 +362,10 @@
 
                         </LinearLayout>
 
-                    </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
                     <!-- kf3e08-->
-                    <android.support.v7.widget.CardView
+                    <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVkf3e08"
                         style="@style/cardViews">
 
@@ -398,10 +398,10 @@
 
                         </LinearLayout>
 
-                    </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
                     <!-- H4-->
-                    <android.support.v7.widget.CardView style="@style/cardView">
+                    <androidx.cardview.widget.CardView style="@style/cardView">
 
                         <LinearLayout style="@style/vlinearlayout">
 
@@ -412,10 +412,10 @@
 
                         </LinearLayout>
 
-                    </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
                     <!-- kf3e09-->
-                    <android.support.v7.widget.CardView
+                    <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVkf3e09"
                         style="@style/cardViews">
 
@@ -448,10 +448,10 @@
 
                         </LinearLayout>
 
-                    </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
                     <!-- H5-->
-                    <android.support.v7.widget.CardView style="@style/cardView">
+                    <androidx.cardview.widget.CardView style="@style/cardView">
 
                         <LinearLayout style="@style/vlinearlayout">
 
@@ -462,10 +462,10 @@
 
                         </LinearLayout>
 
-                    </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
                     <!-- kf3e10-->
-                    <android.support.v7.widget.CardView
+                    <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVkf3e10"
                         style="@style/cardViews">
 
@@ -498,10 +498,10 @@
 
                         </LinearLayout>
 
-                    </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
                     <!-- kf3e11-->
-                    <android.support.v7.widget.CardView
+                    <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVkf3e11"
                         style="@style/cardViews">
 
@@ -534,10 +534,10 @@
 
                         </LinearLayout>
 
-                    </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
                     <!-- kf3e12-->
-                    <android.support.v7.widget.CardView
+                    <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVkf3e12"
                         style="@style/cardViews">
 
@@ -591,10 +591,10 @@
 
                         </LinearLayout>
 
-                    </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
                     <!-- H6-->
-                    <android.support.v7.widget.CardView style="@style/cardView">
+                    <androidx.cardview.widget.CardView style="@style/cardView">
 
                         <LinearLayout style="@style/vlinearlayout">
 
@@ -605,10 +605,10 @@
 
                         </LinearLayout>
 
-                    </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
                     <!-- kf3e13-->
-                    <android.support.v7.widget.CardView
+                    <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVkf3e13"
                         style="@style/cardViews">
 
@@ -641,7 +641,7 @@
 
                         </LinearLayout>
 
-                    </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
 
                     <LinearLayout
@@ -650,7 +650,7 @@
                         android:visibility='@{kf3e13a.checked? View.GONE : View.VISIBLE}'>
 
                         <!-- kf3e14-->
-                        <android.support.v7.widget.CardView
+                        <androidx.cardview.widget.CardView
                             android:id="@+id/fldGrpCVkf3e14"
                             style="@style/cardViews">
 
@@ -683,10 +683,10 @@
 
                             </LinearLayout>
 
-                        </android.support.v7.widget.CardView>
+                        </androidx.cardview.widget.CardView>
 
                         <!-- kf3e15-->
-                        <android.support.v7.widget.CardView
+                        <androidx.cardview.widget.CardView
                             android:id="@+id/fldGrpCVkf3e15"
                             style="@style/cardViews">
 
@@ -719,10 +719,10 @@
 
                             </LinearLayout>
 
-                        </android.support.v7.widget.CardView>
+                        </androidx.cardview.widget.CardView>
 
                         <!-- kf3e16-->
-                        <android.support.v7.widget.CardView
+                        <androidx.cardview.widget.CardView
                             android:id="@+id/fldGrpCVkf3e16"
                             style="@style/cardViews">
 
@@ -755,10 +755,10 @@
 
                             </LinearLayout>
 
-                        </android.support.v7.widget.CardView>
+                        </androidx.cardview.widget.CardView>
 
                         <!-- kf3e17-->
-                        <android.support.v7.widget.CardView
+                        <androidx.cardview.widget.CardView
                             android:id="@+id/fldGrpCVkf3e17"
                             style="@style/cardViews">
 
@@ -791,13 +791,13 @@
 
                             </LinearLayout>
 
-                        </android.support.v7.widget.CardView>
+                        </androidx.cardview.widget.CardView>
 
                     </LinearLayout>
 
 
                     <!-- H7-->
-                    <android.support.v7.widget.CardView style="@style/cardView">
+                    <androidx.cardview.widget.CardView style="@style/cardView">
 
                         <LinearLayout style="@style/vlinearlayout">
 
@@ -808,10 +808,10 @@
 
                         </LinearLayout>
 
-                    </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
                     <!-- kf3e18-->
-                    <android.support.v7.widget.CardView
+                    <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVkf3e18"
                         style="@style/cardViews">
 
@@ -844,10 +844,10 @@
 
                         </LinearLayout>
 
-                    </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
                     <!-- H8-->
-                    <android.support.v7.widget.CardView style="@style/cardView">
+                    <androidx.cardview.widget.CardView style="@style/cardView">
 
                         <LinearLayout style="@style/vlinearlayout">
 
@@ -858,10 +858,10 @@
 
                         </LinearLayout>
 
-                    </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
                     <!-- kf3e19-->
-                    <android.support.v7.widget.CardView
+                    <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVkf3e19"
                         style="@style/cardViews">
 
@@ -894,7 +894,7 @@
 
                         </LinearLayout>
 
-                    </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
 
                     <LinearLayout
@@ -903,7 +903,7 @@
                         android:visibility='@{kf3e19a.checked? View.GONE : View.VISIBLE}'>
 
                         <!-- kf3e20-->
-                        <android.support.v7.widget.CardView
+                        <androidx.cardview.widget.CardView
                             android:id="@+id/fldGrpCVkf3e20"
                             style="@style/cardViews">
 
@@ -936,10 +936,10 @@
 
                             </LinearLayout>
 
-                        </android.support.v7.widget.CardView>
+                        </androidx.cardview.widget.CardView>
 
                         <!-- kf3e21-->
-                        <android.support.v7.widget.CardView
+                        <androidx.cardview.widget.CardView
                             android:id="@+id/fldGrpCVkf3e21"
                             style="@style/cardViews"
                             android:visibility='@{kf3e20a.checked? View.GONE : View.VISIBLE}'>
@@ -973,7 +973,7 @@
 
                             </LinearLayout>
 
-                        </android.support.v7.widget.CardView>
+                        </androidx.cardview.widget.CardView>
 
                     </LinearLayout>
 
