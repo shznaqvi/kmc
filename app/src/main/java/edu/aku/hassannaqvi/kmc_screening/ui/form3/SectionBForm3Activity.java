@@ -21,6 +21,7 @@ import edu.aku.hassannaqvi.kmc_screening.validation.ClearClass;
 import edu.aku.hassannaqvi.kmc_screening.validation.ValidatorClass;
 
 import static edu.aku.hassannaqvi.kmc_screening.core.MainApp.fc;
+import static edu.aku.hassannaqvi.kmc_screening.ui.SectionInfoKmcActivity.followupNo;
 
 public class SectionBForm3Activity extends AppCompatActivity {
 
@@ -53,7 +54,7 @@ public class SectionBForm3Activity extends AppCompatActivity {
         bi.kf3b0498.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (b){
+                if (b) {
                     ClearClass.ClearAllFields(bi.fldGrpLLkf3b04, false);
                     bi.fldGrpLLkf3b04.setTag("-1");
                 } else {
@@ -127,7 +128,7 @@ public class SectionBForm3Activity extends AppCompatActivity {
             }
             if (UpdateDB()) {
                 finish();
-                startActivity(new Intent(this, !bi.kf3b02a.isChecked() || !bi.kf3b03a.isChecked() ? EndingActivity.class : SectionCForm3Activity.class)
+                startActivity(new Intent(this, !bi.kf3b02a.isChecked() || !bi.kf3b03a.isChecked() ? EndingActivity.class : getIntentClass())
                         .putExtra("complete", true).putExtra("day1", getIntent().getBooleanExtra("dayFlag", false)));
 
             } else {
@@ -136,6 +137,22 @@ public class SectionBForm3Activity extends AppCompatActivity {
         }
 
 
+    }
+
+
+    public Class<?> getIntentClass() {
+        switch (followupNo) {
+            case 6:
+            case 8:
+            case 9:
+                return SectionCForm3Activity.class;
+            case 10:
+            case 11:
+            case 12:
+                return SectionDForm3Activity.class;
+            default:
+                return SectionEForm3Activity.class;
+        }
     }
 
     private boolean formValidation() {

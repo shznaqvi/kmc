@@ -203,8 +203,7 @@ public class SectionCForm3Activity extends AppCompatActivity {
             }
             if (UpdateDB()) {
                 finish();
-                startActivity(new Intent(this, SectionDForm3Activity.class)
-                        .putExtra("complete", true).putExtra("day1", day1Flag));
+                startActivity(new Intent(this, SectionDForm3Activity.class).putExtra("complete", true).putExtra("day1", day1Flag));
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
@@ -220,7 +219,7 @@ public class SectionCForm3Activity extends AppCompatActivity {
 
 
         if (bi.kf3c01a.isChecked()) {
-            if (Integer.valueOf(bi.kf3c03h.getText().toString()) == 0 && Integer.valueOf(bi.kf3c03m.getText().toString()) == 0) {
+            if (Integer.parseInt(bi.kf3c03h.getText().toString()) == 0 && Integer.parseInt(bi.kf3c03m.getText().toString()) == 0) {
                 bi.kf3c03h.setError("Both values can't be zero!!");
                 bi.kf3c03h.setFocusable(true);
                 Toast.makeText(this, getString(R.string.kf3c03a) + ": Both values can't be zero!!", Toast.LENGTH_SHORT).show();
@@ -229,7 +228,7 @@ public class SectionCForm3Activity extends AppCompatActivity {
         }
 
         if (bi.kf3c10a.isChecked()) {
-            if (Integer.valueOf(bi.kf3c12h.getText().toString()) == 0 && Integer.valueOf(bi.kf3c12m.getText().toString()) == 0) {
+            if (Integer.parseInt(bi.kf3c12h.getText().toString()) == 0 && Integer.parseInt(bi.kf3c12m.getText().toString()) == 0) {
                 bi.kf3c12h.setError("Both values can't be zero!!");
                 bi.kf3c12h.setFocusable(true);
                 Toast.makeText(this, getString(R.string.kf3c12a) + ": Both values can't be zero!!", Toast.LENGTH_SHORT).show();
