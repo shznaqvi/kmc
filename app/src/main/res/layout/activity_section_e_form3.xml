@@ -52,7 +52,9 @@
                 <!-- kf3e22-->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVkf3e22"
-                    style="@style/cardViews">
+                    style="@style/cardViews"
+                    android:visibility="gone"
+                    tools:visibility="visible">
 
                     <LinearLayout style="@style/hlinearlayout">
 
@@ -67,7 +69,8 @@
                             style="@style/EditTextNum"
                             android:layout_width="0dp"
                             android:layout_weight="1"
-                            android:hint="00.0"
+                            android:hint="##.#"
+                            android:layoutDirection="ltr"
                             app:mask="##.#"
                             app:pattern="^(\\d{2,2}\\.\\d{1,1})$" />
 

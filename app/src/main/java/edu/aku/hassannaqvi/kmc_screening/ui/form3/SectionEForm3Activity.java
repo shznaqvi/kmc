@@ -142,7 +142,7 @@ public class SectionEForm3Activity extends AppCompatActivity {
         });
 
         if (followupNo == 11 || followupNo == 12) {
-            bi.fldGrpCVkf3e22.setVisibility(View.GONE);
+            bi.fldGrpCVkf3e22.setVisibility(View.VISIBLE);
         }
 
     }
