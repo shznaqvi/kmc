@@ -180,7 +180,7 @@ public class SectionAForm1Activity extends AppCompatActivity {
     public void weightChanged(CharSequence s, int start, int before, int count) {
         if (bi.kf1b01.getText().toString().isEmpty()) return;
 
-        if (Integer.valueOf(bi.kf1b01.getText().toString()) > 1200 && Integer.valueOf(bi.kf1b01.getText().toString()) <= 2200)
+        if (Integer.parseInt(bi.kf1b01.getText().toString()) > 1200 && Integer.parseInt(bi.kf1b01.getText().toString()) <= 2400)
             bi.kf1b02a.setChecked(true);
         else
             bi.kf1b02b.setChecked(true);

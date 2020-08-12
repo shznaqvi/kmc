@@ -34,8 +34,8 @@
 
                     <TextView
                         style="@style/textviews"
-                        android:layout_height="match_parent"
                         android:layout_width="0dp"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:text="@string/crataluka" />
 
@@ -59,8 +59,8 @@
 
                     <TextView
                         style="@style/textviews"
-                        android:layout_height="match_parent"
                         android:layout_width="0dp"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:text="@string/cruc" />
 
@@ -84,8 +84,8 @@
 
                     <TextView
                         style="@style/textviews"
-                        android:layout_height="match_parent"
                         android:layout_width="0dp"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:text="@string/crvillage" />
 
@@ -160,8 +160,8 @@
 
                     <TextView
                         style="@style/textviews"
-                        android:layout_height="match_parent"
                         android:layout_width="0dp"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:text="@string/kapr01" />
 
@@ -193,8 +193,8 @@
 
                     <TextView
                         style="@style/textviews"
-                        android:layout_height="match_parent"
                         android:layout_width="0dp"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:text="@string/kapr03" />
 
@@ -232,8 +232,8 @@
 
                             <TextView
                                 style="@style/textviews"
-                                android:layout_height="match_parent"
                                 android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:text="@string/kapr04" />
 
@@ -289,8 +289,8 @@
 
                             <TextView
                                 style="@style/textviews"
-                                android:layout_height="match_parent"
                                 android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:text="@string/kapr06" />
 
@@ -315,8 +315,8 @@
 
                             <TextView
                                 style="@style/textviews"
-                                android:layout_height="match_parent"
                                 android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:text="@string/kapr07" />
 
@@ -341,8 +341,8 @@
 
                             <TextView
                                 style="@style/textviews"
-                                android:layout_height="match_parent"
                                 android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:text="@string/kapr08" />
 
@@ -367,8 +367,8 @@
 
                             <TextView
                                 style="@style/textviews"
-                                android:layout_height="match_parent"
                                 android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:text="@string/kapr09" />
 
@@ -393,8 +393,8 @@
 
                             <TextView
                                 style="@style/textviews"
-                                android:layout_height="match_parent"
                                 android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:text="@string/kapr10" />
 
@@ -423,8 +423,8 @@
 
                             <TextView
                                 style="@style/textviews"
-                                android:layout_height="match_parent"
                                 android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:text="@string/kapr11" />
 
@@ -565,6 +565,64 @@
 
                     </androidx.cardview.widget.CardView>
 
+                    <!--kapr15-->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvkapr15"
+                        style="@style/cardViews">
+
+                        <LinearLayout style="@style/vlinearlayout">
+
+                            <TextView
+                                style="@style/textviews"
+                                android:text="@string/kapr15" />
+
+                            <RadioGroup
+                                android:id="@+id/kapr15"
+                                style="@style/radiogroups">
+
+                                <RadioButton
+                                    android:id="@+id/kapr15a"
+                                    style="@style/radiobuttons"
+                                    android:text="@string/yes" />
+
+                                <RadioButton
+                                    android:id="@+id/kapr15b"
+                                    style="@style/radiobuttons"
+                                    android:text="@string/no" />
+
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <!--kapr16-->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvkapr16"
+                        style="@style/cardViews"
+                        android:visibility="@{kapr15b.checked ? View.VISIBLE : View.GONE}">
+
+                        <LinearLayout style="@style/hlinearlayout">
+
+                            <TextView
+                                style="@style/textviews"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/kapr16" />
+
+                            <EditText
+                                android:id="@+id/kapr16"
+                                style="@style/EditTextAlpha"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:hint="@string/name"
+                                android:text='@{kapr15b.checked ? kapr16.getText().toString : "" }' />
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
 
                     <!--kapr14-->
                     <androidx.cardview.widget.CardView
@@ -575,8 +633,8 @@
 
                             <TextView
                                 style="@style/textviews"
-                                android:layout_height="match_parent"
                                 android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:text="@string/kapr14" />
 

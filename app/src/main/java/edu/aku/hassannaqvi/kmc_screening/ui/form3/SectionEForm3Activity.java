@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
-import android.widget.CompoundButton;
-import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -62,46 +60,31 @@ public class SectionEForm3Activity extends AppCompatActivity {
             bi.fldGrpSecE02.setVisibility(View.VISIBLE);
         }*/
 
-        bi.kf3e02.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (i == bi.kf3e02b.getId())
-                    bi.kf3e03.clearCheck();
-            }
+        bi.kf3e02.setOnCheckedChangeListener((radioGroup, i) -> {
+            if (i == bi.kf3e02b.getId())
+                bi.kf3e03.clearCheck();
         });
 
-        bi.kf3e13.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (i == bi.kf3e13a.getId())
-                    ClearClass.ClearAllFields(bi.fldGrpSecE02b, null);
-            }
+        bi.kf3e13.setOnCheckedChangeListener((radioGroup, i) -> {
+            if (i == bi.kf3e13a.getId())
+                ClearClass.ClearAllFields(bi.fldGrpSecE02b, null);
         });
 
-        bi.kf3e19.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (i == bi.kf3e19a.getId())
-                    ClearClass.ClearAllFields(bi.fldGrpSecE02c, null);
-            }
+        bi.kf3e19.setOnCheckedChangeListener((radioGroup, i) -> {
+            if (i == bi.kf3e19a.getId())
+                ClearClass.ClearAllFields(bi.fldGrpSecE02c, null);
         });
 
-        bi.kf3e20.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (i == bi.kf3e20a.getId())
-                    bi.kf3e21.clearCheck();
-            }
+        bi.kf3e20.setOnCheckedChangeListener((radioGroup, i) -> {
+            if (i == bi.kf3e20a.getId())
+                bi.kf3e21.clearCheck();
         });
 
-        bi.kf3e12f.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (b)
-                    ClearClass.ClearAllFields(bi.fldGrpLLkf3e12, false);
-                else
-                    ClearClass.ClearAllFields(bi.fldGrpLLkf3e12, true);
-            }
+        bi.kf3e12f.setOnCheckedChangeListener((compoundButton, b) -> {
+            if (b)
+                ClearClass.ClearAllFields(bi.fldGrpLLkf3e12, false);
+            else
+                ClearClass.ClearAllFields(bi.fldGrpLLkf3e12, true);
         });
 
         bi.kf3e04a.addTextChangedListener(new TextWatcher() {
@@ -113,7 +96,7 @@ public class SectionEForm3Activity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
-                float no = bi.kf3e04a.getText().toString().isEmpty() ? 0f : Float.valueOf(bi.kf3e04a.getText().toString());
+                float no = bi.kf3e04a.getText().toString().isEmpty() ? 0f : Float.parseFloat(bi.kf3e04a.getText().toString());
 
                 if (no >= 38 || no <= 35.5) {
                     bi.kf3e04b.setVisibility(View.VISIBLE);
@@ -140,7 +123,7 @@ public class SectionEForm3Activity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
-                int no = bi.kf3e05.getText().toString().isEmpty() ? 0 : Integer.valueOf(bi.kf3e05.getText().toString());
+                int no = bi.kf3e05.getText().toString().isEmpty() ? 0 : Integer.parseInt(bi.kf3e05.getText().toString());
 
                 if (no >= 60) {
                     bi.fldGrpCVkf3e06.setVisibility(View.VISIBLE);
@@ -157,6 +140,10 @@ public class SectionEForm3Activity extends AppCompatActivity {
 
             }
         });
+
+        if (followupNo == 11 || followupNo == 12) {
+            bi.fldGrpCVkf3e22.setVisibility(View.GONE);
+        }
 
     }
 

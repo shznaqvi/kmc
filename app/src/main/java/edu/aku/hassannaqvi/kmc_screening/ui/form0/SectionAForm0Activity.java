@@ -13,7 +13,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -117,14 +116,22 @@ public class SectionAForm0Activity extends AppCompatActivity {
             }
         });
 
-        bi.kapr12.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (i != bi.kapr12b.getId()) {
-                    bi.kapr13.clearCheck();
-                    bi.kapr14.setText(null);
-                }
+        bi.kapr12.setOnCheckedChangeListener((radioGroup, i) -> {
+            if (i != bi.kapr12b.getId()) {
+                bi.kapr13.clearCheck();
+                bi.kapr14.setText(null);
             }
+        });
+
+        bi.kapr13.setOnCheckedChangeListener((radioGroup, i) -> {
+
+            if (i == bi.kapr13a.getId() || i == bi.kapr13e.getId() || i == bi.kapr13g.getId()) {
+                bi.cvkapr15.setVisibility(View.VISIBLE);
+            } else {
+                bi.cvkapr15.setVisibility(View.GONE);
+                bi.kapr15.clearCheck();
+            }
+
         });
     }
 
@@ -298,6 +305,10 @@ public class SectionAForm0Activity extends AppCompatActivity {
                     : bi.kapr13g.isChecked() ? "7"
                     : "0");
             sInfo.put("kapr14", bi.kapr14.getText().toString());
+            sInfo.put("kapr15", bi.kapr15a.isChecked() ? "1"
+                    : bi.kapr15b.isChecked() ? "2"
+                    : "0");
+            sInfo.put("kapr16", bi.kapr16.getText().toString());
 
             sInfo.put("pw_luid", mapWRA.getUid());
             sInfo.put("pw_round", mapWRA.getRound());

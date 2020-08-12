@@ -238,6 +238,11 @@
                                 android:text="@string/kf3f05c" />
 
                             <CheckBox
+                                android:id="@+id/kf3f0597"
+                                style="@style/checkbox"
+                                android:text="@string/noone" />
+
+                            <CheckBox
                                 android:id="@+id/kf3f0596"
                                 style="@style/checkbox"
                                 android:text="@string/other" />

@@ -48,9 +48,6 @@ import edu.aku.hassannaqvi.kmc_screening.other.DateUtils;
 import edu.aku.hassannaqvi.kmc_screening.ui.form1.SectionAForm1Activity;
 import edu.aku.hassannaqvi.kmc_screening.ui.form2.SectionBForm2Activity;
 import edu.aku.hassannaqvi.kmc_screening.ui.form3.SectionBForm3Activity;
-import edu.aku.hassannaqvi.kmc_screening.ui.form3.SectionCForm3Activity;
-import edu.aku.hassannaqvi.kmc_screening.ui.form3.SectionDForm3Activity;
-import edu.aku.hassannaqvi.kmc_screening.ui.form3.SectionEForm3Activity;
 import edu.aku.hassannaqvi.kmc_screening.ui.other.EndingActivity;
 import edu.aku.hassannaqvi.kmc_screening.validation.ClearClass;
 import edu.aku.hassannaqvi.kmc_screening.validation.ValidatorClass;
@@ -333,8 +330,7 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
     }
 
     public Class<?> getIntentClass() {
-        Class<?> cls;
-        switch (followupNo) {
+        /*switch (followupNo) {
             case 6:
             case 8:
                 return SectionBForm3Activity.class;
@@ -346,7 +342,8 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
                 return SectionDForm3Activity.class;
             default:
                 return SectionEForm3Activity.class;
-        }
+        }*/
+        return SectionBForm3Activity.class;
     }
 
     private boolean checkFormExist(String villageCode, String formType, String pwid, String screendid, String followUpNo) {

@@ -53,6 +53,24 @@ public class SectionFForm3Activity extends AppCompatActivity {
             }
         });
 
+        bi.kf3f0597.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                bi.kf3f05a.setChecked(false);
+                bi.kf3f05a.setEnabled(false);
+                bi.kf3f05b.setChecked(false);
+                bi.kf3f05b.setEnabled(false);
+                bi.kf3f05c.setChecked(false);
+                bi.kf3f05c.setEnabled(false);
+                bi.kf3f0596.setChecked(false);
+                bi.kf3f0596.setEnabled(false);
+            } else {
+                bi.kf3f05a.setEnabled(true);
+                bi.kf3f05b.setEnabled(true);
+                bi.kf3f05c.setEnabled(true);
+                bi.kf3f0596.setEnabled(true);
+            }
+        });
+
     }
 
     public void BtnEnd() {
@@ -89,6 +107,7 @@ public class SectionFForm3Activity extends AppCompatActivity {
         sa1.put("kf3f05a", bi.kf3f05a.isChecked() ? "1" : "0");
         sa1.put("kf3f05b", bi.kf3f05b.isChecked() ? "2" : "0");
         sa1.put("kf3f05c", bi.kf3f05c.isChecked() ? "3" : "0");
+        sa1.put("kf3f0597", bi.kf3f0597.isChecked() ? "97" : "0");
         sa1.put("kf3f0596", bi.kf3f0596.isChecked() ? "96" : "0");
         sa1.put("kf3f0596x", bi.kf3f0596x.getText().toString());
 

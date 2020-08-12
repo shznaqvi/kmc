@@ -247,7 +247,7 @@
     <string name="kfh1"> Inclusion Criteria </string>
     <string name="kf1b01"> ڄمڻ وقت جو وزن لکو </string>
     <string name="kf1b01a"> گرامن ۾ </string>
-    <string name="kf1b02"> ڇا ٻار 1200 گرام کان وڌيڪ يا 2200 گرام يا ان کان گھٽ وزن وارو هو؟ </string>
+    <string name="kf1b02"> ڇا ٻار 1200 گرام کان وڌيڪ يا 2400 گرام يا ان کان گھٽ وزن وارو هو؟ </string>
     <string name="kf1b03"> ڇا شرڪت ڪندڙ چونڊيل يونين ڪائونسل ۾ رھي ٿو؟ </string>
     <string name="kfh2"> Exclusion Criteria </string>
     <string name="kf1b04"> ڇا ٻار کي سامهون ڏنل ڪا نشاني يا علامت آهي؟ آپشن جي سامهون ها يا نه لکو </string>
@@ -774,7 +774,7 @@
     <string name="kf3e01"> ٻار جو وزن ڪيو </string>
     <string name="kf3e01a"> گرام </string>
 
-    <string name="kf3e22"> ٻار جو ڊيگهه ڪيو </string>
+    <string name="kf3e22"> ٻار جي ڊيگهه/ قد معلوم ڪيو </string>
     <string name="kf3e22a"> ڊيگهه </string>
 
     <string name="kf3eh9"> ASSESSMENT OF UMBILICAL CORD (DAY 14, 28)</string>
@@ -976,6 +976,8 @@
     <string name="kapr13f"> جڙوه ٻارن جي مرده پيدائش </string>
     <string name="kapr13g"> هڪ ٻار جي مرده پيدائش ۽ هڪ ٻار جي زنده پيدائش </string>
     <string name="kapr14"> تاريخ </string>
+    <string name="kapr15"> ڇا ٻار کي اسڪرين ڪيو ويو آهي؟ </string>
+    <string name="kapr16">  جيڪڏهن ٻار کي اسڪرين ناهي ڪيو ويو ته ڇو؟ سبب ٻڌايو </string>
 
     <string name="kfa1"> جانچ جي جڳهه </string>
     <string name="kfa1a"> صحت مرڪز </string>
