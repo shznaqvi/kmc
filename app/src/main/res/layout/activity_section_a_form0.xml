@@ -565,6 +565,33 @@
 
                     </androidx.cardview.widget.CardView>
 
+                    <!--kapr14-->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvkapr14"
+                        style="@style/cardViews">
+
+                        <LinearLayout style="@style/hlinearlayout">
+
+                            <TextView
+                                style="@style/textviews"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/kapr14" />
+
+                            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                                android:id="@+id/kapr14"
+                                style="@style/EditTextNum"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:hint="dd-MM-yyyy"
+                                app:dateFormat="dd-MM-yyyy"
+                                app:maxDate="CR_DATE" />
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
                     <!--kapr15-->
                     <androidx.cardview.widget.CardView
                         android:id="@+id/cvkapr15"
@@ -607,7 +634,7 @@
                             <TextView
                                 style="@style/textviews"
                                 android:layout_width="0dp"
-                                android:layout_height="match_parent"
+                                android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="@string/kapr16" />
 
@@ -618,34 +645,6 @@
                                 android:layout_weight="1"
                                 android:hint="@string/name"
                                 android:text='@{kapr15b.checked ? kapr16.getText().toString : "" }' />
-
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
-
-
-                    <!--kapr14-->
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/cvkapr14"
-                        style="@style/cardViews">
-
-                        <LinearLayout style="@style/hlinearlayout">
-
-                            <TextView
-                                style="@style/textviews"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/kapr14" />
-
-                            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                                android:id="@+id/kapr14"
-                                style="@style/EditTextNum"
-                                android:layout_width="0dp"
-                                android:layout_weight="1"
-                                android:hint="dd-MM-yyyy"
-                                app:dateFormat="dd-MM-yyyy"
-                                app:maxDate="CR_DATE" />
 
                         </LinearLayout>
 
