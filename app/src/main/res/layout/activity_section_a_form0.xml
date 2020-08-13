@@ -643,7 +643,7 @@
                                 style="@style/EditTextAlpha"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
-                                android:hint="@string/name"
+                                android:hint="@string/kapr16"
                                 android:text='@{kapr15b.checked ? kapr16.getText().toString : "" }' />
 
                         </LinearLayout>
