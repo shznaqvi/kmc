@@ -20,7 +20,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".ui.mortality.Section1Activity"></activity>
         <activity
             android:name=".ui.other.SplashscreenActivity"
             android:screenOrientation="portrait">
@@ -30,89 +30,72 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ui.other.LoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar"
             android:windowSoftInputMode="stateVisible|adjustPan" />
-
         <activity
             android:name=".ui.other.MainActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-
         <activity
             android:name=".core.AndroidDatabaseManager"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-
         <activity
             android:name=".ui.other.EndingActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-
         <activity
             android:name=".ui.SectionA1Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1" />
-
         <activity
             android:name=".ui.form0.SectionAForm0Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1" />
-
         <activity
             android:name=".ui.SectionInfoKmcActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1" />
-
         <activity
             android:name=".ui.form1.SectionAForm1Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1" />
-
         <activity
             android:name=".ui.form2.SectionBForm2Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1" />
-
         <activity
             android:name=".ui.form2.SectionCForm2Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1" />
-
         <activity
             android:name=".ui.form3.SectionBForm3Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1" />
-
         <activity
             android:name=".ui.form3.SectionCForm3Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1" />
-
         <activity
             android:name=".ui.form3.SectionDForm3Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1" />
-
         <activity
             android:name=".ui.form3.SectionEForm3Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1" />
-
         <activity
             android:name=".ui.form3.SectionFForm3Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1" />
-
         <activity
             android:name=".ui.form3.SectionGForm3Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1" />
-
     </application>
 
 </manifest>

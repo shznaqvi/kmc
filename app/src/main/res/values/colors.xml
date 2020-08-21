@@ -13,6 +13,16 @@
 
 
 
+
+    <color name="colorSecondary">#4527a0</color>
+    <color name="colorSecondary_overlay">#7f4527a0</color>
+    <color name="colorSecondaryDark">#000070</color>
+    <color name="colorSecondaryDark_overlay">#7f000070</color>
+    <color name="colorSecondaryLight">#7953d2</color>
+    <color name="colorSecondaryLight_overlay">#7f7953d2</color>
+    <color name="colorSecondaryAccent">#ff3d00</color>
+    <color name="colorSecondaryAccent_overlay">#7fff3d00</color>
+
     <color name="blackOverlay">#66000000</color>
     <color name="dullBlack">#292929</color>
     <color name="grayOverlay">#7f807e7e</color>
