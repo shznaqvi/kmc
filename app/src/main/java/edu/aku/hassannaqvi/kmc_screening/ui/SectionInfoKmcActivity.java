@@ -57,7 +57,8 @@ import static edu.aku.hassannaqvi.kmc_screening.core.MainApp.fc;
 
 public class SectionInfoKmcActivity extends AppCompatActivity {
 
-    private List<String> ucName, talukaNames, villageNames, partNam;
+    private List<String> ucName;
+    private List<String> villageNames;
     private List<String> talukaCodes, villageCodes;
     private Map<String, UCsContract> uc;
     private DatabaseHelper db;
@@ -154,9 +155,9 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 if (bi.kf2a4.getText().toString().isEmpty()) return;
-                if (Integer.valueOf(bi.kf2a4.getText().toString()) < 2) return;
+                if (Integer.parseInt(bi.kf2a4.getText().toString()) < 2) return;
 
-                bi.kf2a5.setMaxvalue(Float.valueOf(bi.kf2a4.getText().toString()) - 1);
+                bi.kf2a5.setMaxvalue(Float.parseFloat(bi.kf2a4.getText().toString()) - 1);
             }
 
             @Override
@@ -168,7 +169,7 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
 
     public void populateSpinner(final Context context) {
         // Spinner Drop down elements
-        talukaNames = new ArrayList<>();
+        List<String> talukaNames = new ArrayList<>();
         talukaCodes = new ArrayList<>();
 
         talukaNames.add("....");
@@ -587,7 +588,7 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
 
         } else {
             mapPartElig = new HashMap<>();
-            partNam = new ArrayList<>();
+            List<String> partNam = new ArrayList<>();
             partNam.add("....");
 
             Collection<EligibleContract> dc;
@@ -654,7 +655,7 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
             String acc = GPSPref.getString("Accuracy", "0");
             String elevation = GPSPref.getString("Elevation", "0");
 
-            if (lat == "0" && lang == "0") {
+            if (lat.equals("0") && lang.equals("0")) {
                 Toast.makeText(this, "Could not obtained GPS points", Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(this, "GPS set", Toast.LENGTH_SHORT).show();
@@ -680,20 +681,24 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
         bi.fldGrpcra02.setVisibility(status);
         bi.fldGrpbtn.setVisibility(status);
 
-        if (MainApp.formType.equals("kf1")) {
-            bi.form01.setVisibility(status);
-            ClearClass.ClearAllFields(bi.form01, null);
-            bi.kf1a6.setMinDate(DateUtils.getDaysBack("dd/MM/yyyy", -29));
-        } else if (MainApp.formType.equals("kf2")) {
-            bi.form02.setVisibility(status);
-            bi.form0203.setVisibility(status);
-            ClearClass.ClearAllFields(bi.form02, null);
-            ClearClass.ClearAllFields(bi.form0203, null);
-        } else if (MainApp.formType.equals("kf3")) {
-            bi.form0203.setVisibility(status);
-            bi.form03.setVisibility(status);
-            ClearClass.ClearAllFields(bi.form0203, null);
-            ClearClass.ClearAllFields(bi.form03, null);
+        switch (MainApp.formType) {
+            case "kf1":
+                bi.form01.setVisibility(status);
+                ClearClass.ClearAllFields(bi.form01, null);
+                bi.kf1a6.setMinDate(DateUtils.getDaysBack("dd/MM/yyyy", -29));
+                break;
+            case "kf2":
+                bi.form02.setVisibility(status);
+                bi.form0203.setVisibility(status);
+                ClearClass.ClearAllFields(bi.form02, null);
+                ClearClass.ClearAllFields(bi.form0203, null);
+                break;
+            case "kf3":
+                bi.form0203.setVisibility(status);
+                bi.form03.setVisibility(status);
+                ClearClass.ClearAllFields(bi.form0203, null);
+                ClearClass.ClearAllFields(bi.form03, null);
+                break;
         }
         bi.kfa1.clearCheck();
     }
