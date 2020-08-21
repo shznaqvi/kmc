@@ -230,6 +230,22 @@ public class Section1Activity extends AppCompatActivity {
     }
 
 
+
+    public void BtnContinue() {
+        if (!formValidation()) return;
+        try {
+            SaveDraft();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (UpdateDB()) {
+            finish();
+            startActivity(new Intent(this, SectionPIB02Activity.class));
+        } else {
+            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
+        }
+    }
+
     public void BtnSearchWoman() {
 
         if (!ValidateSpinners()) return;
@@ -312,5 +328,11 @@ public class Section1Activity extends AppCompatActivity {
                 break;
         }
         bi.kfa1.clearCheck();
+    }
+
+
+
+    public void BtnEnd() {
+        AppUtilsKt.openEndActivity(this, PIEndingActivity.class);
     }
 }
