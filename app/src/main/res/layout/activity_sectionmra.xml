@@ -10,7 +10,7 @@
             type="edu.aku.hassannaqvi.kmc.models.Form" />-->
         <variable
             name="callback"
-            type="edu.aku.hassannaqvi.kmc_screening.ui.mortality.Section1Activity" />
+            type="edu.aku.hassannaqvi.kmc_screening.ui.mortality.SectionMRAActivity" />
     </data>
 
     <ScrollView

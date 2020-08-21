@@ -20,7 +20,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.mortality.Section1Activity"></activity>
+        <activity android:name=".ui.mortality.SectionMRAActivity"></activity>
         <activity
             android:name=".ui.other.SplashscreenActivity"
             android:screenOrientation="portrait">

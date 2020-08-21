@@ -1,62 +1,44 @@
 package edu.aku.hassannaqvi.kmc_screening.ui.mortality;
 
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.provider.Settings;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import edu.aku.hassannaqvi.covid_matiari.utils.app_utils.AppUtilsKt;
 import edu.aku.hassannaqvi.kmc_screening.R;
 import edu.aku.hassannaqvi.kmc_screening.contracts.EligibleContract;
-import edu.aku.hassannaqvi.kmc_screening.contracts.FormsContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.PWScreenedContract;
-import edu.aku.hassannaqvi.kmc_screening.contracts.RegisteredPWContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.TalukasContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.UCsContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.VillagesContract;
 import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc_screening.core.MainApp;
-import edu.aku.hassannaqvi.kmc_screening.databinding.ActivitySectionInfoKmcBinding;
+import edu.aku.hassannaqvi.kmc_screening.databinding.ActivitySectionmraBinding;
 import edu.aku.hassannaqvi.kmc_screening.other.DateUtils;
 import edu.aku.hassannaqvi.kmc_screening.ui.SectionInfoKmcActivity;
-import edu.aku.hassannaqvi.kmc_screening.ui.mortality.Section1Activity;
-import edu.aku.hassannaqvi.kmc_screening.ui.other.EndingActivity;
 import edu.aku.hassannaqvi.kmc_screening.validation.ClearClass;
 import edu.aku.hassannaqvi.kmc_screening.validation.ValidatorClass;
 
-import static edu.aku.hassannaqvi.kmc_screening.core.MainApp.fc;
-
-import android.os.Bundle;
-
-public class Section1Activity extends AppCompatActivity {
+public class SectionMRAActivity extends AppCompatActivity {
 
 
 
@@ -68,13 +50,13 @@ public class Section1Activity extends AppCompatActivity {
     private PWScreenedContract mapWRA;
     private Map<String, EligibleContract> mapPartElig;
     private static final String TAG = SectionInfoKmcActivity.class.getName();
-    ActivitySectionInfoKmcBinding bi;
+    ActivitySectionmraBinding bi;
     public static int followupNo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_section1);
+        setContentView(R.layout.activity_sectionmra);
     }
 
 
@@ -188,6 +170,87 @@ public class Section1Activity extends AppCompatActivity {
         });
 
     }
+    private void saveDraft() throws JSONException {
+
+        JSONObject json = new JSONObject();
+        json.put("nmq101", bi.nmq101a.isChecked() ? "1"
+                : bi.nmq101b.isChecked() ? "2"
+                :  "-1");
+
+     /*   json.put("nmq102", bi.nmq102.getText().toString());
+
+        json.put("nmq103", bi.nmq103.getText().toString());
+
+        json.put("nmq104", bi.nmq104.getText().toString());*/
+
+        json.put("nmq105", bi.nmq105.getText().toString());
+
+        json.put("nmq106", bi.nmq106.getText().toString());
+
+        json.put("nmq107", bi.nmq107.getText().toString());
+
+        json.put("nmq108", bi.nmq108a.isChecked() ? "1"
+                : bi.nmq108b.isChecked() ? "2"
+                :  "-1");
+
+        json.put("nmq109", bi.nmq109.getText().toString());
+
+        json.put("nmq201", bi.nmq201a.isChecked() ? "1"
+                : bi.nmq201b.isChecked() ? "2"
+                :  "-1");
+
+        json.put("nmq202m", bi.nmq202m.getText().toString());
+
+        json.put("nmq202d", bi.nmq202d.getText().toString());
+
+        json.put("nmq203", bi.nmq203a.isChecked() ? "1"
+                : bi.nmq203b.isChecked() ? "2"
+                :  "-1");
+
+        json.put("nmq20401",bi.nmq20401.isChecked() ? "1" :"-1");
+
+        json.put("nmq20402",bi.nmq20402.isChecked() ? "2" :"-1");
+
+        json.put("nmq20403",bi.nmq20403.isChecked() ? "3" :"-1");
+
+        json.put("nmq20404",bi.nmq20404.isChecked() ? "4" :"-1");
+
+        json.put("nmq20405",bi.nmq20405.isChecked() ? "5" :"-1");
+
+        json.put("nmq20406",bi.nmq20406.isChecked() ? "6" :"-1");
+
+        json.put("nmq20407",bi.nmq20407.isChecked() ? "7" :"-1");
+
+        json.put("nmq20408",bi.nmq20408.isChecked() ? "8" :"-1");
+
+        json.put("nmq20409",bi.nmq20409.isChecked() ? "9" :"-1");
+
+        json.put("nmq204010",bi.nmq204010.isChecked() ? "10" :"-1");
+
+        json.put("nmq204011",bi.nmq204011.isChecked() ? "11" :"-1");
+
+        json.put("nmq204098",bi.nmq204098.isChecked() ? "98" :"-1");
+
+        json.put("nmq204096",bi.nmq204096.isChecked() ? "96" :"-1");
+
+        json.put("nmq204096x", bi.nmq204096x.getText().toString());
+        json.put("nmq205", bi.nmq20501.isChecked() ? "1"
+                : bi.nmq20502.isChecked() ? "2"
+                : bi.nmq20503.isChecked() ? "3"
+                : bi.nmq20504.isChecked() ? "4"
+                : bi.nmq20505.isChecked() ? "5"
+                : bi.nmq20506.isChecked() ? "6"
+                : bi.nmq20507.isChecked() ? "7"
+                : bi.nmq205096.isChecked() ? "96"
+                :  "-1");
+
+        json.put("nmq205096x", bi.nmq205096x.getText().toString());
+        json.put("nmq206h", bi.nmq206h.getText().toString());
+
+        json.put("nmq206d", bi.nmq206d.getText().toString());
+
+
+    }
 
     private boolean ValidateSpinners() {
         if (bi.crataluka.getSelectedItemPosition() == 0) {
@@ -234,13 +297,13 @@ public class Section1Activity extends AppCompatActivity {
     public void BtnContinue() {
         if (!formValidation()) return;
         try {
-            SaveDraft();
+            saveDraft();
         } catch (Exception e) {
             e.printStackTrace();
         }
         if (UpdateDB()) {
             finish();
-            startActivity(new Intent(this, SectionPIB02Activity.class));
+            startActivity(new Intent(this, SectionMRAActivity.class));
         } else {
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
         }
@@ -297,14 +360,14 @@ public class Section1Activity extends AppCompatActivity {
                 }
             }
 
-            bi.kf2a6.setAdapter(new ArrayAdapter<>(Section1Activity.this, android.R.layout.simple_spinner_dropdown_item, partNam));
+            bi.kf2a6.setAdapter(new ArrayAdapter<>(SectionMRAActivity.this, android.R.layout.simple_spinner_dropdown_item, partNam));
         }
 
         Toast.makeText(this, "Household number exists", Toast.LENGTH_LONG).show();
         setupFields(View.VISIBLE);
 
     }
-    private void setupFields(int status) {
+   /* private void setupFields(int status) {
         bi.fldGrpcra02.setVisibility(status);
         bi.fldGrpbtn.setVisibility(status);
 
@@ -328,9 +391,38 @@ public class Section1Activity extends AppCompatActivity {
                 break;
         }
         bi.kfa1.clearCheck();
+    }*/
+
+
+    private boolean formValidation() {
+        return Validator.emptyCheckingContainer(this, bi.fldGrpSectionC);
+
     }
+    private void setupFields(int status) {
+     /*   bi.fldGrpcra02.setVisibility(status);
+        bi.fldGrpbtn.setVisibility(status);
 
-
+        switch (MainApp.formType) {
+            case "kf1":
+                bi.form01.setVisibility(status);
+                ClearClass.ClearAllFields(bi.form01, null);
+                bi.kf1a6.setMinDate(DateUtils.getDaysBack("dd/MM/yyyy", -29));
+                break;
+            case "kf2":
+                bi.form02.setVisibility(status);
+                bi.form0203.setVisibility(status);
+                ClearClass.ClearAllFields(bi.form02, null);
+                ClearClass.ClearAllFields(bi.form0203, null);
+                break;
+            case "kf3":
+                bi.form0203.setVisibility(status);
+                bi.form03.setVisibility(status);
+                ClearClass.ClearAllFields(bi.form0203, null);
+                ClearClass.ClearAllFields(bi.form03, null);
+                break;
+        }
+        bi.kfa1.clearCheck();*/
+    }
 
     public void BtnEnd() {
         AppUtilsKt.openEndActivity(this, PIEndingActivity.class);
