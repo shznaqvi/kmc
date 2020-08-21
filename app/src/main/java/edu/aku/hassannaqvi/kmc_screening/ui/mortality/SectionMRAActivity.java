@@ -14,6 +14,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.validatorcrawler.aliazaz.Validator;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -23,7 +25,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import edu.aku.hassannaqvi.covid_matiari.utils.app_utils.AppUtilsKt;
 import edu.aku.hassannaqvi.kmc_screening.R;
 import edu.aku.hassannaqvi.kmc_screening.contracts.EligibleContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.PWScreenedContract;
@@ -33,14 +34,10 @@ import edu.aku.hassannaqvi.kmc_screening.contracts.VillagesContract;
 import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc_screening.core.MainApp;
 import edu.aku.hassannaqvi.kmc_screening.databinding.ActivitySectionmraBinding;
-import edu.aku.hassannaqvi.kmc_screening.other.DateUtils;
 import edu.aku.hassannaqvi.kmc_screening.ui.SectionInfoKmcActivity;
-import edu.aku.hassannaqvi.kmc_screening.validation.ClearClass;
 import edu.aku.hassannaqvi.kmc_screening.validation.ValidatorClass;
 
 public class SectionMRAActivity extends AppCompatActivity {
-
-
 
     private List<String> ucName;
     private List<String> villageNames;
@@ -58,11 +55,6 @@ public class SectionMRAActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sectionmra);
     }
-
-
-
-
-
 
     public void populateSpinner(final Context context) {
         // Spinner Drop down elements
@@ -170,6 +162,7 @@ public class SectionMRAActivity extends AppCompatActivity {
         });
 
     }
+
     private void saveDraft() throws JSONException {
 
         JSONObject json = new JSONObject();
@@ -292,9 +285,7 @@ public class SectionMRAActivity extends AppCompatActivity {
         return ValidatorClass.EmptyTextBox(this, bi.kapr02a, getString(R.string.kapr01));
     }
 
-
-
-    public void BtnContinue() {
+    public void BtnContinue(View v) {
         if (!formValidation()) return;
         try {
             saveDraft();
@@ -367,64 +358,10 @@ public class SectionMRAActivity extends AppCompatActivity {
         setupFields(View.VISIBLE);
 
     }
-   /* private void setupFields(int status) {
-        bi.fldGrpcra02.setVisibility(status);
-        bi.fldGrpbtn.setVisibility(status);
-
-        switch (MainApp.formType) {
-            case "kf1":
-                bi.form01.setVisibility(status);
-                ClearClass.ClearAllFields(bi.form01, null);
-                bi.kf1a6.setMinDate(DateUtils.getDaysBack("dd/MM/yyyy", -29));
-                break;
-            case "kf2":
-                bi.form02.setVisibility(status);
-                bi.form0203.setVisibility(status);
-                ClearClass.ClearAllFields(bi.form02, null);
-                ClearClass.ClearAllFields(bi.form0203, null);
-                break;
-            case "kf3":
-                bi.form0203.setVisibility(status);
-                bi.form03.setVisibility(status);
-                ClearClass.ClearAllFields(bi.form0203, null);
-                ClearClass.ClearAllFields(bi.form03, null);
-                break;
-        }
-        bi.kfa1.clearCheck();
-    }*/
-
 
     private boolean formValidation() {
-        return Validator.emptyCheckingContainer(this, bi.fldGrpSectionC);
+        return Validator.emptyCheckingContainer(this, bi.GrpName);
 
     }
-    private void setupFields(int status) {
-     /*   bi.fldGrpcra02.setVisibility(status);
-        bi.fldGrpbtn.setVisibility(status);
 
-        switch (MainApp.formType) {
-            case "kf1":
-                bi.form01.setVisibility(status);
-                ClearClass.ClearAllFields(bi.form01, null);
-                bi.kf1a6.setMinDate(DateUtils.getDaysBack("dd/MM/yyyy", -29));
-                break;
-            case "kf2":
-                bi.form02.setVisibility(status);
-                bi.form0203.setVisibility(status);
-                ClearClass.ClearAllFields(bi.form02, null);
-                ClearClass.ClearAllFields(bi.form0203, null);
-                break;
-            case "kf3":
-                bi.form0203.setVisibility(status);
-                bi.form03.setVisibility(status);
-                ClearClass.ClearAllFields(bi.form0203, null);
-                ClearClass.ClearAllFields(bi.form03, null);
-                break;
-        }
-        bi.kfa1.clearCheck();*/
-    }
-
-    public void BtnEnd() {
-        AppUtilsKt.openEndActivity(this, PIEndingActivity.class);
-    }
 }

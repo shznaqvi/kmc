@@ -61,8 +61,10 @@ dependencies {
     implementation 'com.nabinbhandari.android:permissions:3.8'
 
     implementation 'com.github.Shashank02051997:FancyToast-Android:0.1.6'
-    // Edittext-library
+
+    //Ali Mask
     implementation 'com.github.AliAzaz:Edittext-Library:2.0.0'
+    implementation 'com.github.AliAzaz:AndroidValidatorCrawler:1.0.3'
 
     implementation 'com.google.code.gson:gson:2.8.6'
 }
