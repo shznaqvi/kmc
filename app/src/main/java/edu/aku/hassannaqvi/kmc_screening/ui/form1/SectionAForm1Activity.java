@@ -40,10 +40,8 @@ public class SectionAForm1Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_a_form1);
         bi.setCallback(this);
-
         setContentUI();
         setListeners();
-
     }
 
     private void setContentUI() {
@@ -72,18 +70,14 @@ public class SectionAForm1Activity extends AppCompatActivity {
             finish();
             startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
         } else {
-            Toast.makeText(this, "Error in updating db!!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
         }
     }
 
     private boolean UpdateDB() {
-
         DatabaseHelper db = new DatabaseHelper(this);
-        long count = db.updateSA();
-        if (count != -1) return true;
-
-        Toast.makeText(this, "Error in updating DB", Toast.LENGTH_SHORT).show();
-        return false;
+        long updateCount = db.updateSA();
+        return updateCount == 1;
     }
 
     private void SaveDraft() throws JSONException {

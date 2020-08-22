@@ -31,7 +31,7 @@ public class EndingActivity extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_ending);
         binding.setCallback(this);
 
-        Boolean check = getIntent().getExtras().getBoolean("complete");
+        boolean check = getIntent().getBooleanExtra("complete", false);
 
         if (check) {
             binding.istatusa.setEnabled(true);
@@ -44,19 +44,6 @@ public class EndingActivity extends AppCompatActivity {
             binding.istatusa.setEnabled(false);
         }
 
-/*        istatus.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
-                if (istatus88.isChecked()) {
-                    istatus88x.setVisibility(View.VISIBLE);
-                    //istatus88x.requestFocus();
-                } else {
-                    istatus88x.setText(null);
-                    istatus88x.setVisibility(View.GONE);
-                }
-            }
-        });*/
-
     }
 
     public void BtnEnd() {
@@ -64,9 +51,12 @@ public class EndingActivity extends AppCompatActivity {
             SaveDraft();
             if (UpdateDB()) {
                 finish();
-                startActivity(new Intent(this, MainActivity.class));
+                startActivity(new Intent(this, MainActivity.class)
+                        .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                        .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                        .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
             } else {
-                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -86,16 +76,8 @@ public class EndingActivity extends AppCompatActivity {
 
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
-
         int updcount = db.updateEnding();
-
-        if (updcount == 1) {
-            return true;
-        } else {
-            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
-            return false;
-        }
-
+        return updcount == 1;
     }
 
     private boolean formValidation() {

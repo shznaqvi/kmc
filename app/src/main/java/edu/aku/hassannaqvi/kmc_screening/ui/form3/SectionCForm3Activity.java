@@ -206,7 +206,7 @@ public class SectionCForm3Activity extends AppCompatActivity {
                 startActivity(new Intent(this, SectionDForm3Activity.class).putExtra("complete", true).putExtra("day1", day1Flag));
 
             } else {
-                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
             }
         }
 
@@ -240,20 +240,10 @@ public class SectionCForm3Activity extends AppCompatActivity {
     }
 
     private boolean UpdateDB() {
-
         DatabaseHelper db = new DatabaseHelper(this);
-
         int updcount = db.updateSC();
-
-        if (updcount > 0) {
-            //Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
-            return true;
-        } else {
-            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
-            return false;
-        }
+        return updcount == 1;
     }
-
 
     @Override
     public void onBackPressed() {

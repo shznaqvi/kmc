@@ -20,7 +20,6 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.mortality.SectionMRAActivity"></activity>
         <activity
             android:name=".ui.other.SplashscreenActivity"
             android:screenOrientation="portrait">
@@ -50,6 +49,10 @@
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name=".ui.SectionA1Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".ui.mortality.SectionMRAActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1" />
         <activity

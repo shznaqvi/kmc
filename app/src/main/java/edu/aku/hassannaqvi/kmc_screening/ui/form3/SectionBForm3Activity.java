@@ -132,7 +132,7 @@ public class SectionBForm3Activity extends AppCompatActivity {
                         .putExtra("complete", true).putExtra("day1", getIntent().getBooleanExtra("dayFlag", false)));
 
             } else {
-                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
             }
         }
 
@@ -160,17 +160,9 @@ public class SectionBForm3Activity extends AppCompatActivity {
     }
 
     private boolean UpdateDB() {
-
         DatabaseHelper db = new DatabaseHelper(this);
-
-        int updcount = db.updateSB();
-
-        if (updcount > 0) {
-            return true;
-        } else {
-            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
-            return false;
-        }
+        int updateCount = db.updateSB();
+        return updateCount == 1;
     }
 
 

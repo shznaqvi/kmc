@@ -1,8 +1,6 @@
 package edu.aku.hassannaqvi.kmc_screening.ui.other;
 
-import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -19,16 +17,15 @@ import android.text.InputType;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+
+import com.bumptech.glide.Glide;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -37,13 +34,10 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.Map;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import edu.aku.hassannaqvi.kmc_screening.R;
 import edu.aku.hassannaqvi.kmc_screening.contracts.FormsContract;
 import edu.aku.hassannaqvi.kmc_screening.core.AndroidDatabaseManager;
@@ -51,57 +45,42 @@ import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc_screening.core.MainApp;
 import edu.aku.hassannaqvi.kmc_screening.databinding.ActivityMainBinding;
 import edu.aku.hassannaqvi.kmc_screening.sync.SyncAllData;
-import edu.aku.hassannaqvi.kmc_screening.ui.SectionA1Activity;
 import edu.aku.hassannaqvi.kmc_screening.ui.SectionInfoKmcActivity;
 import edu.aku.hassannaqvi.kmc_screening.ui.form0.SectionAForm0Activity;
+import edu.aku.hassannaqvi.kmc_screening.ui.mortality.SectionMRAActivity;
+import edu.aku.hassannaqvi.kmc_screening.ui.utils.DashboardMenu;
 
 public class MainActivity extends AppCompatActivity {
 
     private final String TAG = "MainActivity";
 
     String dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
-    @BindView(R.id.adminsec)
-    LinearLayout adminsec;
-    @BindView(R.id.lblheader)
-    TextView lblheader;
-    @BindView(R.id.recordSummary)
-    TextView recordSummary;
-
-    @BindView(R.id.syncDevice)
-    Button syncDevice;
-
-    @BindView(R.id.spAreas)
-    Spinner spAreas;
 
     SharedPreferences sharedPref;
     SharedPreferences.Editor editor;
     AlertDialog.Builder builder;
     String m_Text = "";
-    ProgressDialog mProgressDialog;
-    ArrayList<String> lablesAreas;
-    Map<String, String> AreasMap;
-    private ProgressDialog pd;
     private Boolean exit = false;
     private String rSumText = "";
-    String formType;
+    private DatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
-        ButterKnife.bind(this);
-        if (android.os.Build.VERSION.SDK_INT > 9) {
-            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-            StrictMode.setThreadPolicy(policy);
-        }
-        lblheader.setText("Welcome! You're assigned to block ' " + MainApp.userName);
+//        Binding setting
+        ActivityMainBinding bi = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        bi.setCallback(this);
 
+        db = new DatabaseHelper(this);
 
-        /*TagID Start*/
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+        bi.lblheader.setText(String.format("Welcome! %s", MainApp.userName));
+
+//        TagID Start
         sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
         editor = sharedPref.edit();
-
 
         builder = new AlertDialog.Builder(MainActivity.this);
         final AlertDialog dialog = builder.create();
@@ -114,57 +93,33 @@ public class MainActivity extends AppCompatActivity {
         final EditText input = new EditText(MainActivity.this);
         input.setInputType(InputType.TYPE_CLASS_TEXT);
         input.requestFocus();
-        input.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View view, boolean b) {
-                if (b) {
-                    dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
-                }
+        input.setOnFocusChangeListener((view, b) -> {
+            if (b) {
+                dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
             }
         });
 
         builder.setView(input);
 
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                m_Text = input.getText().toString();
-                if (!m_Text.equals("")) {
-                    editor.putString("tagName", m_Text);
-                    editor.commit();
-                }
+        builder.setPositiveButton("OK", (dialog1, which) -> {
+            m_Text = input.getText().toString();
+            if (!m_Text.equals("")) {
+                editor.putString("tagName", m_Text);
+                editor.apply();
             }
         });
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.cancel();
-            }
-        });
+        builder.setNegativeButton("Cancel", (dialog12, which) -> dialog12.cancel());
 
         if (sharedPref.getString("tagName", null) == "" || sharedPref.getString("tagName", null) == null) {
             builder.show();
         }
-        /*TagID End*/
+//        TagID End
 
-
-//        Binding setting
-        ActivityMainBinding mainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        mainBinding.setCallback(this);
-
-
-        if (MainApp.userName.equals("dmu@aku")) {
-            mainBinding.adminsec.setVisibility(View.VISIBLE);
-        } else {
-            mainBinding.adminsec.setVisibility(View.GONE);
-        }
-
-
-        DatabaseHelper db = new DatabaseHelper(this);
+        bi.adminsec.setVisibility(MainApp.admin ? View.VISIBLE : View.GONE);
 
 //        Admin checking
         if (MainApp.admin) {
-            mainBinding.adminsec.setVisibility(View.VISIBLE);
+            bi.adminsec.setVisibility(View.VISIBLE);
 
             Collection<FormsContract> todaysForms = db.getTodayForms();
 
@@ -221,46 +176,39 @@ public class MainActivity extends AppCompatActivity {
             rSumText += "\r\n";
 
             Log.d(TAG, "onCreate: " + rSumText);
-            recordSummary.setText(rSumText);
+            bi.recordSummary.setText(rSumText);
 
         } else {
-            mainBinding.adminsec.setVisibility(View.GONE);
+            bi.adminsec.setVisibility(View.GONE);
         }
 
-//        Fill spinner
+//        Populating Menu Items
+        DashboardMenu[] menuItems = {
+                new DashboardMenu(R.drawable.pw_reg, getString(R.string.pw_reg)),
+                new DashboardMenu(R.drawable.pw_survey, getString(R.string.pw_sur)),
+                new DashboardMenu(R.drawable.f1_screening, "FORM-1\nPARTICIPANT SCREENING"),
+                new DashboardMenu(R.drawable.f2_recruitment, "FORM-2\nRECRUITMENT FORM"),
+                new DashboardMenu(R.drawable.f3_followup, "FORM-3\nFOLLOWUP FORM"),
+                new DashboardMenu(R.drawable.f_mr, "Neonatal Mortality\n(0-28 Days)")
+        };
 
-        /*lablesAreas = new ArrayList<>();
-        AreasMap = new HashMap<>();
-        lablesAreas.add("Select Area..");
+        ImageView[] imageViews = {bi.pwReg.itemImg, bi.pwSurv.itemImg, bi.form01Eligible.itemImg, bi.form02Rec.itemImg, bi.form03FUp.itemImg, bi.formMR.itemImg};
+        TextView[] txtViews = {bi.pwReg.itemTitle, bi.pwSurv.itemTitle, bi.form01Eligible.itemTitle, bi.form02Rec.itemTitle, bi.form03FUp.itemTitle, bi.formMR.itemTitle};
 
-
-        spAreas.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, lablesAreas));
-
-        spAreas.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
-                if (spAreas.getSelectedItemPosition() != 0) {
-                    MainApp.areaCode = Integer.valueOf(AreasMap.get(spAreas.getSelectedItem().toString()));
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });*/
-
-        /*Add data in Serial date wrt date*/
-
+        for (int i = 0; i < menuItems.length; i++) {
+            Glide.with(this)
+                    .asBitmap()
+                    .load(menuItems[i].getImageSrc())
+                    .into(imageViews[i]);
+            txtViews[i].setText(menuItems[i].getLbl());
+        }
 
     }
 
     public void openForm(int index) {
-
         if (!MainApp.userName.equals("0000")) {
             final Intent oF = new Intent(MainActivity.this, getClass(index));
-            if (sharedPref.getString("tagName", null) != "" && sharedPref.getString("tagName", null) != null && !MainApp.userName.equals("0000")) {
+            if (!sharedPref.getString("tagName", null).equals("") && sharedPref.getString("tagName", null) != null && !MainApp.userName.equals("0000")) {
                 startActivity(oF);
             } else {
 
@@ -289,24 +237,17 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                 });
-                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                });
-
+                builder.setNegativeButton("Cancel", (dialog, which) -> dialog.cancel());
                 builder.show();
             }
         } else {
-
             Toast.makeText(this, "Please restart the app", Toast.LENGTH_SHORT).show();
         }
 
     }
 
-    private Class getClass(int a) {
-        Class intentClass = null;
+    private Class<?> getClass(int a) {
+        Class<?> intentClass = null;
         switch (a) {
             case 0:
                 MainApp.surveyType = "kf0a";
@@ -333,6 +274,10 @@ public class MainActivity extends AppCompatActivity {
                 MainApp.surveyType = "kf3";
                 intentClass = SectionInfoKmcActivity.class;
                 break;
+            case 5:
+                MainApp.formType = "mw";
+                intentClass = SectionMRAActivity.class;
+                break;
             default:
                 break;
         }
@@ -341,7 +286,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void testGPS(View v) {
-
         SharedPreferences sharedPref = getSharedPreferences("GPSCoordinates", Context.MODE_PRIVATE);
         Log.d("MAP", "testGPS: " + sharedPref.getAll().toString());
         Map<String, ?> allEntries = sharedPref.getAll();
@@ -359,41 +303,38 @@ public class MainActivity extends AppCompatActivity {
                 .setMessage("Are you sure to download new app??")
                 .setCancelable(false)
                 .setPositiveButton("Yes",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog,
-                                                int id) {
-                                // this is how you fire the downloader
-                                try {
-                                    URL url = new URL(MainApp._UPDATE_URL);
-                                    HttpURLConnection c = (HttpURLConnection) url.openConnection();
-                                    c.setRequestMethod("GET");
-                                    c.setDoOutput(true);
-                                    c.connect();
+                        (dialog, id) -> {
+                            // this is how you fire the downloader
+                            try {
+                                URL url = new URL(MainApp._UPDATE_URL);
+                                HttpURLConnection c = (HttpURLConnection) url.openConnection();
+                                c.setRequestMethod("GET");
+                                c.setDoOutput(true);
+                                c.connect();
 
-                                    String PATH = Environment.getExternalStorageDirectory() + "/download/";
-                                    File file = new File(PATH);
-                                    file.mkdirs();
-                                    File outputFile = new File(file, "app.apk");
-                                    FileOutputStream fos = new FileOutputStream(outputFile);
+                                String PATH = Environment.getExternalStorageDirectory() + "/download/";
+                                File file = new File(PATH);
+                                file.mkdirs();
+                                File outputFile = new File(file, "app.apk");
+                                FileOutputStream fos = new FileOutputStream(outputFile);
 
-                                    InputStream is = c.getInputStream();
+                                InputStream is = c.getInputStream();
 
-                                    byte[] buffer = new byte[1024];
-                                    int len1 = 0;
-                                    while ((len1 = is.read(buffer)) != -1) {
-                                        fos.write(buffer, 0, len1);
-                                    }
-                                    fos.close();
-                                    is.close();//till here, it works fine - .apk is download to my sdcard in download file
-
-                                    Intent intent = new Intent(Intent.ACTION_VIEW);
-                                    intent.setDataAndType(Uri.fromFile(new File(Environment.getExternalStorageDirectory() + "/download/" + "app.apk")), "application/vnd.android.package-archive");
-                                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                                    startActivity(intent);
-
-                                } catch (IOException e) {
-                                    Toast.makeText(getApplicationContext(), "Update error!", Toast.LENGTH_LONG).show();
+                                byte[] buffer = new byte[1024];
+                                int len1 = 0;
+                                while ((len1 = is.read(buffer)) != -1) {
+                                    fos.write(buffer, 0, len1);
                                 }
+                                fos.close();
+                                is.close();//till here, it works fine - .apk is download to my sdcard in download file
+
+                                Intent intent = new Intent(Intent.ACTION_VIEW);
+                                intent.setDataAndType(Uri.fromFile(new File(Environment.getExternalStorageDirectory() + "/download/" + "app.apk")), "application/vnd.android.package-archive");
+                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                startActivity(intent);
+
+                            } catch (IOException e) {
+                                Toast.makeText(getApplicationContext(), "Update error!", Toast.LENGTH_LONG).show();
                             }
                         });
         alertDialogBuilder.setNegativeButton("No",
@@ -426,7 +367,7 @@ public class MainActivity extends AppCompatActivity {
                     "updateSyncedForms",
                     FormsContract.class,
                     FormsContract.FormsTable._URL.replace(".php", "_f0a.php"),
-                    new DatabaseHelper(this).getUnsyncedForms0("kf0", "kf0a")
+                    db.getUnsyncedForms0("kf0", "kf0a")
             ).execute();
 
             Toast.makeText(getApplicationContext(), "Syncing Forms - PW Survillence", Toast.LENGTH_SHORT).show();
@@ -436,7 +377,7 @@ public class MainActivity extends AppCompatActivity {
                     "updateSyncedForms",
                     FormsContract.class,
                     FormsContract.FormsTable._URL.replace(".php", "_f0b.php"),
-                    new DatabaseHelper(this).getUnsyncedForms0("kf0", "kf0b")
+                    db.getUnsyncedForms0("kf0", "kf0b")
             ).execute();
 
             Toast.makeText(getApplicationContext(), "Syncing Forms - PW Screening", Toast.LENGTH_SHORT).show();
@@ -446,7 +387,7 @@ public class MainActivity extends AppCompatActivity {
                     "updateSyncedForms",
                     FormsContract.class,
                     FormsContract.FormsTable._URL.replace(".php", "_f1.php"),
-                    new DatabaseHelper(this).getUnsyncedForms("kf1")
+                    db.getUnsyncedForms("kf1")
             ).execute();
 
             Toast.makeText(getApplicationContext(), "Syncing Forms - PW Recruitment", Toast.LENGTH_SHORT).show();
@@ -456,7 +397,7 @@ public class MainActivity extends AppCompatActivity {
                     "updateSyncedForms",
                     FormsContract.class,
                     FormsContract.FormsTable._URL.replace(".php", "_f2.php"),
-                    new DatabaseHelper(this).getUnsyncedForms("kf2")
+                    db.getUnsyncedForms("kf2")
             ).execute();
 
             Toast.makeText(getApplicationContext(), "Syncing Forms - PW FOLLOWUPS", Toast.LENGTH_SHORT).show();
@@ -466,7 +407,7 @@ public class MainActivity extends AppCompatActivity {
                     "updateSyncedForms",
                     FormsContract.class,
                     FormsContract.FormsTable._URL.replace(".php", "_f3.php"),
-                    new DatabaseHelper(this).getUnsyncedForms("kf3")
+                    db.getUnsyncedForms("kf3")
             ).execute();
 
             SharedPreferences syncPref = getSharedPreferences("SyncInfo", Context.MODE_PRIVATE);
@@ -484,8 +425,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void syncDevice(View view) {
 
-        ConnectivityManager connMgr = (ConnectivityManager)
-                getSystemService(Context.CONNECTIVITY_SERVICE);
+        ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
 
@@ -519,15 +459,6 @@ public class MainActivity extends AppCompatActivity {
             }, 3 * 1000);
 
         }
-    }
-
-
-    public void openA1(View v) {
-        startActivity1(SectionA1Activity.class);
-    }
-
-    private void startActivity1(final Class<? extends Activity> ActivityToOpen) {
-        startActivity(new Intent(getBaseContext(), ActivityToOpen));
     }
 
 }

@@ -66,5 +66,9 @@ dependencies {
     implementation 'com.github.AliAzaz:Edittext-Library:2.0.0'
     implementation 'com.github.AliAzaz:AndroidValidatorCrawler:1.0.3'
 
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+
     implementation 'com.google.code.gson:gson:2.8.6'
 }

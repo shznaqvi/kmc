@@ -486,7 +486,7 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
                                         finish();
                                         startActivity(new Intent(SectionInfoKmcActivity.this, EndingActivity.class).putExtra("complete", false));
                                     } else {
-                                        Toast.makeText(SectionInfoKmcActivity.this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(SectionInfoKmcActivity.this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
                                     }
                                 }
 
@@ -522,7 +522,7 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
                         .putExtra("dayFlag", bi.kf3b01a.isChecked())
                         .putExtra("complete", true));
             } else {
-                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -627,24 +627,17 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
     }
 
     private boolean UpdateDB() {
-
         DatabaseHelper db = new DatabaseHelper(this);
-
         long updcount = db.addForm(fc);
-
         fc.set_ID(String.valueOf(updcount));
-
         if (updcount > 0) {
-            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
-
-            fc.setUID(
-                    (fc.getDeviceID() + fc.get_ID()));
+            fc.setUID((fc.getDeviceID() + fc.get_ID()));
             db.updateFormID();
+            return true;
         } else {
-            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
+            return false;
         }
-
-        return true;
     }
 
     public void setGPS() {

@@ -338,7 +338,7 @@ public class SectionAForm0Activity extends AppCompatActivity {
                 startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
 
             } else {
-                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -354,7 +354,7 @@ public class SectionAForm0Activity extends AppCompatActivity {
                 finish();
                 startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
             } else {
-                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -461,22 +461,15 @@ public class SectionAForm0Activity extends AppCompatActivity {
     }
 
     private boolean UpdateDB() {
-
         DatabaseHelper db = new DatabaseHelper(this);
-
         long updcount = db.addForm(fc);
-
         fc.set_ID(String.valueOf(updcount));
-
         if (updcount > 0) {
-            fc.setUID(
-                    (fc.getDeviceID() + fc.get_ID()));
+            fc.setUID((fc.getDeviceID() + fc.get_ID()));
             db.updateFormID();
-        } else {
-            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            return true;
         }
-
-        return true;
+        return false;
     }
 
     private void setGPS() {

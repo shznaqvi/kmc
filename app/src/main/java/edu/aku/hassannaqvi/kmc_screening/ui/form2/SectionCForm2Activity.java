@@ -60,7 +60,7 @@ public class SectionCForm2Activity extends AppCompatActivity {
             finish();
             startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
         } else {
-            Toast.makeText(this, "Error in updating db!!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -68,10 +68,7 @@ public class SectionCForm2Activity extends AppCompatActivity {
 
         DatabaseHelper db = new DatabaseHelper(this);
         long count = db.updateSC();
-        if (count != -1) return true;
-
-        Toast.makeText(this, "Error in updating DB", Toast.LENGTH_SHORT).show();
-        return false;
+        return count == 1;
     }
 
     private void SaveDraft() throws JSONException {
