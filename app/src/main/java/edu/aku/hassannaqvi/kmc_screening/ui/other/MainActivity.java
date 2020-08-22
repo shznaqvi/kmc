@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
         builder = new AlertDialog.Builder(MainActivity.this);
         final AlertDialog dialog = builder.create();
 
-        ImageView img = new ImageView(getApplicationContext());
+        ImageView img = new ImageView(this);
         img.setImageResource(R.drawable.tagimg);
         img.setPadding(0, 15, 0, 15);
         builder.setCustomTitle(img);
@@ -115,11 +115,10 @@ public class MainActivity extends AppCompatActivity {
         }
 //        TagID End
 
-        bi.adminsec.setVisibility(MainApp.admin ? View.VISIBLE : View.GONE);
-
 //        Admin checking
+        bi.openDB.setVisibility(MainApp.admin ? View.VISIBLE : View.GONE);
         if (MainApp.admin) {
-            bi.adminsec.setVisibility(View.VISIBLE);
+            bi.openDB.setVisibility(View.VISIBLE);
 
             Collection<FormsContract> todaysForms = db.getTodayForms();
 
@@ -179,7 +178,7 @@ public class MainActivity extends AppCompatActivity {
             bi.recordSummary.setText(rSumText);
 
         } else {
-            bi.adminsec.setVisibility(View.GONE);
+            bi.openDB.setVisibility(View.GONE);
         }
 
 //        Populating Menu Items
@@ -213,7 +212,7 @@ public class MainActivity extends AppCompatActivity {
             } else {
 
                 builder = new AlertDialog.Builder(MainActivity.this);
-                ImageView img = new ImageView(getApplicationContext());
+                ImageView img = new ImageView(this);
                 img.setImageResource(R.drawable.tagimg);
                 img.setPadding(0, 15, 0, 15);
                 builder.setCustomTitle(img);
@@ -275,7 +274,7 @@ public class MainActivity extends AppCompatActivity {
                 intentClass = SectionInfoKmcActivity.class;
                 break;
             case 5:
-                MainApp.formType = "mw";
+                MainApp.formType = "mr";
                 intentClass = SectionMRAActivity.class;
                 break;
             default:
@@ -334,7 +333,7 @@ public class MainActivity extends AppCompatActivity {
                                 startActivity(intent);
 
                             } catch (IOException e) {
-                                Toast.makeText(getApplicationContext(), "Update error!", Toast.LENGTH_LONG).show();
+                                Toast.makeText(this, "Update error!", Toast.LENGTH_LONG).show();
                             }
                         });
         alertDialogBuilder.setNegativeButton("No",
@@ -348,7 +347,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openDB(View v) {
-        Intent dbmanager = new Intent(getApplicationContext(), AndroidDatabaseManager.class);
+        Intent dbmanager = new Intent(this, AndroidDatabaseManager.class);
         startActivity(dbmanager);
     }
 
@@ -360,7 +359,7 @@ public class MainActivity extends AppCompatActivity {
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
 
-            Toast.makeText(getApplicationContext(), "Syncing Forms - PW Registration", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Syncing Forms - PW Registration", Toast.LENGTH_SHORT).show();
             new SyncAllData(
                     this,
                     "Forms - PW Registration",
@@ -370,7 +369,7 @@ public class MainActivity extends AppCompatActivity {
                     db.getUnsyncedForms0("kf0", "kf0a")
             ).execute();
 
-            Toast.makeText(getApplicationContext(), "Syncing Forms - PW Survillence", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Syncing Forms - PW Survillence", Toast.LENGTH_SHORT).show();
             new SyncAllData(
                     this,
                     "Forms - PW Survillence",
@@ -380,7 +379,7 @@ public class MainActivity extends AppCompatActivity {
                     db.getUnsyncedForms0("kf0", "kf0b")
             ).execute();
 
-            Toast.makeText(getApplicationContext(), "Syncing Forms - PW Screening", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Syncing Forms - PW Screening", Toast.LENGTH_SHORT).show();
             new SyncAllData(
                     this,
                     "Forms - PW Screening",
@@ -390,7 +389,7 @@ public class MainActivity extends AppCompatActivity {
                     db.getUnsyncedForms("kf1")
             ).execute();
 
-            Toast.makeText(getApplicationContext(), "Syncing Forms - PW Recruitment", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Syncing Forms - PW Recruitment", Toast.LENGTH_SHORT).show();
             new SyncAllData(
                     this,
                     "Forms - PW Recruitment",
@@ -400,7 +399,7 @@ public class MainActivity extends AppCompatActivity {
                     db.getUnsyncedForms("kf2")
             ).execute();
 
-            Toast.makeText(getApplicationContext(), "Syncing Forms - PW FOLLOWUPS", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Syncing Forms - PW FOLLOWUPS", Toast.LENGTH_SHORT).show();
             new SyncAllData(
                     this,
                     "Forms - PW FOLLOWUPS",
@@ -408,6 +407,16 @@ public class MainActivity extends AppCompatActivity {
                     FormsContract.class,
                     FormsContract.FormsTable._URL.replace(".php", "_f3.php"),
                     db.getUnsyncedForms("kf3")
+            ).execute();
+
+            Toast.makeText(this, "Syncing Forms - MORTALITY", Toast.LENGTH_SHORT).show();
+            new SyncAllData(
+                    this,
+                    "Forms - MORTALITY",
+                    "updateSyncedForms",
+                    FormsContract.class,
+                    FormsContract.FormsTable._URL.replace(".php", "_mr.php"),
+                    db.getUnsyncedForms("mr")
             ).execute();
 
             SharedPreferences syncPref = getSharedPreferences("SyncInfo", Context.MODE_PRIVATE);

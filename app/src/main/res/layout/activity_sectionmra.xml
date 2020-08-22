@@ -56,100 +56,93 @@
                             android:text="@string/Q_nmq101" />
                     </RelativeLayout>
 
-                    <RadioGroup
-                        android:id="@+id/nmq101"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <RadioButton
-                            android:id="@+id/nmq101a"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/nmq101a" />
-
-                        <RadioButton
-                            android:id="@+id/nmq101b"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/nmq101b" />
-                    </RadioGroup>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!--crataluka-->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cvcrataluka"
-                style="@style/cardViews">
-
-                <LinearLayout style="@style/hlinearlayout">
-
-                    <TextView
-                        style="@style/textviews"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="@string/crataluka1" />
-
                     <Spinner
                         android:id="@+id/crataluka"
                         style="@style/spinner"
-                        android:layout_width="0dp"
-                        android:layout_weight="1" />
+                        android:layout_width="match_parent" />
 
                 </LinearLayout>
-
             </androidx.cardview.widget.CardView>
 
-
-            <!--crauc-->
+            <!-- nmq102  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/cvcrauc"
-                style="@style/cardViews">
+                android:id="@+id/fldGrpCVnmq102"
+                style="@style/cardView">
 
-                <LinearLayout style="@style/hlinearlayout">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-                    <TextView
-                        style="@style/textviews"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="@string/cruc" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bottom">
+
+                        <TextView
+                            android:id="@+id/qtxt_nmq102"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@id/q_nmq102"
+                            android:text="@string/nmq102" />
+
+                        <TextView
+                            android:id="@+id/q_nmq102"
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@id/qtxt_nmq102"
+                            android:layout_alignBottom="@id/qtxt_nmq102"
+                            android:text="@string/Q_nmq102" />
+                    </RelativeLayout>
 
                     <Spinner
                         android:id="@+id/crauc"
                         style="@style/spinner"
-                        android:layout_width="0dp"
-                        android:layout_weight="1" />
+                        android:layout_width="match_parent" />
 
                 </LinearLayout>
-
             </androidx.cardview.widget.CardView>
 
-
-            <!--crvillage-->
+            <!-- nmq103  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/cvcrvillage"
-                style="@style/cardViews">
+                android:id="@+id/fldGrpCVnmq103"
+                style="@style/cardView">
 
-                <LinearLayout style="@style/hlinearlayout">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-                    <TextView
-                        style="@style/textviews"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="@string/crvillage" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bottom">
+
+                        <TextView
+                            android:id="@+id/qtxt_nmq103"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@id/q_nmq103"
+                            android:text="@string/nmq103" />
+
+                        <TextView
+                            android:id="@+id/q_nmq103"
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@id/qtxt_nmq103"
+                            android:layout_alignBottom="@id/qtxt_nmq103"
+                            android:text="@string/Q_nmq103" />
+                    </RelativeLayout>
 
                     <Spinner
                         android:id="@+id/crvillage"
                         style="@style/spinner"
-                        android:layout_width="0dp"
-                        android:layout_weight="1" />
+                        android:layout_width="match_parent" />
 
                 </LinearLayout>
-
             </androidx.cardview.widget.CardView>
-
 
             <!--Village code label-->
             <androidx.cardview.widget.CardView style="@style/cardView">
@@ -164,7 +157,6 @@
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
-
 
             <!--checkBtnLayout-->
             <androidx.cardview.widget.CardView

@@ -159,7 +159,7 @@
                                 android:layout_marginTop="16dp"
                                 android:layout_marginBottom="8dp"
                                 android:onClick="@{(v) -> callback.openForm(4)}"
-                                android:text="FORM-3 FOLLOWUP FORM" />-->
+                                android:text="FORM-3 FOLLOWUP FORM" /
 
                 <Button
                     android:id="@+id/syncServer"
@@ -168,65 +168,101 @@
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="8dp"
                     android:onClick="syncServer"
-                    android:text="Upload Data" />
+                    android:text="Upload Data" />>-->
 
-                <LinearLayout
-                    android:id="@+id/adminsec"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                <LinearLayout style="@style/hlinearlayout">
 
-                    <Button
-                        android:id="@+id/syncDevice"
-                        android:layout_width="match_parent"
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/uploadData"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginBottom="8dp"
-                        android:onClick="syncDevice"
-                        android:text="Download Data"
-                        android:visibility="gone" />
+                        android:layout_margin="@dimen/cardview_compat_inset_shadow"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:onClick="@{callback::syncServer}">
 
-                    <Button
-                        android:id="@+id/downloadApp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginBottom="8dp"
-                        android:background="@color/red"
-                        android:text="DOWNLOAD APP"
-                        android:textColor="@color/white"
-                        android:visibility="gone" />
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            android:padding="12dp">
 
-                    <Button
-                        android:id="@+id/updateApp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginBottom="8dp"
-                        android:background="#D60000"
-                        android:onClick="updateApp"
-                        android:text="Update App"
-                        android:visibility="gone" />
 
-                    <Button
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_centerVertical="true"
+                                android:layout_toStartOf="@id/formText2"
+                                android:contentDescription="Upload data to server"
+                                android:src="@drawable/upload" />
+
+                            <TextView
+                                android:id="@+id/formText2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="10dp"
+                                android:text="Upload Data"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                                android:textColor="@color/colorPrimaryDark" />
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
                         android:id="@+id/openDB"
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginBottom="8dp"
-                        android:onClick="openDB"
-                        android:text="Open Database Manager" />
+                        android:layout_margin="@dimen/cardview_compat_inset_shadow"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:onClick="@{callback::openDB}">
 
-                    <Button
-                        android:id="@+id/testGPS"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginBottom="8dp"
-                        android:onClick="testGPS"
-                        android:text="Test GPS Coordinates" />
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            android:padding="12dp">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_centerVertical="true"
+                                android:layout_toStartOf="@id/formText3"
+                                android:contentDescription="DB manager"
+                                android:src="@drawable/database" />
+
+                            <TextView
+                                android:id="@+id/formText3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_marginStart="10dp"
+                                android:text="DB Manager"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                                android:textColor="@color/colorPrimaryDark" />
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
 
                 </LinearLayout>
+
+                <Button
+                    android:id="@+id/testGPS"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:onClick="testGPS"
+                    android:text="Test GPS Coordinates"
+                    android:visibility="gone" />
 
             </LinearLayout>
 

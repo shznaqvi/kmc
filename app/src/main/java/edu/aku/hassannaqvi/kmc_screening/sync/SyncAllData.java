@@ -17,7 +17,6 @@ import java.io.InputStreamReader;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.Collection;
@@ -38,12 +37,12 @@ public class SyncAllData extends AsyncTask<Void, Void, String> {
     private Context mContext;
     private ProgressDialog pd;
     private String syncClass, url, updateSyncClass;
-    private Class contractClass;
-    private Collection dbData;
+    private Class<?> contractClass;
+    private Collection<?> dbData;
     private MCrypt mCrypt;
 
 
-    public SyncAllData(Context context, String syncClass, String updateSyncClass, Class contractClass, String url, Collection dbData) {
+    public SyncAllData(Context context, String syncClass, String updateSyncClass, Class<?> contractClass, String url, Collection<?> dbData) {
         mContext = context;
         this.syncClass = syncClass;
         this.updateSyncClass = updateSyncClass;
@@ -130,12 +129,6 @@ public class SyncAllData extends AsyncTask<Void, Void, String> {
                                 break;
                             }
 
-                        } catch (NoSuchMethodException e) {
-                            e.printStackTrace();
-                        } catch (IllegalAccessException e) {
-                            e.printStackTrace();
-                        } catch (InvocationTargetException e) {
-                            e.printStackTrace();
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
@@ -146,7 +139,7 @@ public class SyncAllData extends AsyncTask<Void, Void, String> {
 
                         BufferedReader br = new BufferedReader(new InputStreamReader(
                                 connection.getInputStream(), StandardCharsets.UTF_8));
-                        StringBuffer sb = new StringBuffer();
+                        StringBuilder sb = new StringBuilder();
 
                         while ((line = br.readLine()) != null) {
                             sb.append(line + "\n");
@@ -159,12 +152,8 @@ public class SyncAllData extends AsyncTask<Void, Void, String> {
                         System.out.println(connection.getResponseMessage());
                         return connection.getResponseMessage();
                     }
-                } catch (MalformedURLException e) {
-//                    e.printStackTrace();
-                    continue;
                 } catch (IOException e) {
 //                    e.printStackTrace();
-                    continue;
                 }
                 /*finally {
                     if (connection != null)
@@ -188,7 +177,7 @@ public class SyncAllData extends AsyncTask<Void, Void, String> {
         super.onPostExecute(result);
         int sSynced = 0;
         int sDuplicate = 0;
-        String sSyncedError = "";
+        StringBuilder sSyncedError = new StringBuilder();
         JSONArray json = null;
         try {
             json = new JSONArray(result);
@@ -217,7 +206,7 @@ public class SyncAllData extends AsyncTask<Void, Void, String> {
 
                     sDuplicate++;
                 } else {
-                    sSyncedError += "\nError: " + jsonObject.getString("message");
+                    sSyncedError.append("\nError: ").append(jsonObject.getString("message"));
                 }
             }
             Toast.makeText(mContext, syncClass + " synced: " + sSynced + "\r\n\r\n Errors: " + sSyncedError, Toast.LENGTH_SHORT).show();
@@ -235,9 +224,7 @@ public class SyncAllData extends AsyncTask<Void, Void, String> {
             pd.setTitle(syncClass + " Sync Failed");
             pd.show();
             //syncStatus.setText(syncStatus.getText() + "\r\n" + syncClass + " Sync Failed");
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
+        } catch (IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }
     }

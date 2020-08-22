@@ -182,9 +182,6 @@ public class SectionMRAActivity extends AppCompatActivity {
         fc.setPwid(bi.nmq104.getText().toString());
 
         JSONObject json = new JSONObject();
-        json.put("nmq101", bi.nmq101a.isChecked() ? "1"
-                : bi.nmq101b.isChecked() ? "2"
-                : "-1");
 
         json.put("nmq105", bi.nmq105.getText().toString());
 

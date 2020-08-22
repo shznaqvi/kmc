@@ -54,6 +54,7 @@
         <activity
             android:name=".ui.mortality.SectionMRAActivity"
             android:screenOrientation="portrait"
+            android:label="@string/mr_mainheading"
             android:theme="@style/AppTheme1" />
         <activity
             android:name=".ui.form0.SectionAForm0Activity"

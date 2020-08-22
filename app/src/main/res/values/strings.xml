@@ -1039,7 +1039,7 @@
 
 
     <!--Mortality-->
-    <string name="kmcrapidneonatalmortalitysurvey_mainheading"> ۾ نون ڄاول ٻارن جي موت بابت سروي KMC:  ۾ نون ڄاول ٻارن جي موت بابت سروي KMC</string>
+    <string name="mr_mainheading">KMC Rapid Neonatal Mortality Survey (0-28 days)</string>
     <string name="nmq101">داخلا جو علائقو</string>
     <string name="nmq101a">جوهي</string>
     <string name="nmq101b">ڪي اين شاھ</string>
