@@ -164,11 +164,11 @@ public class SectionMRAActivity extends AppCompatActivity {
             Clear.clearAllFields(bi.nmq204check, !b);
         });
 
-        bi.nmq201.setOnCheckedChangeListener((radioGroup, i) -> {
+        /*bi.nmq201.setOnCheckedChangeListener((radioGroup, i) -> {
             if (i == bi.nmq201a.getId())
                 Clear.clearAllFields(bi.fldGrpSecMR02);
 
-        });
+        });*/
     }
 
     public void nmq104OnTextChanged(CharSequence charSequence, int i, int i1, int i2) {

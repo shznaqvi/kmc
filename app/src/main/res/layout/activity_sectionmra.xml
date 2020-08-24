@@ -405,10 +405,10 @@
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/nmq109"
                             style="@style/EditTextNum"
-                            android:layout_height="wrap_content"
                             android:layout_width="match_parent"
-                            android:hint="####.##"
+                            android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
+                            android:hint="####.##"
                             android:layoutDirection="ltr"
                             app:mask="####.##"
                             app:maxValue="5000"
@@ -643,72 +643,102 @@
                                     android:id="@+id/nmq20401"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:checked="@{nmq204098.checked ? false : false}"
+                                    android:enabled="@{nmq204098.checked ? false : true}"
                                     android:text="@string/nmq20401" />
 
                                 <CheckBox
                                     android:id="@+id/nmq20402"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:checked="@{nmq204098.checked ? false : false}"
+                                    android:enabled="@{nmq204098.checked ? false : true}"
                                     android:text="@string/nmq20402" />
 
                                 <CheckBox
                                     android:id="@+id/nmq20403"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:checked="@{nmq204098.checked ? false : false}"
+                                    android:enabled="@{nmq204098.checked ? false : true}"
                                     android:text="@string/nmq20403" />
 
                                 <CheckBox
                                     android:id="@+id/nmq20404"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:checked="@{nmq204098.checked ? false : false}"
+                                    android:enabled="@{nmq204098.checked ? false : true}"
                                     android:text="@string/nmq20404" />
 
                                 <CheckBox
                                     android:id="@+id/nmq20405"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:checked="@{nmq204098.checked ? false : false}"
+                                    android:enabled="@{nmq204098.checked ? false : true}"
                                     android:text="@string/nmq20405" />
 
                                 <CheckBox
                                     android:id="@+id/nmq20406"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:checked="@{nmq204098.checked ? false : false}"
+                                    android:enabled="@{nmq204098.checked ? false : true}"
                                     android:text="@string/nmq20406" />
 
                                 <CheckBox
                                     android:id="@+id/nmq20407"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:checked="@{nmq204098.checked ? false : false}"
+                                    android:enabled="@{nmq204098.checked ? false : true}"
                                     android:text="@string/nmq20407" />
 
                                 <CheckBox
                                     android:id="@+id/nmq20408"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:checked="@{nmq204098.checked ? false : false}"
+                                    android:enabled="@{nmq204098.checked ? false : true}"
                                     android:text="@string/nmq20408" />
 
                                 <CheckBox
                                     android:id="@+id/nmq20409"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:checked="@{nmq204098.checked ? false : false}"
+                                    android:enabled="@{nmq204098.checked ? false : true}"
                                     android:text="@string/nmq20409" />
 
                                 <CheckBox
                                     android:id="@+id/nmq204010"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:checked="@{nmq204098.checked ? false : false}"
+                                    android:enabled="@{nmq204098.checked ? false : true}"
                                     android:text="@string/nmq204010" />
 
                                 <CheckBox
                                     android:id="@+id/nmq204011"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:checked="@{nmq204098.checked ? false : false}"
+                                    android:enabled="@{nmq204098.checked ? false : true}"
                                     android:text="@string/nmq204011" />
+
+                                <CheckBox
+                                    android:id="@+id/nmq204098"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/nmq204098" />
 
                                 <CheckBox
                                     android:id="@+id/nmq204096"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:checked="@{nmq204098.checked ? false : false}"
+                                    android:enabled="@{nmq204098.checked ? false : true}"
                                     android:text="@string/nmq204096" />
 
                                 <EditText
@@ -721,13 +751,6 @@
                                     android:text='@{nmq204096.checked ? nmq204096x.getText().toString() : ""}'
                                     android:visibility='@{nmq204096.checked? View.VISIBLE : View.GONE}' />
                             </LinearLayout>
-
-                            <CheckBox
-                                android:id="@+id/nmq204098"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:tag="-1"
-                                android:text="@string/nmq204098" />
 
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
