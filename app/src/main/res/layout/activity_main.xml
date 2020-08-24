@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="edu.aku.hassannaqvi.kmc_screening.edu.aku.hassannaqvi.kmc.MainActivity">
 
@@ -10,27 +11,35 @@
             type="edu.aku.hassannaqvi.kmc_screening.ui.other.MainActivity" />
     </data>
 
-    <LinearLayout style="@style/linearlayout_view_wt_bound">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
 
         <TextView
             android:id="@+id/lblheader"
             style="@style/textview_heading"
+            android:layout_height="100dp"
             android:background="@color/dullWhile"
-            android:padding="10dp"
-            android:text="Main Menu"
+            android:paddingTop="23dp"
             android:textAlignment="center"
             android:textColor="@color/colorPrimary"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ScrollView
             android:id="@+id/activity_main"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/white"
+            android:layout_height="0dp"
+            android:layout_marginTop="70dp"
             android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_horizontal_margin"
             android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin">
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/lblheader">
 
             <LinearLayout style="@style/vlinearlayout">
 
@@ -47,210 +56,216 @@
                     android:typeface="monospace" />
 
                 <LinearLayout
-                    style="@style/linearlayout_view"
-                    android:layout_marginBottom="20dp"
-                    android:baselineAligned="false"
-                    android:orientation="horizontal">
+                    style="@style/linearlayout_view_wt_bound"
+                    android:padding="22dp">
 
-                    <include
-                        android:id="@+id/pwReg"
-                        layout="@layout/menuitem"
-                        android:layout_width="0dp"
-                        android:layout_height="@dimen/_120sdp"
-                        android:layout_marginEnd="40dp"
-                        android:layout_weight="1"
-                        android:onClick="@{(v) -> callback.openForm(0)}" />
+                    <LinearLayout
+                        style="@style/linearlayout_view"
+                        android:layout_marginBottom="20dp"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
 
-                    <include
-                        android:id="@+id/pwSurv"
-                        layout="@layout/menuitem"
-                        android:layout_width="0dp"
-                        android:layout_height="@dimen/_120sdp"
-                        android:layout_weight="1"
-                        android:onClick="@{(v) -> callback.openForm(1)}" />
+                        <include
+                            android:id="@+id/pwReg"
+                            layout="@layout/menuitem"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/_100sdp"
+                            android:layout_marginEnd="50dp"
+                            android:layout_weight="1"
+                            android:onClick="@{(v) -> callback.openForm(0)}" />
 
-                </LinearLayout>
+                        <include
+                            android:id="@+id/pwSurv"
+                            layout="@layout/menuitem"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/_100sdp"
+                            android:layout_weight="1"
+                            android:onClick="@{(v) -> callback.openForm(1)}" />
 
-                <LinearLayout
-                    style="@style/linearlayout_view"
-                    android:layout_marginBottom="20dp"
-                    android:baselineAligned="false"
-                    android:orientation="horizontal">
+                    </LinearLayout>
 
-                    <include
-                        android:id="@+id/form01Eligible"
-                        layout="@layout/menuitem"
-                        android:layout_width="0dp"
-                        android:layout_height="@dimen/_120sdp"
-                        android:layout_marginEnd="40dp"
-                        android:layout_weight="1"
-                        android:onClick="@{(v) -> callback.openForm(2)}" />
+                    <LinearLayout
+                        style="@style/linearlayout_view"
+                        android:layout_marginBottom="20dp"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
 
-                    <include
-                        android:id="@+id/form02Rec"
-                        layout="@layout/menuitem"
-                        android:layout_width="0dp"
-                        android:layout_height="@dimen/_120sdp"
-                        android:layout_weight="1"
-                        android:onClick="@{(v) -> callback.openForm(3)}" />
+                        <include
+                            android:id="@+id/form01Eligible"
+                            layout="@layout/menuitem"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/_100sdp"
+                            android:layout_marginEnd="50dp"
+                            android:layout_weight="1"
+                            android:onClick="@{(v) -> callback.openForm(2)}" />
 
-                </LinearLayout>
+                        <include
+                            android:id="@+id/form02Rec"
+                            layout="@layout/menuitem"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/_100sdp"
+                            android:layout_weight="1"
+                            android:onClick="@{(v) -> callback.openForm(3)}" />
 
-                <LinearLayout
-                    style="@style/linearlayout_view"
-                    android:layout_marginBottom="20dp"
-                    android:baselineAligned="false"
-                    android:orientation="horizontal">
+                    </LinearLayout>
 
-                    <include
-                        android:id="@+id/form03FUp"
-                        layout="@layout/menuitem"
-                        android:layout_width="0dp"
-                        android:layout_height="@dimen/_120sdp"
-                        android:layout_marginEnd="40dp"
-                        android:layout_weight="1"
-                        android:onClick="@{(v) -> callback.openForm(4)}" />
+                    <LinearLayout
+                        style="@style/linearlayout_view"
+                        android:layout_marginBottom="20dp"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
 
-                    <include
-                        android:id="@+id/formMR"
-                        layout="@layout/menuitem"
-                        android:layout_width="0dp"
-                        android:layout_height="@dimen/_120sdp"
-                        android:layout_weight="1"
-                        android:onClick="@{(v) -> callback.openForm(5)}" />
+                        <include
+                            android:id="@+id/form03FUp"
+                            layout="@layout/menuitem"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/_100sdp"
+                            android:layout_marginEnd="50dp"
+                            android:layout_weight="1"
+                            android:onClick="@{(v) -> callback.openForm(4)}" />
 
-                </LinearLayout>
+                        <include
+                            android:id="@+id/formMR"
+                            layout="@layout/menuitem"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/_100sdp"
+                            android:layout_weight="1"
+                            android:onClick="@{(v) -> callback.openForm(5)}" />
 
-                <!--            <Button
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="16dp"
-                                android:layout_marginBottom="8dp"
-                                android:onClick="@{(v) -> callback.openForm(0)}"
-                                android:text="@string/pw_reg" />
+                    </LinearLayout>
 
-                            <Button
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="16dp"
-                                android:layout_marginBottom="8dp"
-                                android:onClick="@{(v) -> callback.openForm(1)}"
-                                android:text="@string/pw_sur" />
+                    <!--            <Button
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="16dp"
+                                    android:layout_marginBottom="8dp"
+                                    android:onClick="@{(v) -> callback.openForm(0)}"
+                                    android:text="@string/pw_reg" />
 
-                            <Button
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="16dp"
-                                android:layout_marginBottom="8dp"
-                                android:onClick="@{(v) -> callback.openForm(2)}"
-                                android:text="FORM-1 PARTICIPANT ELIGIBILITY SCREENING" />
+                                <Button
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="16dp"
+                                    android:layout_marginBottom="8dp"
+                                    android:onClick="@{(v) -> callback.openForm(1)}"
+                                    android:text="@string/pw_sur" />
 
-                            <Button
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="16dp"
-                                android:layout_marginBottom="8dp"
-                                android:onClick="@{(v) -> callback.openForm(3)}"
-                                android:text="FORM-2 RECRUITMENT FORM" />
+                                <Button
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="16dp"
+                                    android:layout_marginBottom="8dp"
+                                    android:onClick="@{(v) -> callback.openForm(2)}"
+                                    android:text="FORM-1 PARTICIPANT ELIGIBILITY SCREENING" />
 
-                            <Button
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="16dp"
-                                android:layout_marginBottom="8dp"
-                                android:onClick="@{(v) -> callback.openForm(4)}"
-                                android:text="FORM-3 FOLLOWUP FORM" /
+                                <Button
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="16dp"
+                                    android:layout_marginBottom="8dp"
+                                    android:onClick="@{(v) -> callback.openForm(3)}"
+                                    android:text="FORM-2 RECRUITMENT FORM" />
 
-                <Button
-                    android:id="@+id/syncServer"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="8dp"
-                    android:onClick="syncServer"
-                    android:text="Upload Data" />>-->
+                                <Button
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="16dp"
+                                    android:layout_marginBottom="8dp"
+                                    android:onClick="@{(v) -> callback.openForm(4)}"
+                                    android:text="FORM-3 FOLLOWUP FORM" /
 
-                <LinearLayout style="@style/hlinearlayout">
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/uploadData"
-                        android:layout_width="0dp"
+                    <Button
+                        android:id="@+id/syncServer"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/cardview_compat_inset_shadow"
-                        android:layout_weight="1"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:foreground="?android:attr/selectableItemBackground"
-                        android:onClick="@{callback::syncServer}">
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="8dp"
+                        android:onClick="syncServer"
+                        android:text="Upload Data" />>-->
 
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_margin="10dp"
-                            android:padding="12dp">
+                    <LinearLayout style="@style/hlinearlayout">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/uploadData"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/cardview_compat_inset_shadow"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:onClick="@{callback::syncServer}">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="10dp"
+                                android:padding="12dp">
 
 
-                            <ImageView
-                                android:layout_width="24dp"
-                                android:layout_height="24dp"
-                                android:layout_centerVertical="true"
-                                android:layout_toStartOf="@id/formText2"
-                                android:contentDescription="Upload data to server"
-                                android:src="@drawable/upload" />
+                                <ImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_toStartOf="@id/formText2"
+                                    android:contentDescription="Upload data to server"
+                                    android:src="@drawable/upload" />
 
-                            <TextView
-                                android:id="@+id/formText2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerHorizontal="true"
-                                android:layout_centerVertical="true"
-                                android:layout_marginStart="10dp"
-                                android:text="Upload Data"
-                                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                                android:textColor="@color/colorPrimaryDark" />
+                                <TextView
+                                    android:id="@+id/formText2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginStart="10dp"
+                                    android:text="Upload Data"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                                    android:textColor="@color/colorPrimaryDark" />
 
-                        </RelativeLayout>
+                            </RelativeLayout>
 
-                    </androidx.cardview.widget.CardView>
+                        </androidx.cardview.widget.CardView>
 
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/openDB"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/cardview_compat_inset_shadow"
-                        android:layout_weight="1"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:foreground="?android:attr/selectableItemBackground"
-                        android:onClick="@{callback::openDB}">
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/openDB"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/cardview_compat_inset_shadow"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:onClick="@{callback::openDB}">
 
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_margin="10dp"
-                            android:padding="12dp">
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="10dp"
+                                android:padding="12dp">
 
-                            <ImageView
-                                android:layout_width="24dp"
-                                android:layout_height="24dp"
-                                android:layout_centerVertical="true"
-                                android:layout_toStartOf="@id/formText3"
-                                android:contentDescription="DB manager"
-                                android:src="@drawable/database" />
+                                <ImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_toStartOf="@id/formText3"
+                                    android:contentDescription="DB manager"
+                                    android:src="@drawable/database" />
 
-                            <TextView
-                                android:id="@+id/formText3"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerInParent="true"
-                                android:layout_marginStart="10dp"
-                                android:text="DB Manager"
-                                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                                android:textColor="@color/colorPrimaryDark" />
+                                <TextView
+                                    android:id="@+id/formText3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:layout_marginStart="10dp"
+                                    android:text="DB Manager"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                                    android:textColor="@color/colorPrimaryDark" />
 
-                        </RelativeLayout>
+                            </RelativeLayout>
 
-                    </androidx.cardview.widget.CardView>
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
@@ -268,6 +283,6 @@
 
         </ScrollView>
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

@@ -160,6 +160,15 @@ public class SectionMRAActivity extends AppCompatActivity {
             }
         });
 
+        bi.nmq204098.setOnCheckedChangeListener((compoundButton, b) -> {
+            Clear.clearAllFields(bi.nmq204check, !b);
+        });
+
+        bi.nmq201.setOnCheckedChangeListener((radioGroup, i) -> {
+            if (i == bi.nmq201a.getId())
+                Clear.clearAllFields(bi.fldGrpSecMR02);
+
+        });
     }
 
     public void nmq104OnTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -261,7 +270,7 @@ public class SectionMRAActivity extends AppCompatActivity {
         }
         if (UpdateDB()) {
             finish();
-            startActivity(new Intent(this, EndingActivity.class));
+            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
         } else {
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
         }
@@ -327,11 +336,22 @@ public class SectionMRAActivity extends AppCompatActivity {
     }*/
 
     public void btnSearchWoman(View v) {
+        if (!Validator.emptyCheckingContainer(this, bi.GrpName))
+            return;
         setupFields(View.VISIBLE);
     }
 
     private boolean formValidation() {
-        return Validator.emptyCheckingContainer(this, bi.GrpName);
+        if (!Validator.emptyCheckingContainer(this, bi.GrpName))
+            return false;
+
+        if (bi.nmq201a.isChecked()) {
+            if (Integer.parseInt(bi.nmq202m.getText().toString()) == 0 && Integer.parseInt(bi.nmq202d.getText().toString()) == 0)
+                return Validator.emptyCustomTextBox(this, bi.nmq202m, "Both days and months can't be zero!");
+        } else if (Integer.parseInt(bi.nmq206h.getText().toString()) == 0 && Integer.parseInt(bi.nmq206d.getText().toString()) == 0)
+            return Validator.emptyCustomTextBox(this, bi.nmq206h, "Both days and hours can't be zero!");
+
+        return true;
     }
 
     private boolean UpdateDB() {

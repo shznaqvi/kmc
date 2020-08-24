@@ -185,9 +185,9 @@ public class MainActivity extends AppCompatActivity {
         DashboardMenu[] menuItems = {
                 new DashboardMenu(R.drawable.pw_reg, getString(R.string.pw_reg)),
                 new DashboardMenu(R.drawable.pw_survey, getString(R.string.pw_sur)),
-                new DashboardMenu(R.drawable.f1_screening, "FORM-1\nPARTICIPANT SCREENING"),
-                new DashboardMenu(R.drawable.f2_recruitment, "FORM-2\nRECRUITMENT FORM"),
-                new DashboardMenu(R.drawable.f3_followup, "FORM-3\nFOLLOWUP FORM"),
+                new DashboardMenu(R.drawable.f1_screening, "Form-1\nParticipant Screening"),
+                new DashboardMenu(R.drawable.f2_recruitment, "Form-2\nRecruitment Form"),
+                new DashboardMenu(R.drawable.f3_followup, "Form-3\nFollowUP Form"),
                 new DashboardMenu(R.drawable.f_mr, "Neonatal Mortality\n(0-28 Days)")
         };
 
