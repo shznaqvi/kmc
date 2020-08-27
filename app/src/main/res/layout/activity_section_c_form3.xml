@@ -212,8 +212,8 @@
                             android:id="@+id/kf3c05"
                             style="@style/EditTextNum"
                             android:hint="@string/kf3c05a"
-                            android:maxLength="2"
-                            app:maxValue="65"
+                            android:maxLength="3"
+                            app:maxValue="365"
                             app:minValue="0"
                             app:type="range" />
 
