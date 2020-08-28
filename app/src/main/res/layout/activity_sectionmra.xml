@@ -412,7 +412,7 @@
                             android:hint="####"
                             android:maxLength="4"
                             app:minValue="1000"
-                            app:maxValue="5000"
+                            app:maxValue="8000"
                             app:pattern="[0-9]{4}"
                             app:type="range" />
                     </LinearLayout>
