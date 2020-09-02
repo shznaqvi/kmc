@@ -70,7 +70,8 @@
                             layout="@layout/menuitem"
                             android:layout_width="0dp"
                             android:layout_height="@dimen/_100sdp"
-                            android:layout_marginEnd="50dp"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_20sdp"
                             android:layout_weight="1"
                             android:onClick="@{(v) -> callback.openForm(0)}" />
 
@@ -78,6 +79,7 @@
                             android:id="@+id/pwSurv"
                             layout="@layout/menuitem"
                             android:layout_width="0dp"
+                            android:layout_marginEnd="@dimen/_10sdp"
                             android:layout_height="@dimen/_100sdp"
                             android:layout_weight="1"
                             android:onClick="@{(v) -> callback.openForm(1)}" />
@@ -95,7 +97,7 @@
                             layout="@layout/menuitem"
                             android:layout_width="0dp"
                             android:layout_height="@dimen/_100sdp"
-                            android:layout_marginEnd="50dp"
+                            android:layout_marginEnd="@dimen/_30sdp"
                             android:layout_weight="1"
                             android:onClick="@{(v) -> callback.openForm(2)}" />
 
@@ -120,7 +122,8 @@
                             layout="@layout/menuitem"
                             android:layout_width="0dp"
                             android:layout_height="@dimen/_100sdp"
-                            android:layout_marginEnd="50dp"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_20sdp"
                             android:layout_weight="1"
                             android:onClick="@{(v) -> callback.openForm(4)}" />
 
@@ -128,6 +131,7 @@
                             android:id="@+id/formMR"
                             layout="@layout/menuitem"
                             android:layout_width="0dp"
+                            android:layout_marginEnd="@dimen/_10sdp"
                             android:layout_height="@dimen/_100sdp"
                             android:layout_weight="1"
                             android:onClick="@{(v) -> callback.openForm(5)}" />

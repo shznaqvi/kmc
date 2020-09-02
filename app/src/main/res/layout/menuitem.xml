@@ -27,6 +27,7 @@
             android:padding="@dimen/_3sdp"
             android:text="@string/pw_reg"
             android:textAlignment="center"
+            android:textColor="@color/black"
             android:textSize="@dimen/_9sdp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
