@@ -21,16 +21,12 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
-import android.os.Handler;
 import android.provider.ContactsContract;
 import android.text.TextUtils;
 import android.text.method.PasswordTransformationMethod;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -45,26 +41,18 @@ import com.github.amlcurran.showcaseview.targets.ViewTarget;
 import com.nabinbhandari.android.permissions.PermissionHandler;
 import com.nabinbhandari.android.permissions.Permissions;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
 import java.util.List;
-import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.kmc_screening.R;
-import edu.aku.hassannaqvi.kmc_screening.contracts.UCsContract;
 import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc_screening.core.MainApp;
-import edu.aku.hassannaqvi.kmc_screening.get.GetAllData;
+import edu.aku.hassannaqvi.kmc_screening.get.DownalodDataTask;
 
 import static edu.aku.hassannaqvi.kmc_screening.core.MainApp.permissions;
 import static java.lang.Thread.sleep;
@@ -82,17 +70,6 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     private static final String[] DUMMY_CREDENTIALS = new String[]{
             "test1234:test1234", "testS12345:testS12345", "bar@example.com:world"
     };
-    // Spinners
-    ArrayAdapter<String> dataAdapter;
-
-    ArrayList<String> lablesTalukas;
-    //Collection<EnumBlockContract> TalukasList;
-    Map<String, String> talukasMap;
-
-    ArrayList<String> lablesUCs;
-    Collection<UCsContract> UcsList;
-    Map<String, String> ucsMap;
-
 
     // UI references.
     @BindView(R.id.login_progress)
@@ -109,25 +86,19 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     TextView txtinstalldate;
     @BindView(R.id.email_sign_in_button)
     Button mEmailSignInButton;
-
     @BindView(R.id.spUCs)
     Spinner spUCs;
     @BindView(R.id.spTaluka)
     Spinner spTalukas;
-
     @BindView(R.id.syncData)
     Button syncData;
 
     SharedPreferences sharedPref;
     SharedPreferences.Editor editor;
-
     String DirectoryName;
-
     DatabaseHelper db;
-
     private UserLoginTask mAuthTask = null;
     private int clicks;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -200,69 +171,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         db = new DatabaseHelper(this);
 
 //        DB backup
-        dbBackup();
-    }
-
-    public void dbBackup() {
-
-        sharedPref = getSharedPreferences("kmc", MODE_PRIVATE);
-        editor = sharedPref.edit();
-
-        if (sharedPref.getBoolean("flag", false)) {
-
-            String dt = sharedPref.getString("dt", new SimpleDateFormat("dd-MM-yy").format(new Date()));
-
-            if (dt != new SimpleDateFormat("dd-MM-yy").format(new Date())) {
-                editor.putString("dt", new SimpleDateFormat("dd-MM-yy").format(new Date()));
-
-                editor.commit();
-            }
-
-            File folder = new File(Environment.getExternalStorageDirectory() + File.separator + DatabaseHelper.PROJECT_NAME);
-            boolean success = true;
-            if (!folder.exists()) {
-                success = folder.mkdirs();
-            }
-            if (success) {
-
-                DirectoryName = folder.getPath() + File.separator + sharedPref.getString("dt", "");
-                folder = new File(DirectoryName);
-                if (!folder.exists()) {
-                    success = folder.mkdirs();
-                }
-                if (success) {
-
-                    try {
-                        File dbFile = new File(this.getDatabasePath(DatabaseHelper.DATABASE_NAME).getPath());
-                        FileInputStream fis = new FileInputStream(dbFile);
-
-                        String outFileName = DirectoryName + File.separator +
-                                DatabaseHelper.DB_NAME;
-
-                        // Open the empty db as the output stream
-                        OutputStream output = new FileOutputStream(outFileName);
-
-                        // Transfer bytes from the inputfile to the outputfile
-                        byte[] buffer = new byte[1024];
-                        int length;
-                        while ((length = fis.read(buffer)) > 0) {
-                            output.write(buffer, 0, length);
-                        }
-                        // Close the streams
-                        output.flush();
-                        output.close();
-                        fis.close();
-                    } catch (IOException e) {
-                        Log.e("dbBackup:", e.getMessage());
-                    }
-
-                }
-
-            } else {
-                Toast.makeText(this, "Not create folder", Toast.LENGTH_SHORT).show();
-            }
-        }
-
+        MainApp.dbBackup(this);
     }
 
     @OnClick(R.id.syncData)
@@ -277,7 +186,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
             db.deleteRegisteredPW();
 
-            new syncData(this).execute();
+            new DownalodDataTask(this, this).execute(true);
 
         } else {
             Toast.makeText(this, "No network connection available.", Toast.LENGTH_SHORT).show();
@@ -434,14 +343,6 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         }
     }
 
-    public void gotoMain(View v) {
-
-        finish();
-
-        Intent im = new Intent(LoginActivity.this, MainActivity.class);
-        startActivity(im);
-    }
-
     public void showCredits(View view) {
         if (clicks < 7) {
             clicks++;
@@ -565,45 +466,41 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         }
     }
 
-    public class syncData extends AsyncTask<String, String, String> {
+/*    public class SyncData extends AsyncTask<String, String, String> {
 
         private Context mContext;
 
-        public syncData(Context mContext) {
+        public SyncData(Context mContext) {
             this.mContext = mContext;
         }
 
         @Override
         protected String doInBackground(String... strings) {
-            runOnUiThread(new Runnable() {
-
-                @Override
-                public void run() {
-                    Toast.makeText(LoginActivity.this, "Sync Users", Toast.LENGTH_LONG).show();
-                    new GetAllData(mContext, "Users").execute();
-                    Toast.makeText(LoginActivity.this, "Sync Talukas", Toast.LENGTH_LONG).show();
-                    new GetAllData(mContext, "Talukas").execute();
-                    Toast.makeText(LoginActivity.this, "Sync UCs", Toast.LENGTH_LONG).show();
-                    new GetAllData(mContext, "UCs").execute();
-                    Toast.makeText(LoginActivity.this, "Sync Villages", Toast.LENGTH_LONG).show();
-                    new GetAllData(mContext, "Villages").execute();
-                    Toast.makeText(LoginActivity.this, "Sync PWs", Toast.LENGTH_LONG).show();
-                    new GetAllData(mContext, "PWs").execute();
-                    Toast.makeText(LoginActivity.this, "Sync PWScreened", Toast.LENGTH_LONG).show();
-                    new GetAllData(mContext, "PWScreened").execute();
-                    Toast.makeText(LoginActivity.this, "Sync Eligibiles", Toast.LENGTH_LONG).show();
-                    new GetAllData(mContext, "Eligibiles").execute();
-                    Toast.makeText(LoginActivity.this, "Sync Recruitments", Toast.LENGTH_LONG).show();
-                    new GetAllData(mContext, "Recruitments").execute();
-                    Toast.makeText(LoginActivity.this, "Sync RegisteredPW", Toast.LENGTH_LONG).show();
-                    new GetAllData(mContext, "RegisteredPW").execute();
-                    Toast.makeText(LoginActivity.this, "Sync RegisteredPWF1", Toast.LENGTH_LONG).show();
-                    new GetAllData(mContext, "RegisteredPWF1").execute();
-                    Toast.makeText(LoginActivity.this, "Sync RegisteredPWF2", Toast.LENGTH_LONG).show();
-                    new GetAllData(mContext, "RegisteredPWF2").execute();
-                    Toast.makeText(LoginActivity.this, "Sync RegisteredPWF3", Toast.LENGTH_LONG).show();
-                    new GetAllData(mContext, "RegisteredPWF3").execute();
-                }
+            runOnUiThread(() -> {
+                Toast.makeText(mContext, "Sync Users", Toast.LENGTH_LONG).show();
+                new GetAllData(mContext, "Users").execute();
+                Toast.makeText(mContext, "Sync Talukas", Toast.LENGTH_LONG).show();
+                new GetAllData(mContext, "Talukas").execute();
+                Toast.makeText(mContext, "Sync UCs", Toast.LENGTH_LONG).show();
+                new GetAllData(mContext, "UCs").execute();
+                Toast.makeText(mContext, "Sync Villages", Toast.LENGTH_LONG).show();
+                new GetAllData(mContext, "Villages").execute();
+                Toast.makeText(mContext, "Sync PWs", Toast.LENGTH_LONG).show();
+                new GetAllData(mContext, "PWs").execute();
+                Toast.makeText(mContext, "Sync PWScreened", Toast.LENGTH_LONG).show();
+                new GetAllData(mContext, "PWScreened").execute();
+                Toast.makeText(mContext, "Sync Eligibiles", Toast.LENGTH_LONG).show();
+                new GetAllData(mContext, "Eligibiles").execute();
+                Toast.makeText(mContext, "Sync Recruitments", Toast.LENGTH_LONG).show();
+                new GetAllData(mContext, "Recruitments").execute();
+                Toast.makeText(mContext, "Sync RegisteredPW", Toast.LENGTH_LONG).show();
+                new GetAllData(mContext, "RegisteredPW").execute();
+                Toast.makeText(mContext, "Sync RegisteredPWF1", Toast.LENGTH_LONG).show();
+                new GetAllData(mContext, "RegisteredPWF1").execute();
+                Toast.makeText(mContext, "Sync RegisteredPWF2", Toast.LENGTH_LONG).show();
+                new GetAllData(mContext, "RegisteredPWF2").execute();
+                Toast.makeText(mContext, "Sync RegisteredPWF3", Toast.LENGTH_LONG).show();
+                new GetAllData(mContext, "RegisteredPWF3").execute();
             });
 
 
@@ -612,22 +509,13 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
         @Override
         protected void onPostExecute(String s) {
-            new Handler().postDelayed(new Runnable() {
-
-                @Override
-                public void run() {
-
-//                    populateSpinner(mContext);
-
-                    editor.putBoolean("flag", true);
-                    editor.commit();
-
-                    dbBackup();
-
-                }
+            new Handler().postDelayed(() -> {
+                editor.putBoolean("flag", true);
+                editor.commit();
+                dbBackup();
             }, 1200);
         }
-    }
+    }*/
 
 }
 

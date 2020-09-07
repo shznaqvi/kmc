@@ -5,7 +5,6 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Application;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -13,11 +12,19 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.Settings;
 import android.text.format.DateFormat;
+import android.util.Log;
+import android.widget.Toast;
 
 import androidx.core.app.ActivityCompat;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -101,28 +108,21 @@ public class MainApp extends Application {
         return calendar;
     }
 
-    public static void endActivity(final Context context, final Activity activity) {
+    public static void endActivity(Context context, Activity activity) {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
                 context);
         alertDialogBuilder
                 .setMessage("Do you want to Exit??")
                 .setCancelable(false)
                 .setPositiveButton("Yes",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog,
-                                                int id) {
-                                activity.finish();
-                                Intent end_intent = new Intent(context, EndingActivity.class);
-                                end_intent.putExtra("complete", false);
-                                context.startActivity(end_intent);
-                            }
+                        (dialog, id) -> {
+                            activity.finish();
+                            Intent end_intent = new Intent(context, EndingActivity.class);
+                            end_intent.putExtra("complete", false);
+                            context.startActivity(end_intent);
                         });
         alertDialogBuilder.setNegativeButton("No",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.cancel();
-                    }
-                });
+                (dialog, id) -> dialog.cancel());
         AlertDialog alert = alertDialogBuilder.create();
         alert.show();
     }
@@ -285,5 +285,65 @@ public class MainApp extends Application {
         }
     }
 
+
+    public static void dbBackup(Context context) {
+
+        SharedPreferences sharedPref = context.getSharedPreferences("kmc", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+
+        if (sharedPref.getBoolean("flag", false)) {
+
+            String dt = sharedPref.getString("dt", new SimpleDateFormat("dd-MM-yy").format(new Date()));
+
+            if (!dt.equals(new SimpleDateFormat("dd-MM-yy").format(new Date()))) {
+                editor.putString("dt", new SimpleDateFormat("dd-MM-yy").format(new Date()));
+                editor.apply();
+            }
+
+            File folder = new File(Environment.getExternalStorageDirectory() + File.separator + DatabaseHelper.PROJECT_NAME);
+            boolean success = true;
+            if (!folder.exists()) {
+                success = folder.mkdirs();
+            }
+            if (success) {
+
+                String DirectoryName = folder.getPath() + File.separator + sharedPref.getString("dt", "");
+                folder = new File(DirectoryName);
+                if (!folder.exists()) {
+                    success = folder.mkdirs();
+                }
+                if (success) {
+
+                    try {
+                        File dbFile = new File(context.getDatabasePath(DatabaseHelper.DATABASE_NAME).getPath());
+                        FileInputStream fis = new FileInputStream(dbFile);
+
+                        String outFileName = DirectoryName + File.separator + DatabaseHelper.DB_NAME;
+
+                        // Open the empty db as the output stream
+                        OutputStream output = new FileOutputStream(outFileName);
+
+                        // Transfer bytes from the inputfile to the outputfile
+                        byte[] buffer = new byte[1024];
+                        int length;
+                        while ((length = fis.read(buffer)) > 0) {
+                            output.write(buffer, 0, length);
+                        }
+                        // Close the streams
+                        output.flush();
+                        output.close();
+                        fis.close();
+                    } catch (IOException e) {
+                        Log.e("dbBackup:", e.getMessage());
+                    }
+
+                }
+
+            } else {
+                Toast.makeText(context, "Not create folder", Toast.LENGTH_SHORT).show();
+            }
+        }
+
+    }
 
 }

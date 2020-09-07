@@ -5,16 +5,15 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
 import android.os.StrictMode;
 import android.text.InputType;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
@@ -22,17 +21,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import com.bumptech.glide.Glide;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Collection;
 import java.util.Date;
@@ -44,6 +38,7 @@ import edu.aku.hassannaqvi.kmc_screening.core.AndroidDatabaseManager;
 import edu.aku.hassannaqvi.kmc_screening.core.DatabaseHelper;
 import edu.aku.hassannaqvi.kmc_screening.core.MainApp;
 import edu.aku.hassannaqvi.kmc_screening.databinding.ActivityMainBinding;
+import edu.aku.hassannaqvi.kmc_screening.get.DownalodDataTask;
 import edu.aku.hassannaqvi.kmc_screening.sync.SyncAllData;
 import edu.aku.hassannaqvi.kmc_screening.ui.SectionInfoKmcActivity;
 import edu.aku.hassannaqvi.kmc_screening.ui.form0.SectionAForm0Activity;
@@ -53,15 +48,12 @@ import edu.aku.hassannaqvi.kmc_screening.ui.utils.DashboardMenu;
 public class MainActivity extends AppCompatActivity {
 
     private final String TAG = "MainActivity";
-
-    String dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
-
-    SharedPreferences sharedPref;
-    SharedPreferences.Editor editor;
-    AlertDialog.Builder builder;
-    String m_Text = "";
+    private String dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
+    private SharedPreferences sharedPref;
+    private SharedPreferences.Editor editor;
+    private AlertDialog.Builder builder;
+    private String m_Text = "", rSumText = "";
     private Boolean exit = false;
-    private String rSumText = "";
     private DatabaseHelper db;
 
     @Override
@@ -293,65 +285,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void updateApp(View v) {
-        v.setBackgroundColor(Color.GREEN);
-
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
-                MainActivity.this);
-        alertDialogBuilder
-                .setMessage("Are you sure to download new app??")
-                .setCancelable(false)
-                .setPositiveButton("Yes",
-                        (dialog, id) -> {
-                            // this is how you fire the downloader
-                            try {
-                                URL url = new URL(MainApp._UPDATE_URL);
-                                HttpURLConnection c = (HttpURLConnection) url.openConnection();
-                                c.setRequestMethod("GET");
-                                c.setDoOutput(true);
-                                c.connect();
-
-                                String PATH = Environment.getExternalStorageDirectory() + "/download/";
-                                File file = new File(PATH);
-                                file.mkdirs();
-                                File outputFile = new File(file, "app.apk");
-                                FileOutputStream fos = new FileOutputStream(outputFile);
-
-                                InputStream is = c.getInputStream();
-
-                                byte[] buffer = new byte[1024];
-                                int len1 = 0;
-                                while ((len1 = is.read(buffer)) != -1) {
-                                    fos.write(buffer, 0, len1);
-                                }
-                                fos.close();
-                                is.close();//till here, it works fine - .apk is download to my sdcard in download file
-
-                                Intent intent = new Intent(Intent.ACTION_VIEW);
-                                intent.setDataAndType(Uri.fromFile(new File(Environment.getExternalStorageDirectory() + "/download/" + "app.apk")), "application/vnd.android.package-archive");
-                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                                startActivity(intent);
-
-                            } catch (IOException e) {
-                                Toast.makeText(this, "Update error!", Toast.LENGTH_LONG).show();
-                            }
-                        });
-        alertDialogBuilder.setNegativeButton("No",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.cancel();
-                    }
-                });
-        AlertDialog alert = alertDialogBuilder.create();
-        alert.show();
-    }
-
     public void openDB(View v) {
         Intent dbmanager = new Intent(this, AndroidDatabaseManager.class);
         startActivity(dbmanager);
     }
 
-    public void syncServer(View view) {
+    public void syncServer() {
 
         // Require permissions INTERNET & ACCESS_NETWORK_STATE
         ConnectivityManager connMgr = (ConnectivityManager)
@@ -432,23 +371,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void syncDevice(View view) {
-
-        ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
-        if (networkInfo != null && networkInfo.isConnected()) {
-
-            SharedPreferences syncPref = getSharedPreferences("SyncInfo", Context.MODE_PRIVATE);
-            SharedPreferences.Editor editor = syncPref.edit();
-
-            editor.putString("LastDownSyncServer", dtToday);
-
-            editor.apply();
-        } else {
-            Toast.makeText(this, "No network connection available.", Toast.LENGTH_SHORT).show();
-        }
-    }
-
     @Override
     public void onBackPressed() {
         if (exit) {
@@ -470,4 +392,23 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        //Menu Setting
+        getMenuInflater().inflate(R.menu.item_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.onSync:
+                new DownalodDataTask(this, this).execute(false);
+                break;
+            case R.id.onUpload:
+                syncServer();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }
