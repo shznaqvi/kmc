@@ -176,6 +176,9 @@ public class GetAllData extends AsyncTask<String, String, String> {
                         case "Villages":
                             db.syncVillages(jsonArray);
                             break;
+                        case "Mortality":
+                            db.syncMortality(jsonArray);
+                            break;
                         case "RegisteredPW":
                             db.syncRegisteredPW(MainApp.FORMTYPE0, jsonArray);
                             break;
