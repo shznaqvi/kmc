@@ -18,20 +18,20 @@ public class VillagesContract {
     }
 
     public VillagesContract sync(JSONObject jsonObject) throws JSONException {
-        this.villageCode = jsonObject.getString(singleVillage.COLUMN_VILLAGE_CODE);
-        this.villageName = jsonObject.getString(singleVillage.COLUMN_VILLAGE_NAME);
-        this.districtCode = jsonObject.getString(singleVillage.COLUMN_DISTRICT_CODE);
-        this.ucCode = jsonObject.getString(singleVillage.COLUMN_UC_CODE);
+        this.villageCode = jsonObject.getString(SingleVillage.COLUMN_VILLAGE_CODE);
+        this.villageName = jsonObject.getString(SingleVillage.COLUMN_VILLAGE_NAME);
+        this.districtCode = jsonObject.getString(SingleVillage.COLUMN_DISTRICT_CODE);
+        this.ucCode = jsonObject.getString(SingleVillage.COLUMN_UC_CODE);
 
 
         return this;
     }
 
     public VillagesContract hydrate(Cursor cursor) {
-        this.villageCode = cursor.getString(cursor.getColumnIndex(singleVillage.COLUMN_VILLAGE_CODE));
-        this.villageName = cursor.getString(cursor.getColumnIndex(singleVillage.COLUMN_VILLAGE_NAME));
-        this.districtCode = cursor.getString(cursor.getColumnIndex(singleVillage.COLUMN_DISTRICT_CODE));
-        this.ucCode = cursor.getString(cursor.getColumnIndex(singleVillage.COLUMN_UC_CODE));
+        this.villageCode = cursor.getString(cursor.getColumnIndex(SingleVillage.COLUMN_VILLAGE_CODE));
+        this.villageName = cursor.getString(cursor.getColumnIndex(SingleVillage.COLUMN_VILLAGE_NAME));
+        this.districtCode = cursor.getString(cursor.getColumnIndex(SingleVillage.COLUMN_DISTRICT_CODE));
+        this.ucCode = cursor.getString(cursor.getColumnIndex(SingleVillage.COLUMN_UC_CODE));
 
         return this;
     }
@@ -53,7 +53,7 @@ public class VillagesContract {
         return districtCode;
     }
 
-    public static abstract class singleVillage implements BaseColumns {
+    public static abstract class SingleVillage implements BaseColumns {
 
         public static final String TABLE_NAME = "villages";
         public static final String COLUMN_NAME_NULLABLE = "nullColumnHack";

@@ -18,15 +18,15 @@ public class TalukasContract {
 
     public TalukasContract sync(JSONObject jsonObject) throws JSONException {
 
-        this.districtCode = jsonObject.getString(singleTaluka.COLUMN_DISTRICT_CODE);
-        this.districtName = jsonObject.getString(singleTaluka.COLUMN_DISTRICT_NAME);
+        this.districtCode = jsonObject.getString(SingleTaluka.COLUMN_DISTRICT_CODE);
+        this.districtName = jsonObject.getString(SingleTaluka.COLUMN_DISTRICT_NAME);
 
         return this;
     }
 
     public TalukasContract hydrate(Cursor cursor) {
-        this.districtCode = cursor.getString(cursor.getColumnIndex(singleTaluka.COLUMN_DISTRICT_CODE));
-        this.districtName = cursor.getString(cursor.getColumnIndex(singleTaluka.COLUMN_DISTRICT_NAME));
+        this.districtCode = cursor.getString(cursor.getColumnIndex(SingleTaluka.COLUMN_DISTRICT_CODE));
+        this.districtName = cursor.getString(cursor.getColumnIndex(SingleTaluka.COLUMN_DISTRICT_NAME));
 
         return this;
     }
@@ -47,7 +47,7 @@ public class TalukasContract {
         this.districtName = districtName;
     }
 
-    public static abstract class singleTaluka implements BaseColumns {
+    public static abstract class SingleTaluka implements BaseColumns {
 
         public static final String TABLE_NAME = "talukas";
         public static final String COLUMN_NAME_NULLABLE = "nullColumnHack";

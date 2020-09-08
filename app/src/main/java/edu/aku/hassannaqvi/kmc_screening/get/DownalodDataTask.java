@@ -55,6 +55,8 @@ public class DownalodDataTask extends AsyncTask<Boolean, String, String> {
                 new GetAllData(mContext.get(), "RegisteredPWF2").execute();
                 Toast.makeText(mContext.get(), "Sync RegisteredPWF3", Toast.LENGTH_LONG).show();
                 new GetAllData(mContext.get(), "RegisteredPWF3").execute();
+                Toast.makeText(mContext.get(), "Sync Mortality", Toast.LENGTH_LONG).show();
+                new GetAllData(mContext.get(), "Mortality").execute();
             }
         });
 

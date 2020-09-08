@@ -180,7 +180,7 @@
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:background="@drawable/button_bg"
-                        android:onClick='@{callback::btnSearchWoman}'
+                        android:onClick="@{callback::BtnSearchWoman}"
                         android:text="CHECK"
                         android:textColor="@color/colorPrimaryDark" />
 
@@ -226,6 +226,7 @@
 
                         <EditText
                             android:id="@+id/nmq105"
+                            android:enabled="false"
                             style="@style/EditText"
                             android:layout_marginBottom="12dp"
                             android:hint="@string/nmq105" />
@@ -264,18 +265,14 @@
                                 android:text="@string/Q_nmq106" />
                         </RelativeLayout>
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
+                        <EditText
                             android:id="@+id/nmq106"
-                            style="@style/EditTextNum"
+                            style="@style/EditText"
+                            android:enabled="false"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
-                            android:hint="###"
-                            android:maxLength="3"
-                            app:maxValue="999"
-                            app:minValue="001"
-                            app:pattern="[0-9]{3}"
-                            app:type="range" />
+                            android:hint="###" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -314,6 +311,7 @@
                         <EditText
                             android:id="@+id/nmq107"
                             style="@style/EditText"
+                            android:enabled="false"
                             android:layout_marginBottom="12dp"
                             android:hint="@string/nmq107" />
                     </LinearLayout>

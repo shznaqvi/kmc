@@ -22,7 +22,7 @@ import edu.aku.hassannaqvi.kmc_screening.contracts.EligibleContract.EligibleEntr
 import edu.aku.hassannaqvi.kmc_screening.contracts.FormsContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.FormsContract.FormsTable;
 import edu.aku.hassannaqvi.kmc_screening.contracts.MortalityContract;
-import edu.aku.hassannaqvi.kmc_screening.contracts.MortalityContract.singleMortality;
+import edu.aku.hassannaqvi.kmc_screening.contracts.MortalityContract.SingleMortality;
 import edu.aku.hassannaqvi.kmc_screening.contracts.PWFollowUpContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.PWFollowUpContract.PWFUPEntry;
 import edu.aku.hassannaqvi.kmc_screening.contracts.PWScreenedContract;
@@ -32,13 +32,13 @@ import edu.aku.hassannaqvi.kmc_screening.contracts.RecruitmentContract.Recruitme
 import edu.aku.hassannaqvi.kmc_screening.contracts.RegisteredPWContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.RegisteredPWContract.RegisteredPW;
 import edu.aku.hassannaqvi.kmc_screening.contracts.TalukasContract;
-import edu.aku.hassannaqvi.kmc_screening.contracts.TalukasContract.singleTaluka;
+import edu.aku.hassannaqvi.kmc_screening.contracts.TalukasContract.SingleTaluka;
 import edu.aku.hassannaqvi.kmc_screening.contracts.UCsContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.UCsContract.UCsTable;
 import edu.aku.hassannaqvi.kmc_screening.contracts.UsersContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.UsersContract.UsersTable;
 import edu.aku.hassannaqvi.kmc_screening.contracts.VillagesContract;
-import edu.aku.hassannaqvi.kmc_screening.contracts.VillagesContract.singleVillage;
+import edu.aku.hassannaqvi.kmc_screening.contracts.VillagesContract.SingleVillage;
 
 /**
  * Created by hassan.naqvi on 11/30/2016.
@@ -55,7 +55,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "kmc_screening.db";
     public static final String DB_NAME = DATABASE_NAME.replace(".", "_copy.");
     public static final String PROJECT_NAME = "KMC-SCREENING";
-    private static final int DATABASE_VERSION = 8;
+    private static final int DATABASE_VERSION = 9;
     private static final String SQL_CREATE_FORMS = "CREATE TABLE "
             + FormsTable.TABLE_NAME + "("
             + FormsTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -155,12 +155,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String SQL_ALTER_ELIGIBILES = "ALTER TABLE " +
             EligibleEntry.TABLE_NAME + " ADD COLUMN " +
             EligibleEntry.COLUMN_SCREEN_ID + " TEXT;";
-
-    final String SQL_CREATE_DISTRICT_TABLE = "CREATE TABLE " + singleTaluka.TABLE_NAME + " (" +
-            singleTaluka._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
-            singleTaluka.COLUMN_DISTRICT_CODE + " TEXT, " +
-            singleTaluka.COLUMN_DISTRICT_NAME + " TEXT " +
-            ");";
+    private static final String SQL_DELETE_TALUKA = "DROP TABLE IF EXISTS " + SingleTaluka.TABLE_NAME;
 
     private static final String SQL_ALTER_PW_REGISTERED = "ALTER TABLE " +
             RegisteredPW.TABLE_NAME + " ADD COLUMN " +
@@ -183,33 +178,34 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             RegisteredPW.COLUMN_VILLAGE_CODE + " TEXT, " +
             RegisteredPW.COLUMN_PWIDS + " TEXT " +
             ");";
-
-    final String SQL_CREATE_PSU_TABLE = "CREATE TABLE " + singleVillage.TABLE_NAME + " (" +
-            singleVillage._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
-            singleVillage.COLUMN_VILLAGE_CODE + " TEXT, " +
-            singleVillage.COLUMN_VILLAGE_NAME + " TEXT, " +
-            singleVillage.COLUMN_DISTRICT_CODE + " TEXT, " +
-            singleVillage.COLUMN_UC_CODE + " TEXT " +
-            ");";
-
-    final String SQL_CREATE_MRA_TABLE = "CREATE TABLE " + singleMortality.TABLE_NAME + " (" +
-            singleMortality._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
-            singleMortality.COLUMN__UID + " TEXT, " +
-            singleMortality.COLUMN_VILLAGE + " TEXT, " +
-            singleMortality.COLUMN_PWID + " TEXT, " +
-            singleMortality.COLUMN_SCREENDATE + " TEXT, " +
-            singleMortality.COLUMN_PW_NAME + " TEXT, " +
-            singleMortality.COLUMN_CHILD + " TEXT, " +
-            singleMortality.COLUMN_CHILDNAME + " TEXT, " +
-            singleMortality.COLUMN_SEX + " TEXT, " +
-            singleMortality.COLUMN_SMRA + " TEXT " +
+    private static final String SQL_DELETE_VILLAGE = "DROP TABLE IF EXISTS " + SingleVillage.TABLE_NAME;
+    final String SQL_CREATE_DISTRICT_TABLE = "CREATE TABLE " + SingleTaluka.TABLE_NAME + " (" +
+            SingleTaluka._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+            SingleTaluka.COLUMN_DISTRICT_CODE + " TEXT, " +
+            SingleTaluka.COLUMN_DISTRICT_NAME + " TEXT " +
             ");";
 
     private static final String SQL_DELETE_USERS = "DROP TABLE IF EXISTS " + UsersContract.UsersTable.TABLE_NAME;
     private static final String SQL_DELETE_FORMS = "DROP TABLE IF EXISTS " + FormsTable.TABLE_NAME;
-    private static final String SQL_DELETE_TALUKA = "DROP TABLE IF EXISTS " + singleTaluka.TABLE_NAME;
+    final String SQL_CREATE_PSU_TABLE = "CREATE TABLE " + SingleVillage.TABLE_NAME + " (" +
+            SingleVillage._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+            SingleVillage.COLUMN_VILLAGE_CODE + " TEXT, " +
+            SingleVillage.COLUMN_VILLAGE_NAME + " TEXT, " +
+            SingleVillage.COLUMN_DISTRICT_CODE + " TEXT, " +
+            SingleVillage.COLUMN_UC_CODE + " TEXT " +
+            ");";
     private static final String SQL_DELETE_UCS = "DROP TABLE IF EXISTS " + UCsTable.TABLE_NAME;
-    private static final String SQL_DELETE_VILLAGE = "DROP TABLE IF EXISTS " + singleVillage.TABLE_NAME;
+    final String SQL_CREATE_MRA_TABLE = "CREATE TABLE " + SingleMortality.TABLE_NAME + " (" +
+            SingleMortality._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+            SingleMortality.COLUMN__UID + " TEXT, " +
+            SingleMortality.COLUMN_VILLAGE + " TEXT, " +
+            SingleMortality.COLUMN_PWID + " TEXT, " +
+            SingleMortality.COLUMN_SCREENDATE + " TEXT, " +
+            SingleMortality.COLUMN_PW_NAME + " TEXT, " +
+            SingleMortality.COLUMN_CHILD + " TEXT, " +
+            SingleMortality.COLUMN_CHILDNAME + " TEXT, " +
+            SingleMortality.COLUMN_SEX + " TEXT " +
+            ");";
     private static final String SQL_DELETE_MWRA = "DROP TABLE IF EXISTS " + PWFUPEntry.TABLE_NAME;
     private static final String SQL_DELETE_MWRASCREENED = "DROP TABLE IF EXISTS " + PWFScrennedEntry.TABLE_NAME;
     private static final String SQL_DELETE_ELIGIBILE = "DROP TABLE IF EXISTS " + EligibleEntry.TABLE_NAME;
@@ -262,6 +258,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             case 6:
             case 7:
                 db.execSQL(SQL_ALTER_FORMS_02);
+            case 8:
+                db.execSQL(SQL_CREATE_MRA_TABLE);
         }
 
     }
@@ -297,9 +295,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
-                singleTaluka._ID,
-                singleTaluka.COLUMN_DISTRICT_CODE,
-                singleTaluka.COLUMN_DISTRICT_NAME
+                SingleTaluka._ID,
+                SingleTaluka.COLUMN_DISTRICT_CODE,
+                SingleTaluka.COLUMN_DISTRICT_NAME
         };
 
         String whereClause = null;
@@ -308,12 +306,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String having = null;
 
         String orderBy =
-                singleTaluka.COLUMN_DISTRICT_NAME + " ASC";
+                SingleTaluka.COLUMN_DISTRICT_NAME + " ASC";
 
         Collection<TalukasContract> allDC = new ArrayList<TalukasContract>();
         try {
             c = db.query(
-                    singleTaluka.TABLE_NAME,  // The table to query
+                    SingleTaluka.TABLE_NAME,  // The table to query
                     columns,                   // The columns to return
                     whereClause,               // The columns for the WHERE clause
                     whereArgs,                 // The values for the WHERE clause
@@ -385,26 +383,26 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
-                singleVillage._ID,
-                singleVillage.COLUMN_VILLAGE_CODE,
-                singleVillage.COLUMN_VILLAGE_NAME,
-                singleVillage.COLUMN_DISTRICT_CODE,
-                singleVillage.COLUMN_UC_CODE
+                SingleVillage._ID,
+                SingleVillage.COLUMN_VILLAGE_CODE,
+                SingleVillage.COLUMN_VILLAGE_NAME,
+                SingleVillage.COLUMN_DISTRICT_CODE,
+                SingleVillage.COLUMN_UC_CODE
         };
 
-        String whereClause = singleVillage.COLUMN_DISTRICT_CODE + " =? AND " + singleVillage.COLUMN_UC_CODE + " =?";
+        String whereClause = SingleVillage.COLUMN_DISTRICT_CODE + " =? AND " + SingleVillage.COLUMN_UC_CODE + " =?";
 
         String[] whereArgs = {district_code, uc_code};
         String groupBy = null;
         String having = null;
 
         String orderBy =
-                singleVillage.COLUMN_VILLAGE_NAME + " ASC";
+                SingleVillage.COLUMN_VILLAGE_NAME + " ASC";
 
         Collection<VillagesContract> allPC = new ArrayList<VillagesContract>();
         try {
             c = db.query(
-                    singleVillage.TABLE_NAME,  // The table to query
+                    SingleVillage.TABLE_NAME,  // The table to query
                     columns,                   // The columns to return
                     whereClause,               // The columns for the WHERE clause
                     whereArgs,                 // The values for the WHERE clause
@@ -427,34 +425,32 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allPC;
     }
 
-    public Collection<MortalityContract> getAllMRAsByDistrict(String district_code, String uc_code) {
+    public MortalityContract getMortalityByVillage(String village_code, String pwid) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
-                singleMortality.COLUMN__UID,
-                singleMortality.COLUMN_VILLAGE,
-                singleMortality.COLUMN_PWID,
-                singleMortality.COLUMN_SCREENDATE,
-                singleMortality.COLUMN_PW_NAME,
-                singleMortality.COLUMN_CHILD,
-                singleMortality.COLUMN_CHILDNAME,
-                singleMortality.COLUMN_SEX,
-                singleMortality.COLUMN_SMRA
+                SingleMortality.COLUMN__UID,
+                SingleMortality.COLUMN_VILLAGE,
+                SingleMortality.COLUMN_PWID,
+                SingleMortality.COLUMN_SCREENDATE,
+                SingleMortality.COLUMN_PW_NAME,
+                SingleMortality.COLUMN_CHILD,
+                SingleMortality.COLUMN_CHILDNAME,
+                SingleMortality.COLUMN_SEX
         };
 
-        String whereClause = singleMortality.COLUMN__UID + " =? AND " + singleMortality.COLUMN_VILLAGE + " =?";
+        String whereClause = SingleMortality.COLUMN_VILLAGE + " =? AND " + SingleMortality.COLUMN_PWID + " =?";
 
-        String[] whereArgs = {district_code, uc_code};
+        String[] whereArgs = {village_code, pwid};
         String groupBy = null;
         String having = null;
 
-        String orderBy =
-                singleMortality.COLUMN_VILLAGE + " ASC";
+        String orderBy = SingleMortality.COLUMN_VILLAGE + " ASC";
 
-        Collection<MortalityContract> allPC = new ArrayList<MortalityContract>();
+        MortalityContract allPC = null;
         try {
             c = db.query(
-                    singleMortality.TABLE_NAME,  // The table to query
+                    SingleMortality.TABLE_NAME,  // The table to query
                     columns,                   // The columns to return
                     whereClause,               // The columns for the WHERE clause
                     whereArgs,                 // The values for the WHERE clause
@@ -463,8 +459,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     orderBy                    // The sort order
             );
             while (c.moveToNext()) {
-                MortalityContract pc = new MortalityContract();
-                allPC.add(pc.hydrate(c));
+                allPC = new MortalityContract().hydrate(c);
             }
         } finally {
             if (c != null) {
@@ -925,7 +920,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public void syncTalukas(JSONArray talukalist) {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(singleTaluka.TABLE_NAME, null, null);
+        db.delete(SingleTaluka.TABLE_NAME, null, null);
         try {
             JSONArray jsonArray = talukalist;
             for (int i = 0; i < jsonArray.length(); i++) {
@@ -936,9 +931,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 user.sync(jsonObjectUser);
                 ContentValues values = new ContentValues();
 
-                values.put(singleTaluka.COLUMN_DISTRICT_CODE, user.getDistrictCode());
-                values.put(singleTaluka.COLUMN_DISTRICT_NAME, user.getDistrictName());
-                db.insert(singleTaluka.TABLE_NAME, null, values);
+                values.put(SingleTaluka.COLUMN_DISTRICT_CODE, user.getDistrictCode());
+                values.put(SingleTaluka.COLUMN_DISTRICT_NAME, user.getDistrictName());
+                db.insert(SingleTaluka.TABLE_NAME, null, values);
             }
 
         } catch (Exception e) {
@@ -1117,7 +1112,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public void syncVillages(JSONArray pcList) {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(singleVillage.TABLE_NAME, null, null);
+        db.delete(SingleVillage.TABLE_NAME, null, null);
 
         try {
             JSONArray jsonArray = pcList;
@@ -1131,12 +1126,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
                 ContentValues values = new ContentValues();
 
-                values.put(singleVillage.COLUMN_UC_CODE, vc.getUcCode());
-                values.put(singleVillage.COLUMN_VILLAGE_CODE, vc.getVillageCode());
-                values.put(singleVillage.COLUMN_VILLAGE_NAME, vc.getVillageName());
-                values.put(singleVillage.COLUMN_DISTRICT_CODE, vc.getDistrictCode());
+                values.put(SingleVillage.COLUMN_UC_CODE, vc.getUcCode());
+                values.put(SingleVillage.COLUMN_VILLAGE_CODE, vc.getVillageCode());
+                values.put(SingleVillage.COLUMN_VILLAGE_NAME, vc.getVillageName());
+                values.put(SingleVillage.COLUMN_DISTRICT_CODE, vc.getDistrictCode());
 
-                db.insert(singleVillage.TABLE_NAME, null, values);
+                db.insert(SingleVillage.TABLE_NAME, null, values);
             }
             db.close();
 
@@ -1147,13 +1142,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public void syncMortality(JSONArray pcList) {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(singleMortality.TABLE_NAME, null, null);
+        db.delete(SingleMortality.TABLE_NAME, null, null);
 
         try {
-            JSONArray jsonArray = pcList;
 
-            for (int i = 0; i < jsonArray.length(); i++) {
-                JSONObject jsonObjectPSU = jsonArray.getJSONObject(i);
+            for (int i = 0; i < pcList.length(); i++) {
+                JSONObject jsonObjectPSU = pcList.getJSONObject(i);
 
                 MortalityContract vc = new MortalityContract();
                 vc.sync(jsonObjectPSU);
@@ -1161,17 +1155,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
                 ContentValues values = new ContentValues();
 
-                values.put(singleMortality.COLUMN__UID, vc.getUID());
-                values.put(singleMortality.COLUMN_VILLAGE, vc.getvillage());
-                values.put(singleMortality.COLUMN_PWID, vc.getpwid());
-                values.put(singleMortality.COLUMN_SCREENDATE, vc.getscreendate());
-                values.put(singleMortality.COLUMN_PW_NAME, vc.getpw_name());
-                values.put(singleMortality.COLUMN_CHILD, vc.getchild());
-                values.put(singleMortality.COLUMN_CHILDNAME, vc.getchildname());
-                values.put(singleMortality.COLUMN_SEX, vc.getsex());
-                values.put(singleMortality.COLUMN_SMRA, vc.getsMRA());
+                values.put(SingleMortality.COLUMN__UID, vc.getUID());
+                values.put(SingleMortality.COLUMN_VILLAGE, vc.getvillage());
+                values.put(SingleMortality.COLUMN_PWID, vc.getpwid());
+                values.put(SingleMortality.COLUMN_SCREENDATE, vc.getscreendate());
+                values.put(SingleMortality.COLUMN_PW_NAME, vc.getpw_name());
+                values.put(SingleMortality.COLUMN_CHILD, vc.getchild());
+                values.put(SingleMortality.COLUMN_CHILDNAME, vc.getchildname());
+                values.put(SingleMortality.COLUMN_SEX, vc.getsex());
 
-                db.insert(singleMortality.TABLE_NAME, null, values);
+                db.insert(SingleMortality.TABLE_NAME, null, values);
             }
             db.close();
 

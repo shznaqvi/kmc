@@ -16,35 +16,32 @@ public class MortalityContract {
     private String child;
     private String childname;
     private String sex;
-    private String sMRA = "";
 
     public MortalityContract() {
     }
 
     public MortalityContract sync(JSONObject jsonObject) throws JSONException {
-        this._UID = jsonObject.getString(singleMortality.COLUMN__UID);
-        this.village = jsonObject.getString(singleMortality.COLUMN_VILLAGE);
-        this.pwid = jsonObject.getString(singleMortality.COLUMN_PWID);
-        this.screendate = jsonObject.getString(singleMortality.COLUMN_SCREENDATE);
-        this.pw_name = jsonObject.getString(singleMortality.COLUMN_PW_NAME);
-        this.child = jsonObject.getString(singleMortality.COLUMN_CHILD);
-        this.childname = jsonObject.getString(singleMortality.COLUMN_CHILDNAME);
-        this.sex = jsonObject.getString(singleMortality.COLUMN_SEX);
-        this.sMRA = jsonObject.getString(singleMortality.COLUMN_SMRA);
+        this._UID = jsonObject.getString(SingleMortality.COLUMN__UID);
+        this.village = jsonObject.getString(SingleMortality.COLUMN_VILLAGE);
+        this.pwid = jsonObject.getString(SingleMortality.COLUMN_PWID);
+        this.screendate = jsonObject.getString(SingleMortality.COLUMN_SCREENDATE);
+        this.pw_name = jsonObject.getString(SingleMortality.COLUMN_PW_NAME);
+        this.child = jsonObject.getString(SingleMortality.COLUMN_CHILD);
+        this.childname = jsonObject.getString(SingleMortality.COLUMN_CHILDNAME);
+        this.sex = jsonObject.getString(SingleMortality.COLUMN_SEX);
 
         return this;
     }
 
     public MortalityContract hydrate(Cursor cursor) {
-        this._UID = cursor.getString(cursor.getColumnIndex(singleMortality.COLUMN__UID));
-        this.village = cursor.getString(cursor.getColumnIndex(singleMortality.COLUMN_VILLAGE));
-        this.pwid = cursor.getString(cursor.getColumnIndex(singleMortality.COLUMN_PWID));
-        this.screendate = cursor.getString(cursor.getColumnIndex(singleMortality.COLUMN_SCREENDATE));
-        this.pw_name = cursor.getString(cursor.getColumnIndex(singleMortality.COLUMN_PW_NAME));
-        this.child = cursor.getString(cursor.getColumnIndex(singleMortality.COLUMN_CHILD));
-        this.childname = cursor.getString(cursor.getColumnIndex(singleMortality.COLUMN_CHILDNAME));
-        this.sex = cursor.getString(cursor.getColumnIndex(singleMortality.COLUMN_SEX));
-        this.sMRA = cursor.getString(cursor.getColumnIndex(singleMortality.COLUMN_SMRA));
+        this._UID = cursor.getString(cursor.getColumnIndex(SingleMortality.COLUMN__UID));
+        this.village = cursor.getString(cursor.getColumnIndex(SingleMortality.COLUMN_VILLAGE));
+        this.pwid = cursor.getString(cursor.getColumnIndex(SingleMortality.COLUMN_PWID));
+        this.screendate = cursor.getString(cursor.getColumnIndex(SingleMortality.COLUMN_SCREENDATE));
+        this.pw_name = cursor.getString(cursor.getColumnIndex(SingleMortality.COLUMN_PW_NAME));
+        this.child = cursor.getString(cursor.getColumnIndex(SingleMortality.COLUMN_CHILD));
+        this.childname = cursor.getString(cursor.getColumnIndex(SingleMortality.COLUMN_CHILDNAME));
+        this.sex = cursor.getString(cursor.getColumnIndex(SingleMortality.COLUMN_SEX));
 
         return this;
     }
@@ -114,15 +111,7 @@ public class MortalityContract {
         this.sex = sex;
     }
 
-    public String getsMRA() {
-        return sMRA;
-    }
-
-    public void setsMRA(String sMRA) {
-        this.sMRA = sMRA;
-    }
-
-    public static abstract class singleMortality implements BaseColumns {
+    public static abstract class SingleMortality implements BaseColumns {
 
         public static final String TABLE_NAME = "mortality";
         public static final String COLUMN_NAME_NULLABLE = "nullColumnHack";
@@ -134,9 +123,8 @@ public class MortalityContract {
         public static final String COLUMN_CHILD = "child";
         public static final String COLUMN_CHILDNAME = "childname";
         public static final String COLUMN_SEX = "sex";
-        public static final String COLUMN_SMRA = "sMRA";
 
-        public static final String _URI = "mortality.php";
+        public static final String _URI = "mortality_list.php";
 
     }
 }

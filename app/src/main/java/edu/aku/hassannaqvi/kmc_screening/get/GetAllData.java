@@ -10,12 +10,14 @@ import org.json.JSONException;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
 import edu.aku.hassannaqvi.kmc_screening.contracts.EligibleContract;
+import edu.aku.hassannaqvi.kmc_screening.contracts.MortalityContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.PWFollowUpContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.PWScreenedContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.RecruitmentContract;
@@ -82,13 +84,13 @@ public class GetAllData extends AsyncTask<String, String, String> {
                         url = new URL(hostItem + RecruitmentContract.RecruitmentEntry._URI);
                         break;
                     case "Talukas":
-                        url = new URL(hostItem + TalukasContract.singleTaluka._URI);
+                        url = new URL(hostItem + TalukasContract.SingleTaluka._URI);
                         break;
                     case "UCs":
                         url = new URL(hostItem + UCsContract.UCsTable._URI);
                         break;
                     case "Villages":
-                        url = new URL(hostItem + VillagesContract.singleVillage._URI);
+                        url = new URL(hostItem + VillagesContract.SingleVillage._URI);
                         break;
                     case "RegisteredPW":
                         url = new URL(hostItem + RegisteredPWContract.RegisteredPW._URI);
@@ -104,6 +106,9 @@ public class GetAllData extends AsyncTask<String, String, String> {
                         break;
                     case "RegisteredPWF3":
                         url = new URL(hostItem + RegisteredPWContract.RegisteredPW._URI3);
+                        break;
+                    case "Mortality":
+                        url = new URL(hostItem + MortalityContract.SingleMortality._URI);
                         break;
                 }
 
@@ -127,10 +132,7 @@ public class GetAllData extends AsyncTask<String, String, String> {
 
                     return result.toString();
                 }
-            } catch (java.net.SocketTimeoutException e) {
-                continue;
-            } catch (java.io.IOException e) {
-                continue;
+            } catch (IOException ignored) {
             }
         }
 
@@ -145,11 +147,10 @@ public class GetAllData extends AsyncTask<String, String, String> {
 
         //Do something with the JSON string
         if (result != null) {
-            String json = result;
-            if (json.length() > 0) {
+            if (result.length() > 0) {
                 DatabaseHelper db = new DatabaseHelper(mContext);
                 try {
-                    JSONArray jsonArray = new JSONArray(json);
+                    JSONArray jsonArray = new JSONArray(result);
 
                     switch (syncClass) {
                         case "PWs":
@@ -202,7 +203,7 @@ public class GetAllData extends AsyncTask<String, String, String> {
                     e.printStackTrace();
                 }
             } else {
-                pd.setMessage("Received: " + json.length() + "");
+                pd.setMessage("Received: " + result.length() + "");
                 pd.show();
             }
         } else {

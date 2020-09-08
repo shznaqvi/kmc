@@ -30,9 +30,8 @@ import java.util.List;
 import java.util.Map;
 
 import edu.aku.hassannaqvi.kmc_screening.R;
-import edu.aku.hassannaqvi.kmc_screening.contracts.EligibleContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.FormsContract;
-import edu.aku.hassannaqvi.kmc_screening.contracts.PWScreenedContract;
+import edu.aku.hassannaqvi.kmc_screening.contracts.MortalityContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.TalukasContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.UCsContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.VillagesContract;
@@ -41,6 +40,9 @@ import edu.aku.hassannaqvi.kmc_screening.core.MainApp;
 import edu.aku.hassannaqvi.kmc_screening.databinding.ActivitySectionmraBinding;
 import edu.aku.hassannaqvi.kmc_screening.ui.SectionInfoKmcActivity;
 import edu.aku.hassannaqvi.kmc_screening.ui.other.EndingActivity;
+import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 
 import static edu.aku.hassannaqvi.kmc_screening.core.MainApp.fc;
 
@@ -51,8 +53,7 @@ public class SectionMRAActivity extends AppCompatActivity {
     private List<String> talukaCodes, villageCodes;
     private Map<String, UCsContract> uc;
     private DatabaseHelper db;
-    private PWScreenedContract mapWRA;
-    private Map<String, EligibleContract> mapPartElig;
+    private MortalityContract mort;
     private static final String TAG = SectionInfoKmcActivity.class.getName();
     ActivitySectionmraBinding bi;
 
@@ -192,6 +193,9 @@ public class SectionMRAActivity extends AppCompatActivity {
 
         JSONObject json = new JSONObject();
 
+        json.put("puid", mort.getUID());
+        json.put("screendate", mort.getscreendate());
+
         json.put("nmq105", bi.nmq105.getText().toString());
 
         json.put("nmq106", bi.nmq106.getText().toString());
@@ -276,69 +280,28 @@ public class SectionMRAActivity extends AppCompatActivity {
         }
     }
 
-    /*public void BtnSearchWoman() {
-
-        if (!ValidateSpinners()) return;
-
-        if (MainApp.formType.equals("kf1")) {
-
-            mapWRA = db.getPWScreened(villageCodes.get(bi.crvillage.getSelectedItemPosition()), bi.kapr02a.getText().toString());
-
-            if (mapWRA == null)
-                mapWRA = db.getPWScreened("kf0a", villageCodes.get(bi.crvillage.getSelectedItemPosition()), bi.kapr02a.getText().toString());
-
-            if (mapWRA == null) {
-                setupFields(View.GONE);
-                Toast.makeText(this, "Household does not exist ", Toast.LENGTH_LONG).show();
-                return;
-            }
-
-            bi.kf1a2.setText(mapWRA.getPw_name());
-
-        } else {
-            mapPartElig = new HashMap<>();
-            List<String> partNam = new ArrayList<>();
-            partNam.add("....");
-
-            Collection<EligibleContract> dc;
-
-            String fType = MainApp.formType;
-            if (fType.equals("kf2"))
-                dc = db.getEligibileParticipant(villageCodes.get(bi.crvillage.getSelectedItemPosition()), bi.kapr02a.getText().toString());
-            else
-                dc = (Collection<EligibleContract>) db.getRecruitmentParticipant(villageCodes.get(bi.crvillage.getSelectedItemPosition()), bi.kapr02a.getText().toString());
-
-            for (Object d : dc) {
-                partNam.add(((EligibleContract) d).getScreen_id());
-                mapPartElig.put(((EligibleContract) d).getScreen_id(), ((EligibleContract) d));
-            }
-
-            if (mapPartElig.size() == 0) {
-                dc = db.getEligibleParticipantFromPDADB(villageCodes.get(bi.crvillage.getSelectedItemPosition()), bi.kapr02a.getText().toString(), fType.equals("kf2") ? "kf1" : "kf2");
-                for (Object d : dc) {
-                    partNam.add(((EligibleContract) d).getScreen_id());
-                    mapPartElig.put(((EligibleContract) d).getScreen_id(), ((EligibleContract) d));
-                }
-
-                if (mapPartElig.size() == 0) {
-                    setupFields(View.GONE);
-                    Toast.makeText(this, "Household does not exist ", Toast.LENGTH_LONG).show();
-                    return;
-                }
-            }
-
-            bi.kf2a6.setAdapter(new ArrayAdapter<>(SectionMRAActivity.this, android.R.layout.simple_spinner_dropdown_item, partNam));
-        }
-
-        Toast.makeText(this, "Household number exists", Toast.LENGTH_LONG).show();
-        setupFields(View.VISIBLE);
-
-    }*/
-
-    public void btnSearchWoman(View v) {
+    public void BtnSearchWoman(View v) {
         if (!Validator.emptyCheckingContainer(this, bi.GrpName))
             return;
-        setupFields(View.VISIBLE);
+
+        //Get Data From DB
+        getSpecificPerson()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(mortalityContract -> {
+                    mort = mortalityContract;
+                    setupFields(View.VISIBLE);
+                    bi.nmq105.setText(mort.getpw_name());
+                    bi.nmq106.setText(mort.getchild());
+                    bi.nmq107.setText(mort.getchildname());
+                    Clear.clearRadioGroup(bi.nmq108);
+                    bi.nmq108.check(mort.getsex().equals("1") ? bi.nmq108a.getId() : bi.nmq108b.getId());
+                }, error -> {
+                    Toast.makeText(this, "No Women found!!", Toast.LENGTH_SHORT).show();
+                    setupFields(View.GONE);
+                });
+
+//        disposable.dispose();
     }
 
     private boolean formValidation() {
@@ -365,5 +328,11 @@ public class SectionMRAActivity extends AppCompatActivity {
         return false;
     }
 
+    private Observable<MortalityContract> getSpecificPerson() {
+        return Observable.create(emitter -> {
+            emitter.onNext(db.getMortalityByVillage(villageCodes.get(bi.crvillage.getSelectedItemPosition()), bi.nmq104.getText().toString()));
+            emitter.onComplete();
+        });
+    }
 
 }
