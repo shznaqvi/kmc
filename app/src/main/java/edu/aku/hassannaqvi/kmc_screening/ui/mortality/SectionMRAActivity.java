@@ -294,7 +294,7 @@ public class SectionMRAActivity extends AppCompatActivity {
                     bi.nmq105.setText(mort.getpw_name());
                     bi.nmq106.setText(mort.getchild());
                     bi.nmq107.setText(mort.getchildname());
-                    Clear.clearRadioGroup(bi.nmq108);
+                    Clear.clearRadioGroup(bi.nmq108, false);
                     bi.nmq108.check(mort.getsex().equals("1") ? bi.nmq108a.getId() : bi.nmq108b.getId());
                 }, error -> {
                     Toast.makeText(this, "No Women found!!", Toast.LENGTH_SHORT).show();
