@@ -50,12 +50,13 @@ public class SectionMRAActivity extends AppCompatActivity {
 
     private List<String> ucName;
     private List<String> villageNames;
-    private List<String> talukaCodes, villageCodes;
+    private List<String> talukaCodes, villageCodes, childIDs;
     private Map<String, UCsContract> uc;
+    private Map<String, MortalityContract> morMap;
     private DatabaseHelper db;
-    private MortalityContract mort;
     private static final String TAG = SectionInfoKmcActivity.class.getName();
     ActivitySectionmraBinding bi;
+    private ArrayAdapter<String> childIdAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +70,19 @@ public class SectionMRAActivity extends AppCompatActivity {
     private void setupFields(int visibility) {
         bi.fldGrpSecMR01.setVisibility(visibility);
         Clear.clearAllFields(bi.fldGrpSecMR01);
+    }
+
+    private void setupMortFields(MortalityContract mort) {
+        if (mort == null) {
+            bi.nmq105.setText(null);
+            bi.nmq107.setText(null);
+            Clear.clearRadioGroup(bi.nmq108, false);
+            return;
+        }
+        bi.nmq105.setText(mort.getpw_name());
+        bi.nmq107.setText(mort.getchildname());
+        Clear.clearRadioGroup(bi.nmq108, false);
+        bi.nmq108.check(mort.getsex().equals("1") ? bi.nmq108a.getId() : bi.nmq108b.getId());
     }
 
     private void populateSpinner(Context context) {
@@ -165,11 +179,32 @@ public class SectionMRAActivity extends AppCompatActivity {
             Clear.clearAllFields(bi.nmq204check, !b);
         });
 
-        /*bi.nmq201.setOnCheckedChangeListener((radioGroup, i) -> {
+        bi.nmq201.setOnCheckedChangeListener((radioGroup, i) -> {
             if (i == bi.nmq201a.getId())
                 Clear.clearAllFields(bi.fldGrpSecMR02);
+        });
 
-        });*/
+        childIDs = new ArrayList<String>() {{
+            add("....");
+        }};
+        morMap = new HashMap<>();
+        childIdAdapter = new ArrayAdapter<>(context, android.R.layout.simple_spinner_dropdown_item, childIDs);
+        bi.nmq106.setAdapter(childIdAdapter);
+        bi.nmq106.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                setupMortFields(null);
+                if (i == 0) return;
+                MortalityContract mort = morMap.get(bi.nmq106.getSelectedItem().toString());
+                if (mort == null) return;
+                setupMortFields(mort);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
     }
 
     public void nmq104OnTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -193,12 +228,13 @@ public class SectionMRAActivity extends AppCompatActivity {
 
         JSONObject json = new JSONObject();
 
+        MortalityContract mort = morMap.get(bi.nmq106.getSelectedItem().toString());
         json.put("puid", mort.getUID());
         json.put("screendate", mort.getscreendate());
 
         json.put("nmq105", bi.nmq105.getText().toString());
 
-        json.put("nmq106", bi.nmq106.getText().toString());
+        json.put("nmq106", bi.nmq106.getSelectedItem().toString());
 
         json.put("nmq107", bi.nmq107.getText().toString());
 
@@ -289,13 +325,15 @@ public class SectionMRAActivity extends AppCompatActivity {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(mortalityContract -> {
-                    mort = mortalityContract;
+                    childIDs.clear();
+                    childIDs.add("....");
+                    morMap.clear();
+                    for (MortalityContract item : mortalityContract) {
+                        childIDs.add(item.getchild());
+                        morMap.put(item.getchild(), item);
+                        childIdAdapter.notifyDataSetChanged();
+                    }
                     setupFields(View.VISIBLE);
-                    bi.nmq105.setText(mort.getpw_name());
-                    bi.nmq106.setText(mort.getchild());
-                    bi.nmq107.setText(mort.getchildname());
-                    Clear.clearRadioGroup(bi.nmq108, false);
-                    bi.nmq108.check(mort.getsex().equals("1") ? bi.nmq108a.getId() : bi.nmq108b.getId());
                 }, error -> {
                     Toast.makeText(this, "No Women found!!", Toast.LENGTH_SHORT).show();
                     setupFields(View.GONE);
@@ -328,7 +366,7 @@ public class SectionMRAActivity extends AppCompatActivity {
         return false;
     }
 
-    private Observable<MortalityContract> getSpecificPerson() {
+    private Observable<List<MortalityContract>> getSpecificPerson() {
         return Observable.create(emitter -> {
             emitter.onNext(db.getMortalityByVillage(villageCodes.get(bi.crvillage.getSelectedItemPosition()), bi.nmq104.getText().toString()));
             emitter.onComplete();

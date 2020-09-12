@@ -16,6 +16,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 import edu.aku.hassannaqvi.kmc_screening.contracts.EligibleContract;
 import edu.aku.hassannaqvi.kmc_screening.contracts.EligibleContract.EligibleEntry;
@@ -425,7 +426,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allPC;
     }
 
-    public MortalityContract getMortalityByVillage(String village_code, String pwid) {
+    public List<MortalityContract> getMortalityByVillage(String village_code, String pwid) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
@@ -447,7 +448,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         String orderBy = SingleMortality.COLUMN_VILLAGE + " ASC";
 
-        MortalityContract allPC = null;
+        List<MortalityContract> allPC = new ArrayList<>();
         try {
             c = db.query(
                     SingleMortality.TABLE_NAME,  // The table to query
@@ -459,7 +460,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     orderBy                    // The sort order
             );
             while (c.moveToNext()) {
-                allPC = new MortalityContract().hydrate(c);
+                allPC.add(new MortalityContract().hydrate(c));
             }
         } finally {
             if (c != null) {
@@ -469,7 +470,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 db.close();
             }
         }
-        return allPC;
+        return allPC.size() == 0 ? null : allPC;
     }
 
     public Collection<PWFollowUpContract> getPW(String villageCode, String hhno) {
