@@ -404,8 +404,8 @@
                             android:layout_marginBottom="12dp"
                             android:hint="####"
                             android:maxLength="4"
-                            app:maxValue="8000"
-                            app:minValue="1000"
+                            app:maxValue="5000"
+                            app:minValue="900"
                             app:pattern="[0-9]{4}"
                             app:type="range" />
                     </LinearLayout>
@@ -706,6 +706,7 @@
 
                                 <EditText
                                     android:id="@+id/nmq204096x"
+                                    style="@style/EditTextAlphaNumeric"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="12dp"
@@ -812,6 +813,7 @@
 
                                 <EditText
                                     android:id="@+id/nmq205096x"
+                                    style="@style/EditTextAlphaNumeric"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="12dp"

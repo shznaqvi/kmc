@@ -79,7 +79,6 @@ public class SectionMRAActivity extends AppCompatActivity {
             Clear.clearRadioGroup(bi.nmq108, false);
             return;
         }
-        bi.nmq105.setText(mort.getpw_name());
         bi.nmq107.setText(mort.getchildname());
         Clear.clearRadioGroup(bi.nmq108, false);
         bi.nmq108.check(mort.getsex().equals("1") ? bi.nmq108a.getId() : bi.nmq108b.getId());
@@ -121,8 +120,7 @@ public class SectionMRAActivity extends AppCompatActivity {
                 ArrayAdapter<String> psuAdapter = new ArrayAdapter<>(context,
                         android.R.layout.simple_spinner_dropdown_item, ucName);
 
-                psuAdapter
-                        .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                psuAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 bi.crauc.setAdapter(psuAdapter);
 
             }
@@ -325,15 +323,16 @@ public class SectionMRAActivity extends AppCompatActivity {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(mortalityContract -> {
+                    setupFields(View.VISIBLE);
                     childIDs.clear();
                     childIDs.add("....");
                     morMap.clear();
+                    bi.nmq105.setText(mortalityContract.get(0).getpw_name());
                     for (MortalityContract item : mortalityContract) {
                         childIDs.add(item.getchild());
                         morMap.put(item.getchild(), item);
                         childIdAdapter.notifyDataSetChanged();
                     }
-                    setupFields(View.VISIBLE);
                 }, error -> {
                     Toast.makeText(this, "No Women found!!", Toast.LENGTH_SHORT).show();
                     setupFields(View.GONE);
