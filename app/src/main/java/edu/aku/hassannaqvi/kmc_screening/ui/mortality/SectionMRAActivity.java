@@ -41,7 +41,9 @@ import edu.aku.hassannaqvi.kmc_screening.databinding.ActivitySectionmraBinding;
 import edu.aku.hassannaqvi.kmc_screening.ui.SectionInfoKmcActivity;
 import edu.aku.hassannaqvi.kmc_screening.ui.other.EndingActivity;
 import io.reactivex.Observable;
+import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
 import static edu.aku.hassannaqvi.kmc_screening.core.MainApp.fc;
@@ -74,7 +76,6 @@ public class SectionMRAActivity extends AppCompatActivity {
 
     private void setupMortFields(MortalityContract mort) {
         if (mort == null) {
-            bi.nmq105.setText(null);
             bi.nmq107.setText(null);
             Clear.clearRadioGroup(bi.nmq108, false);
             return;
@@ -322,20 +323,39 @@ public class SectionMRAActivity extends AppCompatActivity {
         getSpecificPerson()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(mortalityContract -> {
-                    setupFields(View.VISIBLE);
-                    childIDs.clear();
-                    childIDs.add("....");
-                    morMap.clear();
-                    bi.nmq105.setText(mortalityContract.get(0).getpw_name());
-                    for (MortalityContract item : mortalityContract) {
-                        childIDs.add(item.getchild());
-                        morMap.put(item.getchild(), item);
-                        childIdAdapter.notifyDataSetChanged();
+                .subscribe(new Observer<List<MortalityContract>>() {
+                    Disposable disposable;
+
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                        disposable = d;
                     }
-                }, error -> {
-                    Toast.makeText(this, "No Women found!!", Toast.LENGTH_SHORT).show();
-                    setupFields(View.GONE);
+
+                    @Override
+                    public void onNext(List<MortalityContract> mortalityContract) {
+                        setupFields(View.VISIBLE);
+                        childIDs.clear();
+                        childIDs.add("....");
+                        morMap.clear();
+                        bi.nmq105.setText(mortalityContract.get(0).getpw_name());
+                        for (MortalityContract item : mortalityContract) {
+                            childIDs.add(item.getchild());
+                            morMap.put(item.getchild(), item);
+                            childIdAdapter.notifyDataSetChanged();
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        Toast.makeText(SectionMRAActivity.this, "No Women found!!", Toast.LENGTH_SHORT).show();
+                        setupFields(View.GONE);
+                        disposable.dispose();
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        disposable.dispose();
+                    }
                 });
 
 //        disposable.dispose();

@@ -92,10 +92,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //Setting default value in tagName
-        editor.putString("tagName", null);
-        editor.apply();
-
+        //Setting values in tagName
         builder.setView(input);
         builder.setPositiveButton("OK", (dialog1, which) -> {
             m_Text = input.getText().toString();
@@ -106,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
         });
         builder.setNegativeButton("Cancel", (dialog12, which) -> dialog12.cancel());
 
-        if (sharedPref.getString("tagName", null) == "" || sharedPref.getString("tagName", null) == null) {
+        if (sharedPref.getString("tagName", null) == null || sharedPref.getString("tagName", null).equals("")) {
             builder.show();
         }
 //        TagID End
