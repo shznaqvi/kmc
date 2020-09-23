@@ -31,6 +31,7 @@ import java.text.SimpleDateFormat;
 import java.util.Collection;
 import java.util.Date;
 import java.util.Map;
+import java.util.Objects;
 
 import edu.aku.hassannaqvi.kmc_screening.R;
 import edu.aku.hassannaqvi.kmc_screening.contracts.FormsContract;
@@ -91,8 +92,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        builder.setView(input);
+        //Setting default value in tagName
+        editor.putString("tagName", null);
+        editor.apply();
 
+        builder.setView(input);
         builder.setPositiveButton("OK", (dialog1, which) -> {
             m_Text = input.getText().toString();
             if (!m_Text.equals("")) {
@@ -198,8 +202,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void openForm(int index) {
         if (!MainApp.userName.equals("0000")) {
-            final Intent oF = new Intent(MainActivity.this, getClass(index));
-            if (!sharedPref.getString("tagName", null).equals("") && sharedPref.getString("tagName", null) != null && !MainApp.userName.equals("0000")) {
+            Intent oF = new Intent(MainActivity.this, getClass(index));
+            if (sharedPref.getString("tagName", null) != null && !Objects.equals(sharedPref.getString("tagName", null), "")) {
                 startActivity(oF);
             } else {
 

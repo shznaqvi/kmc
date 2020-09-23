@@ -22,7 +22,7 @@ android {
             targetSdkVersion 30
             versionCode code
 //            versionName "2.8"
-            versionName "0.9"
+            versionName "0.10"
             testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         }
         compileOptions {
