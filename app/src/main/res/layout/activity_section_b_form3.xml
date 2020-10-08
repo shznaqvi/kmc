@@ -290,8 +290,8 @@
                                         android:layout_width="0dp"
                                         android:layout_weight="1"
                                         android:hint="##"
-                                        android:maxLength="2"
-                                        app:maxValue="31"
+                                        android:maxLength="3"
+                                        app:maxValue="365"
                                         app:minValue="0"
                                         app:type="range" />
 
