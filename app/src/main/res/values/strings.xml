@@ -247,8 +247,6 @@
     <string name="kfh1"> Inclusion Criteria </string>
     <string name="kf1b01"> ڄمڻ وقت جو وزن لکو </string>
     <string name="kf1b01a"> گرامن ۾ </string>
-    <string name="kf1b01b"> وزن رڪارڊ نه ٿيو آهي </string>
-    <string name="kf1b0198"> خبر نه آهي </string>
     <string name="kf1b02"> ڇا ٻار 1200 گرام کان وڌيڪ يا 2500 گرام يا ان کان گھٽ وزن وارو هو؟ </string>
     <string name="kf1b03"> ڇا شرڪت ڪندڙ چونڊيل يونين ڪائونسل ۾ رھي ٿو؟ </string>
     <string name="kfh2"> Exclusion Criteria </string>
@@ -1055,6 +1053,8 @@
     <string name="nmq108a">ڇوڪرو</string>
     <string name="nmq108b">ڇوڪري</string>
     <string name="nmq109">ڄمڻ وقت جو وزن لکو </string>
+    <string name="nmq109b"> وزن رڪارڊ نه ٿيو آهي </string>
+    <string name="nmq10998"> خبر نه آهي </string>
     <string name="nmq201">ٻار جي موجوده صورت حال</string>
     <string name="nmq201a">ٻار زندهه آهي</string>
     <string name="nmq201b">ٻار زندهه نه آهي</string>

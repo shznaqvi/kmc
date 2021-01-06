@@ -408,6 +408,19 @@
                             app:minValue="900"
                             app:pattern="[0-9]{4}"
                             app:type="range" />
+
+                        <CheckBox
+                            android:id="@+id/nmq109b"
+                            style="@style/checkbox"
+                            android:tag="-1"
+                            android:text="@string/nmq109b" />
+
+                        <CheckBox
+                            android:id="@+id/nmq10998"
+                            style="@style/checkbox"
+                            android:tag="-1"
+                            android:text="@string/nmq10998" />
+
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 

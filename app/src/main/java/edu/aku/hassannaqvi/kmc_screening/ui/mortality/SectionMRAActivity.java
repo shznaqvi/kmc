@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.CompoundButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -77,11 +78,11 @@ public class SectionMRAActivity extends AppCompatActivity {
     private void setupMortFields(MortalityContract mort) {
         if (mort == null) {
             bi.nmq107.setText(null);
-            Clear.clearRadioGroup(bi.nmq108, false);
+//            Clear.clearRadioGroup(bi.nmq108, false);
             return;
         }
         bi.nmq107.setText(mort.getchildname());
-        Clear.clearRadioGroup(bi.nmq108, false);
+//        Clear.clearRadioGroup(bi.nmq108, false);
         bi.nmq108.check(mort.getsex().equals("1") ? bi.nmq108a.getId() : bi.nmq108b.getId());
     }
 
@@ -204,6 +205,30 @@ public class SectionMRAActivity extends AppCompatActivity {
 
             }
         });
+
+        bi.nmq109b.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    bi.nmq10998.setChecked(false);
+                    bi.nmq109.setEnabled(false);
+                    bi.nmq109.setText(null);
+                } else
+                    bi.nmq109.setEnabled(true);
+            }
+        });
+
+        bi.nmq10998.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    bi.nmq109b.setChecked(false);
+                    bi.nmq109.setEnabled(false);
+                    bi.nmq109.setText(null);
+                } else
+                    bi.nmq109.setEnabled(true);
+            }
+        });
     }
 
     public void nmq104OnTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -242,6 +267,8 @@ public class SectionMRAActivity extends AppCompatActivity {
                 : "-1");
 
         json.put("nmq109", bi.nmq109.getText().toString());
+        json.put("nmq109b", bi.nmq109b.isChecked() ? "2" : "-1");
+        json.put("nmq10998", bi.nmq10998.isChecked() ? "98" : "-1");
 
         json.put("nmq201", bi.nmq201a.isChecked() ? "1"
                 : bi.nmq201b.isChecked() ? "2"
@@ -316,6 +343,7 @@ public class SectionMRAActivity extends AppCompatActivity {
     }
 
     public void BtnSearchWoman(View v) {
+//        setupFields(View.VISIBLE);
         if (!Validator.emptyCheckingContainer(this, bi.GrpName))
             return;
 

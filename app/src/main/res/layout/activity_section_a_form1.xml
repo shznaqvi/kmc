@@ -61,26 +61,12 @@
                             android:id="@+id/kf1b01"
                             style="@style/EditTextNum"
                             android:layout_width="match_parent"
-                            android:enabled="@{kf1b01b.checked || kf1b0198.checked ? false : true}"
                             android:hint="@string/kf1b01a"
                             android:maxLength="4"
                             android:onTextChanged="@{callback.weightChanged}"
-                            android:text='@{kf1b01b.checked || kf1b0198.checked ? "" : kf1b01.getText().toString}'
                             app:maxValue="5000"
                             app:minValue="900"
                             app:type="range" />
-
-                        <CheckBox
-                            android:id="@+id/kf1b01b"
-                            style="@style/checkbox"
-                            android:tag="-1"
-                            android:text="@string/kf1b01b" />
-
-                        <CheckBox
-                            android:id="@+id/kf1b0198"
-                            style="@style/checkbox"
-                            android:tag="-1"
-                            android:text="@string/kf1b0198" />
 
                     </LinearLayout>
 
