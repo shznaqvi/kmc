@@ -85,6 +85,8 @@ public class SectionAForm1Activity extends AppCompatActivity {
         JSONObject sa1 = new JSONObject();
 
         sa1.put("kf1b01", bi.kf1b01.getText().toString());
+        sa1.put("kf1b01b", bi.kf1b01b.isChecked() ? "2" : "0");
+        sa1.put("kf1b0198", bi.kf1b0198.isChecked() ? "98" : "0");
         sa1.put("kf1b02", bi.kf1b02a.isChecked() ? "1" : bi.kf1b02b.isChecked() ? "2" : "0");
         sa1.put("kf1b03", bi.kf1b03a.isChecked() ? "1" : bi.kf1b03b.isChecked() ? "2" : "0");
         sa1.put("kf1b0401", bi.kf1b0401a.isChecked() ? "1" : bi.kf1b0401b.isChecked() ? "2" : "0");
@@ -174,7 +176,7 @@ public class SectionAForm1Activity extends AppCompatActivity {
     public void weightChanged(CharSequence s, int start, int before, int count) {
         if (bi.kf1b01.getText().toString().isEmpty()) return;
 
-        if (Integer.parseInt(bi.kf1b01.getText().toString()) > 1200 && Integer.parseInt(bi.kf1b01.getText().toString()) <= 2400)
+        if (Integer.parseInt(bi.kf1b01.getText().toString()) > 1200 && Integer.parseInt(bi.kf1b01.getText().toString()) <= 2500)
             bi.kf1b02a.setChecked(true);
         else
             bi.kf1b02b.setChecked(true);
