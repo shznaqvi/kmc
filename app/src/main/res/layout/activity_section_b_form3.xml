@@ -289,7 +289,7 @@
                                         style="@style/EditTextNum"
                                         android:layout_width="0dp"
                                         android:layout_weight="1"
-                                        android:hint="##"
+                                        android:hint="###"
                                         android:maxLength="3"
                                         app:maxValue="365"
                                         app:minValue="0"
