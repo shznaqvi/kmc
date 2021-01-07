@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -325,6 +326,36 @@ public class SectionMRAActivity extends AppCompatActivity {
         json.put("nmq206d", bi.nmq206d.getText().toString());
 
         fc.setsA(String.valueOf(json));
+
+        setGPS();
+    }
+
+    private void setGPS() {
+        SharedPreferences GPSPref = getSharedPreferences("GPSCoordinates", Context.MODE_PRIVATE);
+        try {
+            String lat = GPSPref.getString("Latitude", "0");
+            String lang = GPSPref.getString("Longitude", "0");
+            String acc = GPSPref.getString("Accuracy", "0");
+            String elevation = GPSPref.getString("Elevation", "0");
+
+            if (lat == "0" && lang == "0") {
+                Toast.makeText(this, "Could not obtained GPS points", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "GPS set", Toast.LENGTH_SHORT).show();
+            }
+
+            String date = DateFormat.format("dd-MM-yyyy HH:mm", Long.parseLong(GPSPref.getString("Time", "0"))).toString();
+
+            fc.setGpsLat(lat);
+            fc.setGpsLng(lang);
+            fc.setGpsAcc(acc);
+            fc.setGpsDT(date); // Timestamp is converted to date above
+            fc.setGpsAltitude(elevation);
+
+        } catch (Exception e) {
+            Log.e(TAG, "setGPS: " + e.getMessage());
+        }
+
     }
 
     public void BtnContinue(View v) {
