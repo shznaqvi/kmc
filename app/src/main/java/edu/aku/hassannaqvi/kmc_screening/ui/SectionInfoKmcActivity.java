@@ -427,6 +427,9 @@ public class SectionInfoKmcActivity extends AppCompatActivity {
                 sInfo.put("kf2a07", bi.kf2a3.getText().toString());
                 sInfo.put("kf2a08", bi.kf2a4.getText().toString());
                 sInfo.put("kf2a09", bi.kf2a5.getText().toString());
+                sInfo.put("kf2a12", bi.kf2a5ba.isChecked() ? "1"
+                        : bi.kf2a5bb.isChecked() ? "2"
+                        : "0");
                 break;
             case "kf3":
             /*sInfo.put("kf3a05", bi.kf3a3.getText().toString());

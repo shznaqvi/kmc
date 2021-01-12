@@ -899,8 +899,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="12dp"
                                 android:hint="@string/nmq206d"
-                                android:maxLength="2"
-                                app:maxValue="28"
+                                android:maxLength="3"
+                                app:maxValue="365"
                                 app:minValue="0"
                                 app:type="range" />
                         </LinearLayout>
