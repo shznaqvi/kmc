@@ -819,6 +819,42 @@
 
                     </androidx.cardview.widget.CardView>
 
+                    <!--kf2a5c-->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvkf2a5c"
+                        style="@style/cardViews">
+
+                        <LinearLayout style="@style/vlinearlayout">
+
+                            <TextView
+                                style="@style/textviews"
+                                android:text="@string/kf2a5c" />
+
+                            <RadioGroup
+                                android:id="@+id/kf2a5c"
+                                style="@style/radiogroups"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/kf2a5ca"
+                                    style="@style/radiobuttons"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:text="@string/yes" />
+
+                                <RadioButton
+                                    android:id="@+id/kf2a5cb"
+                                    style="@style/radiobuttons"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:text="@string/no" />
+
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
 
                 </LinearLayout>
 
