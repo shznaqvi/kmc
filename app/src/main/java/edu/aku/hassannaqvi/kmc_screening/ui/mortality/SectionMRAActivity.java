@@ -362,14 +362,28 @@ public class SectionMRAActivity extends AppCompatActivity {
         if (!formValidation()) return;
         try {
             saveDraft();
+            if (UpdateDB()) {
+                finish();
+                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+            } else {
+                Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        if (UpdateDB()) {
-            finish();
-            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
-        } else {
-            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
+    }
+
+    public void BtnEnd(View v) {
+        try {
+            saveDraft();
+            if (UpdateDB()) {
+                finish();
+                startActivity(new Intent(this, EndingActivity.class));
+            } else {
+                Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
