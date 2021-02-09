@@ -323,7 +323,8 @@ public class SectionAForm0Activity extends AppCompatActivity {
 
         fc.setsInfo(String.valueOf(sInfo));
 
-        setGPS();
+        //HassanBhai@Requested - 09Feb2021
+        //setGPS();
     }
 
     public void BtnEnd() {

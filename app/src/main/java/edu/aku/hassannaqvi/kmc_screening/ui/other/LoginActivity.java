@@ -349,12 +349,12 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             Toast.makeText(this, String.valueOf(clicks), Toast.LENGTH_SHORT).show();
         } else {
             clicks = 0;
-            Toast.makeText(this, "TEAM CREDITS: " +
-                            "\r\nHassan Naqvi, " +
-                            "Ali Azaz, " +
-                            "Gul Sanober, " +
-                            "Ramsha Ahmed, " +
-                            "Javed Khan",
+            Toast.makeText(this, "TEAM CREDITS: "
+                            + "\r\n\tSYED HASSAN ZAMIN NAQVI"
+                            + "\r\n\t\tALI AZAZ ALAM"
+                            + "\r\n\t\t\tGUL SANOBER"
+                            + "\r\n\t\t\t\tRAMSHA SAEED AHMED"
+                            + "\r\n\t\t\t\t\tJAVED AHMED KHAN",
                     Toast.LENGTH_LONG)
                     .show();
         }
@@ -413,7 +413,25 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             mAuthTask = null;
             showProgress(false);
 
-            LocationManager mlocManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+            DatabaseHelper db = new DatabaseHelper(LoginActivity.this);
+            if ((mEmail.equals("dmu@aku") && mPassword.equals("aku?dmu")) || db.Login(mEmail, mPassword)
+                    || (mEmail.equals("test1234") && mPassword.equals("test1234"))) {
+                MainApp.userName = mEmail;
+                MainApp.admin = mEmail.contains("@");
+
+                finish();
+                Intent iLogin = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(iLogin);
+
+            } else {
+                mPasswordView.setError(getString(R.string.error_incorrect_password));
+                mPasswordView.requestFocus();
+                Toast.makeText(LoginActivity.this, mEmail + " " + mPassword, Toast.LENGTH_SHORT).show();
+            }
+
+
+            //HassanBhai@RequestedGPSRemove - 09Feb2021
+            /*LocationManager mlocManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
             if (mlocManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
 
                 DatabaseHelper db = new DatabaseHelper(LoginActivity.this);
@@ -455,7 +473,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                 AlertDialog alert = alertDialogBuilder.create();
                 alert.show();
 
-            }
+            }*/
 
         }
 

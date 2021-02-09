@@ -327,7 +327,8 @@ public class SectionMRAActivity extends AppCompatActivity {
 
         fc.setsA(String.valueOf(json));
 
-        setGPS();
+        //HassanBhai@Requested - 09Feb2021
+        //setGPS();
     }
 
     private void setGPS() {
