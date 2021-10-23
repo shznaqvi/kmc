@@ -63,7 +63,7 @@
                             android:layout_width="match_parent"
                             android:hint="@string/kf1b01a"
                             android:maxLength="4"
-                            android:onTextChanged="@{callback.weightChanged}"
+                            android:onTextChanged="@{callback::weightChanged}"
                             app:maxValue="5000"
                             app:minValue="900"
                             app:type="range" />
@@ -87,7 +87,7 @@
                         <RadioGroup
                             android:id="@+id/kf1b02"
                             style="@style/radiogroups"
-                            android:onCheckedChanged="@{callback.onRadioClickChanged}"
+                            android:onCheckedChanged="@{callback::onRadioClickChanged}"
                             android:orientation="horizontal">
 
                             <RadioButton
@@ -127,7 +127,7 @@
                         <RadioGroup
                             android:id="@+id/kf1b03"
                             style="@style/radiogroups"
-                            android:onCheckedChanged="@{callback.onRadioClickChanged}"
+                            android:onCheckedChanged="@{callback::onRadioClickChanged}"
                             android:orientation="horizontal">
 
                             <RadioButton
@@ -217,7 +217,7 @@
                             <RadioGroup
                                 android:id="@+id/kf1b0401"
                                 style="@style/radiogroups"
-                                android:onCheckedChanged="@{callback.onRadioQuestion04CheckID}"
+                                android:onCheckedChanged="@{callback::onRadioQuestion04CheckID}"
                                 android:orientation="horizontal">
 
                                 <RadioButton
@@ -255,7 +255,7 @@
                             <RadioGroup
                                 android:id="@+id/kf1b0402"
                                 style="@style/radiogroups"
-                                android:onCheckedChanged="@{callback.onRadioQuestion04CheckID}"
+                                android:onCheckedChanged="@{callback::onRadioQuestion04CheckID}"
                                 android:orientation="horizontal">
 
                                 <RadioButton
@@ -293,7 +293,7 @@
                             <RadioGroup
                                 android:id="@+id/kf1b0403"
                                 style="@style/radiogroups"
-                                android:onCheckedChanged="@{callback.onRadioQuestion04CheckID}"
+                                android:onCheckedChanged="@{callback::onRadioQuestion04CheckID}"
                                 android:orientation="horizontal">
 
                                 <RadioButton
@@ -331,7 +331,7 @@
                             <RadioGroup
                                 android:id="@+id/kf1b0404"
                                 style="@style/radiogroups"
-                                android:onCheckedChanged="@{callback.onRadioQuestion04CheckID}"
+                                android:onCheckedChanged="@{callback::onRadioQuestion04CheckID}"
                                 android:orientation="horizontal">
 
                                 <RadioButton
@@ -369,7 +369,7 @@
                             <RadioGroup
                                 android:id="@+id/kf1b0405"
                                 style="@style/radiogroups"
-                                android:onCheckedChanged="@{callback.onRadioQuestion04CheckID}"
+                                android:onCheckedChanged="@{callback::onRadioQuestion04CheckID}"
                                 android:orientation="horizontal">
 
                                 <RadioButton
@@ -421,7 +421,7 @@
                             <RadioGroup
                                 android:id="@+id/kf1b0406"
                                 style="@style/radiogroups"
-                                android:onCheckedChanged="@{callback.onRadioQuestion04CheckID}"
+                                android:onCheckedChanged="@{callback::onRadioQuestion04CheckID}"
                                 android:orientation="horizontal">
 
                                 <RadioButton
@@ -459,7 +459,7 @@
                             <RadioGroup
                                 android:id="@+id/kf1b0407"
                                 style="@style/radiogroups"
-                                android:onCheckedChanged="@{callback.onRadioQuestion04CheckID}"
+                                android:onCheckedChanged="@{callback::onRadioQuestion04CheckID}"
                                 android:orientation="horizontal">
 
                                 <RadioButton
@@ -497,7 +497,7 @@
                             <RadioGroup
                                 android:id="@+id/kf1b0408"
                                 style="@style/radiogroups"
-                                android:onCheckedChanged="@{callback.onRadioQuestion04CheckID}"
+                                android:onCheckedChanged="@{callback::onRadioQuestion04CheckID}"
                                 android:orientation="horizontal">
 
                                 <RadioButton
@@ -535,7 +535,7 @@
                             <RadioGroup
                                 android:id="@+id/kf1b0409"
                                 style="@style/radiogroups"
-                                android:onCheckedChanged="@{callback.onRadioQuestion04CheckID}"
+                                android:onCheckedChanged="@{callback::onRadioQuestion04CheckID}"
                                 android:orientation="horizontal">
 
                                 <RadioButton
@@ -573,7 +573,7 @@
                             <RadioGroup
                                 android:id="@+id/kf1b0410"
                                 style="@style/radiogroups"
-                                android:onCheckedChanged="@{callback.onRadioQuestion04CheckID}"
+                                android:onCheckedChanged="@{callback::onRadioQuestion04CheckID}"
                                 android:orientation="horizontal">
 
                                 <RadioButton
@@ -611,7 +611,7 @@
                             <RadioGroup
                                 android:id="@+id/kf1b0411"
                                 style="@style/radiogroups"
-                                android:onCheckedChanged="@{callback.onRadioQuestion04CheckID}"
+                                android:onCheckedChanged="@{callback::onRadioQuestion04CheckID}"
                                 android:orientation="horizontal">
 
                                 <RadioButton
@@ -649,7 +649,7 @@
                             <RadioGroup
                                 android:id="@+id/kf1b0412"
                                 style="@style/radiogroups"
-                                android:onCheckedChanged="@{callback.onRadioQuestion04CheckID}"
+                                android:onCheckedChanged="@{callback::onRadioQuestion04CheckID}"
                                 android:orientation="horizontal">
 
                                 <RadioButton
@@ -687,7 +687,7 @@
                             <RadioGroup
                                 android:id="@+id/kf1b0413"
                                 style="@style/radiogroups"
-                                android:onCheckedChanged="@{callback.onRadioQuestion04CheckID}"
+                                android:onCheckedChanged="@{callback::onRadioQuestion04CheckID}"
                                 android:orientation="horizontal">
 
                                 <RadioButton
@@ -725,7 +725,7 @@
                             <RadioGroup
                                 android:id="@+id/kf1b0414"
                                 style="@style/radiogroups"
-                                android:onCheckedChanged="@{callback.onRadioQuestion04CheckID}"
+                                android:onCheckedChanged="@{callback::onRadioQuestion04CheckID}"
                                 android:orientation="horizontal">
 
                                 <RadioButton
@@ -780,7 +780,7 @@
                             <RadioGroup
                                 android:id="@+id/kf1b0415"
                                 style="@style/radiogroups"
-                                android:onCheckedChanged="@{callback.onRadioQuestion04CheckID}"
+                                android:onCheckedChanged="@{callback::onRadioQuestion04CheckID}"
                                 android:orientation="horizontal">
 
                                 <RadioButton
@@ -854,7 +854,7 @@
                             <RadioGroup
                                 android:id="@+id/kf1b0501"
                                 style="@style/radiogroups"
-                                android:onCheckedChanged="@{callback.onRadioEligibilityChecked}"
+                                android:onCheckedChanged="@{callback::onRadioEligibilityChecked}"
                                 android:orientation="horizontal">
 
                                 <RadioButton
@@ -892,7 +892,7 @@
                             <RadioGroup
                                 android:id="@+id/kf1b0502"
                                 style="@style/radiogroups"
-                                android:onCheckedChanged="@{callback.onRadioEligibilityChecked}"
+                                android:onCheckedChanged="@{callback::onRadioEligibilityChecked}"
                                 android:orientation="horizontal">
 
                                 <RadioButton
@@ -930,7 +930,7 @@
                             <RadioGroup
                                 android:id="@+id/kf1b0503"
                                 style="@style/radiogroups"
-                                android:onCheckedChanged="@{callback.onRadioEligibilityChecked}"
+                                android:onCheckedChanged="@{callback::onRadioEligibilityChecked}"
                                 android:orientation="horizontal">
 
                                 <RadioButton
@@ -968,7 +968,7 @@
                             <RadioGroup
                                 android:id="@+id/kf1b0504"
                                 style="@style/radiogroups"
-                                android:onCheckedChanged="@{callback.onRadioEligibilityChecked}"
+                                android:onCheckedChanged="@{callback::onRadioEligibilityChecked}"
                                 android:orientation="horizontal">
 
                                 <RadioButton
@@ -1006,7 +1006,7 @@
                             <RadioGroup
                                 android:id="@+id/kf1b0596"
                                 style="@style/radiogroups"
-                                android:onCheckedChanged="@{callback.onRadioEligibilityChecked}"
+                                android:onCheckedChanged="@{callback::onRadioEligibilityChecked}"
                                 android:orientation="horizontal">
 
                                 <RadioButton
@@ -1051,7 +1051,7 @@
                             <RadioGroup
                                 android:id="@+id/kf1b06"
                                 style="@style/radiogroups"
-                                android:onCheckedChanged="@{callback.onRadioEligibilityChecked}"
+                                android:onCheckedChanged="@{callback::onRadioEligibilityChecked}"
                                 android:orientation="horizontal">
 
                                 <RadioButton
@@ -1089,7 +1089,7 @@
                             <RadioGroup
                                 android:id="@+id/kf1b0602"
                                 style="@style/radiogroups"
-                                android:onCheckedChanged="@{callback.onRadioEligibilityChecked}"
+                                android:onCheckedChanged="@{callback::onRadioEligibilityChecked}"
                                 android:orientation="horizontal">
 
                                 <RadioButton

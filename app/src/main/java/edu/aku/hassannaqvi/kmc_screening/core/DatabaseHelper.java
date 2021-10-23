@@ -7,7 +7,6 @@ import android.database.MatrixCursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -913,7 +912,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
         } catch (Exception e) {
-            Log.d(TAG, "syncUser(e): " + e);
+         //   Log.d(TAG, "syncUser(e): " + e);
         } finally {
             db.close();
         }
@@ -938,7 +937,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }
 
         } catch (Exception e) {
-            Log.d(TAG, "syncTalukas(e): " + e);
+            //  Log.d(TAG, "syncTalukas(e): " + e);
         } finally {
             db.close();
         }
@@ -969,7 +968,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }
 
         } catch (Exception e) {
-            Log.d(TAG, "syncRegisteredPW(e): " + e);
+            //    Log.d(TAG, "syncRegisteredPW(e): " + e);
         } finally {
             db.close();
         }
@@ -987,7 +986,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
                 PWFollowUpContract vc = new PWFollowUpContract();
                 vc.sync(jsonObjectPSU);
-                Log.i(TAG, "PWs: " + jsonObjectPSU.toString());
+                //        Log.i(TAG, "PWs: " + jsonObjectPSU.toString());
 
                 ContentValues values = new ContentValues();
 
@@ -1008,7 +1007,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             db.close();
 
         } catch (Exception e) {
-            Log.d(TAG, "syncPWS: " + e.getMessage());
+            //    Log.d(TAG, "syncPWS: " + e.getMessage());
         }
     }
 
@@ -1024,7 +1023,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
                 PWScreenedContract spw = new PWScreenedContract();
                 spw.sync(jsonObjectPSU);
-                Log.i(TAG, "PWScreened: " + jsonObjectPSU.toString());
+                //           Log.i(TAG, "PWScreened: " + jsonObjectPSU.toString());
 
                 ContentValues values = new ContentValues();
 
@@ -1042,7 +1041,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             db.close();
 
         } catch (Exception e) {
-            Log.d(TAG, "syncPWScreened: " + e.getMessage());
+            //     Log.d(TAG, "syncPWScreened: " + e.getMessage());
         }
     }
 
@@ -1058,7 +1057,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
                 EligibleContract epw = new EligibleContract();
                 epw.sync(jsonObjectPSU);
-                Log.i(TAG, "Eligibiles: " + jsonObjectPSU.toString());
+                //         Log.i(TAG, "Eligibiles: " + jsonObjectPSU.toString());
 
                 ContentValues values = new ContentValues();
 
@@ -1075,7 +1074,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             db.close();
 
         } catch (Exception e) {
-            Log.d(TAG, "syncEligibiles: " + e.getMessage());
+            //      Log.d(TAG, "syncEligibiles: " + e.getMessage());
         }
     }
 
@@ -1091,7 +1090,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
                 RecruitmentContract epw = new RecruitmentContract();
                 epw.sync(jsonObjectPSU);
-                Log.i(TAG, "Rrecruitment" + jsonObjectPSU.toString());
+                //          Log.i(TAG, "Rrecruitment" + jsonObjectPSU.toString());
 
                 ContentValues values = new ContentValues();
 
@@ -1107,7 +1106,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             db.close();
 
         } catch (Exception e) {
-            Log.d(TAG, "syncRrecruitment" + e.getMessage());
+            //        Log.d(TAG, "syncRrecruitment" + e.getMessage());
         }
     }
 
@@ -1123,7 +1122,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
                 VillagesContract vc = new VillagesContract();
                 vc.sync(jsonObjectPSU);
-                Log.i(TAG, "syncVillages: " + jsonObjectPSU.toString());
+                //        Log.i(TAG, "syncVillages: " + jsonObjectPSU.toString());
 
                 ContentValues values = new ContentValues();
 
@@ -1152,7 +1151,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
                 MortalityContract vc = new MortalityContract();
                 vc.sync(jsonObjectPSU);
-                Log.i(TAG, "syncMortality: " + jsonObjectPSU.toString());
+                //       Log.i(TAG, "syncMortality: " + jsonObjectPSU.toString());
 
                 ContentValues values = new ContentValues();
 
@@ -1605,14 +1604,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }
             return alc;
         } catch (SQLException sqlEx) {
-            Log.d("printing exception", sqlEx.getMessage());
+            //          Log.d("printing exception", sqlEx.getMessage());
             //if any exceptions are triggered save the error message to cursor an return the arraylist
             Cursor2.addRow(new Object[]{"" + sqlEx.getMessage()});
             alc.set(1, Cursor2);
             return alc;
         } catch (Exception ex) {
 
-            Log.d("printing exception", ex.getMessage());
+            //      Log.d("printing exception", ex.getMessage());
 
             //if any exceptions are triggered save the error message to cursor an return the arraylist
             Cursor2.addRow(new Object[]{"" + ex.getMessage()});

@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Projects.kmc.iml" filepath="$PROJECT_DIR$/.idea/modules/Projects.kmc.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/kmc.iml" filepath="$PROJECT_DIR$/.idea/kmc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kmc.iml" filepath="$PROJECT_DIR$/.idea/modules/kmc.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/kmc.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/kmc.app.iml" />
     </modules>
   </component>
